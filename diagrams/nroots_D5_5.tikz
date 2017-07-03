@@ -1,0 +1,26 @@
+\begin{tikzpicture}[>=latex,line join=bevel,]
+%%
+\node (alpha2+alpha3+alpha4+alpha5) at (60bp,163bp) [draw,draw=none] {$\alpha_{2} + \alpha_{3} + \alpha_{4} + \alpha_{5}$};
+  \node (alpha2+alpha3+alpha5) at (142bp,213bp) [draw,draw=none] {$\alpha_{2} + \alpha_{3} + \alpha_{5}$};
+  \node (alpha5) at (101bp,312bp) [draw,draw=none] {$\alpha_{5}$};
+  \node (alpha2+2*alpha3+alpha4+alpha5) at (46bp,112bp) [draw,draw=none] {$\alpha_{2} + 2\alpha_{3} + \alpha_{4} + \alpha_{5}$};
+  \node (alpha1+2*alpha2+2*alpha3+alpha4+alpha5) at (105bp,8bp) [draw,draw=none] {$\alpha_{1} + 2\alpha_{2} + 2\alpha_{3} + \alpha_{4} + \alpha_{5}$};
+  \node (alpha1+alpha2+alpha3+alpha5) at (165bp,163bp) [draw,draw=none] {$\alpha_{1} + \alpha_{2} + \alpha_{3} + \alpha_{5}$};
+  \node (alpha1+alpha2+alpha3+alpha4+alpha5) at (165bp,112bp) [draw,draw=none] {$\alpha_{1} + \alpha_{2} + \alpha_{3} + \alpha_{4} + \alpha_{5}$};
+  \node (alpha1+alpha2+2*alpha3+alpha4+alpha5) at (105bp,60bp) [draw,draw=none] {$\alpha_{1} + \alpha_{2} + 2\alpha_{3} + \alpha_{4} + \alpha_{5}$};
+  \node (alpha3+alpha5) at (101bp,263bp) [draw,draw=none] {$\alpha_{3} + \alpha_{5}$};
+  \node (alpha3+alpha4+alpha5) at (60bp,213bp) [draw,draw=none] {$\alpha_{3} + \alpha_{4} + \alpha_{5}$};
+  \draw [black,->] (alpha2+alpha3+alpha4+alpha5) ..controls (56.415bp,149.45bp) and (53.345bp,138.71bp)  .. (alpha2+2*alpha3+alpha4+alpha5);
+  \draw [black,->] (alpha5) ..controls (101bp,299.84bp) and (101bp,289.19bp)  .. (alpha3+alpha5);
+  \draw [black,->] (alpha2+alpha3+alpha5) ..controls (148.19bp,199.08bp) and (153.34bp,188.33bp)  .. (alpha1+alpha2+alpha3+alpha5);
+  \draw [black,->] (alpha3+alpha5) ..controls (89.652bp,248.72bp) and (79.772bp,237.15bp)  .. (alpha3+alpha4+alpha5);
+  \draw [black,->] (alpha2+alpha3+alpha4+alpha5) ..controls (90.272bp,147.87bp) and (121.55bp,133.28bp)  .. (alpha1+alpha2+alpha3+alpha4+alpha5);
+  \draw [black,->] (alpha3+alpha4+alpha5) ..controls (60bp,199.29bp) and (60bp,189.02bp)  .. (alpha2+alpha3+alpha4+alpha5);
+  \draw [black,->] (alpha1+alpha2+alpha3+alpha5) ..controls (165bp,149.38bp) and (165bp,138.47bp)  .. (alpha1+alpha2+alpha3+alpha4+alpha5);
+  \draw [black,->] (alpha3+alpha5) ..controls (112.35bp,248.72bp) and (122.23bp,237.15bp)  .. (alpha2+alpha3+alpha5);
+  \draw [black,->] (alpha2+alpha3+alpha5) ..controls (118.43bp,198.2bp) and (95.43bp,184.74bp)  .. (alpha2+alpha3+alpha4+alpha5);
+  \draw [black,->] (alpha1+alpha2+2*alpha3+alpha4+alpha5) ..controls (105bp,45.763bp) and (105bp,35.065bp)  .. (alpha1+2*alpha2+2*alpha3+alpha4+alpha5);
+  \draw [black,->] (alpha2+2*alpha3+alpha4+alpha5) ..controls (62.674bp,96.87bp) and (77.694bp,84.141bp)  .. (alpha1+alpha2+2*alpha3+alpha4+alpha5);
+  \draw [black,->] (alpha1+alpha2+alpha3+alpha4+alpha5) ..controls (148.58bp,97.315bp) and (132.92bp,84.265bp)  .. (alpha1+alpha2+2*alpha3+alpha4+alpha5);
+%
+\end{tikzpicture}

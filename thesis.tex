@@ -1,0 +1,121 @@
+%%% Hlavní soubor. Zde se definují základní parametry a odkazuje se na ostatní části. %%%
+\RequirePackage{fix-cm}
+%% Verze pro jednostranný tisk:
+% Okraje: levý 40mm, pravý 25mm, horní a dolní 25mm
+% (ale pozor, LaTeX si sám přidává 1in)
+\documentclass[12pt,a4paper,final]{report}
+\setlength\textwidth{145mm}
+\setlength\textheight{247mm}
+\setlength\oddsidemargin{15mm}
+\setlength\evensidemargin{15mm}
+\setlength\topmargin{0mm}
+\setlength\headsep{0mm}
+\setlength\headheight{0mm}
+% \openright zařídí, aby následující text začínal na pravé straně knihy
+\let\openright=\clearpage
+
+%% Pokud tiskneme oboustranně:
+% \documentclass[12pt,a4paper,twoside,openright]{report}
+% \setlength\textwidth{145mm}
+% \setlength\textheight{247mm}
+% \setlength\oddsidemargin{15mm}
+% \setlength\evensidemargin{0mm}
+% \setlength\topmargin{0mm}
+% \setlength\headsep{0mm}
+% \setlength\headheight{0mm}
+% \let\openright=\cleardoublepage
+
+\usepackage{fixltx2e}   % fixes various  bugs in LaTeX
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{microtype}  % microtypographical enhancements
+\usepackage[british,english]{babel}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{graphicx}
+\usepackage{pdfpages} % for inserting pdfs of published articles
+\usepackage{twoopt} % for convenient commands
+\usepackage{xfrac} % for \sfrac command
+\usepackage{mathrsfs}   % calligraphic font \mathscr{C}
+\usepackage{minted} % for pretty printing of source code
+\usepackage[toc]{appendix}
+\usepackage[matrix,arrow]{xy}    % for diagrams
+
+\usepackage{tikz}
+\input{diagrams/tikz_settings.tex}
+
+\usepackage{threeparttable,array}
+\newcolumntype{C}{>{$\displaystyle}c <{$}}
+
+
+%% Balíček hyperref, kterým jdou vyrábět klikací odkazy v PDF,
+%% ale hlavně ho používáme k uložení metadat do PDF (včetně obsahu).
+%% POZOR, nezapomeňte vyplnit jméno práce a autora.
+\usepackage[final,pdftex,breaklinks,unicode,bookmarksopen=true]{hyperref}   % Musí být za všemi ostatními balíčky
+\hypersetup{pdftitle=Invariant differential operators}
+\hypersetup{pdfauthor=Vít Tuček}
+
+%%% Drobné úpravy stylu
+
+% Tato makra přesvědčují mírně ošklivým trikem LaTeX, aby hlavičky kapitol
+% sázel příčetněji a nevynechával nad nimi spoustu místa. Směle ignorujte.
+\makeatletter
+\def\@makechapterhead#1{
+  {\parindent \z@ \raggedright \normalfont
+   \Huge\bfseries \thechapter. #1
+   \par\nobreak
+   \vskip 20\p@
+}}
+\def\@makeschapterhead#1{
+  {\parindent \z@ \raggedright \normalfont
+   \Huge\bfseries #1
+   \par\nobreak
+   \vskip 20\p@
+}}
+\makeatother
+
+% Toto makro definuje kapitolu, která není očíslovaná, ale je uvedena v obsahu.
+\def\chapwithtoc#1{
+\chapter*{#1}
+\addcontentsline{toc}{chapter}{#1}
+}
+
+\input{definitions}
+
+\begin{document}
+
+% Trochu volnější nastavení dělení slov, než je default.
+\lefthyphenmin=2
+\righthyphenmin=2
+
+\input{titlepage}
+
+%%% Jednotlivé kapitoly práce jsou pro přehlednost uloženy v samostatných souborech
+%\include{introduction}
+%\include{complex}
+%\include{hermitian_pairs}
+%\include{homology}
+\include{unitarizable_modules}
+%\include{invariant}
+%\include{parabolic_geometries}
+%\include{conclusion}
+
+%%% Seznam použité literatury
+\addcontentsline{toc}{chapter}{Bibliography}
+\bibliography{my_library}
+\bibliographystyle{plain}
+
+%\include{appendix}
+
+%%% Tabulky v disertační práci, existují-li.
+% \chapwithtoc{List of Tables}
+
+%%% Použité zkratky v disertační práci, existují-li, včetně jejich vysvětlení.
+% \chapwithtoc{List of Abbreviations}
+
+%%% Přílohy k disertační práci, existují-li (různé dodatky jako výpisy programů,
+%%% diagramy apod.). Každá příloha musí být alespoň jednou odkazována z vlastního
+%%% textu práce. Přílohy se číslují.
+% \chapwithtoc{Attachments}
+
+\openright
+\end{document}

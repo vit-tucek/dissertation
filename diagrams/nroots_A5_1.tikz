@@ -1,0 +1,13 @@
+\begin{tikzpicture}[>=latex,line join=bevel,]
+%%
+\node (alpha1+alpha2+alpha3+alpha4+alpha5) at (55bp,7bp) [draw,draw=none] {$\alpha_{1} + \alpha_{2} + \alpha_{3} + \alpha_{4} + \alpha_{5}$};
+  \node (alpha1) at (55bp,206bp) [draw,draw=none] {$\alpha_{1}$};
+  \node (alpha1+alpha2+alpha3+alpha4) at (55bp,57bp) [draw,draw=none] {$\alpha_{1} + \alpha_{2} + \alpha_{3} + \alpha_{4}$};
+  \node (alpha1+alpha2+alpha3) at (55bp,107bp) [draw,draw=none] {$\alpha_{1} + \alpha_{2} + \alpha_{3}$};
+  \node (alpha1+alpha2) at (55bp,157bp) [draw,draw=none] {$\alpha_{1} + \alpha_{2}$};
+  \draw [black,->] (alpha1) ..controls (55bp,193.84bp) and (55bp,183.19bp)  .. (alpha1+alpha2);
+  \draw [black,->] (alpha1+alpha2) ..controls (55bp,143.29bp) and (55bp,133.02bp)  .. (alpha1+alpha2+alpha3);
+  \draw [black,->] (alpha1+alpha2+alpha3+alpha4) ..controls (55bp,43.293bp) and (55bp,33.024bp)  .. (alpha1+alpha2+alpha3+alpha4+alpha5);
+  \draw [black,->] (alpha1+alpha2+alpha3) ..controls (55bp,93.293bp) and (55bp,83.024bp)  .. (alpha1+alpha2+alpha3+alpha4);
+%
+\end{tikzpicture}

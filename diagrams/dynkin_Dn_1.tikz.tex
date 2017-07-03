@@ -1,0 +1,13 @@
+\begin{tikzpicture} % SO^*(2n) ~ D_n relative
+	\node[nroot] (a1) [label=above:$\alpha_1$] {};
+	\node[croot] (a2) [right= of a1] [label=above:$\alpha_2$] {};
+	\node (a3) [right= of a2] {};
+	\node (a4) [right= of a3] {};
+	\node[croot] (a5) [right= of a4] [label=above left:$\alpha_{n-2}$] {};
+	\node[croot] (a6) [above right= of a5] [label=above:$\alpha_{n}$] {};
+	\node[croot] (a7) [below right= of a5] [label=above right:$\alpha_{n-1}$] {};
+	\draw (a1) to (a2) to (a3);
+	\draw [dotted] (a3) to (a4);
+	\draw (a4) to (a5) to (a6);
+	\draw (a5) to (a7);
+\end{tikzpicture}

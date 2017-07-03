@@ -1,0 +1,203 @@
+\chapter{Parabolic geometries and construction of Calderbank-Diemer}
+
+%\section{Differential geometry in infinite dimension}
+
+\section{Parabolic geometries}
+ First we need to recall some of the fundamental notions of parabolic geometries. The canonical reference for parabolic geometries is \cite{cap_parabolic_2009}. In this section we closely follow article \cite{calderbank_differential_2001}. We will show the construction in the complex case, but it works for all admissible real cases.
+
+ Let $G$ be a Lie group and let $P$ be its parabolic subgroup. A \emph{Cartan geometry} modeled on the pair $(G,P)$ is a $P$-principal bundle $\pi: \mathcal{G} \to M$ with a $P$-equivariant one-form $\omega: T\mathcal{G} \to \lie{g}$ such that for each $u\in \mathcal{G}$, $\omega_u:T_u\mathcal{G}\to\lie{g}$ is an isomorphism restricting to the canonical isomorphism between $T_u(\mathcal{G}_{\pi(u)})$ and $\lie{p}$ (the so called \emph{Cartan connection}). The \emph{curvature function} $\kappa:\mathcal{G} \to \Lambda^2\lie{g}^*\otimes\lie{g}$ of a Cartan geometry is defined by
+\[
+ \kappa(u)(\xi,\chi) = [\xi,\chi] - \omega( [\omega^{-1}(\xi),\omega^{-1}(\chi)])(u),
+\]
+where the first bracket is the bracket of $\lie{g}$ while the second bracket is just the bracket of vector fields on $\mathcal{G}$.
+
+For any (possibly infinite dimensional, see \cite{michor}) continuous representation $\rep{V}$ of $P$ we can form an associated topological vector bundle $\bun{V}:=\mathcal{G}\times_P \rep{V} \to M$. The bundle associated to $\lie{p}_+$ is the cotangent bundle $T^*M$ and the bundle associated to $\lie{g}/\lie{p}$ is the tangent bundle $TM$. It what follows we identify the $P$-representation $\lie{g}/\lie{p}$ with $\lie{p}_-$ via the Killing form of $\lie{g}$. The bundle associated to the adjoint representation on $\lie{g}$ is called \emph{adjoint tractor bundle} and is denoted by $\bun{A}M$.
+
+ It can be checked that $\kappa$ is in fact horizontal and $P$-equivariant and hence it induces a section of $\Omega^2M\otimes\bun{A}M$ which we will denote by the same symbol.
+
+Sections of associated bundles are in bijective correspondence with $P$-equi\-variant functions on the total space $\mathcal{G}$. For an infinite-dimensional representation $\rep{V}$ we define smooth sections as smooth $P$-equivariant functions on the total space with values in $\rep{V}$. It directly follows that a smooth section can have values only in the subspace of smooth vectors of $\rep{V}$.
+
+ The \emph{invariant derivative} on $V$ is defined by
+\begin{gather*}
+  \nabla^\omega: \mathcal{C}^\infty(\mathcal{G},\rep{V}) \to \mathcal{C}^\infty(\mathcal{G},\lie{g}^*\otimes\rep{V})\\
+  \nabla^\omega_\xi f = \mathrm{d}f(\omega^{-1}(\xi))
+\end{gather*}
+for all $\xi \in \lie{g}$. It is $P$-equivariant and so maps $\mathcal{C}^\infty(\mathcal{G},\rep{V})^P$ into $\mathcal{C}^\infty(\mathcal{G},\lie{g}^*\otimes \rep{V})^P$ and thus we get a linear map $\nabla^\omega: \Gamma(M,\bun{V}) \to \Gamma(M,\bun{A}M\otimes \bun{V})$. Note that from the definition of the fundamental derivative it follows that $\nabla^\omega_{e_i} s$ has the same geometric weight as $s$.
+
+ We define the \emph{tractor connection} by
+\begin{gather*}
+ \nabla^\lie{g}: \mathcal{C}^\infty(\mathcal{G},\rep{V}) \to \mathcal{C}^\infty(\mathcal{G},\lie{g}^*\otimes\rep{V})\\
+ \nabla^\lie{g}_\xi f = \nabla^\omega_\xi f + \xi \cdot f.
+%  \nabla^\lie{g}_\xi f = \mathrm{d}f(\omega^{-1}(\xi)) + \xi \cdot f.
+\end{gather*}
+ It is easily checked that for $P$-equivariant $f$ and for any $\xi \in \lie{p}$ we get $\nabla^\lie{g}_\xi f = 0$ and hence $\nabla^\lie{g}$ induces a covariant derivative on $\bun{V}$.
+
+We define the associated twisted deRham differential
+\[
+ \td: \Gamma(M,\Omega^k\bun{V}) \to \Gamma(M,\Omega^{k+1}\bun{V})
+\]
+by the usual formula. We will need the expression for $\td$ in local coordinates. Let $\epsilon^i$ be elements of the basis of $\lie{p}_+$, let $e_i$ be the elements of the dual basis and denote the corresponding sections on $M$ by the same symbols. Then
+\[
+ (\td s) (u)=  \sum_i \epsilon^i\wedge (\nabla^\omega_{e_i} s)(u) + d s(u) - \sum_{i <j} \epsilon^i\wedge\epsilon^j\wedge\kappa(e_i,e_j)  \lrcorner\, s(u),
+\]
+where only the first term depends on the one-jet of $s\in\Gamma(M,\bun{V})$ and the remaining two terms act algebraically on the values of $s$. Note that only the $\lie{p}_-$-component of $\kappa(e_i,e_j)$ (the \emph{torsion component}) contributes to the contraction. %In what follows we consider only \emph{regular} parabolic geometries, since then the curvature part of the operator $\td$ doesn't increase the geometric weight. By  Corollary 3.1.8 of \cite{cap_parabolic_2009}, we get that $\kappa(e_i,e_j) \in \lie{p}_-$ and hence we can insert it with the $\rep{V}$-valued $k$-form $s(u)$. %parabook str 256 dole = v 1-grad pripade je geometrie automaticky regularni
+
+The Lie algebra homology differential $\lhd:\Lambda^i \lie{p}_+ \otimes \rep{V} \to \Lambda^{i-1} \lie{p}_+ \otimes \rep{V}$ is $P$-equivariant and hence it induces operator (denoted by the same symbol) on the bundles associated to the chain spaces. These bundles are of course exterior forms with values in $\mathcal{V}$ and we will denote them by $\Omega^i\bun{V}$. Let $B_i\bun{V}$ denote the image of $\lhd$ on $i$-forms with values in $\bun{V}$, let $Z_i\bun{V}$ denote its kernel and let $H_i\bun{V}$ denote the corresponding factors $Z_i\bun{V}/B_i\bun{V}$. Again, from $P$-equivariance it follows that there are natural identifications
+\[
+ Z_\bullet\bun{V}=\bun{G}\times_P \ker \lhd \quad B_\bullet\bun{V}=\bun{G}\times_P \im \lhd \quad H_i\bun{V} = \bun{G}\times_P H_i(\lie{p}_+,\rep{V}).
+\]
+
+\section{Construction of Calderbank and Diemer}
+
+The BGG operators were constructed in \cite{calderbank_differential_2001} by using a family of differential operators $\pproj{k}: \Gamma(M,\Omega^k\bun{V}) \to \Gamma(M,\Omega^{k+1}\bun{V})$ which vanish on $\mathrm{im}\,\lhd$ and map into $\ker \lhd$. The \emph{BGG operator} $D_k: \Gamma(\bun{H}_k(\lie{p}_+,\rep{V}))\to\Gamma(\bun{H}_{i+1}(\lie{p}_+,\rep{V}))$ is then defined as \[D_k s := \mathrm{proj} \circ\pproj{k+1} \circ \td \circ \pproj{k} \circ \mathrm{rep},\] where $\mathrm{proj}$ is the algebraic projection on homology and $\mathrm{rep}$ is a choice of representative in the homology class.
+
+The idea for constructing $\pproj{k}$ comes from the expression for the algebraic projection onto $\ker \lap$ which is given by $\id - \lap^{-1}\lap$ and because $\lhd$ commutes with $\lap^{-1}$ this equals to $\id -\lap^{-1}\lhd d - d \lap^{-1} \lhd$.  We need a $P$-equivariant operator and since the Lie algebra cohomology differential is the only thing that is not $P$-equivariant in this formula, we can try to restore the $P$-equivariance by adding a differential term. This reasoning leads to the following definitions
+\begin{gather*}
+ \plap = \lhd \td + \td \lhd,\quad Q = \plap^{-1}\lhd \\
+  \pproj{k} = \id - Q\td - \td Q.
+\end{gather*} Now the problem arises how to compute the inverse of $\plap$ at least on the image of $\lhd$. Once this inverse is provided, the desired properties of $\pproj{k}$ follow immediately as algebraic consequences. %We refer to \cite{calderbank_differential_2001} for details.
+
+There always exists a reduction of our $P$-bundles to $K_\C$ which means that we can construct the sought inverse by using $K_\C$-equivariant operators. Since the inverse must be unique it follows that it doesn't depend on the choice of reduction from $P$ to $K_\C$ and hence it is $P$-equivariant.
+
+\begin{lemma}
+Let $\rep{V}$  be a finite-dimensional $(\lie{g},P)$-module or $\overline{L(\lambda)}$. Then the operator $\plap$ is invertible on $B_i\bun{V}$ and the inverse is given by
+\[
+ \plap^{-1}=\left( \sum_{k=0}^\infty N^k \right) \lap^{-1},
+\]
+where $N=-\lap^{-1}(\plap-\lap)$.
+\end{lemma}
+\begin{proof}
+ We need to prove that the infinite sum makes sense for any section $s\in\Gamma(M,B_{i}\bun{V})$. Let us compute the local expression for $N(s)$, where we consider $s$ to have values in some irreducible $K_\C$-type.
+\begin{align*}
+ -\lap N(s)(u) &= (\plap - \lap) s (u)\\
+	    &= \lhd(\td - d) s (u) \quad\text{ because $s\in\Gamma(M,B_{i}\bun{V})$}\\
+	  &= \lhd\left(\sum_i\epsilon^i\wedge\nabla^\omega_{e_i}s - \sum_{i <j} \epsilon^i\wedge\epsilon^j\wedge\kappa(e_i,e_j)  \lrcorner\, s \right)(u)
+	  %&= \sum_i \left( \epsilon^i\cdot \nabla^\omega_{e_i}s - \epsilon^i\wedge\lhd\nabla^\omega_{e_i}s \right) + \sum_{i<j}
+\end{align*}
+
+ The first term increases the geometric weight, because fundamental derivative doesn't change $w$, wedging with an element from $\lie{p}_+$ increases it by one and $\lhd$ preserves the geometric weight.
+
+The second term also increases the weight, because the contraction with $\kappa(e_i,e_j)$ lowers it by one and wedging with two elements from $\lie{p}_+$ increases it by two.
+
+For a finite-dimensional representation $\rep{V}$ it follows that the operator $N$ is nilpotent and in the infinite sum there is only finitely many terms nonzero. Thus the operator $\Pi^\lie{g}_k$ is a differential operator of finite order.
+
+For a section with values in the representation $\overline{L(\lambda)} = \prod_{k=0}^\infty L_k$ we get that $N$ works as a component-wise derivation composed with right shift. It follows that the sum is well defined and the components  of $\Pi^\lie{g}_k$ are differential operators of increasing order --- the sum $\sum_{k=0}^\infty N(s)(u)$ has at most $k+1$ nonzero terms on the component corresponding to $L_k$. For forms of higher degree it works in the same way.
+\end{proof}
+
+The following proposition (in the finite-dimensional case) is one of the main results of \cite{calderbank_differential_2001}. Since this proposition is crucial for what follows, we show the full proof here in detail. Also note that the original statement contained some irrelevant sign errors.
+
+\begin{proposition}[\cite{calderbank_differential_2001}, Proposition 5.5]
+ The operator $\pproj{k}: \Gamma(M,\Omega^k\bun{V}) \to \Gamma(M,\Omega^k\bun{V})$ has the following properties.
+\begin{enumerate}
+ \item The operator $\pproj{k}$ vanishes on $\im \lhd$and maps into $\ker \lhd$:  \[\pproj{k}\circ\lhd = 0 \quad \&\quad \lhd\circ\,\pproj{k} = 0.\]
+ \item The operator $\pproj{k}$ induces identity on the homology $\bun{H}_k(\lie{p}_+,\rep{V})$:  \[\pproj{k} = \id \mod \im \lhd.\]
+ \item The commutator of $\td$ and $\pproj{}$ equals to the commutator of $Q$ and $R$ \[\td \circ \pproj{k} - \pproj{k+1}\circ\td = Q\circ R - R\circ Q,\] where $R$ is the curvature operator defined by $R(s) = (\td \circ \td) (s)$.
+ \item For $k=0$ and in the flat case, the operator is actually a projection: \[\left(\pproj{k}\right)^2 = \pproj{k} + Q\circ R\circ Q.\]
+ \item \[\pproj{k} \circ \plap  = -Q\circ R \circ \lhd \quad \& \quad \plap \circ\, \pproj{k} = -\delta \circ R \circ Q.\]
+\end{enumerate}
+Thus in the flat case we have a projection onto a subspace of $\ker \lhd$ complementary to $\im \lhd$ and moreover, this projection is actually a chain map between twisted deRham complexes $\td:\Omega^\bullet\bun{V} \to \Omega^{\bullet+1}\bun{V}$ which is homotopic to the identity, the chain-homotopy being the operator $Q:\Omega^\bullet\bun{V} \to \Omega^{\bullet-1}\bun{V}$.
+\end{proposition}
+\begin{proof}
+We will prove these point one by one by easy algebraic manipulations.
+
+The first point is proven by the following two calculations:
+\begin{align*}
+  \pproj{}\lhd & = \left( \id-\plap^{-1}\lhd\td - \td\plap^{-1}\lhd \right)\lhd &\\
+		& = \lhd - \plap^{-1}\lhd\td\lhd &\\
+		& = \lhd - \plap^{-1} \plap\lhd & \text{because $\lhd\td\lhd=\plap\lhd$}
+\end{align*}
+proves the first half and
+\begin{align*}
+  \lhd \pproj{} & = \lhd -\lhd\plap^{-1}\lhd\td - \lhd\td\plap^{-1}\lhd & \\
+		& = \lhd -\lhd\td\plap^{-1}\lhd &\text{because $[\lhd,\plap^{-1}]=0$ on $\im \lhd$}\\
+		& = \lhd - \plap\plap^{-1}\lhd &\text{since $\plap = \lhd\td$ on $\im \lhd$}
+\end{align*}
+proves the second half of the first point.
+
+The second point is a direct consequence of definitions, because for a section $s$ with values in $Z_k\bun{V}$ we get $\pproj{k}(s)=s - \plap^{-1}\lhd\td s$ and $\plap^{-1}$ maps $B_k\bun{V}$ to $B_k\bun{V}$.
+
+Proof of the next point of the proposition is also just unwinding the definitions and trivial algebra:
+\[
+ [\td,\pproj{}]  = [\td,-Q\td - \td Q] = -\td Q \td - \td\td Q + Q \td \td +\td Q \td.
+\]
+
+To prove the fourth point, it is good to note first that from the already proven fact $\pproj{} \lhd = 0$ it follows that also $\pproj{} Q = 0$. Moreover even $Q^2$ equals zero. Now we have
+\begin{align*}
+ \left(\pproj{} \right)^2 & = \pproj{}(\id - Q\td -\td Q) & \\
+			  & = \pproj{} - \pproj{}Q\td - \pproj{} \td Q & \\
+			  & = \pproj{} -\td \pproj{} Q + [\td,\pproj{}]Q &\\
+			  & = \pproj{} + [Q,R]Q &\text{by the third point of the proposition}\\
+			  & = \pproj{} + QRQ+RQQ.
+\end{align*}
+
+The last point requires two calculations:
+\begin{align*}
+ \plap \pproj{} & = \lhd\td \pproj{} + \td\lhd\pproj{} & \text{the second term here is zero by the first point}\\
+		& = \lhd\pproj{}\td + \lhd[\td,\pproj{}] & \text{here the first term is zero by the first point} \\
+		& = \lhd[Q,R] &\text{by point three} &\\
+		& = \lhd Q R - \lhd R Q&\\
+		& = -\lhd R Q &\text{because $\lhd Q = \lhd\plap^{-1} \lhd = 0$}
+\end{align*}
+and a similar one
+\begin{align*}
+ \pproj{} \plap & = \pproj{}(\lhd\td+\td\lhd) = \pproj{}\lhd\td + \pproj{}\td\lhd  &\\
+		& = \td\pproj{}\lhd + [\pproj{},\td]\lhd= -[Q,R]\lhd &  \\
+		& = -QR\lhd + RQ\lhd = -QR\lhd.
+\end{align*}
+% \begin{align*}
+%  \pproj{} \plap & = \pproj{}(\lhd\td+\td\lhd) & \\
+% 		& = \pproj{}\lhd\td + \pproj{}\td\lhd & \\
+% 		& = \td\pproj{}\lhd + [\pproj{},\td]\lhd & \\
+% 		& = -[Q,R]\lhd & \\
+% 		& = -QR\lhd + RQ\lhd & \\
+% 		& = -QR\lhd
+% \end{align*}
+
+Let's deal with $\im\lhd\cap\im\pproj{}$. By the fourth point of the proposition we get
+\[
+ \lhd u = \pproj{} v = \pproj{} \pproj{} v - QRQ v= \pproj{} \lhd u  -QRQ v
+\]
+which by the first point of the proposition implies that $\im \lhd \cap \im \pproj{} = \im QRQ$. Thus in the flat case we get that $\im \lhd$ and $\im \pproj{}$ are complementary. Finally, in the flat case we get  that $\pproj{}$ is chain-homotopic to the identity via $Q$ as a direct consequence of definitions.
+\end{proof}
+
+Because $\pproj{}$ maps into $\ker \lhd$ we have that $\plap \pproj{} = \lhd\td\pproj{}$. Combining this equality with the fifth point of the previous proposition gives us $\lhd\td\pproj{} = \plap\pproj{}= -\lhd RQ$. Since $Q=0$ on $\ker\lhd$, we see  see that $\td\pproj{}$ maps $\ker \lhd$ to $\ker \lhd$. This allows us to write the BGG operator as $D_k=\mathrm{proj} \circ \td \circ \pproj{k} \circ \mathrm{rep}$. The operator $\pproj{}\circ\mathrm{rep}: H_\bullet\bun{V}\to\Omega^\bullet\bun{V}$ gives us the unique representatives of the homology classes in $\ker \plap$. Indeed $\ker \plap \cap \im \lhd = 0$ because for $u=\lhd v \in \ker \plap$ we get $0=\plap u = \plap \lhd v$ and we know that $\plap$ is invertible on $\im \lhd$. Easy computation shows that $\mathrm{proj}\circ \pproj{0}$ is injective on parallel sections of $\bun{V}$ and it maps them to solutions of $D_0$.
+
+\section{Infinity structures and homotopy transfer}
+
+\begin{proposition}[\textsl{Leibniz rule}]\label{leib} For $\alpha\in\Cinf(H_k(W_1))$
+and $\beta\in\Cinf(H_\ell(W_2))$,
+\begin{multline*}
+\OpInv_{k+\ell}(\alpha\cpinv \beta)=
+\OpInv_k\alpha\cpinv \beta +(-1)^k \alpha\cpinv \OpInv_\ell \beta\\
++\Bigl[\PiInv_{k+\ell+1}\Bigl(\bigl(\Qinv \Rinv \PiInv_k \alpha\bigr)
+\wedge \PiInv_\ell \beta +(-1)^k \PiInv_k \alpha \wedge
+\bigl(\Qinv \Rinv \PiInv_\ell \beta\bigr)
+-\Rinv \Qinv\bigl(\PiInv_k \alpha\wedge\PiInv_\ell \beta\bigr)\Bigr)\Bigr].
+\end{multline*}
+Here, and henceforth, we write $[\ldots]$ for the projection
+to homology, and $\PiInv_k$ for $\PiInv_k\circ\mathrm{rep}$.
+\end{proposition}
+\begin{proof}
+This again follows easily from Proposition~\ref{calc}:
+\begin{align*}
+\OpInv_{k+\ell}(\alpha\cpinv \beta)
+&=[\PiInv_{k+\ell+1}\dinv\PiInv_{k+\ell}
+(\PiInv_k\alpha\wedge\PiInv_\ell\beta)]\\
+&=[\PiInv_{k+\ell+1}\dinv(\PiInv_k \alpha\wedge\PiInv_\ell \beta)]
+-[\PiInv_{k+\ell+1}\Rinv\Qinv(\PiInv_k \alpha\wedge\PiInv_\ell \beta)].
+\end{align*}
+The first term can be expanded using the Leibniz rule for the exterior
+derivative:
+\begin{equation*}
+\dinv(\PiInv_k \alpha\wedge\PiInv_\ell \beta)=
+\dinv\PiInv_k \alpha\wedge\PiInv_\ell \beta
++(-1)^k\PiInv_k \alpha\wedge\dinv\PiInv_\ell \beta.
+\end{equation*}
+We insert the projections $\PiInv_{k+1}$, $\PiInv_{\ell+1}$ using the
+definition $\id=\PiInv+\dinv\circ\Qinv+\Qinv\circ\dinv$. The first
+correction term does not contribute, since $\dinv\PiInv_k \alpha$ and
+$\dinv\PiInv_\ell \beta$ are in $\ker\delTdM$, while the second correction
+gives two further curvature terms as stated.
+\end{proof}
+
+%\section{Normal solutions and comparison theorem}

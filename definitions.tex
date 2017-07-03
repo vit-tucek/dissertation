@@ -1,0 +1,215 @@
+\newcommand{\inserttikzfigure}[2]{
+											\begin{center}
+												\begin{figure}[h]
+													\centering 
+													\input{#1}
+													\caption{#2}
+												\end{figure} 
+											\end{center}
+										}										
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% THEOREMS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{notation}[theorem]{Notation}
+\newtheorem{example}[theorem]{Example}
+
+%%%%%%%% CMUC %%%%%%%%%%
+
+\newcommand{\mindex}[2]{\genfrac{(}{)}{0pt}{3}{#1}{#2}}
+
+\newcommand{\Aut}{\mathrm{Aut}}
+\newcommand{\Spin}{\mathrm{Spin}}
+\newcommand{\EndC}{\mathrm{End}}
+\newcommand{\Cliff}{C\ell}
+\newcommand{\Herm}{\mathrm{Herm}}
+\newcommand{\F}{\mathrm{F}_4}
+\renewcommand{\P}{\mathrm{P}_4}
+\newcommand{\V}{\mathbb{V}}
+\newcommand{\affOP}{\widehat{\mathbb{OP}}{}^2_0}
+\DeclareMathOperator{\Tr}{\tr}
+%\newenvironment{smatrix}{\left(\begin{smallmatrix}}{\end{smallmatrix}\right)}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% SYMBOLS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\et}{\,\&\,}
+\renewcommand{\k}{\Bbbk}
+\renewcommand{\C}{\mathbb{C}}
+\newcommand{\octo}{\mathbb{O}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\lie}[1]{\mathfrak{#1}}
+\newcommand{\rep}[1]{\mathbb{#1}}
+\newcommand{\bun}[1]{\mathcal{#1}}
+\newcommand{\oppar}{\overline{\lie{p}}}
+\newcommand{\Hom}{\mathrm{Hom}}
+\newcommand{\pproj}[1]{\Pi_{#1}^\lie{g}}
+\newcommand{\floor}[1]{\left[ #1 \right]}
+
+\newcommand{\roots}{\Phi} % the set of roots
+\newcommand{\sroots}{\Delta} % the set of positive simple roots
+\newcommand{\weights}{\Lambda} % weight lattice
+
+\renewcommand{\a}{\alpha}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% OPERATORS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\newcommand{\im}{\mathrm{im}\,}
+%\newcommand{\lap}{\square}
+%\newcommand{\td}{\mathrm{d}^\lie{g}}
+%\newcommand{\id}{\mathrm{Id}\,}
+%\newcommand{\plap}{\lap_\lie{g}}
+%\newcommand{\lcd}{\partial\,}
+% \renewcommand{\lhd}{\mathop{\partial^*}}
+% \renewcommand{\lhd}{\mathop{\delta}}
+ \renewcommand{\lhd}{\operatorname{\delta}}
+
+\newcommand{\bigo}{\mathcal{O}}
+
+\newcommand{\conj}[1]{\overline{#1}}
+\newcommand{\jscal}[2]{\langle #1\,|\, #2 \rangle}
+\newcommand{\oscal}[2]{\left( #1 \,|\, #2 \right)}
+ 
+
+% \DeclareMathOperator{\hom}
+\DeclareMathOperator{\proj}{\mathrm{proj}}
+\DeclareMathOperator{\im}{\mathrm{im}}
+\DeclareMathOperator{\lap}{\square}
+\DeclareMathOperator{\id}{\mathrm{Id}}
+\DeclareMathOperator{\td}{\mathrm{d}^\lie{g}}
+\DeclareMathOperator{\plap}{\lap_\lie{g}}
+\DeclareMathOperator{\lcd}{\partial}
+% \DeclareMathOperator{\lhd}{\partial^*}
+\DeclareMathOperator{\tr}{\mathrm{Tr}}
+\DeclareMathOperator{\ad}{\mathrm{ad}}
+\DeclareMathOperator{\Ad}{\mathrm{Ad}}
+\DeclareMathOperator{\Id}{\mathrm{Id}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% ENVIRONMENTS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newenvironment{smatrix}{\left(\begin{smallmatrix}}{\end{smallmatrix}\right)}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%% CD %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\dsum}{\oplus}               % small direct sum
+\newcommand{\Dsum}{\bigoplus}            % big direct sum
+\newcommand{\tens}{\mathbin{\otimes}}    % small tensor product
+\newcommand{\Tens}{\bigotimes}           % big tensor product
+\newcommand{\cartan}{\mathbin{\odot}}    % small Cartan product
+\newcommand{\Cartan}{\bigodot}           % big Cartan product
+\newcommand{\subideal}{\ltimes}          % semidirect product for algebras
+\newcommand{\idealsub}{\rtimes}          %  with ideal on right or left
+\newcommand{\subnormal}{\ltimes}         % semidirect product for groups with
+\newcommand{\normalsub}{\rtimes}         %  normal subgroup on right or left
+\newcommand{\intersect}{\mathinner{\cap}}% intersection
+\newcommand{\setdif}{\mathbin{\mathrm -}}% or {\smallsetminus}
+\newcommand{\skwend}{\mathinner{\vartriangle}} % skew endomorphism
+%
+\newcommand{\act}{\mathinner{\cdot}}
+\newcommand{\dual}{^{*\!}}
+\newcommand{\Cinf}{\mathrm{C}^\infty}
+%
+\newcommand{\oper}[3][n]{\newcommand{#2}{\mathop{\mathrm{#3}}\ifx
+  n#1\nolimits\else\limits\fi}}
+\newcommand{\rsoper}[3][n]{\newcommand{#2}{\mathop{\mathrmsl{#3\mkern1mu}}\ifx
+  n#1\nolimits\else\limits\fi}}
+\newcommand{\symb}[2]{\newcommand{#1}{{\mathit{#2}}}}
+\newcommand{\rssymb}[2]{\newcommand{#1}{{\mathrmsl{#2\mkern1mu}}}}
+\newcommand{\calsymb}[2]{\newcommand{#1}{{\mathcal{#2}}}}
+\newcommand{\bbsymb}[2]{\newcommand{#1}{{\mathbb{#2}}}}
+
+\rsoper\kernel{ker}
+\rsoper\image{im}
+% \rsoper\alt{alt}           % alternating part
+\rsoper\sym{sym}           % symmetric part
+\rsoper\trace{tr}          % trace of an endomorphism
+\rsoper\detm{det}          % determinant
+\rsoper\divg{div}
+\rsoper\Sdivg{Sdiv}
+\rsoper\Twist{Twist}
+\rsoper\project{proj}
+\rsoper\represent{repr}
+\rssymb\ev{ev}
+\rssymb\iden{id}
+%
+\newcommand{\cross}{\mathbin{{\times}\!}\low}
+\newcommand{\from}{\colon}
+\newcommand{\isom}{\cong}
+\newcommand{\hQuabla}{\hat{\pmb\square}}
+\newcommand{\Quabla}{\pmb{\square}}
+\newcommand{\Lie}{{\mathcal L}}
+%
+\newcommand{\conf}{\mathsf{c}}
+\newcommand{\cip}{\ip}
+\newcommand{\cform}{\eta}
+\newcommand{\g}{\lie{g}}
+\newcommand{\p}{\lie{p}}
+\newcommand{\Lieb}[1]{[#1]}
+\bbsymb\E{E}\bbsymb\W{W}
+\newcommand{\T}{\lie{m}}
+\newcommand{\inner}{\mathbin{\lrcorner}}
+\newcommand{\capinner}{\mathbin{\lower3pt\hbox{$\urcorner$}}}
+\newcommand{\low}{^{\vphantom x}}
+\newcommand{\dT}{d\low_{\T}}
+\newcommand{\dTd}{d\low_{\T^*}}
+\newcommand{\delT}{\delta\low_{\T}}
+\newcommand{\delTd}{\delta\low_{\T^*}}
+\newcommand{\delTdM}{\delta\low_{T\dual M}}
+\newcommand{\gM}{\g\low_M}
+\newcommand{\InvDer}{\nabla^\cform}
+\newcommand{\TwConn}{\nabla^\g}
+\newcommand{\deltw}{\delta^\g}
+\newcommand{\dtw}{d^\g}
+\newcommand{\Rtw}{R^\g}
+\newcommand{\QuaTw}{\Quabla_\g}
+\newcommand{\Qtw}{Q}
+\newcommand{\PiTw}{\Pi}
+\calsymb\cD{D}\calsymb\cG{G}\calsymb\cH{H}\calsymb\cK{K}\calsymb\cL{L}
+
+\newcommand{\OpTw}{\cD}
+\newcommand{\cptw}{\mathbin{\scriptstyle\sqcup}}
+\newcommand{\delinv}{\delta^\cform}
+\newcommand{\dinv}{d^\cform}
+\newcommand{\Rinv}{R^\cform}
+\newcommand{\hQuaInv}{\hQuabla_\cform}
+\newcommand{\QuaInv}{\Quabla_\cform}
+\newcommand{\Qinv}{Q_\cform}
+\newcommand{\PiInv}{\Pi^\cform}
+\newcommand{\OpInv}{\cD^\cform}
+\newcommand{\Opinv}{\cD_\cform}
+\newcommand{\cpinv}{\cptw\low_\cform}
+\newcommand{\TwIso}{\Psi_\W}
+\newcommand{\captw}{\mathbin{\scriptstyle\sqcap}}
+\newcommand{\capinv}{\captw\low_\cform}
+\newcommand{\Dirac}{{\smash{\raise1pt\hbox{$\not$}}\mkern-1.5mu D}}
+
+%%%%%%%%%%%%% F4/Spin9
+\newcommand{\field}{\Bbbk}
+\newcommand{\reals}{\mathbb{R}}
+\newcommand{\complex}{\mathbb{C}}
+\newcommandtwoopt{\projplane}[2][2][P]{\mathbb{O}{#2}^{#1}}
+\newcommandtwoopt{\jalg}[2][G][\octo]{J_{#1}(#2)}
+
+\newcommand{\set}[1]{\left\lbrace #1\right\rbrace}
+\renewcommand{\mid}{\middle \mid}
+\newcommand{\sform}[1]{\mathrm{II}(#1)}
+
+\newenvironment{psmatrix}
+  {\left(\begin{smallmatrix}}
+  {\end{smallmatrix}\right)}
+	
+	%%%%%%%%%%%%%%%%%% G2/P1
+	
+	\newcommand{\uenv}[1]{\mathfrak{U(#1)}}
+
+
+\newcommand{\pd}[1]{\partial_{#1}}
+\newcommand{\euler}{\mathbb{E}}
+\newcommand{\wdeg}{\mathrm{wdeg}\,}
+\newcommand{\actpol}{\widehat{\pi}_{\lambda}}
+
+\newcommand{\cas}{\mathrm{Cas}_\mathbb{V}\,}
+\newcommand{\vsingtop}{v_\mathrm{sing}^\mathrm{top}}

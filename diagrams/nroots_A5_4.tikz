@@ -1,0 +1,22 @@
+\begin{tikzpicture}[>=latex,line join=bevel,]
+%%
+\node (alpha2+alpha3+alpha4+alpha5) at (43bp,57bp) [draw,draw=none] {$\alpha_{2} + \alpha_{3} + \alpha_{4} + \alpha_{5}$};
+  \node (alpha2+alpha3+alpha4) at (125bp,107bp) [draw,draw=none] {$\alpha_{2} + \alpha_{3} + \alpha_{4}$};
+  \node (alpha4) at (72bp,206bp) [draw,draw=none] {$\alpha_{4}$};
+  \node (alpha1+alpha2+alpha3+alpha4) at (148bp,57bp) [draw,draw=none] {$\alpha_{1} + \alpha_{2} + \alpha_{3} + \alpha_{4}$};
+  \node (alpha4+alpha5) at (43bp,157bp) [draw,draw=none] {$\alpha_{4} + \alpha_{5}$};
+  \node (alpha1+alpha2+alpha3+alpha4+alpha5) at (95bp,7bp) [draw,draw=none] {$\alpha_{1} + \alpha_{2} + \alpha_{3} + \alpha_{4} + \alpha_{5}$};
+  \node (alpha3+alpha4) at (102bp,157bp) [draw,draw=none] {$\alpha_{3} + \alpha_{4}$};
+  \node (alpha3+alpha4+alpha5) at (43bp,107bp) [draw,draw=none] {$\alpha_{3} + \alpha_{4} + \alpha_{5}$};
+  \draw [black,->] (alpha2+alpha3+alpha4) ..controls (131.19bp,93.076bp) and (136.34bp,82.328bp)  .. (alpha1+alpha2+alpha3+alpha4);
+  \draw [black,->] (alpha2+alpha3+alpha4+alpha5) ..controls (57.627bp,42.498bp) and (70.704bp,30.428bp)  .. (alpha1+alpha2+alpha3+alpha4+alpha5);
+  \draw [black,->] (alpha1+alpha2+alpha3+alpha4) ..controls (133.01bp,42.426bp) and (119.5bp,30.186bp)  .. (alpha1+alpha2+alpha3+alpha4+alpha5);
+  \draw [black,->] (alpha4) ..controls (64.906bp,193.5bp) and (57.803bp,181.99bp)  .. (alpha4+alpha5);
+  \draw [black,->] (alpha4+alpha5) ..controls (43bp,143.29bp) and (43bp,133.02bp)  .. (alpha3+alpha4+alpha5);
+  \draw [black,->] (alpha3+alpha4+alpha5) ..controls (43bp,93.293bp) and (43bp,83.024bp)  .. (alpha2+alpha3+alpha4+alpha5);
+  \draw [black,->] (alpha3+alpha4) ..controls (108.19bp,143.08bp) and (113.34bp,132.33bp)  .. (alpha2+alpha3+alpha4);
+  \draw [black,->] (alpha4) ..controls (79.339bp,193.5bp) and (86.686bp,181.99bp)  .. (alpha3+alpha4);
+  \draw [black,->] (alpha3+alpha4) ..controls (85.226bp,142.35bp) and (69.971bp,129.94bp)  .. (alpha3+alpha4+alpha5);
+  \draw [black,->] (alpha2+alpha3+alpha4) ..controls (101.43bp,92.203bp) and (78.43bp,78.739bp)  .. (alpha2+alpha3+alpha4+alpha5);
+%
+\end{tikzpicture}

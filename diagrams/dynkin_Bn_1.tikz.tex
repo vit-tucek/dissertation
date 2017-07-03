@@ -1,0 +1,10 @@
+\begin{tikzpicture}[decoration={markings,mark=at position .6 with {\arrow[line width=2pt]{>}}}] % SO(2n-1,\R) ~ B_n relative
+	\node[nroot] (a1) [label=above:$\alpha_1$] {};
+	\node[croot] (a2) [right= of a1] [label=above:$\alpha_2$] {};
+	\node (a3) [right= of a2] {};
+	\node (a4) [right= of a3] {};
+	\node[croot] (a5) [right=of a4] [label=above:$\alpha_{n-1}$] {};
+	\node[croot] (a6) [right=of a5] [label=above:$\alpha_{n}$] {};
+	\draw (a1) to (a2) to (a3); \draw [dotted] (a3) to (a4);
+	\draw (a4) to (a5); \draw [postaction={decorate},double distance=1.5pt] (a5) to (a6);
+\end{tikzpicture}

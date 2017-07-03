@@ -1,0 +1,625 @@
+\chapter{Hermitian symmetric spaces}
+
+\section{Classical hermitian symmetric spaces}
+
+\[
+ I_{m,n} = \begin{pmatrix} \Id_m & 0 \\ 0 & -\Id_n \end{pmatrix}, \quad J = \begin{pmatrix} 0 & \Id_n \\ -\Id_n & 0 \end{pmatrix}
+\]
+
+\[X^\dag = \overline{X}^t\]
+
+\begin{equation}\label{eq:algebras_definition}
+\begin{aligned}
+ \lie{sl}(n,\C) &= \{ X \in \lie{gl}(n,\C) \,|\, \tr X = 0 \} & \text{for } n \geq 1\\
+ \lie{so}(m,n)  &= \{ X\in \lie{gl}(m+n,\R) \,|\, X^\dag I_{m,n}+I_{m,n}X = 0 \} & \text{for } m+n\geq 3\\
+ \lie{su}(m,n)  &= \{ X \in \lie{sl}(m+n,\C)  \,|\, X^\dag I_{m,n}+I_{m,n}X = 0 \} & \text{for } m+n \geq 2\\
+ \lie{so}^\dag(2n) &= \{ X \in \lie{su}(n,n) \,|\, X^t I_{n,n}J + I_{n,n} JX = 0 \} & \text{for } n \geq 2\\
+ \lie{sp}(n,\R) &= \{ X \in \lie{gl}(2n,\R) \,|\, X^tJ + JX = 0 \} & \text{for } n\geq 1
+\end{aligned}
+\end{equation}
+
+
+Let $G$ be simply connected, connected simple Lie group, let $Z$ be its center and let $K$ be a closed  maximal subgroup of $G$ such that $K/Z$ is compact. A unitary representation $(\rho,\mathbb{V})$  of $G$ such that the underlying $(\lie{g},K)$-module is an irreducible highest weight module is called unitary highest weight module. From the universal property of (generalized) Verma modules it follows that any unitarizable highest weight module is the unique irreducible quotient of a (generalized) Verma module. It is a result of Harish-Chandra that nontrivial unitarizable highest weight modules occur only when $G/K$ is a noncompact Hermitian symmetric space. The table \ref{fig:herm_pairs} of all such Hermitian pairs $(G,K)$ is given below.
+
+Let $\lie{g}_0$ and $\lie{k}_0$ be the corresponding Lie algebras of $G$ and $K$ and let $\lie{g}$ and $\lie{k}$ denote their complexifications. By $G_\C$ and $K_C$ we denote the complexifications of $G$ and $K$. The Cartan decomposition gives us $\lie{g}_0 = \lie{k}_0 \oplus \lie{q}_0$ and upon complexification we get a splitting of  $\lie{q} = \lie{p}_-\oplus\lie{p}_+$. % into eigenspaces of the complex structure that is defined on the tangent space $T_{eK}G/K \simeq \lie{q}$.
+There is a choice of a Cartan subalgebra $\lie{h}$ such that $\lie{h} \leq \lie{k}$. With respect to this Cartan subalgebra we have a triangular decomposition $\lie{g}=\lie{n}^-\oplus\lie{h}\oplus\lie{n}$ with $\lie{h} \leq \lie{k}$ and $\lie{p}_-\leq \lie{n}^-$, $\lie{p}_+ \leq \lie{n}$.
+
+Both algebras $\lie{p} := \lie{k}\oplus \lie{p}_+$ and $\oppar := \lie{k}\oplus\lie{p}_-$ are parabolic subalgebras of $\lie{g}$. Moreover their nilradicals $\lie{p}_-$ and $\lie{p}_+$ are not only nilpotent but even abelian. By $P$ and $\overline{P}$ we denote the corresponding parabolic subgroups of $G_\C$. The homogeneous space $G_\C/P$ is diffeomorphic to the compact Hermitian symmetric space and $\lie{p}_-$ is naturally mapped via exponential map and projection to an open and dense subset of this compact manifold. The so called Harish-Chandra embedding gives us a realization of the noncompact dual $G/K$ as an orbit in this embedded $\lie{p}_-$. This realizes $G/K$ as a bounded Hermitian symmetric domain in $\lie{p}_-$ and it manifests the Hermitian structure on $G/K$.
+
+% \begin{figure}\label{fig:herm_pairs}
+% \begin{center}
+% \begin{tabular}{llll}
+% $G_\mathbb{C}$ & {\centering $G$ }& $G'$ & $K$\\\hline
+% $SL(p+q,\mathbb{C})$ & $SU(p+q)$ &$SU(p,q)$ &$S(U(p)\times U(q))$\\
+% $SO(p+2,\mathbb{C})$ & $SO(p+2)$ & $SO(2,p)$ & $SO(p)\times SO(2)$\\
+% $SO(2n,\mathbb{C})$ & $SO(2n)$ & $SO^*(2n)$ & $U(n)$\\
+% $Sp(2n,\mathbb{C})$ & $Sp(n)$ & $Sp(n,\mathbb{R})$ & $U(n)$\\
+% $E_6^\mathbb{C}$ & $E_6$ & $E_6^{-14}$& $SO(10)\times SO(2)$\\
+% $E_7^\mathbb{C}$ & $E_7$ & $E_7^{-25} $ & $E_6\times SO(2)$
+% \end{tabular}
+% \end{center}
+% \end{figure}
+\begin{table}\label{fig:herm_pairs}
+\begin{center}%TODO zkontrolovat
+\begin{tabular}{llll}
+$G_\mathbb{C}$ & {\centering $G$ }&  $K$\\\hline
+$SL(p+q,\mathbb{C})$ & $SU(p,q)$ &$S(U(p)\times U(q))$\\
+$SO(p+2,\mathbb{C})$ &  $SO(2,p)$ & $SO(p)\times SO(2)$\\
+$SO(2n,\mathbb{C})$ &   $SO^*(2n)$ & $U(n)$\\
+$Sp(2n,\mathbb{C})$ &   $Sp(n,\mathbb{R})$ & $U(n)$\\
+$E_6^\mathbb{C}$ &   $E_6^{-14}$& $SO(10)\times SO(2)$\\
+$E_7^\mathbb{C}$ &  $E_7^{-25} $ & $E_6\times SO(2)$
+\end{tabular}\caption{Hermitian symmetric pairs}
+\end{center}
+\end{table}
+
+ In what follows we will consider also some of the other real parabolic pairs whose complexification is the parabolic pair $(\lie{g},\lie{p})$. We will use uniform notation $\epsilon^i$, $i=1,\ldots,p$ for the elements of the basis the nilradical and by $e_i$ we will denote the dual basis defined  by the Killing form. The elements $e_i$ then span the nilradical of the opposite parabolic subalgebra. %TODO bazove elementy?
+
+Let $\roots$ be the set of roots of $(\lie{g},\lie{h})$ and let $\roots_c$ denote the set of roots of $(\lie{k},\lie{h})$. We call elements of $\roots_c$ the compact roots and the remaining roots in $\roots_n = \roots \setminus \roots_c$ are called noncompact. We define the positive roots $\roots^+$ in such a way that elements of $\roots_n^+ = \roots^+ \cap \roots_n$ span $\lie{p}_-$. We denote the positive compact roots by $\roots^+_c = \roots_c \cap \roots^+$. By $\omega_i$ we denote the $i$-th fundamental weight in the standard ordering.
+
+As usual we denote the Weyl group of $(\lie{g},\lie{b})$ by $W$ and the subgroup generated by reflections $s_\alpha$ for $\alpha\in \roots_c$ we denote by $W_c$. Then $W_c$ is isomorphic to the Weyl group of the root system $\roots_c$. Also we let $\rho$ be the sum of positive roots and $\leq$ denotes the Bruhat order on $\lie{h}^*$.
+
+There is a distinguish element in the center of $\lie{k}$ called \emph{grading element} which acts by zero on $\lie{k}$, by $1$ on $\lie{p}_+$ and by $-1$ on $\lie{p}_-$. This elements acts by a scalar on any irreducible representation of $K$. We call this scalar the \emph{geometric weight}.
+
+Let $\sroots$ denote the set of  simple roots of $\roots$. Then $\sroots\setminus \sroots_c$ contains a single element, the so called \emph{non-compact simple root}, which we will denote by $\beta$. We define a totally ordered sequence $\xi_1,\xi_2,\ldots \xi_t$ of \emph{strongly orthogonal} non-compact positive roots as follows. Let $\xi_1$ be the unique highest root. Delete the simple roots $\alpha_1,\alpha_1'$ from the Dynkin diagram of $\lie{g}$ which are not orthogonal to $\xi_1$ and take the unique connected component containing $\beta$. Let $\xi_2$ be the unique highest root of this component and continue inductively until $\beta$ itself is deleted. We define
+\[\mu_j := \sum_{i=1}^j \xi_i\]
+and note that they are all dominant weights. Moreover, up to a scalar multiple, there exists for each $j$ a unique non-zero $v_j\in S(\lie{p}_+)^{\lie{n}}$ of weight $-\mu_j.$ Furthemore $S(\lie{p}_+)^{\lie{n}}$ is just the polynomial algebra on the $v_j,j=1,\ldots, t.$ This result as well as the following one is due to Schmid  (\cite{schmid_decomp}). It is closely tied to the proof of classification of unitarizable highest weight modules. See \cite{enright_intrinsic_1990} for details.
+
+\begin{theorem}
+ Let $I$ denote the set of integral multiindices $\underline{i}=(i_1,\ldots,l_t)$ with $i_1\geq i_2 \geq \cdots  \geq i_t \geq 0$. Let $F_{\underline{i}}$ denote the irreducible finite-dimensional $\lie{k}$-module with lowest weight $\sum_{j=1}^t i_j\xi_i$. Then $S(\lie{p}_+)$ has a multiplicity free decomposition
+ \[
+  S(\lie{p}_+) \simeq \bigoplus_{\underline{i}\in I} F_{\underline{i}}.
+ \]
+The table \ref{tbl:strongly_og} gives the set of all strongly orthogonal roots for each Hermitian symmetric pair.
+\begin{table}[h]\label{tbl:strongly_og}\begin{center}
+  \begin{tabular}{CCCCC}
+  \lie{g}_0 & \beta& t & \xi_i & \mu_i \\\hline
+   \lie{su}(p,q) &\alpha_p& p & \epsilon_i-\epsilon_{t-i+1} & \omega_i + \omega_{t-i+1} \\
+   \lie{so}(2,2n-1) & \alpha_1 & 2 & \epsilon_1+\epsilon_2, \epsilon_1 - \epsilon_2 & \omega_2, 2\omega_1\\
+   \lie{sp}(n,\R) & \alpha_n & n & 2\epsilon_i & 2\omega_1\\
+   \lie{so}(2,2n-2) &\alpha_1 & 2 & \epsilon_1 + \epsilon_2, \epsilon_1 - \epsilon_2 & \omega_2,2\omega_1\\
+%    \lie{e}_6 & \alpha_1\text{ or }\alpha_6 & 2 &
+  \end{tabular}\caption{Strongly orthogonal roots}\end{center}
+\end{table}
+\end{theorem}
+
+
+The Satake diagram of $\lie{su}(p,q)$ for $p+q = n+1$, $1 \leq p \leq \frac{n-1}{2}$.
+\begin{center}
+     \begin{tikzpicture}
+	\node[nroot] (a1) [label=above:$\alpha_1$] {};
+%	\node[nroot] (a2) [right= of a1] [label=above:$\alpha_2$] {};
+	\node (a3) [right= of a1] {};
+	\node (a4) [right= of a3] {};
+	\node[nroot] (ap) [right=of a4] [label=above:$\alpha_p$] {};
+	\node[croot] (ap1) [right= of ap] [label=above:$\alpha_{p+1}$] {};
+	\node (d1) [right=of ap1] {}; \node (d2) [right=of d1] {};
+	\node[croot] (aq) [right=of d2] [label=above:$\alpha_{q}$] {};
+	\node[nroot] (aq1) [right=of aq] [label=above:$\alpha_{q+1}$] {};
+
+	\node (e1) [right=of aq1] {}; \node (e2) [right=of e1] {};
+	\node[nroot] (an) [right=of e2] [label=above:$\alpha_n$] {};
+
+	\draw (a1) to  (a3); \draw [dotted] (a3) to (a4);
+	\draw (a4) to (ap) to (ap1)  to (d1); \draw [dotted] (d1) to (d2);
+	\draw (d2) to (aq) to (aq1) to (e1); \draw [dotted] (e1) to (e2); \draw (e2) to (an);
+
+	\draw [<->, bend right] (a1) to (an); \draw [<->, bend right] (ap) to (aq1);
+	\draw [<->, bend right] (a3) to (e2); 	\draw [<->, bend right] (a4) to (e1);
+     \end{tikzpicture}
+\end{center}
+%  Another version of the same diagram.
+% \begin{center}\begin{tikzpicture}
+%  	\node[nroot] (a1)                         [label=above:$\alpha_1$] {};
+% 	\node[nroot] (a2)  [right=of a1]  [label=above:$\alpha_2$] {};
+% 	\node[nroot] (an)  [below=of a1] [label=below:$\alpha_n$] {};
+% 	\node[nroot] (am) [below=of a2] [label=below:$\alpha_{n-1}$] {};
+% 	\node            (d1)  [right=of a2] {};
+% 	\node		(d2)  [right=of d1] {};
+% 	\node[nroot] (ap) [right=of d2]  [label=above:$\alpha_p$] {};
+% 	\node            (e1)  [right=of am] {};
+% 	\node		(e2)  [right=of e1] {};
+% 	\node[nroot] (ar) [right=of e2]  [label=below:$\alpha_{q+1}$] {};
+% 	\node[croot] (app) [right=of ap] [label=above:$\alpha_{p+1}$] {};
+% 	\node[croot] (aq) [right=of ar] [label=below:$\alpha_{q}$] {};
+% 	\node[croot] (p1) [right=of app] [label=above:$\alpha_{p+2}$] {};
+% 	\node[croot] (p2) [right=of aq] [label=below:$\alpha_{q-1}$] {};
+%
+%
+% 	\draw (a1) to (a2) to (d1); \draw [dotted] (d1) to (d2); \draw (d2) to (ap) to (app) to (p1);
+% 	\draw (an) to (am) to (e1); \draw  [dotted] (e1) to (e2); \draw (e2) to (ar) to (aq) to (p2);
+%
+% 	\draw [<->] (a1) to (an); \draw [<->]  (a2) to (am);\draw [<->] (ap) to (ar); \draw [dotted, bend left] (p1) to (p2);
+% \end{tikzpicture}\end{center}
+
+The Satake diagram of $\lie{su}(p,p)$ for $n=2p+1$, $p\leq 2$.
+
+% \begin{center}\begin{tikzpicture}
+%  	\node[nroot] (a1)                         [label=above:$\alpha_1$] {};
+% 	\node[nroot] (a2)  [right=of a1]  [label=above:$\alpha_2$] {};
+% 	\node[nroot] (an)  [below=of a1] [label=below:$\alpha_n$] {};
+% 	\node[nroot] (am) [below=of a2] [label=below:$\alpha_{n-1}$] {};
+% 	\node            (d1)  [right=of a2] {};
+% 	\node		(d2)  [right=of d1] {};
+% 	\node[nroot] (ap1) [right=of d2]  [label=above:$\alpha_{p-1}$] {};
+% 	\node            (e1)  [right=of am] {};
+% 	\node		(e2)  [right=of e1] {};
+% 	\node[nroot] (ap2) [right=of e2]  [label=below:$\alpha_{p+1}$] {};
+% 	\node[nroot] (ap) [right=of ap1] [label=right:$\alpha_p$] {};
+%
+%
+%
+% 	\draw (a1) to (a2) to (d1); \draw [dotted] (d1) to (d2); \draw (d2) to (ap1) to (ap);
+% 	\draw (an) to (am) to (e1); \draw  [dotted] (e1) to (e2); \draw (e2) to (ap2) to (ap);
+%
+% 	\draw [<->] (a1) to (an); \draw [<->]  (a2) to (am);\draw [<->] (ap1) to (ap2);
+% \end{tikzpicture}\end{center}
+
+\begin{center}
+     \begin{tikzpicture} % SU(p,q) ~ A_{n-1} relative
+	\node[nroot] (a1) [label=above:$\alpha_1$] {};
+	\node[nroot] (a2) [right= of a1] [label=above:$\alpha_2$] {};
+	\node (a3) [right= of a2] {};
+	\node (a4) [right= of a3] {};
+	\node[nroot] (a5) [right=of a4] [label=above:$\alpha_p$] {};
+	\node (a6) [right= of a5] {};
+	\node (a7) [right=of a6] {};
+	\node[nroot] (a8) [right=of a7] [label=above:$\alpha_{n-2}$] {};
+	\node[nroot] (a9) [right=of a8] [label=above:$\alpha_{n-1}$] {};
+	\draw (a1) to (a2) to (a3); \draw [dotted] (a3) to (a4);
+	\draw (a4) to (a5) to (a6); \draw [dotted](a6) to (a7);
+	\draw (a7) to (a8) to (a9);
+
+	\draw [<->, bend right] (a1) to (a9); \draw [<->, bend right] (a2) to (a8); \draw [<->, bend right] (a4) to (a6);
+     \end{tikzpicture}
+\end{center}
+
+The Satake diagram for $\lie{so}(2,2n-1)$.
+
+\begin{center}
+     \begin{tikzpicture}[decoration={markings,mark=at position .6 with {\arrow[line width=2pt]{>}}}] % SO(2n-1,\R) ~ B_n relative
+	\node[nroot] (a1) [label=above:$\alpha_1$] {};
+	\node[nroot] (a2) [right= of a1] [label=above:$\alpha_2$] {};
+	\node[croot] (a3) [right= of a2] [label=above:$\alpha_3$] {};
+	\node (d1) [right= of a3] {}; \node (d2) [right= of d1] {};
+	\node[croot] (a5) [right=of d2] [label=above:$\alpha_{n-1}$] {};
+	\node[croot] (a6) [right=of a5] [label=above:$\alpha_{n}$] {};
+	\draw (a1) to (a2) to (a3) to (d1); \draw [dotted] (d1) to (d2);
+	\draw (d2) to (a5); \draw [postaction={decorate},double distance=1.5pt] (a5) to (a6);
+     \end{tikzpicture}
+\end{center}
+
+The Satake diagram for $\lie{so}(2,2n-2)$.
+
+\begin{center}
+     \begin{tikzpicture}] % SO^*(2n) ~ D_n relative
+	\node[nroot] (a1) [label=above:$\alpha_1$] {};
+	\node[nroot] (a2) [right= of a1] [label=above:$\alpha_2$] {};
+	\node[croot] (a3) [right= of a2] [label=above:$\alpha_3$] {};
+	\node (d1) [right= of a3] {}; \node (d2) [right= of d1] {};
+	\node[croot] (a5) [right=of d2] [label=above:$\alpha_{n-2}$] {};
+	\node[croot] (a6) [above right= of a5] [label=above:$\alpha_{n}$] {};
+	\node[croot] (a7) [below right= of a5] [label=above right:$\alpha_{n-1}$] {};
+	\draw (a1) to (a2) to (a3) to (d1);
+	\draw [dotted] (d1) to (d2);
+	\draw (d2) to (a5) to (a6);
+	\draw (a5) to (a7);
+     \end{tikzpicture}
+\end{center}
+
+The Satake diagram for $\lie{sp}(n,\R)$.
+
+\begin{center}
+     \begin{tikzpicture}[decoration={markings,mark=at position .5 with {\arrowreversed[line width=2pt]{>}}}] % Sp(n,\R) ~ C_n relative
+	\node[nroot] (a1) [label=above:$\alpha_1$] {};
+	\node[nroot] (a2) [right= of a1] [label=above:$\alpha_2$] {};
+	\node (a3) [right= of a2] {};
+	\node (a4) [right= of a3] {};
+	\node[nroot] (a5) [right=of a4] [label=above:$\alpha_{n-1}$] {};
+	\node[nroot] (a6) [right=of a5] [label=above:$\alpha_{n}$] {};
+	\draw (a1) to (a2) to (a3); \draw [dotted] (a3) to (a4);
+	\draw (a4) to (a5); \draw [postaction={decorate},double distance=1.5pt] (a5) to (a6);
+     \end{tikzpicture}
+\end{center}
+
+The Satake diagram for $\lie{so}^*(2n)$ for  even $n$.
+
+\begin{center}
+     \begin{tikzpicture}] % SO^*(2n) ~ D_n relative
+	\node[croot] (a1) [label=above:$\alpha_1$] {};
+	\node[nroot] (a2) [right= of a1] [label=above:$\alpha_2$] {};
+	\node[croot] (a3) [right= of a2] [label=above:$\alpha_3$] {};
+	\node (d1) [right= of a3] {}; \node (d2) [right= of d1] {};
+	\node[croot] (a4) [right= of d2] [label=above:$\alpha_{n-3}$] {};
+	\node[nroot] (a5) [right=of a4] [label=above:$\alpha_{n-2}$] {};
+	\node[nroot] (a6) [above right= of a5] [label=above:$\alpha_{n}$] {};
+	\node[croot] (a7) [below right= of a5] [label=above right:$\alpha_{n-1}$] {};
+	\draw (a1) to (a2) to (a3) to (d1);
+	\draw [dotted] (d1) to (d2);
+	\draw (d2) to (a4) to (a5) to (a6);
+	\draw (a5) to (a7);
+     \end{tikzpicture}
+\end{center}
+
+The Satake diagram for $\lie{so}^*(2n)$ for  odd $n$.
+\begin{center}
+     \begin{tikzpicture}] % SO^*(2n) ~ D_n relative
+	\node[croot] (a1) [label=above:$\alpha_1$] {};
+	\node[nroot] (a2) [right= of a1] [label=above:$\alpha_2$] {};
+	\node[croot] (a3) [right= of a2] [label=above:$\alpha_3$] {};
+	\node (d1) [right= of a3] {}; \node (d2) [right= of d1] {};
+	\node[nroot] (a4) [right= of d2] [label=above:$\alpha_{n-3}$] {};
+	\node[croot] (a5) [right=of a4] [label=above:$\alpha_{n-2}$] {};
+	\node[nroot] (a6) [above right= of a5] [label=above:$\alpha_{n}$] {};
+	\node[nroot] (a7) [below right= of a5] [label=above right:$\alpha_{n-1}$] {};
+	\draw (a1) to (a2) to (a3) to (d1);
+	\draw [dotted] (d1) to (d2);
+	\draw (d2) to (a4) to (a5) to (a6);
+	\draw (a5) to (a7); \draw [<->] (a6) to (a7);
+     \end{tikzpicture}
+\end{center}
+
+The Satake diagram for $\lie{e}_6^{-14}$ - EIII.
+
+\begin{center}
+    \begin{tikzpicture}% E6 relative
+        \node[nroot] (a1) [label=above:$\alpha_1$] {};
+        \node[croot] (a3) [right=of a1] [label=above:$\alpha_3$] {};
+        \node[croot] (a4) [right=of a3] [label=above:$\alpha_4$] {};
+        \node[croot] (a5) [right=of a4] [label=above:$\alpha_5$] {};
+        \node[nroot] (a6) [right=of a5] [label=above:$\alpha_6$] {};
+        \node[croot] (a2) [below=of a4] [label=right:$\alpha_2$] {};
+        \draw (a1) to (a3) to (a4) to (a5) to (a6);
+        \draw (a4) to (a2); \draw [<->, bend left] (a1) to (a6);
+     \end{tikzpicture}
+\end{center}
+
+The Satake diagram for $\lie{e}_7^{-25}$ - EVII.
+
+\begin{center}
+     \begin{tikzpicture} % E7 relative
+        \node[nroot] (a1) [label=above:$\alpha_1$] {};
+        \node[croot] (a3) [right=of a1] [label=above:$\alpha_3$] {};
+        \node[croot] (a4) [right=of a3] [label=above:$\alpha_4$] {};
+        \node[croot] (a5) [right=of a4] [label=above:$\alpha_5$] {};
+        \node[nroot] (a6) [right=of a5] [label=above:$\alpha_6$] {};
+        \node[nroot] (a7) [right=of a6] [label=above:$\alpha_7$] {};
+        \node[croot] (a2) [below=of a4] [label=right:$\alpha_2$] {};
+        \draw (a1) to (a3) to (a4) to (a5) to (a6) to (a7);
+        \draw (a4) to (a2);
+     \end{tikzpicture}
+\end{center}
+
+\section{Octonionic (and other) planes}
+
+\subsection{Octonions and the exceptional Jordan algebra}
+
+Let $\octo$ denote the normed algebra of octonions over a field $\field$ of characteristic $0$ (we will consider only $\field=\reals$ and $\field =\complex$) and let $N\colon\octo \to \reals$ denote the corresponding norm. Let $\oscal{\,}{\,}$ denote the scalar product of octonions  defined by polarization $\oscal{x}{y} = \frac{1}{2} (N(x+y) - N(x) - N(y))$. Sometimes it is defined without the factor of $1/2$, because then some formulas are simpler and one can also work over a field of characteristic $2$. The conjugation is defined by $\conj{x} = 2\oscal{x}{1}1 - x$, where $1$ is the unit of the octonionic algebra $\octo$. We define the real part of $x$ as $\Re(x) = \frac{x + \conj{x}}{2}$ and the imaginary part as $\Im(x) = \frac{x-\conj{x}}{2}$. 
+
+One can construct $\octo$ e.g. by the Cayley-Dickson process. Basic relations concerning the scalar product are 
+\begin{equation}\label{eq:scal_product}
+\begin{aligned}
+\oscal{x}{y} & = \frac{ x\conj{y} + y\conj{x}}{2}\\
+\oscal{x}{y} & = \oscal{\conj{x}}{\conj{y}}.
+\end{aligned}
+\end{equation}
+Another useful  identities one gets via polarizations (see \cite[p. 5]{springer})
+\begin{gather}
+\oscal{x_1y}{x_2y} = \oscal{x_1}{x_2} N(y), \quad \oscal{xy_1}{xy_2} = N(x)\oscal{y_1}{y_2} \label{eq:scalar_product2}\\
+\oscal{x_1y_1}{x_2y_2} + \oscal{x_1y_2}{x_2y_1} = 2\oscal{x_1}{x_2}\oscal{y_1}{y_2}.\label{eq:scalar_product3}
+\end{gather}
+Combining the second equation of \eqref{eq:scal_product} with \eqref{eq:scalar_product3} we get
+\begin{equation}\label{eq:scalar_product4}
+2\oscal{a}{c}\oscal{b}{d} = \oscal{a\conj{b}}{c\conj{d}} + \oscal{a\conj{d}}{c\conj{b}}.
+\end{equation}
+Finally, we will need
+\begin{equation}\label{eq:scalar_product5}
+\oscal{ab}{c} = \oscal{b}{\conj{a}c}, \quad \oscal{a}{bc} = \oscal{a\conj{c}}{b}.
+%2\oscal{a,\conj{d}}\oscal{b}{\conj{c}} &= \oscal{ab}{\conj{cd}} + \oscal{a\conj{c}}{}
+\end{equation}
+
+The octonionic multiplication  can be ``decomposed'' using scalar product and cross product similarly  as in the case of quaternions. Namely, we have $\oscal{x}{y} = \Re( x\conj{y})$ and we define the cross product as \[x \times y = \Im (x\conj{y}) = \frac{1}{2}( x\conj{y} - y\conj{x}).\] It is not really a cross product, but its restriction to the space of imaginary octonions is (Elduque \ref{}). The difference between the cross product in Harvey (\ref{}) and this one is precisely the commutator $[x,y]$. It is easy to see that the cross product has purely imaginary values.
+
+%% HARVEY
+% The octonionic multiplication  can be ``decomposed'' using scalar product and cross product similarly  as in the case of quaternions. Namely, we have $\oscal{x}{y} = \Re( x\conj{y})$ and we define the cross product as \[x \times y = \Im (\conj{y}x) = \frac{1}{2}( \conj{y}x - \conj{x}y).\] It is not really a cross product, but its restriction to the space of imaginary octonions is (Elduque \ref{}). $x \times y = \frac{1}{2}[x,y] - (\Re x \Im y - \Re y \Im x)$ We follow conventions from Harvey \ref{harvey}.
+
+A bit more obscure is the triple cross product 
+\[
+u \times v \times w = \frac{1}{2}\bigl( u(\conj{v}w) - w(\conj{v}u) \bigr)
+\]
+that appears in the theory of calibrations (and in fact defines what is called the Cayley calibration), see \cite{harvey, salamon} for details. Finally, the associator is defined as
+\[
+\{ x,y,z \} = (xy)z - x(yz).
+\]
+The associator is completely antisymmetric. This property is actually equivalent to the alternativity of the octonionic algebra which in turn implies that any subalgebra generated by two elements is associative. (Artin theorem, \ref{}) It is easy to see that if any entry is a multiple of unit in $\octo$, then the associator is zero. Thus it descends to a map $\Lambda^3 \mathrm{Im}\, \octo \to \field$.
+
+The projective octonionic plane $\projplane$ can be defined via the exceptional formally real Jordan algebra $\jalg[3] = \mathrm{Herm}(3,\octo)$. (see Freudenthal and references therein \ref{}). The points of the geometry are then idempotents of trace one. The automorphism group of this Jordan algebra is the compact real group $F_4$ whose action preserves the trace and determinant of these octonionic matrices. One can define $F_4$-invariant positive definite scalar product on $\jalg$ as
+\[
+ \jscal{A}{B} = \mathrm{Tr}(A \circ B),
+\]
+where $A \circ B$ is the Jordan product of $A$ and $B$ defined by
+\[
+ A \circ B = \frac{1}{2} \left( AB + BA \right).
+\]
+We can generalize this as follows. Take a matrix $G=\begin{pmatrix} \gamma_1 & 0 & 0 \\ 0 & \gamma_2 & 0 \\ 0 & 0 & \gamma_3\end{pmatrix}$ such that $G^2 = \mathrm{Id}$ and all $\gamma_i$ are from the ground field $\field$. Then we define $G$-hermitian matrices as those satisfying $GA^\dagger = AG$ and on the space of those matrices we still have the same.
+
+
+Let $G = \begin{pmatrix} \gamma_1 & 0 & 0\\ 0 & \gamma_2 & 0\\ 0 & 0 & \gamma_3\end{pmatrix}$ be a real (or complex?) matrix such that $G^2 = 1$. Scalar product on $\octo^3$ is defined by $\oscal{x}{y} = \frac{1}{2}(x^\dagger G y + y^\dagger G x) = \sum_{i=1}^3 \gamma_i\oscal{x_i}{y_i}$, where we use the standard scalar product on octonions for which $\oscal{x}{x} = N(x)$.
+
+ For $x\in\octo^3$ define $\varphi (x) = \frac{1}{x^\dagger G x} x (Gx)^\dagger$, it is a trace one idempotent by direct calculation that only uses the fact that $\octo$ form a composition algebra $N(xy) = N(x)N(y)$. Moreover it is $G$-hermitian, meaning $GA=A^\dagger G$. All $G$-symmetric matrices have the following form
+\begin{equation}\label{g-matrix}
+  \begin{pmatrix}
+  \gamma_1 r_1 & \gamma_2 \conj{x_1} & \gamma_3 \conj{x_2} \\
+  \gamma_1 x_1 & \gamma_2 r_2 & \gamma_3 \conj{x_3} \\
+  \gamma_1 x_2 & \gamma_2 x_3 & \gamma_3 r_3
+  \end{pmatrix}.
+\end{equation}
+
+The scalar product on such matrices is defined by $\jscal{A}{B} = \mathrm{Tr}\; (A \circ B)$ and for a general $G$-symmetric matrix this gives us the quadratic form
+\[
+	\jscal{A}{A} = 2\left( \gamma_1\gamma_2 N(x_1) + \gamma_1\gamma_3 N(x_2) + \gamma_2\gamma_3 N(x_3)\right) + \sum_{i=1}^{3} r_i^2
+\]
+and by polarization this yields
+\begin{equation}\label{eq:jscal1}
+\jscal{A}{B} = 2\left( \gamma_1\gamma_2 \oscal{x_1}{y_1} + \gamma_1\gamma_3 \oscal{x_2}{y_2} + \gamma_2\gamma_3\oscal{x_3}{y_3} \right) + \sum_{i=1}^3 r_i s_i.
+\end{equation}
+The set of all $G$-hermitian matrices with multiplication give by
+\[
+A \circ B = \frac{1}{2}(AB+BA)
+\]
+form an exceptional Jordan algebra and from classification of Jordan algebras (see \cite{springer} for details) we know that up to isomorphism that there is only one exceptional Jordan algebra over the complex numbers given by $\jalg[3][\octo_\complex]$ which corresponds to $G=\mathrm{Id}$. Over the real numbers there are actually three isomorphism classes represented by $\jalg[3]$, $\jalg[1,2]$, corresponding to $G = \begin{psmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & -1\end{psmatrix}$ and the Jordan algebra over the split octonions $\jalg[3][\octo']$. The automorphism group of an exceptional Jordan algebra is a group of type $F_4$. In the complex case we get of course the complex Lie group $F_4$, the automorphism group of $\jalg$ is the compact Lie group of type $F_4$, the automorphism group of $\jalg[3][\octo']$ is the split real Lie group of type $F_4$ and finally the $\jalg[1,2]$ has the only remaining real Lie group $F_4^{-20}$ as its automorphism group. 
+
+\subsection{Maps}
+
+With these preliminaries behind us we can finally define the $\mathbb{R}$ (or $\mathbb{C}$) linear mapping $\varphi: \octo^3 \to \jalg $\ by
+\[
+	\varphi(a) = \frac{a(Ga)^\dagger}{a^\dagger Ga}.
+\]
+Its matrix form looks like this
+\begin{equation}\label{eq:varphi}
+\varphi(a) = \frac{1}{\sum\nolimits_i\gamma_i N(a_i)} 
+	\begin{pmatrix}
+		\gamma_1 N(a_1) & \gamma_2 a_1 \conj{a_2} & \gamma_3 a_1 \conj{a_3} \\
+		\gamma_1 a_2\conj{a_1} & \gamma_2 N(a_2)  & \gamma_3 a_2 \conj{a_3} \\
+		\gamma_1 a_3\conj{a_1} & \gamma_2 a_3 \conj{a_2} & \gamma_3 N(a_3) \\
+	\end{pmatrix}
+\end{equation}
+
+Four octonionic planes were defined in the article \cite{stavrov} by giving maps and transition functions. We are going to show that the domains used for maps are actually just the analogs of classical affine coordinates of the projective or hyperbolic plane. We will show that these octonionic planes can be actually defined as the space of idempotent matrices of trace one in some exceptional Jordan algebra $\jalg$ which makes the $F_4$-symmetry quite manifest. Now we define our affine coordinate patches which are completely analogous to the classical picture from $\reals^{1,2}$. The only novelty is the split projective plane $\projplane[2][P]_s$.
+
+
+\subsection{Algebraic geometry}
+
+\begin{lemma}
+ The equations for the octonionic plane are 
+\begin{equation}\label{eq:trace}
+\gamma_1 r_1 + \gamma_2 r_2 + \gamma_3 r_3 = 1,
+\end{equation}
+\begin{align}
+ r_1 & = \gamma_1 r_1^2 + \gamma_2 N(x_1) + \gamma_3 N(x_2) \label{eq:diag1}\\
+ r_2 & = \gamma_2 r_2^2 + \gamma_1 N(x_1) + \gamma_3 N(x_3) \label{eq:diag2} \\
+ r_3 & = \gamma_3 r_3^2 + \gamma_1 N(x_2) + \gamma_2 N(x_3) \label{eq:diag3}
+\end{align}
+\begin{align}
+ r_3 x_1 &= \conj{x_3}x_2 \label{eq:antidiag1} \\
+ r_2 x_2 &= x_3 x_1 \label{eq:antidiag2} \\
+ r_1 x_3 &= x_2\conj{x_1}.  \label{eq:antidiag3}
+\end{align}
+\end{lemma}
+\begin{proof}
+Straightforward, we have just used the equation $\mathrm{Tr}\, A = 1$ to rewrite the off-diagonal terms of $A^2=A$:
+\begin{align*}
+\gamma_1 x_1 &= (\gamma_1 r_1 + \gamma_2 r_2)\gamma_1 x_1  + \gamma_1\gamma_3 \conj{x_3}x_2 \\
+\gamma_1 x_2 &= (\gamma_1 r_1 + \gamma_3 r_3)\gamma_1 x_2  + \gamma_1\gamma_2 x_3 x_1 \\
+\gamma_2 x_3 &= (\gamma_2 r_2 + \gamma_3 r_3)\gamma_2 x_3  + \gamma_1\gamma_2 x_2\conj{x_1}.
+\end{align*}
+
+
+\end{proof}
+\begin{lemma}
+The map $\varphi$ restricted to the affine coordinate patches has a well-defined smooth inverse on an octonionic plane, i.e. for any $A \in \jalg$ satisfying $A^2 = A$ and $\mathrm{Tr}\, A = 1$ there exists $a\in \octo^3$ whose one coordinate is 1 and such that $\varphi(a) = A$.
+\end{lemma}
+\begin{proof}
+The equation \eqref{eq:trace} implies that at least one $r_i$ is nonzero. Without loss of generality, we will treat the case $r_1 \neq 0$ as the others follow by permuting the indices.
+
+Comparing \eqref{g-matrix} with \eqref{eq:varphi} and imposing $a_1 = 1$ we see that we must have $r_1 =  \sfrac{1}{\oscal{a}{a}}$ and $\gamma_1 x_1 = r_1 \gamma_1 a_2$ which leads us to defining $a_2 = \sfrac{x_1}{r_1}$. Similarly, we obtain $a_3 = \sfrac{x_2}{r_1}$. Now we need to check whether these choices satisfy all the remaining equations.
+
+First of all $\oscal{a}{a} = \gamma_1 + \gamma_2 \sfrac{N(x_1)}{r_1^2} + \gamma_3\sfrac{N(x_2)}{r_1^2}$ where the right hand side is equal to $\sfrac{ \gamma_1 r_1^2+ \gamma_2N(x_1) + \gamma_3N(x_2)}{r_1^2}$. By the equation \eqref{eq:diag1} this is $1/r_1$ as it should be. The remaining antidiagonal term of \eqref{g-matrix} = \eqref{eq:varphi} is $x_3 = \sfrac{a_3\conj{a_2}}{\oscal{a}{a}}  = \sfrac{ x_2\conj{x_1}}{r_1}$ which is exactly the equation \eqref{eq:antidiag3}.
+
+The diagonal terms pose a slightly bigger challenge as they are equivalent to $r_1 r_2  = N(x_1)$ and $r_1 r_3 = N(x_2)$. For a nonzero $x_1, x_2$ these equations can be derived from \eqref{eq:antidiag1} and \eqref{eq:antidiag2}. In the associative case, these are two of the equations for $\varphi(a)$ to be of rank 1 and this actually remains true even in the non-associative case, see e.g. \cite{chaput}. However, we can obtain these equations by elementary calculations  as we will illustrate in the case $x_2 = 0$. For then the equation \eqref{eq:antidiag3} yields $x_3 = 0$ as we suppose $r_1 \neq 0$ from the beginning. The equation \eqref{eq:antidiag1} implies either $r_3 = 0$ or $x_1 = 0$. The latter case leading to $A$ being a zero everywhere except at the upper left position and $a = (1,0,0)^T$. In the former case, we first take the square of the  condition $1 = \mathrm{Tr}\, A = \gamma_1 r_1 + \gamma_2 r_2$ to obtain $r_1^2 + 2\gamma_1\gamma_2 r_1 r_2 + r_2^2 = 1$ and subsequently 
+\[
+r_1r_2 = \frac{1-r_1^2 - r_2^2}{2\gamma_1\gamma_2}.
+\]
+The equations \eqref{eq:diag1}, \eqref{eq:diag2} turn into 
+\[
+\gamma_1 r_1 = r_1^2 +  \gamma_1\gamma_2N(x_1), \qquad \gamma_2 r_2 = r_2^2 + \gamma_1\gamma_2 N(x_1)
+\]
+and their sum yields after a rearrangement 
+\[
+N(x_1) = \frac{1- r_1^2 - r_2^2}{2\gamma_1\gamma_2}.
+\]
+\end{proof}
+
+\subsection{Differential geometry}
+
+\begin{align}
+\projplane: & \quad U_i = \set{(x_1, x_2, x_3)^T \in \octo^3 \,\middle|\, x_i = 1} \\
+\projplane[1,1]:  & \quad 
+	\begin{aligned}
+			U_1 &= \set{(1, x_2, x_3)^T \in \octo^3 \,\middle|\, 1 + N(x_2) - N(x_3) > 0} \\
+			U_2 &= \set{(x_1, 1, x_3)^T \in \octo^3 \,\middle|\, N(x_1) + 1  - N(x_3) > 0} \\
+    \end{aligned} \\
+\projplane[2][H]:  & \quad U_3 = \set{(x_1, x_2, 1)^T \in \octo^3 \,\middle|\, N(x_1) + N(x_2) - 1 < 0} \\
+\projplane[2][P]_s: & \quad U_i = \set{(x_1, x_2, x_3)^T \in \octo_s^3 \,\middle|\, x_i = 1 \,\&\, \sum\nolimits_i N(x_i) > 0}
+\end{align}
+
+In all cases we would like to identify lines corresponding to the different points on different patches. Over an associative algebra it is quite easy, because we can just use an equivalence relation $(x_1, x_2, x_3)^T \sim  (\lambda x_1, \lambda x_2,\lambda x_3)^T$ for any nonzero $\lambda$ from the algebra. This relation is however not transitive when we are working over the octonions. Nevertheless it is transitive on our affine coordinate patches as was shown in \cite{stavrov}. There is only one complication, in the case of the split octonions we actually demand $\lambda$ to have positive norm $N(\lambda) > 0$.
+
+\subsection{Scalar product}
+
+\begin{theorem}
+The pullback along $\varphi$ is given by
+\begin{equation}
+\jscal{\partial_u \varphi(x)}{\partial_v \varphi(x)} = 2\frac{ \oscal{x}{x}\oscal{u}{v} - \oscal{x}{u}\oscal{x}{v} + \beta(x,u,v) }{\oscal{x}{x}^2}, 
+\end{equation}
+where
+\begin{equation}
+\beta(x,u,v) =  2\Bigl( \sum_{i=1}^3 \oscal{x_i\conj{v_i}}{u_i\times x_i} + \sum_{i,j} \gamma_i\gamma_j
+\oscal{x_i}{u_i(\conj{x_j}\times \conj{v_j}) + v_i(\conj{x_j}\times \conj{u_j})} \Bigr).
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+The  directional derivative of $\varphi$ is given by $\partial_u \varphi(x) = \lim_{t\to 0} \frac{\mathrm{d}}{\mathrm{d}t} \varphi(x+tu)$. Using that 
+\[\partial_u \left( \frac{1}{x^\dagger G x} \right) = - 2\frac{\oscal{x}{u}}{\oscal{x}{x}^2},
+\]
+we obtain
+\[
+\partial_u \varphi(x) = \frac{\psi(x,u) - 2\oscal{x}{u}\varphi(x)}{\oscal{x}{x}},
+\]
+where $\psi(x,u) = u(Gx)^\dagger + x(Gu)^\dagger$ or in matrix form
+% \[
+% x(Gu)^\dagger = 
+% \begin{pmatrix}
+% \gamma_1 x_1 \conj{u_1} & \gamma_2 x_1 \conj{u_2} & \gamma_3 x_1 \conj{u_3}  \\
+% \gamma_1 x_2 \conj{u_1} & \gamma_2 x_2 \conj{u_2} & \gamma_3 x_2 \conj{u_3}  \\
+% \gamma_1 x_3 \conj{u_1} & \gamma_2 x_3 \conj{u_2} & \gamma_3 x_3 \conj{u_3}
+% \end{pmatrix}
+% \]
+% \[
+% u(Gx)^\dagger = 
+% \begin{pmatrix}
+% \gamma_1 u_1 \conj{x_1} & \gamma_2 u_1 \conj{x_2} & \gamma_3 u_1 \conj{x_3}  \\
+% \gamma_1 u_2 \conj{x_1} & \gamma_2 u_2 \conj{x_2} & \gamma_3 u_2 \conj{x_3}  \\
+% \gamma_1 u_3 \conj{x_1} & \gamma_2 u_3 \conj{x_2} & \gamma_3 u_3 \conj{x_3}
+% \end{pmatrix}
+% \]
+% which yields
+\[
+\psi(x,u) =
+\begin{pmatrix}
+2\gamma_1\oscal{x_1}{u_1} & \gamma_2(x_1\conj{u_2} + u_1\conj{x_2}) & \gamma_3(x_1\conj{u_3} + u_1\conj{x_3})  \\
+\gamma_1(x_2\conj{u_1} + u_2\conj{x_1}) & 2\gamma_2\oscal{x_2}{u_2} & \gamma_3(x_2\conj{u_3} + u_2\conj{x_3})  \\
+\gamma_1(x_3\conj{u_1} + u_3\conj{x_1}) & \gamma_2(x_3\conj{u_2} + u_3\conj{x_2}) & 2\gamma_3\oscal{x_3}{u_3}
+\end{pmatrix}.
+\]
+
+Notice that 
+\[
+\varphi(x) = \frac{\psi(x,x)}{2\oscal{x}{x}}
+\]
+and so it is sufficient to calculate $\jscal{\psi(x,u)}{\psi(x,v)}$ in order to obtain $\jscal{\partial_u \varphi(x)}{\partial_v \varphi(x)}$. Namely we have
+\begin{equation}\label{eq:jscal2}
+\begin{aligned}
+\jscal{\partial_u \varphi(x)}{\partial_v \varphi(x)} 
+		& = \jscal{\frac{\psi(x,u) - 2\oscal{x}{u}\varphi(x)}{\oscal{x}{x}}}{\frac{\psi(x,v) - 2\oscal{x}{v}\varphi(x)}{\oscal{x}{x}}} \\
+        & = \frac{1}{\oscal{x}{x}^2} \bigl( \jscal{\psi(x,u)}{\psi(x,v)} \\
+		& \qquad \qquad \quad - 2\oscal{x}{u}\jscal{\psi(x,v)}{\varphi(x)}\\ 
+        & \qquad \qquad \quad - 2\oscal{x}{v}\jscal{\psi(x,u)}{\varphi(x)} \\
+		& \qquad \qquad \quad +  4\oscal{x}{u}\oscal{x}{v}\jscal{\varphi(x)}{\varphi(x)} \bigr) \\
+\end{aligned}
+\end{equation}
+
+The matrices look like this
+\[
+\psi(x,u) =
+\begin{pmatrix}
+2\gamma_1\oscal{x_1}{u_1} & \gamma_2(x_1\conj{u_2} + u_1\conj{x_2}) & \gamma_3(x_1\conj{u_3} + u_1\conj{x_3})  \\
+\gamma_1(x_2\conj{u_1} + u_2\conj{x_1}) & 2\gamma_2\oscal{x_2}{u_2} & \gamma_3(x_2\conj{u_3} + u_2\conj{x_3})  \\
+\gamma_1(x_3\conj{u_1} + u_3\conj{x_1}) & \gamma_2(x_3\conj{u_2} + u_3\conj{x_2}) & 2\gamma_3\oscal{x_3}{u_3}
+\end{pmatrix}
+\]
+\[
+\psi(x,v) =
+\begin{pmatrix}
+2\gamma_1\oscal{x_1}{v_1} & \gamma_2(x_1\conj{v_2} + v_1\conj{x_2}) & \gamma_3(x_1\conj{v_3} + v_1\conj{x_3})  \\
+\gamma_1(x_2\conj{v_1} + v_2\conj{x_1}) & 2\gamma_2\oscal{x_2}{v_2} & \gamma_3(x_2\conj{v_3} + v_2\conj{x_3})  \\
+\gamma_1(x_3\conj{v_1} + v_3\conj{x_1}) & \gamma_2(x_3\conj{v_2} + v_3\conj{x_2}) & 2\gamma_3\oscal{x_3}{v_3}
+\end{pmatrix}
+\]
+and their scalar product is easily computed by \eqref{eq:jscal1}
+\begin{align*}
+    \jscal{\psi(x,u)}{\psi(x,v)} & = 4\sum_{i=1}^3 \oscal{x_i}{u_i}\oscal{x_i}{v_i} \\
+            &\quad + 2\gamma_1\gamma_2 \oscal{ x_1\conj{u_2} + u_1\conj{x_2} }{ x_1\conj{v_2} + v_1\conj{x_2} } \\
+            &\quad + 2\gamma_1\gamma_3 \oscal{ x_1\conj{u_3} + u_1\conj{x_3} }{ x_1\conj{v_3} + v_1\conj{x_3} } \\
+            &\quad + 2\gamma_2\gamma_3 \oscal{ x_2\conj{u_3} + u_2\conj{x_3} }{ x_2\conj{v_3} + v_2\conj{x_3} } 
+\end{align*}
+We expand the term $\oscal{ x_1\conj{u_2} + u_1\conj{x_2} }{ x_1\conj{v_2} + v_1\conj{x_2} }$ to
+\[
+	N(x_1)\oscal{u_2}{v_2} + N(x_2)\oscal{u_1}{v_1} + \oscal{x_1\conj{u_2}}{v_1\conj{x_2}} + \oscal{u_1\conj{x_2}}{x_1\conj{v_2}}
+\]
+and we can use \eqref{eq:scalar_product4} to rewrite the second two terms as
+\[
+2\oscal{x_1}{v_1}\oscal{x_2}{u_2} - \oscal{x_1\conj{x_2}}{v_1\conj{u_2}} + 2\oscal{u_1}{x_1}\oscal{x_2}{v_2} - \oscal{u_1\conj{v_2}}{x_1\conj{x_2}}.
+\]
+To obtain a metric that resembles Fubini-Study metric in homogeneous coordinates, we want to write 
+\[\jscal{\psi(x,u)}{\psi(x,v)}  = 2\oscal{x}{u}\oscal{x}{v} + 2\oscal{x}{x}\oscal{u}{v} + \beta(x,u,v).\]
+So let's actually calculate 
+\[
+\beta(x,u,v) = \jscal{\psi(x,u)}{\psi(x,v)}  - 2\oscal{x}{u}\oscal{x}{v} - 2\oscal{x}{x}\oscal{u}{v}.
+\]
+
+First of all, the ``diagonal terms'' are
+\begin{align*}
+2\oscal{x_i}{u_i} & \oscal{x_i}{v_i}  - \oscal{x_i}{x_i}\oscal{u_i}{v_i} = & \\
+	& = \oscal{x_i\conj{x_i}}{u_i\conj{v_i}} + \oscal{x_i\conj{v_i}}{u_i\conj{x_i}} - 2\oscal{x_i}{x_i}\oscal{u_i}{v_i} & \text{according to \eqref{eq:scalar_product4}} \\
+	& = N(x_i)\oscal{1}{u_i\conj{v_i}} + \oscal{x_i\conj{v_i}}{u_i\conj{x_i}} - N(x_i)\oscal{u_i}{v_i} - N(x_i)\oscal{\conj{u_i}}{\conj{v_i}} & \\
+    & = N(x_i)\oscal{v_i}{u_i} - N(x_i)\oscal{u_i}{v_i} + \oscal{x_i\conj{v_i}}{u_i\conj{x_i}} - \oscal{x_i\conj{u_i}}{x_i\conj{v_i}} & \text{by \eqref{eq:scalar_product5}} \\
+    & = \oscal{x_i\conj{v_i}}{u_i\conj{x_i} - x_i\conj{u_i}} & \\
+    & = \oscal{x_i\conj{v_i}}{2u_i\times x_i}. & 
+\end{align*}
+The ``off-diagonal terms'' are handled similarly by using \eqref{eq:scalar_product5} and \eqref{eq:scal_product}
+\begin{align*}
+	2\oscal{x_i}{u_i}&\oscal{x_j}{v_j} + 2\oscal{x_j}{u_j}\oscal{x_i}{v_i} - 2\oscal{x_i\conj{x_j}}{u_i\conj{v_j} + v_i\conj{u_j}} = \\
+    	& = \oscal{x_i\conj{x_j}}{u_i\conj{v_j}} +  \oscal{x_i\conj{v_j}}{u_i\conj{x_j}} + \oscal{x_j\conj{x_i}}{u_j\conj{v_i}} +  \oscal{x_j\conj{v_i}}{u_j\conj{x_i}} - 2\oscal{x_i\conj{x_j}}{u_i\conj{v_j} + v_i\conj{u_j}}  \\
+       	& = \oscal{x_i\conj{x_j}}{u_i\conj{v_j}} +  \oscal{x_i\conj{v_j}}{u_i\conj{x_j}} + \oscal{x_i\conj{x_j}}{v_i\conj{u_j}} +  \oscal{x_i\conj{u_j}}{v_i\conj{x_j}} - 2\oscal{x_i\conj{x_j}}{u_i\conj{v_j} + v_i\conj{u_j}}  \\
+        & = \oscal{x_i\conj{v_j}}{u_i\conj{x_j}} + \oscal{x_i\conj{u_j}}{v_i\conj{x_j}} - \oscal{x_i\conj{x_j}}{u_i\conj{v_j} + v_i\conj{u_j}} \\
+        & = \oscal{x_i}{(u_i\conj{x_j})v_j + (v_i\conj{x_j})u_j - (u_i\conj{v_j})x_j - (v_i\conj{u_j})x_j}.
+\end{align*}
+If we look more closely on the second entry of the scalar product we see, that we can simplify it using the associator and its properties as follows
+\begin{align*}
+(u_i\conj{x_j})v_j - (u_i\conj{v_j})x_j & = u_i(\conj{x_j}v_j - \conj{v_j}x_j) + \{u_i, \conj{x_j}, v_j\} + \{u_i, \conj{v_j}, x_j\} \\
+		& = 2u_i(\conj{x_j}\times \conj{v_j}) - \{u_i, x_j, v_j \} - \{u_i, v_j, x_j\} \\
+        & = 2u_i(\conj{x_j}\times \conj{v_j})
+\end{align*}
+
+Putting it all together, we arrive at
+\[
+\beta(x,u,v) = 2\Bigl( \sum_{i=1}^3 \oscal{x_i\conj{v_i}}{u_i\times x_i} + \sum_{i,j} \oscal{x_i}{u_i(\conj{x_j}\times \conj{v_j}) + v_i(\conj{x_j}\times \conj{u_j})} \Bigr).
+\]
+An easy calculation gives that $\beta(x,x,u) = \beta(x,u,x) = 0$. %What about \beta(u,x,x)?
+
+Finally, we can express the pullback continuing from \eqref{eq:jscal2}
+\begin{align*}
+\jscal{\partial_u \varphi(x)}{\partial_v \varphi(x)} 
+        & = \frac{1}{\oscal{x}{x}^2}\bigl( 2\oscal{x}{u}\oscal{x}{v} + 2\oscal{x}{x}\oscal{u}{v} + \beta(x,u,v) \\
+		& \qquad \qquad \quad - 2\oscal{x}{u}\frac{2\oscal{x}{x}\oscal{x}{v} + 2\oscal{x}{x}\oscal{x}{v} + \beta(x,x,v)}{2\oscal{x}{x}} \\
+		& \qquad \qquad \quad - 2\oscal{x}{v}\frac{2\oscal{x}{x}\oscal{x}{u} + 2\oscal{x}{x}\oscal{x}{u} + \beta(x,u,x)}{2\oscal{x}{x}} \\
+		& \qquad \qquad \quad + 4\oscal{x}{u}\oscal{x}{v} \bigr) \\
+        & = \frac{1}{\oscal{x}{x}^2}\bigl( 2\oscal{x}{u}\oscal{x}{v} + 2\oscal{x}{x}\oscal{u}{v} + \beta(x,u,v) \\
+		& \qquad \qquad \quad  - 4\oscal{x}{u}\oscal{x}{v} \\        
+		& \qquad \qquad \quad - 4\oscal{x}{v}\oscal{x}{u}  \\
+		& \qquad \qquad \quad +  4\oscal{x}{u}\oscal{x}{v} \bigr) \\
+        & = 2\frac{ \oscal{x}{x}\oscal{u}{v} - \oscal{x}{u}\oscal{x}{v} + \beta(x,u,v) }{\oscal{x}{x}^2}.
+\end{align*}
+\end{proof}
+
+%\section{Vanoce}
+The result is
+\begin{equation}
+\jscal{\psi(x,u)}{\psi(x,v)} = 2\oscal{x}{x}\oscal{u}{v} + 2\Re(h(x,u)h(x,v)) + \beta(x,u,v),
+\end{equation}
+where
+	\[h(x,u) = \sum_{i=1}^3 \gamma_i x_i \conj{u_i}\] 
+and
+\begin{equation}
+\beta(x,u,v) = 2\sum_{j \geq i = 1}^3 \oscal{x_i}{(u_i \times x_j)\conj{v_j} + (v_i \times x_j)\conj{u_j}  - \{u_i, x_j, \conj{v_j}\} - \{v_i, x_j, \conj{u_j} \}}
+\end{equation}
+
+\[
+\{a,b,c\} = \frac{2}{3}\text{cyklicka suma (a x b) x c}
+\]
+
+\[
+\Re (ab) = 2\Re(a)\Re(b) - \oscal{a}{b}
+\]

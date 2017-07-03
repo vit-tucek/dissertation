@@ -1,0 +1,20 @@
+\begin{tikzpicture}[>=latex,line join=bevel,]
+%%
+\node (alpha1) at (95bp,310bp) [draw,draw=none] {$\alpha_{1}$};
+  \node (alpha1+2*alpha2+2*alpha3+alpha4+alpha5) at (95bp,8bp) [draw,draw=none] {$\alpha_{1} + 2\alpha_{2} + 2\alpha_{3} + \alpha_{4} + \alpha_{5}$};
+  \node (alpha1+alpha2+alpha3+alpha4) at (43bp,161bp) [draw,draw=none] {$\alpha_{1} + \alpha_{2} + \alpha_{3} + \alpha_{4}$};
+  \node (alpha1+alpha2) at (95bp,261bp) [draw,draw=none] {$\alpha_{1} + \alpha_{2}$};
+  \node (alpha1+alpha2+alpha3) at (95bp,211bp) [draw,draw=none] {$\alpha_{1} + \alpha_{2} + \alpha_{3}$};
+  \node (alpha1+alpha2+alpha3+alpha4+alpha5) at (95bp,111bp) [draw,draw=none] {$\alpha_{1} + \alpha_{2} + \alpha_{3} + \alpha_{4} + \alpha_{5}$};
+  \node (alpha1+alpha2+2*alpha3+alpha4+alpha5) at (95bp,60bp) [draw,draw=none] {$\alpha_{1} + \alpha_{2} + 2\alpha_{3} + \alpha_{4} + \alpha_{5}$};
+  \node (alpha1+alpha2+alpha3+alpha5) at (148bp,161bp) [draw,draw=none] {$\alpha_{1} + \alpha_{2} + \alpha_{3} + \alpha_{5}$};
+  \draw [black,->] (alpha1) ..controls (95bp,297.84bp) and (95bp,287.19bp)  .. (alpha1+alpha2);
+  \draw [black,->] (alpha1+alpha2+alpha3+alpha5) ..controls (133.01bp,146.43bp) and (119.5bp,134.19bp)  .. (alpha1+alpha2+alpha3+alpha4+alpha5);
+  \draw [black,->] (alpha1+alpha2+alpha3) ..controls (109.99bp,196.43bp) and (123.5bp,184.19bp)  .. (alpha1+alpha2+alpha3+alpha5);
+  \draw [black,->] (alpha1+alpha2+alpha3) ..controls (80.373bp,196.5bp) and (67.296bp,184.43bp)  .. (alpha1+alpha2+alpha3+alpha4);
+  \draw [black,->] (alpha1+alpha2) ..controls (95bp,247.29bp) and (95bp,237.02bp)  .. (alpha1+alpha2+alpha3);
+  \draw [black,->] (alpha1+alpha2+2*alpha3+alpha4+alpha5) ..controls (95bp,45.763bp) and (95bp,35.065bp)  .. (alpha1+2*alpha2+2*alpha3+alpha4+alpha5);
+  \draw [black,->] (alpha1+alpha2+alpha3+alpha4) ..controls (57.627bp,146.5bp) and (70.704bp,134.43bp)  .. (alpha1+alpha2+alpha3+alpha4+alpha5);
+  \draw [black,->] (alpha1+alpha2+alpha3+alpha4+alpha5) ..controls (95bp,97.523bp) and (95bp,86.942bp)  .. (alpha1+alpha2+2*alpha3+alpha4+alpha5);
+%
+\end{tikzpicture}

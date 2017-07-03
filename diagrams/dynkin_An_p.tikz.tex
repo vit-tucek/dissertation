@@ -1,0 +1,14 @@
+\begin{tikzpicture} % SU(p,q) ~ A_{n-1} relative
+	\node[croot] (a1) [label=above:$\alpha_1$] {};
+	\node[croot] (a2) [right= of a1] [label=above:$\alpha_2$] {};
+	\node (a3) [right= of a2] {};
+	\node (a4) [right= of a3] {};
+	\node[nroot] (a5) [right=of a4] [label=above:$\alpha_p$] {};
+	\node (a6) [right= of a5] {};
+	\node (a7) [right=of a6] {};
+	\node[croot] (a8) [right=of a7] [label=above:$\alpha_{n-2}$] {};
+	\node[croot] (a9) [right=of a8] [label=above:$\alpha_{n-1}$] {};
+	\draw (a1) to (a2) to (a3); \draw [dotted] (a3) to (a4);
+	\draw (a4) to (a5) to (a6); \draw [dotted](a6) to (a7);
+	\draw (a7) to (a8) to (a9);
+\end{tikzpicture}

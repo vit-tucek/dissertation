@@ -1,0 +1,54 @@
+\begin{tikzpicture}[>=latex,line join=bevel,]
+%%
+\node (s3*s4*s5*s2*s3*s4) at (30bp,150bp) [draw,draw=none] {$s_{3}s_{4}s_{5}s_{2}s_{3}s_{4}$};
+  \node (s3*s4*s5*s2*s3*s4*s1*s2) at (108bp,54bp) [draw,draw=none] {$s_{3}s_{4}s_{5}s_{2}s_{3}s_{4}s_{1}s_{2}$};
+  \node (s3*s4*s5*s2*s3*s1) at (109bp,150bp) [draw,draw=none] {$s_{3}s_{4}s_{5}s_{2}s_{3}s_{1}$};
+  \node (s3*s4*s5) at (52bp,294bp) [draw,draw=none] {$s_{3}s_{4}s_{5}$};
+  \node (s3) at (108bp,390bp) [draw,draw=none] {$s_{3}$};
+  \node (s3*s4*s5*s2*s3*s4*s1*s2*s3) at (108bp,6bp) [draw,draw=none] {$s_{3}s_{4}s_{5}s_{2}s_{3}s_{4}s_{1}s_{2}s_{3}$};
+  \node (s3*s4*s2) at (109bp,294bp) [draw,draw=none] {$s_{3}s_{4}s_{2}$};
+  \node (s3*s4*s5*s2*s3) at (39bp,198bp) [draw,draw=none] {$s_{3}s_{4}s_{5}s_{2}s_{3}$};
+  \node (s3*s4*s5*s2) at (48bp,246bp) [draw,draw=none] {$s_{3}s_{4}s_{5}s_{2}$};
+  \node (s3*s4*s5*s2*s1) at (109bp,198bp) [draw,draw=none] {$s_{3}s_{4}s_{5}s_{2}s_{1}$};
+  \node (s3*s4*s5*s2*s3*s4*s1) at (64bp,102bp) [draw,draw=none] {$s_{3}s_{4}s_{5}s_{2}s_{3}s_{4}s_{1}$};
+  \node (1) at (108bp,439bp) [draw,draw=none] {$1$};
+  \node (s3*s4*s2*s3*s1*s2) at (188bp,150bp) [draw,draw=none] {$s_{3}s_{4}s_{2}s_{3}s_{1}s_{2}$};
+  \node (s3*s4*s5*s2*s3*s1*s2) at (153bp,102bp) [draw,draw=none] {$s_{3}s_{4}s_{5}s_{2}s_{3}s_{1}s_{2}$};
+  \node (s3*s2) at (130bp,342bp) [draw,draw=none] {$s_{3}s_{2}$};
+  \node (s3*s2*s1) at (165bp,294bp) [draw,draw=none] {$s_{3}s_{2}s_{1}$};
+  \node (s3*s4) at (87bp,342bp) [draw,draw=none] {$s_{3}s_{4}$};
+  \node (s3*s4*s2*s3) at (109bp,246bp) [draw,draw=none] {$s_{3}s_{4}s_{2}s_{3}$};
+  \node (s3*s4*s2*s3*s1) at (179bp,198bp) [draw,draw=none] {$s_{3}s_{4}s_{2}s_{3}s_{1}$};
+  \node (s3*s4*s2*s1) at (170bp,246bp) [draw,draw=none] {$s_{3}s_{4}s_{2}s_{1}$};
+  \draw [black,->] (s3*s2) ..controls (139.08bp,329.07bp) and (147.96bp,317.39bp)  .. (s3*s2*s1);
+  \draw [black,->] (s3*s4*s5*s2) ..controls (64.466bp,232.58bp) and (81.602bp,219.66bp)  .. (s3*s4*s5*s2*s1);
+  \draw [black,->] (s3*s4) ..controls (92.574bp,329.35bp) and (97.83bp,318.35bp)  .. (s3*s4*s2);
+  \draw [black,->] (s3*s4*s5*s2*s3*s1) ..controls (97.124bp,136.86bp) and (85.185bp,124.66bp)  .. (s3*s4*s5*s2*s3*s4*s1);
+  \draw [black,->] (s3*s4*s5*s2*s3) ..controls (57.738bp,184.69bp) and (78.077bp,171.32bp)  .. (s3*s4*s5*s2*s3*s1);
+  \draw [black,->] (s3*s4*s2*s1) ..controls (172.24bp,233.55bp) and (174.29bp,223.07bp)  .. (s3*s4*s2*s3*s1);
+  \draw [black,->] (s3*s4*s2*s3*s1) ..controls (181.24bp,185.55bp) and (183.29bp,175.07bp)  .. (s3*s4*s2*s3*s1*s2);
+  \draw [black,->] (s3*s4*s5*s2*s3*s1*s2) ..controls (141.12bp,88.86bp) and (129.18bp,76.656bp)  .. (s3*s4*s5*s2*s3*s4*s1*s2);
+  \draw [black,->] (s3*s4*s5*s2*s1) ..controls (109bp,185.55bp) and (109bp,175.07bp)  .. (s3*s4*s5*s2*s3*s1);
+  \draw [black,->] (s3*s4*s2) ..controls (92.534bp,280.58bp) and (75.398bp,267.66bp)  .. (s3*s4*s5*s2);
+  \draw [black,->] (1) ..controls (108bp,425.83bp) and (108bp,415.21bp)  .. (s3);
+  \draw [black,->] (s3*s4*s2*s3*s1*s2) ..controls (178.92bp,137.07bp) and (170.04bp,125.39bp)  .. (s3*s4*s5*s2*s3*s1*s2);
+  \draw [black,->] (s3*s2) ..controls (124.68bp,329.35bp) and (119.66bp,318.35bp)  .. (s3*s4*s2);
+  \draw [black,->] (s3*s4*s5*s2*s3*s4*s1*s2) ..controls (108bp,41.554bp) and (108bp,31.067bp)  .. (s3*s4*s5*s2*s3*s4*s1*s2*s3);
+  \draw [black,->] (s3) ..controls (113.57bp,377.35bp) and (118.83bp,366.35bp)  .. (s3*s2);
+  \draw [black,->] (s3*s4*s2) ..controls (125.47bp,280.58bp) and (142.6bp,267.66bp)  .. (s3*s4*s2*s1);
+  \draw [black,->] (s3*s4*s5*s2) ..controls (45.76bp,233.55bp) and (43.709bp,223.07bp)  .. (s3*s4*s5*s2*s3);
+  \draw [black,->] (s3*s4*s2*s3) ..controls (127.74bp,232.69bp) and (148.08bp,219.32bp)  .. (s3*s4*s2*s3*s1);
+  \draw [black,->] (s3*s4*s5*s2*s3*s4*s1) ..controls (75.546bp,88.93bp) and (87.051bp,76.902bp)  .. (s3*s4*s5*s2*s3*s4*s1*s2);
+  \draw [black,->] (s3*s4*s5) ..controls (51.005bp,281.55bp) and (50.093bp,271.07bp)  .. (s3*s4*s5*s2);
+  \draw [black,->] (s3*s4*s5*s2*s3) ..controls (36.76bp,185.55bp) and (34.709bp,175.07bp)  .. (s3*s4*s5*s2*s3*s4);
+  \draw [black,->] (s3*s4*s5*s2*s3*s4) ..controls (38.768bp,137.14bp) and (47.271bp,125.63bp)  .. (s3*s4*s5*s2*s3*s4*s1);
+  \draw [black,->] (s3*s4*s2*s3) ..controls (90.262bp,232.69bp) and (69.923bp,219.32bp)  .. (s3*s4*s5*s2*s3);
+  \draw [black,->] (s3*s4*s5*s2*s3*s1) ..controls (120.55bp,136.93bp) and (132.05bp,124.9bp)  .. (s3*s4*s5*s2*s3*s1*s2);
+  \draw [black,->] (s3*s4*s2*s3*s1) ..controls (160.26bp,184.69bp) and (139.92bp,171.32bp)  .. (s3*s4*s5*s2*s3*s1);
+  \draw [black,->] (s3) ..controls (102.68bp,377.35bp) and (97.662bp,366.35bp)  .. (s3*s4);
+  \draw [black,->] (s3*s4) ..controls (77.922bp,329.07bp) and (69.036bp,317.39bp)  .. (s3*s4*s5);
+  \draw [black,->] (s3*s2*s1) ..controls (166.24bp,281.55bp) and (167.38bp,271.07bp)  .. (s3*s4*s2*s1);
+  \draw [black,->] (s3*s4*s2) ..controls (109bp,281.55bp) and (109bp,271.07bp)  .. (s3*s4*s2*s3);
+  \draw [black,->] (s3*s4*s2*s1) ..controls (153.53bp,232.58bp) and (136.4bp,219.66bp)  .. (s3*s4*s5*s2*s1);
+%
+\end{tikzpicture}
