@@ -126,7 +126,24 @@ Let $\lie{h}^*_\R$ denote the real span of the roots. A \emph{cone} with vertex 
  For $a=(Q,R,l)\in\mathcal{A}$, let $C_a$ be the integral cone of $\lie{k}$-dominant integral elements in $\lie{h}^*_\R$ which are orthogonal to elements in $R$.
 \end{definition}
 
-Since the root system $R$ always contains $\beta$, the representations $L(\lambda)$ are in fact finite-dimensional for $\lambda\in C_a$.
+%Since the root system $R$ always contains $\beta$, the representations $L(\lambda)$ are in fact finite-dimensional for $\lambda\in C_a$.
+
+For concrete calculations the following lemma can be useful. 
+
+\begin{lemma}[Section 4.3 of \cite{enright_resolutions_2004}]
+The cone $C_{Q, R, l}$ consists of positive integral multiples of weights of the form $\omega_i - (\omega_i, \beta^\vee) \zeta,$ where $\omega_i$ is a fundamental weight corresponding to simple root $\alpha_i$ that does not belong to $R$.
+\end{lemma}
+\begin{proof}
+ Any  $\lie{k}$-dominant integral weight can be written in the form $\mu = \sum_i a_i \omega_i + b \zeta,$ where $a_i$ are nonnegative integers. Such a weight is perpendicular to $R$ if and only if it is perpendicular to all compact simple roots contained in $R$ and to the noncompact root $-\beta$, i.e. to the simple roots of the root system $R$. The crucial observation here is that for each Hermitian symmetric space the weight $\zeta$ is in fact the fundamental weight corresponding to the simple noncompact root. Hence we have 
+\[
+0 = \left(\sum a_i \omega_i + b \zeta, \alpha_i^\vee \right) = a_i 
+\] 
+for all compact simple roots of  $R$ and 
+\[
+0 = \left(\sum a_i \omega_i + b \zeta, \beta^\vee \right)
+\]
+for the noncompact root. Recalling the definition of $\zeta$ and solving for $b$ we see that the cone consists of vectors of the form $\sum a_i (\omega_i - (\omega_i, \alpha_i^\vee)\zeta)$ where the sum is only indices whose simple roots are not in $R$.
+\end{proof}
 
 \begin{proposition}[Proposition 6.6 of \cite{davidson_differential_1991}]
  The set of reduction points $\Lambda_r$ is the disjoint union of the sets $\Lambda_a, a\in\mathcal{A}$.
