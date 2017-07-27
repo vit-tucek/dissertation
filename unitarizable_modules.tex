@@ -279,6 +279,59 @@ Let $a=(Q,R,l)$, $Q=R=\mathrm{SU}(p',q')$, $1\leq p' \leq p$, $1\leq q'\leq q$. 
   Q(\lambda_a)=R(\lambda_a)=\mathrm{SU}(p',q')
 \end{gather*}
 
+\subsubsection{Concrete example}
+
+For $p=q=3$ we can choose $p' = q' = 2$ and this gives us two possible degrees of reduction. The cone of unitarizable weights is the same in both case and consists of weights of the form $a_2 (\omega_2 - \omega_3) + a_4(\omega_4 - \omega_3)$
+
+For $l=1$ we obtain $\mathfrak{g}_\lambda$ of type $A_5$ and the scalar products of the weights in the cone with noncompact roots is given by 
+
+\begin{tikzpicture}[>=latex,line join=bevel,]
+%%
+\node (node_7) at (20.5bp,58.5bp) [draw,draw=none] {$-a_{2} + 3$};
+  \node (node_6) at (110.5bp,58.5bp) [draw,draw=none] {$-a_{4} + 3$};
+  \node (node_5) at (50.5bp,108.5bp) [draw,draw=none] {$6$};
+  \node (node_4) at (80.5bp,108.5bp) [draw,draw=none] {$6$};
+  \node (node_3) at (102.5bp,7.5bp) [draw,draw=none] {$-a_{4} + 1$};
+  \node (node_2) at (35.5bp,7.5bp) [draw,draw=none] {$-a_{2} + 1$};
+  \node (node_1) at (65.5bp,58.5bp) [draw,draw=none] {$4$};
+  \node (node_0) at (65.5bp,157.5bp) [draw,draw=none] {$8$};
+  \draw [black,->] (node_1) ..controls (69.278bp,71.59bp) and (72.808bp,82.886bp)  .. (node_4);
+  \draw [black,->] (node_1) ..controls (61.722bp,71.59bp) and (58.192bp,82.886bp)  .. (node_5);
+  \draw [black,->] (node_3) ..controls (91.815bp,22.65bp) and (82.854bp,34.518bp)  .. (node_1);
+  \draw [black,->] (node_2) ..controls (44.07bp,22.497bp) and (51.128bp,34.025bp)  .. (node_1);
+  \draw [black,->] (node_7) ..controls (29.022bp,73.136bp) and (35.976bp,84.262bp)  .. (node_5);
+  \draw [black,->] (node_5) ..controls (54.408bp,121.75bp) and (57.851bp,132.53bp)  .. (node_0);
+  \draw [black,->] (node_6) ..controls (101.98bp,73.136bp) and (95.024bp,84.262bp)  .. (node_4);
+  \draw [black,->] (node_2) ..controls (31.377bp,21.969bp) and (28.198bp,32.353bp)  .. (node_7);
+  \draw [black,->] (node_4) ..controls (76.592bp,121.75bp) and (73.149bp,132.53bp)  .. (node_0);
+  \draw [black,->] (node_3) ..controls (104.69bp,21.896bp) and (106.36bp,32.125bp)  .. (node_6);
+%
+\end{tikzpicture}
+
+For $l=2$ we obtain $\mathfrak{g}_\lambda$ of type $A_1$ given by  $\epsilon_1 - \epsilon_6$ and the scalar products are 
+\begin{tikzpicture}[>=latex,line join=bevel,]
+%%
+\node (node_7) at (110.5bp,57.5bp) [draw,draw=none] {$-a_{4} + 2$};
+  \node (node_6) at (50.5bp,107.5bp) [draw,draw=none] {$5$};
+  \node (node_5) at (65.5bp,57.5bp) [draw,draw=none] {$3$};
+  \node (node_4) at (86.5bp,7.0bp) [draw,draw=none] {$-a_{4}$};
+  \node (node_3) at (20.5bp,57.5bp) [draw,draw=none] {$-a_{2} + 2$};
+  \node (node_2) at (43.5bp,7.0bp) [draw,draw=none] {$-a_{2}$};
+  \node (node_1) at (65.5bp,156.5bp) [draw,draw=none] {$7$};
+  \node (node_0) at (80.5bp,107.5bp) [draw,draw=none] {$5$};
+  \draw [black,->] (node_2) ..controls (37.344bp,20.982bp) and (32.274bp,31.673bp)  .. (node_3);
+  \draw [black,->] (node_6) ..controls (54.408bp,120.75bp) and (57.851bp,131.53bp)  .. (node_1);
+  \draw [black,->] (node_4) ..controls (92.924bp,20.982bp) and (98.214bp,31.673bp)  .. (node_7);
+  \draw [black,->] (node_3) ..controls (29.022bp,72.136bp) and (35.976bp,83.262bp)  .. (node_6);
+  \draw [black,->] (node_4) ..controls (80.782bp,21.206bp) and (75.936bp,32.398bp)  .. (node_5);
+  \draw [black,->] (node_5) ..controls (69.278bp,70.59bp) and (72.808bp,81.886bp)  .. (node_0);
+  \draw [black,->] (node_7) ..controls (101.98bp,72.136bp) and (95.024bp,83.262bp)  .. (node_0);
+  \draw [black,->] (node_0) ..controls (76.592bp,120.75bp) and (73.149bp,131.53bp)  .. (node_1);
+  \draw [black,->] (node_2) ..controls (49.49bp,21.206bp) and (54.567bp,32.398bp)  .. (node_5);
+  \draw [black,->] (node_5) ..controls (61.722bp,70.59bp) and (58.192bp,81.886bp)  .. (node_6);
+%
+\end{tikzpicture}
+
 \subsubsection{Nilpotent cohomology in detail}
 
 Now we compute the cohomology for $\lambda = \omega_{p'} + \omega_{n-q'} - (n+l+1-p'-q')\omega_p$. We have for $k=2-(n+l+1-p'-q') = 1+p'+q'-n-l$ that
@@ -869,7 +922,19 @@ Scalar products of $\rho$ with positive noncompact roots
   \[
    C = \{-(a+b)\omega_1 + a\omega_{n-1} + b\omega_n) \,|\, a,b\in\mathbb{N}_0 \}
   \]
-  and an easy calculation gives $\Psi^+_\lambda = \Psi^+_{\lambda+\mu}$ for all $\mu \in C$. Thus we can use the theorem \ref{thm:translation}.
+  and an easy calculation gives $\Psi^+_\lambda = \Psi^+_{\lambda+\mu}$ for all $\mu \in C$. Thus we can use the theorem \ref{thm:translation} and get the same shape of cohomology on the whole cone. However, concrete calculation for $D_5$ shows that the weights for the cohomology differ based on tha values of $a, b.$
+	
+	\begin{tikzpicture}[>=latex,line join=bevel,]
+%%
+\node (node_3) at (69.5bp,167.5bp) [draw,draw=none] {$\left(-a - b - 6,\,-3,\,2,\,a,\,b\right)$};
+  \node (node_2) at (69.5bp,8.5bp) [draw,draw=none] {$\left(-a - b - 6,\,0,\,0,\,a + 1,\,b + 1\right)$};
+  \node (node_1) at (69.5bp,61.5bp) [draw,draw=none] {$\left(-a - b - 7,\,0,\,1,\,a,\,b\right)$};
+  \node (node_0) at (69.5bp,114.5bp) [draw,draw=none] {$\left(-a - b - 6,\,-2,\,2,\,a,\,b\right)$};
+  \draw [black,->] (node_0) ..controls (69.5bp,129.81bp) and (69.5bp,140.03bp)  .. (node_3);
+  \draw [black,->] (node_2) ..controls (69.5bp,23.805bp) and (69.5bp,34.034bp)  .. (node_1);
+  \draw [black,->] (node_1) ..controls (69.5bp,76.805bp) and (69.5bp,87.034bp)  .. (node_0);
+%
+\end{tikzpicture}
   
  \item $ \lambda = -(n-1)\omega_1 + \omega_n$\\
   Scalar products of positive noncompact roots with $\lambda+\rho$ are
