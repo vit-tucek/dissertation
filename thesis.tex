@@ -36,7 +36,7 @@
 \usepackage{twoopt} % for convenient commands
 \usepackage{xfrac} % for \sfrac command
 \usepackage{mathrsfs}   % calligraphic font \mathscr{C}
-\usepackage{minted} % for pretty printing of source code
+%\usepackage{minted} % for pretty printing of source code
 \usepackage[toc]{appendix}
 \usepackage[matrix,arrow]{xy}    % for diagrams
 
@@ -90,14 +90,13 @@
 \input{titlepage}
 
 %%% Jednotlivé kapitoly práce jsou pro přehlednost uloženy v samostatných souborech
-%\include{introduction}
-%\include{complex}
-%\include{hermitian_pairs}
-%\include{homology}
+\include{introduction}
+\include{algebras}
 \include{unitarizable_modules}
-%\include{invariant}
-%\include{parabolic_geometries}
-%\include{conclusion}
+\include{spaces}
+\include{invariant}
+\include{parabolic_geometries}
+\include{conclusion}
 
 %%% Seznam použité literatury
 \addcontentsline{toc}{chapter}{Bibliography}

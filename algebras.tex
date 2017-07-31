@@ -1,5 +1,331 @@
-\chapter{BGG category $\mathcal{O}$ and Lie algebra (co)homology}
+\chapter{Lie algebras and their modules}
 
+In this chapter we fix some notation and review several structural results about Lie algebras. First we start with some basic definitions concerning a Lie algebra $\lie{g}$ over a field $\k$ of real or complex numbers.
+
+\medskip
+
+
+Let $\lie{g}^{1} = \lie{g}$ and define inductively the so called \emph{lower central series} of $\lie{g}$ by $\lie{g}^{k+1} = [\lie{g},\lie{g}^{k}]$.  A subalgebra $\lie{n}$ of $\lie{g}$ is called \emph{nilpotent} if $\lie{n}^{k} = 0$ for some $k\in\N$.
+
+Let $\lie{g}^{(1)} = \lie{g}$ and define inductively the so called \emph{derived series} of $\lie{g}$ by $\lie{g}^{(k+1)} = [\lie{g}^{(k)},\lie{g}^{(k)}]$.  A subalgebra $\lie{b}$ of $\lie{g}$ is called \emph{solvable} if $\lie{b}^{(k)} = 0$ for some $k\in\N$. A \emph{Borel subalgebra} $\lie{b}$ of $\lie{g}$ is any maximal solvable subalgebra of $\lie{g}$.
+
+
+We denote by $\ad(X)$ the Lie algebra homomorphism $\lie{g}\to \lie{g}$ given by $Y\mapsto [X,Y]$. This is the \emph{adjoint representation} of $\lie{g}$.
+
+A  Lie algebra $\lie{g}$ is said to be \emph{semisimple} if it has no nonzero solvable ideal and it is called \emph{simple} if $\lie{g} = [\lie{g},\lie{g}]$ and the only ideals of $\lie{g}$ are $0$ and $\lie{g}$. Any semisimple Lie algebra is a direct sum of simple Lie algebras. An \emph{semisimple element} $X$ of $\lie{g}$ is an element of $\lie{g}$ such that $\ad X: \lie{g} \to \lie{g}$ is diagonalizable.
+
+A \emph{Cartan subalgebra} of a complex Lie algebra $\lie{g}$ is a maximal commutative subalgebra $\lie{h}$ of $\lie{g}$ consisting of semisimple elements. For a real Lie algebra $\lie{g}_\R$ we define its Cartan subalgebra $\lie{h}_\R$ as such that its complexification $\lie{h}_\C$ (see chapter \ref{ch2}) is a Cartan subalgebra of the complexification of $\lie{g}_\R$.
+
+A \emph{reductive} Lie algebra $\lie{g}$ is a Lie algebra that decomposes as $\lie{g} = \lie{z(g)} \oplus \lie{g}_{ss}$, where $\lie{z(g)}$ is the center of $\lie{g}$ and the algebra $\lie{g}_{ss} = [\lie{g},\lie{g}]$ is the \emph{semisimple part} of $\lie{g}$. Of course, as its name suggest, the algebra $\lie{g}_{ss}$ is semisimple.
+
+Let $\lie{g}$ be a real or complex Lie algebra let $B$ be a bilinear form $\lie{g}\otimes \lie{g} \to \k$. We say that $B$ is invariant if all $\ad X$, $X\in\lie{g}$ are skew-symmetric operators relative to $B$, i.e.
+\[
+ B([X,Y],Z) = -B(Y,[X,Z]), \quad \forall X,Y,Z \in \lie{g}.
+\]
+The most important invariant form is the so called \emph{Killing form} which we will denote $B$ and which exists for any Lie algebra $\lie{g}$. It is defined by
+\[
+ B(X,Y) = \tr(\ad(X) \circ ad(Y)).
+\]
+If $\phi:\lie{g} \to \lie{g}$ is any automorphism of the Lie algebra $\lie{g}$, then by definition $\ad(X) \circ \phi = \phi \circ \ad(X)$ for any $X\in\lie{g}$. This implies
+\[
+ \ad(\phi(X)) \circ \ad(\phi(Y)) = \phi \circ \ad(X)\circ\ad(Y)\circ\phi^{-1}
+\]
+and thus $B(\phi(X),\phi(Y)) = B(X,Y)$. The Cartan criterion states that a Lie algebra $\lie{g}$ is semisimple if and only if the Killing form $B$ is nondegenerate.
+
+\subsection{Complex Lie algebras}
+
+Let $\lie{g}$ be a complex semisimple Lie algebra and choose a Cartan subalgebra $\lie{h} \leq \lie{g}$. Any two Cartan subalgebras of $\lie{g}$ are conjugate by an inner automorphism of $\lie{g}$. The roots $\roots$ of $(\lie{g},\lie{h})$ are linear functionals $\alpha: \lie{h} \to \C$ such that the corresponding \emph{root space} $\lie{g}_\alpha = \{ X\in G \,|\,\forall H\in \lie{h}: [H,X] = \alpha(H) X \}$ is nonempty. In other words, roots are the nontrivial weights of the adjoint representation $\ad:\lie{g}\to\lie{g}$. The roots form a finite subset $\roots \subset \lie{h}^*$ and we have the \emph{root space decomposition}
+\[
+ \lie{g} = \lie{h} \oplus \sum_{\alpha \in \roots} \lie{g}_\alpha.
+\]
+
+If $X\in\lie{g}_\alpha$ and $Y\in\lie{g}_\beta$, then $B(X,Y) = 0$ unless $\alpha = -\beta$. Thus the Killing form induces a nondegenerate pairing on $\lie{g}_\alpha \otimes \lie{g}_{-\alpha}\to \C$. The restriction of $B$ to $\lie{h}$ is nondegenerate and, in particular, for each linear functional $\lambda \in \lie{h}^*$, there is a unique
+ element $\widetilde{H_\lambda} \in \lie{h}$ such that $\lambda(H) = B(H,H_\lambda)$ for all $H\in\lie{h}$. We can define the bilinear form $(\, , \,)$ on $\lie{h}^*$ by
+\[
+ (\lambda,\mu) = B(\widetilde{H_\lambda}, H_\mu).
+\]
+The restriction of $(\, , \, )$ to the real span of $\roots$ is positive definite (and in particular has real values).
+
+Let us summarize the properties of $\roots$
+\begin{enumerate}
+ \item For any $\alpha \in \roots$ the only nontrivial complex multiple of $\alpha$ that is also a root is $-\alpha$, i.e.
+	\[ z \alpha \in \roots, \quad z\in \C \Longleftrightarrow z \in \{ 1, -1 \}. \]
+ \item The roots spaces $\lie{g}_{-\alpha}$ are one-dimensional and the subspace spanned by $\lie{g}_{-\alpha}, \lie{g}_\alpha$ and $[\lie{g}_{-\alpha}, \lie{g}_\alpha]$ is a Lie subalgebra isomorphic to $\lie{sl}(2,\C)$.
+ \item For $\alpha, \beta \in \roots$, $\beta \neq -\alpha$ we have
+ \[
+  [\lie{g}_\alpha,\lie{g}_\beta] = \begin{cases}
+				      \lie{g}_{\alpha + \beta} & \text{ if } \alpha + \beta \in \roots \\
+				        0 & \text{otherwise}.
+                                  \end{cases}
+ \]
+ \item Let $\alpha, \beta \in \roots$ with $\beta \neq \pm \alpha$ and $z\in\C$. A functional $\alpha + z\beta$ can be a root if and only if $z\in\Z$. The set of such roots form an unbroken chain
+ \[ \beta - p\alpha, \beta -(p-1)\alpha, \ldots, \beta + (q-1)\alpha, \beta +q\alpha, \]
+       where $p,q\geq 0$ and $p-q = \frac{2(\beta,\alpha)}{(\alpha,\alpha)}$. 
+\end{enumerate}
+
+For a root $\alpha \in \roots$ we define the \emph{coroot} $H_\alpha$ as
+\[
+ H_\alpha = \frac{2}{(\alpha,\alpha)}\widetilde{H_\alpha}.
+\]
+A nonzero vectors in $\lie{g}_\alpha$ are called a \emph{root vectors}. From the properties of $\roots$ follows that we can always find root vectors $E_\alpha \in \lie{g}_\alpha$, $F_\alpha \in \lie{g}_{-\alpha}$ such that the triple $E_\alpha, F_\alpha, H_\alpha$ satisfies the canonical $\sl(2)$ relations
+\[
+ [E,F] = H, \quad [H,E] = 2E, \quad [H,F] = -2F
+\]
+
+Choose a basis $v_1, \ldots, v_r$ of $\lie{h}$ and define a linear functional $\lambda\in\lie{h}^*$ to be \emph{positive} if there is an index $j$ such that $\lambda(v_i) = 0$ for $i<j$ and $\lambda(v_j) > 0$. The \emph{positive roots} $\roots^+$ are then the roots which are positive and we obtain a disjoint union $\roots = \roots^+ \cup \roots^-$. The \emph{negative roots}  $\roots^-$ are defined as $-\roots^+$ and we will write $\alpha > 0$ or $\alpha < 0$ to indicate whether the root is positive or negative. By $\sroots$ we will denote the set of \emph{simple roots} associated with $\roots$ and the notion of positivity for $\lie{h}^*$. The simple roots are define as the set of those positive roots, which cannot be written as a sum of positive roots. The set of simple roots $\sroots$ forms a basis of $\lie{h}^*$. Alternatively, one can start with a subset $\sroots$ of $\roots$ that form a basis of $\lie{h}^*$ and declare it to be the set of simple roots. The positive and negative roots are then obtained as 
+positive or negative linear combinations of elements of $\sroots$.
+
+Let $\sroots=\{ \alpha_1, \ldots, \alpha_r \}$ be a system of simple roots for $(\lie{g},\lie{h})$. The \emph{Cartan matrix} is defined as
+\[
+ a_{ij} =\frac{2(\alpha_i,\alpha_j)}{(\alpha_i,\alpha_i)}.
+\]
+A \emph{Dynking diagram} is defined as a graph with vertex for each simple root and $i$th and $j$th vertex are joined by $a_{ij}a_{ji}$ many edges. If a two joined vertices correspond to roots of different lengths, one orients the edges by arrow pointing from the longer root to the shorter one.
+
+% Sometimes it is convenient for computations to choose a suitable basis. For a simple roots $\sroots = \{ \alpha_1, \ldots, \alpha_n \}$ choose elements $E_i$  in the root spaces $\lie{g}_{\alpha_i}$ and $F_i \in \lie{g}_{-\alpha_i}$ such that $[E_i,F_i] = \frac{2}{(\alpha_i,\alpha_i)}$. This means that $H_i =[E_i,F_i]$ satisfies $\alpha_i(H_i)=2$ and hence $E_i,F_i,H_i$ is a $\lie{sl}(2,\C)$-triple. The elements of $\{H_i, E_i, F_i : i=1,\ldots, n \}$ are called \emph{Chevalley-Serre} generators and they satisfy the so called \emph{Chevalley-Serre relations}:
+% \begin{align*}
+%  [E_i, F_j] &= \delta_{i,j}H_i \\
+%  [H_i, E_j] &= a_{ij}E_j \\
+%  [H_i, F_j] &= -a_{ij}F_j \\
+%  \ad(E_i)^{-a_{ij}+1} E_j &= 0 \\
+%  \ad(F_i)^{-a_{ij}+1} F_j &= 0 \text{ for } i\neq j.
+% \end{align*}
+
+
+
+\emph{representation, dominant, integral} %TODO
+
+For a root $\alpha \in \roots$ we define \emph{root reflection} $s_\alpha$ as
+\[
+ s_\alpha: \phi \mapsto \phi - \frac{2(\phi,\alpha)}{(\alpha,\alpha)}\alpha.
+\] It is a reflection with respect to the hyperplane orthogonal to $\alpha$ on the Euclidean space formed by the real span of $\roots$ endowed with the restriction of $(\, , \,)$. The set of roots is preserved under root reflections \( s_\alpha(\roots) = \roots\) and the group $W(\roots)$ generated by these reflections is known under the name \emph{Weyl group}. In fact, it is sufficient to take reflections with respect to simple roots to generate the whole Weyl group, i.e. $W(\sroots) = W(\roots)$.
+
+\emph{Bruhat order}%TODO
+
+\subsection{Borel and parabolic subalgebras}
+
+Given a complex Lie algebra $\lie{g}$ with a chosen Cartan subalgebra $\lie{h}$ and a system of positive roots $\roots^+$ we get a \emph{Cartan decomposition} (\emph{triangluar decomposition}) as
+\[
+ \lie{g} = \lie{n}^- \oplus \lie{h} \oplus \lie{n}, \quad \text{where } \lie{n} = \bigoplus_{\alpha \in \roots^+} \lie{g}_\alpha \text{ and } \lie{n}^- = \bigoplus_{\alpha \in \roots^-} \lie{g}_\alpha.
+\]
+The Lie subalgebras $\lie{n}$, $\lie{n}^-$ are nilpotent and $\lie{n}^-$ is called the \emph{opposite} Lie subalgebra to $\lie{n}$. The subalgebra $\lie{b} = \lie{h}\oplus \lie{n}$ is the \emph{standard Borel subalgebra} and we will denote by $\lie{b}^-$ the opposite  Borel subalgebra. It is clear from the Cartan decomposition that $\lie{b}\cap\lie{b}^- = \lie{h}$. All Borel subalgebras are conjugated by inner automorphism to the standard Borel subalgebra.
+
+A \emph{parabolic subalgebra} $\lie{p}$ of $\lie{g}$ is a subalgebra that contains a Borel subalgebra, \emph{standard parabolic subalgebra} is then a subalgebra that contains the standard Borel subalgebra. All parabolic subalgebras are conjugated by inner automorphism to a standard parabolic subalgebra.
+
+Any parabolic subalgebra $\lie{p}$ has a decomposition
+\[
+ \lie{p} = \lie{l} \oplus \lie{u}
+\]
+into its Levi part $\lie{l}$ and nilpotent part $\lie{u}$. The Levi part is a reductive Lie subalgebra of $\lie{g}$.
+
+Standard parabolic subalgebras are classified by subset of simple roots (Proposition 3.2.1 of \cite{cap_parabolic_2009}). To a standard parabolic subalgebra $\lie{p}$ we assign the subset \[\Sigma_\lie{p} = \{ \alpha\in\sroots : \lie{g}_{-\alpha}\nsubseteq \lie{p} \}.\] Conversely, the standard parabolic subalgebra $\lie{p}_\Sigma$ corresponding to a subset $\Sigma \subseteq \sroots$ is the sum of the standard Borel subalgebra $\lie{b}$ and all negative root spaces corresponding to roots $\roots_\Sigma$ which can be written as a linear combination of elements of $\sroots \setminus \Sigma$
+\[
+ \lie{p}_\Sigma = \lie{b} \oplus \sum_{\alpha \in \roots_\Sigma} \lie{g}_{-\alpha}.
+\]
+In particular, given $\Sigma \subset \sroots$ we get
+\[
+ \lie{l} = \lie{h} \oplus \sum_{\alpha \in \roots_\Sigma} \lie{g}_\alpha, \quad \lie{u} = \sum_{\alpha \in \roots^+ \setminus \roots_\Sigma} \lie{g}_{\alpha}.
+\]
+
+For $\Sigma \subseteq \Sigma' \subseteq \sroots$ we have $\lie{p}_{\Sigma'} \leq \lie{p}_\Sigma \leq \lie{g}$ and the two extreme choices $\Sigma = \emptyset$, $\Sigma = \sroots$ lead to $\lie{p}= \lie{g}$ and $\lie{p} = \lie{b}$ respectively.
+
+\emph{opposite parabolic} subalgebra %TODO
+
+It is convenient to denote parabolic subalgebras by Dynkin diagrams with crossed roots. Namely, the standard parabolic subalgebra $\lie{p}_\Sigma$ of $(\lie{g},\roots^+)$ is denoted by the Dynkin diagram of $\lie{g}$ where the nodes corresponding to $\Sigma$ are represented by crosses instead of dots. By erasing of these crossed nodes one obtains the Dynkin diagram of the semisimple part of $\lie{l}$ and the crossed nodes correspond precisely to the generators of the center of $\lie{l}$.
+
+The following lemma (whose proof can be found in \cite{cap_parabolic_2009}) shows that the parabolic subalgebras are equivalent to gradings of the lie algebra $\lie{g}$.
+\begin{lemma}
+There is a bijective correspondence between parabolic subalgebras of $\lie{g}$ and gradings $\lie{g}=\oplus_{i=-k}^k \lie{g}_i$ of $\lie{g}$.
+
+	Given $\Sigma\subset\sroots$, the set $\lie{g}_i$ ($i\neq 0)$ is defined to be $\oplus_{\phi\in A_i} \lie{g}_\phi$, where $A_i$ contains elements $\phi=\sum_{\alpha_j\in\sroots} c_j \alpha_j$ such that $\sum_{\{j:\alpha_j\in\Sigma\}} c_j=i$, and $\lie{g}_0=\lie{h}\oplus_{\phi\in A_0} \lie{g}_\phi$.
+
+	Given a grading $\oplus_j \lie{g}_j$, the parabolic subalgebra is then $\lie{p}=\oplus_{j\lie{g}eq 0}\lie{g}_j$.
+\end{lemma}
+
+\begin{lemma}[Proposition 3.1.2 of \cite{cap_parabolic_2009}]
+	Let $\lie{g}=\lie{g}_{-k}\oplus\cdots \lie{g}_k$ be a $|k|$-graded semisimple Lie algebra over $\k=\R$ or $\C$ and let $B:\lie{g}\otimes \lie{g}\to \k$ be a nondegenerate invariant bilinear form. Then we have:
+	\begin{enumerate}
+	 \item There is a unique element $E \in \lie{g}$, called the \emph{grading element}, such that \([E,X] = jX\) for all $X \in \lie{g}_j$. The element $E$ lies in the center of the subalgebra $\lie{g}_0 \leq \lie{g}$.
+	 \item The $|k|$-grading on $\lie{g}$ induces a $|k_i|$-grading for some $k_i\leq k$ on each ideal $s\subseteq \lie{g}$. In particular, $\lie{g}$ is a direct sum of $|k_i|$-graded simple Lie algebras, where $k_i\leq k$ for all $i$ and $k_i=k$ for at least one $i$.
+	 \item The isomorphism $\lie{g} \to \lie{g}^*$ provided by $B$ is compatible with the filtration and the grading of $\lie{g}$. In particular, $B$ induces dualities of $\lie{g}_0$-modules between $\lie{g}_i$ and $\lie{g}_{-i}$ and the filtration component $\lie{g}^i$ is exactly the annihilator (with respect to $B$) of $\lie{g}^{-i+1}$. Hence, $B$ induces a duality of $\lie{p}$-modules between $\lie{g}/\lie{g}^{-i+1}$ and $\lie{g}^i$, and in particular between $\lie{g}/\lie{p}$ and $\lie{p}_+$.  
+	 \item For $i<0$ we have $[\lie{g}_{i+1},\lie{g}_{-1}] = \lie{g}_i$. If no simple ideal of $\lie{g}$ is contained in $\lie{g}_)$, then this also holds for $i=0$.
+	 \item Let $A\in\lie{g}_i$ with $i>0$ be an element such that $[A,X]=0$ for all $X\in\lie{g}_{-1}$. Then $A=0$. If no simple ideal of $\lie{g}$ is contained in $\lie{g}_)$, then this also holds for $i=0$.
+	\end{enumerate}
+\end{lemma}
+
+In particular, the Killing form $B$ has the following anti-diagonal block matrix form with respect to the decomposition $\lie{g}=\lie{g}_{-k}\oplus\cdots \lie{g}_k$
+\[
+ B = \begin{pmatrix}
+      0 & \cdots & B_{k,-k} \\
+      \vdots &  \ddots & \vdots \\
+      B_{-k,k} & \cdots&0
+     \end{pmatrix},
+\]
+where $B_{i,j}$ denote the restriction of $B$ to $\lie{g}_i\otimes \lie{g}_j$.
+
+
+
+Classification of Hermitian symmetric pairs. We treat this material from the view of representation (or Lie) theory as in \cite{knapp}. Geometric treatment of Hermitian symmetric spaces is presented for example in \cite{helgason}.
+
+\subsection{Real Lie algebras}
+
+The \emph{complexification} of a real reducitve Lie algebra $\lie{g}_0$ is define as $\lie{g} = \lie{g}_0\otimes_\R \C$. With Lie bracket defined naturally by complex linear extension as follows
+\[
+ [A\otimes z, B\otimes w] = [A,B]\otimes zw.
+\]
+As a real vector space we have isomorphism $\lie{g} \simeq \lie{g}_0 \oplus \imath \lie{g}_0$ defined by $X\otimes (a+\imath b) \mapsto aX \oplus \imath bX$. Writing elements $Z,Z'\in\lie{g}$ as $Z = X + \imath Y$ $Z'=X'+\imath Y'$ we get \[[Z,Z'] = [X,X'] - [Y,Y'] + \imath \left( [X,Y'] + [X',Y]\right).\]
+
+A \emph{real form} of a complex Lie alebra $\lie{g}$ is a real Lie algebra $\lie{g}_0$ such that $\lie{g}$ is the complexification of $\lie{g}_0$. A complex Lie algebra usually has many nonisomorphic real forms. For a complexification $\lie{g}$ of $\lie{g}_0$ we will denote by $\sigma$ the conjugation of $\lie{g}$ with respect to the real form $\lie{g}_0$.
+
+\begin{example}
+ The complexification of the classical Lie algebra of trace-free real matrices $\lie{sl}(n,\R)$ is naturally isomorphic to the Lie algebra of trace-free complex matrices $\lie{sl}(n,\C)$. Anoter real form of $\lie{sl}(n,\C)$ is for example the algebra of trace-free skew Hermitian  matrices  $\lie{su}(n)$. %TODO
+\end{example}
+
+An \emph{involution} of a Lie algebra $\lie{g}$ is Lie algebra homomorphism $\lie{g}\to\lie{g}$ which squares to identity. An involution $\theta$ of a real semisimple Lie algebra $\lie{g}_0$ is called \emph{Cartan involution} if the symmetric bilinear form $B_\theta(X,Y) = -B(X,\theta Y)$ is postivive definite. We will denote the complex linear extension of $\theta$ to the complexification of $\lie{g}_0$ by the same symbol and we will still call it the Cartan involution. Any real semisimple Lie algebra has a Cartan involution and it is unique up to inner automorphism.
+
+\begin{example}
+  Cartan involution on $\lie{sl}(n,\R)$ is given by negative transpose, i.e. $\theta X = - X^t$. The subalgebra $\lie{k}_0$ is then $\lie{so}(n,\R)$ and the ideal $\lie{p}_0$ is the space of symmetric matrices.
+
+ For $\lie{su}(n)$ is a Cartan involution given by a negative conjugate transpose $\theta X = - \overline{X}^t$. The subalgebra $\lie{k}_0$ is the whole $\lie{su}(n)$ and $\lie{p}_0$ is of course empty.
+\end{example}
+
+We can generalize this as follows. Take a matrix Lie algebra, i.e. a subalgebra of $\lie{gl}(n,\C)$, that is closed under transposition and define $\theta X = -X^\dag$. Then
+ \[
+  \theta [X,Y] = -[X,Y]^\dag = - [Y^\dag,X^\dag] = [-X^\dag,-Y^\dag] = [\theta X, \theta Y]
+ \]
+ shows that $\theta$ is involution. Using the fact that $B$ is invariant with respect to automorphisms we get that
+ \begin{align*}
+  B_\theta(X,Y) &= -B(x,\theta Y) = - B(\theta X, \theta^2 Y) \\
+                &= -B(\theta X, Y) = B_\theta(X,Y),
+ \end{align*}
+ which demonstrates that $B_\theta$ is symmetric. To show that it is also positive definite, we first need to show that for a scalar product $\langle X,Y \rangle = \Re (XY^\dag)$ we have that the adjoint of $\ad X$ is $\ad X^\dag$.
+ \begin{align*}
+  \langle [X,Y],Z \rangle &= \Re\tr (XYZ^\dag - YXZ^\dag) = \\
+			  &= \Re\tr (YZ^\dag X - YXZ^\dag) =  \\% = \Re\tr (Y (Z^\dag X - X Z^\dag))\\
+                          &= \Re\tr( Y(X^\dag Z - ZX^\dag)^\dag) = \langle Y, [X^\dag,Z] \rangle.
+ \end{align*}
+ Now we can show that $B_\theta$ is in fact positive definite as follows
+ \begin{align*}
+  B_\theta(X,X) &= -B(X,\theta X) = -\tr (\ad X \circ \ad \theta X )\\
+                &= \tr (\ad X \circ \ad (X^\dag))  = tr (\ad X (\ad X)^*) \geq 0.
+ \end{align*}
+
+In fact, any real semisimple Lie algebra $\lie{g}_0$ is isomorphic to a Lie algebra of real matrices that is closed under transpose and the isomorphism can be chosen in such a way that the Cartan involution of $\lie{g}_0$ is carried to negative transpose (Proposition VI.6.28 of \cite{knapp}).
+
+A Cartan involution $\theta$ of $\lie{g}_0$ yields an eigenspace decomposition $\lie{g}_0 = \lie{k}_0 \oplus \lie{p}_0$ of $\lie{g}_0$ into $+1$ and $-1$ eigenspaces of $\theta$. Since $\theta$ is a Lie algebra homomorphism, it follows that
+\begin{equation}\label{eq:cartan_decomposition_1}
+ [\lie{k}_0,\lie{k}_0] \subseteq \lie{k}_0, \quad[\lie{k}_0,\lie{p}_0] \subseteq \lie{p}_0, \quad [\lie{p}_0,\lie{p}_0] \subseteq \lie{k}_0.
+\end{equation}
+From these relations it is easy to derive that $\lie{k}_0$ and $\lie{p}_0$ are orthogonal with respect to $B_\theta$ and $B$. If $X$ is in $\lie{k}_0$ and $Y$ is in $\lie{p}_0$, then $\ad X \circ \ad Y $ sends $\lie{k}_0$ to $\lie{p}_0$ and $\lie{p}_0$ to $\lie{k}_0$; i.e. as a matrix in block form subordinated to the decomposition $\lie{g}_0 = \lie{k}_0 \oplus \lie{p}_0$ it has the form $\begin{smatrix} 0 & * \\ * & 0\end{smatrix}$. Thus it has trace $0$ and $B(X,Y) = 0$ and since $\theta Y = - Y$ also $B_\theta (X,Y) = 0$. Because $B_\theta$ is positive definite, the eigenspacese have the property that
+\begin{equation}\label{eq:cartan_decomposition_2}
+ B \text{ is } \begin{cases} \text{negative definite on } \lie{k}_0 \\ \text{positive definite on } \lie{p}_0. \end{cases}
+\end{equation}
+
+A decomposition of $\lie{g}_0 = \lie{k}_0 \oplus \lie{p}_0$ that satisfies \eqref{eq:cartan_decomposition_1} and \eqref{eq:cartan_decomposition_2} is called \emph{Cartan decomposition} of $\lie{g}_0$. Conversely any Cartan decomposition defines a Cartan involution by
+\[
+\theta =
+ \begin{cases}
+  + \Id \text{ on } \lie{k}_0 \\
+  - \Id \text{ on } \lie{p}_0
+ \end{cases}
+\]
+and we see that Cartan involutions are in bijective correspondence with Cartan decompositions.
+
+Cartan involutions and decompositions can be even pushed to the Lie group level.
+\begin{theorem}[Theorem VI.6.31 of \cite{knapp}]
+ Let $G$ be a semisimple Lie group, let $\theta$ be a Cartan involution of its Lie algebra $\lie{g}_0$, let $\lie{g}_0 = lie{k}_0 \oplus \lie{p}_0$ be the corresponding Catan decomposition, and let $K$ be the analytic subgroup of $G$ with Lie algebra $\lie{k}_0$. Then
+ \begin{enumerate}
+  \item there exists a Lie group automorphism $\Theta$ of $G$ with differential $\theta$, and $\Theta^2=\Id$
+  \item the subgroup of $G$ fixed by $\Theta$ is $K$
+  \item the mapping $K\times \lie{p}_0 \to G$ given by $(k,X)\mapsto k \exp{X}$ is a diffeomorphism onto
+  \item $K$ is closed and contains the center $Z$ of $G$
+  \item $K$ is compact if and only if $Z$ is finite in which case it is a maximal compact subgroup of $G$.
+ \end{enumerate}
+\end{theorem}
+
+This theorem justifies the following definition. We will call a real form $\lie{g}_0$ of $\lie{g}$ \emph{compact} if $\lie{g}_0 = \lie{k}_0$, i.e. if the Killing form $B$ is negative definite.
+
+Take a Cartan decomposition $\lie{g}_0 = \lie{k}_0 \oplus \lie{p}_0$ and consider $\lie{g}_0$ as a subset of its complexification $\lie{g}$. Inspecting the signature of $B_\theta$ we easily see that $\lie{k}_0\oplus \imath \lie{p}_0$ is a compact form, say $\lie{u}_0$, of $\lie{g}$. Denote by $\sigma$ the conjugation of $\lie{g}$ with respect to the real form $\lie{g}_0$ and let $\tau$ denote the conjugation with respect to $\lie{u}_0$. Both $\sigma$ and $\tau$ are either $\Id$ or $-\Id$ on $\lie{k}_0, \imath \lie{k}_0, \lie{p}_0, \imath \lie{p}_0$. This immediately implies that the two involutions commute $\sigma \circ \tau = \tau \circ \sigma$. In particular $\tau (\lie{g}_0) \subseteq \lie{g}_0$ and the restriction of $\tau$ to $\lie{g}_0$ is the Cartan involution $\theta$ corresponding to the Cartan decomposition $\lie{g}_0=\lie{k}_0 \oplus \lie{p}_0$.
+
+Conversely, given a compact form $\lie{u}_0$ of a complexification $\lie{g}$ of $\lie{g}_0$ such that the corresponding conjugations $\tau$ and $\sigma$ commute, we get a Cartan involution for $\lie{g}_0$ by restriction of the involution $\tau$ that corresponds to the compact form $\lie{u}_0$. Indeed, since $\lie{g}_0 \subseteq \lie{g} = \lie{u}_0 \oplus \imath \lie{u}_0$, we get for any $X+\imath Y\in\lie{g}_0$
+\[
+ B_\theta (X+\imath Y,X+\imath Y) = -B(X+\imath Y,X-\imath Y) = -B(X,X) - B(Y,Y),
+\]
+which is positive definite since $X,Y$ are elements from the compact Lie algebra $\lie{u}_0$.
+
+A semisimple Lie algebra has up to inner isomorphism only one compact real form and it can be even shown that the compact form can be chosen in such a way that the corresponding conjugation $\tau$ commutes with any apriori chosen involution $\sigma$ of $\lie{g}$. This is the core of the proof of existence of Cartan involution for arbitrary real semisimple Lie algebra $\lie{g}_0$.
+
+To summarize, if $\lie{g}_0 = \lie{k}_0 \oplus \lie{p}_0$ is a Cartan decomposition of $\lie{g}_0$, then $\lie{k}_0 \oplus \imath \lie{p}_0$ is a compact  real form of the complexification $\lie{g}$ of $\lie{g}_0$. Conversely, if $\lie{k}_0$ and $\lie{p}_0$ are the $+1$ and $-1$ eigenspaces of an involution $\sigma$ of $\lie{g}$ then $\sigma$ is Cartan involution if and only if the real form $\lie{k}_0 \oplus \imath \lie{p}_0$  is compact.
+
+In the following we will use this simple lemma.
+\begin{lemma}\label{lem:theta_adjoint}
+ If $\lie{g}_0$ is a real semisimple Lie algebra and $\theta$ is a Cartan involution, then the adjoint operator to $\ad X$ with respect to $B_\theta$ is $-\ad \theta X$, i.e.
+ \begin{equation*}
+  (\ad X)^* = -\ad \theta X, \quad \forall X\in\lie{g}_0
+ \end{equation*}
+\end{lemma}
+\begin{proof}
+  We have for all $Y,Z\in\lie{g}$
+  \begin{align*}
+  B_\theta((\ad X)Y,Z) &= -B([X,Y],\theta Z) = B(Y,[X,\theta Z]) \\
+                       &= B(Y,[\theta^2 X, \theta Z]) = B(Y,\theta [\theta X, Z]) \\
+		       &= -B_\theta(Y,[\theta X,Z]) = B_\theta(Y,(-\ad \theta X)Z).
+  \end{align*}
+\end{proof}
+
+In addition to compact form, there is always another real form (also unique up to conjugation) of a complex semisimple Lie algera $\lie{g}$. Let $\lie{h}_0$ be a Cartan subalgebra of $\lie{g}$ and consider its complexification $\lie{h}$ which is (by definition) a Cartan subalgebra of $\lie{g}$. We call a real Lie algebra $\lie{g}_0$ a \emph{split form} of $\lie{g}$ if the restrictions of elements of $\lie{h}^*$ to $\lie{h}_0$ are real valued.
+
+To construct a split real form we can just take a suitable basis of $\lie{g}$ and its real span. In details, take a complex Lie algebra $\lie{g}$ and its Cartan subalgebra $\lie{h}$ and define $\lie{h}_0$ as the subset of $\lie{h}$ on which all the roots take only real values. There is always a choice (see Theorem VI.6.6 of \cite{knapp_advanced}) of root vectors $X_\alpha \in \lie{g}_\alpha$ such that $[X_\alpha, X_{-\alpha}] = H_\alpha$ and
+\begin{gather*}
+\beta \neq -\alpha \,\&\, \alpha + \beta \notin \roots \Longrightarrow [X_\alpha,X_\beta]=0 \\
+ \alpha + \beta \in\roots \Longrightarrow [X_\alpha, X_\beta] = N_{\alpha,\beta}X_{\alpha+\beta},
+\end{gather*}
+where $N_{\alpha,\beta}\in\R$ and $N_{\alpha,\beta} = -N_{-\alpha,-\beta}$. Now the split form of $\lie{g}$ is obtained as
+\[
+ \lie{g}_\text{split} = \lie{h}_0 \oplus \bigoplus_{\alpha \in\roots} \R X_\alpha
+\]
+and a compact form of $\lie{g}$ can be then given as
+\[
+ \lie{k}_0 = \imath \lie{h}_0 \oplus \bigoplus_{\alpha\in\roots^+} \R (X_\alpha - X_{-\alpha}) \oplus \imath \R (X_\alpha + X_{-\alpha}).
+\]
+
+Let $\lie{g}_0$ be a real semisimple Lie algebra and let $\theta$ be its Cartan involution. A Cartan subalgebra $\lie{h}_0$ of $\lie{g}_0$ is called \emph{$\theta$-stable} if $\theta(\lie{h}_0)=\lie{h}_0$. In such a case we have $\lie{h}_0= (\lie{h}_0\cap\lie{k}_0) \oplus (\lie{h}_0\cap\lie{p}_0$, where $\lie{g}_0 = \lie{k}_0\oplus\lie{p}_0$ is the Cartan decomposition. We call the dimension of $\lie{h}_0\cap\lie{k}_0$ the \emph{compact dimension} of a $\theta$-stable  Cartan subalgebra $\lie{h}_0$ and similarly the dimension of $\lie{h}_0\cap\lie{p}_0$ is called the \emph{noncompact dimension} of $\lie{h}_0$. A $\theta$-stable Cartan subalgebra $\lie{h}_0 \leq \lie{g}_0$ is called \emph{maximally compact} or \emph{maximally noncompact} if and only if its compact (respectively noncompact) dimension is maximal possible.
+
+%TODO theta stabilita, komplexni konjugace a akce thety (viz Vogan, mozna Knapp)
+
+%\subsection{Iwasawa decomposition}
+In contrast to the complex case, Cartan subalgebras of real Lie algebras are not unique up to conjugation. Up to conjugation by inner automorphism, there is a finite number of Cartan subalgebras and any Cartan subalgebra is conjugated via an inner automorphism to a $\theta$-stable Cartan subalgebra. Moreover there is up to conjugation by an element of $K$ only one maximally compact (or maximally noncompact) $\theta$-stable Cartan subalgebra of $\lie{g}_0$.
+
+Let $\lie{g}$ be a complexification of $\lie{g}_0$ and let $\lie{h}$ be a complexification of a $\theta$-stable maximally noncompact Cartan subalgebra $\lie{h}_0$ of $\lie{g}_0$. Let $\sigma$ be a complex conjugation of $\lie{g}$ with respect to the real form $\lie{g}_0$. For $\alpha\in\roots$ we define $\sigma^* \alpha$ by $(\sigma^* \alpha) (H) = \overline{\alpha(\sigma H)}$ for all $H\in\lie{h}$. Since $\sigma$ is conjugate linear, $\sigma^*\alpha$ is again a complex linear form on $\lie{h}$ and identifying $\Hom_\C(\lie{h},\C)$ with $\Hom_\R(\lie{h}_0,\C)$, the map $\sigma^*$ coincides with complex conjugation. In fact, $\sigma^*$ is an involutive automorphism of the root system $\roots(\lie{g},\lie{h})$. A root $\alpha \in \roots(\lie{g},\lie{h})$ is called \emph{compact root} if $\sigma^*\alpha = -\alpha$. The set of compact roots is denoted by $\roots_c$.
+
+\begin{proposition}[Proposition 2.3.8 of \cite{cap_parabolic_2009}]
+ The set of compact roots is given by $\roots_c = \{ \alpha \in \roots \,:\,\alpha|\lie{a} = 0 \}$. It is an abstract root system on the Euclidean subspace of $\imath \lie{t}\oplus \lie{a}$ spanned by its elements. For $\alpha\in\roots_c$, the root space $\lie{g}_\alpha$ is contained in $\lie{k}\leq \lie{g}$.
+\end{proposition}
+
+%\subsection{Satake diagrams}
+
+Choose a set of positive roots $\roots^+$ such that $\sigma^* \alpha \in \roots^+$ for all $\alpha\in\roots^+\setminus\roots_c$. One way to obtain such a system of positive roots is to choose ordering of $\roots$ by choosing a basis $\{H_1,\ldots, H_p\}$ of $\lie{a}$ and extending it to a basis $\{H_1,\ldots,H_r\}$ of $\imath\lie{t}\oplus\lie{a}$. By definition $\alpha\in\roots^+$ if and only if there is an index $j$ such that $\alpha(H_j) > 0$ and $\alpha(H_i) = 0 $ for all $i<j$. By definition $\alpha(H_i)\neq 0$ for some $i\leq p$ for $\alpha \in \roots^+\setminus \roots_c$ and since all $\alpha(H_j)$ are real, $\sigma H_i = H_i$ for $i\leq p$ and $\sigma(H_i) = -H_i$ for $i>p$.
+
+Let $\sroots$ be the set of simple roots of $\roots^+$ and put $\sroots_c = \sroots \cap \roots_c$. Then $\sroots_c$ are a system of simple roots for $\roots_c$ and we order our system of simple roots $\sroots$ in such a way that elements of $\sroots_c$ come last. The following lemma is due to Ichir{o} Satake.
+\begin{lemma}
+\begin{enumerate}
+ \item The element $\sigma^*\alpha - \alpha$ is not a root for any $\alpha\in\roots$.
+ \item For $\alpha \in \sroots \setminus \sroots_c$, there is a unique element $\alpha'\in\sroots\setminus\sroots_c$ such that $\sigma^*\alpha-\alpha'$ is a linear combination of compact roots.
+\end{enumerate}
+\end{lemma}
+
+The \emph{Satake diagram} of the real Lie algebra $\lie{g}_0$ is defined as follows. In the Dynkin diagram associated to the simple system $\sroots$, represent compact roots by a black dot and roots in $\sroots\setminus\sroots_c$ by a white dot. Moreover, for any $\alpha\in\sroots\setminus\sroots_c$ such that $\sigma^*\alpha\neq\alpha$, connect $\alpha$ by an arrow  to the unique simple root $\alpha'\in\sroots\setminus\sroots_c$ such that $\sigma^*\alpha -\alpha'$ is a linear combination of compact roots.
+
+
+
+%\subsection{Parabolic subalgebras of real Lie algebras}
+
+\begin{definition}[page 274, \cite{vogan}]
+ Let $\lie{q}$ be a parabolic subalgebra of the complexification of a real semisimple Lie algebra $\lie{g}_0$ and let $\theta$ be the corresponding Cartan involution. We will call $\lie{q}$ to be $\theta$-stable if $\theta \lie{q} = \lie{q}$. It follows then that also the opposite parabolic subalgebra $\lie{q}^-$ is $\theta$-stable and that the Levi part is $\theta$-stable $\theta \lie{l} = \lie{l}$.
+\end{definition}
+
+For a real Lie algebra $\lie{g}_0$ we define $\lie{q}_0$ to be a parabolic subalgebra if and only if the complexification $\lie{q}$ is a parabolic subalgebra of the complexification $\lie{g}$. Similarly to the complex case, there is an equivalence between parabolic subalgebra $\lie{g}$ and gradings on $\lie{g}$ also in the real category. The standard parabolic subalgebras are given by crossed roots in Satake diagrams, where we are allowed to cross only white roots (i.e. those that are not in $\roots_c$.
+
+%TODO rozepsat, real Iwasawa?s
 
 \section{BGG category $\mathcal{O}$}
 
