@@ -1,0 +1,108 @@
+
+\subsection[Sp(n,R)]{$\mathrm{Sp}(n,\R) \sim C_n, n \geq 2$}
+
+\subsubsection{Root system data}
+
+\[ \alpha_i = \epsilon_i - \epsilon_{i+1}, i< n,a_n = 2\epsilon_n, \quad \omega_i=\epsilon_1+\cdots+\epsilon_i\]
+\begin{align*}
+ \roots &= \{\pm \epsilon_i \pm \epsilon_j | i,j = 1,\ldots, n \}\setminus\{0\}\\
+ \roots_c^+ &= \{ \epsilon_i-\epsilon_j | 1\leq i < j \leq  n\}\\
+ \roots_n^+ &= \{ \epsilon_i + \epsilon_j | 1 \leq i \leq  j \leq n \}
+\end{align*}
+\[\beta = 2\epsilon_1,\quad \rho = (n,\ldots ,1),\quad \zeta = (1,1,\ldots,1)\]
+\inserttikzfigure{diagrams/dynkin_Cn_n.tikz}{Marked Dynkin diagram of $\mathrm{Sp}(n,\R)$}
+
+The reduction points of unitarizable highest weight modules are the following integral translated cones $\lambda_a + C_a$:
+Let $a=(Q,R,l)$, $R=\mathrm{Sp}(r,\R)$ and $1\leq l \leq r \leq n$. Then
+\[
+ C_a = \{ a_r\omega_r + \cdots + a_n\omega_n \,|\, a_n=-(a_r+\cdots + a_{n-1}) \}
+\]
+and
+\begin{gather*}
+  \lambda_a = \omega_q + \omega_r - (2+n-\frac{1}{2}(r+q-l+1))\omega_n\\
+  \mu_a= \omega_{q-l} + \omega_{r-l} - (2+n-\frac{1}{2}(r+q-l+1))\omega_n\\
+   1\leq q\leq r\leq n,\quad 1\leq l \leq q\\
+   Q(\lambda_a) = \mathrm{Sp}(q,\R),\quad R(\lambda_a)= \mathrm{Sp}(r,\R)
+\end{gather*}
+
+\subsubsection{Nilpotent cohomology in detail}
+
+Scalar products of $\rho$ with noncompact roots
+\begin{align*}
+ (\epsilon_i - \epsilon_j, \rho ) & = n-i+1 - (n-j+1) = j - i \\
+ (\epsilon_i + \epsilon_j, \rho ) & = n-i+1 + (n-j+1) = 2n+2-i-j.
+\end{align*}
+
+
+The $i$th coordinate of $\lambda$ with respect to the $\epsilon$-basis is
+\[
+ (\epsilon_i, \lambda) = \begin{cases}
+                          2+ \frac{1}{2}(r+q-l+1) - n -2, & 1\leq i \leq q \\
+                          1 + \frac{1}{2}(r+q-l+1) - n -2,  & q < i \leq r \\
+                          \frac{1}{2}(r+q-l+1) - n -2,  & r < i.
+                         \end{cases}
+\]
+Computation of $(\epsilon_i - \epsilon_j, \lambda + \rho)$ for $j > i$ leads to the following table
+\begin{center}
+\begin{tabular}{C|CCC}
+                  & 1 < j \leq q & q < j \leq r & r < j \leq n \\[2pt]\hline
+   1\leq i \leq q & j - i        & 1+j-i        & 2+j-i        \\
+  q < i \leq r    &              & j-i		& 1+j-i        \\
+  r < i \leq n	  & 		 & 		& j-i	
+\end{tabular}
+\end{center}
+and  scalar products of the remaining positive roots $\epsilon_i + \epsilon_j$, $j\geq i$ are
+\begin{center}
+\begin{tabular}{C|CCC}
+                  & 1 < j \leq q & q < j \leq r & r < j \leq n \\[2pt]\hline
+   1\leq i \leq q & 3+m-i-j      & 2 + m -i-j   & 1 + m  -i-j      \\
+  q < i \leq r    &              & 1 + m-i-j	& m    -i-j    \\
+  r < i \leq n	  & 		 & 		& m-1-i-j
+\end{tabular}
+\end{center}
+where
+\[
+ m = r+q-l.
+\]
+We see again that only noncompact roots can be orthogonal to $\lambda+\rho$ in accordance with the lemma \ref{lem:singular_are_noncompact}. If a positive noncompact root $\epsilon_i + \epsilon_j$ belongs to $\Psi^+_\lambda$, then
+\begin{enumerate}
+  \item $1\leq i \leq q$
+    \begin{enumerate}
+      \item $1 \leq j \leq q$: \[ 3+r-l \leq i \leq \min \left\{ q, \frac{3+m}{2} \right \}\]
+      \item $q < j \leq r$: \[ 2+q-l \leq i \leq \min \{ 1+r-l, q \}  \]
+      \item $r < j \leq n$: \[ \max \{ 1, 1+m-n \} \leq i \leq q-l  \]
+    \end{enumerate}
+  \item $q <  i \leq r$
+    \begin{enumerate}
+      \item $q < j \leq r$: \[  1+q \leq i \leq \frac{1+m}{2} \]
+      \item $r < j \leq n$: \[ m-n \leq i < q-l \]
+    \end{enumerate}
+  \item $r < i \leq n$, \quad $r < j \leq n$: \[ \max \{ r+1,  m-n-1 \} \leq i \leq \frac{m-1}{2}. \]
+\end{enumerate}
+The set of indices 2a is empty, because $q-l < q$; similarly the third set is empty since $r+1 > \frac{m-1}{2}$.
+
+A singular long root exists if and only if
+\[
+  m \text{ is odd and } (3+r \leq q+l \text{ or } q+l < 1+r)
+\]
+or alternatively a singular root doesn't exist if and only if
+\[
+ m \text{ is even or } m \text{ is odd and either } q+l = 2+r \text{ or } q+l = 1+r.
+\]
+
+
+Two positive noncompact roots are orthogonal if and only if the intersection of their indices is empty, i.e.
+\[
+ (\epsilon_i + \epsilon_j,\epsilon_k + \epsilon_l) = 0 \Longleftrightarrow \{i,j\} \cap \{k,l\} = \emptyset.
+\]
+
+
+\begin{figure}[H]
+  \centering 
+  \resizebox{\textwidth}{!}{%
+	\input{diagrams/nroots_C5_5.tikz}
+	\input{diagrams/bruhat_C5_5.tikz} %
+	}
+  \caption{Poset of noncompact roots and the BGG graph for $\mathrm{Sp}(5,\R)$}
+\end{figure} 
+

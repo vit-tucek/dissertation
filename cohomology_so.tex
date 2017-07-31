@@ -1,0 +1,180 @@
+
+\subsection[SO*(2n)]{$\mathrm{SO}^*(2n) \sim D_n, n\geq 4$}
+
+\subsubsection{Root system data}
+
+\[\alpha_i = \epsilon_i - \epsilon_{i+1}, i<n, \alpha_n = \epsilon_{n-1} + \epsilon_n\]
+\[\omega_i = \epsilon_1+\cdots \epsilon_i, i < n-1, \quad \omega_{n-1} = \frac{1}{2}(\epsilon_1 + \cdots \epsilon_{n-1}-\epsilon_n), \quad \omega_{n} = \frac{1}{2}(\epsilon_1 + \cdots \epsilon_{n-1}+\epsilon_n)\]
+\begin{align*}
+ \roots &= \{ \pm \epsilon_i \pm \epsilon_j | i\neq j, i,j = 1\ldots n \} \\
+ \roots_c^+ &= \{ \epsilon_i-\epsilon_j | 1\leq i < j \leq  n\}\\
+ \roots_n^+ &= \{ \epsilon_i + \epsilon_j | 1 \leq i <  j \leq n \}
+\end{align*}
+\[\beta = \epsilon_1+\epsilon_2,\quad \rho = (n-1,\ldots ,1,0),\quad \zeta = \frac{1}{2}(1,1,\ldots,1)\]
+\inserttikzfigure{diagrams/dynkin_Dn_n.tikz}{Marked Dynkin diagram for $\mathrm{SO}^*(2n)$}
+
+\begin{center}\begin{threeparttable}
+\begin{tabular}{CCCCC}
+  \text{Vertex } \lambda_a & \text{Weight } \mu_a &  Q(\lambda_a) = R(\lambda_a)& l(\lambda_a) \\ \hline
+  \omega_2 - (2n-2)\omega_n & -(2n-2)\omega_n & \mathrm{SU}(1,1) &  1 \\
+  \omega_p -2(n-p+l) \omega_n & \omega_{p-2l}-2(n-p+l)\omega_n & \mathrm{SO}^*(2p)\tnote{1} & 1\leq l \leq \floor{\frac{p}{2}} \\
+  \omega_{n-1} - (1+2l)\omega_n & \omega_{n-1-2l} - 2(1+l)\omega_n &  \mathrm{SO}^*(2n-2) & 1\leq l \leq \floor{\frac{n-1}{2}} \\
+  -(2l-2)\omega_n & \omega_{n-2l} - 2l\omega_n &  \mathrm{SO}^*(2n)  & 1\leq l \leq \floor{\frac{n}{2}} \\
+  \omega_1 +\omega_{q+1} - (2n-q)\omega_n & \omega_q -(2n-q)\omega_n & \mathrm{SU}(1,q)\tnote{2} & 1\\
+  \omega_1 +\omega_{n-1} - (n+1)\omega_n & \omega_{n-2} - (n+2)\omega_n &  \mathrm{SU}(1,n-2)  & 1 \\
+  \omega_1 -(n-1)\omega_n & \omega_{n-1} - n\omega_n &  \mathrm{SU}(1,n-1)  & 1
+\end{tabular}
+\smallskip
+\begin{tablenotes}
+ \item [1] $3 \leq p \leq n-2$
+ \item [2] $2 \leq q \leq n-3$
+\end{tablenotes}\caption{Vertices and root systems for $\mathrm{SO}^*(2n)$, $n\geq 4$}
+\end{threeparttable}\end{center}
+
+Let $a=(Q,R,l)$, $Q=R$. Then for $R=\mathrm{SO}^*(2p)$, $3\leq p\leq n$
+\[
+ C_a = \{a_p\omega_p+\cdots + a_n\omega_n \,|\, a_n = -2a_p - \cdots -2a_{n-2} - a_{n-1}\}
+\]
+and for  $R=\mathrm{SU}(1,q)$, $1\leq q \leq n-1$
+\[
+ C_a = \{a_1\omega_1 + a_{q+1}\omega_{q+1} + \cdots + a_n\omega_n \,|\, a_n = -(a_1 + 2a_{q+1} + \cdots + 2a_{n-2} + a_{n-1})\}.
+\]
+
+\subsubsection{Nilpotent cohomology in detail}
+
+Scalar products of positive noncompact roots with $\rho$ are
+\[
+ (\epsilon_i + \epsilon_j, \rho) = 2n - i -j.
+\]
+
+\begin{enumerate}
+ \item $\lambda =  \omega_2 - (2n-2)\omega_n $\\
+  \[
+   (\epsilon_i + \epsilon_j,\lambda+\rho) = \begin{cases}
+                                             1, &  i=1,j=2 \\
+                                             2-j, & i=1, 2 < j \leq n\\
+                                             1-j, & i=2, 2 < j \leq n \\
+                                             2-i-j, & 2 < i < j
+                                            \end{cases}
+  \]
+  \[
+   \Psi^+_\lambda = \emptyset, \quad \roots^+_{n,\lambda} = \{ \epsilon_1 + \epsilon_2 \}
+  \]
+
+ \item $\lambda = \omega_p -2(n-p+l) \omega_n$, $3\leq p \leq n-2$, $1\leq l \leq \floor{\frac{p}{2}}$\\
+  \[
+   (\epsilon_i + \epsilon_j,\lambda+\rho) = \begin{cases}
+                                             2(p-l+1)-i-j, & 1\leq i < j \leq p \\
+                                             2(p-l)+1-i-j, & 1 \leq i \leq p < j \leq n\\
+                                             2(p-l)-i-j, &  p <i < j \leq n
+                                            \end{cases}
+  \]
+  \begin{multline*}
+   \Psi^+_\lambda = \{ \epsilon_i + \epsilon_{2(p-l)+1-i} \,|\, \max\{1,1+2(p-l)-n\} \leq i < p-2l+1 \} \cup \\  \{ \epsilon_i + \epsilon_{2(p-l)+2-i} \,|\, p-2l+2 \leq i < p-l+1 \}
+  \end{multline*}
+  \begin{multline*}
+   (\Psi^+_\lambda)^\perp \supseteq \{ \epsilon_i + \epsilon_j \,|\, \\ i,j \in \{ 1,\ldots,\max\{0,2(p-l)-n\},p-2l+1,p-l+1,\min\{ 2(p-l),n \}+1.\ldots,n \} \}
+  \end{multline*}
+  \[
+   \roots^+_{n,\lambda} = \{ \}
+  \]
+
+  
+ \item $\lambda = \omega_{n-1} - (1+2l)\omega_n  $, $  1\leq l \leq \floor{\frac{n-1}{2}}$  \\
+  \[
+   (\epsilon_i + \epsilon_j,\lambda+\rho) = \begin{cases}
+                                             2(n-l)-i-j, & 1 \leq i<	j < n \\
+                                             n-2l-1-i, & 1 \leq i< n = j
+                                            \end{cases}
+  \]
+  \begin{enumerate}
+   \item $n$ is odd and $l=\frac{n-1}{2}$\\
+    \[
+      \Psi^+_\lambda = \Big\{\epsilon_i + \epsilon_{n+1-i} \,\big|\, 1<i< \frac{n+1}{2} \Big\}
+    \]
+    \[
+      \roots^+_{n,\lambda} = \left\{ \epsilon_1 + \epsilon_{\frac{n+1}{2}} \right\}
+    \]
+    
+   \item $n$ even or $n$ odd and $l < \frac{n-1}{2}$\\
+    \[
+      \Psi^+_\lambda = \{\epsilon_i + \epsilon_{2(n-l)-i} \,|\, n-2l<i<n-l \} \cup \{ \epsilon_{n-2l-1} + \epsilon_n \}
+    \]
+    \[
+      \roots^+_{n,\lambda} = \{ \epsilon_i + \epsilon_j \,|\, i < j \et i,j\in \{1,\ldots,n-2l-2,n-2l,n-l\} \}
+    \]
+  \end{enumerate}
+  
+ \item $\lambda = -(2l-2)\omega_n $, $ 1\leq l \leq \floor{\frac{n}{2}} $\\
+ \[
+  (\epsilon_i + \epsilon_j,\lambda+\rho) = 2(n-l+1)-i-j
+ \]
+ \[
+  \Psi^+_\lambda = \{ \epsilon_i + \epsilon_{2(n-l+1)-i} \,|\, n + 2(1-l) \leq i \leq n-l  \} 
+ \]
+ \[
+  \roots^+_{n,\lambda} =  \{ \epsilon_i + \epsilon_j \,|\, i < j \et i,j \in \{ 1,\ldots, n-2l+1,n-l+1 \} \}
+ \]
+
+ 
+ \item $\lambda =  \omega_1 +\omega_{q+1} - (2n-q)\omega_n$, $ 2\leq q \leq n-3$\\
+  \[
+   (\epsilon_i + \epsilon_j,\lambda+\rho) = \begin{cases}
+                                             2+q-j, & i = 1, 2\leq j \leq q+1 \\
+                                             1+q-j, & i = 1, q+1 < j \leq n \\
+                                             2+q-i-j, & 2\leq i < j \leq q+1 \\ % here are the only singular roots
+                                             1+q-i-j, & 2\leq i \leq q+1 < j \leq n \\
+                                             q-i-j, &   q+1 < i < j \leq n \\
+                                            \end{cases}
+  \]
+  \[
+   \Psi^+_\lambda = \Big\{ \epsilon_i + \epsilon_{2+q-i} \,\big|\, 1 < i < \frac{q}{2}+1 \Big\}
+  \]
+  \[
+   \roots^+_{n,\lambda} = \begin{cases}
+                           \{ \epsilon_1 + \epsilon_{q+1}  \}, & q \text{ is odd}\\
+                           \big\{ \epsilon_1 + \epsilon_{q+1}, \epsilon_1 + \epsilon_{\frac{q}{2}+1}   \big\}, & q \text{ is even}
+                          \end{cases}
+  \]
+  
+ \item $\lambda = \omega_1 +\omega_{n-1} - (n+1)\omega_n $\\
+  \[
+   (\epsilon_i + \epsilon_j,\lambda+\rho) = \begin{cases}
+                                             n - j, & i = 1 < j < n \\
+                                             -1, & i = 1, j=n\\
+                                             n-i-j, & 1 < i < j < n\\
+                                             -1-i, & 1 < i < n = j
+                                            \end{cases}
+  \]
+  \[
+   \Psi^+_\lambda = \Big\{ \epsilon_i + \epsilon_{n-i} \,\big|\, 1 < i < \frac{n}{2}\Big\}, \quad 
+   \roots^+_{n,\lambda} = \begin{cases}
+				\{\epsilon_1 + \epsilon_{n-1} \}, & n \text{ is odd} \\
+				\{\epsilon_1 + \epsilon_{n-1}, \epsilon_1 + \epsilon_{\frac{n}{2}} \}, & n \text{ is even}
+			  \end{cases}
+  \]
+  
+ \item $\lambda = \omega_1 -(n-1)\omega_n $\\
+ \[
+  (\epsilon_i + \epsilon_j,\lambda+\rho) = \begin{cases}
+                                            n+1-j, & i=1<j\leq n\\
+                                            n+1-i-j, & 1<i<j\leq n
+                                           \end{cases}
+ \]
+ \[
+   \Psi^+_\lambda = \Big\{\epsilon_i + \epsilon_{n+1-i} \,\big|\, 1 < i < \frac{n+1}{2} \Big\}
+ \]
+ \[
+   \roots^+_{n,\lambda} = \begin{cases}
+				\{\epsilon_1 + \epsilon_n \}, & n \text{ is even} \\
+				\{\epsilon_1 + \epsilon_n, \epsilon_1 + \epsilon_{\frac{n+1}{2}} \}, & n \text{ is odd}
+			  \end{cases}
+  \]
+\end{enumerate}
+
+\begin{figure}[H]
+  \centering
+  \input{diagrams/nroots_D5_5.tikz} 
+	\input{diagrams/bruhat_D5_5.tikz} 
+  \caption{Poset of noncompact roots and the BGG graph for $\mathrm{SO}^*(10)$}
+\end{figure} 

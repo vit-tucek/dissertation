@@ -1,0 +1,208 @@
+\subsection[SU(p,q)]{$\mathrm{SU}(p,q), p+q=n \sim A_{n-1}, n \geq 2$}\label{sec:su}
+
+\subsubsection{Root system data}
+
+\[\alpha_i = \epsilon_i - \epsilon_{i+1}, \quad \omega_i = \epsilon_1 + \cdots + \epsilon_i \]
+\begin{align*}
+ \roots & = \{ \epsilon_i - \epsilon_j | i\neq j, i,j=1\ldots n\}\\
+ \roots_c^+ & = \{ \epsilon_i-\epsilon_j | 1\leq i < j \leq p \text{ or } p+1 \leq i < j \leq n\}\\
+ \roots_n^+ & = \{ \epsilon_i - \epsilon_j | 1 \leq i \leq p, p+1 \leq j \leq n \}
+\end{align*}
+\[\beta = \epsilon_1 - \epsilon_n,\quad 2\rho = (n-1,n-3,\ldots -n+3,-n+1),\quad \zeta = (\underbrace{\frac{q}{n},\ldots,\frac{q}{n}}_{p\text{ times}},\underbrace{\frac{-p}{n},\ldots,\frac{-p}{n}}_{q\text{ times}})\]
+\inserttikzfigure{diagrams/dynkin_An_p.tikz}{Marked Dynkin diagram of $\lie{su}(p,q)$ for $p+q=n$}
+
+The reduction points of unitarizable highest weight modules are the following integral translated cones $\lambda_a + C_a$:
+Let $a=(Q,R,l)$, $Q=R=\mathrm{SU}(p',q')$, $1\leq p' \leq p$, $1\leq q'\leq q$. Then
+\[
+ C_a = \{a_{p'}\omega_{p'} + \cdots + a_p\omega_p + \cdots + a_{n-q'}\omega_{n-q'} \,|\, a_p=-a_{p'}-\cdots -a_{p-1}-a_{p+1} - \cdots - a_{n-q'} \}.
+\]
+\begin{gather*}
+  \lambda_a=\omega_{p'} + \omega_{n-q'} - (n+l+1-p'-q')\omega_p   \\
+  \mu_a = \omega_{p'-l}+\omega_{n-q'+l}-(n+l+1-p'-q')\omega_p\\
+  1\leq p' \leq p,\quad 1\leq q' \leq q,\quad 1\leq l \leq \min(p',q')\\
+  Q(\lambda_a)=R(\lambda_a)=\mathrm{SU}(p',q')
+\end{gather*}
+
+\subsubsection{Nilpotent cohomology in detail}
+
+Now we compute the cohomology for $\lambda = \omega_{p'} + \omega_{n-q'} - (n+l+1-p'-q')\omega_p$. We have for $k=2-(n+l+1-p'-q') = 1+p'+q'-n-l$ that
+ \[
+  (\epsilon_i, \lambda) = \begin{cases}
+                           k, &1\leq i \leq p' \\
+                           k-1, & p' < i \leq p\\
+                           1, & p < i \leq n-q'\\
+                           0, & n-q' < i \leq n.
+                          \end{cases}
+ \]
+ The positive roots of $\lie{su}(p,q)$ are $\epsilon_i - \epsilon_j$, $i<j$ and we have
+ \[(\epsilon_i - \epsilon_j, \rho) =  \frac{n+1-2i}{2}-\frac{n+1-2j}{2} = j-i > 0.\] Now, in order to determine the set $\Psi^+_\lambda$, we compute all possible values of $(\epsilon_i - \epsilon_j, \lambda +\rho)$  for $i<j$
+ \begin{center}
+ \begin{tabular}{C|CCCC}
+                  & 1\leq j \leq p' & p' < j \leq p &  p < j \leq n-q' &  n-q' < j \leq n \\[2pt]\hline
+  1\leq i \leq p' &         j-i     &    1 + j-i    &      k-1 + j-i   &       k + j-i          \\
+  p' < i \leq p   &                 &        j-i    &      k-2 + j-i   &       k-1 + j-i          \\
+  p < i \leq n-q' &                 &               &         j-i      &       1 + j-i          \\
+  n-q' < i \leq n &                 &               &                  &       j-i          \\
+\end{tabular}
+\end{center}
+We see that only terms containing $k$ can be zero, because $j-i >0$ and $2-n \leq k \leq 0$. Thus the only singular roots are the noncompact ones. Substituting for $k$ and solving for $j$ we get
+% \begin{center}
+% \begin{tabular}{C|CC}
+%  &  p < j \leq n-q' &  n-q' < j \leq n \\[2pt]\hline
+%    1\leq i \leq p' &            p'+q'-n-l + j-i   &       1+p'+q'-n-l + j-i          \\
+%   p' < i \leq p   &    -1+p'+q'-n-l + j-i   &       p'+q'-n-l + j-i          \\
+% \end{tabular}
+% \end{center}
+% and solving for zero
+\begin{center}
+\begin{tabular}{C|CC}
+                   &  p < j \leq n-q'    &  n-q' < j \leq n \\[2pt]\hline
+   1\leq i \leq p' &  j=i+m   &   j=i+m-1         \\
+  p' < i \leq p    &  j=i+m+1 &   j=i+m       \\
+\end{tabular}
+\end{center}
+where \[m=1-k = n+l-p'-q'.\]
+The case $j=i+m+1$ doesn't lead to any solution, since $j-i-m-1 = j-i-n-l+p'+q'-1$ is strictly negative for $ p' < i \leq p < j \leq n-q' $.
+%for $i=p'+1$ we get $j=2+l+n-q'>n-q'$.
+The case $j=i+m$ for $i \leq p'$ leads to
+\begin{gather*}
+ \max\{1,q'-q+1+p'-l\}\leq i \leq p'-l\\
+ \max\{1+n+l-p'-q', p+1 \} \leq j \leq n-q',
+\end{gather*}
+which results in an empty set of singular roots if and only if $l=p'$.
+The case of $j=i+m$ for $i>p'$ yields
+\begin{gather*}
+  p'+1 \leq i \leq \min\{p, p'+q'-l \}\\
+  n-q'+l+1 \leq j \leq \min\{n +l-p'-q'+p,n \},
+\end{gather*}
+which gives an empty set of singular roots if and only if $l=q'$ or $p=p'$.
+And finally the case $j=i+m-1$ gives
+\begin{gather*}
+ p'+2-l \leq i \leq p'\\
+ n-q'+1 \leq j \leq n-q'-1+l
+\end{gather*}
+which doesn't contribute to singular roots if and only if $l=1$.
+
+Two roots $\epsilon_i - \epsilon_j$, $\epsilon_a - \epsilon_b$ are orthogonal if and only if $\{i,j\} \cap \{a,b\}=\emptyset$. Thus the set of positive noncompact roots orthogonal to $\Psi_\lambda^+$ is
+\begin{multline}\label{eq:orthogonal_to_singular}
+\big\{\epsilon_i - \epsilon_j\,|\,
+		i \in \{ 1,\ldots, q'-q+p'-l\}\cup \{p'-l+1\}\cup \{ p'+q'-l+1,\ldots, p \} \\
+		j \in \{p+1,\ldots,  m\} \cup \{n+l-q'\} \cup \{m+p+1, \ldots,n\} \big\},
+% 		j \in \{p+1,\ldots,  n+l-p'-q'-1\} \cup \{n+l-q'\} \cup \{n+l-p'-q'+p+1, \ldots,n\} \big\}.
+\end{multline}
+where a set $\{a,\ldots,b\}$ is considered empty if $a>b$.
+
+Positive noncompact roots $\alpha = \epsilon_i - \epsilon_j$ satisfying $(\lambda + \rho, \alpha)\in \Z^+$ are given by constraints
+\begin{equation}\label{eq:su_root_constraints}
+\begin{split}
+ 1 \leq i \leq p' & \Longrightarrow \max \{ i+m, p \} < j \leq n-q' \vee \max \{ i+m, n-q'+1 \}  \leq j \leq n  \\
+ p' < i \leq p & \Longrightarrow \max \{p, i+m+1 \} < j \leq n-q' \vee \max \{n-q',i+m\} < j  \leq n.
+ \end{split}
+\end{equation}
+
+If a positive noncompact root $\epsilon_i - \epsilon_j$ with $i>p'$ is orthogonal to all singular roots and it's scalar product with $\lambda + \rho$ is positive, then necessarily
+\[
+ i\in \{ p'+q'-l+1,\ldots, p \} \text{ and } i+m < j\leq n.
+\]
+But for $i=p'+q'-l+1$ we get that $i+m = n+1$ and hence we see that there are no such roots. Thus, we have to look only at the noncompact roots satisfying the first constraint of \eqref{eq:su_root_constraints}.
+
+If a noncompact root $\epsilon_i - \epsilon_j$ with $i\leq p'$ is orthogonal to the singular roots $\Psi_\lambda^+$, then either $i=p'-l+1$ or $i \leq q'-q + p'-l$. If $i=p'-l+1$, then we get $i+m = n-q'+1$ which means that we have to look only at
+\[
+ \max \{ i+m, n-q'+1 \} = n-q'+1  \leq j \leq n.
+\]
+Taking into account \eqref{eq:orthogonal_to_singular} we see that the roots with indices given by
+\[
+ i = p'-l+1, \quad j \in \{n-q'+l\} \cup \{m+p+1, \ldots,n\}
+\]
+are included in $\roots_{n,\lambda}^+$. For  $i\leq q'-q + p'-l$ we have $i+m \leq p$ and the constraints of \eqref{eq:su_root_constraints} reduce to
+\[
+ p < j \leq n
+\]
+and thus the remaining roots of $\roots_{n,\lambda}^+$ have indices given by
+\[
+  i \in \{ 1,\ldots, q'-q+p'-l\}, \quad
+  j \in \{p+1,\ldots,  m\} \cup \{n+l-q'\} \cup \{m+p+1, \ldots,n\}.
+\]
+
+Because all roots have the same length $\sqrt{2}$ we finally arrive at $\roots_{n,\lambda}^+ $ being equal to the set of roots $\epsilon_i - \epsilon_j$ with indices given by the following constraints
+\begin{gather}
+  i = p'-l+1 \quad \&\quad  j \in \{n-q'+l\} \cup \{m+p+1, \ldots,n\} \\ \notag
+  i \in \{ 1,\ldots, q'-q+p'-l\} \quad \& \hspace{8cm} \\ \notag \hspace{4.5cm}  j \in \{p+1,\ldots,  m\} \cup \{n+l-q'\} \cup \{m+p+1, \ldots,n\}.\notag
+\end{gather}
+
+The Weyl group of $\lie{sl}(n)$ is generated by root reflections and is isomorphic to the symmetric group $S_n$ on the set $\{1,\ldots,n\}$. Indeed, the reflection $s_{\epsilon_i - \epsilon_j}$ acts as a transposition of the $i$th and $j$th coordinate in $\epsilon$-basis. Since there are overlaps in the ranges for $j$ for various $i$, it follows that the group $W_\lambda$ is isomorphic to the permutation subgroup of $S_n$ which permutes only a subset $M_\lambda$ of $\{1,\ldots,n\}$ and leaves all other elements fixed. This subset is
+\[
+ M_\lambda =  \{ 1,\ldots, q'-q+p'-l, p'-l+1, p+1,\ldots,m, n-q'+l,m+p+1,\ldots,n\}
+\]
+in the case of $q'-q+p'-l > 0$ and
+\[
+  M_\lambda =  \{p'-l+1,n-q'+l,m+p+1,\ldots,n\}
+\]
+if $q'-q+p'-l \leq 0.$ We remind, that a range $a,\ldots,b$ is considered empty if $a>b$. The root subsystem $\roots_\lambda$ is then given by
+\[
+ \roots_\lambda = \{ \epsilon_i - \epsilon_j \,|\, i\neq j, i,j\in M_\lambda \}.
+\]
+
+The pair $(\roots_\lambda,\roots_{\lambda,c})$ is a pair of root systems such that the corresponding Lie algebras $(\lie{g}_\lambda,\lie{g}_{\lambda,c})$ form a Hermitian symmetric pair of type $\lie{su}(a,b)$ for some $a,b$. The formula of the theorem \ref{thm:cohomology} is basically coming (via Enright Shelton equivalences) from the classical Kostant formula for Lie algebra cohomology of the nilradical coming from $\lie{g}_\lambda$. Hence the cohomology groups can be computed in a classical way just by restriction to the indices contained in $M_\lambda$.
+
+Let us look at some specific cases. For $p=1$ the only possible value for $l$ is $1$ and $1\leq q' \leq n-1$. The weights are $\lambda = (q'-n)\omega_1 + \omega_{n-q'}$ and the corresponding set $M_\lambda = \{ 1,n-q'+1,\ldots,n \}$.
+
+
+Now let's look what happens when $p=2$. There are three possibilities
+\begin{enumerate}
+ \item $p'=1, l=1$\\
+ The weight is $\lambda=\omega_1+\omega_{n-q'}-(n+1-q')\omega_2$ and the resulting set of admissible indices $M_\lambda = \{1,n-q'+1,\ldots,n\}$.
+ \item $p'=2, l=1$\\
+ The weight is $\lambda=\omega_2+\omega_{n-q'}-(n-q')\omega_2 = \omega_{n-q'} + (q'-n+1)\omega_2$ and the resulting set of admissible indices $M_\lambda = \{1,\ldots,n\}$ if $q'=q$ (in which case $\lambda = 0$) and $M_\lambda = \{2,n-q'+1,\ldots,n\}$ for $q'<q$.
+ \item $p'=2, l=2$\\
+ The weight is $\lambda=\omega_2+\omega_{n-q'}-(n+1-q')\omega_2 = \omega_{n-q'}+(q'-n)\omega_2$ and the resulting set of admissible indices $M_\lambda = \{1,n-q'+2,\ldots,n\}$.
+\end{enumerate}
+
+The most singular case occurs for $\lie{su}(k,k)$ and $p'=q'=l = k $. Then the set $M_\lambda =$ is $\{1,2k\}$. For $p'=q'=k$ and $l<k$ we get $M_\lambda = \{ 1,\ldots,k-l+1,k+l,\ldots, 2k \}$.
+
+\begin{figure}[H]
+  \centering 
+  \input{diagrams/nroots_A5_1.tikz} 
+	\input{diagrams/bruhat_A5_1.tikz} 
+  \caption{Poset of noncompact roots and the Bruhat graph for $\mathrm{SU}(1,5)$}
+\end{figure} 
+
+\begin{figure}[H]
+  \centering 
+  \input{diagrams/nroots_A5_2.tikz} 
+	\input{diagrams/bruhat_A5_2.tikz} 
+  \caption{Poset of noncompact roots and the Bruhat graph for $\mathrm{SU}(2,4)$}
+\end{figure} 
+
+\begin{figure}[H]
+  \centering 
+	\resizebox{\textwidth}{!}{
+  \input{diagrams/nroots_A5_3.tikz} 
+	\input{diagrams/bruhat_A5_3.tikz} 
+	}
+  \caption{Poset of noncompact roots and the Bruhat graphfor $\mathrm{SU}(3,3)$}
+\end{figure} 
+
+\begin{figure}[H]
+  \centering 
+  \input{diagrams/nroots_A5_4.tikz} 
+	\input{diagrams/bruhat_A5_4.tikz} 
+  \caption{Poset of noncompact roots and the Bruhat graph for $\mathrm{SU}(4,2)$}
+\end{figure} 
+
+\begin{figure}[H]
+  \centering 
+  \input{diagrams/nroots_A5_5.tikz}
+	\input{diagrams/bruhat_A5_5.tikz}
+  \caption{Poset of noncompact roots and the Bruhat graph for $\mathrm{SU}(5,1)$}
+\end{figure} 
+
+
+\begin{figure}[H]
+  \centering 
+  \input{diagrams/a7_4}
+  \caption{The BGG graph of type $(A_7,A_3\times A_3)$}
+\end{figure} 
+
+\subsubsection*{Low rank examples}
+

@@ -1,0 +1,207 @@
+
+\subsection[SO(2,2n-2)]{$\mathrm{SO}(2,2n-2) \sim D_n, n\geq 3$}
+
+\subsubsection{Root system data}
+
+\[\alpha_i = \epsilon_i - \epsilon_{i+1}, i<n, \alpha_n = \epsilon_{n-1} + \epsilon_n\]
+\[\omega_i = \epsilon_1+\cdots \epsilon_i, i < n-1, \quad \omega_{n-1} = \frac{1}{2}(\epsilon_1 + \cdots \epsilon_{n-1}-\epsilon_n), \quad \omega_{n} = \frac{1}{2}(\epsilon_1 + \cdots \epsilon_{n-1}+\epsilon_n)\]
+\begin{align*}
+ \roots &= \{ \pm \epsilon_i \pm \epsilon_j | i\neq j, i,j = 1\ldots n \} \\
+ \roots_c^+ &= \{ \epsilon_i\pm \epsilon_j | 2\leq i < j \leq  n\}\\
+ \roots_n^+ &= \{ \epsilon_1 \pm \epsilon_j | 2 \leq  j \leq n \}
+ \end{align*}
+\[\beta = \epsilon_1+\epsilon_2,\quad \rho = (n-1,\ldots ,1,0),\quad \zeta = (1,0,\ldots,0)\]
+\inserttikzfigure{diagrams/dynkin_Dn_1.tikz}{Marked Dynkin diagram for $\mathrm{SO}(2,2n-2)$}
+
+\begin{center}\begin{threeparttable}
+\begin{tabular}{CCCCC}
+  \text{Vertex } \lambda_a & \text{Weight } \mu_a &  Q(\lambda_a) = R(\lambda_a)& l(\lambda_a) \\ \hline
+  -(2n-p-1)\omega_1+\omega_{p+1} & -(2n-p)\omega_1 + \omega_p  & \mathrm{SU}(1,p)\tnote{1} &  1 \\
+  -(n+1)\omega_1 +\omega_{n-1} + \omega_n & -(n+2)\omega_1 + \omega_{n-2} & \mathrm{SU}(1,n-2) &  1 \\
+  -(n-1)\omega_1 + \omega_n \tnote{2} & -n\omega_1+\omega_{n-1} &  \mathrm{SU}(1,n-1) & 1 \\
+  -(n-2)\omega_1 & -n\omega_1 & \mathrm{SO}(2,2n-2) &  2\\
+  0 & -2\omega_1 + \omega_2 & \mathrm{SO}(2,2n-2) &  1 \\
+  -(n-1)\omega_1  + \omega_{n-1} \tnote{3} & -n\omega_1 + \omega_n &\mathrm{SU}(1,n-1) & 1
+\end{tabular}\smallskip
+\begin{tablenotes}
+ \item [1] $1\leq p \leq n-3$ with Dynkin diagram of $R(\lambda_a)$:\\
+ \begin{tikzpicture} % SO^*(2n) ~ D_n relative
+	\node[nroot] (a1) [label=above:$-\beta$] {};
+	\node[croot] (a2) [right= of a1] [label=above:$\alpha_2$] {};
+	\node (a3) [right= of a2] {};
+	\node (a4) [right= of a3] {};
+	\node[croot] (a5) [right= of a4] [label=above:$\alpha_{p}$] {};
+	\draw (a1) to (a2) to (a3);
+	\draw [dotted] (a3) to (a4);
+	\draw (a4) to (a5);
+     \end{tikzpicture}
+ \item [2] Dynkin diagram  of $R(\lambda_a)$:
+ \begin{tikzpicture} % SO^*(2n) ~ D_n relative
+	\node[nroot] (a1) [label=above:$-\beta$] {};
+	\node[croot] (a2) [right= of a1] [label=above:$\alpha_2$] {};
+	\node (a3) [right= of a2] {};
+	\node (a4) [right= of a3] {};
+	\node[croot] (a5) [right= of a4] [label=above:$\alpha_{n-1}$] {};
+	\draw (a1) to (a2) to (a3);
+	\draw [dotted] (a3) to (a4);
+	\draw (a4) to (a5);
+     \end{tikzpicture}
+ \item [3] Dynkin diagram of $R(\lambda_a)$:
+\begin{tikzpicture} % SO^*(2n) ~ D_n relative
+	\node[nroot] (a1) [label=above:$-\beta$] {};
+	\node[croot] (a2) [right= of a1] [label=above:$\alpha_2$] {};
+	\node (a3) [right= of a2] {};
+	\node (a4) [right= of a3] {};
+	\node[croot] (a5) [right= of a4] [label=above:$\alpha_{n-2}$] {};
+	\node[croot] (a6) [right= of a5] [label=above:$\alpha_{n}$] {};
+	\draw (a1) to (a2) to (a3);
+	\draw [dotted] (a3) to (a4);
+	\draw (a4) to (a5) to (a6);
+     \end{tikzpicture} 
+\end{tablenotes}
+\caption{Vertices and root systems for $\mathrm{SO}(2,2n-2)$, $n\geq 3$}\label{tbl:so_even}
+\end{threeparttable}\end{center}
+
+\subsubsection{Nilpotent cohomology in detail}
+
+Scalar products of $\rho$ with positive noncompact roots
+\begin{equation}\label{eq:Dn_rho_scalar_posroots}
+ (\epsilon_1 + \epsilon_j, \rho) = 2n-1-j, \quad (\epsilon_1 - \epsilon_j, \rho) = j -1.
+\end{equation}
+
+
+\begin{enumerate}
+ \item $ \lambda =  -(2n-p-1)\omega_1+\omega_{p+1}$\\
+   Scalar products of positive noncompact roots with $\lambda+\rho$ are
+  \begin{align*}
+    (\epsilon_1 + \epsilon_j, \lambda+\rho) & = \begin{cases}
+                                                 p+2-j, & 1<j\leq p+1 \\
+                                                 p+1-j, & p+1<j\leq n
+                                                \end{cases}\\
+    (\epsilon_1 - \epsilon_j, \lambda+\rho) & = \begin{cases}
+                                                 p-2n+j, & 1<j\leq p+1 \\
+                                                 p-2n+1+j, & p+1<j\leq n.
+                                                \end{cases}
+  \end{align*}
+  This gives an empty set of singular roots $\Psi^+_\lambda = \emptyset$ and the set of generating roots is $\roots^+_{n,\lambda} = \{\epsilon_1 + \epsilon_j \,|\, 1<j\leq p+1 \}$. The generated root subsystem is
+  \[
+   \roots_\lambda = \{ \pm(\epsilon_1 + \epsilon_j \,|\, 1<j\leq p+1 \} \cup \{ \epsilon_i - \epsilon_j \,|\, 1 < i,j \leq p+1 \et i\neq j \}
+  \]
+  and is of type $A_p$. The integral cone is in this case
+  \[
+    C = \{ a_1\omega_1 + a_{p+1}\omega_{p+1} + \cdots + a_n \omega_n \,|\, a_1 + 2( a_{p+1} + \cdots + a_n) = 0 \}
+  \]
+  and one can easily check that $\Psi^+_\lambda = \Psi^+_{\lambda+\mu}$ for all $\mu \in C$ and the translation theorem \ref{thm:translation} applies.
+  
+ \item $ \lambda = -(n+1)\omega_1 +\omega_{n-1} + \omega_n$\\
+   Scalar products of positive noncompact roots with $\lambda+\rho$ 
+  \begin{align*}
+    (\epsilon_1 + \epsilon_j, \lambda+\rho) & = \begin{cases}
+                                                 n-j, & 1<j < n \\
+                                                 -1, & j = n
+                                                \end{cases}\\
+    (\epsilon_1 - \epsilon_j, \lambda+\rho) & = \begin{cases}
+                                                 -n-2+j, & 1<j < n \\
+                                                 -1, & j = n
+                                                \end{cases}
+  \end{align*}
+  show that there are no singular roots $\Psi^+_\lambda = \emptyset$ and that the set of generating roots is $\roots^+_{n,\lambda} = \{\epsilon_1 + \epsilon_j \,|\, 1<j<n \}$. The generated root subsystem of $\roots$ is
+  \[
+%    \roots_\lambda = \{\pm \epsilon_i \pm \epsilon_j \,|\, i\neq j, i,j = 1,\ldots, n-1 \}.
+    \roots_\lambda = \{ \pm(\epsilon_1 + \epsilon_j \,|\, 1<j < n \} \cup \{ \epsilon_i - \epsilon_j \,|\, 1 < i,j \leq n \et i\neq j \}
+  \]
+  and is of type $A_{n-2}$. The integral cone is
+  \[
+   C = \{-(a+b)\omega_1 + a\omega_{n-1} + b\omega_n) \,|\, a,b\in\mathbb{N}_0 \}
+  \]
+  and an easy calculation gives $\Psi^+_\lambda = \Psi^+_{\lambda+\mu}$ for all $\mu \in C$. Thus we can use the theorem \ref{thm:translation} and get the same shape of cohomology on the whole cone. However, concrete calculation for $D_5$ shows that the weights for the cohomology differ based on tha values of $a, b.$
+	
+	\begin{tikzpicture}[>=latex,line join=bevel,]
+%%
+\node (node_3) at (69.5bp,167.5bp) [draw,draw=none] {$\left(-a - b - 6,\,-3,\,2,\,a,\,b\right)$};
+  \node (node_2) at (69.5bp,8.5bp) [draw,draw=none] {$\left(-a - b - 6,\,0,\,0,\,a + 1,\,b + 1\right)$};
+  \node (node_1) at (69.5bp,61.5bp) [draw,draw=none] {$\left(-a - b - 7,\,0,\,1,\,a,\,b\right)$};
+  \node (node_0) at (69.5bp,114.5bp) [draw,draw=none] {$\left(-a - b - 6,\,-2,\,2,\,a,\,b\right)$};
+  \draw [black,->] (node_0) ..controls (69.5bp,129.81bp) and (69.5bp,140.03bp)  .. (node_3);
+  \draw [black,->] (node_2) ..controls (69.5bp,23.805bp) and (69.5bp,34.034bp)  .. (node_1);
+  \draw [black,->] (node_1) ..controls (69.5bp,76.805bp) and (69.5bp,87.034bp)  .. (node_0);
+%
+\end{tikzpicture}
+  
+ \item $ \lambda = -(n-1)\omega_1 + \omega_n$\\
+  Scalar products of positive noncompact roots with $\lambda+\rho$ are
+  \begin{align*}
+    (\epsilon_1 + \epsilon_j, \lambda+\rho) & = n+1-j\\
+    (\epsilon_1 - \epsilon_j, \lambda+\rho) & = j-n
+  \end{align*}
+  and the corresponding sets of singular roots $\Psi^+_\lambda = \{ \epsilon_1-\epsilon_n\}$ and generating roots $\roots^+_{n,\lambda} = \{ \epsilon_1 + \epsilon_n \}$ are easy to determine. This gives the subsystem of type $A_1$
+  \[
+   \roots_\lambda = \{ \epsilon_1 + \epsilon_n, -\epsilon_1 - \epsilon_n\}
+  \]
+  and the resulting weights for nontrivial cohomology groups are all in table \ref{tbl:so_even}. The integral cone is in this case \[C = \{t(-\omega_1 + \omega_n) \,|\, t\in\mathbb{N}_0 \}\] and one can easily check that $\Psi^+_\lambda = \Psi^+_{\lambda+\mu}$ for all $\mu \in C$ and the translation theorem \ref{thm:translation} applies.
+
+
+ \item $ \lambda = -(n-2)\omega_1$\\
+  Scalar products of positive noncompact roots with $\lambda+\rho$ are
+  \begin{align*}
+    (\epsilon_1 + \epsilon_j, \lambda+\rho) & = 1+n-j\\
+    (\epsilon_1 - \epsilon_j, \lambda+\rho) & = 1-n+j.
+  \end{align*}
+  The set of singular positive roots is $\Psi^+_\lambda = \{ \epsilon_1 - \epsilon_{n-1} \}$ and the set of generating roots $\roots^+_{n,\lambda} = \{ \epsilon_1 + \epsilon_{n-1} \}$. It  follows that
+  \[
+   \roots_\lambda = \{\epsilon_1 + \epsilon_{n-1},-\epsilon_1 -\epsilon_{n-1} \},
+  \]
+  which is of type $A_1$ and all the information on cohomology is already contained in the table \ref{tbl:so_even}. %TODO opravdu je to typ A_1? Funguje prosta zmena baze?
+  
+ \item $ \lambda = 0$\\
+  Scalar products of positive noncompact roots with $\lambda+\rho$ are given by \eqref{eq:Dn_rho_scalar_posroots} and we see that there are no singular roots $\Psi_\lambda = \emptyset$ since all scalar products are positive integers. It follows that $\roots^+_{n,\lambda} = \roots^+_n$ and after a moment of thought we realize that 
+  \[
+   \roots_\lambda = \roots.
+  \]
+  We conclude that the cohomology is in this case computed by the orginial Kostant's formula. %TODO tohle by ale bejt konecnedimenzionalni reprezentace, tak jaktoze je unitarizovatelna?
+  
+ \item $ \lambda = -(n-1)\omega_1  + \omega_{n-1}$\\
+  Scalar products of positive noncompact roots with $\lambda+\rho$ are
+  \begin{align*}
+    (\epsilon_1 + \epsilon_j, \lambda+\rho) & = \begin{cases}
+                                                 n+1-j, & 1<j < n \\
+                                                 0, & j = n
+                                                \end{cases}\\
+    (\epsilon_1 - \epsilon_j, \lambda+\rho) & = \begin{cases}
+                                                j-n, & 1<j < n \\
+                                                 1, & j = n
+                                                \end{cases}
+  \end{align*}
+  which gives $\Psi^+_\lambda = \{\epsilon_1 +\epsilon_n \}$ and $\roots^+_{n,\lambda} = \{\epsilon_1 - \epsilon_n \}$. This generates the roots subsystem of type $A_1$
+  \[
+   \roots_\lambda = \{ \epsilon_1 - \epsilon_n, \epsilon_n - \epsilon_1 \}
+  \]
+  and all the cohomology information is contained in table \ref{tbl:so_even}. The integral cone is in this case \[C = \{x(-\omega_1 + \omega_{n-1}) \,|\, x\in\mathbb{N}_0 \}\] and one for $\mu  \in C$, $\mu = -x\omega_1 + x\omega_{n-1}$ one has
+  \begin{align*}
+    (\epsilon_1 + \epsilon_j, \mu) & = \begin{cases}
+                                                 0, & 1<j < n \\
+                                                 -x, & j = n
+                                                \end{cases}\\
+    (\epsilon_1 - \epsilon_j, \mu) & = \begin{cases}
+                                                -x, & 1<j < n \\
+                                                 0, & j = n.
+                                                \end{cases}
+  \end{align*}
+  Since $x$ is a positive integer, it follows that
+  \[
+   \Psi^+_{\lambda + \mu} = \emptyset, \quad \roots^+_{n,\lambda+\mu} = \{ \epsilon_1 - \epsilon_n \} \cup \{\epsilon_1 + \epsilon_j \,|\, 1<j<n \}.
+  \]
+  The root subsystem generated by reflections is
+  \[
+   \roots_{\lambda + \mu} = \{\pm(\epsilon_1-\epsilon_n)\} \cup \{\pm(\epsilon_1 + \epsilon_j \,|\, 1<j<n\} \cup \{ \epsilon_i - \epsilon_j \,|\, 1<i,j<n \et i \neq j\}
+  \]
+  and is of type $A_{n-1}$.
+
+\end{enumerate}
+
+\begin{figure}[H]
+  \centering 
+  \input{diagrams/nroots_D5_1.tikz} 
+	\input{diagrams/bruhat_D5_1.tikz} 
+  \caption{Poset of noncompact roots and the BGG graph for $\mathrm{SO}(2,8)$}
+\end{figure} 

@@ -1,0 +1,179 @@
+\subsection[SO(2,2n-1)]{$\mathrm{SO}(2,2n-1) \sim B_n, n\geq 2$}
+
+
+\subsubsection{Root system data}
+
+\[ \alpha_i = \epsilon_i - \epsilon_{i+1}, i<n, \quad \alpha_n = \epsilon_n\]
+\[ \omega_i = \epsilon_1 +\cdots+\epsilon_i, i<n, \quad \omega_n = \frac{1}{2}(\epsilon_1 +\cdots + \epsilon_n)\]
+\begin{align*}
+\roots &= \{ \pm \epsilon_i, \pm \epsilon_i \pm \epsilon_j | i\neq j, i,j=1\ldots n\}\\
+\roots_c^+ &= \{ \epsilon_i\pm \epsilon_j | 2\leq i < j \leq  n\} \cup \{ \epsilon_j|2\leq j \leq n \}\\
+\roots_n^+ &= \{ \epsilon_1 \pm \epsilon_j | 2 \leq  j \leq n \} \cup \{\epsilon_1\}
+\end{align*}
+\[\beta = \epsilon_1+\epsilon_2,\quad \rho = (n-\frac{1}{2},\ldots ,\frac{1}{2}),\quad \zeta = (1,0,\ldots,0)\]
+\inserttikzfigure{diagrams/dynkin_Bn_1.tikz}{Marked Dynkin diagram for $\mathrm{SO}(2,2n-1)$}
+
+\begin{center}\begin{threeparttable}
+\begin{tabular}{CCCCC}
+  \text{Vertex } \lambda_a & \text{Weight } \mu_a &  Q(\lambda_a) = R(\lambda_a)\tnote{1}& l(\lambda_a) \\ \hline
+  -(2n-p)\omega_1 +\omega_{p+1} & -(2n-p+1)\omega_1 + \omega_p & \mathrm{SU}(1,p)\tnote{2} &  1 \\
+  -(n+1)\omega_1 + 2\omega_n & -(n+2)\omega_1 + \omega_{n-1} & \mathrm{SU}(1,n-1) & 1 \\
+  0 & -2\omega_1 +\omega_2 &\mathrm{SO}(2,2n-1) & 1 \\
+  -(n-\frac{3}{2})\omega_1 & -(n+\frac{1}{2})\omega_1 & \mathrm{SO}(2,2n-1) & 2 \\
+  -(n-\frac{1}{2})\omega_1 + \omega_n & -(n+\frac{1}{2})\omega_1 +\omega_n & \mathrm{SU}(1,n-1) &1
+\end{tabular}\smallskip
+\begin{tablenotes}
+ \item [1] Except in the last row, where $R(\lambda_a)= \mathrm{SO}(2,2n-1)$.
+ \item [2] $1\leq p \leq n-2$
+\end{tablenotes}
+\caption{Vertices and root systems for $\mathrm{SO}(2,2n-1)$, $n\geq 2$}\label{tbl:so_odd}
+\end{threeparttable}\end{center}
+
+\subsubsection{Nilpotent cohomology in detail}
+
+Scalar products of of $\rho$ with positive noncompact roots
+\begin{equation}\label{eq:Bn_rho_scalar_posroots}
+  (\epsilon_1, \rho) = n - \frac{1}{2}, \quad (\epsilon_1 + \epsilon_j, \rho)  =  2n-j, \quad (\epsilon_1 - \epsilon_j, \rho)  =  j - 1.
+\end{equation}
+
+\begin{enumerate}
+ \item $\lambda = (p-2n) \omega_1 + \omega_{p+1}$\\
+      The scalar products of positive noncompact roots with $\lambda+\rho$
+      \begin{align*}
+	(\epsilon_1, \lambda+\rho) &= p-n+\frac{1}{2} \\
+	(\epsilon_1+\epsilon_j,\lambda+\rho) &= \begin{cases}
+						p+2-j, &  1<j\leq p+1\\
+						p+1-j, &   p+1 <j \leq n 
+	                                       \end{cases}\\
+	(\epsilon_1-\epsilon_j,\lambda+\rho) &= \begin{cases}
+						p-2n+j-1, &  1<j\leq p+1\\
+						p-2n+j, &   p+1 <j \leq n
+	                                       \end{cases}\\
+      \end{align*}
+      reveal that the set of singular roots is empty $\Psi^+_\lambda = \emptyset$ and that the set of generating roots is $\roots^+_{n,\lambda} = \{\epsilon_1 + \epsilon_j \,|\, 1<j\leq p+1 \}$. The generated root subsystem of type $A_p$ is
+      \[
+	\roots_\lambda = \{ \pm(\epsilon_1 + \epsilon_j \,|\, 1<j\leq p+1 \} \cup \{ \epsilon_i - \epsilon_j \,|\, 1 < i,j \leq p+1 \et i\neq j \}.
+      \]
+      
+ \item $\lambda = -(n+1)\omega_1 + 2\omega_n $\\
+    Scalar products of positive noncompact roots with $\lambda+\rho$
+      \begin{align*}
+	(\epsilon_1, \lambda+\rho) &= -\frac{1}{2} \\
+	(\epsilon_1+\epsilon_j,\lambda+\rho) &=  n+1-j \\
+	(\epsilon_1-\epsilon_j,\lambda+\rho) &= -n-2+j
+      \end{align*}
+    show that the set of singular roots is again empty $\Psi^+_\lambda = \emptyset$ and the set of generating roots is $\roots^+_{n,\lambda} = \{\epsilon_1 + \epsilon_j \,|\, 1<j\leq n \}$. The generated root subsystem of type $A_{n-1}$ is
+    \[
+      \roots_\lambda = \{ \pm(\epsilon_1 + \epsilon_j \,|\, 1<j\leq p+1 \} \cup \{ \epsilon_i - \epsilon_j \,|\, 1 < i,j \leq p+1 \et i\neq j \}.
+    \]
+      
+ \item $\lambda = 0 $\\
+       In this case the scalar products of positive roots with $\lambda+\rho$ are of course given by \eqref{eq:Bn_rho_scalar_posroots} and there are no singular roots $\Psi^+_\lambda = \emptyset$. We have $\roots^+_{n,\lambda} = \roots^+_n$, the root subsystem is
+       \[
+        \roots_\lambda = \roots
+       \]
+       and the Kostant's formula applies.
+       
+ \item $\lambda = (\frac{3}{2} - n)\omega_1  $\\
+      The scalar products of positive noncompact roots with $\lambda+\rho$ are
+      \begin{align*}
+	(\epsilon_1, \lambda+\rho) &= 1 \\
+	(\epsilon_1+\epsilon_j,\lambda+\rho) &=  n+\frac{3}{2}-j \\
+	(\epsilon_1-\epsilon_j,\lambda+\rho) &= -n + \frac{1}{2} + j.
+      \end{align*}
+      The set of singular roots is empty $\Psi^+_\lambda = \emptyset$ and the integrality conditions of the definition \ref{def:cohomology_roots} imply that $\roots^+_{n,\lambda} = \{ \epsilon_1 \}$. It follows that
+      \[
+       \roots_\lambda = \{ \pm \epsilon_1 \} 
+      \]
+      and that all the nontrivial cohomologies are contained in the table \ref{tbl:so_odd}.
+      
+ \item $\lambda = -(n-\frac{1}{2})\omega_1 + \omega_n  $\\
+      Sscalar products of positive noncompact roots with $\lambda+\rho$
+      \begin{align*}
+	(\epsilon_1, \lambda+\rho) &= \frac{1}{2} \\
+	(\epsilon_1+\epsilon_j,\lambda+\rho) &=  n+\frac{3}{2}-j \\
+	(\epsilon_1-\epsilon_j,\lambda+\rho) &= -n-\frac{1}{2}+j
+      \end{align*}
+      again show that there are no singular roots $\Psi^+_\lambda = \emptyset$ and since $\epsilon_1^\vee = 2\epsilon_1$ we have $\roots^+_{n,\lambda} = \{ \epsilon_1 \}$. This yields the subsystem
+      \[
+       \roots_\lambda = \{ \pm \epsilon_1 \} 
+      \]
+      which is of type $A_1$ and the nontrivial cohomologies are giveny by table \ref{tbl:so_odd}.
+\end{enumerate}
+
+%%%%%%%%%%%% ALL ROOTS
+% 
+% Before we compute the cohomology we first do some preliminary calculations and write down the scalar products of positive roots $\roots^+ = \{ \epsilon_i \pm \epsilon_j \,|\, 1\leq i < j \leq n \} \cup \{ \epsilon_i \,|\, 1\leq i \leq n\}$ with $\rho$
+% \begin{equation}\label{eq:Bn_rho_scalar_posroots}
+%  \begin{split}
+%   (\epsilon_i, \rho) & = n + \frac{1}{2} - i \\
+%   (\epsilon_i + \epsilon_j, \rho) & = n + \frac{1}{2} - i + n + \frac{1}{2} - j = 2n+1-i-j \\
+%   (\epsilon_i - \epsilon_j, \rho) & = n + \frac{1}{2} - i - (n + \frac{1}{2} - j) = j - i.
+%  \end{split}
+% \end{equation}
+% 
+% \begin{enumerate}
+%  \item $\lambda = (p-2n) \omega_1 + \omega_{p+1}$\\
+%       The scalar products of positive roots with $\lambda+\rho$
+%       \begin{gather*}
+% 	(\epsilon_i, \lambda+\rho) = \begin{cases}
+% 	                              p-n+\frac{1}{2}, & i=1\\
+% 	                              \frac{3}{2} + n -i, & 1 < i \leq p+1 \\
+% 	                              \frac{1}{2} + n - i, & p+1 < i 
+% 	                             \end{cases}\\
+% 	(\epsilon_i+\epsilon_j,\lambda+\rho) = \begin{cases} 
+% 	                                        p+2-j, & i=1, 1<j\leq p+1\\
+% 						2n+3-i-j,& 1<i<j\leq p+1 \\
+% 						2n+2 -i -j, & 1<i\leq p+1 <j \leq n \\
+% 						2n+1-i-j, & p+1 < i < j \leq n
+% 	                                       \end{cases}\\
+% 	(\epsilon_i-\epsilon_j,\lambda+\rho) = \begin{cases}
+% 	                                        p+2n+j-i, & i=1, 1<j\leq p+1\\
+% 						j-i,& 1<i<j\leq p+1 \\
+% 						1+j-i, & 1<i\leq p+1 <j \leq n \\
+% 						j-i, & p+1 < i < j \leq n.
+% 	                                       \end{cases}\\
+%       \end{gather*}
+%  \item $\lambda = -(n+1)\omega_1 + 2\omega_n $\\
+%        The scalar products of positive roots with $\lambda+\rho$
+%       \begin{gather*}
+% 	(\epsilon_i, \lambda+\rho) = \begin{cases}
+% 	                              -\frac{1}{2}, & i = 1 \\
+% 	                              n+\frac{3}{2} - i, & 1<i\leq n
+% 	                             \end{cases}\\
+% 	(\epsilon_i+\epsilon_j,\lambda+\rho) = \begin{cases}
+% 	                                        n+1-j, & i=1, 1<j\leq n\\
+% 	                                        2n+3-i-j, & 1 < i < j \leq n
+% 	                                       \end{cases}\\
+% 	(\epsilon_i-\epsilon_j,\lambda+\rho) = \begin{cases}
+% 	                                        -n-2+j, & i=1, 1<j\leq n \\
+% 	                                        j-i, & 1 < i < j \leq n
+% 	                                       \end{cases}
+%       \end{gather*}
+%  \item $\lambda = 0 $\\
+%        In this case the scalar products of positive roots with $\lambda+\rho$ are of course given by \eqref{eq:Bn_rho_scalar_posroots}.
+%  \item $\lambda = (\frac{3}{2} - n)\omega_1  $\\
+%        The scalar products of positive roots with $\lambda+\rho$
+%       \begin{gather*}
+% 	(\epsilon_i, \lambda+\rho) = \\
+% 	(\epsilon_i+\epsilon_j,\lambda+\rho) = \\
+% 	(\epsilon_i-\epsilon_j,\lambda+\rho) =
+%       \end{gather*}
+%  \item $\lambda = -(n-\frac{1}{2})\omega_1 + \omega_n  $\\
+%        The scalar products of positive roots with $\lambda+\rho$
+%       \begin{gather*}
+% 	(\epsilon_i, \lambda+\rho) = \\
+% 	(\epsilon_i+\epsilon_j,\lambda+\rho) = \\
+% 	(\epsilon_i-\epsilon_j,\lambda+\rho) =
+%       \end{gather*}
+% \end{enumerate}
+
+
+\begin{figure}[H]
+  \centering
+  \input{diagrams/nroots_B5_1.tikz} 
+	\input{diagrams/bruhat_B5_1.tikz} 
+  \caption{Poset of noncompact roots for $\mathrm{SO}(2,9)$}
+\end{figure} 
+
+
