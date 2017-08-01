@@ -87,11 +87,55 @@ Scalar products of $\rho$ with positive noncompact roots
   \[
    \roots_\lambda = \{ \pm(\epsilon_1 + \epsilon_j \,|\, 1<j\leq p+1 \} \cup \{ \epsilon_i - \epsilon_j \,|\, 1 < i,j \leq p+1 \et i\neq j \}
   \]
-  and is of type $A_p$. The integral cone is in this case
+  and is of type $A_p$.
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}
+\draw (0 cm,0) -- (6 cm,0);
+\draw (8 cm,0) -- (10 cm,0);
+\draw[fill=white] (0 cm, 0 cm) circle (.1cm) node[below=4pt]{$\epsilon_{1} + \epsilon_{p+1}$};
+\draw[fill=black] (2 cm, 0 cm) circle (.1cm) node[below=4pt]{$\epsilon_{p} - \epsilon_{p+1}$};
+\draw[fill=black] (4 cm, 0 cm) circle (.1cm) node[below=4pt]{$\epsilon_{p-1} - \epsilon_{p}$};
+\node (node_a) at (6 cm, 0 cm) {};
+\node (node_b) at (8 cm, 0 cm) {};
+\draw[fill=black] (10 cm, 0 cm) circle (.1cm) node[below=4pt]{$\epsilon_{2} - \epsilon_{3}$};
+\draw [dotted] (node_a) to (node_b);
+\end{tikzpicture}  
+  \caption{The reduced hermitian symmetric pair $(\mathfrak{g}_\lambda, \mathfrak{k}_\lambda)$}
+\end{figure}
+  
+The integral cone is in this case
   \[
-    C = \{ a_1\omega_1 + a_{p+1}\omega_{p+1} + \cdots + a_n \omega_n \,|\, a_1 + 2( a_{p+1} + \cdots + a_n) = 0 \}
+    C = \{ a_1\omega_1 + a_{p+1}\omega_{p+1} + \cdots + a_n \omega_n \,|\, a_1 + 2( a_{p+1} + \cdots + a_{n-2}) + a_{n-1} + a_n = 0 \}
   \]
-  and one can easily check that $\Psi^+_\lambda = \Psi^+_{\lambda+\mu}$ for all $\mu \in C$ and the translation theorem \ref{thm:translation} applies.
+  and one can easily check that $\Psi^+_\lambda = \Psi^+_{\lambda+\mu}$ for all $\mu \in C$ and thus the translation theorem \ref{thm:translation} applies.
+  
+\begin{figure}[H]
+  \centering
+\begin{tikzpicture}[>=latex,line join=bevel,]
+%%
+  \node (node_0) at (0,10) [draw,draw=none] {$\left(-2(a_{p+1} + \cdots + a_{n-2}) - a_{n-1} - a_{n} - 2n + p + 1,\,0,\,0,\ldots,\,0,\,0,\,a_{p+1}+1,\,a_{p+2},\ldots,\,a_{n}\right)$};
+
+  \node (node_1) at (0,8) [draw,draw=none] {$\left(-2(a_{p+1} + \cdots + a_{n-2}) - a_{n-1} - a_{n} - 2n + p,\,0,\,0,\ldots,\,0,\,1,\,a_{p+1},\,a_{p+2},\ldots,\,a_{n}\right)$};
+
+  \node (node_2) at (0,6) [draw,draw=none] {$\left(-2(a_{p+1} + \cdots + a_{n-2}) - a_{n-1} - a_{n} - 2n + p-1,\,0,\,0,\ldots,\,1,\,0,\,a_{p+1},\,a_{p+2},\ldots,\,a_{n}\right)$};
+
+  \node (node_3) at (0,4) [draw,draw=none] {$\left(-2(a_{p+1} + \cdots + a_{n-2}) - a_{n-1} - a_{n} - 2n + 1,\,0,\,1,\ldots,\,0,\,0,\,a_{p+1},\,a_{p+2},\ldots,\,a_{n}\right)$};
+
+  \node (node_4) at (0,2) [draw,draw=none] {$\left(-2(a_{p+1} + \cdots + a_{n-2}) - a_{n-1} - a_{n} - 2n + 2,\,1,\,0,\ldots,\,0,\,0,\,a_{p+1},\,a_{p+2},\ldots,\,a_{n}\right)$};
+  
+  \node (node_5) at (0,0) [draw,draw=none] {$\left(-2(a_{p+1} + \cdots + a_{n-2}) - a_{n-1} - a_{n} - 2n +2,\,0,\,0,\ldots,\,0,\,0,\,a_{p+1},\,a_{p+2},\ldots,\,a_{n}\right)$};
+
+  \draw [black,->] (node_0) edge (node_1);
+  \draw [black,->] (node_1) edge (node_2);
+  \draw [dotted] (node_2) to (node_3);
+  \draw [black,->] (node_3) edge (node_4);
+  \draw [black,->] (node_4) edge (node_5);
+%
+\end{tikzpicture}
+  \caption{Nilpotent cohomology / BGG resolution}
+\end{figure}
   
  \item $ \lambda = -(n+1)\omega_1 +\omega_{n-1} + \omega_n$\\
    Scalar products of positive noncompact roots with $\lambda+\rho$ 
