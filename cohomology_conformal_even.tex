@@ -115,17 +115,17 @@ The integral cone is in this case
   \centering
 \begin{tikzpicture}[>=latex,line join=bevel,]
 %%
-  \node (node_0) at (0,10) [draw,draw=none] {$\left(-2(a_{p+1} + \cdots + a_{n-2}) - a_{n-1} - a_{n} - 2n + p + 1,\,0,\,0,\ldots,\,0,\,0,\,a_{p+1}+1,\,a_{p+2},\ldots,\,a_{n}\right)$};
+  \node (node_0) at (0,10) [draw,draw=none] {$\left(A - a_{n-1} - a_{n} - 2n + p + 1,\,0,\,0,\ldots,\,0,\,0,\,a_{p+1}+1,\,a_{p+2},\ldots,\,a_{n}\right)$};
 
-  \node (node_1) at (0,8) [draw,draw=none] {$\left(-2(a_{p+1} + \cdots + a_{n-2}) - a_{n-1} - a_{n} - 2n + p,\,0,\,0,\ldots,\,0,\,1,\,a_{p+1},\,a_{p+2},\ldots,\,a_{n}\right)$};
+  \node (node_1) at (0,8) [draw,draw=none] {$\left(A - a_{n-1} - a_{n} - 2n + p,\,0,\,0,\ldots,\,0,\,1,\,a_{p+1},\,a_{p+2},\ldots,\,a_{n}\right)$};
 
-  \node (node_2) at (0,6) [draw,draw=none] {$\left(-2(a_{p+1} + \cdots + a_{n-2}) - a_{n-1} - a_{n} - 2n + p-1,\,0,\,0,\ldots,\,1,\,0,\,a_{p+1},\,a_{p+2},\ldots,\,a_{n}\right)$};
+  \node (node_2) at (0,6) [draw,draw=none] {$\left(A - a_{n-1} - a_{n} - 2n + p-1,\,0,\,0,\ldots,\,1,\,0,\,a_{p+1},\,a_{p+2},\ldots,\,a_{n}\right)$};
 
-  \node (node_3) at (0,4) [draw,draw=none] {$\left(-2(a_{p+1} + \cdots + a_{n-2}) - a_{n-1} - a_{n} - 2n + 1,\,0,\,1,\ldots,\,0,\,0,\,a_{p+1},\,a_{p+2},\ldots,\,a_{n}\right)$};
+  \node (node_3) at (0,4) [draw,draw=none] {$\left(A - a_{n-1} - a_{n} - 2n + 1,\,0,\,1,\ldots,\,0,\,0,\,a_{p+1},\,a_{p+2},\ldots,\,a_{n}\right)$};
 
-  \node (node_4) at (0,2) [draw,draw=none] {$\left(-2(a_{p+1} + \cdots + a_{n-2}) - a_{n-1} - a_{n} - 2n + 2,\,1,\,0,\ldots,\,0,\,0,\,a_{p+1},\,a_{p+2},\ldots,\,a_{n}\right)$};
+  \node (node_4) at (0,2) [draw,draw=none] {$\left(A - a_{n-1} - a_{n} - 2n + 2,\,1,\,0,\ldots,\,0,\,0,\,a_{p+1},\,a_{p+2},\ldots,\,a_{n}\right)$};
   
-  \node (node_5) at (0,0) [draw,draw=none] {$\left(-2(a_{p+1} + \cdots + a_{n-2}) - a_{n-1} - a_{n} - 2n +2,\,0,\,0,\ldots,\,0,\,0,\,a_{p+1},\,a_{p+2},\ldots,\,a_{n}\right)$};
+  \node (node_5) at (0,0) [draw,draw=none] {$\left(A - a_{n-1} - a_{n} - 2n +2,\,0,\,0,\ldots,\,0,\,0,\,a_{p+1},\,a_{p+2},\ldots,\,a_{n}\right)$};
 
   \draw [black,->] (node_0) edge (node_1);
   \draw [black,->] (node_1) edge (node_2);
@@ -134,7 +134,7 @@ The integral cone is in this case
   \draw [black,->] (node_4) edge (node_5);
 %
 \end{tikzpicture}
-  \caption{Nilpotent cohomology / BGG resolution}
+  \caption{Nilpotent cohomology / BGG resolution, $A = -2(a_{p+1} + \cdots + a_{n-2})$}
 \end{figure}
   
  \item $ \lambda = -(n+1)\omega_1 +\omega_{n-1} + \omega_n$\\
