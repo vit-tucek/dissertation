@@ -158,19 +158,50 @@ The integral cone is in this case
   \[
    C = \{-(a+b)\omega_1 + a\omega_{n-1} + b\omega_n) \,|\, a,b\in\mathbb{N}_0 \}
   \]
-  and an easy calculation gives $\Psi^+_\lambda = \Psi^+_{\lambda+\mu}$ for all $\mu \in C$. Thus we can use the theorem \ref{thm:translation} and get the same shape of cohomology on the whole cone. However, concrete calculation for $D_5$ shows that the weights for the cohomology differ based on tha values of $a, b.$
-	
-	\begin{tikzpicture}[>=latex,line join=bevel,]
+  and an easy calculation gives $\Psi^+_\lambda = \Psi^+_{\lambda+\mu}$ for all $\mu \in C$. Thus we can use the theorem \ref{thm:translation} and get the same shape of cohomology on the whole cone.
+  
+\begin{figure}[H]
+  \centering
+\begin{tikzpicture}
+\draw (0 cm,0) -- (6 cm,0);
+\draw (8 cm,0) -- (10 cm,0);
+\draw[fill=white] (0 cm, 0 cm) circle (.1cm) node[below=4pt]{$\epsilon_{1} + \epsilon_{n-1}$};
+\draw[fill=black] (2.5 cm, 0 cm) circle (.1cm) node[below=4pt]{$\epsilon_{n-2} - \epsilon_{n-1}$};
+\draw[fill=black] (5 cm, 0 cm) circle (.1cm) node[below=4pt]{$\epsilon_{n-3} - \epsilon_{n-4}$};
+\node (node_a) at (6 cm, 0 cm) {};
+\node (node_b) at (8 cm, 0 cm) {};
+\draw[fill=black] (10 cm, 0 cm) circle (.1cm) node[below=4pt]{$\epsilon_{2} - \epsilon_{3}$};
+\draw [dotted] (node_a) to (node_b);
+\end{tikzpicture}  
+  \caption{The reduced hermitian symmetric pair $(\mathfrak{g}_\lambda, \mathfrak{k}_\lambda)$}
+\end{figure}  
+
+ 
+\begin{figure}[H]
+  \centering
+\begin{tikzpicture}[>=latex,line join=bevel,]
 %%
-\node (node_3) at (69.5bp,167.5bp) [draw,draw=none] {$\left(-a - b - 6,\,-3,\,2,\,a,\,b\right)$};
-  \node (node_2) at (69.5bp,8.5bp) [draw,draw=none] {$\left(-a - b - 6,\,0,\,0,\,a + 1,\,b + 1\right)$};
-  \node (node_1) at (69.5bp,61.5bp) [draw,draw=none] {$\left(-a - b - 7,\,0,\,1,\,a,\,b\right)$};
-  \node (node_0) at (69.5bp,114.5bp) [draw,draw=none] {$\left(-a - b - 6,\,-2,\,2,\,a,\,b\right)$};
-  \draw [black,->] (node_0) ..controls (69.5bp,129.81bp) and (69.5bp,140.03bp)  .. (node_3);
-  \draw [black,->] (node_2) ..controls (69.5bp,23.805bp) and (69.5bp,34.034bp)  .. (node_1);
-  \draw [black,->] (node_1) ..controls (69.5bp,76.805bp) and (69.5bp,87.034bp)  .. (node_0);
+  \node (node_0) at (0,10) [draw,draw=none] {$\left(-(a+b+n+1), 0, 0, \ldots, 0, 0, a+1, b+1 \right)$};
+
+  \node (node_1) at (0,8) [draw,draw=none] {$\left(-(a+b+n+2), 0, 0, \ldots, 0, 1, a, b \right)$};
+
+  \node (node_2) at (0,6) [draw,draw=none] {$\left(-(a+b+n+3), 0, 0, \ldots, 1, 0, a, b \right)$};
+
+  \node (node_3) at (0,4) [draw,draw=none] {$\left(-(a+b+2n-3), 0, 1, \ldots, 0, 0, a, b \right)$};
+
+  \node (node_4) at (0,2) [draw,draw=none] {$\left(-(a+b+2n-2), 1, 0, \ldots, 0, 0, a, b \right)$};
+  
+  \node (node_5) at (0,0) [draw,draw=none] {$\left(-(a+b+2n-2), 0, 0, \ldots, 0, 0, a, b \right)$};
+
+  \draw [black,->] (node_0) edge (node_1);
+  \draw [black,->] (node_1) edge (node_2);
+  \draw [dotted] (node_2) to (node_3);
+  \draw [black,->] (node_3) edge (node_4);
+  \draw [black,->] (node_4) edge (node_5);
 %
 \end{tikzpicture}
+  \caption{Nilpotent cohomology / BGG resolution}
+\end{figure}
   
  \item $ \lambda = -(n-1)\omega_1 + \omega_n$\\
   Scalar products of positive noncompact roots with $\lambda+\rho$ are
