@@ -295,7 +295,7 @@ Cone of unitarizable weights: $\left(a_{2} + 2\right)\omega_{2} - \left(a_{2} + 
 \end{figure}
     
 
-%\noindent $\lambda = $ $\left(a_{2} + 2\right)\omega_{2} - \left(a_{2} + 3\right)\omega_{3}$ \\
+\noindent $\lambda = 2\omega_{2} - 3\omega_{3}$ \\
 \noindent Set of singular roots: $\{\epsilon_{1} + \epsilon_{3}$\} \\
 
 \begin{figure}[H]
@@ -310,15 +310,46 @@ Cone of unitarizable weights: $\left(a_{2} + 2\right)\omega_{2} - \left(a_{2} + 
   \centering
       \begin{tikzpicture}[>=latex,line join=bevel,]
 %%
-\node (node_1) at (46.5bp,8.5bp) [draw,draw=none] {$\left(0,\,a_{2} + 2,\,-a_{2} - 3\right)$};
-  \node (node_0) at (167.0bp,8.5bp) [draw,draw=none] {$\left(2,\,a_{2},\,-a_{2} - 3\right)$};
+\node (node_1) at (46.5bp,8.5bp) [draw,draw=none] {$\left(0,\,  2,\,- 3\right)$};
+  \node (node_0) at (167.0bp,8.5bp) [draw,draw=none] {$\left(2,\,0,\, - 3\right)$};
   \draw [black,->] (node_1) ..controls (101.65bp,8.5bp) and (110.36bp,8.5bp)  .. (node_0);
 %
 \end{tikzpicture}
   \caption{Nilpotent cohomology / BGG resolution}
 \end{figure}
 
-        
+\noindent $\lambda = \left(a_{2} + 2\right)\omega_{2} - \left(a_{2} + 3\right)\omega_{3}$, $a_2\geq 1$ \\
+\noindent Set of singular roots: $\emptyset$ \\
+
+\begin{figure}[H]
+  \centering
+  \begin{tikzpicture}
+\draw (0 cm,0) -- (0 cm,0);
+\draw (0 cm, 0.1 cm) -- +(2 cm,0);
+\draw (0 cm, -0.1 cm) -- +(2 cm,0);
+\draw[shift={(1.2, 0)}, rotate=0] (135 : 0.45cm) -- (0,0) -- (-135 : 0.45cm);
+\draw[fill=black] (0 cm, 0 cm) circle (.1cm) node[below=4pt]{$2\epsilon_{2}$};
+\draw[fill=white] (2 cm, 0 cm) circle (.1cm) node[below=4pt]{$\epsilon_{1} - \epsilon_{2}$};
+\end{tikzpicture}
+  \caption{The reduced hermitian symmetric pair $(\mathfrak{g}_\lambda, \mathfrak{k}_\lambda)$}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+      \begin{tikzpicture}[>=latex,line join=bevel,]
+%%
+ \node (node_0) at (0,3) [draw,draw=none] {$\left(0,\,a_{2} + 2,\,-a_{2} - 3\right)$};
+ \node (node_1) at (3,2) [draw,draw=none] {$\left(2,\,a_{2} + 1,\,-a_{2} - 3\right)$};
+ \node (node_2) at (6,1) [draw,draw=none] {$\left(4,\,a_{2} - 1,\,-a_{2} - 3\right)$};
+ \node (node_3) at (9,0) [draw,draw=none] {$\left(4,\,a_{2} - 2,\,-a_{2} - 3\right)$};
+ 
+  \draw [black,->] (node_0) edge (node_1);
+  \draw [black,->] (node_1) edge (node_2);
+  \draw [black,->] (node_2) edge (node_3);
+%
+\end{tikzpicture}
+  \caption{Nilpotent cohomology / BGG resolution}
+\end{figure}        
 
 
 \section[sp(3): 2, 2, 2]{$\boldsymbol{\mathfrak{sp}(3)\!:\; r = 2,\, q = 2,\, l = 2}$}
