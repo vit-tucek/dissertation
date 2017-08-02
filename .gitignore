@@ -1,3 +1,4 @@
+
 *.aux
 *.glo
 *.idx
@@ -24,3 +25,6 @@
 thesis.pdf
 _minted-thesis
 *.tps
+*.bcf
+*.xml
+*-blx.bib

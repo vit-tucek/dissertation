@@ -36,7 +36,9 @@
 \usepackage{twoopt} % for convenient commands
 \usepackage{xfrac} % for \sfrac command
 \usepackage{mathrsfs}   % calligraphic font \mathscr{C}
-%\usepackage{minted} % for pretty printing of source code
+\usepackage{minted} % for pretty printing of source code
+\usepackage[style=alphabetic]{biblatex}
+\addbibresource{thesis.bib}
 \usepackage{float}
 \usepackage[toc]{appendix}
 \usepackage[matrix,arrow]{xy}    % for diagrams
@@ -93,20 +95,21 @@
 \hbadness=10000 % silence underfull warnings
 
 %%% Jednotlivé kapitoly práce jsou pro přehlednost uloženy v samostatných souborech
-%\include{introduction}
-%\include{algebras}
+\include{introduction}
+\include{algebras}
 \include{unitarizable_modules}
-%\include{spaces}
-%\include{invariant}
-%\include{parabolic_geometries}
-%\include{conclusion}
+\include{spaces}
+\include{invariant}
+\include{parabolic_geometries}
+\include{conclusion}
 
 %%% Seznam použité literatury
 \addcontentsline{toc}{chapter}{Bibliography}
-\bibliography{my_library}
-\bibliographystyle{plain}
+\printbibliography
+%\bibliographystyle{plain}
+%\bibliography{thesis}
 
-%\include{appendix}
+\include{appendix}
 
 %%% Tabulky v disertační práci, existují-li.
 % \chapwithtoc{List of Tables}
