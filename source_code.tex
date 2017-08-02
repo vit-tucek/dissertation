@@ -1,0 +1,694 @@
+\chapter{Source code}
+The Bruhat graphs in this work were produced with the help of the following code written for the mathematical software called sage \cite{sage}. Most of the code was submitted in a form of patch with respect to the version 5.12.
+
+\begin{minted}[fontsize=\footnotesize]{python}
+######################################################################
+##############             HELPER FUNCTIONS             ##############
+######################################################################
+
+from sage.graphs.graph_latex import setup_latex_preamble
+setup_latex_preamble()
+
+def one_graded_from_dynkin(D, crossed_node):
+    ct = D.cartan_type() # D might be relabeled, we need to get rid of that
+    ct = CartanType([ct.type(), ct.rank()])
+    index_set = list(ct.index_set())
+    index_set.remove(crossed_node)
+    return ct, index_set
+
+def setup(CT, index_set):
+    W = WeylGroup(CT, prefix="s")
+    AS = W.domain()
+    FW = AS.fundamental_weights()
+    vFW = FW.map(lambda v: v.to_vector())
+    RP = AS.root_poset(facade=True)
+    nonparabolic_roots = [x.to_ambient() for x in AS.root_system.root_lattice().positive_roots_nonparabolic(index_set=index_set)]
+    nRP = RP.subposet(nonparabolic_roots)
+    rho = AS.rho()
+    return W, AS, FW, vFW, rho, nRP
+
+def inject_positive_integer_variables(names, p=0, q=0):
+    """
+    If names is a string (e.g. "A") this function injects into the workspace n variables named Ap till Aq inclusive.
+    Otherwise it is assumed that names is a list of variables that will be injected.
+    They are assumed to take only nonnegative integral values.
+    """
+    def inject_name(name, i=None):
+        if i is not None:
+            name = name + str(i)
+        var(name)
+        eval("assume({s} >= 0, ({s}, 'integer'))".format(s=name))
+
+    if isinstance(names, basestring):
+        for i in range(p, q+1):
+            inject_name(names, i)
+    else:
+        for name in names:
+            inject_name(name)
+
+def setup_cone(variable_list, cone_str):
+    """
+    Deletes all assumptions, defines variables and declares them to be integral and nonnegative.
+
+    variable_list is either a list of strings or 3-tuple containing name and range for the variables (see inject_positive_integer_variables)
+    """
+    forget()
+    global vFW
+    print("\n Initial assumptions:")
+    print(assumptions())
+    if isinstance(variable_list, list):
+        inject_positive_integer_variables(variable_list)
+    else:
+        inject_positive_integer_variables(*variable_list)
+    print("Cone: %s with assumptions:" % cone_str)
+    print(assumptions())
+    print("\n")
+    exec(cone_str, globals())
+    #exec(cone_str, globals(), locals())
+    #exec(cone_str, locals(), globals())
+
+class RootWithScalarProduct:
+    """
+    Use this to relabel graphs of positive roots with scalar product with given weight v.
+    """
+    def __init__(self, r, v):
+        self.root = r
+        self.scalarproduct = v.dot_product(r.associated_coroot().to_vector())
+
+    def _latex_(self):
+        return "(%s, %s)" % (latex(self.scalarproduct), latex(self.root))
+
+    def __str__(self):
+        return str(self.scalarproduct)
+
+    def __repr__(self):
+        return repr(self.scalarproduct)
+
+def poset_scalar_product(poset, v, only_nonnegative=True):
+    """
+    Returns LaTeX code of poset of roots whose nodes were labeled by inner product of those roots with give weight v.
+    """
+    p = poset.relabel(lambda r: RootWithScalarProduct(r, v))
+    if only_nonnegative:
+        p = p.subposet([x for x in p if not(x.scalarproduct < 0)])
+    if p.is_empty():
+        print("Poset of scalar products is empty.")
+    return p
+
+def _fix_basis_latex(string):
+    """
+    Basis of Ambient spaces are indexed by e_0, ..., e_{n-1} instead of conventional \epsilon_1, ..., \epsilon_n.
+    This functions returns string with fixed LaTeX source. You can render its output in notebook by calling latex.eval(...)
+    """
+    import re
+    def shift_number(matchobj):
+        return "e_{%d}" % (int(matchobj.group(1)) + 1)
+
+    index_re = re.compile("e_{(\d+)}")
+    return index_re.sub(shift_number, string).replace("e_{", "\epsilon_{")
+
+def fix_basis_latex(obj):
+    return _fix_basis_latex(str(latex(obj))).replace("0000000000000", "")
+
+def get_poset_latex(poset, orientation="up"):
+    hd = poset.hasse_diagram()
+    if orientation != "up":
+        hd.set_latex_options(rankdir=orientation)
+
+    return fix_basis_latex(latex(hd))
+
+def save_diagram(name, poset, orientation="up"):
+    import os
+    with open(os.path.join("diagrams", name + ".tikz"), 'w') as f:
+        f.write(get_poset_latex(poset, orientation=orientation))
+
+######################################################################
+##############  Parabolic enhancements for Weyl groups  ##############
+######################################################################
+
+import sage.combinat.root_system.weyl_group as wg
+
+def parabolic_bruhat_graph(self, index_set = None, side="right"):
+    """
+    Returns the Hasse graph of the poset ``self.bruhat_poset(index_set,side)`` with edges labeled by the cover relation
+    """
+    elements = self.minimal_representatives(index_set, side)
+    covers =[(x,y)  for y in elements for x in y.bruhat_lower_covers() if x in elements]
+    res = DiGraph()
+    for u,v in covers:
+        res.add_edge(u,v,v.inverse()*u)
+    return res
+
+def parabolic_weight_graph(self, weight, index_set=None,side="right"):
+    elements = self.minimal_representatives(index_set,side)
+    wl0 = self.long_element(index_set)
+    #covers =[(wl0*x,wl0*y)  for y in elements for x in y.bruhat_lower_covers() if x in elements] # funguje jen pro "right"
+    covers =[(x,y)  for y in elements for x in y.bruhat_lower_covers() if x in elements]
+    res = DiGraph()
+    rho = weight.parent().rho()
+    v = weight + rho
+    def act_on_weight(v,x):
+        return str((v.weyl_action(x) - rho).to_dominant_chamber(index_set).to_vector())
+    for x,y in covers:
+        #a = v.weyl_action(x) - rho
+        #b = v.weyl_action(y) - rho
+        #res.add_edge(str(a.to_vector()),str(b.to_vector()))
+        a = act_on_weight(v,x)
+        b = act_on_weight(v,y)
+        res.add_edge(a,b)
+    return res
+
+def parabolic_weight_graph_enum(self, weight, index_set=None, side="right"):
+    elements = [x for x in enumerate(self.minimal_representatives(index_set,side))]
+    covers =[(x,y)  for y in elements for x in elements if x[1] in y[1].bruhat_lower_covers()]
+    res = DiGraph()
+    rho = weight.parent().rho()
+    v = weight + rho
+    def act_on_weight(v,x):
+        return str((v.weyl_action(x) - rho).to_dominant_chamber(index_set).to_vector())
+    for x,y in covers:
+        a = str(x[0]) + ":" + act_on_weight(v,x[1])
+        b = str(y[0]) + ":" + act_on_weight(v,y[1])
+        res.add_edge(a,b)
+    return res
+
+def parabolic_poset(self, Levi_indices, side="right"):
+    # returns a poset of minimal representatives of W_S \ W
+    # self is a finite-dimensional Weyl group
+    # first we compute orbit of the characteristic vector of our parabolic subalgebra
+    # this is for representatives of left cosets; to obtain representatives for right cosets just take the inverse
+    elements = self.minimal_representatives(Levi_indices, side)
+    #since our Weyl elements should be already reduced (?), we could optimize this step by constructing the cover relations directly thus reducing quadratic complexity to linear
+    covers = tuple([x,y]  for y in elements for x in y.bruhat_lower_covers() if x in elements)
+    return Poset( (elements, covers), cover_relations = True)
+
+def parabolic_weight_poset(self, weight, Levi_indices, side="right", relative_index_set=None):
+    rho = weight.parent().rho()
+    v = weight + rho
+    elements = self.minimal_representatives(Levi_indices, side, relative_index_set=relative_index_set)
+    covers = tuple([x,y]  for y in elements for x in y.bruhat_lower_covers() if x in elements)
+    labels = {}
+    for x in elements:
+        labels[x] = str((v.weyl_action(x) - rho).to_dominant_chamber(Levi_indices).to_vector())
+    return Poset( (elements, covers), cover_relations = True, element_labels=labels)
+
+def minimal_representatives(self, index_set=None, side="right", relative_index_set=None):
+    """
+    Returns the set of minimal coset representatives of ``self`` by a parabolic subgroup.
+
+    INPUT:
+
+    - ``index_set`` - a subset (or iterable) of the nodes of the Dynkin diagram, empty by default, denotes the generators of the Levi part
+    - ``side`` - 'left' or 'right' (default)
+    - ``relative_index_set`` - superset of index_set for the relative Case, again determines the Levi part
+
+    See documentation of ``self.bruhat_poset`` for more details.
+
+    The output is equivalent to ``set(w.coset_representative(index_set,side))``
+
+    but this routine is much faster. For explanation of the algorithm see e.g. Cap, Slovak:
+    Parabolic geometries, p. 332
+
+    EXAMPLES::
+
+        sage: G = WeylGroup(CartanType("A4"),prefix="s")
+        sage: index_set = [1,3,4]
+        sage: side = "left"
+        sage: a = set(w for w in G.minimal_representatives(index_set,side))
+        sage: b = set(w.coset_representative(index_set,side) for w in G)
+        sage: print a.difference(b)
+        set([])
+    """
+    from sage.combinat.root_system.root_system import RootSystem
+    from copy import copy
+
+    if side != 'right' and side != 'left':
+        raise ValueError, "%s is neither 'right' nor 'left'"%(side)
+
+   #TODO check for relative_index_set being a superset of index_set
+
+    weight_space = RootSystem(self.cartan_type()).weight_space()
+    if index_set == None:
+        crossed_nodes = set(self.index_set())
+        relative_crossed_nodes = set()
+    else:
+        crossed_nodes = set(self.index_set()).difference(index_set)
+        if not relative_index_set:
+            relative_index_set = self.index_set()
+        relative_crossed_nodes = set(self.index_set()).difference(relative_index_set)
+    # the characteristic vector
+    rhop = sum([weight_space.fundamental_weight(i) for i in crossed_nodes if not(i in relative_crossed_nodes)])
+    '''
+
+    The variable "todo" serves for traversing the orbit of rhop, while the directory "known" serves
+elements in the orbit of rhop while known[vec] are paths of simple reflections from rhop to vec.
+
+    '''
+    todo = [rhop]
+    known = dict()
+    known[rhop] = []
+    if rhop == 0:
+        return set( [self.one()] )
+    else:
+        while len(todo) > 0:
+            vec = todo.pop()
+            nonzero_coeffs = [i for i in self.index_set() if (vec.coefficient(i) > 0) and (i in relative_index_set)]
+            for i in nonzero_coeffs:
+                new_vec = vec.simple_reflection(i)
+                new_reflections = copy(known[vec])
+                new_reflections.append(i)
+                todo.append(new_vec)
+                known[new_vec] = new_reflections
+        if side =='left':
+            return set(self.from_reduced_word(w) for w in known.values())
+        else:
+            #here we could just take the inverses of w but reversing the list of simple reflections
+            return set(self.from_reduced_word(w[::-1]) for w in known.values())
+
+def bruhat_poset(self, index_set = None, side="right", facade = False):
+    from sage.combinat.posets.posets import Poset
+    elements = self.minimal_representatives(index_set, side)
+    # Since our Weyl elements should be already reduced (?), we could
+    # optimize this step by constructing the cover relations directly (see Cap, Slovak: Parabolic
+    # thus reducing quadratic complexity of the next step to linear. On the other hand, we would
+    covers = tuple([x,y] for y in elements for x in  y.bruhat_lower_covers()
+                    if x in elements)
+    return Poset((self, covers), cover_relations = True, facade=facade)
+
+
+wg.WeylGroup_gens.minimal_representatives = minimal_representatives
+#wg.WeylGroup_gens.bruhat_poset = bruhat_poset
+wg.WeylGroup_gens.parabolic_poset = parabolic_poset
+wg.WeylGroup_gens.parabolic_bruhat_graph = parabolic_bruhat_graph
+wg.WeylGroup_gens.parabolic_weight_graph = parabolic_weight_graph
+wg.WeylGroup_gens.parabolic_weight_graph_enum = parabolic_weight_graph_enum
+wg.WeylGroup_gens.parabolic_weight_poset = parabolic_weight_poset
+
+######################################################################
+##############   Cohomology given by root embeddings    ##############
+######################################################################
+
+def get_P_lambda(CT, index_set, side):
+    """
+    Returns parabolic poset for CT with Levi part given by index_set that consists of minimal representative of `side' cosets.
+    """
+    W = WeylGroup(CT, prefix="s")
+    return W.parabolic_poset(index_set, side)
+
+def W_lambda_weight_poset(P_lambda, embedding):
+    """
+    Returns poset P_lambda embedded to a bigger Weyl group through embedding
+    :embedding:  tuple (simple_roots, W) where simple_roots are embeddings of simple_roots into reflections in W.
+    """
+    simple_roots, W = embedding
+    AS = W.domain()
+    for i in simple_roots.keys():
+        simple_roots[i] = AS.from_vector(vector(simple_roots[i]))
+
+#       reflections = w.parent().reflections()
+#       embedding = {}
+#       for i  in simple_roots:
+#           embedding[i] = reflections()[simple_roots[i]]
+    def embedd(w):
+        reflections_word = map(lambda i: simple_roots[i], w.reduced_word())
+        return W.from_reduced_word(reflections_word, word_type="all")
+    print "Embedding: ", simple_roots
+    return P_lambda.relabel(embedd)
+
+def to_fundamental_weights(AS, u):
+    """
+    u is a dense vector over symbolic ring epsilon basis and this will return its coordinates wrt basis of fundamental weights
+    should work better than matrix M as some Cartan Types (i.e. E_6) are implemented in Ambient space of higher dimension than the rank
+    """
+    return vector([u.dot_product(AS.simple_coroot(i).to_vector()) for i in AS.index_set()])
+
+
+def get_dominant(AS, u, index_set):
+    """
+    Returns as provably dominant element in the orbit of u as possible. The orbit is taken with respect to Weyl subgroup generated by indices from index_set. If all coefficients of u are numbers it will return the dominant element.
+
+    If there is no dominant element ends up in infinite loop! TODO BUG?
+    """
+    negative = True
+    while negative:
+        for i in index_set:
+            c = u.dot_product(AS.simple_coroot(i).to_vector())
+            if c < 0:
+                break
+        else: # we haven't found provably negative coefficient wrt fundamental weights
+            negative = False
+        if negative:
+            u = AS.weyl_group().simple_reflection(i)*u
+    return u
+
+def get_W_action(AS, index_set, side, v, node_dist=1.5, with_dynkins=False):
+    """
+    index_set is index_set determines the Levi part of the space we are embedding into
+    """
+    class W_action:
+        ct = AS.cartan_type()
+
+        #M = Matrix([AS.fundamental_weight(i).to_vector() for i in AS.index_set()]).transpose().inverse() # change of basis from "epsilons" to fundamental weights
+
+        def to_fundamental_weights(self, u):
+            """
+            u is a dense vector over symbolic ring epsilon basis and this will return its coordinates wrt basis of fundamental weights
+            should work better than matrix M as some Cartan Types (i.e. E_6) are implemented in Ambient space of higher dimension than the rank
+            """
+            return vector([u.dot_product(AS.simple_coroot(i).to_vector()) for i in AS.index_set()])
+
+        def __init__(self, w):
+            #AS = w.domain()
+            #nw = w.coset_representative(index_set, side) # Enright is wrong!
+            nw = w
+
+            #self.result = nw.reduced_word()
+            #self.result = M*(2*nw.matrix()*AS.rho().to_vector() - AS.rho().to_vector())
+            #self.result = M*(nw.matrix()*v - AS.rho().to_vector())
+            self.result = self.to_fundamental_weights(get_dominant(AS, nw.matrix()*v - AS.rho().to_vector(), index_set))
+            #self.result = self.to_fundamental_weights(nw.matrix()*v - 1*AS.rho().to_vector())
+            #self.result = (AS.from_vector(nw.matrix()*v) - AS.rho()).to_dominant_chamber(index_set).to_weight_space()
+            # u, direction = (AS.from_vector(nw.matrix()*v) - AS.rho()).to_dominant_chamber(index_set, reduced_word=True)
+#             wl = w.coset_representative(index_set, "left")
+#             wr = w.coset_representative(index_set, "right")
+#           self.result = u.to_weight_space(), w.reduced_word(), direction, wl.reduced_word(), wr.reduced_word(), (w*wl.inverse()).reduced_word(), (wr.inverse()*w).reduced_word(), (w*wl.inverse())*wl
+#             self.result = u.to_weight_space(), w.reduced_word(), direction
+
+        def __repr__(self):
+            return repr(w)
+
+        def _latex_(self):
+            if with_dynkins:
+                global parabolic_index_set
+                parabolic_index_set = map(lambda i: latex(self.result[i-1]), index_set) # TODO can give wrong node fill in case there are repeating labels
+                def labeling(i):
+                    return latex(self.result[i-1])
+                dynkin_latex = "\n\n \\begin{tikzpicture}\n" + _fix_basis_latex(self.ct._latex_dynkin_diagram(label=labeling, node_dist=node_dist)) + "\\end{tikzpicture}\n\n "
+                return dynkin_latex
+            else:
+                return latex(self.result)
+
+    return W_action
+
+def to_fundamental_weights(AS, u):
+            """
+            u is a dense vector over symbolic ring epsilon basis and this will return its coordinates wrt basis of fundamental weights
+            should work better than matrix M as some Cartan Types (i.e. E_6) are implemented in Ambient space of higher dimension than the rank
+            """
+            return vector([u.dot_product(AS.simple_coroot(i).to_vector()) for i in AS.index_set()])
+
+def cohomology_poset(small_CT, small_index_set, simple_roots_embedding, W, big_index_set, v, with_dynkins=False):
+    P = get_P_lambda(small_CT, small_index_set, "left")
+    eP = W_lambda_weight_poset(P, (simple_roots_embedding, W))
+    AS = W.domain()
+    action = get_W_action(AS, big_index_set, "left", v, with_dynkins=with_dynkins)
+    return eP.relabel(action)
+
+
+######################################################################
+##############    Cohomology of unitarizable modules    ##############
+######################################################################
+
+def WG_action(w, v):
+    """
+    Action of weyl group element w on vector v.
+    Workaround for subgroups not containing elements of the supergroup.
+    """
+    AS = v.parent()
+    return AS.from_vector(w.matrix()*v.to_vector())
+
+def get_length_function(positive_roots):
+    positive_roots = set(positive_roots)
+    @cached_function
+    def l(w):
+        return len([a for a in positive_roots if WG_action(w.inverse(), -a) in positive_roots])
+    return l
+
+def get_generating_roots(weight, index_set):
+    """
+    Returns a list of roots that generate the reflection subgroup which governs cohomology of unitarizable hihgest weight modules.
+    First part of Enright's formula from his paper on u-cohomology.
+    The convention is that Verma modules are induced from lambda (i.e. no rho-shift)
+    """
+    AS = weight.parent() # the ambient space
+    rho = AS.rho()
+    Psi = [r for r in AS.positive_roots() if r.scalar(rho + weight) == 0]
+
+    if AS.cartan_type()[0] in "BCG":
+        print [x.is_short_root() for x in Psi]
+        is_there_long_root = any(not(x.is_short_root()) for x in Psi)
+    else:
+        is_there_long_root = False
+    print "Is there long root:", is_there_long_root
+    def test_root(r):
+        n = r.associated_coroot().scalar(weight + rho) # TODO check coroot calculations
+        if is_there_long_root:
+            short = r.is_short_root()
+        else:
+            short = True
+        #print r, long_root, short
+        return n.is_integer() and n > 0 and short
+
+    nonparabolic_roots = [x.to_ambient() for x in AS.root_system.root_lattice().positive_roots_nonparabolic(index_set=index_set)]
+    parabolic_roots = [x.to_ambient() for x in AS.root_system.root_lattice().positive_roots_parabolic(index_set=index_set)]
+    #print("Nonparabolic roots: %s" % sorted(nonparabolic_roots))
+    Phi = [r for r in nonparabolic_roots if test_root(r) and all(r.scalar(s) == 0 for s in Psi)]
+    return Phi, Psi, parabolic_roots, nonparabolic_roots
+
+def generate_subgroup(generators):
+    """
+    Keep multiplying and taking inverses as long as new elements are constructed.
+    Unfortunately, this routine takes too much time in practice.
+    """
+    new = set(a*b for (a,b) in cartesian_product([generators, generators])).union(set(g.inverse() for g in generators))
+    if new == generators:
+        return new
+    else:
+        return generate_subgroup(new)
+
+def DyerN(w):
+    W = w.parent()
+    return [t for t in W.reflections() if (t*w).length() < w.length()]
+
+def DyerCoxeterGenerators(H):
+    return [w for w in H if set(DyerN(w)) == set([w])]
+
+def get_subsystem_data(weight, index_set):
+    AS = weight.parent()
+    W = AS.weyl_group()
+    generating_roots, Psi, parabolic_roots, nonparabolic_roots =  get_generating_roots(weight, index_set)
+    reflections = W.reflections()
+    generators = set(reflections[r] for r in generating_roots)
+
+    #W_lambda = list(generate_subgroup(generators)) # subgroup generates H as a matrix group and we lose all the WeylGroupElement methods # too slow
+    #W_lambda = [W.element_class(W, h) for h in W.subgroup(generators)] # too slow
+    W_lambda = W.subgroup(generators)
+    W_lambda_reflections = []
+    for x in W_lambda:
+        g = W.element_class(W, x)
+        if g in reflections:
+            W_lambda_reflections.append(g)
+
+    # calculate Coxeter generators of the reflection subgroup
+    # see [Deodhar] or [Dyer] for proof
+    def DyerCoxeterGenerators(H_reflections):
+        # optimized version
+        #H_reflections = [W.element_class(W, x) for x in reflections if x in H] # WARNING switching H and reflections leads to empty set!
+        # H_reflections = [W.element_class(W, x) for x in H if W.element_class(W, x) in reflections] # the previous stopped working in Sage 7.6 # refactored shortly thereafter to assume that we have only reflections at input
+        W_length = get_length_function(AS.positive_roots())
+        def DyerN(w):
+            w = W.element_class(W, w)
+            return set(t for t in H_reflections if  W_length(t*w) < W_length(w))
+
+        return [w for w in H_reflections if DyerN(w) == set([w])]
+
+    coxeter_generators = DyerCoxeterGenerators(W_lambda_reflections)
+
+    lambda_positive_roots = [r for r in reflections.keys() if reflections[r] in W_lambda_reflections]
+    lambda_simple_roots = [r for r in reflections.keys() if reflections[r] in coxeter_generators]
+    lambda_parabolic_roots = [r for r in lambda_positive_roots if r in parabolic_roots]
+    lambda_nonparabolic_roots = [r for r in lambda_positive_roots if r in nonparabolic_roots]
+
+    # decompose coset representative according to their length
+    from collections import defaultdict
+    def is_dominant(v, positive_roots):
+        return all(v.scalar(r) > 0 for r in positive_roots)
+    lambda_W_c = defaultdict(list)
+    rho = AS.rho()
+    lambda_length = get_length_function(lambda_positive_roots)
+    for w in W_lambda:
+        if is_dominant(WG_action(w, rho), lambda_parabolic_roots):
+            lambda_W_c[lambda_length(w)].append(w)
+
+    return Psi, generating_roots, lambda_simple_roots, lambda_positive_roots, lambda_parabolic_roots, lambda_nonparabolic_roots, W_lambda, lambda_W_c
+
+# small hack for LaTeXing DynkinDiagrams of generalized flag manifolds
+from sage.combinat.root_system.cartan_type import CartanType_abstract as cta
+def _my_latex_draw_node(self, x, y, label, position="below=4pt", fill='white'):
+        r"""
+        Draw (possibly marked [crossed out]) circular node ``i`` at the
+        position ``(x,y)`` with node label ``label`` .
+        - ``position`` -- position of the label relative to the node
+        - ``anchor`` -- (optional) the anchor point for the label
+        EXAMPLES::
+            sage: CartanType(['A',3])._latex_draw_node(0, 0, 1)
+            '\\draw[fill=white] (0 cm, 0 cm) circle (.25cm) node[below=4pt]{$1$};\n'
+        """
+        global parabolic_index_set
+        #print parabolic_index_set, label
+        fill = "black" if label in parabolic_index_set else "white"
+        return "\\draw[fill={}] ({} cm, {} cm) circle (.1cm) node[{}]{{${}$}};\n".format(fill, x, y, position, label)
+cta._latex_draw_node =  _my_latex_draw_node
+
+def examine(weight, index_set, cone=None, only_nonnegative=True, show_diagrams=False, show_latex=False, orientation="up", cartan_type="", with_dynkins=False, **kwargs):
+    Psi, generating_roots, lambda_simple_roots, lambda_positive_roots, lambda_parabolic_roots, lambda_nonparabolic_roots, H, lambda_W_c = get_subsystem_data(weight, index_set)
+    print("Weight: %s" % weight)
+    print("Singular roots: %s" % sorted(Psi))
+    print("Set of generating roots: %s" % sorted(generating_roots))
+    print("Set of generated roots: %s" % sorted(lambda_positive_roots))
+    #show("Set of generated roots:", lambda_positive_roots)
+    print("Simple roots: %s" % sorted(lambda_simple_roots))
+    #print("Scalar products of pairs of distinct simple roots: %s" % set(u.scalar(v) for (u,v) in cartesian_product([lambda_simple_roots, lambda_simple_roots]) if u != v))
+
+    print("Noncompact lambda-roots: %s" % lambda_nonparabolic_roots)
+
+    AS = weight.parent()
+    weight = weight
+    if cone is not None:
+        print("Translated cone: %s" % cone)
+        v = weight.to_vector() + cone + AS.rho().to_vector() # we induce Verma modules from lambda and hence we need to test scalar products with weight shifted by rho
+    else:
+        v = weight.to_vector() + AS.rho().to_vector() # we induce Verma modules from lambda and hence we need to test scalar products with weight shifted by rho
+
+    nonparabolic_roots = [x.to_ambient() for x in AS.root_system.root_lattice().positive_roots_nonparabolic(index_set=index_set)]
+    nRP = AS.root_poset(facade=True).subposet(nonparabolic_roots)
+    sP = poset_scalar_product(nRP, v, only_nonnegative=only_nonnegative)
+    if sP.is_empty():
+        print "Poset of nonnegative scalar products is empty."
+        sP_latex = ""
+    else:
+        sP_latex = get_poset_latex(sP, orientation)
+    if  sP_latex != "":
+        if show_diagrams:
+            print("Scalar products (possibly only the nonnegative ones) of the weight (in the cone) with noncompact roots:")
+            _ = latex.eval(sP_latex)
+        if show_latex:
+            print sP_latex
+
+### BUG
+# DynkinDiagram calls CartanMatrix with all its arguments (*args) see line 181 in dynkin_diagram.py
+    # this causes error with relabeling for A1, i.e. DynkinDiagram(CartanMatrix([[2]]), ["ahoj"])
+    # workaround here is to use Matrix instead of CartanMatrix, but note that the label in Dynkin diagram is wrong!
+    # also, DynkinDiagram(CM, index_set=...) doesn't work as intended and produces labeling range(order(CM))
+    # print("Cartan matrix:\n%s" % CM)
+    # if len(lambda_simple_roots) > 0:
+#         D = DynkinDiagram(CM, lambda_simple_roots)
+#     else:
+#         D = DynkinDiagram(CM, index_set=lambda_simple_roots)
+
+# in the end, we relabel explicitely in case we have rank 1
+    CM = Matrix([[rj.scalar(ri.associated_coroot()) for rj in lambda_simple_roots] for ri in lambda_simple_roots])
+    D = DynkinDiagram(CM, lambda_simple_roots)
+    if len(lambda_simple_roots) == 1:
+        D = D.relabel({1: lambda_simple_roots[0]})
+
+
+    # let's calculate the cohomology of the "shape" given by vertex of the cone
+    e = set(D.index_set()).intersection(lambda_nonparabolic_roots).pop() # we know that there is only one simple noncompact root in the lambda-subsystem
+    print("Noncompact root in the lambda-subsystem: %s" % e)
+    crossed_node = D.index_set().index(e) + 1
+    # simple_roots_embedding = dict(enumerate(D.index_set(), 1)) #BUG returns sorted index_set
+    simple_roots_embedding = D.cartan_type()._relabelling
+
+    ct, small_index_set = one_graded_from_dynkin(D, crossed_node)
+    # print ct, small_index_set, simple_roots_embedding, AS.weyl_group(),index_set, v
+
+    # There is a BUG in DynkinDiagram._latex_ which causes not very nice labeling of nodes in the Dynkin diagram
+    #latex.eval(fix_basis_latex(latex(D)))
+    #print fix_basis_latex("\n" + latex(D) + "\n")
+    # This is a workaround
+    labeling = lambda i: latex(i)
+
+    global parabolic_index_set
+    parabolic_index_set = [latex(simple_roots_embedding[s]) for s in small_index_set]
+
+    dynkin_latex = "\\begin{tikzpicture}\n" + _fix_basis_latex(D.cartan_type()._latex_dynkin_diagram(labeling)) + "\\end{tikzpicture}"
+    #dynkin_latex = dynkin_latex.replace(".25cm", ".15cm").replace("fill=white", "fill=black") # make nodes smaller and black TODO automatically make noncompact root white
+
+    if show_diagrams:
+        _ =latex.eval(dynkin_latex)
+    if show_latex:
+        print dynkin_latex
+
+    cP = cohomology_poset(
+            ct, # to get rid of relabeling, we want this to be labeled by integers
+            small_index_set,
+            simple_roots_embedding,
+            AS.weyl_group(prefix="s"),
+            index_set, # not used right now, uniform "projection" on minimal representatives doesn't seem to work (i.e. Enright has a mistake in his paper, we take k-dominant weight in the orbit)
+            v,
+            with_dynkins=with_dynkins
+            )
+    bgg_poset = get_poset_latex(cP, orientation)
+    if show_diagrams:
+        _ = latex.eval(bgg_poset)
+    if show_latex:
+        print bgg_poset
+        #print(latex(cP))
+
+    from string import Template
+
+    scalar_poset_template = Template(r"""
+\begin{figure}[H]
+  \centering
+      $scalar_poset
+  \caption{Nonnegative scalar products with noncompact roots}
+\end{figure}
+    """)
+    if sP_latex == "":
+        scalar_poset = ""
+    else:
+        scalar_poset = scalar_poset_template.substitute(scalar_poset=sP_latex)
+
+    template = Template(r"""
+
+\subsubsection{$cartan_type}
+
+Cone of unitarizable weights: $weight \\
+
+$scalar_poset
+
+%\noindent $$\lambda = $$ $weight \\
+\noindent Set of singular roots: $singular_roots \\
+
+\begin{figure}[H]
+  \centering
+  $reduced_dynkin
+  \caption{The reduced hermitian symmetric pair $$(\mathfrak{g}_\lambda, \mathfrak{k}_\lambda)$$}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+      $bgg_poset
+  \caption{Nilpotent cohomology / BGG resolution}
+\end{figure}
+
+        """)
+
+    if Psi:
+        singular_roots_latex = "$\{" + ", ".join(_fix_basis_latex(latex(r)) for r in Psi) + "$\}"
+    else:
+        singular_roots_latex = "$\emptyset$"
+    coefficients = [c for c in to_fundamental_weights(AS, v - AS.rho().to_vector())]
+    F = CombinatorialFreeModule(SR, ["omega_{%d}" % i for i in range(1, len(coefficients)+1)], prefix="omega", latex_prefix="\\omega")
+    terms = latex(sum(c*F.monomial(i) for (i,c) in enumerate(coefficients, 1)))
+    #terms = " + ".join("{c}\\omega_{i}".format(c=c, i=i) for (i, c) in enumerate())
+    return  template.substitute(weight="$" + terms.strip() + "$",
+                   singular_roots=singular_roots_latex,
+                   reduced_dynkin=dynkin_latex,
+                   scalar_poset=scalar_poset,
+                   bgg_poset=bgg_poset,
+                   cartan_type=cartan_type
+                  )
+
+\end{minted}
