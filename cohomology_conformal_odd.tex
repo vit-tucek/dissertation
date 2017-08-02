@@ -110,7 +110,47 @@ The integral cone is in this case
     \[
       \roots_\lambda = \{ \pm(\epsilon_1 + \epsilon_j \,|\, 1<j\leq p+1 \} \cup \{ \epsilon_i - \epsilon_j \,|\, 1 < i,j \leq p+1 \et i\neq j \}.
     \]
-      
+
+The integral cone is in this case \[C = \{t(-\omega_1 + \omega_n) \,|\, t\in\mathbb{N}_0 \}\] and $\Psi^+_\lambda = \Psi^+_{\lambda+\mu}$ for all $\mu \in C$.      
+
+
+\begin{figure}[H]
+  \centering
+\begin{tikzpicture}
+\draw (0 cm,0) -- (6 cm,0);
+\draw (8 cm,0) -- (10 cm,0);
+\draw[fill=white] (0 cm, 0 cm) circle (.1cm) node[below=4pt]{$\epsilon_{1} + \epsilon_{n}$};
+\draw[fill=black] (2.5 cm, 0 cm) circle (.1cm) node[below=4pt]{$\epsilon_{n-1} - \epsilon_{n}$};
+\draw[fill=black] (5 cm, 0 cm) circle (.1cm) node[below=4pt]{$\epsilon_{n-2} - \epsilon_{n-1}$};
+\node (node_a) at (6 cm, 0 cm) {};
+\node (node_b) at (8 cm, 0 cm) {};
+\draw[fill=black] (10 cm, 0 cm) circle (.1cm) node[below=4pt]{$\epsilon_{2} - \epsilon_{3}$};
+\draw [dotted] (node_a) to (node_b);
+\end{tikzpicture}  
+  \caption{The reduced hermitian symmetric pair $(\mathfrak{g}_\lambda, \mathfrak{k}_\lambda)$}
+\end{figure}  
+
+\begin{figure}[H]
+  \centering
+\begin{tikzpicture}[>=latex,line join=bevel,]
+%%
+  \node (node_0) at (0,10) [draw,draw=none] {$\left(-t-n-1, 0, 0, \ldots, 0, 0, t+2\right)$};
+  \node (node_1) at (0,8) [draw,draw=none] {$\left(-t-n-2, 0, 0, \ldots, 0, 1, t \right)$};
+  \node (node_2) at (0,6) [draw,draw=none] {$\left(-t-n-3, 0, 0, \ldots, 1, 0, t \right)$};
+  \node (node_3) at (0,4) [draw,draw=none] {$\left(-t-2n+2, 0, 1, \ldots, 0, 0, t \right)$};
+  \node (node_4) at (0,2) [draw,draw=none] {$\left(-t-2n+1, 1, 0, \ldots, 0, 0, t \right)$};
+  \node (node_5) at (0,0) [draw,draw=none] {$\left(-t-2n+1, 0, 0, \ldots, 0, 0, t \right)$};
+
+  \draw [black,->] (node_0) edge (node_1);
+  \draw [black,->] (node_1) edge (node_2);
+  \draw [dotted] (node_2) to (node_3);
+  \draw [black,->] (node_3) edge (node_4);
+  \draw [black,->] (node_4) edge (node_5);
+%
+\end{tikzpicture}
+  \caption{Nilpotent cohomology / BGG resolution}
+\end{figure}
+
  \item $\lambda = 0 $\\
        In this case the scalar products of positive roots with $\lambda+\rho$ are of course given by \eqref{eq:Bn_rho_scalar_posroots} and there are no singular roots $\Psi^+_\lambda = \emptyset$. We have $\roots^+_{n,\lambda} = \roots^+_n$, the root subsystem is
        \[
