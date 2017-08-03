@@ -67,7 +67,7 @@ For a root $\alpha \in \roots$ we define the \emph{coroot} $H_\alpha$ as
 \[
  H_\alpha = \frac{2}{(\alpha,\alpha)}\widetilde{H_\alpha}.
 \]
-A nonzero vectors in $\lie{g}_\alpha$ are called a \emph{root vectors}. From the properties of $\roots$ follows that we can always find root vectors $E_\alpha \in \lie{g}_\alpha$, $F_\alpha \in \lie{g}_{-\alpha}$ such that the triple $E_\alpha, F_\alpha, H_\alpha$ satisfies the canonical $\sl(2)$ relations
+A nonzero vectors in $\lie{g}_\alpha$ are called a \emph{root vectors}. From the properties of $\roots$ follows that we can always find root vectors $E_\alpha \in \lie{g}_\alpha$, $F_\alpha \in \lie{g}_{-\alpha}$ such that the triple $E_\alpha, F_\alpha, H_\alpha$ satisfies the canonical $\lie{sl}(2)$ relations
 \[
  [E,F] = H, \quad [H,E] = 2E, \quad [H,F] = -2F
 \]
@@ -319,7 +319,7 @@ The \emph{Satake diagram} of the real Lie algebra $\lie{g}_0$ is defined as foll
 
 %\subsection{Parabolic subalgebras of real Lie algebras}
 
-\begin{definition}[page 274, \cite{vogan}]
+\begin{definition}[page 274, \cite{knapp_cohomological_1995}]
  Let $\lie{q}$ be a parabolic subalgebra of the complexification of a real semisimple Lie algebra $\lie{g}_0$ and let $\theta$ be the corresponding Cartan involution. We will call $\lie{q}$ to be $\theta$-stable if $\theta \lie{q} = \lie{q}$. It follows then that also the opposite parabolic subalgebra $\lie{q}^-$ is $\theta$-stable and that the Levi part is $\theta$-stable $\theta \lie{l} = \lie{l}$.
 \end{definition}
 
@@ -327,7 +327,7 @@ For a real Lie algebra $\lie{g}_0$ we define $\lie{q}_0$ to be a parabolic subal
 
 %TODO rozepsat, real Iwasawa?s
 
-\section{BGG category $\mathcal{O}$}
+\section[BGG category O]{BGG category $\mathcal{O}$}
 
 This chapter contains the description of Bernstein-Bernstein-Gelfand category $\mathcal{O}$ and a small recapitulation of Enright-Shelton equivalences which will be needed later.
 
@@ -353,7 +353,7 @@ Let $P: \lie{U(g)} \to \lie{U(h)}$ be the projection defined by the splitting \[
 
 It is easy to see that $\langle u\cdot v,v' \rangle = \langle v,\sigma(u)\cdot v' \rangle$ for all $v,v'\in M_\lambda$ and for all $u\in \lie{U(g)}$. Forms with such a property are called \emph{contravariant forms}.
 
-The following proposition and its proof can be found e.g. in \cite{humphreys}.
+The following proposition and its proof can be found e.g. in \cite{humphreys_representations_2008}.
 
 \begin{proposition}
 Contravariant forms have the following properties:
@@ -388,9 +388,9 @@ Let $v\in J(\lambda)$  be arbitrary. Then $\langle v, v_\lambda \rangle = 0$ sin
 
 The generalized Verma module $M(\lambda)$ is a quotient of the Verma module $N(\lambda)$. Hence the simple quotient $L(\lambda)$ of $M(\lambda)$ is also a quotient of $N(\lambda)$ by its maximal submodule. We get induced contravariant forms on $L(\lambda)$ and $M(\lambda)$  which we also call Shapovalov forms and we denote them by a same symbol.
 
-\subsection{Category $\mathcal{O}$ and translation functors}
+\subsection[Category O and translation functors]{Category $\mathcal{O}$ and translation functors}
 
-We present a short overview of translation functors as is presented in \cite{humphreys}. Since we deal with integral weights only, we omit all the notations that concerns nonintegral weights.
+We present a short overview of translation functors as is presented in \cite{humphreys_representations_2008}. Since we deal with integral weights only, we omit all the notations that concerns nonintegral weights.
 
 \begin{definition}
   Let $\lambda, \mu \in \weights$ be such that $\nu = \mu - \lambda \in \weights^+$ and consider a finite dimensional representation $F(\nu)$ of highest weight $\nu$. Then the translation functor $T_\lambda^\mu: \mathcal{O}_\mu \to \mathcal{O}_\lambda$ is defined by
@@ -409,7 +409,7 @@ The vector space $\lie{h}^*$ decomposes into so called facets for the affine Wey
   \end{cases}
 \]
 
-\begin{theorem}[Theorem 7.?? of \cite{humphreys}]\label{thm:translation}
+\begin{theorem}[Theorem 7.?? of \cite{humphreys_representations_2008}]\label{thm:translation}
  If two weights $\mu$ and $\lambda$ lie in the same facet, then the translation functors $T_\lambda^\mu$ and $T_\mu^\lambda$ implement an equivalence of categories between $\mathcal{O}_\mu$ and $\mathcal{O}_\lambda$.
 \end{theorem}
 
@@ -509,7 +509,7 @@ Harish-Chandra module.
 
 The problem is that $L(\lambda)$ is not a $P$-representation.  This is not surprising because the generalized Verma module $M(\lambda)$ was induced from a $\overline{P}$-representation. Let $L(\lambda)=\bigoplus_{\mu\in \widehat{K}_\C} L_\mu$ be the decomposition of $L(\lambda)$ into $K_\C$-types. Each $L_\mu$ is contained in some $S^k(\lie{p}_+,F(\lambda))$ modulo the maximal submodule of $M(\lambda)$ and the algebra $\lie{p}_+$ acts  as a multiplication by a variable, while $\lie{p}_-$ acts basically as a differentiation. To formalize this write $L(\lambda) = \bigoplus_{\mu\in\widehat{K_\C}, k\in\mathbb{N}} L_{\mu,k}$ where $L_{\mu,k}$ is the $K_\C$-type contained in $S^k(\lie{p}_+,F(\lambda))$ and note that $\lie{p}_+ (L_{\mu,k}) \subset L_{\mu,k+1}$.
 
-The \emph{formal globalization} of $L(\lambda)$ is defined as   $\overline{L(\lambda)}=\prod_{\mu\in \widehat{K}_\C} L_\mu$ (product of topological vector spaces). (See e.g \cite{vogan_jr._unitary_2008}.) Since each $K_\C$-type is finite-dimensional and each $S^k(\lie{p}_+,F(\lambda))$ contains only finitely many irreducible $K_\C$-representations, we can write it as
+The \emph{formal globalization} of $L(\lambda)$ is defined as   $\overline{L(\lambda)}=\prod_{\mu\in \widehat{K}_\C} L_\mu$ (product of topological vector spaces). (See e.g \cite{vogan_unitary_2008}.) Since each $K_\C$-type is finite-dimensional and each $S^k(\lie{p}_+,F(\lambda))$ contains only finitely many irreducible $K_\C$-representations, we can write it as
 \[\overline{L(\lambda)} = \prod_{k\in\mathbb{N}} L_k,\] %TODO predelat do lemmatu s dukazem?
 where $L_k = \bigoplus_{\mu\in\widehat{K_c}} L_{\mu,k}$ is a finite sum. The action of $\lie{p}_+$ works as a right shift: $\lie{p}_+(L_k)\subset L_{k+1}$. The $(\lie{g},K)$-module $L(\lambda)$ can be realized as a space of polynomials with values in a finite dimensional $K$-representation $F_\lambda$ and it's formal completion can be thought of as a space of formal power series with values in $F_\lambda$. %TODO posledni vetu predelat do lematu s dukazem?
 
@@ -728,7 +728,7 @@ To prove the first equality of \eqref{eq:hodge_decomp_aux} we just use the defin
 \end{remark}
 
 
-For better understanding of how our operators act we represent them in a block matrix form with respect to the Hodge decomposition \eqref{eq:hodge_decomp}
+To better understand the situation we can represent these operators in a block matrix form with respect to the Hodge decomposition \eqref{eq:hodge_decomp}
 \[
  \lcd = \begin{pmatrix} 0 & 0 & A\\0&0&0\\0&0&0\end{pmatrix} \quad \lhd = \begin{pmatrix} 0 & 0 &0\\0&0&0\\ B&0&0\end{pmatrix} \quad
  \lap = \begin{pmatrix}
@@ -737,7 +737,7 @@ For better understanding of how our operators act we represent them in a block m
 	  0 & 0 & BA
 	\end{pmatrix},
 \]
-where $A$ is the restriction of $\lcd$ to $\im\lhd$ and $B$ is the restriction of $\lhd$ to $\im \lcd$.
+where $A$ is the restriction of $\lcd$ to $\im\lhd$ and $B$ is the restriction of $\lhd$ to $\im \lcd$. Disjointness of $\lcd$ and $\lhd$ then amounts to nondegeneracy of $A$ and $B$.
 
 There is a convenient way to construct pairs of disjoint operators.
 \begin{proposition} %TODO jak je to s im adjungovaneho operatoru? v konecne dimenzi by ta podminka na nedegenerovanost na im adjunktu mela byt nadbytecna. v nekonecne?
