@@ -206,9 +206,9 @@ Let $\Psi_\lambda$ be the set if roots in $\roots$ which are orthogonal to $\lam
 
 \begin{theorem}[3.7 \cite{davidson_differential_1991}]\label{thm:cohomology}
  Let $L$ be unitarizable with highest weight $\lambda $. Then for $i\in \mathbb{N}$ we have
-\[
+\begin{equation}\label{eq:cohomology}
  H^i(\lie{p}_+,L)\simeq \bigoplus_{w\in W^{c,i}_\lambda} F(\overline{w(\lambda+\rho)} - \rho)
-\]
+\end{equation}
 where  $\overline{\lambda}$ is the unique $\roots_c^+$-dominant element in the $W_c$ orbit of $\lambda$.
 \end{theorem}
 
@@ -233,8 +233,6 @@ where  $\overline{\lambda}$ is the unique $\roots_c^+$-dominant element in the $
 \end{proof}
 
 
-There is a fair amount of work which builds on top of these results. It was proven (\cite{enright_hilbert_2004,boe_kostant_2009}) that the formula for Lie algebra cohomology is equivalent for the module to have a BGG-like resolution in terms of Verma modules. These resolutions are explicitely computed for the two expceptional types in \cite{enright_resolutions_2004}. The paper \cite{enright_hilbert_2004} treats also the classical types $\lie{su}(p,q)$, $\lie{sp}(n,\R)$ and $\lie{so}^*(2n)$ to some degree. So what remains to be done are the orthogonal cases $\lie{so}(2,2p)$. 
-
 \begin{example} 
  Let us take $\lie{g} = \lie{so}(2,2n-2)$ with $\lambda = (2-n)\omega_1$. Then in the epsilon basis we have $\lambda + \rho = (1,n-2,\ldots,1,0)$ and $\Psi_\lambda^+ = \{ \epsilon_1 - \epsilon_{n-1}\}$. The only noncompact root that is orthogonal to $\epsilon_1 -  \epsilon_{n-1}$ and whose scalar product with $\lambda + \rho$ is positive integral is $\alpha = \epsilon_1 + \epsilon_{n-1}$. Thus we get $\roots_{n,\lambda}^+ = \epsilon_1 + \epsilon_{n-1} = \roots_\lambda$. It follows that
 \begin{align*}
@@ -253,6 +251,62 @@ Similarly there is only one root generating $W_\lambda$ for $\lie{g} = \lie{so}(
 Moreover, by inspecting the tables \ref{tbl:so_even} and \ref{tbl:so_odd}, we see that in both of these cases the cone $C_a$ is empty.
 \end{example}
 
+These cohomologies are explicitely computed for the two expceptional types in \cite{enright_resolutions_2004-1}. The papers \cite{enright_hilbert_2004}, \cite{enright_resolutions_2004} treat also certain weights for the classical types $\lie{su}(p,q)$, $\lie{sp}(n,\R)$ and $\lie{so}^*(2n).$ So what remains to be done are the orthogonal cases $\lie{so}(2,2p)$ which are rather easy and are calculated completely in sections \ref{sec:conf_even} and \ref{sec:conf_odd}. For the other classical types we calculate some of the data that go into the formula \eqref{eq:cohomology} and calculate the cohomologies completely in small ranks in appendix \ref{app:cohomology}. We borrow idea from \cite{enright_resolutions_2004-1} and calculate possible $\Psi_\lambda^+ $ by labeling the poset of noncompact roots by scalar products of the associated coroots with $\lambda + \rho + \mu$ for $\mu \in C$. We show only nodes / roots where the scalar product is not always negative. 
+
+In general the combinatorics behind the calculations is rather involved. In most cases the reduced hermitian pair doesn't stay the same on the cone which is due to the fact that these cones can intersect facets in nontrivial ways. 
+
+\begin{example}
+To illustrate the situation, here is an example for $\mathrm{SO}^*(16)$ and cone of unitarizable weights $\left(a_{5} + 1\right)\omega_{5} - \left(2 \, a_{5} + 2 \, a_{6} + a_{7} + 8\right)\omega_{8}.$
+
+\begin{figure}[ht]
+  \centering
+      \begin{tikzpicture}[>=latex,line join=bevel,]
+%%
+\node (node_2) at (308.5bp,61.5bp) [draw,draw=none] {$(2, \epsilon_{3} + \epsilon_{5})$};
+  \node (node_4) at (173.5bp,8.5bp) [draw,draw=none] {$(-a_{5} - a_{6}, \epsilon_{2} + \epsilon_{7})$};
+  \node (node_3) at (269.5bp,8.5bp) [draw,draw=none] {$(-a_{5}, \epsilon_{3} + \epsilon_{6})$};
+  \node (node_9) at (200.5bp,220.5bp) [draw,draw=none] {$(5, \epsilon_{1} + \epsilon_{4})$};
+  \node (node_8) at (149.5bp,114.5bp) [draw,draw=none] {$(-a_{5} + 2, \epsilon_{1} + \epsilon_{6})$};
+  \node (node_7) at (221.5bp,61.5bp) [draw,draw=none] {$(-a_{5} + 1, \epsilon_{2} + \epsilon_{6})$};
+  \node (node_6) at (236.5bp,114.5bp) [draw,draw=none] {$(3, \epsilon_{2} + \epsilon_{5})$};
+  \node (node_5) at (308.5bp,114.5bp) [draw,draw=none] {$(3, \epsilon_{3} + \epsilon_{4})$};
+  \node (node_14) at (236.5bp,326.5bp) [draw,draw=none] {$(7, \epsilon_{1} + \epsilon_{2})$};
+  \node (node_13) at (348.5bp,8.5bp) [draw,draw=none] {$(1, \epsilon_{4} + \epsilon_{5})$};
+  \node (node_12) at (108.5bp,61.5bp) [draw,draw=none] {$(-a_{5} - a_{6} + 1, \epsilon_{1} + \epsilon_{7})$};
+  \node (node_11) at (200.5bp,167.5bp) [draw,draw=none] {$(4, \epsilon_{1} + \epsilon_{5})$};
+  \node (node_10) at (55.5bp,8.5bp) [draw,draw=none] {$(-a_{5} - a_{6} - a_{7}, \epsilon_{1} + \epsilon_{8})$};
+  \node (node_1) at (272.5bp,167.5bp) [draw,draw=none] {$(4, \epsilon_{2} + \epsilon_{4})$};
+  \node (node_0) at (272.5bp,220.5bp) [draw,draw=none] {$(5, \epsilon_{2} + \epsilon_{3})$};
+  \node (node_15) at (236.5bp,273.5bp) [draw,draw=none] {$(6, \epsilon_{1} + \epsilon_{3})$};
+  \draw [black,->] (node_12) ..controls (120.42bp,77.332bp) and (129.52bp,88.646bp)  .. (node_8);
+  \draw [black,->] (node_8) ..controls (164.56bp,130.56bp) and (176.35bp,142.35bp)  .. (node_11);
+  \draw [black,->] (node_10) ..controls (71.149bp,24.558bp) and (83.403bp,36.35bp)  .. (node_12);
+  \draw [black,->] (node_6) ..controls (246.92bp,130.26bp) and (254.79bp,141.41bp)  .. (node_1);
+  \draw [black,->] (node_1) ..controls (250.71bp,183.93bp) and (232.91bp,196.54bp)  .. (node_9);
+  \draw [black,->] (node_3) ..controls (280.84bp,24.332bp) and (289.49bp,35.646bp)  .. (node_2);
+  \draw [black,->] (node_4) ..controls (187.6bp,24.483bp) and (198.55bp,36.114bp)  .. (node_7);
+  \draw [black,->] (node_9) ..controls (210.92bp,236.26bp) and (218.79bp,247.41bp)  .. (node_15);
+  \draw [black,->] (node_0) ..controls (262.08bp,236.26bp) and (254.21bp,247.41bp)  .. (node_15);
+  \draw [black,->] (node_11) ..controls (200.5bp,182.81bp) and (200.5bp,193.03bp)  .. (node_9);
+  \draw [black,->] (node_7) ..controls (225.73bp,76.88bp) and (228.78bp,87.262bp)  .. (node_6);
+  \draw [black,->] (node_13) ..controls (336.87bp,24.332bp) and (327.99bp,35.646bp)  .. (node_2);
+  \draw [black,->] (node_15) ..controls (236.5bp,288.81bp) and (236.5bp,299.03bp)  .. (node_14);
+  \draw [black,->] (node_5) ..controls (298.08bp,130.26bp) and (290.21bp,141.41bp)  .. (node_1);
+  \draw [black,->] (node_1) ..controls (272.5bp,182.81bp) and (272.5bp,193.03bp)  .. (node_0);
+  \draw [black,->] (node_7) ..controls (199.71bp,77.935bp) and (181.91bp,90.539bp)  .. (node_8);
+  \draw [black,->] (node_2) ..controls (286.71bp,77.935bp) and (268.91bp,90.539bp)  .. (node_6);
+  \draw [black,->] (node_6) ..controls (226.08bp,130.26bp) and (218.21bp,141.41bp)  .. (node_11);
+  \draw [black,->] (node_3) ..controls (255.4bp,24.483bp) and (244.45bp,36.114bp)  .. (node_7);
+  \draw [black,->] (node_2) ..controls (308.5bp,76.805bp) and (308.5bp,87.034bp)  .. (node_5);
+  \draw [black,->] (node_4) ..controls (154.02bp,24.784bp) and (138.37bp,37.061bp)  .. (node_12);
+%
+\end{tikzpicture}
+  \caption{Nonnegative scalar products with noncompact roots}
+\end{figure}
+
+We can see that the set of singular weights $\Psi_\lambda^+$ is generically empty, but for $a_5 = a_6 = a_7$ it contains the roots $\epsilon_1 - \epsilon_8$ and $\epsilon_2 + \epsilon_7$ and for small values of $a_5$ even more. It is however clear that the cone can be written as a union of smaller cones such that $\Psi_\lambda^+$ remains the same on each of them. 
+
+\end{example}
 
 \clearpage
 
