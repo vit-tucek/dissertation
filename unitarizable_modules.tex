@@ -2,7 +2,9 @@
 
 One of the main open problem of representation theory is classification of unitary modules of Lie groups. Apart from the finite-dimensional representations (which are unitary for compact Lie groups) one of the classes of modules where a complete classification was obtained is the class of unitarizable modules of highest weight. It is precisely the intersection of BGG category $\mathcal{O}$ and Harish-Chandra $(\mathfrak{g}, K)$-modules. It was proved already by Harish-Chandra that these modules can occur only in the hermitian symmetric case, see \cite{harish-chandra_representations_1955}, \cite{harish-chandra_representations_1956-1} and \cite{harish-chandra_representations_1956} for details.
 
-A sufficient and necessary condition for unitarizability of a highest weight module appears in \cite{garland_unitarizable_1981}. Independently, these modules were classified by Jakobsen in \cite{jakobsen_last_1981}, \cite{jakobsen_hermitian_1983} with later development in \cite{jakobsen_intrinsic_1996}. Another, yet independent approach, was given by \cite{enright_classification_1983} with later simplification in \cite{joseph_annihilators_1992}. In this chapter we follow mainly the article \cite{enright_classification_1983} and reorganization of the unitarizable weight into integral cones that was presented in \cite{davidson_differential_1991}. 
+A sufficient and necessary condition for unitarizability of a highest weight module appears in \cite{garland_unitarizable_1981}. Independently, these modules were classified by Jakobsen in \cite{jakobsen_last_1981}, \cite{jakobsen_hermitian_1983} with later development in \cite{jakobsen_intrinsic_1996}. Another, yet independent approach, was given by \cite{enright_classification_1983} with later simplification in \cite{joseph_annihilators_1992}. In \cite{adams_unitary_1987} it was shown that all unitarizable highest weight modules can be obtained via the derived functor construction from either a one-dimensional or a unipotent representation. This  parameterization given here fits in nicely with the Langlands classification and the coadjoint orbit picture.  
+
+In this chapter we follow mainly the article \cite{enright_classification_1983} and reorganization of the unitarizable weight into integral cones that was presented in \cite{davidson_differential_1991}. 
 
 \section{Classification}
 
@@ -150,7 +152,7 @@ for the noncompact root. Recalling the definition of $\zeta$ and solving for $b$
 \begin{proposition}[Proposition 6.6 of \cite{davidson_differential_1991}]
  The set of reduction points $\Lambda_r$ is the disjoint union of the sets $\Lambda_a, a\in\mathcal{A}$.
 
- Each set $\Lambda_a$ is a translated integral cone with vertex $\lambda_a + C_a$. We list the vertices $\lambda_a$ in the next section.
+ Each set $\Lambda_a$ is a translated integral cone with vertex $\lambda_a + C_a$. We list the vertices $\lambda_a$ in sections \ref{sec:su} through \ref{sec:exceptional}.
 \end{proposition}
 \begin{proof}
  The first statement is trivial and the second one follows by case by case computations.
@@ -251,7 +253,7 @@ Similarly there is only one root generating $W_\lambda$ for $\lie{g} = \lie{so}(
 Moreover, by inspecting the tables \ref{tbl:so_even} and \ref{tbl:so_odd}, we see that in both of these cases the cone $C_a$ is empty.
 \end{example}
 
-These cohomologies are explicitely computed for the two expceptional types in \cite{enright_resolutions_2004-1}. The papers \cite{enright_hilbert_2004}, \cite{enright_resolutions_2004} treat also certain weights for the classical types $\lie{su}(p,q)$, $\lie{sp}(n,\R)$ and $\lie{so}^*(2n).$ So what remains to be done are the orthogonal cases $\lie{so}(2,2p)$ which are rather easy and are calculated completely in sections \ref{sec:conf_even} and \ref{sec:conf_odd}. For the other classical types we calculate some of the data that go into the formula \eqref{eq:cohomology} and calculate the cohomologies completely in small ranks in appendix \ref{app:cohomology}. We borrow idea from \cite{enright_resolutions_2004-1} and calculate possible $\Psi_\lambda^+ $ by labeling the poset of noncompact roots by scalar products of the associated coroots with $\lambda + \rho + \mu$ for $\mu \in C$. We show only nodes / roots where the scalar product is not always negative. 
+Cohomologies of all unitarizable modules for the two expceptional types are explicitely computed in \cite{enright_resolutions_2004-1}. The papers \cite{enright_hilbert_2004}, \cite{enright_resolutions_2004} treat also certain weights for the classical types $\lie{su}(p,q)$, $\lie{sp}(n,\R)$ and $\lie{so}^*(2n).$  The orthogonal cases $\lie{so}(2,2n-2)$, $\lie{so}(2,2n-1)$ are rather easy and are calculated completely in sections \ref{sec:conf_even} and \ref{sec:conf_odd}. For the other classical types we calculate some of the data that go into the formula \eqref{eq:cohomology} and calculate the cohomologies completely in small ranks in appendix \ref{app:cohomology}. We borrow idea from \cite{enright_resolutions_2004-1} and calculate possible $\Psi_\lambda^+ $ by labeling the poset of noncompact roots by scalar products of the associated coroots with $\lambda + \rho + \mu$ for $\mu \in C$. We show only nodes / roots where the scalar product is not always negative. 
 
 In general the combinatorics behind the calculations is rather involved. In most cases the reduced hermitian pair doesn't stay the same on the cone which is due to the fact that these cones can intersect facets in nontrivial ways. 
 
@@ -397,7 +399,9 @@ We can see that the set of singular weights $\Psi_\lambda^+$ is generically empt
 \end{threeparttable}\end{center}
 % \end{table}
 
-\subsubsection{$\mathrm{E_7}$}
+For full cohomologies of unitarizable modules see \cite{enright_resolutions_2004-1}.
+
+\subsubsection{$\mathrm{E_7}$}\label{sec:exceptional}
 
 \begin{center}
      \begin{tikzpicture} % E7 relative
@@ -460,3 +464,4 @@ We can see that the set of singular weights $\Psi_\lambda^+$ is generically empt
 \end{threeparttable}\end{center}
 % \end{table}
 
+For full cohomologies of unitarizable modules see \cite{enright_resolutions_2004-1}.
