@@ -253,6 +253,12 @@ Similarly there is only one root generating $W_\lambda$ for $\lie{g} = \lie{so}(
 Moreover, by inspecting the tables \ref{tbl:so_even} and \ref{tbl:so_odd}, we see that in both of these cases the cone $C_a$ is empty.
 \end{example}
 
+\begin{remark}
+ The formula \eqref{eq:cohomology} is actually stated a little bit differently in \cite{enright_analogues_1988}. Namely, the finite dimensional modules appearing in the cohomology are $F(\overline{w}\cdot lambda)$ where $\overline{w}$ is the minimal length representant of $w$. The same formula appears in a recent article \cite{enright_diagrams_2014}. However, this formula is wrong as the following example shows.
+
+Consider $\lie{su}(1,2)$ and weight $\lambda = -(a+2)\omega_1 + (a+1)\omega_2$. The reduced hermitian pair is of type $A_1$ and it's given by $\{\epsilon_1 - \epsilon_3 \}$. The associated reflection is $s_{\epsilon_1 - \epsilon_3} = s_1 s_2 s_1$ and its minimal coset representative is $s_1 s_2$. It's affine action on $\lambda$ gives $-2\omega_1 - (a+2)\omega_2$ which is not $\roots_c^+$-dominant. On the other hand the (normal) action of $s_1 s_2 s_1$ on $\lambda + \rho$ gives $ -(a+2)\omega_1 + (a+1)\omega_2$ which is $\roots_c^+$-dominant and hence the first cohomology is $F(-(a+3)\omega_1 + a\omega_2).$
+\end{remark}
+
 Cohomologies of all unitarizable modules for the two expceptional types are explicitely computed in \cite{enright_resolutions_2004-1}. The papers \cite{enright_hilbert_2004}, \cite{enright_resolutions_2004} treat also certain weights for the classical types $\lie{su}(p,q)$, $\lie{sp}(n,\R)$ and $\lie{so}^*(2n).$  The orthogonal cases $\lie{so}(2,2n-2)$, $\lie{so}(2,2n-1)$ are rather easy and are calculated completely in sections \ref{sec:conf_even} and \ref{sec:conf_odd}. For the other classical types we calculate some of the data that go into the formula \eqref{eq:cohomology} and calculate the cohomologies completely in small ranks in appendix \ref{app:cohomology}. We borrow idea from \cite{enright_resolutions_2004-1} and calculate possible $\Psi_\lambda^+ $ by labeling the poset of noncompact roots by scalar products of the associated coroots with $\lambda + \rho + \mu$ for $\mu \in C$. We show only nodes / roots where the scalar product is not always negative. 
 
 In general the combinatorics behind the calculations is rather involved. In most cases the reduced hermitian pair doesn't stay the same on the cone which is due to the fact that these cones can intersect facets in nontrivial ways. 
