@@ -571,7 +571,7 @@ With these preliminaries behind us we can finally define the $\mathbb{R}$ (or $\
 \[
 	\varphi(a) = \frac{a(Ga)^\dagger}{a^\dagger Ga}.
 \]
-Its matrix form looks like this
+The idea for such a mapping is borrowed from \cite{allcock_identifying_1997, aslaksen_restricted_1991}. Its matrix form looks like this
 \begin{equation}\label{eq:varphi}
 \varphi(a) = \frac{1}{\sum\nolimits_i\gamma_i N(a_i)} 
 	\begin{pmatrix}
@@ -674,139 +674,141 @@ The directional derivative $\partial_u \varphi(x) = \lim_{t\to 0} \frac{\mathrm{
 we obtain the result after a short calculation.
 \end{proof}
 
-\begin{theorem}
-The pullback along $\varphi$ is given by
-\begin{equation}
-\jscal{\partial_u \varphi(x)}{\partial_v \varphi(x)} = 2\frac{ \oscal{x}{x}\oscal{u}{v} - \oscal{x}{u}\oscal{x}{v} + \beta(x,u,v) }{\oscal{x}{x}^2}, 
-\end{equation}
-where
-\begin{equation}
-\beta(x,u,v) =  2\Bigl( \sum_{i=1}^3 \oscal{x_i\conj{v_i}}{u_i\times x_i} + \sum_{i,j} \gamma_i\gamma_j
-\oscal{x_i}{u_i(\conj{x_j}\times \conj{v_j}) + v_i(\conj{x_j}\times \conj{u_j})} \Bigr).
-\end{equation}
-\end{theorem}
+Now it is straightforward to calculate the pullback of the Jordan algebra scalar product $\jscal{\partial_u \varphi(x)}{\partial_v \varphi(x)}$ and calculate the curvature using Gauss equation. The main point here is that the scalar products on the Jordan algebras are invariant with respect to their automorphism groups and so one obtains Riemannian metrics on these coordinate patches which are invariant with respect to these groups. What remains is to prove that these patches actually cover whole orbit in each case and determine the automorphism groups. But these matters are well known \cite{springer_octonions_2000, yokota}.
 
-\begin{proof}
-
-Notice that 
-\[
-\varphi(x) = \frac{\psi(x,x)}{2\oscal{x}{x}}
-\]
-and so it is sufficient to calculate $\jscal{\psi(x,u)}{\psi(x,v)}$ in order to obtain $\jscal{\partial_u \varphi(x)}{\partial_v \varphi(x)}$. Namely we have
-\begin{equation}\label{eq:jscal2}
-\begin{aligned}
-\jscal{\partial_u \varphi(x)}{\partial_v \varphi(x)} 
-		& = \jscal{\frac{\psi(x,u) - 2\oscal{x}{u}\varphi(x)}{\oscal{x}{x}}}{\frac{\psi(x,v) - 2\oscal{x}{v}\varphi(x)}{\oscal{x}{x}}} \\
-        & = \frac{1}{\oscal{x}{x}^2} \bigl( \jscal{\psi(x,u)}{\psi(x,v)} \\
-		& \qquad \qquad \quad - 2\oscal{x}{u}\jscal{\psi(x,v)}{\varphi(x)}\\ 
-        & \qquad \qquad \quad - 2\oscal{x}{v}\jscal{\psi(x,u)}{\varphi(x)} \\
-		& \qquad \qquad \quad +  4\oscal{x}{u}\oscal{x}{v}\jscal{\varphi(x)}{\varphi(x)} \bigr) \\
-\end{aligned}
-\end{equation}
-
-The matrices look like this
-\[
-\psi(x,u) =
-\begin{pmatrix}
-2\gamma_1\oscal{x_1}{u_1} & \gamma_2(x_1\conj{u_2} + u_1\conj{x_2}) & \gamma_3(x_1\conj{u_3} + u_1\conj{x_3})  \\
-\gamma_1(x_2\conj{u_1} + u_2\conj{x_1}) & 2\gamma_2\oscal{x_2}{u_2} & \gamma_3(x_2\conj{u_3} + u_2\conj{x_3})  \\
-\gamma_1(x_3\conj{u_1} + u_3\conj{x_1}) & \gamma_2(x_3\conj{u_2} + u_3\conj{x_2}) & 2\gamma_3\oscal{x_3}{u_3}
-\end{pmatrix}
-\]
-\[
-\psi(x,v) =
-\begin{pmatrix}
-2\gamma_1\oscal{x_1}{v_1} & \gamma_2(x_1\conj{v_2} + v_1\conj{x_2}) & \gamma_3(x_1\conj{v_3} + v_1\conj{x_3})  \\
-\gamma_1(x_2\conj{v_1} + v_2\conj{x_1}) & 2\gamma_2\oscal{x_2}{v_2} & \gamma_3(x_2\conj{v_3} + v_2\conj{x_3})  \\
-\gamma_1(x_3\conj{v_1} + v_3\conj{x_1}) & \gamma_2(x_3\conj{v_2} + v_3\conj{x_2}) & 2\gamma_3\oscal{x_3}{v_3}
-\end{pmatrix}
-\]
-and their scalar product is easily computed by \eqref{eq:jscal1}
-\begin{align*}
-    \jscal{\psi(x,u)}{\psi(x,v)} & = 4\sum_{i=1}^3 \oscal{x_i}{u_i}\oscal{x_i}{v_i} \\
-            &\quad + 2\gamma_1\gamma_2 \oscal{ x_1\conj{u_2} + u_1\conj{x_2} }{ x_1\conj{v_2} + v_1\conj{x_2} } \\
-            &\quad + 2\gamma_1\gamma_3 \oscal{ x_1\conj{u_3} + u_1\conj{x_3} }{ x_1\conj{v_3} + v_1\conj{x_3} } \\
-            &\quad + 2\gamma_2\gamma_3 \oscal{ x_2\conj{u_3} + u_2\conj{x_3} }{ x_2\conj{v_3} + v_2\conj{x_3} } 
-\end{align*}
-We expand the term $\oscal{ x_1\conj{u_2} + u_1\conj{x_2} }{ x_1\conj{v_2} + v_1\conj{x_2} }$ to
-\[
-	N(x_1)\oscal{u_2}{v_2} + N(x_2)\oscal{u_1}{v_1} + \oscal{x_1\conj{u_2}}{v_1\conj{x_2}} + \oscal{u_1\conj{x_2}}{x_1\conj{v_2}}
-\]
-and we can use \eqref{eq:scalar_product4} to rewrite the second two terms as
-\[
-2\oscal{x_1}{v_1}\oscal{x_2}{u_2} - \oscal{x_1\conj{x_2}}{v_1\conj{u_2}} + 2\oscal{u_1}{x_1}\oscal{x_2}{v_2} - \oscal{u_1\conj{v_2}}{x_1\conj{x_2}}.
-\]
-To obtain a metric that resembles Fubini-Study metric in homogeneous coordinates, we want to write 
-\[\jscal{\psi(x,u)}{\psi(x,v)}  = 2\oscal{x}{u}\oscal{x}{v} + 2\oscal{x}{x}\oscal{u}{v} + \beta(x,u,v).\]
-So let's actually calculate 
-\[
-\beta(x,u,v) = \jscal{\psi(x,u)}{\psi(x,v)}  - 2\oscal{x}{u}\oscal{x}{v} - 2\oscal{x}{x}\oscal{u}{v}.
-\]
-
-First of all, the ``diagonal terms'' are
-\begin{align*}
-2\oscal{x_i}{u_i} & \oscal{x_i}{v_i}  - \oscal{x_i}{x_i}\oscal{u_i}{v_i} = & \\
-	& = \oscal{x_i\conj{x_i}}{u_i\conj{v_i}} + \oscal{x_i\conj{v_i}}{u_i\conj{x_i}} - 2\oscal{x_i}{x_i}\oscal{u_i}{v_i} & \text{according to \eqref{eq:scalar_product4}} \\
-	& = N(x_i)\oscal{1}{u_i\conj{v_i}} + \oscal{x_i\conj{v_i}}{u_i\conj{x_i}} - N(x_i)\oscal{u_i}{v_i} - N(x_i)\oscal{\conj{u_i}}{\conj{v_i}} & \\
-    & = N(x_i)\oscal{v_i}{u_i} - N(x_i)\oscal{u_i}{v_i} + \oscal{x_i\conj{v_i}}{u_i\conj{x_i}} - \oscal{x_i\conj{u_i}}{x_i\conj{v_i}} & \text{by \eqref{eq:scalar_product5}} \\
-    & = \oscal{x_i\conj{v_i}}{u_i\conj{x_i} - x_i\conj{u_i}} & \\
-    & = \oscal{x_i\conj{v_i}}{2u_i\times x_i}. & 
-\end{align*}
-The ``off-diagonal terms'' are handled similarly by using \eqref{eq:scalar_product5} and \eqref{eq:scal_product}
-\begin{align*}
-	2\oscal{x_i}{u_i}&\oscal{x_j}{v_j} + 2\oscal{x_j}{u_j}\oscal{x_i}{v_i} - 2\oscal{x_i\conj{x_j}}{u_i\conj{v_j} + v_i\conj{u_j}} = \\
-    	& = \oscal{x_i\conj{x_j}}{u_i\conj{v_j}} +  \oscal{x_i\conj{v_j}}{u_i\conj{x_j}} + \oscal{x_j\conj{x_i}}{u_j\conj{v_i}} +  \oscal{x_j\conj{v_i}}{u_j\conj{x_i}} - 2\oscal{x_i\conj{x_j}}{u_i\conj{v_j} + v_i\conj{u_j}}  \\
-       	& = \oscal{x_i\conj{x_j}}{u_i\conj{v_j}} +  \oscal{x_i\conj{v_j}}{u_i\conj{x_j}} + \oscal{x_i\conj{x_j}}{v_i\conj{u_j}} +  \oscal{x_i\conj{u_j}}{v_i\conj{x_j}} - 2\oscal{x_i\conj{x_j}}{u_i\conj{v_j} + v_i\conj{u_j}}  \\
-        & = \oscal{x_i\conj{v_j}}{u_i\conj{x_j}} + \oscal{x_i\conj{u_j}}{v_i\conj{x_j}} - \oscal{x_i\conj{x_j}}{u_i\conj{v_j} + v_i\conj{u_j}} \\
-        & = \oscal{x_i}{(u_i\conj{x_j})v_j + (v_i\conj{x_j})u_j - (u_i\conj{v_j})x_j - (v_i\conj{u_j})x_j}.
-\end{align*}
-If we look more closely on the second entry of the scalar product we see, that we can simplify it using the associator and its properties as follows
-\begin{align*}
-(u_i\conj{x_j})v_j - (u_i\conj{v_j})x_j & = u_i(\conj{x_j}v_j - \conj{v_j}x_j) + \{u_i, \conj{x_j}, v_j\} + \{u_i, \conj{v_j}, x_j\} \\
-		& = 2u_i(\conj{x_j}\times \conj{v_j}) - \{u_i, x_j, v_j \} - \{u_i, v_j, x_j\} \\
-        & = 2u_i(\conj{x_j}\times \conj{v_j})
-\end{align*}
-
-Putting it all together, we arrive at
-\[
-\beta(x,u,v) = 2\Bigl( \sum_{i=1}^3 \oscal{x_i\conj{v_i}}{u_i\times x_i} + \sum_{i,j} \oscal{x_i}{u_i(\conj{x_j}\times \conj{v_j}) + v_i(\conj{x_j}\times \conj{u_j})} \Bigr).
-\]
-An easy calculation gives that $\beta(x,x,u) = \beta(x,u,x) = 0$. %What about \beta(u,x,x)?
-
-Finally, we can express the pullback continuing from \eqref{eq:jscal2}
-\begin{align*}
-\jscal{\partial_u \varphi(x)}{\partial_v \varphi(x)} 
-        & = \frac{1}{\oscal{x}{x}^2}\bigl( 2\oscal{x}{u}\oscal{x}{v} + 2\oscal{x}{x}\oscal{u}{v} + \beta(x,u,v) \\
-		& \qquad \qquad \quad - 2\oscal{x}{u}\frac{2\oscal{x}{x}\oscal{x}{v} + 2\oscal{x}{x}\oscal{x}{v} + \beta(x,x,v)}{2\oscal{x}{x}} \\
-		& \qquad \qquad \quad - 2\oscal{x}{v}\frac{2\oscal{x}{x}\oscal{x}{u} + 2\oscal{x}{x}\oscal{x}{u} + \beta(x,u,x)}{2\oscal{x}{x}} \\
-		& \qquad \qquad \quad + 4\oscal{x}{u}\oscal{x}{v} \bigr) \\
-        & = \frac{1}{\oscal{x}{x}^2}\bigl( 2\oscal{x}{u}\oscal{x}{v} + 2\oscal{x}{x}\oscal{u}{v} + \beta(x,u,v) \\
-		& \qquad \qquad \quad  - 4\oscal{x}{u}\oscal{x}{v} \\        
-		& \qquad \qquad \quad - 4\oscal{x}{v}\oscal{x}{u}  \\
-		& \qquad \qquad \quad +  4\oscal{x}{u}\oscal{x}{v} \bigr) \\
-        & = 2\frac{ \oscal{x}{x}\oscal{u}{v} - \oscal{x}{u}\oscal{x}{v} + \beta(x,u,v) }{\oscal{x}{x}^2}.
-\end{align*}
-\end{proof}
+%\begin{theorem}
+%The pullback along $\varphi$ is given by
+%\begin{equation}
+%\jscal{\partial_u \varphi(x)}{\partial_v \varphi(x)} = 2\frac{ \oscal{x}{x}\oscal{u}{v} - \oscal{x}{u}\oscal{x}{v} + \beta(x,u,v) }{\oscal{x}{x}^2}, 
+%\end{equation}
+%where
+%\begin{equation}
+%\beta(x,u,v) =  2\Bigl( \sum_{i=1}^3 \oscal{x_i\conj{v_i}}{u_i\times x_i} + \sum_{i,j} \gamma_i\gamma_j
+%\oscal{x_i}{u_i(\conj{x_j}\times \conj{v_j}) + v_i(\conj{x_j}\times \conj{u_j})} \Bigr).
+%\end{equation}
+%\end{theorem}
+%
+%\begin{proof}
+%
+%Notice that 
+%\[
+%\varphi(x) = \frac{\psi(x,x)}{2\oscal{x}{x}}
+%\]
+%and so it is sufficient to calculate $\jscal{\psi(x,u)}{\psi(x,v)}$ in order to obtain $\jscal{\partial_u \varphi(x)}{\partial_v \varphi(x)}$. Namely we have
+%\begin{equation}\label{eq:jscal2}
+%\begin{aligned}
+%\jscal{\partial_u \varphi(x)}{\partial_v \varphi(x)} 
+%		& = \jscal{\frac{\psi(x,u) - 2\oscal{x}{u}\varphi(x)}{\oscal{x}{x}}}{\frac{\psi(x,v) - 2\oscal{x}{v}\varphi(x)}{\oscal{x}{x}}} \\
+%        & = \frac{1}{\oscal{x}{x}^2} \bigl( \jscal{\psi(x,u)}{\psi(x,v)} \\
+%		& \qquad \qquad \quad - 2\oscal{x}{u}\jscal{\psi(x,v)}{\varphi(x)}\\ 
+%        & \qquad \qquad \quad - 2\oscal{x}{v}\jscal{\psi(x,u)}{\varphi(x)} \\
+%		& \qquad \qquad \quad +  4\oscal{x}{u}\oscal{x}{v}\jscal{\varphi(x)}{\varphi(x)} \bigr) \\
+%\end{aligned}
+%\end{equation}
+%
+%The matrices look like this
+%\[
+%\psi(x,u) =
+%\begin{pmatrix}
+%2\gamma_1\oscal{x_1}{u_1} & \gamma_2(x_1\conj{u_2} + u_1\conj{x_2}) & \gamma_3(x_1\conj{u_3} + u_1\conj{x_3})  \\
+%\gamma_1(x_2\conj{u_1} + u_2\conj{x_1}) & 2\gamma_2\oscal{x_2}{u_2} & \gamma_3(x_2\conj{u_3} + u_2\conj{x_3})  \\
+%\gamma_1(x_3\conj{u_1} + u_3\conj{x_1}) & \gamma_2(x_3\conj{u_2} + u_3\conj{x_2}) & 2\gamma_3\oscal{x_3}{u_3}
+%\end{pmatrix}
+%\]
+%\[
+%\psi(x,v) =
+%\begin{pmatrix}
+%2\gamma_1\oscal{x_1}{v_1} & \gamma_2(x_1\conj{v_2} + v_1\conj{x_2}) & \gamma_3(x_1\conj{v_3} + v_1\conj{x_3})  \\
+%\gamma_1(x_2\conj{v_1} + v_2\conj{x_1}) & 2\gamma_2\oscal{x_2}{v_2} & \gamma_3(x_2\conj{v_3} + v_2\conj{x_3})  \\
+%\gamma_1(x_3\conj{v_1} + v_3\conj{x_1}) & \gamma_2(x_3\conj{v_2} + v_3\conj{x_2}) & 2\gamma_3\oscal{x_3}{v_3}
+%\end{pmatrix}
+%\]
+%and their scalar product is easily computed by \eqref{eq:jscal1}
+%\begin{align*}
+%    \jscal{\psi(x,u)}{\psi(x,v)} & = 4\sum_{i=1}^3 \oscal{x_i}{u_i}\oscal{x_i}{v_i} \\
+%            &\quad + 2\gamma_1\gamma_2 \oscal{ x_1\conj{u_2} + u_1\conj{x_2} }{ x_1\conj{v_2} + v_1\conj{x_2} } \\
+%            &\quad + 2\gamma_1\gamma_3 \oscal{ x_1\conj{u_3} + u_1\conj{x_3} }{ x_1\conj{v_3} + v_1\conj{x_3} } \\
+%            &\quad + 2\gamma_2\gamma_3 \oscal{ x_2\conj{u_3} + u_2\conj{x_3} }{ x_2\conj{v_3} + v_2\conj{x_3} } 
+%\end{align*}
+%We expand the term $\oscal{ x_1\conj{u_2} + u_1\conj{x_2} }{ x_1\conj{v_2} + v_1\conj{x_2} }$ to
+%\[
+%	N(x_1)\oscal{u_2}{v_2} + N(x_2)\oscal{u_1}{v_1} + \oscal{x_1\conj{u_2}}{v_1\conj{x_2}} + \oscal{u_1\conj{x_2}}{x_1\conj{v_2}}
+%\]
+%and we can use \eqref{eq:scalar_product4} to rewrite the second two terms as
+%\[
+%2\oscal{x_1}{v_1}\oscal{x_2}{u_2} - \oscal{x_1\conj{x_2}}{v_1\conj{u_2}} + 2\oscal{u_1}{x_1}\oscal{x_2}{v_2} - \oscal{u_1\conj{v_2}}{x_1\conj{x_2}}.
+%\]
+%To obtain a metric that resembles Fubini-Study metric in homogeneous coordinates, we want to write 
+%\[\jscal{\psi(x,u)}{\psi(x,v)}  = 2\oscal{x}{u}\oscal{x}{v} + 2\oscal{x}{x}\oscal{u}{v} + \beta(x,u,v).\]
+%So let's actually calculate 
+%\[
+%\beta(x,u,v) = \jscal{\psi(x,u)}{\psi(x,v)}  - 2\oscal{x}{u}\oscal{x}{v} - 2\oscal{x}{x}\oscal{u}{v}.
+%\]
+%
+%First of all, the ``diagonal terms'' are
+%\begin{align*}
+%2\oscal{x_i}{u_i} & \oscal{x_i}{v_i}  - \oscal{x_i}{x_i}\oscal{u_i}{v_i} = & \\
+%	& = \oscal{x_i\conj{x_i}}{u_i\conj{v_i}} + \oscal{x_i\conj{v_i}}{u_i\conj{x_i}} - 2\oscal{x_i}{x_i}\oscal{u_i}{v_i} & \text{according to \eqref{eq:scalar_product4}} \\
+%	& = N(x_i)\oscal{1}{u_i\conj{v_i}} + \oscal{x_i\conj{v_i}}{u_i\conj{x_i}} - N(x_i)\oscal{u_i}{v_i} - N(x_i)\oscal{\conj{u_i}}{\conj{v_i}} & \\
+%    & = N(x_i)\oscal{v_i}{u_i} - N(x_i)\oscal{u_i}{v_i} + \oscal{x_i\conj{v_i}}{u_i\conj{x_i}} - \oscal{x_i\conj{u_i}}{x_i\conj{v_i}} & \text{by \eqref{eq:scalar_product5}} \\
+%    & = \oscal{x_i\conj{v_i}}{u_i\conj{x_i} - x_i\conj{u_i}} & \\
+%    & = \oscal{x_i\conj{v_i}}{2u_i\times x_i}. & 
+%\end{align*}
+%The ``off-diagonal terms'' are handled similarly by using \eqref{eq:scalar_product5} and \eqref{eq:scal_product}
+%\begin{align*}
+%	2\oscal{x_i}{u_i}&\oscal{x_j}{v_j} + 2\oscal{x_j}{u_j}\oscal{x_i}{v_i} - 2\oscal{x_i\conj{x_j}}{u_i\conj{v_j} + v_i\conj{u_j}} = \\
+%    	& = \oscal{x_i\conj{x_j}}{u_i\conj{v_j}} +  \oscal{x_i\conj{v_j}}{u_i\conj{x_j}} + \oscal{x_j\conj{x_i}}{u_j\conj{v_i}} +  \oscal{x_j\conj{v_i}}{u_j\conj{x_i}} - 2\oscal{x_i\conj{x_j}}{u_i\conj{v_j} + v_i\conj{u_j}}  \\
+%       	& = \oscal{x_i\conj{x_j}}{u_i\conj{v_j}} +  \oscal{x_i\conj{v_j}}{u_i\conj{x_j}} + \oscal{x_i\conj{x_j}}{v_i\conj{u_j}} +  \oscal{x_i\conj{u_j}}{v_i\conj{x_j}} - 2\oscal{x_i\conj{x_j}}{u_i\conj{v_j} + v_i\conj{u_j}}  \\
+%        & = \oscal{x_i\conj{v_j}}{u_i\conj{x_j}} + \oscal{x_i\conj{u_j}}{v_i\conj{x_j}} - \oscal{x_i\conj{x_j}}{u_i\conj{v_j} + v_i\conj{u_j}} \\
+%        & = \oscal{x_i}{(u_i\conj{x_j})v_j + (v_i\conj{x_j})u_j - (u_i\conj{v_j})x_j - (v_i\conj{u_j})x_j}.
+%\end{align*}
+%If we look more closely on the second entry of the scalar product we see, that we can simplify it using the associator and its properties as follows
+%\begin{align*}
+%(u_i\conj{x_j})v_j - (u_i\conj{v_j})x_j & = u_i(\conj{x_j}v_j - \conj{v_j}x_j) + \{u_i, \conj{x_j}, v_j\} + \{u_i, \conj{v_j}, x_j\} \\
+%		& = 2u_i(\conj{x_j}\times \conj{v_j}) - \{u_i, x_j, v_j \} - \{u_i, v_j, x_j\} \\
+%        & = 2u_i(\conj{x_j}\times \conj{v_j})
+%\end{align*}
+%
+%Putting it all together, we arrive at
+%\[
+%\beta(x,u,v) = 2\Bigl( \sum_{i=1}^3 \oscal{x_i\conj{v_i}}{u_i\times x_i} + \sum_{i,j} \oscal{x_i}{u_i(\conj{x_j}\times \conj{v_j}) + v_i(\conj{x_j}\times \conj{u_j})} \Bigr).
+%\]
+%An easy calculation gives that $\beta(x,x,u) = \beta(x,u,x) = 0$. %What about \beta(u,x,x)?
+%
+%Finally, we can express the pullback continuing from \eqref{eq:jscal2}
+%\begin{align*}
+%\jscal{\partial_u \varphi(x)}{\partial_v \varphi(x)} 
+%        & = \frac{1}{\oscal{x}{x}^2}\bigl( 2\oscal{x}{u}\oscal{x}{v} + 2\oscal{x}{x}\oscal{u}{v} + \beta(x,u,v) \\
+%		& \qquad \qquad \quad - 2\oscal{x}{u}\frac{2\oscal{x}{x}\oscal{x}{v} + 2\oscal{x}{x}\oscal{x}{v} + \beta(x,x,v)}{2\oscal{x}{x}} \\
+%		& \qquad \qquad \quad - 2\oscal{x}{v}\frac{2\oscal{x}{x}\oscal{x}{u} + 2\oscal{x}{x}\oscal{x}{u} + \beta(x,u,x)}{2\oscal{x}{x}} \\
+%		& \qquad \qquad \quad + 4\oscal{x}{u}\oscal{x}{v} \bigr) \\
+%        & = \frac{1}{\oscal{x}{x}^2}\bigl( 2\oscal{x}{u}\oscal{x}{v} + 2\oscal{x}{x}\oscal{u}{v} + \beta(x,u,v) \\
+%		& \qquad \qquad \quad  - 4\oscal{x}{u}\oscal{x}{v} \\        
+%		& \qquad \qquad \quad - 4\oscal{x}{v}\oscal{x}{u}  \\
+%		& \qquad \qquad \quad +  4\oscal{x}{u}\oscal{x}{v} \bigr) \\
+%        & = 2\frac{ \oscal{x}{x}\oscal{u}{v} - \oscal{x}{u}\oscal{x}{v} + \beta(x,u,v) }{\oscal{x}{x}^2}.
+%\end{align*}
+%\end{proof}
 
 %\section{Vanoce}
-The result is
-\begin{equation}
-\jscal{\psi(x,u)}{\psi(x,v)} = 2\oscal{x}{x}\oscal{u}{v} + 2\Re(h(x,u)h(x,v)) + \beta(x,u,v),
-\end{equation}
-where
-	\[h(x,u) = \sum_{i=1}^3 \gamma_i x_i \conj{u_i}\] 
-and
-\begin{equation}
-\beta(x,u,v) = 2\sum_{j \geq i = 1}^3 \oscal{x_i}{(u_i \times x_j)\conj{v_j} + (v_i \times x_j)\conj{u_j}  - \{u_i, x_j, \conj{v_j}\} - \{v_i, x_j, \conj{u_j} \}}
-\end{equation}
-
-\[
-\{a,b,c\} = \frac{2}{3}\text{cyklicka suma (a x b) x c}
-\]
-
-\[
-\Re (ab) = 2\Re(a)\Re(b) - \oscal{a}{b}
-\]
+%The result is
+%\begin{equation}
+%\jscal{\psi(x,u)}{\psi(x,v)} = 2\oscal{x}{x}\oscal{u}{v} + 2\Re(h(x,u)h(x,v)) + \beta(x,u,v),
+%\end{equation}
+%where
+%	\[h(x,u) = \sum_{i=1}^3 \gamma_i x_i \conj{u_i}\] 
+%and
+%\begin{equation}
+%\beta(x,u,v) = 2\sum_{j \geq i = 1}^3 \oscal{x_i}{(u_i \times x_j)\conj{v_j} + (v_i \times x_j)\conj{u_j}  - \{u_i, x_j, \conj{v_j}\} - \{v_i, x_j, \conj{u_j} \}}
+%\end{equation}
+%
+%\[
+%\{a,b,c\} = \frac{2}{3}\text{cyklicka suma (a x b) x c}
+%\]
+%
+%\[
+%\Re (ab) = 2\Re(a)\Re(b) - \oscal{a}{b}
+%\]
 
 \section{Invariant differential operators}
 \emph{Homomorphisms of parabolic Verma modules}
