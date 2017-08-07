@@ -839,9 +839,11 @@ As was argued in \cite{davidson_differential_1991} this inner product can be use
 
 Of course, the simple submodule $L(\lambda)$ is isomorphic to the simple quotient of $M(\lambda)$ by $J(\lambda)$. Reader interested in explicit form of the generators $m_i$ can consult chapter 10 of \cite{davidson_differential_1991}. The relationship between the Fischer inner product and the Shapovalov form was calculated by \cite{wachi}.
 
-\subsection[Explicit singular vectors for su(m, n)]{Explicit singular vectors for $\mfrak{su}(m, n)$}
+\subsection[Explicit singular vectors for su(m, n)]{Explicit singular vectors for $\mfrak{su}(m, n)$}\label{sec:invariant}
 
-Since Verma modules are in particular highest weight modules, any homomorphism between them is determined by the image of the generating vector. This image is called singular vector it is, up to duality, precisely the invariant differential operator we seek. In this section we apply the recently developed F-method to find (and classify) all singular vectors in Verma modules for $\mfrak{su}(m, n)$ which are induced from scalar representation. 
+Since Verma modules are in particular highest weight modules, any homomorphism between them is determined by the image of the generating vector. This image is called singular vector it is, up to duality, precisely the invariant differential operator we seek. In this section we apply the recently developed F-method \cite{kobayashi_fmethod} to find (and classify) all singular vectors in Verma modules for $\mfrak{su}(m, n)$ which are induced from scalar representation.
+
+\medskip
 
 Let us consider the connected complex simple Lie group $G=\SL(n+m,\C)$, $n,m \in \N$, and its Lie algebra $\mfrak{g}=\mfrak{sl}(n+m,\C)$ given by
 \begin{align}
@@ -853,7 +855,7 @@ A Cartan subalgebra $\mfrak{h}$ of $\mfrak{g}$ is given by diagonal matrices
 \end{align}
 For $i=1,2,\dots,n+m$ we define $\veps_i \in \mfrak{h}^*$ by $\veps_i(\diag(a_1,a_2,\dots,a_{n+m}))=a_i$. Then the root system of $\mfrak{g}$ with respect to $\mfrak{h}$ is $\Delta=\{\veps_i-\veps_j;\, 1\leq i \neq j \leq n+m\}$. A positive root system in $\Delta$ is $\Delta^+=\{\veps_i - \veps_j;\, 1 \leq i < j \leq n+m\}$ with the set of simple roots $\Pi=\{\alpha_1,\alpha_2,\dots,\alpha_{n+m-1}\}$, $\alpha_i= \veps_i - \veps_{i+1}$ for $i=1,2,\dots,n+m-1$. Finally, the fundamental weights are $\omega_i = \smash{\sum_{j=1}^i} \veps_j$ for $i=1,2,\dots,n+m-1$.
 
-The standard Borel subalgebra $\mfrak{b}$ of $\mfrak{g}$ is defined through $\mfrak{b} = \mfrak{h} \oplus \mfrak{n}$, where the nilradical $\mfrak{n}$ of $\mfrak{b}$ is given by \eqref{eq:niradical borel}. The subset $\Sigma=\{\alpha_1,\dots,\alpha_{n-1},\alpha_{n+1},\dots,\alpha_{n+m-1}\}$ of $\Pi$ generates the root subsystem $\Delta_\Sigma$ in $\mfrak{h}^*$. We associate to $\Sigma$ the standard parabolic subalgebra $\mfrak{p}$ of $\mfrak{g}$ by $\mfrak{p}= \mfrak{l} \oplus \mfrak{u}$, where the reductive Levi subalgebra $\mfrak{l}$ of $\mfrak{p}$ is defined by \eqref{eq:Levi subalgebra} and the nilradical $\mfrak{u}$ together with the opposite nilradical $\widebar{\mfrak{u}}$ are given by \eqref{eq:nilradical parabolic}. The $\Sigma$-height $\htt_\Sigma(\alpha)$ of $\alpha \in \Delta$ is
+ The subset $\Sigma=\{\alpha_1,\dots,\alpha_{n-1},\alpha_{n+1},\dots,\alpha_{n+m-1}\}$ of $\Pi$ generates the root subsystem $\Delta_\Sigma$ in $\mfrak{h}^*$. We associate to $\Sigma$ the standard parabolic subalgebra $\mfrak{p}$ of $\mfrak{g}$ by $\mfrak{p}= \mfrak{l} \oplus \mfrak{u}$. By subscript $\mu$ we denote the $\mfrak{l}$-isotypical component of a module. The $\Sigma$-height $\htt_\Sigma(\alpha)$ of $\alpha \in \Delta$ is
 \begin{align}
   \htt_\Sigma\!\big({\textstyle \sum_{i=1}^{n+m-1}} a_i \alpha_i\big) = a_n,
 \end{align}
@@ -903,7 +905,7 @@ Any character $\lambda \in \Hom_P(\mfrak{p},\C)$ is given by
 for some $\alpha \in \C$, where $\widetilde{\omega}_n\in \Hom_P(\mfrak{p},\C)$
 is equal to $\omega_n\in \mfrak{h}^*$ regarded as trivially extended to
 $\mfrak{p} =\mfrak{h} \oplus (\bigoplus_{\alpha \in \Delta_\Sigma} \mfrak{g}_\alpha) \oplus \mfrak{u}$.
-The character $\rho \in \Hom_P(\mfrak{p},\C)$ defined by \eqref{eq:rho_vector} is
+The character $\rho \in \Hom_P(\mfrak{p},\C)$  is defined as
 \begin{align}
   \rho={\textstyle {n+m \over 2}}\,\widetilde{\omega}_n.
 \end{align}
@@ -922,11 +924,9 @@ for the Euler homogeneity operators and
 for $A=(a_{ij}) \in M_{n,n}(\C)$, $B=(b_{ij}) \in M_{m,m}(\C)$. We set $L^y_{ij}=L^y_{E_{ij}}$ for $1 \leq i,j \leq m$ and $R^y_{ij}=R^y_{E_{ij}}$ for $1 \leq i,j \leq n$.
 \medskip
 
-\remark Let us note that the action of the Levi subalgebra can be written more succinctly using the following notation.
-\medskip
 
-\theorem{\label{thm:action AGS}
-Let $\lambda \in \Hom_P(\mfrak{p},\C)$ and let $(\sigma,\mathbb{V})$ be a $\mfrak{p}$-module. Then the embedding of $\mfrak{g}$ into $\eus{A}^\mfrak{g}_{\widebar{\mfrak{u}}} \otimes_\C \End \mathbb{V}_{\lambda+\rho}$ and $\eus{A}^\mfrak{g}_{\widebar{\mfrak{u}}^*} \otimes_\C \End \mathbb{V}_{\lambda-\rho}$ is given by
+\begin{theorem}\label{thm:action AGS}
+Let $\lambda \in \Hom_P(\mfrak{p},\C)$ and let $(\sigma,\mathbb{V})$ be a $\mfrak{p}$-module. Let $\eus{A}_{\widebar{\mfrak{u}}}$ be the Weyl algebra of the vector space $\widebar{\mfrak{u}}$ generated by $\{x_\alpha,\partial_{x_\alpha};\, \alpha \in \Delta(\mfrak{u})\}$ and $\eus{A}_{\widebar{\mfrak{u}^*}}$ be the Weyl algebra of the vector space $\widebar{\mfrak{u}^*}$ generated by by $\{y_\alpha,\partial_{y_\alpha};\, \alpha \in \Delta(\mfrak{u})\}.$  Then the embedding of $\mfrak{g}$ into $\eus{A}_{\widebar{\mfrak{u}}} \otimes_\C \End \mathbb{V}_{\lambda+\rho}$ and into it's Fourier dual $\eus{A}_{\widebar{\mfrak{u}}^*} \otimes_\C \End \mathbb{V}_{\lambda-\rho}$ is given by
 \begin{enumerate}
 \item[1)]
 \begin{align}
@@ -958,59 +958,36 @@ for all $A \in M_{n,n}(\C)$, $B \in M_{m,m}(\C)$ satisfying $\tr A =0$ and $\tr 
   \end{aligned}
 \end{align}
 for $i=1,2,\dots,n$ and $j=1,2,\dots,m$.
-\end{enumerate}}
+\end{enumerate}
+\end{theorem}
 
-\proof{It follows immediately from Theorem \ref{thm:action 1-graded} using the commutation relations for the Lie algebra $\mfrak{sl}(n+m,\C)$.}
-\vspace{-2mm}
+\begin{proof}
+It follows immediately by straightforward caculations from \cite{krizka_contact}.
+\end{proof}
 
-%\theorem{\label{thm:action AGS}
-%Let $\lambda \in \Hom_P(\mfrak{p},\C)$ and let $(\sigma,\mathbb{V})$ be a $\mfrak{p}$-module. Then the embedding of $\mfrak{g}$ into $\eus{A}^\mfrak{g}_{\widebar{\mfrak{u}}} \otimes_\C \End \mathbb{V}_{\lambda+\rho}$ and $\eus{A}^\mfrak{g}_{\widebar{\mfrak{u}}^*} \otimes_\C \End \mathbb{V}_{\lambda-\rho}$ is given by
-%\begin{enumerate}
-%\item[1)]
-%\begin{align}
-%\begin{aligned}
-%  \pi_{\sigma_\lambda}(f_{ij})&=-\partial_{x_{ij}}, \\
-%  \hat{\pi}_{\sigma_\lambda}(f_{ij})&=-y_{ij}
-%\end{aligned}
-%\end{align}
-%for $i=1,2,\dots,m$ and $j=1,2,\dots,n$;
-%\item[2)]
-%\begin{align}
-%  \begin{aligned}
-%    \pi_{\sigma_\lambda}(h_c)&= \bigg({1 \over n} + {1 \over m}\bigg) \sum_{k=1}^m \sum_{\ell=1}^n x_{k\ell} \partial_{x_{k\ell}} + \bigg(\lambda+ {n+m \over 2}\bigg) + \sigma(h_c), \\
-%    \pi_{\sigma_\lambda}(h_{A,B})&= \sum_{k=1}^m \sum_{\ell=1}^n \sum_{r=1}^n a_{r\ell} x_{kr} \partial_{x_{k\ell}} - \sum_{k=1}^m \sum_{\ell=1}^n \sum_{s=1}^m b_{ks} x_{s\ell} \partial_{x_{k\ell}} + \sigma(h_{A,B}), \\
-%    \hat{\pi}_{\sigma_\lambda}(h_c)&= -\bigg({1 \over n} + {1 \over m}\bigg) \sum_{k=1}^m \sum_{\ell=1}^n y_{k\ell} \partial_{y_{k\ell}} +  \bigg(\lambda - {n+m \over 2}\bigg) + \sigma(h_c), \\
-%    \hat{\pi}_{\sigma_\lambda}(h_{A,B})&= -\sum_{k=1}^m \sum_{\ell=1}^n \sum_{r=1}^n a_{r\ell} y_{k\ell} \partial_{y_{kr}} + \sum_{k=1}^m \sum_{\ell=1}^n \sum_{s=1}^m b_{ks} y_{k\ell}\partial_{y_{s\ell}} + \sigma(h_{A,B})
-%  \end{aligned}
-%\end{align}
-%for all $A=(a_{r\ell}) \in M_{n,n}(\C)$, $B=(b_{ks}) \in M_{m,m}(\C)$ satisfying $\tr A =0$ and $\tr B = 0$;
-%\item[3)]
-%\begin{align}
-%  \begin{aligned}
-%    \pi_{\sigma_\lambda}(e_{ij})&= \sum_{k=1}^m \sum_{\ell=1}^n x_{ki} x_{j\ell} \partial_{x_{k\ell}}  + \bigg(\lambda+ {n+m \over 2}\bigg) x_{ji} + \sigma(e_{ij}) + x_{ji}\sigma(h_c)
-%    \\ &\quad + \sum_{\ell=1}^n x_{j\ell} \sigma(h_{E_{i\ell}-{1\over n}I_n \delta_{i \ell},0})
-%     - \sum_{k=1}^m x_{ki} \sigma(h_{0,E_{kj}-{1 \over m}I_m \delta_{kj}}),  \\
-%    \hat{\pi}_{\sigma_\lambda}(e_{ij})&= \sum_{k=1}^m \sum_{\ell=1}^n y_{k\ell} \partial_{y_{ki}} \partial_{y_{j\ell}} - \bigg(\lambda-  {n+m \over 2}\bigg) \partial_{y_{ji}} + \sigma(e_{ij}) - \partial_{y_{ji}} \sigma(h_c)
-%    \\ &\quad - \sum_{\ell=1}^n \partial_{y_{j\ell}} \sigma(h_{E_{i\ell}-{1\over n}I_n \delta_{i \ell},0})
-%     + \sum_{k=1}^m \partial_{y_{ki}} \sigma(h_{0,E_{kj}-{1 \over m}I_m \delta_{kj}})
-%  \end{aligned}
-%\end{align}
-%for $i=1,2,\dots,n$ and $j=1,2,\dots,m$.
-%\end{enumerate}}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\subsection{Singular vectors and equivariant differential operators}
-
-Let $\alpha \in \C$ and let $(\sigma,\C)$ be the trivial $\mfrak{p}$-module. Then from \eqref{eq:Phi isomorphism} we have an isomorphism
-\begin{align}
-  \tau \circ \Phi_{\lambda_\alpha} \colon M^\mfrak{g}_\mfrak{p}(\C_{\lambda_\alpha-\rho}) \riso \C[\widebar{\mfrak{u}}^*] \otimes_\C \C_{\lambda_\alpha-\rho}
+Let $\alpha \in \C$ and let $(\sigma,\C)$ be the trivial $\mfrak{p}$-module. Then we have an isomorphism
+\begin{align}\label{eq:Phi isomorphism}
+  \tau \circ \Phi_{\lambda_\alpha} \colon M(\C_{\lambda_\alpha-\rho}) \riso \C[\widebar{\mfrak{u}}^*] \otimes_\C \C_{\lambda_\alpha-\rho}
 \end{align}
 of $\mfrak{g}$-modules, where the action of $\mfrak{g}$ on $\C[\widebar{\mfrak{u}}^*] \otimes_\C \C_{\lambda_\alpha-\rho}$ is given by Theorem \ref{thm:action AGS}.
-%Moreover, because $\C[\widebar{\mfrak{u}}^*] \otimes_\C \C_{\lambda_\alpha-\rho}$ and also $\Sol(\mfrak{g},\mfrak{p};\C[\widebar{\mfrak{u}}^*] \otimes_\C \C_{\lambda_\alpha-\rho})^\mcal{F} \subset \C[\widebar{\mfrak{u}}^*] \otimes_\C \C_{\lambda_\alpha-\rho}$ are semisimple $\mfrak{l}$-modules, we denote by $(\C[\widebar{\mfrak{u}}^*] \otimes_\C \C_{\lambda-\rho})_\mu$ and $\Sol(\mfrak{g},\mfrak{p};\C[\widebar{\mfrak{u}}^*] \otimes_\C \C_{\lambda-\rho})^\mcal{F}_\mu$ the $\mfrak{l}$-isotypic components of highest weight $\mu \in \mfrak{h}^*$.
+%Moreover, because $\C[\widebar{\mfrak{u}}^*] \otimes_\C \C_{\lambda_\alpha-\rho}$ and also $\Sol^\mcal{F} \subset \C[\widebar{\mfrak{u}}^*] \otimes_\C \C_{\lambda_\alpha-\rho}$ are semisimple $\mfrak{l}$-modules, we denote by $(\C[\widebar{\mfrak{u}}^*] \otimes_\C \C_{\lambda-\rho})_\mu$ and $\Sol(\mfrak{g},\mfrak{p};\C[\widebar{\mfrak{u}}^*] \otimes_\C \C_{\lambda-\rho})^\mcal{F}_\mu$ the $\mfrak{l}$-isotypic components of highest weight $\mu \in \mfrak{h}^*$.
 \medskip
 
-\proposition{\label{prop:C[u] decomposition AGS}
+If we introduce an $\mfrak{l}$-module
+\begin{align}
+  \Sol = \{f \in \C[\widebar{\mfrak{u}}^*] \otimes_\C \!\mathbb{V}_{\lambda-\rho};\, \hat{\pi}_{\sigma_\lambda}(a)f=0\ \text{for all}\ a \in \mfrak{u}\},
+\end{align}
+then by \eqref{eq:Phi isomorphism} we obtain an isomorphism
+\begin{align}
+  \tau \circ \Phi_\lambda \colon M(\mathbb{V}_{\lambda-\rho})^\mfrak{u} \riso \Sol^\mcal{F}
+\end{align}
+of $\mfrak{l}$-modules where $\mcal{F}$ is the algebraic Fourier duality mapping uniquely determined by 
+\begin{equation*}
+  \mcal{F}(x_\alpha) = -\partial_{y_\alpha}, \qquad \mcal{F}(\partial_{x_\alpha})= y_\alpha.
+\end{equation*}
+
+\begin{proposition}\label{prop:C[u] decomposition AGS}
 Let $\alpha \in \C$ and let $r=\min\{n,m\}$. Then we have
 \begin{align}
    \C[\widebar{\mfrak{u}}^*] \otimes_\C \C_{\lambda_\alpha-\rho} \simeq \bigoplus_{\mu \in \Lambda^+_\alpha\!(\mfrak{p})} \mathbb{F}_\mu
@@ -1033,9 +1010,10 @@ is $v_\mu=q_1^{a_1}q_2^{a_2} \dots q_r^{a_r}$, where
     y_{k,n-k+1} & y_{k,n-k+2}&  \dots & y_{k,n}
   \end{pmatrix}
 \end{align}
-for $k=1,2,\dots,r$.}
+for $k=1,2,\dots,r$.
+\end{proposition}
 
-\proof{First of all, we need to verify that the polynomials $q_k$ are the highest weight vectors with highest weights $\omega_{n-k}+\omega_{n+k}+\big(\alpha - {n + m \over 2} -2\big)\omega_n$ for $k=1,2,\dots,r$. Using \eqref{eq:left right action y AGS} it easily follows that $L^y_{ij}q_k=0$ for $j=k+1,k+2,\dots,m$ and $L^y_{ij}q_k$ is the polynomial which arises from $q_k$ replacing the $j$-th row $(y_{j,n-k+1},y_{j,n-k+2},\dots,y_{j,n})$  with the $i$-th row $(y_{i,n-k+1},y_{i,n-k+2},\dots,y_{i,n})$ in the corresponding matrix \eqref{eq:generators hwv AGS} for $j=1,2,\dots,k$. Analogously, we have that $-R^y_{ij}q_k=0$ for $i=1,2,\dots,n-k$ and $-R^y_{ij}q_k$ is the polynomial which arises from $q_k$ replacing the $i$-th column \smash{$(y_{1,i},y_{2,i},\dots,y_{k,i})^{\rm T}$} with the $j$-th column \smash{$(y_{1,j},y_{2,j},\dots,y_{k,j})^{\rm T}$} in the corresponding matrix \eqref{eq:generators hwv AGS} for $i=n-k+1,n-k+2,\dots,n$. Therefore, we obtain $R^y_{ij}q_k=0$ for $1 \leq i < j \leq n$ and $L^y_{ij}q_k=0$ for $1 \leq i < j \leq m$, which gives us that $q_k$ is annihilated by $\mfrak{l} \cap \mfrak{n}$. Furthermore, since we have
+\begin{proof}First of all, we need to verify that the polynomials $q_k$ are the highest weight vectors with highest weights $\omega_{n-k}+\omega_{n+k}+\big(\alpha - {n + m \over 2} -2\big)\omega_n$ for $k=1,2,\dots,r$. Using \eqref{eq:left right action y AGS} it easily follows that $L^y_{ij}q_k=0$ for $j=k+1,k+2,\dots,m$ and $L^y_{ij}q_k$ is the polynomial which arises from $q_k$ replacing the $j$-th row $(y_{j,n-k+1},y_{j,n-k+2},\dots,y_{j,n})$  with the $i$-th row $(y_{i,n-k+1},y_{i,n-k+2},\dots,y_{i,n})$ in the corresponding matrix \eqref{eq:generators hwv AGS} for $j=1,2,\dots,k$. Analogously, we have that $-R^y_{ij}q_k=0$ for $i=1,2,\dots,n-k$ and $-R^y_{ij}q_k$ is the polynomial which arises from $q_k$ replacing the $i$-th column \smash{$(y_{1,i},y_{2,i},\dots,y_{k,i})^{\rm T}$} with the $j$-th column \smash{$(y_{1,j},y_{2,j},\dots,y_{k,j})^{\rm T}$} in the corresponding matrix \eqref{eq:generators hwv AGS} for $i=n-k+1,n-k+2,\dots,n$. Therefore, we obtain $R^y_{ij}q_k=0$ for $1 \leq i < j \leq n$ and $L^y_{ij}q_k=0$ for $1 \leq i < j \leq m$, which gives us that $q_k$ is annihilated by $\mfrak{l} \cap \mfrak{n}$. Furthermore, since we have
 \begin{align*}
   \hat{\pi}_{\lambda_\alpha}\!(h_{A,B})q_k &= \sum_{i=1}^n a_i R^y_{ii}q_k + \sum_{j=1}^m b_j L^y_{jj}q_k = -\sum_{i=n-k+1}^n a_i q_k + \sum_{j=1}^k b_j q_k
   = \bigg(\sum_{i=1}^{n-k} a_i + \sum_{j=1}^k b_j \bigg)q_k \\
@@ -1056,31 +1034,33 @@ and generates a finite-dimensional simple $\mfrak{l}$-submodule of $\C[\widebar{
 \begin{align*}
   \bigoplus_{\mu \in \Lambda^+_\alpha\!(\mfrak{p})} \mathbb{F}_\mu \rarr \C[\widebar{\mfrak{u}}^*] \otimes_\C \C_{\lambda_\alpha-\rho}
 \end{align*}
-of $\mfrak{l}$-modules, which is an isomorphism as follows from \cite{Goodman-Wallach2009}.}
+of $\mfrak{l}$-modules, which is an isomorphism as follows from \cite{Goodman-Wallach2009}.
+\end{proof}
 
-\lemma{\label{lem:solution space AGS}
+\begin{lemma}\label{lem:solution space AGS}
 Let $\alpha \in \C$ and $\mu \in \Lambda^+_\alpha(\mfrak{p})$. Then we have
 \begin{align*}
- \Sol(\mfrak{g},\mfrak{p};\C[\widebar{\mfrak{u}}^*] \otimes_\C \C_{\lambda_\alpha-\rho})^\mcal{F}_\mu \simeq
+ \Sol^\mcal{F}_\mu \simeq
  \begin{cases}
    \mathbb{F}_\mu & \text{for $\alpha \in \C$, $\mu = \big(\alpha-{n+m \over 2}\big)\omega_n$}, \\[1mm]
    \mathbb{F}_\mu & \text{$\!\begin{gathered}\text{for $\alpha = a-k+{\textstyle {n+m \over 2}}$, $\mu=a \omega_{n-k} + a\omega_{n+k}-(a+k)\omega_n$,}\\[1mm] \text{$a \in \N$, $k \in \{1,2,\dots,r\}$} \hfill \end{gathered}$} \\[1mm]
    0 & \text{otherwise}.
  \end{cases}
-\end{align*}}
+\end{align*}
+\end{lemma}
 
-\proof{Using Proposition \ref{prop:C[u] decomposition AGS} we know that $\C[\widebar{\mfrak{u}}^*] \otimes_\C \C_{\lambda_\alpha-\rho}$ is a multiplicity free $\mfrak{l}$-module. Moreover, since we have $\Sol(\mfrak{g},\mfrak{p};\C[\widebar{\mfrak{u}}^*] \otimes_\C \C_{\lambda_\alpha-\rho})^\mcal{F}_\mu \subset (\C[\widebar{\mfrak{u}}^*] \otimes_\C \C_{\lambda_\alpha-\rho})_\mu \simeq \mathbb{F}_\mu$ for $\mu \in \Lambda^+_\alpha(\mfrak{p})$, we obtain that $\smash{\Sol(\mfrak{g},\mfrak{p};\C[\widebar{\mfrak{u}}^*] \otimes_\C \C_{\lambda_\alpha-\rho})^\mcal{F}_\mu}$ is either the zero $\mfrak{l}$-module or isomorphic to the $\mfrak{l}$-module $\mathbb{F}_\mu$. Therefore, it is enough to verify, whether the highest weight vector $v_\mu$ of $(\C[\widebar{\mfrak{u}}^*] \otimes_\C \C_{\lambda_\alpha-\rho})_\mu$ is contained in $\Sol(\mfrak{g},\mfrak{p};\C[\widebar{\mfrak{u}}^*] \otimes_\C \C_{\lambda_\alpha-\rho})^\mcal{F}$ or not. Let $\mu \in \Lambda^+_\alpha(\mfrak{p})$ and let us assume that the highest weight vector
+\begin{proof}Using Proposition \ref{prop:C[u] decomposition AGS} we know that $\C[\widebar{\mfrak{u}}^*] \otimes_\C \C_{\lambda_\alpha-\rho}$ is a multiplicity free $\mfrak{l}$-module. Moreover, since we have $\Sol^\mcal{F}_\mu \subset (\C[\widebar{\mfrak{u}}^*] \otimes_\C \C_{\lambda_\alpha-\rho})_\mu \simeq \mathbb{F}_\mu$ for $\mu \in \Lambda^+_\alpha(\mfrak{p})$, we obtain that $\smash{\Sol^\mcal{F}_\mu}$ is either the zero $\mfrak{l}$-module or isomorphic to the $\mfrak{l}$-module $\mathbb{F}_\mu$. Therefore, it is enough to verify, whether the highest weight vector $v_\mu$ of $(\C[\widebar{\mfrak{u}}^*] \otimes_\C \C_{\lambda_\alpha-\rho})_\mu$ is contained in $\Sol^\mcal{F}$ or not. Let $\mu \in \Lambda^+_\alpha(\mfrak{p})$ and let us assume that the highest weight vector
 \begin{align*}
   v_\mu = q_1^{a_1}q_2^{a_2}\dots q_r^{a_r}
 \end{align*}
-of $(\C[\widebar{\mfrak{u}}^*] \otimes_\C \C_{\lambda_\alpha-\rho})_\mu$ with $a_1,a_2,\dots a_r \in \N_0$ belongs to $\Sol(\mfrak{g},\mfrak{p};\C[\widebar{\mfrak{u}}^*] \otimes_\C \C_{\lambda_\alpha-\rho})^\mcal{F}$. Because of the greater clarity, we denote by $q^a$ the polynomial $q_1^{a_1}q_2^{a_2}\dots q_r^{a_r}$ for $a=(a_1,a_2,\dots,a_r) \in \N_0^r$ and by $1_k \in \N_0^r$ the $r$-tuple having $1$ at the $k$-th position and $0$ otherwise. Furthermore, we have
+of $(\C[\widebar{\mfrak{u}}^*] \otimes_\C \C_{\lambda_\alpha-\rho})_\mu$ with $a_1,a_2,\dots a_r \in \N_0$ belongs to $\Sol^\mcal{F}$. For greater clarity, we denote by $q^a$ the polynomial $q_1^{a_1}q_2^{a_2}\dots q_r^{a_r}$ for $a=(a_1,a_2,\dots,a_r) \in \N_0^r$ and by $1_k \in \N_0^r$ the $r$-tuple having $1$ at the $k$-th position and $0$ otherwise. Furthermore, we have
 \begin{align*}
   \hat{\pi}_{\lambda_\alpha}\!(e_{ij})&= \sum_{k=1}^m \sum_{\ell=1}^n y_{k\ell} \partial_{y_{ki}} \partial_{y_{j\ell}} - \bigg(\alpha-  {n+m \over 2}\bigg) \partial_{y_{ji}}= \sum_{k=1}^m  \partial_{y_{ki}} L^y_{kj} - \bigg(\alpha - {n-m \over 2} \bigg) \partial_{y_{ji}}
 \end{align*}
 for $i=1,2,\dots,n$ and $j=1,2,\dots,m$.
 \smallskip
 
-If $v_\mu =1$, then $\hat{\pi}_{\lambda_\alpha}\!(e_{ij})v_\mu=0$ for all $i=1,2,\dots,n$, $j=1,2,\dots,m$ and $\alpha \in \C$. Therefore, we have $\Sol(\mfrak{g},\mfrak{p};\C[\widebar{\mfrak{u}}^*] \otimes_\C \C_{\lambda_\alpha-\rho})^\mcal{F}_\mu \simeq \mathbb{F}_\mu$ for $\mu=\big(\alpha-{n+m \over 2}\big)\omega_n$ and $\alpha \in \C$.
+If $v_\mu =1$, then $\hat{\pi}_{\lambda_\alpha}\!(e_{ij})v_\mu=0$ for all $i=1,2,\dots,n$, $j=1,2,\dots,m$ and $\alpha \in \C$. Therefore, we have $\Sol^\mcal{F}_\mu \simeq \mathbb{F}_\mu$ for $\mu=\big(\alpha-{n+m \over 2}\big)\omega_n$ and $\alpha \in \C$.
 \smallskip
 
 Now, if $v_\mu \neq 1$, then there exists an index $s \in \{1,2,\dots,r\}$ satisfying $a_s \neq 0 $ and $a_\ell=0$ for $\ell=s+1,s+2,\dots,r$. Since $\partial_{y_{k,n-s+1}}q_\ell =0$ and $L^y_{ks}q_\ell=0$ for $\ell=1,2,\dots,s-1$ and $k=1,2,\dots,m$, we may write
@@ -1134,37 +1114,37 @@ We may write
   \hat{\pi}_{\lambda_\alpha}\!(e_{ij})v_\mu &= \sum_{k=1}^m  \partial_{y_{ki}} L^y_{kj}q_s^{a_s} - (a_s-s+m) \partial_{y_{ji}}q_s^{a_s} \\
   &= \sum_{k=1}^m  a_s \partial_{y_{ki}} q_s^{a_s-1}L^y_{kj}q_s - (a_s-s+m) \partial_{y_{ji}}q_s^{a_s} \\
   & =a_s \partial_{y_{ji}} q_s^{a_s-1}L^y_{jj}q_s + \sum_{k=s+1}^m  a_s \partial_{y_{ki}} q_s^{a_s-1}L^y_{kj}q_s - (a_s-s+m) \partial_{y_{ji}}q_s^{a_s} \\ &= a_s \partial_{y_{ji}} q_s^{a_s} +  \sum_{k=s+1}^m  a_s  q_s^{a_s-1} \partial_{y_{ki}}L^y_{kj}q_s - (a_s-s+m) \partial_{y_{ji}}q_s^{a_s} \\
-  &=  \sum_{k=s+1}^m  a_s  q_s^{a_s-1} \partial_{y_{ji}}q_s -(m-s)\partial_{y_{ji}}q_s^{a_s}=(m-s)\partial_{y_{ji}}q_s^{a_s}-(m-s)\partial_{y_{ji}}q_s^{a_s}=0,
+  &=  \sum_{k=s+1}^m  a_s  q_s^{a_s-1} \partial_{y_{ji}}q_s -(m-s)\partial_{y_{ji}}q_s^{a_s} \\
+  &=(m-s)\partial_{y_{ji}}q_s^{a_s}-(m-s)\partial_{y_{ji}}q_s^{a_s}=0,
 \end{align*}
-where we used $L^y_{kj}q_s=0$ if $j>s$ or if $k \leq s$ and $k\neq j$ in the third equality and $\partial_{y_{ki}}L^y_{kj}q_s=\partial_{y_{ji}} q_s$ for $k > s$ in the fifth equality. Hence, we have \smash{$\Sol(\mfrak{g},\mfrak{p};\C[\widebar{\mfrak{u}}^*] \otimes_\C \C_{\lambda_\alpha-\rho})^\mcal{F}_\mu \simeq \mathbb{F}_\mu$} for $\mu=a \omega_{n-k} + a\omega_{n+k}-(a+k)\omega_n$ and $\alpha = a-k + {n+m \over 2}$.}
+where we used $L^y_{kj}q_s=0$ if $j>s$ or if $k \leq s$ and $k\neq j$ in the third equality and $\partial_{y_{ki}}L^y_{kj}q_s=\partial_{y_{ji}} q_s$ for $k > s$ in the fifth equality. Hence, we have \smash{$\Sol^\mcal{F}_\mu \simeq \mathbb{F}_\mu$} for $\mu=a \omega_{n-k} + a\omega_{n+k}-(a+k)\omega_n$ and $\alpha = a-k + {n+m \over 2}$.
+\end{proof}
 
-\theorem{\label{thm:singular vectors decomposition AGS}
+\begin{theorem}\label{thm:singular vectors decomposition AGS}
 We have
 \begin{align*}
-  \tau \circ \Phi_{\lambda_\alpha+\rho} \colon M^\mfrak{g}_\mfrak{p}(\C_{\lambda_\alpha})^\mfrak{u} \riso
+  \tau \circ \Phi_{\lambda_\alpha+\rho} \colon M(\C_{\lambda_\alpha})^\mfrak{u} \riso
   \begin{cases}
     \mathbb{F}_{\mu_{\alpha,r}} &  \text{if $\alpha+r \notin \N$}, \\[2mm]
     \mathbb{F}_{\mu_{\alpha,r}} \oplus \bigoplus\limits_{k=0}^{\min\{r-1,\alpha+r-1\}} \mathbb{F}_{\mu_{\alpha,k}} & \text{if $\alpha + r \in \N$,}
   \end{cases}
 \end{align*}
-where $\mu_{\alpha,k}=(\alpha+r-k)\omega_{n-r+k}+(\alpha+r-k)\omega_{n+r-k}-(\alpha+2r-2k)\omega_n$ for $k=0,1,\dots,r$.}
+where $\mu_{\alpha,k}=(\alpha+r-k)\omega_{n-r+k}+(\alpha+r-k)\omega_{n+r-k}-(\alpha+2r-2k)\omega_n$ for $k=0,1,\dots,r$.
+\end{theorem}
 
-\proof{The decomposition of the space of singular vectors $M^\mfrak{g}_\mfrak{p}(\mathbb{C}_{\lambda_\alpha})^\mfrak{u}$ is a straightforward consequence of Lemma \ref{lem:solution space AGS}.}
-\vspace{-4mm}
+\begin{proof}The decomposition of the space of singular vectors $M(\mathbb{C}_{\lambda_\alpha})^\mfrak{u}$ is a straightforward consequence of Lemma \ref{lem:solution space AGS}.
+\end{proof}
 
 If $\alpha+r \in \N$, then Theorem \ref{thm:singular vectors decomposition AGS} ensures the existence of a non-trivial homomorphism
 \begin{align}
-  \varphi \colon M^\mfrak{g}_\mfrak{p}(\mathbb{F}_{\mu_{\alpha,k}}) \rarr M^\mfrak{g}_\mfrak{p}(\C_{\lambda_\alpha})
+  \varphi \colon M(\mathbb{F}_{\mu_{\alpha,k}}) \rarr M(\C_{\lambda_\alpha})
 \end{align}
 of generalized Verma modules for $k=0,1,\dots,\min\{r-1,\alpha+r-1\}$, where the simple $\mfrak{l}$-module $\mathbb{F}_{\mu_{\alpha,k}}$ is extended to a $\mfrak{p}$-module by $\mfrak{u}$ acting trivially, uniquely determined by a homomorphism
 \begin{align}
-  \varphi_0 \colon \mathbb{F}_{\mu_{\alpha,k}} \rarr M^\mfrak{g}_\mfrak{p}(\C_{\lambda_\alpha})
+  \varphi_0 \colon \mathbb{F}_{\mu_{\alpha,k}} \rarr M(\C_{\lambda_\alpha})
 \end{align}
 of $\mfrak{p}$-modules, which is defined by
 \begin{align}
   \varphi_0(v_{\mu_{\alpha,k}})= q^{\alpha+r-k}_{r-k}(f_{ij}) v_\alpha,
 \end{align}
-where $v_\alpha \in M^\mfrak{g}_\mfrak{p}(\C_{\lambda_\alpha})$ is the highest weight vector of $M^\mfrak{g}_\mfrak{p}(\C_{\lambda_\alpha})$ and $v_{\mu_{\alpha,k}} \in \mathbb{F}_{\mu_{\alpha,k}}$ is the highest weight vector of $\mathbb{F}_{\mu_{\alpha,k}}$.
-
-
-The same approach works also in the $\mfrak{sp}$ and $\mfrak{so}^*$ cases \cite{krizka_invariant_2017}. 
+where $v_\alpha \in M(\C_{\lambda_\alpha})$ is the highest weight vector of $M(\C_{\lambda_\alpha})$ and $v_{\mu_{\alpha,k}} \in \mathbb{F}_{\mu_{\alpha,k}}$ is the highest weight vector of $\mathbb{F}_{\mu_{\alpha,k}}$. Finally, let us remark that the same approach works also in the $\mfrak{sp}$ and $\mfrak{so}^*$ cases \cite{krizka_invariant_2017}. 
