@@ -1,9 +1,9 @@
 \chapter{Hermitian symmetric spaces}
 
 
-\subsection{Real Lie algebras}
+\section{Real Lie algebras}
 
-The \emph{complexification} of a real reducitve Lie algebra $\lie{g}_0$ is define as $\lie{g} = \lie{g}_0\otimes_\R \C$. With Lie bracket defined naturally by complex linear extension as follows
+The \emph{complexification} of a real reducitve Lie algebra $\lie{g}_0$ is defined as $\lie{g} = \lie{g}_0\otimes_\R \C$. With Lie bracket defined naturally by complex linear extension as follows
 \[
  [A\otimes z, B\otimes w] = [A,B]\otimes zw.
 \]
@@ -225,7 +225,7 @@ There is a distinguish element in the center of $\lie{k}$ called \emph{grading e
 
 Let $\sroots$ denote the set of  simple roots of $\roots$. Then $\sroots\setminus \sroots_c$ contains a single element, the so called \emph{non-compact simple root}, which we will denote by $\beta$. We define a totally ordered sequence $\xi_1,\xi_2,\ldots \xi_t$ of \emph{strongly orthogonal} non-compact positive roots as follows. Let $\xi_1$ be the unique highest root. Delete the simple roots $\alpha_1,\alpha_1'$ from the Dynkin diagram of $\lie{g}$ which are not orthogonal to $\xi_1$ and take the unique connected component containing $\beta$. Let $\xi_2$ be the unique highest root of this component and continue inductively until $\beta$ itself is deleted. We define
 \[\mu_j := \sum_{i=1}^j \xi_i\]
-and note that they are all dominant weights. Moreover, up to a scalar multiple, there exists for each $j$ a unique non-zero $v_j\in S(\lie{p}_+)^{\lie{n}}$ of weight $-\mu_j.$ Furthemore $S(\lie{p}_+)^{\lie{n}}$ is just the polynomial algebra on the $v_j,j=1,\ldots, t.$ This result as well as the following one is due to Schmid  (\cite{schmid_decomp}). It is closely tied to the proof of classification of unitarizable highest weight modules. See \cite{enright_intrinsic_1990} for details.
+and note that they are all dominant weights. Moreover, up to a scalar multiple, there exists for each $j$ a unique non-zero $v_j\in S(\lie{p}_+)^{\lie{n}}$ of weight $-\mu_j.$ Furthemore $S(\lie{p}_+)^{\lie{n}}$ is just the polynomial algebra on the $v_j,j=1,\ldots, t.$ This result as well as the following one is due to Schmid, Kostant and Hua. It plays an important role in the proof of classification of unitarizable highest weight modules. See \cite{enright_intrinsic_1990} for details.
 
 \begin{theorem}
  Let $I$ denote the set of integral multiindices $\underline{i}=(i_1,\ldots,l_t)$ with $i_1\geq i_2 \geq \cdots  \geq i_t \geq 0$. Let $F_{\underline{i}}$ denote the irreducible finite-dimensional $\lie{k}$-module with lowest weight $\sum_{j=1}^t i_j\xi_i$. Then $S(\lie{p}_+)$ has a multiplicity free decomposition
@@ -785,3 +785,34 @@ and
 \[
 \Re (ab) = 2\Re(a)\Re(b) - \oscal{a}{b}
 \]
+
+\section{Invariant differential operators}
+\emph{Homomorphisms of parabolic Verma modules}
+
+\emph{Unitarizable highest weight modules and invariant differential operators}
+
+Let us change a notation a little bit for this section and let $\alpha$ denote multiindices of integers.
+
+Let $P(V,W)$ denote the space of polynomials between two complex vector spaces $V$ and $W$ which are endowed with a Hermitian inner product. For $p\in P(V,W)$ define $p(\partial):P(V,W)\to P(V,\C)$ by equality $p(\partial) e^{(s|t)_V} = p(\overline{s})e^{(s|t)_V}$. In coordinates we get that for $p(t) = \sum_{\alpha} a_{\alpha} t^{\alpha}$ the resulting linear differential operator has the expression $p(\partial)= \sum_{\alpha} \overline{a_{\alpha}} t^{\alpha}$. The \emph{Fischer inner product} on $P(V,W)$ is defined by $\langle p,q\rangle := (q(\partial)p)(0)$. Explicitly in coordinates we have for  $p(t) = \sum_{\alpha} a_{\alpha} t^{\alpha}$ and  $q(t) = \sum_{\alpha} b_{\alpha} t^{\alpha}$ that $\langle p,q\rangle = \sum_{\alpha} \alpha! (a_{\alpha},b_{\alpha})_W$.
+
+\begin{lemma}
+ Let $p,q\in P(V,W)$ and let $f\in P(V,\C)$. Then
+ \[
+  \langle p,fq\rangle = \langle f(\partial)p, q \rangle = \langle q(\partial)p,f \rangle.
+ \]
+\end{lemma}
+\begin{proof}
+ All three expression are euqal to $((fq)(\partial)p)(0)$.
+\end{proof}
+
+As was argued in \cite{davidson_differential_1991} this inner product can be used to define a nondegenerate pairing between $M(\lambda)$ and its conjugate dual $M(\lambda)^*$. In this duality one gets that $J(\lambda)$ is orthogonal to $L(\lambda)$.
+
+\begin{theorem}[Theorem 2.9 of \cite{davidson_differential_1991}]
+ Let $m_1,\ldots,m_k$ be any set of generators for $J(\lambda)$ as an $S(\lie{p}_+)$-module. Then the simple submodule $L(\lambda)$ of the conjugate dual $M(\lambda)^*$ is the kernel of the constant coefficient operators $m_i(\partial)$, $1\leq i\leq t.$
+\end{theorem}
+\begin{proof}
+ A polynomial $f$ is in $L$ if and only if $\langle f, p m_i \rangle = 0$ for all $p\in P(\lie{p}_-,\C) = S(\lie{p}_+)$, $1\leq i\leq t$. According to the previous lemma this is equivalent to $p(\partial)  m_i(\partial)f)(0)$ for all relevant $p$ and $i$. From the polynomiality of $f$ follows that $m_i(\partial)f = 0$ for all $1\leq i\leq t.$
+\end{proof}
+
+\subsection{F-method}
+\subsection{Scalar valued invariant differential operators for classical hermitian symmetric spaces}

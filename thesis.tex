@@ -25,11 +25,11 @@
 % \setlength\headheight{0mm}
 % \let\openright=\cleardoublepage
 
-\usepackage{fixltx2e}   % fixes various  bugs in LaTeX
+%\usepackage{fixltx2e}   % fixes various  bugs in pre 2015 LaTeX 
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{microtype}  % microtypographical enhancements
-\usepackage[british,english]{babel}
+\usepackage[english]{babel}
 \usepackage{amsmath,amssymb,amsthm}
 \usepackage{graphicx}
 \usepackage{pdfpages} % for inserting pdfs of published articles
@@ -37,7 +37,7 @@
 \usepackage{xfrac} % for \sfrac command
 \usepackage{mathrsfs}   % calligraphic font \mathscr{C}
 \usepackage{minted} % for pretty printing of source code
-\usepackage[style=alphabetic]{biblatex}
+\usepackage[style=alphabetic, backend=biber]{biblatex} % style=iso-authoryear
 \addbibresource{thesis.bib}
 \usepackage{float}
 \usepackage[toc]{appendix}
@@ -56,6 +56,8 @@
 \usepackage[final,pdftex,breaklinks,unicode,bookmarksopen=true]{hyperref}   % Musí být za všemi ostatními balíčky
 \hypersetup{pdftitle=Invariant differential operators}
 \hypersetup{pdfauthor=Vít Tuček}
+
+\usepackage{csquotes}
 
 %%% Drobné úpravy stylu
 
@@ -95,13 +97,13 @@
 \hbadness=10000 % silence underfull warnings
 
 %%% Jednotlivé kapitoly práce jsou pro přehlednost uloženy v samostatných souborech
-%\include{introduction}
-%\include{algebras}
+\include{introduction}
+\include{algebras}
+\include{spaces}
 \include{unitarizable_modules}
-%\include{spaces}
 %\include{invariant}
 %\include{parabolic_geometries}
-%\include{conclusion}
+\include{conclusion}
 
 %%% Seznam použité literatury
 \addcontentsline{toc}{chapter}{Bibliography}

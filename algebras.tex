@@ -4,6 +4,7 @@ In this chapter we fix some notation and review several structural results about
 
 \medskip
 
+\section{Complex simple Lie algebras}
 
 Let $\lie{g}^{1} = \lie{g}$ and define inductively the so called \emph{lower central series} of $\lie{g}$ by $\lie{g}^{k+1} = [\lie{g},\lie{g}^{k}]$.  A subalgebra $\lie{n}$ of $\lie{g}$ is called \emph{nilpotent} if $\lie{n}^{k} = 0$ for some $k\in\N$.
 
@@ -32,7 +33,6 @@ If $\phi:\lie{g} \to \lie{g}$ is any automorphism of the Lie algebra $\lie{g}$, 
 \]
 and thus $B(\phi(X),\phi(Y)) = B(X,Y)$. The Cartan criterion states that a Lie algebra $\lie{g}$ is semisimple if and only if the Killing form $B$ is nondegenerate.
 
-\subsection{Complex simple Lie algebras}
 
 Let $\lie{g}$ be a complex semisimple Lie algebra and choose a Cartan subalgebra $\lie{h} \leq \lie{g}$. Any two Cartan subalgebras of $\lie{g}$ are conjugate by an inner automorphism of $\lie{g}$. The roots $\roots$ of $(\lie{g},\lie{h})$ are linear functionals $\alpha: \lie{h} \to \C$ such that the corresponding \emph{root space} $\lie{g}_\alpha = \{ X\in G \,|\,\forall H\in \lie{h}: [H,X] = \alpha(H) X \}$ is nonempty. In other words, roots are the nontrivial weights of the adjoint representation $\ad:\lie{g}\to\lie{g}$. The roots form a finite subset $\roots \subset \lie{h}^*$ and we have the \emph{root space decomposition}
 \[
@@ -67,7 +67,7 @@ For a root $\alpha \in \roots$ we define the \emph{coroot} $H_\alpha$ as
 \[
  H_\alpha = \frac{2}{(\alpha,\alpha)}\widetilde{H_\alpha}.
 \]
-A nonzero vectors in $\lie{g}_\alpha$ are called a \emph{root vectors}. From the properties of $\roots$ follows that we can always find root vectors $E_\alpha \in \lie{g}_\alpha$, $F_\alpha \in \lie{g}_{-\alpha}$ such that the triple $E_\alpha, F_\alpha, H_\alpha$ satisfies the canonical $\lie{sl}(2)$ relations
+Sometimes we will denote coroot associated to $\alpha$ by $\alpha^\vee$ to keep the notation consistent with articles that we refer to. A nonzero vectors in $\lie{g}_\alpha$ are called a \emph{root vectors}. From the properties of $\roots$ follows that we can always find root vectors $E_\alpha \in \lie{g}_\alpha$, $F_\alpha \in \lie{g}_{-\alpha}$ such that the triple $E_\alpha, F_\alpha, H_\alpha$ satisfies the canonical $\lie{sl}(2)$ relations
 \[
  [E,F] = H, \quad [H,E] = 2E, \quad [H,F] = -2F
 \]
