@@ -634,24 +634,8 @@ N(x_1) = \frac{1- r_1^2 - r_2^2}{2\gamma_1\gamma_2}.
 \]
 \end{proof}
 
-
-\begin{theorem}
-The pullback along $\varphi$ is given by
-\begin{equation}
-\jscal{\partial_u \varphi(x)}{\partial_v \varphi(x)} = 2\frac{ \oscal{x}{x}\oscal{u}{v} - \oscal{x}{u}\oscal{x}{v} + \beta(x,u,v) }{\oscal{x}{x}^2}, 
-\end{equation}
-where
-\begin{equation}
-\beta(x,u,v) =  2\Bigl( \sum_{i=1}^3 \oscal{x_i\conj{v_i}}{u_i\times x_i} + \sum_{i,j} \gamma_i\gamma_j
-\oscal{x_i}{u_i(\conj{x_j}\times \conj{v_j}) + v_i(\conj{x_j}\times \conj{u_j})} \Bigr).
-\end{equation}
-\end{theorem}
-
-\begin{proof}
-The  directional derivative of $\varphi$ is given by $\partial_u \varphi(x) = \lim_{t\to 0} \frac{\mathrm{d}}{\mathrm{d}t} \varphi(x+tu)$. Using that 
-\[\partial_u \left( \frac{1}{x^\dagger G x} \right) = - 2\frac{\oscal{x}{u}}{\oscal{x}{x}^2},
-\]
-we obtain
+\begin{lemma}
+The  directional derivative of $\varphi$ is given by 
 \[
 \partial_u \varphi(x) = \frac{\psi(x,u) - 2\oscal{x}{u}\varphi(x)}{\oscal{x}{x}},
 \]
@@ -681,6 +665,28 @@ where $\psi(x,u) = u(Gx)^\dagger + x(Gu)^\dagger$ or in matrix form
 \gamma_1(x_3\conj{u_1} + u_3\conj{x_1}) & \gamma_2(x_3\conj{u_2} + u_3\conj{x_2}) & 2\gamma_3\oscal{x_3}{u_3}
 \end{pmatrix}.
 \]
+\end{lemma}
+\begin{proof}
+The directional derivative $\partial_u \varphi(x) = \lim_{t\to 0} \frac{\mathrm{d}}{\mathrm{d}t} \varphi(x+tu)$ and using  
+\[
+\partial_u \left( \frac{1}{x^\dagger G x} \right) = - 2\frac{\oscal{x}{u}}{\oscal{x}{x}^2}
+\]
+we obtain the result after a short calculation.
+\end{proof}
+
+\begin{theorem}
+The pullback along $\varphi$ is given by
+\begin{equation}
+\jscal{\partial_u \varphi(x)}{\partial_v \varphi(x)} = 2\frac{ \oscal{x}{x}\oscal{u}{v} - \oscal{x}{u}\oscal{x}{v} + \beta(x,u,v) }{\oscal{x}{x}^2}, 
+\end{equation}
+where
+\begin{equation}
+\beta(x,u,v) =  2\Bigl( \sum_{i=1}^3 \oscal{x_i\conj{v_i}}{u_i\times x_i} + \sum_{i,j} \gamma_i\gamma_j
+\oscal{x_i}{u_i(\conj{x_j}\times \conj{v_j}) + v_i(\conj{x_j}\times \conj{u_j})} \Bigr).
+\end{equation}
+\end{theorem}
+
+\begin{proof}
 
 Notice that 
 \[
