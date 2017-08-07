@@ -162,7 +162,7 @@ For a real Lie algebra $\lie{g}_0$ we define $\lie{q}_0$ to be a parabolic subal
 
 %TODO rozepsat, real Iwasawa?s
 
-\section{Classical Hermitian symmetric spaces}
+Let's look at some specific examples of real Lie algebas and groups.
 
 \[
  I_{m,n} = \begin{pmatrix} \Id_m & 0 \\ 0 & -\Id_n \end{pmatrix}, \quad J = \begin{pmatrix} 0 & \Id_n \\ -\Id_n & 0 \end{pmatrix}
@@ -170,7 +170,7 @@ For a real Lie algebra $\lie{g}_0$ we define $\lie{q}_0$ to be a parabolic subal
 
 \[X^\dag = \overline{X}^t\]
 
-\begin{equation}\label{eq:algebras_definition}
+\begin{equation*}\label{eq:algebras_definition}
 \begin{aligned}
  \lie{sl}(n,\C) &= \{ X \in \lie{gl}(n,\C) \,|\, \tr X = 0 \} & \text{for } n \geq 1\\
  \lie{so}(m,n)  &= \{ X\in \lie{gl}(m+n,\R) \,|\, X^\dag I_{m,n}+I_{m,n}X = 0 \} & \text{for } m+n\geq 3\\
@@ -178,76 +178,23 @@ For a real Lie algebra $\lie{g}_0$ we define $\lie{q}_0$ to be a parabolic subal
  \lie{so}^\dag(2n) &= \{ X \in \lie{su}(n,n) \,|\, X^t I_{n,n}J + I_{n,n} JX = 0 \} & \text{for } n \geq 2\\
  \lie{sp}(n,\R) &= \{ X \in \lie{gl}(2n,\R) \,|\, X^tJ + JX = 0 \} & \text{for } n\geq 1
 \end{aligned}
-\end{equation}
+\end{equation*}
 
-
-Let $G$ be simply connected, connected simple Lie group, let $Z$ be its center and let $K$ be a closed  maximal subgroup of $G$ such that $K/Z$ is compact. A unitary representation $(\rho,\mathbb{V})$  of $G$ such that the underlying $(\lie{g},K)$-module is an irreducible highest weight module is called unitary highest weight module. From the universal property of (generalized) Verma modules it follows that any unitarizable highest weight module is the unique irreducible quotient of a (generalized) Verma module. It is a result of Harish-Chandra that nontrivial unitarizable highest weight modules occur only when $G/K$ is a noncompact Hermitian symmetric space. The table \ref{fig:herm_pairs} of all such Hermitian pairs $(G,K)$ is given below.
-
-Let $\lie{g}_0$ and $\lie{k}_0$ be the corresponding Lie algebras of $G$ and $K$ and let $\lie{g}$ and $\lie{k}$ denote their complexifications. By $G_\C$ and $K_C$ we denote the complexifications of $G$ and $K$. The Cartan decomposition gives us $\lie{g}_0 = \lie{k}_0 \oplus \lie{q}_0$ and upon complexification we get a splitting of  $\lie{q} = \lie{p}_-\oplus\lie{p}_+$. % into eigenspaces of the complex structure that is defined on the tangent space $T_{eK}G/K \simeq \lie{q}$.
-There is a choice of a Cartan subalgebra $\lie{h}$ such that $\lie{h} \leq \lie{k}$. With respect to this Cartan subalgebra we have a triangular decomposition $\lie{g}=\lie{n}^-\oplus\lie{h}\oplus\lie{n}$ with $\lie{h} \leq \lie{k}$ and $\lie{p}_-\leq \lie{n}^-$, $\lie{p}_+ \leq \lie{n}$.
-
-Both algebras $\lie{p} := \lie{k}\oplus \lie{p}_+$ and $\oppar := \lie{k}\oplus\lie{p}_-$ are parabolic subalgebras of $\lie{g}$. Moreover their nilradicals $\lie{p}_-$ and $\lie{p}_+$ are not only nilpotent but even abelian. By $P$ and $\overline{P}$ we denote the corresponding parabolic subgroups of $G_\C$. The homogeneous space $G_\C/P$ is diffeomorphic to the compact Hermitian symmetric space and $\lie{p}_-$ is naturally mapped via exponential map and projection to an open and dense subset of this compact manifold. The so called Harish-Chandra embedding gives us a realization of the noncompact dual $G/K$ as an orbit in this embedded $\lie{p}_-$. This realizes $G/K$ as a bounded Hermitian symmetric domain in $\lie{p}_-$ and it manifests the Hermitian structure on $G/K$.
-
-% \begin{figure}\label{fig:herm_pairs}
-% \begin{center}
-% \begin{tabular}{llll}
-% $G_\mathbb{C}$ & {\centering $G$ }& $G'$ & $K$\\\hline
-% $SL(p+q,\mathbb{C})$ & $SU(p+q)$ &$SU(p,q)$ &$S(U(p)\times U(q))$\\
-% $SO(p+2,\mathbb{C})$ & $SO(p+2)$ & $SO(2,p)$ & $SO(p)\times SO(2)$\\
-% $SO(2n,\mathbb{C})$ & $SO(2n)$ & $SO^*(2n)$ & $U(n)$\\
-% $Sp(2n,\mathbb{C})$ & $Sp(n)$ & $Sp(n,\mathbb{R})$ & $U(n)$\\
-% $E_6^\mathbb{C}$ & $E_6$ & $E_6^{-14}$& $SO(10)\times SO(2)$\\
-% $E_7^\mathbb{C}$ & $E_7$ & $E_7^{-25} $ & $E_6\times SO(2)$
-% \end{tabular}
-% \end{center}
-% \end{figure}
-\begin{table}\label{fig:herm_pairs}
-\begin{center}%TODO zkontrolovat
-\begin{tabular}{llll}
-$G_\mathbb{C}$ & {\centering $G$ }&  $K$\\\hline
-$SL(p+q,\mathbb{C})$ & $SU(p,q)$ &$S(U(p)\times U(q))$\\
-$SO(p+2,\mathbb{C})$ &  $SO(2,p)$ & $SO(p)\times SO(2)$\\
-$SO(2n,\mathbb{C})$ &   $SO^*(2n)$ & $U(n)$\\
-$Sp(2n,\mathbb{C})$ &   $Sp(n,\mathbb{R})$ & $U(n)$\\
-$E_6^\mathbb{C}$ &   $E_6^{-14}$& $SO(10)\times SO(2)$\\
-$E_7^\mathbb{C}$ &  $E_7^{-25} $ & $E_6\times SO(2)$
-\end{tabular}\caption{Hermitian symmetric pairs}
-\end{center}
-\end{table}
-
- In what follows we will consider also some of the other real parabolic pairs whose complexification is the parabolic pair $(\lie{g},\lie{p})$. We will use uniform notation $\epsilon^i$, $i=1,\ldots,p$ for the elements of the basis the nilradical and by $e_i$ we will denote the dual basis defined  by the Killing form. The elements $e_i$ then span the nilradical of the opposite parabolic subalgebra. %TODO bazove elementy?
-
-Let $\roots$ be the set of roots of $(\lie{g},\lie{h})$ and let $\roots_c$ denote the set of roots of $(\lie{k},\lie{h})$. We call elements of $\roots_c$ the compact roots and the remaining roots in $\roots_n = \roots \setminus \roots_c$ are called noncompact. We define the positive roots $\roots^+$ in such a way that elements of $\roots_n^+ = \roots^+ \cap \roots_n$ span $\lie{p}_-$. We denote the positive compact roots by $\roots^+_c = \roots_c \cap \roots^+$. By $\omega_i$ we denote the $i$-th fundamental weight in the standard ordering.
-
-As usual we denote the Weyl group of $(\lie{g},\lie{b})$ by $W$ and the subgroup generated by reflections $s_\alpha$ for $\alpha\in \roots_c$ we denote by $W_c$. Then $W_c$ is isomorphic to the Weyl group of the root system $\roots_c$. Also we let $\rho$ be the sum of positive roots and $\leq$ denotes the Bruhat order on $\lie{h}^*$.
-
-There is a distinguish element in the center of $\lie{k}$ called \emph{grading element} which acts by zero on $\lie{k}$, by $1$ on $\lie{p}_+$ and by $-1$ on $\lie{p}_-$. This elements acts by a scalar on any irreducible representation of $K$. We call this scalar the \emph{geometric weight}.
-
-Let $\sroots$ denote the set of  simple roots of $\roots$. Then $\sroots\setminus \sroots_c$ contains a single element, the so called \emph{non-compact simple root}, which we will denote by $\beta$. We define a totally ordered sequence $\xi_1,\xi_2,\ldots \xi_t$ of \emph{strongly orthogonal} non-compact positive roots as follows. Let $\xi_1$ be the unique highest root. Delete the simple roots $\alpha_1,\alpha_1'$ from the Dynkin diagram of $\lie{g}$ which are not orthogonal to $\xi_1$ and take the unique connected component containing $\beta$. Let $\xi_2$ be the unique highest root of this component and continue inductively until $\beta$ itself is deleted. We define
-\[\mu_j := \sum_{i=1}^j \xi_i\]
-and note that they are all dominant weights. Moreover, up to a scalar multiple, there exists for each $j$ a unique non-zero $v_j\in S(\lie{p}_+)^{\lie{n}}$ of weight $-\mu_j.$ Furthemore $S(\lie{p}_+)^{\lie{n}}$ is just the polynomial algebra on the $v_j,j=1,\ldots, t.$ This result as well as the following one is due to Schmid, Kostant and Hua. It plays an important role in the proof of classification of unitarizable highest weight modules. See \cite{enright_intrinsic_1990} for details.
-
-\begin{theorem}
- Let $I$ denote the set of integral multiindices $\underline{i}=(i_1,\ldots,l_t)$ with $i_1\geq i_2 \geq \cdots  \geq i_t \geq 0$. Let $F_{\underline{i}}$ denote the irreducible finite-dimensional $\lie{k}$-module with lowest weight $\sum_{j=1}^t i_j\xi_i$. Then $S(\lie{p}_+)$ has a multiplicity free decomposition
- \[
-  S(\lie{p}_+) \simeq \bigoplus_{\underline{i}\in I} F_{\underline{i}}.
- \]
-The table \ref{tbl:strongly_og} gives the set of all strongly orthogonal roots for each Hermitian symmetric pair.
-\begin{table}[h]\label{tbl:strongly_og}\begin{center}
-  \begin{tabular}{CCCCC}
-  \lie{g}_0 & \beta& t & \xi_i & \mu_i \\\hline
-   \lie{su}(p,q) &\alpha_p& p & \epsilon_i-\epsilon_{t-i+1} & \omega_i + \omega_{t-i+1} \\
-   \lie{so}(2,2n-1) & \alpha_1 & 2 & \epsilon_1+\epsilon_2, \epsilon_1 - \epsilon_2 & \omega_2, 2\omega_1\\
-   \lie{sp}(n,\R) & \alpha_n & n & 2\epsilon_i & 2\omega_1\\
-   \lie{so}(2,2n-2) &\alpha_1 & 2 & \epsilon_1 + \epsilon_2, \epsilon_1 - \epsilon_2 & \omega_2,2\omega_1\\
-%    \lie{e}_6 & \alpha_1\text{ or }\alpha_6 & 2 &
-  \end{tabular}\caption{Strongly orthogonal roots}\end{center}
-\end{table}
-\end{theorem}
+\begin{equation*}
+\begin{aligned}
+\mathrm{SU}(p,q) &= \{ g \in \mathrm{GL}(p +q, \mathbb{C} \,|\, g I_{p,q}g^\dag = I_{p,q} \}\\
+\mathrm{Sp}(n, \mathbb{C}) &= \{ g \in \mathrm{GL}(2n, \mathbb{C} \,|\, g^t J g  = J \}\\
+\mathrm{Sp}(n, \mathbb{R}) &= \mathrm{Sp}(n, \mathbb{C}) \cap \mathrm{SU}(n,n) \\
+\mathrm{O}(2n, \mathbb{C}) &= \{ g \in \mathrm{GL}(n, \mathbb{C} \,|\, g^t JI_{n,n} g  = JI_{n,n} \}\\
+\mathrm{SO}^*(2n, \mathbb{C}) &=  \mathrm{O}(2n, \mathbb{C}) \cap \mathrm{SU}(n,n) \\
+\end{aligned}
+\end{equation*}
 
 
 The Satake diagram of $\lie{su}(p,q)$ for $p+q = n+1$, $1 \leq p \leq \frac{n-1}{2}$.
+
 \begin{center}
+\resizebox{\textwidth}{!}{
      \begin{tikzpicture}
 	\node[nroot] (a1) [label=above:$\alpha_1$] {};
 %	\node[nroot] (a2) [right= of a1] [label=above:$\alpha_2$] {};
@@ -269,7 +216,9 @@ The Satake diagram of $\lie{su}(p,q)$ for $p+q = n+1$, $1 \leq p \leq \frac{n-1}
 	\draw [<->, bend right] (a1) to (an); \draw [<->, bend right] (ap) to (aq1);
 	\draw [<->, bend right] (a3) to (e2); 	\draw [<->, bend right] (a4) to (e1);
      \end{tikzpicture}
+     }
 \end{center}
+
 %  Another version of the same diagram.
 % \begin{center}\begin{tikzpicture}
 %  	\node[nroot] (a1)                         [label=above:$\alpha_1$] {};
@@ -452,7 +401,78 @@ The Satake diagram for $\lie{e}_7^{-25}$ - EVII.
      \end{tikzpicture}
 \end{center}
 
-\section{Octonionic (and other) planes}
+
+\section{Classical Hermitian symmetric spaces}
+
+
+Let $G$ be simply connected, connected simple Lie group, let $Z$ be its center and let $K$ be a closed  maximal subgroup of $G$ such that $K/Z$ is compact. A unitary representation $(\rho,\mathbb{V})$  of $G$ such that the underlying $(\lie{g},K)$-module is an irreducible highest weight module is called unitary highest weight module. From the universal property of (generalized) Verma modules it follows that any unitarizable highest weight module is the unique irreducible quotient of a (generalized) Verma module. It is a result of Harish-Chandra that nontrivial unitarizable highest weight modules occur only when $G/K$ is a noncompact Hermitian symmetric space. The table \ref{fig:herm_pairs} of all such Hermitian pairs $(G,K)$ is given below.
+
+Let $\lie{g}_0$ and $\lie{k}_0$ be the corresponding Lie algebras of $G$ and $K$ and let $\lie{g}$ and $\lie{k}$ denote their complexifications. By $G_\C$ and $K_C$ we denote the complexifications of $G$ and $K$. The Cartan decomposition gives us $\lie{g}_0 = \lie{k}_0 \oplus \lie{q}_0$ and upon complexification we get a splitting of  $\lie{q} = \lie{p}_-\oplus\lie{p}_+$. % into eigenspaces of the complex structure that is defined on the tangent space $T_{eK}G/K \simeq \lie{q}$.
+There is a choice of a Cartan subalgebra $\lie{h}$ such that $\lie{h} \leq \lie{k}$. With respect to this Cartan subalgebra we have a triangular decomposition $\lie{g}=\lie{n}^-\oplus\lie{h}\oplus\lie{n}$ with $\lie{h} \leq \lie{k}$ and $\lie{p}_-\leq \lie{n}^-$, $\lie{p}_+ \leq \lie{n}$.
+
+Both algebras $\lie{p} := \lie{k}\oplus \lie{p}_+$ and $\oppar := \lie{k}\oplus\lie{p}_-$ are parabolic subalgebras of $\lie{g}$. Moreover their nilradicals $\lie{p}_-$ and $\lie{p}_+$ are not only nilpotent but even abelian. By $P$ and $\overline{P}$ we denote the corresponding parabolic subgroups of $G_\C$. The homogeneous space $G_\C/P$ is diffeomorphic to the compact Hermitian symmetric space and $\lie{p}_-$ is naturally mapped via exponential map and projection to an open and dense subset of this compact manifold. The so called Harish-Chandra embedding gives us a realization of the noncompact dual $G/K$ as an orbit in this embedded $\lie{p}_-$. This realizes $G/K$ as a bounded Hermitian symmetric domain in $\lie{p}_-$ and it manifests the Hermitian structure on $G/K$.
+
+% \begin{figure}\label{fig:herm_pairs}
+% \begin{center}
+% \begin{tabular}{llll}
+% $G_\mathbb{C}$ & {\centering $G$ }& $G'$ & $K$\\\hline
+% $SL(p+q,\mathbb{C})$ & $SU(p+q)$ &$SU(p,q)$ &$S(U(p)\times U(q))$\\
+% $SO(p+2,\mathbb{C})$ & $SO(p+2)$ & $SO(2,p)$ & $SO(p)\times SO(2)$\\
+% $SO(2n,\mathbb{C})$ & $SO(2n)$ & $SO^*(2n)$ & $U(n)$\\
+% $Sp(2n,\mathbb{C})$ & $Sp(n)$ & $Sp(n,\mathbb{R})$ & $U(n)$\\
+% $E_6^\mathbb{C}$ & $E_6$ & $E_6^{-14}$& $SO(10)\times SO(2)$\\
+% $E_7^\mathbb{C}$ & $E_7$ & $E_7^{-25} $ & $E_6\times SO(2)$
+% \end{tabular}
+% \end{center}
+% \end{figure}
+\begin{table}[H]\label{fig:herm_pairs}
+\begin{center}%TODO zkontrolovat
+\begin{tabular}{llll}
+$G_\mathbb{C}$ & {\centering $G$ }&  $K$\\\hline
+$SL(p+q,\mathbb{C})$ & $SU(p,q)$ &$S(U(p)\times U(q))$\\
+$SO(p+2,\mathbb{C})$ &  $SO(2,p)$ & $SO(p)\times SO(2)$\\
+$SO(2n,\mathbb{C})$ &   $SO^*(2n)$ & $U(n)$\\
+$Sp(2n,\mathbb{C})$ &   $Sp(n,\mathbb{R})$ & $U(n)$\\
+$E_6^\mathbb{C}$ &   $E_6^{-14}$& $SO(10)\times SO(2)$\\
+$E_7^\mathbb{C}$ &  $E_7^{-25} $ & $E_6\times SO(2)$
+\end{tabular}\caption{Hermitian symmetric pairs}
+\end{center}
+\end{table}
+
+ In what follows we will consider also some of the other real parabolic pairs whose complexification is the parabolic pair $(\lie{g},\lie{p})$. We will use uniform notation $\epsilon^i$, $i=1,\ldots,p$ for the elements of the basis the nilradical and by $e_i$ we will denote the dual basis defined  by the Killing form. The elements $e_i$ then span the nilradical of the opposite parabolic subalgebra. %TODO bazove elementy?
+
+Let $\roots$ be the set of roots of $(\lie{g},\lie{h})$ and let $\roots_c$ denote the set of roots of $(\lie{k},\lie{h})$. We call elements of $\roots_c$ the compact roots and the remaining roots in $\roots_n = \roots \setminus \roots_c$ are called noncompact. We define the positive roots $\roots^+$ in such a way that elements of $\roots_n^+ = \roots^+ \cap \roots_n$ span $\lie{p}_-$. We denote the positive compact roots by $\roots^+_c = \roots_c \cap \roots^+$. By $\omega_i$ we denote the $i$-th fundamental weight in the standard ordering.
+
+As usual we denote the Weyl group of $(\lie{g},\lie{b})$ by $W$ and the subgroup generated by reflections $s_\alpha$ for $\alpha\in \roots_c$ we denote by $W_c$. Then $W_c$ is isomorphic to the Weyl group of the root system $\roots_c$. Also we let $\rho$ be the sum of positive roots and $\leq$ denotes the Bruhat order on $\lie{h}^*$.
+
+There is a distinguish element in the center of $\lie{k}$ called \emph{grading element} which acts by zero on $\lie{k}$, by $1$ on $\lie{p}_+$ and by $-1$ on $\lie{p}_-$. This elements acts by a scalar on any irreducible representation of $K$. We call this scalar the \emph{geometric weight}.
+
+Let $\sroots$ denote the set of  simple roots of $\roots$. Then $\sroots\setminus \sroots_c$ contains a single element, the so called \emph{non-compact simple root}, which we will denote by $\beta$. We define a totally ordered sequence $\xi_1,\xi_2,\ldots \xi_t$ of \emph{strongly orthogonal} non-compact positive roots as follows. Let $\xi_1$ be the unique highest root. Delete the simple roots $\alpha_1,\alpha_1'$ from the Dynkin diagram of $\lie{g}$ which are not orthogonal to $\xi_1$ and take the unique connected component containing $\beta$. Let $\xi_2$ be the unique highest root of this component and continue inductively until $\beta$ itself is deleted. We define
+\[\mu_j := \sum_{i=1}^j \xi_i\]
+and note that they are all dominant weights. Moreover, up to a scalar multiple, there exists for each $j$ a unique non-zero $v_j\in S(\lie{p}_+)^{\lie{n}}$ of weight $-\mu_j.$ Furthemore $S(\lie{p}_+)^{\lie{n}}$ is just the polynomial algebra on the $v_j,j=1,\ldots, t.$ This result as well as the following one is due to Schmid, Kostant and Hua. It plays an important role in the proof of classification of unitarizable highest weight modules. See \cite{enright_intrinsic_1990} for details.
+
+\begin{theorem}
+ Let $I$ denote the set of integral multiindices $\underline{i}=(i_1,\ldots,l_t)$ with $i_1\geq i_2 \geq \cdots  \geq i_t \geq 0$. Let $F_{\underline{i}}$ denote the irreducible finite-dimensional $\lie{k}$-module with lowest weight $\sum_{j=1}^t i_j\xi_i$. Then $S(\lie{p}_+)$ has a multiplicity free decomposition
+ \begin{equation}\label{eq:khs}
+  S(\lie{p}_+) \simeq \bigoplus_{\underline{i}\in I} F_{\underline{i}}.
+ \end{equation}
+The table \ref{tbl:strongly_og} gives the set of all strongly orthogonal roots for each Hermitian symmetric pair.
+\begin{table}[H]\label{tbl:strongly_og}\begin{center}
+  \begin{tabular}{CCCCC}
+  \lie{g}_0 & \beta& t & \xi_i & \mu_i \\\hline
+   \lie{su}(p,q) &\alpha_p& p & \epsilon_i-\epsilon_{t-i+1} & \omega_i + \omega_{t-i+1} \\
+   \lie{so}(2,2n-1) & \alpha_1 & 2 & \epsilon_1+\epsilon_2, \epsilon_1 - \epsilon_2 & \omega_2, 2\omega_1\\
+   \lie{sp}(n,\R) & \alpha_n & n & 2\epsilon_i & 2\omega_1\\
+   \lie{so}(2,2n-2) &\alpha_1 & 2 & \epsilon_1 + \epsilon_2, \epsilon_1 - \epsilon_2 & \omega_2,2\omega_1\\
+%    \lie{e}_6 & \alpha_1\text{ or }\alpha_6 & 2 &
+  \end{tabular}\caption{Strongly orthogonal roots}\end{center}
+\end{table}
+\end{theorem}
+
+
+\section{Octonionic planes}
+
+The classical Hermitian symmetric spaces (i.e. those corresponding to the classical Lie groups) are treated thoroughly in \cite{faraut_analysis_1994}. The exceptional cases were descibed in \cite{drucker_exceptional_1978, drucker_simplified_1981}. The smaller of the two exceptional cases can be seen as a complexification of the octonionic projective plane \cite{landsberg} and as such it plays a prominent role in \cite{atiyah_projective_2003}. It's hyperplane section was described in \cite{pazourek}. The real octonionic projective plane is a symmetric Riemannian space $\mathrm{F_4}/\mathrm{Spin}(9)$ with exceptional holonomy $\mathrm{Spin}(9).$ Elementary description of this space as well as other it's noncompact (pseudo)Riemannian cousins was given in \cite{held_semi-riemannian_2009}. It required a lot of case by case calcucaltions and classification of Osserman manifolds to identify the manifolds with the appropriate homogeneous spaces. In this section we show how to obtain the Riemannian metric and curvature in a uniform and elemental way.
 
 \subsection{Octonions and the exceptional Jordan algebra}
 
@@ -480,7 +500,7 @@ Finally, we will need
 %2\oscal{a,\conj{d}}\oscal{b}{\conj{c}} &= \oscal{ab}{\conj{cd}} + \oscal{a\conj{c}}{}
 \end{equation}
 
-The octonionic multiplication  can be ``decomposed'' using scalar product and cross product similarly  as in the case of quaternions. Namely, we have $\oscal{x}{y} = \Re( x\conj{y})$ and we define the cross product as \[x \times y = \Im (x\conj{y}) = \frac{1}{2}( x\conj{y} - y\conj{x}).\] It is not really a cross product, but its restriction to the space of imaginary octonions is (Elduque \ref{}). The difference between the cross product in Harvey (\ref{}) and this one is precisely the commutator $[x,y]$. It is easy to see that the cross product has purely imaginary values.
+The octonionic multiplication  can be ``decomposed'' using scalar product and cross product similarly  as in the case of quaternions. Namely, we have $\oscal{x}{y} = \Re( x\conj{y})$ and we define the cross product as \[x \times y = \Im (x\conj{y}) = \frac{1}{2}( x\conj{y} - y\conj{x}).\] It is not really a cross product, but its restriction to the space of imaginary octonions. It is easy to see that the cross product has purely imaginary values.
 
 %% HARVEY
 % The octonionic multiplication  can be ``decomposed'' using scalar product and cross product similarly  as in the case of quaternions. Namely, we have $\oscal{x}{y} = \Re( x\conj{y})$ and we define the cross product as \[x \times y = \Im (\conj{y}x) = \frac{1}{2}( \conj{y}x - \conj{x}y).\] It is not really a cross product, but its restriction to the space of imaginary octonions is (Elduque \ref{}). $x \times y = \frac{1}{2}[x,y] - (\Re x \Im y - \Re y \Im x)$ We follow conventions from Harvey \ref{harvey}.
@@ -495,7 +515,7 @@ that appears in the theory of calibrations (and in fact defines what is called t
 \]
 The associator is completely antisymmetric. This property is actually equivalent to the alternativity of the octonionic algebra which in turn implies that any subalgebra generated by two elements is associative. (Artin theorem, \ref{}) It is easy to see that if any entry is a multiple of unit in $\octo$, then the associator is zero. Thus it descends to a map $\Lambda^3 \mathrm{Im}\, \octo \to \field$.
 
-The projective octonionic plane $\projplane$ can be defined via the exceptional formally real Jordan algebra $\jalg[3] = \mathrm{Herm}(3,\octo)$. (see Freudenthal and references therein \ref{}). The points of the geometry are then idempotents of trace one. The automorphism group of this Jordan algebra is the compact real group $F_4$ whose action preserves the trace and determinant of these octonionic matrices. One can define $F_4$-invariant positive definite scalar product on $\jalg$ as
+The projective octonionic plane $\projplane$ can be defined via the exceptional formally real Jordan algebra $\jalg[3] = \mathrm{Herm}(3,\octo)$. The points of the geometry are then idempotents of trace one. The automorphism group of this Jordan algebra is the compact real group $F_4$ whose action preserves the trace and determinant of these octonionic matrices. One can define $F_4$-invariant positive definite scalar product on $\jalg$ as
 \[
  \jscal{A}{B} = \mathrm{Tr}(A \circ B),
 \]
@@ -531,7 +551,21 @@ A \circ B = \frac{1}{2}(AB+BA)
 \]
 form an exceptional Jordan algebra and from classification of Jordan algebras (see \cite{springer_octonions_2000} for details) we know that up to isomorphism that there is only one exceptional Jordan algebra over the complex numbers given by $\jalg[3][\octo_\complex]$ which corresponds to $G=\mathrm{Id}$. Over the real numbers there are actually three isomorphism classes represented by $\jalg[3]$, $\jalg[1,2]$, corresponding to $G = \begin{psmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & -1\end{psmatrix}$ and the Jordan algebra over the split octonions $\jalg[3][\octo']$. The automorphism group of an exceptional Jordan algebra is a group of type $F_4$. In the complex case we get of course the complex Lie group $F_4$, the automorphism group of $\jalg$ is the compact Lie group of type $F_4$, the automorphism group of $\jalg[3][\octo']$ is the split real Lie group of type $F_4$ and finally the $\jalg[1,2]$ has the only remaining real Lie group $F_4^{-20}$ as its automorphism group. 
 
-\subsection{Maps}
+Now we define the affine patches / coordinate charts.
+
+\begin{align}
+\projplane: & \quad U_i = \set{(x_1, x_2, x_3)^T \in \octo^3 \,\middle|\, x_i = 1} \\
+\projplane[1,1]:  & \quad 
+	\begin{aligned}
+			U_1 &= \set{(1, x_2, x_3)^T \in \octo^3 \,\middle|\, 1 + N(x_2) - N(x_3) > 0} \\
+			U_2 &= \set{(x_1, 1, x_3)^T \in \octo^3 \,\middle|\, N(x_1) + 1  - N(x_3) > 0} \\
+    \end{aligned} \\
+\projplane[2][H]:  & \quad U_3 = \set{(x_1, x_2, 1)^T \in \octo^3 \,\middle|\, N(x_1) + N(x_2) - 1 < 0} \\
+\projplane[2][P]_s: & \quad U_i = \set{(x_1, x_2, x_3)^T \in \octo_s^3 \,\middle|\, x_i = 1 \,\&\, \sum\nolimits_i N(x_i) > 0}
+\end{align}
+
+In all cases we would like to identify lines corresponding to the different points on different patches. Over an associative algebra it is quite easy, because we can just use an equivalence relation $(x_1, x_2, x_3)^T \sim  (\lambda x_1, \lambda x_2,\lambda x_3)^T$ for any nonzero $\lambda$ from the algebra. This relation is however not transitive when we are working over the octonions. Nevertheless it is transitive on our affine coordinate patches as was shown in \cite{held_semi-riemannian_2009}. There is only one complication, in the case of the split octonions we actually demand $\lambda$ to have positive norm $N(\lambda) > 0$.
+
 
 With these preliminaries behind us we can finally define the $\mathbb{R}$ (or $\mathbb{C}$) linear mapping $\varphi: \octo^3 \to \jalg $\ by
 \[
@@ -549,8 +583,6 @@ Its matrix form looks like this
 
 Four octonionic planes were defined in the article \cite{held_semi-riemannian_2009} by giving maps and transition functions. We are going to show that the domains used for maps are actually just the analogs of classical affine coordinates of the projective or hyperbolic plane. We will show that these octonionic planes can be actually defined as the space of idempotent matrices of trace one in some exceptional Jordan algebra $\jalg$ which makes the $F_4$-symmetry quite manifest. Now we define our affine coordinate patches which are completely analogous to the classical picture from $\reals^{1,2}$. The only novelty is the split projective plane $\projplane[2][P]_s$.
 
-
-\subsection{Algebraic geometry}
 
 \begin{lemma}
  The equations for the octonionic plane are 
@@ -602,22 +634,6 @@ N(x_1) = \frac{1- r_1^2 - r_2^2}{2\gamma_1\gamma_2}.
 \]
 \end{proof}
 
-\subsection{Differential geometry}
-
-\begin{align}
-\projplane: & \quad U_i = \set{(x_1, x_2, x_3)^T \in \octo^3 \,\middle|\, x_i = 1} \\
-\projplane[1,1]:  & \quad 
-	\begin{aligned}
-			U_1 &= \set{(1, x_2, x_3)^T \in \octo^3 \,\middle|\, 1 + N(x_2) - N(x_3) > 0} \\
-			U_2 &= \set{(x_1, 1, x_3)^T \in \octo^3 \,\middle|\, N(x_1) + 1  - N(x_3) > 0} \\
-    \end{aligned} \\
-\projplane[2][H]:  & \quad U_3 = \set{(x_1, x_2, 1)^T \in \octo^3 \,\middle|\, N(x_1) + N(x_2) - 1 < 0} \\
-\projplane[2][P]_s: & \quad U_i = \set{(x_1, x_2, x_3)^T \in \octo_s^3 \,\middle|\, x_i = 1 \,\&\, \sum\nolimits_i N(x_i) > 0}
-\end{align}
-
-In all cases we would like to identify lines corresponding to the different points on different patches. Over an associative algebra it is quite easy, because we can just use an equivalence relation $(x_1, x_2, x_3)^T \sim  (\lambda x_1, \lambda x_2,\lambda x_3)^T$ for any nonzero $\lambda$ from the algebra. This relation is however not transitive when we are working over the octonions. Nevertheless it is transitive on our affine coordinate patches as was shown in \cite{held_semi-riemannian_2009}. There is only one complication, in the case of the split octonions we actually demand $\lambda$ to have positive norm $N(\lambda) > 0$.
-
-\subsection{Scalar product}
 
 \begin{theorem}
 The pullback along $\varphi$ is given by
@@ -814,5 +830,4 @@ As was argued in \cite{davidson_differential_1991} this inner product can be use
  A polynomial $f$ is in $L$ if and only if $\langle f, p m_i \rangle = 0$ for all $p\in P(\lie{p}_-,\C) = S(\lie{p}_+)$, $1\leq i\leq t$. According to the previous lemma this is equivalent to $p(\partial)  m_i(\partial)f)(0)$ for all relevant $p$ and $i$. From the polynomiality of $f$ follows that $m_i(\partial)f = 0$ for all $1\leq i\leq t.$
 \end{proof}
 
-\subsection{F-method}
-\subsection{Scalar valued invariant differential operators for classical hermitian symmetric spaces}
+The decomposition \eqref{eq:khs} can be made very explicit -- one can find the highest weights in each summand. See \cite{goodman_symmetry_2009} ford details. From there it is straightforward to calculate invariant differential operators acting on line bundles \cite{tucek_invariant_2017}. 
