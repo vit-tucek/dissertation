@@ -267,7 +267,7 @@ Let $\lie{p}$ be a parabolic subalgebra of $\lie{g}$ of Hermitian type. (I.e. gi
 \[
 J = \{ \alpha \in \sroots \,|\, (\mu + \rho, \alpha^\vee) = 0 \}. 
 \]
-\begin{theorem}[8, Prop 2.3 of \cite{boe_representation_2005}]
+\begin{theorem}[8, Prop 2.3 of \cite{boe_representation_2005}]\label{thm:es_equivalence}
 Let
 \[
 W^{\Sigma, J} = \{ w \in W^\Sigma \, | \,  \forall \alpha \in \Sigma  :  w < ws_\alpha \text{ and } ws_\alpha \in W^\Sigma\}
@@ -338,11 +338,11 @@ We can identify $C^k(\lie{p}_-,\rep{V})=\Hom (\Lambda^k\lie{p}_-,\rep{V})$ with 
  \lcd  (Z_1\wedge\cdots\wedge Z_k\otimes v) = \sum_{i=1}^{2p} \epsilon^i \wedge Z_1\wedge\cdots\wedge Z_k\otimes e_i\cdot v.
 \] The Lie algebra cohomology differential is $\overline{P}$-equivariant. In particular, both $\lcd$ and $\lhd$ are $K_\C$-equivariant and consequently they preserve the geometric weight.
 
-The Kostant Laplacian is defined on each $C_k(\lie{p}_+,\rep{V})$ as $\lap = \lhd \lcd + \lcd \lhd$. It was proven in \cite{kostant_lie_1961} that for a finite-dimensional $\lie{g}$-representation $\rep{V}$ there is a positive definite scalar product on $C_\bullet(\lie{p}_+,\rep{V})$ with respect to which are $\lcd$ and $\lhd$ adjoint. It follows that there is a direct sum \emph{Hodge decomposition} of $K_\C$-modules $C_\bullet(\lie{p}_+,\rep{V})=\im \lcd \oplus  \ker \lap \oplus \im \lhd$ and moreover $\ker \lhd = \ker \lap \oplus \im \lhd$ and $\ker \lcd = \ker \lap \oplus \im \lcd$. It follows that $H_\bullet(\lie{p}_+,\rep{V})\simeq \ker \lap \simeq H^\bullet(\lie{p}_-,\rep{V})$.
+
 
 %\subsection{Invariant and coinvariant functors and their derivations}
 
-\noindent \emph{The right standard resolution of }$\mathbb{C}$ is the
+\emph{The right standard resolution of }$\mathbb{C}$ is the
 complex of free right $U(\mathfrak{n})-$modules given by
 \begin{equation*}
 \cdots \rightarrow \Lambda ^{p+1}\mathfrak{n}\otimes U(\mathfrak{n}%
@@ -372,9 +372,8 @@ H_{\text{p}}(\mathfrak{n},M).
 One knows that the induced $\mathfrak{l}-$action on the homology groups of
 the standard complex is the correct one.
 
-\smallskip
 
-\noindent The \emph{zero} $\mathfrak{n}-$\emph{cohomology }of a $\mathfrak{g}%
+The \emph{zero} $\mathfrak{n}-$\emph{cohomology }of a $\mathfrak{g}%
 -$module $M$ is the $\mathfrak{l}-$module
 \begin{equation*}
 H^{0}(\mathfrak{n},M)=\text{Hom}_{U(\mathfrak{n})}(\mathbb{C},M).
@@ -396,7 +395,7 @@ to the standard resolution of $\mathbb{C}$, this time by free left $U(%
 H^{\text{p}}(\mathfrak{n},M).
 \end{equation*}
 
-\noindent Let $\mathfrak{n}^{\ast }$denote the $\mathfrak{l}-$module dual to
+ Let $\mathfrak{n}^{\ast }$denote the $\mathfrak{l}-$module dual to
 $\mathfrak{n}$. Then, using the standard complexes and the natural
 isomorphism of $\mathfrak{l}-$modules
 \begin{equation*}
@@ -453,8 +452,8 @@ for all $x\in V$. In other words, $\lhd$ and $\lcd$ are disjoint if and only if
 
 %TODO Co zkusit pozadovat, aby $V=\im\lhd \oplus \ker \lcd$ a vice versa?
 
-The \emph{laplacian} is then defined as
-\[\lap = \lcd \lhd + \lhd \lcd.\] We note that $\lap  = (\lhd + \lcd)^2$ and hence one can consider $\lhd + \lcd$ as the Dirac operator for the laplacian $\lap$. %See the book \cite{huang} for investigations of this Dirac operator.
+The \emph{Laplacian} is then defined as
+\[\lap = \lcd \lhd + \lhd \lcd.\] We note that $\lap  = (\lhd + \lcd)^2$ and hence one can consider $\lhd + \lcd$ as the Dirac operator for the Laplacian $\lap$. %See the book \cite{huang} for investigations of this Dirac operator.
 
 \begin{proposition}%[Proposition 2.1 of \cite{kostant_lie_1961}]
  Let the notation be as above and assume $\lcd$ and $\lhd$ are disjoint and $\dim V < \infty$. Then
@@ -538,17 +537,19 @@ The authors of \cite{huang_dirac_2006} proved that if $\rep{V}$ is a unitarizabl
 %A real parabolic subalgebra (of some real form of $\lie{g}$, possibly different from $\lie{g}_0$) $\lie{q}_0$ is  \emph{admissible}, if it's complexification $\lie{q}$ is  $\theta$-stable,\footnote{Parabolic subalgebra $\lie{q}$ is $\theta$-stable iff $\lie{q}\cap\overline{\lie{q}}=\lie{l}$ and $\theta \lie{q}=\lie{q}$.} where $\theta$ is the Cartan involution associated to the real form $\lie{g}_0$ and for $\lie{q}=\lie{l}\oplus\lie{u}_+$ it holds that $\lie{l}\subseteq \lie{k}$ and $\lie{p}_+\subseteq\lie{u}_+$.
 %\end{definition}
 
+It was proven in \cite{kostant_lie_1961} that for a finite-dimensional $\lie{g}$-representation $\rep{V}$ and a parabolic subalgebra $\lie{p} = \lie{l} \oplus \lie{p}_+$ there is a positive definite scalar product on $C_\bullet(\lie{p}_+,\rep{V})$ with respect to which are the differentials $\lcd$ and $\lhd$ adjoint. It follows that there is a direct sum \emph{Hodge decomposition} of $\lie{l}$-modules $C_\bullet(\lie{p}_+,\rep{V})=\im \lcd \oplus  \ker \lap \oplus \im \lhd$ and moreover $\ker \lhd = \ker \lap \oplus \im \lhd$ and $\ker \lcd = \ker \lap \oplus \im \lcd$. It follows that $H_\bullet(\lie{p}_+,\rep{V})\simeq \ker \lap \simeq H^\bullet(\lie{p}_-,\rep{V})$.
+
 \begin{theorem}[\cite{kostant_lie_1961}]
-	Kostant formula
+	Let $\lie{g}$ be a complex simple Lie algebra and let $\lie{p}_\Sigma$ be a standard parabolic subalgebra with Levi decomposition $\lie{p}_\Sigma = \lie{l}_\Sigma \oplus \lie{u}_\Sigma$. Let $W^\Sigma$ be the poset of minimal coset representatives. For every $\lie{g}$-integral and $\lie{g}$-dominant weight $\lambda$ there is isomorphism of $\lie{l}_\Sigma$ modules
+	\begin{equation}
+		 H^i(\lie{u}_\Sigma, L(\lambda))\simeq \bigoplus_{\substack{w\in W^{\Sigma}\\ l(w) = i}} F(w \cdot \lambda),
+	\end{equation}
+	where $L(\lambda)$ is the finite dimensional $\lie{g}$-module with highest weight $\lambda$ and $F(w\cdot \lambda)$ are finite dimensional $\lie{l}_\Sigma$ modules with highest weights $w \cdot \lambda$ where $w \cdot \lambda = w(\lambda + \rho) - \rho$ is the affine action of $w \in W.$
 \end{theorem}
 
-\begin{definition}[\cite{boe_kostant_2009}]
-	Kostant module 
-\end{definition}
+This theorem gave rise to a definition of \emph{Kostant modules} which are (not necessarily finite-dimensional) modules for which there is a similar formula for cohomology. It started with \cite{collingwood_mathfrakn-homology_1985} and was later developed in \cite{boe_kostant_2009}. The definition roughly says that a simple highest weight module $L$ is Kostant module if there is a graded poset $P$ with a length function in $W$ such that the $i$th cohomology is given by the affine action of elements of $P$ of length $i$. For simple modules with regular weight this poset $P$ is given by the poset of minimal coset representatives $W^\Sigma$. For singular weights the situation is much more complicated, the ``working definition'' is that the poset $P$ is given by $W^{\Sigma, J}$ from theorem \ref{thm:es_equivalence}. We refer to \cite{boe_kostant_2009} and \cite{enright_diagrams_2014} for further details and examples. For our applications we only need to know that the unitarizable highest weight modules of chapter \ref{ch:unitarizable} are examples of Kostant modules.
 
-The article \cite{boe_kostant_2009} provides classification of simple modules in certain parabolic BGG categories $\mathcal{O}_S$. The classification is given by subdiagrams of the Dynkin diagram. The proof of Theorem \ref{thm:cohomology} is based on an equivalence of categories given in \cite{enright_categories_1987}. This equivalences relate the relevant blocks in $\mathcal{O}_S$ to blocks for a lower rank algebras. In this way the unitarizable highest weight modules correspond to finite-dimensional ones for which the Kostant formula is known. It also follows that the structure of the resolutions is preserved. The Table \ref{tbl:sing}, taken from \cite{boe_kostant_2009}, shows the relevant information. 
-
-Let $J$ denote the set of singular simple roots, i.e. \[J= \{ \alpha \in \sroots | (\lambda+\rho,\check{\alpha}) = 0 \}.\] The columns $\alpha$ and $\alpha'$ give the crossed roots in the Dynkin diagrams. Each Kostant module\footnote{These are the modules $M$ in $\mathcal{O}$ for which there's is a combinatorial formula for $H^i(\lie{p}_-,M)$ of certain type. The unitarizable highest weight modules are Kostant modules according to \cite{davidson_differential_1991}. For details see \cite{boe_kostant_2009}.} corresponds to a connected subdiagram of $\mathcal{D}'$ containing $\alpha'$. Each such subdiagram gives a parabolic pair and the Kostant modules correspond to finite-dimensional modules for the semisimple part of the Levi factor of $\mathcal{D}'$.
+The article \cite{boe_kostant_2009} classifies Kostant modules for arbitrary blocks of category $\mathcal{O}^\lie{p}$ for $|1|$-graded parabolic $\lie{p} \leq \lie{g}$. The classification is given by certain subdiagrams of the Dynkin diagram. Given subdiagram of the Dynkin diagram one can use the Enright-Shelton equivalence functor to simple modules of the Lie algebra defined by the smaller diagram and one obtains Kostant modules for the bigger Lie algebra. Moreover all Kostant modules arise in this way. Let $J$ denote the set of singular simple roots, i.e. \(J= \{ \alpha \in \sroots \,|\, (\lambda+\rho,\alpha^\vee) = 0 \}.\) The columns $\alpha$ and $\alpha'$ give the crossed roots in the Dynkin diagrams. Each Kostant module corresponds to a connected subdiagram of $\mathcal{D}'$ containing $\alpha'$. Each such subdiagram gives a parabolic pair and the Kostant modules correspond to finite-dimensional modules for the semisimple part of the Levi factor of $\mathcal{D}'$.
 
 \begin{table}[H] 
 %\begin{center}
