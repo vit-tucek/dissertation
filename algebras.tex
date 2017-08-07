@@ -32,7 +32,7 @@ If $\phi:\lie{g} \to \lie{g}$ is any automorphism of the Lie algebra $\lie{g}$, 
 \]
 and thus $B(\phi(X),\phi(Y)) = B(X,Y)$. The Cartan criterion states that a Lie algebra $\lie{g}$ is semisimple if and only if the Killing form $B$ is nondegenerate.
 
-\subsection{Complex Lie algebras}
+\subsection{Complex simple Lie algebras}
 
 Let $\lie{g}$ be a complex semisimple Lie algebra and choose a Cartan subalgebra $\lie{h} \leq \lie{g}$. Any two Cartan subalgebras of $\lie{g}$ are conjugate by an inner automorphism of $\lie{g}$. The roots $\roots$ of $(\lie{g},\lie{h})$ are linear functionals $\alpha: \lie{h} \to \C$ such that the corresponding \emph{root space} $\lie{g}_\alpha = \{ X\in G \,|\,\forall H\in \lie{h}: [H,X] = \alpha(H) X \}$ is nonempty. In other words, roots are the nontrivial weights of the adjoint representation $\ad:\lie{g}\to\lie{g}$. The roots form a finite subset $\roots \subset \lie{h}^*$ and we have the \emph{root space decomposition}
 \[
@@ -92,7 +92,7 @@ A \emph{Dynking diagram} is defined as a graph with vertex for each simple root 
 
 
 
-\emph{representation, dominant, integral} %TODO
+\emph{representation, (anti)dominant, integral} %TODO
 
 For a root $\alpha \in \roots$ we define \emph{root reflection} $s_\alpha$ as
 \[
@@ -163,183 +163,53 @@ In particular, the Killing form $B$ has the following anti-diagonal block matrix
 where $B_{i,j}$ denote the restriction of $B$ to $\lie{g}_i\otimes \lie{g}_j$.
 
 
-
-Classification of Hermitian symmetric pairs. We treat this material from the view of representation (or Lie) theory as in \cite{knapp}. Geometric treatment of Hermitian symmetric spaces is presented for example in \cite{helgason}.
-
-\subsection{Real Lie algebras}
-
-The \emph{complexification} of a real reducitve Lie algebra $\lie{g}_0$ is define as $\lie{g} = \lie{g}_0\otimes_\R \C$. With Lie bracket defined naturally by complex linear extension as follows
-\[
- [A\otimes z, B\otimes w] = [A,B]\otimes zw.
-\]
-As a real vector space we have isomorphism $\lie{g} \simeq \lie{g}_0 \oplus \imath \lie{g}_0$ defined by $X\otimes (a+\imath b) \mapsto aX \oplus \imath bX$. Writing elements $Z,Z'\in\lie{g}$ as $Z = X + \imath Y$ $Z'=X'+\imath Y'$ we get \[[Z,Z'] = [X,X'] - [Y,Y'] + \imath \left( [X,Y'] + [X',Y]\right).\]
-
-A \emph{real form} of a complex Lie alebra $\lie{g}$ is a real Lie algebra $\lie{g}_0$ such that $\lie{g}$ is the complexification of $\lie{g}_0$. A complex Lie algebra usually has many nonisomorphic real forms. For a complexification $\lie{g}$ of $\lie{g}_0$ we will denote by $\sigma$ the conjugation of $\lie{g}$ with respect to the real form $\lie{g}_0$.
-
-\begin{example}
- The complexification of the classical Lie algebra of trace-free real matrices $\lie{sl}(n,\R)$ is naturally isomorphic to the Lie algebra of trace-free complex matrices $\lie{sl}(n,\C)$. Anoter real form of $\lie{sl}(n,\C)$ is for example the algebra of trace-free skew Hermitian  matrices  $\lie{su}(n)$. %TODO
-\end{example}
-
-An \emph{involution} of a Lie algebra $\lie{g}$ is Lie algebra homomorphism $\lie{g}\to\lie{g}$ which squares to identity. An involution $\theta$ of a real semisimple Lie algebra $\lie{g}_0$ is called \emph{Cartan involution} if the symmetric bilinear form $B_\theta(X,Y) = -B(X,\theta Y)$ is postivive definite. We will denote the complex linear extension of $\theta$ to the complexification of $\lie{g}_0$ by the same symbol and we will still call it the Cartan involution. Any real semisimple Lie algebra has a Cartan involution and it is unique up to inner automorphism.
-
-\begin{example}
-  Cartan involution on $\lie{sl}(n,\R)$ is given by negative transpose, i.e. $\theta X = - X^t$. The subalgebra $\lie{k}_0$ is then $\lie{so}(n,\R)$ and the ideal $\lie{p}_0$ is the space of symmetric matrices.
-
- For $\lie{su}(n)$ is a Cartan involution given by a negative conjugate transpose $\theta X = - \overline{X}^t$. The subalgebra $\lie{k}_0$ is the whole $\lie{su}(n)$ and $\lie{p}_0$ is of course empty.
-\end{example}
-
-We can generalize this as follows. Take a matrix Lie algebra, i.e. a subalgebra of $\lie{gl}(n,\C)$, that is closed under transposition and define $\theta X = -X^\dag$. Then
- \[
-  \theta [X,Y] = -[X,Y]^\dag = - [Y^\dag,X^\dag] = [-X^\dag,-Y^\dag] = [\theta X, \theta Y]
- \]
- shows that $\theta$ is involution. Using the fact that $B$ is invariant with respect to automorphisms we get that
- \begin{align*}
-  B_\theta(X,Y) &= -B(x,\theta Y) = - B(\theta X, \theta^2 Y) \\
-                &= -B(\theta X, Y) = B_\theta(X,Y),
- \end{align*}
- which demonstrates that $B_\theta$ is symmetric. To show that it is also positive definite, we first need to show that for a scalar product $\langle X,Y \rangle = \Re (XY^\dag)$ we have that the adjoint of $\ad X$ is $\ad X^\dag$.
- \begin{align*}
-  \langle [X,Y],Z \rangle &= \Re\tr (XYZ^\dag - YXZ^\dag) = \\
-			  &= \Re\tr (YZ^\dag X - YXZ^\dag) =  \\% = \Re\tr (Y (Z^\dag X - X Z^\dag))\\
-                          &= \Re\tr( Y(X^\dag Z - ZX^\dag)^\dag) = \langle Y, [X^\dag,Z] \rangle.
- \end{align*}
- Now we can show that $B_\theta$ is in fact positive definite as follows
- \begin{align*}
-  B_\theta(X,X) &= -B(X,\theta X) = -\tr (\ad X \circ \ad \theta X )\\
-                &= \tr (\ad X \circ \ad (X^\dag))  = tr (\ad X (\ad X)^*) \geq 0.
- \end{align*}
-
-In fact, any real semisimple Lie algebra $\lie{g}_0$ is isomorphic to a Lie algebra of real matrices that is closed under transpose and the isomorphism can be chosen in such a way that the Cartan involution of $\lie{g}_0$ is carried to negative transpose (Proposition VI.6.28 of \cite{knapp}).
-
-A Cartan involution $\theta$ of $\lie{g}_0$ yields an eigenspace decomposition $\lie{g}_0 = \lie{k}_0 \oplus \lie{p}_0$ of $\lie{g}_0$ into $+1$ and $-1$ eigenspaces of $\theta$. Since $\theta$ is a Lie algebra homomorphism, it follows that
-\begin{equation}\label{eq:cartan_decomposition_1}
- [\lie{k}_0,\lie{k}_0] \subseteq \lie{k}_0, \quad[\lie{k}_0,\lie{p}_0] \subseteq \lie{p}_0, \quad [\lie{p}_0,\lie{p}_0] \subseteq \lie{k}_0.
-\end{equation}
-From these relations it is easy to derive that $\lie{k}_0$ and $\lie{p}_0$ are orthogonal with respect to $B_\theta$ and $B$. If $X$ is in $\lie{k}_0$ and $Y$ is in $\lie{p}_0$, then $\ad X \circ \ad Y $ sends $\lie{k}_0$ to $\lie{p}_0$ and $\lie{p}_0$ to $\lie{k}_0$; i.e. as a matrix in block form subordinated to the decomposition $\lie{g}_0 = \lie{k}_0 \oplus \lie{p}_0$ it has the form $\begin{smatrix} 0 & * \\ * & 0\end{smatrix}$. Thus it has trace $0$ and $B(X,Y) = 0$ and since $\theta Y = - Y$ also $B_\theta (X,Y) = 0$. Because $B_\theta$ is positive definite, the eigenspacese have the property that
-\begin{equation}\label{eq:cartan_decomposition_2}
- B \text{ is } \begin{cases} \text{negative definite on } \lie{k}_0 \\ \text{positive definite on } \lie{p}_0. \end{cases}
-\end{equation}
-
-A decomposition of $\lie{g}_0 = \lie{k}_0 \oplus \lie{p}_0$ that satisfies \eqref{eq:cartan_decomposition_1} and \eqref{eq:cartan_decomposition_2} is called \emph{Cartan decomposition} of $\lie{g}_0$. Conversely any Cartan decomposition defines a Cartan involution by
-\[
-\theta =
- \begin{cases}
-  + \Id \text{ on } \lie{k}_0 \\
-  - \Id \text{ on } \lie{p}_0
- \end{cases}
-\]
-and we see that Cartan involutions are in bijective correspondence with Cartan decompositions.
-
-Cartan involutions and decompositions can be even pushed to the Lie group level.
-\begin{theorem}[Theorem VI.6.31 of \cite{knapp}]
- Let $G$ be a semisimple Lie group, let $\theta$ be a Cartan involution of its Lie algebra $\lie{g}_0$, let $\lie{g}_0 = lie{k}_0 \oplus \lie{p}_0$ be the corresponding Catan decomposition, and let $K$ be the analytic subgroup of $G$ with Lie algebra $\lie{k}_0$. Then
- \begin{enumerate}
-  \item there exists a Lie group automorphism $\Theta$ of $G$ with differential $\theta$, and $\Theta^2=\Id$
-  \item the subgroup of $G$ fixed by $\Theta$ is $K$
-  \item the mapping $K\times \lie{p}_0 \to G$ given by $(k,X)\mapsto k \exp{X}$ is a diffeomorphism onto
-  \item $K$ is closed and contains the center $Z$ of $G$
-  \item $K$ is compact if and only if $Z$ is finite in which case it is a maximal compact subgroup of $G$.
- \end{enumerate}
-\end{theorem}
-
-This theorem justifies the following definition. We will call a real form $\lie{g}_0$ of $\lie{g}$ \emph{compact} if $\lie{g}_0 = \lie{k}_0$, i.e. if the Killing form $B$ is negative definite.
-
-Take a Cartan decomposition $\lie{g}_0 = \lie{k}_0 \oplus \lie{p}_0$ and consider $\lie{g}_0$ as a subset of its complexification $\lie{g}$. Inspecting the signature of $B_\theta$ we easily see that $\lie{k}_0\oplus \imath \lie{p}_0$ is a compact form, say $\lie{u}_0$, of $\lie{g}$. Denote by $\sigma$ the conjugation of $\lie{g}$ with respect to the real form $\lie{g}_0$ and let $\tau$ denote the conjugation with respect to $\lie{u}_0$. Both $\sigma$ and $\tau$ are either $\Id$ or $-\Id$ on $\lie{k}_0, \imath \lie{k}_0, \lie{p}_0, \imath \lie{p}_0$. This immediately implies that the two involutions commute $\sigma \circ \tau = \tau \circ \sigma$. In particular $\tau (\lie{g}_0) \subseteq \lie{g}_0$ and the restriction of $\tau$ to $\lie{g}_0$ is the Cartan involution $\theta$ corresponding to the Cartan decomposition $\lie{g}_0=\lie{k}_0 \oplus \lie{p}_0$.
-
-Conversely, given a compact form $\lie{u}_0$ of a complexification $\lie{g}$ of $\lie{g}_0$ such that the corresponding conjugations $\tau$ and $\sigma$ commute, we get a Cartan involution for $\lie{g}_0$ by restriction of the involution $\tau$ that corresponds to the compact form $\lie{u}_0$. Indeed, since $\lie{g}_0 \subseteq \lie{g} = \lie{u}_0 \oplus \imath \lie{u}_0$, we get for any $X+\imath Y\in\lie{g}_0$
-\[
- B_\theta (X+\imath Y,X+\imath Y) = -B(X+\imath Y,X-\imath Y) = -B(X,X) - B(Y,Y),
-\]
-which is positive definite since $X,Y$ are elements from the compact Lie algebra $\lie{u}_0$.
-
-A semisimple Lie algebra has up to inner isomorphism only one compact real form and it can be even shown that the compact form can be chosen in such a way that the corresponding conjugation $\tau$ commutes with any apriori chosen involution $\sigma$ of $\lie{g}$. This is the core of the proof of existence of Cartan involution for arbitrary real semisimple Lie algebra $\lie{g}_0$.
-
-To summarize, if $\lie{g}_0 = \lie{k}_0 \oplus \lie{p}_0$ is a Cartan decomposition of $\lie{g}_0$, then $\lie{k}_0 \oplus \imath \lie{p}_0$ is a compact  real form of the complexification $\lie{g}$ of $\lie{g}_0$. Conversely, if $\lie{k}_0$ and $\lie{p}_0$ are the $+1$ and $-1$ eigenspaces of an involution $\sigma$ of $\lie{g}$ then $\sigma$ is Cartan involution if and only if the real form $\lie{k}_0 \oplus \imath \lie{p}_0$  is compact.
-
-In the following we will use this simple lemma.
-\begin{lemma}\label{lem:theta_adjoint}
- If $\lie{g}_0$ is a real semisimple Lie algebra and $\theta$ is a Cartan involution, then the adjoint operator to $\ad X$ with respect to $B_\theta$ is $-\ad \theta X$, i.e.
- \begin{equation*}
-  (\ad X)^* = -\ad \theta X, \quad \forall X\in\lie{g}_0
- \end{equation*}
-\end{lemma}
-\begin{proof}
-  We have for all $Y,Z\in\lie{g}$
-  \begin{align*}
-  B_\theta((\ad X)Y,Z) &= -B([X,Y],\theta Z) = B(Y,[X,\theta Z]) \\
-                       &= B(Y,[\theta^2 X, \theta Z]) = B(Y,\theta [\theta X, Z]) \\
-		       &= -B_\theta(Y,[\theta X,Z]) = B_\theta(Y,(-\ad \theta X)Z).
-  \end{align*}
-\end{proof}
-
-In addition to compact form, there is always another real form (also unique up to conjugation) of a complex semisimple Lie algera $\lie{g}$. Let $\lie{h}_0$ be a Cartan subalgebra of $\lie{g}$ and consider its complexification $\lie{h}$ which is (by definition) a Cartan subalgebra of $\lie{g}$. We call a real Lie algebra $\lie{g}_0$ a \emph{split form} of $\lie{g}$ if the restrictions of elements of $\lie{h}^*$ to $\lie{h}_0$ are real valued.
-
-To construct a split real form we can just take a suitable basis of $\lie{g}$ and its real span. In details, take a complex Lie algebra $\lie{g}$ and its Cartan subalgebra $\lie{h}$ and define $\lie{h}_0$ as the subset of $\lie{h}$ on which all the roots take only real values. There is always a choice (see Theorem VI.6.6 of \cite{knapp_advanced}) of root vectors $X_\alpha \in \lie{g}_\alpha$ such that $[X_\alpha, X_{-\alpha}] = H_\alpha$ and
-\begin{gather*}
-\beta \neq -\alpha \,\&\, \alpha + \beta \notin \roots \Longrightarrow [X_\alpha,X_\beta]=0 \\
- \alpha + \beta \in\roots \Longrightarrow [X_\alpha, X_\beta] = N_{\alpha,\beta}X_{\alpha+\beta},
-\end{gather*}
-where $N_{\alpha,\beta}\in\R$ and $N_{\alpha,\beta} = -N_{-\alpha,-\beta}$. Now the split form of $\lie{g}$ is obtained as
-\[
- \lie{g}_\text{split} = \lie{h}_0 \oplus \bigoplus_{\alpha \in\roots} \R X_\alpha
-\]
-and a compact form of $\lie{g}$ can be then given as
-\[
- \lie{k}_0 = \imath \lie{h}_0 \oplus \bigoplus_{\alpha\in\roots^+} \R (X_\alpha - X_{-\alpha}) \oplus \imath \R (X_\alpha + X_{-\alpha}).
-\]
-
-Let $\lie{g}_0$ be a real semisimple Lie algebra and let $\theta$ be its Cartan involution. A Cartan subalgebra $\lie{h}_0$ of $\lie{g}_0$ is called \emph{$\theta$-stable} if $\theta(\lie{h}_0)=\lie{h}_0$. In such a case we have $\lie{h}_0= (\lie{h}_0\cap\lie{k}_0) \oplus (\lie{h}_0\cap\lie{p}_0$, where $\lie{g}_0 = \lie{k}_0\oplus\lie{p}_0$ is the Cartan decomposition. We call the dimension of $\lie{h}_0\cap\lie{k}_0$ the \emph{compact dimension} of a $\theta$-stable  Cartan subalgebra $\lie{h}_0$ and similarly the dimension of $\lie{h}_0\cap\lie{p}_0$ is called the \emph{noncompact dimension} of $\lie{h}_0$. A $\theta$-stable Cartan subalgebra $\lie{h}_0 \leq \lie{g}_0$ is called \emph{maximally compact} or \emph{maximally noncompact} if and only if its compact (respectively noncompact) dimension is maximal possible.
-
-%TODO theta stabilita, komplexni konjugace a akce thety (viz Vogan, mozna Knapp)
-
-%\subsection{Iwasawa decomposition}
-In contrast to the complex case, Cartan subalgebras of real Lie algebras are not unique up to conjugation. Up to conjugation by inner automorphism, there is a finite number of Cartan subalgebras and any Cartan subalgebra is conjugated via an inner automorphism to a $\theta$-stable Cartan subalgebra. Moreover there is up to conjugation by an element of $K$ only one maximally compact (or maximally noncompact) $\theta$-stable Cartan subalgebra of $\lie{g}_0$.
-
-Let $\lie{g}$ be a complexification of $\lie{g}_0$ and let $\lie{h}$ be a complexification of a $\theta$-stable maximally noncompact Cartan subalgebra $\lie{h}_0$ of $\lie{g}_0$. Let $\sigma$ be a complex conjugation of $\lie{g}$ with respect to the real form $\lie{g}_0$. For $\alpha\in\roots$ we define $\sigma^* \alpha$ by $(\sigma^* \alpha) (H) = \overline{\alpha(\sigma H)}$ for all $H\in\lie{h}$. Since $\sigma$ is conjugate linear, $\sigma^*\alpha$ is again a complex linear form on $\lie{h}$ and identifying $\Hom_\C(\lie{h},\C)$ with $\Hom_\R(\lie{h}_0,\C)$, the map $\sigma^*$ coincides with complex conjugation. In fact, $\sigma^*$ is an involutive automorphism of the root system $\roots(\lie{g},\lie{h})$. A root $\alpha \in \roots(\lie{g},\lie{h})$ is called \emph{compact root} if $\sigma^*\alpha = -\alpha$. The set of compact roots is denoted by $\roots_c$.
-
-\begin{proposition}[Proposition 2.3.8 of \cite{cap_parabolic_2009}]
- The set of compact roots is given by $\roots_c = \{ \alpha \in \roots \,:\,\alpha|\lie{a} = 0 \}$. It is an abstract root system on the Euclidean subspace of $\imath \lie{t}\oplus \lie{a}$ spanned by its elements. For $\alpha\in\roots_c$, the root space $\lie{g}_\alpha$ is contained in $\lie{k}\leq \lie{g}$.
-\end{proposition}
-
-%\subsection{Satake diagrams}
-
-Choose a set of positive roots $\roots^+$ such that $\sigma^* \alpha \in \roots^+$ for all $\alpha\in\roots^+\setminus\roots_c$. One way to obtain such a system of positive roots is to choose ordering of $\roots$ by choosing a basis $\{H_1,\ldots, H_p\}$ of $\lie{a}$ and extending it to a basis $\{H_1,\ldots,H_r\}$ of $\imath\lie{t}\oplus\lie{a}$. By definition $\alpha\in\roots^+$ if and only if there is an index $j$ such that $\alpha(H_j) > 0$ and $\alpha(H_i) = 0 $ for all $i<j$. By definition $\alpha(H_i)\neq 0$ for some $i\leq p$ for $\alpha \in \roots^+\setminus \roots_c$ and since all $\alpha(H_j)$ are real, $\sigma H_i = H_i$ for $i\leq p$ and $\sigma(H_i) = -H_i$ for $i>p$.
-
-Let $\sroots$ be the set of simple roots of $\roots^+$ and put $\sroots_c = \sroots \cap \roots_c$. Then $\sroots_c$ are a system of simple roots for $\roots_c$ and we order our system of simple roots $\sroots$ in such a way that elements of $\sroots_c$ come last. The following lemma is due to Ichir{o} Satake.
-\begin{lemma}
-\begin{enumerate}
- \item The element $\sigma^*\alpha - \alpha$ is not a root for any $\alpha\in\roots$.
- \item For $\alpha \in \sroots \setminus \sroots_c$, there is a unique element $\alpha'\in\sroots\setminus\sroots_c$ such that $\sigma^*\alpha-\alpha'$ is a linear combination of compact roots.
-\end{enumerate}
-\end{lemma}
-
-The \emph{Satake diagram} of the real Lie algebra $\lie{g}_0$ is defined as follows. In the Dynkin diagram associated to the simple system $\sroots$, represent compact roots by a black dot and roots in $\sroots\setminus\sroots_c$ by a white dot. Moreover, for any $\alpha\in\sroots\setminus\sroots_c$ such that $\sigma^*\alpha\neq\alpha$, connect $\alpha$ by an arrow  to the unique simple root $\alpha'\in\sroots\setminus\sroots_c$ such that $\sigma^*\alpha -\alpha'$ is a linear combination of compact roots.
-
-
-
-%\subsection{Parabolic subalgebras of real Lie algebras}
-
-\begin{definition}[page 274, \cite{knapp_cohomological_1995}]
- Let $\lie{q}$ be a parabolic subalgebra of the complexification of a real semisimple Lie algebra $\lie{g}_0$ and let $\theta$ be the corresponding Cartan involution. We will call $\lie{q}$ to be $\theta$-stable if $\theta \lie{q} = \lie{q}$. It follows then that also the opposite parabolic subalgebra $\lie{q}^-$ is $\theta$-stable and that the Levi part is $\theta$-stable $\theta \lie{l} = \lie{l}$.
-\end{definition}
-
-For a real Lie algebra $\lie{g}_0$ we define $\lie{q}_0$ to be a parabolic subalgebra if and only if the complexification $\lie{q}$ is a parabolic subalgebra of the complexification $\lie{g}$. Similarly to the complex case, there is an equivalence between parabolic subalgebra $\lie{g}$ and gradings on $\lie{g}$ also in the real category. The standard parabolic subalgebras are given by crossed roots in Satake diagrams, where we are allowed to cross only white roots (i.e. those that are not in $\roots_c$.
-
-%TODO rozepsat, real Iwasawa?s
-
 \section[BGG category O]{BGG category $\mathcal{O}$}
 
 This chapter contains the description of Bernstein-Bernstein-Gelfand category $\mathcal{O}$ and a small recapitulation of Enright-Shelton equivalences which will be needed later.
 
-
-\subsection{Generalized Verma modules and the Shapovalov form}
-
-
 For any $\lambda\in\lie{h}^*$ we denote by $\C_\lambda$ the one dimensional representation of $\lie{h}$ on with character $\lambda$. We extend the action to $\lie{b}^- := \lie{n}^-\oplus\lie{h}$ by letting $\lie{n}^-$ act trivially. The \emph{Verma module} $N(\lambda)$ is then defined as $N(\lambda) := \lie{U(g)}\otimes_{\lie{U(b^-)}} \C_\lambda$. We will denote its highest weight vector by $v_\lambda$.
 
-Let $\lambda$ be a $\Delta_c^+$ dominant and integral weight and denote by $F(\lambda)$ the finite dimensional irreducible $\lie{k}$-module.  We extend any irreducible representation of $K_\mathbb{C}$ to $P$ and to $\overline{P}$ by letting $\lie{p}_+$ and $\lie{p}_-$ act trivially. The \emph{generalized Verma module} $M(\lambda)$ is defined as $M(\lambda) = \lie{U}(\lie{g}) \otimes_{\lie{U}(\oppar)} F(\lambda)$. It is well known and easy to prove that $M(\lambda)$ contains a maximal nontrivial submodule $J(\lambda)$ and we denote by $L(\lambda)$ the corresponding irreducible quotient of $M(\lambda)$. Since the nilradical $\lie{p}_-$ of $\oppar$ is abelian and acts trivially on $F(\lambda)$, we have that $M(\lambda) \simeq S(\lie{p}_+)\otimes F(\lambda)$ as $K_\C$ representations, where $S(\lie{p}_+)$ is the symmetric algebra  over the Lie algebra $\lie{p}_+$.
+Let $\lambda$ be a $\Delta_c^+$ dominant and integral weight and denote by $F(\lambda)$ the finite dimensional irreducible $\lie{k}$-module.  We can extend any irreducible representation of $K_\mathbb{C}$ to $P$ and to $\overline{P}$ by letting $\lie{p}_+$ and $\lie{p}_-$ act trivially. The \emph{generalized} or \emph{parabolic Verma module} $M(\lambda)$ is defined as $M(\lambda) = \lie{U}(\lie{g}) \otimes_{\lie{U}(\lie{p})} F(\lambda)$. In cases where we will need to deal with Verma modules for different algebras we will denote them by $M_\Sigma$ where $\Sigma$ is the subset of $\sroots$ defining the parabolic subalgebra $\lie{p}$. 
+
+ It is well known and easy to prove that $M(\lambda)$ contains a maximal nontrivial submodule $J(\lambda)$ and we denote by $L(\lambda)$ the corresponding irreducible quotient of $M(\lambda)$. Since the nilradical $\lie{p}_+$ of $\lie{p}$ is abelian and acts trivially on $F(\lambda)$, we can see that $M(\lambda) \simeq S(\lie{p}_-)\otimes F(\lambda)$ as $K_\C$ representations, where $S(\lie{p}_-)$ is the symmetric algebra  over the Lie algebra $\lie{p}_-$.
 %The canonical $\overline{P}$-invariant filtration of $M(\lambda) = \bigcup_{k\geq 0} M^k(\lambda)$ has filtration components $M^k(\lambda)= \{\epsilon^{i_1}\cdots\epsilon^{i_j}\otimes v\, | v \in F(\lambda), j \leq k \}$.
 In the case of $M(\lambda)$, the geometric weight corresponds to the polynomial degree shifted by the weight of $F(\lambda)$.% and the canonical $\overline{P}$-invariant filtration is the same as the filtration induced by the geometric weight.
+
+The \emph{(parabalic) category $\mathcal{O}_\lie{p}$} is the full subcategory of $\lie{U(g)}$ modules whose objects $M$ satisfy:
+\begin{enumerate}
+\item $M$ is a finitely generated $\lie{U(g)}$ module
+\item Viewed as a $\lie{U(l)}$ module, $M$ is a direct sum of finite dimensional simple modules.
+\item $M$ is locally $\lie{u}$-finite
+\end{enumerate}
+
+The whole category $\mathcal{O}^ \lie{p}$ decomposes into so called \emph{infinitesimal blocks} $\mathcal{O}^\lie{p}_\mu$, where $\mu$ is an antidominant weight of $\roots$. These blocks are full subcategories consisting of modules on which the center of the universal enveloping algebra acts by a character induced from $\mu$.  One can move between different blocks using so called translation functors which in favorable cases provide equivalence of these subcategories. These functors map Verma modules to Verma modules and simple modules to simple modules. The favorable cases are determined by so called facets which are in turn defined via root hyperplanes. The bottom line is that once two weights $\mu, \mu'$ have the same signs of scalar products with positive roots the infinitesimal blocks $\mathcal{O}^\lie{p}_\mu$ and $\mathcal{O}^\lie{p}_{\mu'}$ are equivalent. See chapter 7 of \cite{humphreys_representations_2008} for details.
+
+%\subsection[Category O and translation functors]{Category $\mathcal{O}$ and translation functors}
+%
+%We present a short overview of translation functors as is presented in \cite{humphreys_representations_2008}. Since we deal with integral weights only, we omit all the notations that concerns nonintegral weights.
+%
+%\begin{definition}
+%  Let $\lambda, \mu \in \weights$ be such that $\nu = \mu - \lambda \in \weights^+$ and consider a finite dimensional representation $F(\nu)$ of highest weight $\nu$. Then the translation functor $T_\lambda^\mu: \mathcal{O}_\mu \to \mathcal{O}_\lambda$ is defined by
+%  \[
+%   T_\lambda^\mu M := \proj(F(\nu)\otimes M),
+%  \]
+%  where $\proj$ is the projection from $\mathcal{O}$ to $\mathcal{O}_\mu$.
+%\end{definition}
+%
+%The vector space $\lie{h}^*$ decomposes into so called facets for the affine Weyl group action according to decompositions of the set of positive roots $\roots^+$ as follows. The facet $F$ corresponding to $\roots^+ = \roots^+_- \cup \roots^+_0 \cup \roots^+_+$ is defined as the set of those $\lambda \in \lie{h}$ such that
+%\[
+%  \begin{cases}
+%   (\lambda + \rho, \alpha) < 0, & \forall \alpha \in \roots^+_- \\
+%   (\lambda + \rho, \alpha) = 0, & \forall \alpha \in \roots^+_0 \\
+%   (\lambda + \rho, \alpha) > 0, & \forall \alpha \in \roots^+_+.
+%  \end{cases}
+%\]
+%
+%\begin{theorem}[Theorem 7.?? of \cite{humphreys_representations_2008}]\label{thm:translation}
+% If two weights $\mu$ and $\lambda$ lie in the same facet, then the translation functors $T_\lambda^\mu$ and $T_\mu^\lambda$ implement an equivalence of categories between $\mathcal{O}_\mu$ and $\mathcal{O}_\lambda$.
+%\end{theorem}
+
+\subsection{Shapovalov form}
 
 Let $\sigma$ be involutive antiautomorphism on $\lie{U(g)}$ such that it's restriction on the real form $\lie{g}_0$ is $-\id$. With our choice of Cartan subalgebra $\lie{h}$ we have that $\sigma: X_\beta \mapsto X_{-\beta}$ for $X_\beta \in \lie{g}_\beta$ and $\sigma: h_\alpha \mapsto h_\alpha$ for $h_\alpha \in \lie{h}$.
 
@@ -386,172 +256,66 @@ The maximal submodule of $N(\lambda)$ is the radical of the Shapovalov form.
 Let $v\in J(\lambda)$  be arbitrary. Then $\langle v, v_\lambda \rangle = 0$ since clearly $v$ and $v_\lambda$ have different weights. Since $J(\lambda)^\perp$ is a submodule of $N(\lambda)$ containing the generating vector $v_\lambda$ the statement follows.
 \end{proof}
 
-The generalized Verma module $M(\lambda)$ is a quotient of the Verma module $N(\lambda)$. Hence the simple quotient $L(\lambda)$ of $M(\lambda)$ is also a quotient of $N(\lambda)$ by its maximal submodule. We get induced contravariant forms on $L(\lambda)$ and $M(\lambda)$  which we also call Shapovalov forms and we denote them by a same symbol.
+The generalized Verma module $M(\lambda)$ is a quotient of the Verma module $N(\lambda)$. Hence the simple quotient $L(\lambda)$ of $M(\lambda)$ is also a quotient of $N(\lambda)$ by its maximal submodule. We get induced contravariant forms on $L(\lambda)$ and $M(\lambda)$  which we also call Shapovalov forms.
 
-\subsection[Category O and translation functors]{Category $\mathcal{O}$ and translation functors}
 
-We present a short overview of translation functors as is presented in \cite{humphreys_representations_2008}. Since we deal with integral weights only, we omit all the notations that concerns nonintegral weights.
+\subsection{Equivalences of Enright and Shelton}\label{sec:es_equivalence}
 
-\begin{definition}
-  Let $\lambda, \mu \in \weights$ be such that $\nu = \mu - \lambda \in \weights^+$ and consider a finite dimensional representation $F(\nu)$ of highest weight $\nu$. Then the translation functor $T_\lambda^\mu: \mathcal{O}_\mu \to \mathcal{O}_\lambda$ is defined by
-  \[
-   T_\lambda^\mu M := \proj(F(\nu)\otimes M),
-  \]
-  where $\proj$ is the projection from $\mathcal{O}$ to $\mathcal{O}_\mu$.
-\end{definition}
+%Let $\lie{q}$ be a maximal parabolic subalgebra of $\lie{g}$ with Levi decomposition $\lie{q} = \lie{l_q} \oplus \lie{u_q}$ and suppose that $\lie{q}$ does not contain $\lie{p}$ and $\lie{l_q}$ contains $\lie{h}$ and $\lie{q}$ contains $\lie{b}$. Let $\lie{c}$ equal the center of $\lie{l_q}$ and fix $\lambda \in \lie{h}^*.$ Put $\mathcal{O} = \mathcal{O}(\lie{g}, \lie{p}, \lambda)$ and $\mathcal{O}_{\lie{l_q}} = \mathcal{O}_t( \lie{l_q}, \lie{l_q \cap p}, \lambda).$  
 
-The vector space $\lie{h}^*$ decomposes into so called facets for the affine Weyl group action according to decompositions of the set of positive roots $\roots^+$ as follows. The facet $F$ corresponding to $\roots^+ = \roots^+_- \cup \roots^+_0 \cup \roots^+_+$ is defined as the set of those $\lambda \in \lie{h}$ such that
+Let $\lie{p}$ be a parabolic subalgebra of $\lie{g}$ of Hermitian type. (I.e. giving rise to a $|1|$-grading on $\lie{g}.$) Let $\Sigma$ be the set of singular simple roots for an antidominant weight $\mu$:
 \[
-  \begin{cases}
-   (\lambda + \rho, \alpha) < 0, & \forall \alpha \in \roots^+_- \\
-   (\lambda + \rho, \alpha) = 0, & \forall \alpha \in \roots^+_0 \\
-   (\lambda + \rho, \alpha) > 0, & \forall \alpha \in \roots^+_+.
-  \end{cases}
+J = \{ \alpha \in \sroots \,|\, (\mu + \rho, \alpha^\vee) = 0 \}. 
 \]
-
-\begin{theorem}[Theorem 7.?? of \cite{humphreys_representations_2008}]\label{thm:translation}
- If two weights $\mu$ and $\lambda$ lie in the same facet, then the translation functors $T_\lambda^\mu$ and $T_\mu^\lambda$ implement an equivalence of categories between $\mathcal{O}_\mu$ and $\mathcal{O}_\lambda$.
+\begin{theorem}[8, Prop 2.3 of \cite{boe_representation_2005}]
+Let
+\[
+W^{\Sigma, J} = \{ w \in W^\Sigma \, | \,  \forall \alpha \in \Sigma  :  w < ws_\alpha \text{ and } ws_\alpha \in W^\Sigma\}
+\]
+and define $L(w)$ to be the simple quotient of the parabolic Verma module $M_\Sigma(w) = M(w_\Sigma w \cdot \mu)$ where $w_\Sigma$ is the longest element of the parabolic Weyl group $W_\Sigma$. Then 
+\[
+W^{\Sigma, J} \to \{ \text{simple modules in } \mathcal{O}^\lie{p}_\mu \}
+\]
+given by $w \mapsto L(w)$ is a bijection.
 \end{theorem}
 
+\begin{theorem}[\cite{enright_categories_1987}, \cite{enright_highest_1989}] 
+\hspace{1em} \\[-1em]
+\begin{enumerate}
+	\item Suppose that either $\roots$ has one root length or that it has roots of two lengths and all the roots in $J$ are short. Then there exists an equivalence of categories
+	\[
+	\mathcal{E}: \mathcal{O}^\lie{p}_\mu \to \mathcal{O}^\lie{p'}_{\mathrm{reg}},
+	\]
+	where $\lie{p}'$ is a parabolic subalgebra of Hermitian type of a complex simple Lie algebra $\lie{g}'$ of rank smaller or equal to the rank of $\lie{g}.$ Moreover, there is an isomorphism of posets $W^{\Sigma, J} \to W'^{\Sigma'}$ such that the functor $\mathcal{E}$ sends parabolic Verma modules $M_\Sigma(w)$ to parabolic Verma modules $M_{\Sigma'} (w')$ and similarly for simple modules.
+	
+	\item Suppose that $\roots$ has two root lengths and $J$ contains a long root. Then there exists an equvalence of categories
+	\[
+	\mathcal{E}: \mathcal{O}^\lie{p}_\mu \to \mathcal{O}^\lie{p'}_{\mathrm{reg}} \oplus  \mathcal{O}^\lie{p'}_{\mathrm{reg}},
+	\]
+	where $\lie{p}'$ is a parabolic subalgebra of Hermitian type of a complex simple Lie algebra $\lie{g}'$ of rank smaller or equal to the rank of $\lie{g}.$ More precisely the poset $W^{\Sigma, J}$ is a disjoint union $W^{\Sigma, J}_\mathrm{odd} \cup W^{\Sigma, J}_{\mathrm{even}}$ of two poset and the category $\mathcal{O} ^\lie{p}_\mu$ has a decomposition into a direct sum $\mathcal{O} ^\lie{p}_\mu = \mathcal{O} ^\lie{p}_{\mu, \mathrm{even}} \oplus \mathcal{O} ^\lie{p}_{\mu, \mathrm{odd}}$ such that all extensions between modules in different summands is zero. There exists isomorphisms of posets $ W^{\Sigma, J}_{\mathrm{odd}} \to W'^{\Sigma'}$ and $ W^{\Sigma, J}_{\mathrm{even}} \to W'^{\Sigma'}$ and corresponding equivalences of categories $\mathcal{E}_{\mathrm{odd}}: \mathcal{O} ^\lie{p}_{\mu, \mathrm{odd}} \to  \mathcal{O}^\lie{p'}_{\mathrm{reg}}$ and $\mathcal{E}_{\mathrm{even}}: \mathcal{O} ^\lie{p}_{\mu, \mathrm{even}} \to  \mathcal{O}^\lie{p'}_{\mathrm{reg}}$ such that $M_\Sigma(w) \to M_{\Sigma'} (w')$ and similarly for their simple quotients.
+\end{enumerate}
+\end{theorem}
 
-\subsection{Equivalences of Enright and Shelton}
+Let's illustrate this equivalence with an example. 
+\begin{example}[\cite{boe_kostant_2009}]
+Consider the complex simple Lie algebra $\lie{sl}(6)$ and let $\Sigma = \{\alpha_3\}$. Since the Weyl group is a permutation group acting on $\epsilon$-coordinates, the weights which are singular have repeating values. Pick $\mu = (0,1,2\, |\, 3,3,4)$. The permutations of $\mu + \rho$ which are highest weights plus $\rho$ of simple modules in $\mathcal{O}^{\Sigma, J}$ have their first three and last three entries strictly decreasing.  There are only six possible cases, namely
+\[
+(4, 3, 2\, |\, 3, 1, 0) \quad (4, 3, 1\, |\,3, 2, 0) \quad (4, 3, 0\, |\,3, 2, 1)
+\]
+and their counterparts with first three and last three entries swapped. Now these three weights are equivalent to 
+\[
+(4,  2\, |\,  1, 0) \quad (4,  1\, |\, 2, 0) \quad (4,  0\, |\, 2, 1).
+\]
+If we impose that the weight for $\lie{sl}(6)$ has to have entries increasing by $1$ this mapping on weights has inverse as we know that we have to put the number $3$ into two places and there's only one way to do it in each case so that one obtains $\lie{l}$-dominant weight. This directly generalizes to all other $\lie{sl}$ cases as any weight can be brought by translation functors to a weight that starts with $0$, has entries which are nondecreasing and which increase only by $1$.
+\end{example}
 
-\section{Harish-Chandra modules and their globalizations}
-
-
-\noindent Fix a maximal compact subgroup $K_{0}$ of $G_{0}$. Suppose we have
-a linear action of $K_{0}$ on a complex vector space $M$. A vector $m\in M$
-is called $K_{0}-$\emph{finite} if the span of the $K_{0}-$orbit of $m$ is
-finite-dimensional and if the action of $K_{0}$ in this subspace is
-continuous. The linear action of $K_{0}$ in $M$ is called $K_{0}-$\emph{%
-finite }when every vector is $K_{0}-$finite. By definition, \emph{a
-Harish-Chandra module} for $G_{0}$ is a finite length $\mathfrak{g}-$module $%
-M$ equipped with a compatible, $K_{0}-$finite, linear action. One knows that
-an irreducible $K_{0}-$module has finite multiplicity in a Harish-Chandra
-module. For our purposes, it will also be useful to refer to a category of
-\emph{good }$K_{0}-$modules. A \emph{good }$K_{0}-$module will mean a
-locally finite module such that each irreducible $K_{0}-$module has finite
-multiplicity therein.
-
-\smallskip
-
-\noindent A representation of $G_{0}$ in a complete locally convex
-topological vector space $V$ is called \emph{admissible} if $V$ has finite
-length (with respect to closed invariant subspaces) and if each irreducible $%
-K_{0}-$module has finite multiplicity in $V$. When $V$ is admissible, then
-each $K_{0}-$finite vector in $V$ is differentiable and the subspace of $%
-K_{0}-$finite vectors is a Harish-Chandra module. The representation is
-called \emph{smooth} if every vector in $V$ is differentiable. In this case,
-$V$ is a $\mathfrak{g}-$module. For example, one knows that an admissible
-representation in a Banach space is smooth if and only if the representation
-is finite-dimensional.
-
-\smallskip \smallskip
-
-\noindent Given a Harish-Chandra module $M$, \emph{a globalization} $M_{%
-\text{glob}}$ \emph{of }$M$ is an admissible representation of $G_{0}$ whose
-underlying $(\mathfrak{g},K_{0})-$module of $K_{0}-$finite vectors is
-isomorphic to $M$. By now, four canonical globalizations of Harish-Chandra
-modules are known to exist. These are: the smooth globalization of Casselman
-and Wallach \cite{C}, its dual (called: the distribution globalization),
-Schmid's minimal globalization \cite{S} and its dual (the maximal
-globalization). All four globalizations are smooth and functorial. In this
-article we focus on the minimal and maximal globalizations of Schmid.
-
-\smallskip \smallskip
-
-\noindent The \emph{minimal globalization }$M_{\text{min}}$ of a
-Harish-Chandra module $M$ is uniquely characterized by the property that any
-$(\mathfrak{g},K_{0})-$equivariant linear of $M$ onto the $K_{0}-$finite
-vectors of an admissible representation $V$ lifts to a unique, continuous $%
-G_{0}-$equivariant linear map of $M_{\text{min}}$ into $V$. In particular, $%
-M_{\text{min}}$ embeds $G_{0}-$equivariantly and continuously into any
-globalization of $M$. The construction of the minimal globalization shows
-that it's realized on a \emph{DNF space}. This means that its continuous
-dual, in the strong topology, is a nuclear Frech\'{e}t space. One knows that
-$M_{\text{min}}$ consists of analytic vectors and that it surjects onto the
-analytic vectors in a Banach space globalization. Like each of the canonical
-globalizations, the minimal globalization is functorially exact. In
-particular, a closed $G_{0}-$invariant subspace of a minimal globalization
-is the minimal globalization of its underlying Harish-Chandra module and a
-continuous $G_{0}-$equivariant linear map between minimal globalizations has
-closed range.
-
-\smallskip
-
-\noindent To characterize the maximal globalization, we introduce the $%
-K_{0}- $finite dual on the category of Harish-Chandra modules. In
-particular, let $M $ be a Harish-Chandra module. Then the algebraic dual $%
-M^{\ast }$ of $M$ is a $\mathfrak{g}-$module and a $K_{0}-$module, but in
-general not $K_{0}-$finite. We define $M^{\vee }$, \emph{the} $K_{0}-$\emph{%
-finite (or Harish-Chandra) dual to} $M$, to be the subspace of $K_{0}-$%
-finite vectors in $M^{\ast }$. Thus $M^{\vee }$ is a Harish-Chandra module.
-In fact, the functor $M\mapsto M^{\vee }$ is exact on the category of good $%
-K_{0}-$modules. We also have the formula
-\begin{equation*}
-\left( M^{\vee }\right) ^{\vee }\cong M\text{.}
-\end{equation*}%
-The maximal globalization $M_{\text{max}}$ of $M$ can be defined by the
-equation%
-\begin{equation*}
-M_{\text{max}}=\left( \left( M^{\vee }\right) _{\text{min}}\right) ^{\prime }
-\end{equation*}%
-where the last prime denotes the continuous dual equipped with the strong
-topology. In particular, $M_{\text{max}}$ is a globalization of $M$. Observe
-that the maximal globalization is an exact functor, since all functors used
-in the definition are exact. Because of the minimal property of $M_{\text{min%
-}}$, it follows that any globalization of $M$ embeds continuously and
-equivariantly into $M_{\text{max}}$. Note that the continuous dual of a
-maximal globalization is the minimal globalization of the dual
-Harish-Chandra module.
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-The problem is that $L(\lambda)$ is not a $P$-representation.  This is not surprising because the generalized Verma module $M(\lambda)$ was induced from a $\overline{P}$-representation. Let $L(\lambda)=\bigoplus_{\mu\in \widehat{K}_\C} L_\mu$ be the decomposition of $L(\lambda)$ into $K_\C$-types. Each $L_\mu$ is contained in some $S^k(\lie{p}_+,F(\lambda))$ modulo the maximal submodule of $M(\lambda)$ and the algebra $\lie{p}_+$ acts  as a multiplication by a variable, while $\lie{p}_-$ acts basically as a differentiation. To formalize this write $L(\lambda) = \bigoplus_{\mu\in\widehat{K_\C}, k\in\mathbb{N}} L_{\mu,k}$ where $L_{\mu,k}$ is the $K_\C$-type contained in $S^k(\lie{p}_+,F(\lambda))$ and note that $\lie{p}_+ (L_{\mu,k}) \subset L_{\mu,k+1}$.
-
-The \emph{formal globalization} of $L(\lambda)$ is defined as   $\overline{L(\lambda)}=\prod_{\mu\in \widehat{K}_\C} L_\mu$ (product of topological vector spaces). (See e.g \cite{vogan_unitary_2008}.) Since each $K_\C$-type is finite-dimensional and each $S^k(\lie{p}_+,F(\lambda))$ contains only finitely many irreducible $K_\C$-representations, we can write it as
-\[\overline{L(\lambda)} = \prod_{k\in\mathbb{N}} L_k,\] %TODO predelat do lemmatu s dukazem?
-where $L_k = \bigoplus_{\mu\in\widehat{K_c}} L_{\mu,k}$ is a finite sum. The action of $\lie{p}_+$ works as a right shift: $\lie{p}_+(L_k)\subset L_{k+1}$. The $(\lie{g},K)$-module $L(\lambda)$ can be realized as a space of polynomials with values in a finite dimensional $K$-representation $F_\lambda$ and it's formal completion can be thought of as a space of formal power series with values in $F_\lambda$. %TODO posledni vetu predelat do lematu s dukazem?
-
-Now it is easy to see that the formal globalization  is a representation of $P$. The action of $\lie{p}_+$ on $\overline{L(\lambda)}$ integrates without any problems. Let $X$ be an arbitrary element of $\lie{p}_+.$ The exponential $u:=\exp(tX)v$ is defined for $v\in\overline{L(\lambda)}$ as usual by $\sum_{i=0}^\infty \frac{t^i}{i!} X^iv$. This is well defined for $v$ if and only if each component $u_\mu$ is well defined. If $u_\mu$ is contained in some $S^k(\lie{p}_+,F(\lambda))$, then it is a sum of at most $k$ elements of lower or equal geometric weight.
-
-
-
-Let's consider a simple Lie group $G$ with a parabolic subgroup $P$, $\mathfrak{p} = \mathfrak{l}\oplus\mathfrak{n}$ and let $L$ be the Levi part of $P$ and $E\in \mathfrak{l}$ the grading element. Any simple highest weight representation  $\mathbb{V}$ of the pair $(\mathfrak{g},L)$ decomposes into eigenspaces of $\mathrm{ad}(E)$ and the same is true also for $\Lambda^k\mathfrak{n}\otimes\mathbb{V}$, $k\in \mathbb{N}$.
-
-The formal completion of $\mathbb{V}$ is denoted by $\overline{\mathbb{V}}$ and can be defined e.g. as $\overline{\mathbb{V}} = (\mathbb{V}^\vee)^*$, where $\mathbb{V}^\vee$ is the $L$-finite submodule of the dual of $V$ (i.e. a nontwisted duality  in category $\mathcal{O}$). As $L$-representations we have
-
-$$
-\mathbb{V} = \bigoplus_i \mathbb{V}_i, \qquad \overline{\mathbb{V}}  = \prod_i \mathbb{V}_i
-$$
-
-and $\mathbb{V}$ is a $(\mathfrak{g},L)$-submodule of $\overline{\mathbb{V}}$.
-
-\begin{proposition}
- Suppose that the Lie algebra homology and cohomology differentials are disjoint for $\mathbb{V}$, i.e. $\ker \delta \cap \im \delta^* = 0$ and $\ker \delta^* \cap \im \delta = 0$. We state that differentials are still disjoint for the formal completion of $\mathbb{V}$. Moreover, if the homology (or equivalently cohomology) of $\mathbb{V}$ is finite-dimensional, then it is equal to the cohomology of the formal completion.
-\end{proposition}
-
-\begin{proof}
-
-Elements of the formal completion (of an infinite-dimensional module) $\mathbb{W}$ can be written as infinite tuples of elements of $\mathbb{W}$
-$$
-u\in\overline{\mathbb{W}} \leftrightarrow u = (u_i)_{i\in I},
-$$
-where the index set $I$ runs over all eigenvalues of the action of $E$ on $\mathbb{W}$. And a formal completion of $ \Lambda^k \mathfrak{n} \otimes \mathbb{V}$ is  $\Lambda^k \mathfrak{n}  \otimes \overline{\mathbb{V}}$.
-
-For a contradiction, suppose that there is nonzero $u$ in $\ker \delta \cap \im \delta^*$. Without a loss of generality, we can consider $u$ to be an element of the $k$-th chain space. Let's denote this $k$-th chain space  $\Lambda^k\otimes \mathbb{V}$ by $\mathbb{W}$ Since $u$ is nonzero, there must exists $i$ such that $u_i\neq 0$. Both differentials are natural, which means that they commute with restriction from $\overline{\mathbb{W}}$ to $\mathbb{W}$. They are moreover $L$-invariant, which in particular means that they commute with the action of the grading element, which means that they act component-wise on $(u_i)_{i \in I}$. It follows that if we take $\widetilde{u}= (\widetilde{u_j})\in \mathbb{W} \subseteq \overline{\mathbb{W}}$ to be zero  for $j\neq i$ and $\widetilde{u_i} = u_i$, then we have $\delta \widetilde{u} = 0$.  Since $u\in \im \delta^*$, there must exists a $v\in\overline{\mathbb{W}}$ such that $\delta^* v = u$ and we can define in the same way as before a $\widetilde{v}\in\mathbb{W}$
-such that $\delta^* \widetilde{v} = \widetilde{u}$. Thus we see that there is a non-zero element in $\ker \delta \cap \im \delta^*\cap \Lambda^k\otimes \mathbb{W}$. This is a contradiction with the assumption that $\delta$ and $\delta^*$ are disjoint for $\mathbb{V}$.
-
-
-Basically, the same argument proves that the cohomology must stay the same if it is finite-dimensional. From the Hodge theory (which is implied by the disjointness) we know that any element of the cohomology group can be uniquely represented by an alement in $\ker (\delta + \delta^*)$. Let $D=\delta + \delta^*$ and suppose for a contradiction that there is a nonzero element $(u_i)$ in $\ker D \setminus \ker D_{|\mathbb{W}}$, where $\mathbb{W}$ is the $k$-th chain space of $\mathbb{V}$. Pick $i_0$ such that $u_{i_0} \neq 0$ and $i_0$ is bigger than any eigenvalue of $E$ on $\ker D_{|\mathbb{W}}$.\footnote{This is well defined because of the finite-dimensionality of $\ker D_{|\mathbb{W}}$.} Since $D$ is again $L$ invariant we proceed as before and construct $\widetilde{u}\in\mathbb{W}\cap\ker D$. The choice of $i_0$ now leads to the desired contradiction.
-
-\end{proof}
-
-Hodge theory for nilpotent (co)homoloy was invented by Kostant in \cite{kostant_lie_1961}.
+\begin{remark}
+The proof of these equivalences is not entirely satisfactory. The functors implementing the Enright-Shelton equivalences are combinations of derived Zuckermann functors, extension functor $M \to \lie{U(g)} \otimes_{\lie{U(q)}} (M \otimes F \otimes L)$ where $L$ is the one-dimensional module of weight $\rho(\lie{u_q})$ of a certain parabolic subalgebra $\lie{q}$. Determining the effect of these functors on modules of singular character is hard. Independent proof of one version of the Enright-Shelton equivalence was given by \cite{soergel_mathscr_1988} using Beilinson-Bernstein localization. Another independent proof for the $A$ series was given by \cite{bernstein_categorification_1999}. See also \cite{pandzic_bgg_2016}.
+\end{remark}
 
 \section{Cohomology and homology of Lie algebras}
 
-In this section we denote by $\lie{m}$ an arbitrary Lie algebra and by $\rep{V}$ its representation. We will denote the action of $\lie{m}$ on $\rep{V}$ by a dot.
+In this section we denote by $\lie{m}$ an arbitrary Lie algebra and by $\rep{V}$ its representation. We will denote the action of $\lie{m}$ on $\rep{V}$ by a dot. We follow \cite{kostant_lie_1961} and \cite{cap_parabolic_2009}.
 
 The chain spaces of \emph{Lie algebra homology} $C_k(m,\rep{V})$ of the algebra $\lie{m}$ with values in $\rep{V}$ are defined as $\Lambda^k\lie{m}\otimes\rep{V}$. The Lie algebra \emph{homology differential} \[\lhd_\lie{m} : C_{k+1}(\lie{m},\rep{V}) \to C_k(\lie{m},\rep{V})\] is defined by the following formula
 \begin{multline*}
@@ -763,21 +527,30 @@ There is a convenient way to construct pairs of disjoint operators.
 
  If $V$ is infinite-dimensional and $L$ is any closed subspace of finite codimension, then any algebraic complementary subspace to $L$ in $V$ is also a topological complement (\cite{schaefer_topological_1999}). We further impose on $\lhd$ and $\lcd$ that the are continuous with closed image\footnote{We note that for a finite-dimensional vector space $V$ are these topological conditions automatically satisfied for all linear operators.}
 
+The authors of \cite{huang_dirac_2006} proved that if $\rep{V}$ is a unitarizable $(\lie{g},K)$-module and $\lie{u}_+$ is the nilradical of an admissible real Lie algebra, then the Hodge decomposition of $C_\bullet(\lie{u}_+,\rep{V})$ is still valid. 
+
+\subsection{Kostant theorem and Kostant modules}
 
 %\subsection{Hodge decompositions and Kostant's theorem}
 %TODO konecne rozmerny pripad
 
-\begin{definition}
-A real parabolic subalgebra (of some real form of $\lie{g}$, possibly different from $\lie{g}_0$) $\lie{q}_0$ is  \emph{admissible}, if it's complexification $\lie{q}$ is  $\theta$-stable,\footnote{Parabolic subalgebra $\lie{q}$ is $\theta$-stable iff $\lie{q}\cap\overline{\lie{q}}=\lie{l}$ and $\theta \lie{q}=\lie{q}$.} where $\theta$ is the Cartan involution associated to the real form $\lie{g}_0$ and for $\lie{q}=\lie{l}\oplus\lie{u}_+$ it holds that $\lie{l}\subseteq \lie{k}$ and $\lie{p}_+\subseteq\lie{u}_+$.
-\end{definition}
+%\begin{definition}
+%A real parabolic subalgebra (of some real form of $\lie{g}$, possibly different from $\lie{g}_0$) $\lie{q}_0$ is  \emph{admissible}, if it's complexification $\lie{q}$ is  $\theta$-stable,\footnote{Parabolic subalgebra $\lie{q}$ is $\theta$-stable iff $\lie{q}\cap\overline{\lie{q}}=\lie{l}$ and $\theta \lie{q}=\lie{q}$.} where $\theta$ is the Cartan involution associated to the real form $\lie{g}_0$ and for $\lie{q}=\lie{l}\oplus\lie{u}_+$ it holds that $\lie{l}\subseteq \lie{k}$ and $\lie{p}_+\subseteq\lie{u}_+$.
+%\end{definition}
 
-The authors of \cite{huang_dirac_2006} proved that if $\rep{V}$ is a unitarizable $(\lie{g},K)$-module and $\lie{u}_+$ is the nilradical of an admissible real Lie algebra, then the Hodge decomposition of $C_\bullet(\lie{u}_+,\rep{V})$ is still valid. We compute several explicit examples in the next chapter. %TODO pridat odkaz na kapitolu
+\begin{theorem}[\cite{kostant_lie_1961}]
+	Kostant formula
+\end{theorem}
+
+\begin{definition}[\cite{boe_kostant_2009}]
+	Kostant module 
+\end{definition}
 
 The article \cite{boe_kostant_2009} provides classification of simple modules in certain parabolic BGG categories $\mathcal{O}_S$. The classification is given by subdiagrams of the Dynkin diagram. The proof of Theorem \ref{thm:cohomology} is based on an equivalence of categories given in \cite{enright_categories_1987}. This equivalences relate the relevant blocks in $\mathcal{O}_S$ to blocks for a lower rank algebras. In this way the unitarizable highest weight modules correspond to finite-dimensional ones for which the Kostant formula is known. It also follows that the structure of the resolutions is preserved. The Table \ref{tbl:sing}, taken from \cite{boe_kostant_2009}, shows the relevant information. 
 
-Let $J$ denote the set of singular simple roots, i.e. \[J= \{ \alpha \in \roots^0 | (\lambda+\rho,\check{\alpha}) = 0 \}.\] The columns $\alpha$ and $\alpha'$ give the crossed roots in the Dynkin diagrams. Each Kostant module\footnote{These are the modules $M$ in $\mathcal{O}$ for which there's is a combinatorial formula for $H^i(\lie{p}_-,M)$ of certain type. The unitarizable highest weight modules are Kostant modules according to \cite{davidson_differential_1991}. For details see \cite{boe_kostant_2009}.} corresponds to a connected subdiagram of $\mathcal{D}'$ containing $\alpha'$. Each such subdiagram gives a parabolic pair and the Kostant modules correspond to finite-dimensional modules for the semisimple part of the Levi factor of $\mathcal{D}'$.
+Let $J$ denote the set of singular simple roots, i.e. \[J= \{ \alpha \in \sroots | (\lambda+\rho,\check{\alpha}) = 0 \}.\] The columns $\alpha$ and $\alpha'$ give the crossed roots in the Dynkin diagrams. Each Kostant module\footnote{These are the modules $M$ in $\mathcal{O}$ for which there's is a combinatorial formula for $H^i(\lie{p}_-,M)$ of certain type. The unitarizable highest weight modules are Kostant modules according to \cite{davidson_differential_1991}. For details see \cite{boe_kostant_2009}.} corresponds to a connected subdiagram of $\mathcal{D}'$ containing $\alpha'$. Each such subdiagram gives a parabolic pair and the Kostant modules correspond to finite-dimensional modules for the semisimple part of the Levi factor of $\mathcal{D}'$.
 
-\begin{table}[h] 
+\begin{table}[H] 
 %\begin{center}
 \begin{tabular}{cccccc}
 $\mathcal{D}$ &  $\alpha$ & $|J|$ & $\mathcal{D}'$ & $\alpha'$    \\[2pt] \hline 
@@ -799,4 +572,129 @@ $(E_7,E_6)$ & $\a_7$   & 3 ($\{2,5,7\}$) & $\varnothing$  & --   \\[2pt] \hline
 \caption{Data for singular Hermitian symmetric categories}\label{tbl:sing}
 %\end{center}
 \end{table}
+
+
+\section{Harish-Chandra modules and their globalizations}
+
+
+Fix a maximal compact subgroup $K_{0}$ of a real Lie group $G_{0}$. Suppose we have
+a linear action of $K_{0}$ on a complex vector space $M$. A vector $m\in M$
+is called $K_{0}-$\emph{finite} if the span of the $K_{0}-$orbit of $m$ is
+finite-dimensional and if the action of $K_{0}$ in this subspace is
+continuous. The linear action of $K_{0}$ in $M$ is called $K_{0}-$\emph{%
+finite }when every vector is $K_{0}-$finite. By definition, \emph{a
+Harish-Chandra module} for $G_{0}$ is a finite length $\mathfrak{g}-$module $%
+M$ equipped with a compatible, $K_{0}-$finite, linear action. One knows that
+an irreducible $K_{0}-$module has finite multiplicity in a Harish-Chandra
+module. For our purposes, it will also be useful to refer to a category of
+\emph{good }$K_{0}-$modules. A \emph{good }$K_{0}-$module will mean a
+locally finite module such that each irreducible $K_{0}-$module has finite
+multiplicity therein.
+
+ A representation of $G_{0}$ in a complete locally convex
+topological vector space $V$ is called \emph{admissible} if $V$ has finite
+length (with respect to closed invariant subspaces) and if each irreducible $%
+K_{0}-$module has finite multiplicity in $V$. When $V$ is admissible, then
+each $K_{0}-$finite vector in $V$ is differentiable and the subspace of $%
+K_{0}-$finite vectors is a Harish-Chandra module. The representation is
+called \emph{smooth} if every vector in $V$ is differentiable. In this case,
+$V$ is a $\mathfrak{g}-$module. For example, one knows that an admissible
+representation in a Banach space is smooth if and only if the representation
+is finite-dimensional.
+
+Given a Harish-Chandra module $M$, \emph{a globalization} $M_{%
+\text{glob}}$ \emph{of }$M$ is an admissible representation of $G_{0}$ whose
+underlying $(\mathfrak{g},K_{0})-$module of $K_{0}-$finite vectors is
+isomorphic to $M$. By now, four canonical globalizations of Harish-Chandra
+modules are known to exist. These are: the smooth globalization of Casselman
+and Wallach, its dual (called: the distribution globalization),
+Schmid's minimal globalization and its dual (the maximal
+globalization). All four globalizations are smooth and functorial.
+
+
+The \emph{minimal globalization }$M_{\text{min}}$ of a
+Harish-Chandra module $M$ is uniquely characterized by the property that any
+$(\mathfrak{g},K_{0})-$equivariant linear of $M$ onto the $K_{0}-$finite
+vectors of an admissible representation $V$ lifts to a unique, continuous $%
+G_{0}-$equivariant linear map of $M_{\text{min}}$ into $V$. In particular, $%
+M_{\text{min}}$ embeds $G_{0}-$equivariantly and continuously into any
+globalization of $M$. The construction of the minimal globalization shows
+that it's realized on a \emph{DNF space}. This means that its continuous
+dual, in the strong topology, is a nuclear Frech\'{e}t space. One knows that
+$M_{\text{min}}$ consists of analytic vectors and that it surjects onto the
+analytic vectors in a Banach space globalization. Like each of the canonical
+globalizations, the minimal globalization is functorially exact. In
+particular, a closed $G_{0}-$invariant subspace of a minimal globalization
+is the minimal globalization of its underlying Harish-Chandra module and a
+continuous $G_{0}-$equivariant linear map between minimal globalizations has
+closed range.
+
+To characterize the maximal globalization, we introduce the $%
+K_{0}- $finite dual on the category of Harish-Chandra modules. In
+particular, let $M $ be a Harish-Chandra module. Then the algebraic dual $%
+M^{\ast }$ of $M$ is a $\mathfrak{g}-$module and a $K_{0}-$module, but in
+general not $K_{0}-$finite. We define $M^{\vee }$, \emph{the} $K_{0}-$\emph{%
+finite (or Harish-Chandra) dual to} $M$, to be the subspace of $K_{0}-$%
+finite vectors in $M^{\ast }$. Thus $M^{\vee }$ is a Harish-Chandra module.
+In fact, the functor $M\mapsto M^{\vee }$ is exact on the category of good $%
+K_{0}-$modules. We also have the formula
+\begin{equation*}
+\left( M^{\vee }\right) ^{\vee }\cong M\text{.}
+\end{equation*}%
+The maximal globalization $M_{\text{max}}$ of $M$ can be defined by the
+equation%
+\begin{equation*}
+M_{\text{max}}=\left( \left( M^{\vee }\right) _{\text{min}}\right) ^{\prime }
+\end{equation*}%
+where the last prime denotes the continuous dual equipped with the strong
+topology. In particular, $M_{\text{max}}$ is a globalization of $M$. Observe
+that the maximal globalization is an exact functor, since all functors used
+in the definition are exact. Because of the minimal property of $M_{\text{min%
+}}$, it follows that any globalization of $M$ embeds continuously and
+equivariantly into $M_{\text{max}}$. Note that the continuous dual of a
+maximal globalization is the minimal globalization of the dual
+Harish-Chandra module.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Consider the simple quotient $L(\lambda)$ of the parabolic Verma module $M(\lambda)$ induced from the opposite parabolic algebra $\oppar$. It is not a $P$-representation but we would like induce from it a $P$-representation in order to be able to use it in geometrical applications. Let $L(\lambda)=\bigoplus_{\mu\in \widehat{K}_\C} L_\mu$ be the decomposition of $L(\lambda)$ into $K_\C$-types. Each $L_\mu$ is contained in some $S^k(\lie{p}_+,F(\lambda))$ modulo the maximal submodule of $M(\lambda)$ and the algebra $\lie{p}_+$ acts  as a multiplication by a variable, while $\lie{p}_-$ acts basically as a differentiation. To formalize this write $L(\lambda) = \bigoplus_{\mu\in\widehat{K_\C}, k\in\mathbb{N}} L_{\mu,k}$ where $L_{\mu,k}$ is the $K_\C$-type contained in $S^k(\lie{p}_+,F(\lambda))$ and note that $\lie{p}_+ (L_{\mu,k}) \subset L_{\mu,k+1}$.
+
+The \emph{formal globalization} or rather \emph{formal completion} of $L(\lambda)$ is defined as   $\overline{L(\lambda)}=\prod_{\mu\in \widehat{K}_\C} L_\mu$ (product of topological vector spaces). (See e.g \cite{vogan_unitary_2008}.) Since each $K_\C$-type is finite-dimensional and each $S^k(\lie{p}_+,F(\lambda))$ contains only finitely many irreducible $K_\C$-representations, we can write it as
+\[\overline{L(\lambda)} = \prod_{k\in\mathbb{N}} L_k,\] %TODO predelat do lemmatu s dukazem?
+where $L_k = \bigoplus_{\mu\in\widehat{K_c}} L_{\mu,k}$ is a finite sum. The action of $\lie{p}_+$ works as a right shift: $\lie{p}_+(L_k)\subset L_{k+1}$. The $(\lie{g},K)$-module $L(\lambda)$ can be realized as a space of polynomials with values in a finite dimensional $K$-representation $F_\lambda$ and it's formal completion can be thought of as a space of formal power series with values in $F_\lambda$. %TODO posledni vetu predelat do lematu s dukazem?
+
+Now it is easy to see that the formal globalization  is a representation of $P$. The action of $\lie{p}_+$ on $\overline{L(\lambda)}$ integrates without any problems. Let $X$ be an arbitrary element of $\lie{p}_+.$ The exponential $u:=\exp(tX)v$ is defined for $v\in\overline{L(\lambda)}$ as usual by $\sum_{i=0}^\infty \frac{t^i}{i!} X^iv$. This is well defined for $v$ if and only if each component $u_\mu$ is well defined. If $u_\mu$ is contained in some $S^k(\lie{p}_+,F(\lambda))$, then it is a sum of at most $k$ elements of lower or equal geometric weight.
+
+
+
+Let's consider a simple Lie group $G$ with a parabolic subgroup $P$, $\mathfrak{p} = \mathfrak{l}\oplus\mathfrak{n}$ and let $L$ be the Levi part of $P$ and $E\in \mathfrak{l}$ the grading element. Any simple highest weight representation  $\mathbb{V}$ of the pair $(\mathfrak{g},L)$ decomposes into eigenspaces of $\mathrm{ad}(E)$ and the same is true also for $\Lambda^k\mathfrak{n}\otimes\mathbb{V}$, $k\in \mathbb{N}$.
+
+The formal completion of $\mathbb{V}$ is denoted by $\overline{\mathbb{V}}$ and can be defined e.g. as $\overline{\mathbb{V}} = (\mathbb{V}^\vee)^*$, where $\mathbb{V}^\vee$ is the $L$-finite submodule of the dual of $V$ (i.e. a nontwisted duality  in category $\mathcal{O}$). As $L$-representations we have
+
+$$
+\mathbb{V} = \bigoplus_i \mathbb{V}_i, \qquad \overline{\mathbb{V}}  = \prod_i \mathbb{V}_i
+$$
+
+and $\mathbb{V}$ is a $(\mathfrak{g},L)$-submodule of $\overline{\mathbb{V}}$.
+
+\begin{proposition}
+ Suppose that the Lie algebra homology and cohomology differentials are disjoint for $\mathbb{V}$, i.e. $\ker \delta \cap \im \delta^* = 0$ and $\ker \delta^* \cap \im \delta = 0$. We state that differentials are still disjoint for the formal completion of $\mathbb{V}$. Moreover, if the homology (or equivalently cohomology) of $\mathbb{V}$ is finite-dimensional, then it is equal to the cohomology of the formal completion.
+\end{proposition}
+
+\begin{proof}
+
+Elements of the formal completion (of an infinite-dimensional module) $\mathbb{W}$ can be written as infinite tuples of elements of $\mathbb{W}$
+$$
+u\in\overline{\mathbb{W}} \leftrightarrow u = (u_i)_{i\in I},
+$$
+where the index set $I$ runs over all eigenvalues of the action of $E$ on $\mathbb{W}$. And a formal completion of $ \Lambda^k \mathfrak{n} \otimes \mathbb{V}$ is  $\Lambda^k \mathfrak{n}  \otimes \overline{\mathbb{V}}$.
+
+For a contradiction, suppose that there is nonzero $u$ in $\ker \delta \cap \im \delta^*$. Without a loss of generality, we can consider $u$ to be an element of the $k$-th chain space. Let's denote this $k$-th chain space  $\Lambda^k\otimes \mathbb{V}$ by $\mathbb{W}$ Since $u$ is nonzero, there must exists $i$ such that $u_i\neq 0$. Both differentials are natural, which means that they commute with restriction from $\overline{\mathbb{W}}$ to $\mathbb{W}$. They are moreover $L$-invariant, which in particular means that they commute with the action of the grading element, which means that they act component-wise on $(u_i)_{i \in I}$. It follows that if we take $\widetilde{u}= (\widetilde{u_j})\in \mathbb{W} \subseteq \overline{\mathbb{W}}$ to be zero  for $j\neq i$ and $\widetilde{u_i} = u_i$, then we have $\delta \widetilde{u} = 0$.  Since $u\in \im \delta^*$, there must exists a $v\in\overline{\mathbb{W}}$ such that $\delta^* v = u$ and we can define in the same way as before a $\widetilde{v}\in\mathbb{W}$
+such that $\delta^* \widetilde{v} = \widetilde{u}$. Thus we see that there is a non-zero element in $\ker \delta \cap \im \delta^*\cap \Lambda^k\otimes \mathbb{W}$. This is a contradiction with the assumption that $\delta$ and $\delta^*$ are disjoint for $\mathbb{V}$.
+
+
+Basically, the same argument proves that the cohomology must stay the same if it is finite-dimensional. From the Hodge theory (which is implied by the disjointness) we know that any element of the cohomology group can be uniquely represented by an alement in $\ker (\delta + \delta^*)$. Let $D=\delta + \delta^*$ and suppose for a contradiction that there is a nonzero element $(u_i)$ in $\ker D \setminus \ker D_{|\mathbb{W}}$, where $\mathbb{W}$ is the $k$-th chain space of $\mathbb{V}$. Pick $i_0$ such that $u_{i_0} \neq 0$ and $i_0$ is bigger than any eigenvalue of $E$ on $\ker D_{|\mathbb{W}}$.\footnote{This is well defined because of the finite-dimensionality of $\ker D_{|\mathbb{W}}$.} Since $D$ is again $L$ invariant we proceed as before and construct $\widetilde{u}\in\mathbb{W}\cap\ker D$. The choice of $i_0$ now leads to the desired contradiction.
+
+\end{proof}
+
 
