@@ -3,27 +3,27 @@
 
 \section{Real Lie algebras}
 
-The \emph{complexification} of a real reducitve Lie algebra $\lie{g}_0$ is defined as $\lie{g} = \lie{g}_0\otimes_\R \C$. With Lie bracket defined naturally by complex linear extension as follows
+The \emph{complexification} of a real reducitve Lie algebra $\mfrak{g}_0$ is defined as $\mfrak{g} = \mfrak{g}_0\otimes_\R \C$. With Lie bracket defined naturally by complex linear extension as follows
 \[
  [A\otimes z, B\otimes w] = [A,B]\otimes zw.
 \]
-As a real vector space we have isomorphism $\lie{g} \simeq \lie{g}_0 \oplus \imath \lie{g}_0$ defined by $X\otimes (a+\imath b) \mapsto aX \oplus \imath bX$. Writing elements $Z,Z'\in\lie{g}$ as $Z = X + \imath Y$ $Z'=X'+\imath Y'$ we get \[[Z,Z'] = [X,X'] - [Y,Y'] + \imath \left( [X,Y'] + [X',Y]\right).\]
+As a real vector space we have isomorphism $\mfrak{g} \simeq \mfrak{g}_0 \oplus \imath \mfrak{g}_0$ defined by $X\otimes (a+\imath b) \mapsto aX \oplus \imath bX$. Writing elements $Z,Z'\in\mfrak{g}$ as $Z = X + \imath Y$ $Z'=X'+\imath Y'$ we get \[[Z,Z'] = [X,X'] - [Y,Y'] + \imath \left( [X,Y'] + [X',Y]\right).\]
 
-A \emph{real form} of a complex Lie alebra $\lie{g}$ is a real Lie algebra $\lie{g}_0$ such that $\lie{g}$ is the complexification of $\lie{g}_0$. A complex Lie algebra usually has many nonisomorphic real forms. For a complexification $\lie{g}$ of $\lie{g}_0$ we will denote by $\sigma$ the conjugation of $\lie{g}$ with respect to the real form $\lie{g}_0$.
-
-\begin{example}
- The complexification of the classical Lie algebra of trace-free real matrices $\lie{sl}(n,\R)$ is naturally isomorphic to the Lie algebra of trace-free complex matrices $\lie{sl}(n,\C)$. Anoter real form of $\lie{sl}(n,\C)$ is for example the algebra of trace-free skew Hermitian  matrices  $\lie{su}(n)$. %TODO
-\end{example}
-
-An \emph{involution} of a Lie algebra $\lie{g}$ is Lie algebra homomorphism $\lie{g}\to\lie{g}$ which squares to identity. An involution $\theta$ of a real semisimple Lie algebra $\lie{g}_0$ is called \emph{Cartan involution} if the symmetric bilinear form $B_\theta(X,Y) = -B(X,\theta Y)$ is postivive definite. We will denote the complex linear extension of $\theta$ to the complexification of $\lie{g}_0$ by the same symbol and we will still call it the Cartan involution. Any real semisimple Lie algebra has a Cartan involution and it is unique up to inner automorphism.
+A \emph{real form} of a complex Lie alebra $\mfrak{g}$ is a real Lie algebra $\mfrak{g}_0$ such that $\mfrak{g}$ is the complexification of $\mfrak{g}_0$. A complex Lie algebra usually has many nonisomorphic real forms. For a complexification $\mfrak{g}$ of $\mfrak{g}_0$ we will denote by $\sigma$ the conjugation of $\mfrak{g}$ with respect to the real form $\mfrak{g}_0$.
 
 \begin{example}
-  Cartan involution on $\lie{sl}(n,\R)$ is given by negative transpose, i.e. $\theta X = - X^t$. The subalgebra $\lie{k}_0$ is then $\lie{so}(n,\R)$ and the ideal $\lie{p}_0$ is the space of symmetric matrices.
-
- For $\lie{su}(n)$ is a Cartan involution given by a negative conjugate transpose $\theta X = - \overline{X}^t$. The subalgebra $\lie{k}_0$ is the whole $\lie{su}(n)$ and $\lie{p}_0$ is of course empty.
+ The complexification of the classical Lie algebra of trace-free real matrices $\mfrak{sl}(n,\R)$ is naturally isomorphic to the Lie algebra of trace-free complex matrices $\mfrak{sl}(n,\C)$. Anoter real form of $\mfrak{sl}(n,\C)$ is for example the algebra of trace-free skew Hermitian  matrices  $\mfrak{su}(n)$. %TODO
 \end{example}
 
-We can generalize this as follows. Take a matrix Lie algebra, i.e. a subalgebra of $\lie{gl}(n,\C)$, that is closed under transposition and define $\theta X = -X^\dag$. Then
+An \emph{involution} of a Lie algebra $\mfrak{g}$ is Lie algebra homomorphism $\mfrak{g}\to\mfrak{g}$ which squares to identity. An involution $\theta$ of a real semisimple Lie algebra $\mfrak{g}_0$ is called \emph{Cartan involution} if the symmetric bilinear form $B_\theta(X,Y) = -B(X,\theta Y)$ is postivive definite. We will denote the complex linear extension of $\theta$ to the complexification of $\mfrak{g}_0$ by the same symbol and we will still call it the Cartan involution. Any real semisimple Lie algebra has a Cartan involution and it is unique up to inner automorphism.
+
+\begin{example}
+  Cartan involution on $\mfrak{sl}(n,\R)$ is given by negative transpose, i.e. $\theta X = - X^t$. The subalgebra $\mfrak{k}_0$ is then $\mfrak{so}(n,\R)$ and the ideal $\mfrak{p}_0$ is the space of symmetric matrices.
+
+ For $\mfrak{su}(n)$ is a Cartan involution given by a negative conjugate transpose $\theta X = - \overline{X}^t$. The subalgebra $\mfrak{k}_0$ is the whole $\mfrak{su}(n)$ and $\mfrak{p}_0$ is of course empty.
+\end{example}
+
+We can generalize this as follows. Take a matrix Lie algebra, i.e. a subalgebra of $\mfrak{gl}(n,\C)$, that is closed under transposition and define $\theta X = -X^\dag$. Then
  \[
   \theta [X,Y] = -[X,Y]^\dag = - [Y^\dag,X^\dag] = [-X^\dag,-Y^\dag] = [\theta X, \theta Y]
  \]
@@ -44,62 +44,62 @@ We can generalize this as follows. Take a matrix Lie algebra, i.e. a subalgebra 
                 &= \tr (\ad X \circ \ad (X^\dag))  = tr (\ad X (\ad X)^*) \geq 0.
  \end{align*}
 
-In fact, any real semisimple Lie algebra $\lie{g}_0$ is isomorphic to a Lie algebra of real matrices that is closed under transpose and the isomorphism can be chosen in such a way that the Cartan involution of $\lie{g}_0$ is carried to negative transpose (Proposition VI.6.28 of \cite{knapp}).
+In fact, any real semisimple Lie algebra $\mfrak{g}_0$ is isomorphic to a Lie algebra of real matrices that is closed under transpose and the isomorphism can be chosen in such a way that the Cartan involution of $\mfrak{g}_0$ is carried to negative transpose (Proposition VI.6.28 of \cite{knapp}).
 
-A Cartan involution $\theta$ of $\lie{g}_0$ yields an eigenspace decomposition $\lie{g}_0 = \lie{k}_0 \oplus \lie{p}_0$ of $\lie{g}_0$ into $+1$ and $-1$ eigenspaces of $\theta$. Since $\theta$ is a Lie algebra homomorphism, it follows that
+A Cartan involution $\theta$ of $\mfrak{g}_0$ yields an eigenspace decomposition $\mfrak{g}_0 = \mfrak{k}_0 \oplus \mfrak{p}_0$ of $\mfrak{g}_0$ into $+1$ and $-1$ eigenspaces of $\theta$. Since $\theta$ is a Lie algebra homomorphism, it follows that
 \begin{equation}\label{eq:cartan_decomposition_1}
- [\lie{k}_0,\lie{k}_0] \subseteq \lie{k}_0, \quad[\lie{k}_0,\lie{p}_0] \subseteq \lie{p}_0, \quad [\lie{p}_0,\lie{p}_0] \subseteq \lie{k}_0.
+ [\mfrak{k}_0,\mfrak{k}_0] \subseteq \mfrak{k}_0, \quad[\mfrak{k}_0,\mfrak{p}_0] \subseteq \mfrak{p}_0, \quad [\mfrak{p}_0,\mfrak{p}_0] \subseteq \mfrak{k}_0.
 \end{equation}
-From these relations it is easy to derive that $\lie{k}_0$ and $\lie{p}_0$ are orthogonal with respect to $B_\theta$ and $B$. If $X$ is in $\lie{k}_0$ and $Y$ is in $\lie{p}_0$, then $\ad X \circ \ad Y $ sends $\lie{k}_0$ to $\lie{p}_0$ and $\lie{p}_0$ to $\lie{k}_0$; i.e. as a matrix in block form subordinated to the decomposition $\lie{g}_0 = \lie{k}_0 \oplus \lie{p}_0$ it has the form $\begin{smatrix} 0 & * \\ * & 0\end{smatrix}$. Thus it has trace $0$ and $B(X,Y) = 0$ and since $\theta Y = - Y$ also $B_\theta (X,Y) = 0$. Because $B_\theta$ is positive definite, the eigenspacese have the property that
+From these relations it is easy to derive that $\mfrak{k}_0$ and $\mfrak{p}_0$ are orthogonal with respect to $B_\theta$ and $B$. If $X$ is in $\mfrak{k}_0$ and $Y$ is in $\mfrak{p}_0$, then $\ad X \circ \ad Y $ sends $\mfrak{k}_0$ to $\mfrak{p}_0$ and $\mfrak{p}_0$ to $\mfrak{k}_0$; i.e. as a matrix in block form subordinated to the decomposition $\mfrak{g}_0 = \mfrak{k}_0 \oplus \mfrak{p}_0$ it has the form $\begin{smatrix} 0 & * \\ * & 0\end{smatrix}$. Thus it has trace $0$ and $B(X,Y) = 0$ and since $\theta Y = - Y$ also $B_\theta (X,Y) = 0$. Because $B_\theta$ is positive definite, the eigenspacese have the property that
 \begin{equation}\label{eq:cartan_decomposition_2}
- B \text{ is } \begin{cases} \text{negative definite on } \lie{k}_0 \\ \text{positive definite on } \lie{p}_0. \end{cases}
+ B \text{ is } \begin{cases} \text{negative definite on } \mfrak{k}_0 \\ \text{positive definite on } \mfrak{p}_0. \end{cases}
 \end{equation}
 
-A decomposition of $\lie{g}_0 = \lie{k}_0 \oplus \lie{p}_0$ that satisfies \eqref{eq:cartan_decomposition_1} and \eqref{eq:cartan_decomposition_2} is called \emph{Cartan decomposition} of $\lie{g}_0$. Conversely any Cartan decomposition defines a Cartan involution by
+A decomposition of $\mfrak{g}_0 = \mfrak{k}_0 \oplus \mfrak{p}_0$ that satisfies \eqref{eq:cartan_decomposition_1} and \eqref{eq:cartan_decomposition_2} is called \emph{Cartan decomposition} of $\mfrak{g}_0$. Conversely any Cartan decomposition defines a Cartan involution by
 \[
 \theta =
  \begin{cases}
-  + \Id \text{ on } \lie{k}_0 \\
-  - \Id \text{ on } \lie{p}_0
+  + \Id \text{ on } \mfrak{k}_0 \\
+  - \Id \text{ on } \mfrak{p}_0
  \end{cases}
 \]
 and we see that Cartan involutions are in bijective correspondence with Cartan decompositions.
 
 Cartan involutions and decompositions can be even pushed to the Lie group level.
 \begin{theorem}[Theorem VI.6.31 of \cite{knapp}]
- Let $G$ be a semisimple Lie group, let $\theta$ be a Cartan involution of its Lie algebra $\lie{g}_0$, let $\lie{g}_0 = lie{k}_0 \oplus \lie{p}_0$ be the corresponding Catan decomposition, and let $K$ be the analytic subgroup of $G$ with Lie algebra $\lie{k}_0$. Then
+ Let $G$ be a semisimple Lie group, let $\theta$ be a Cartan involution of its Lie algebra $\mfrak{g}_0$, let $\mfrak{g}_0 = lie{k}_0 \oplus \mfrak{p}_0$ be the corresponding Catan decomposition, and let $K$ be the analytic subgroup of $G$ with Lie algebra $\mfrak{k}_0$. Then
  \begin{enumerate}
   \item there exists a Lie group automorphism $\Theta$ of $G$ with differential $\theta$, and $\Theta^2=\Id$
   \item the subgroup of $G$ fixed by $\Theta$ is $K$
-  \item the mapping $K\times \lie{p}_0 \to G$ given by $(k,X)\mapsto k \exp{X}$ is a diffeomorphism onto
+  \item the mapping $K\times \mfrak{p}_0 \to G$ given by $(k,X)\mapsto k \exp{X}$ is a diffeomorphism onto
   \item $K$ is closed and contains the center $Z$ of $G$
   \item $K$ is compact if and only if $Z$ is finite in which case it is a maximal compact subgroup of $G$.
  \end{enumerate}
 \end{theorem}
 
-This theorem justifies the following definition. We will call a real form $\lie{g}_0$ of $\lie{g}$ \emph{compact} if $\lie{g}_0 = \lie{k}_0$, i.e. if the Killing form $B$ is negative definite.
+This theorem justifies the following definition. We will call a real form $\mfrak{g}_0$ of $\mfrak{g}$ \emph{compact} if $\mfrak{g}_0 = \mfrak{k}_0$, i.e. if the Killing form $B$ is negative definite.
 
-Take a Cartan decomposition $\lie{g}_0 = \lie{k}_0 \oplus \lie{p}_0$ and consider $\lie{g}_0$ as a subset of its complexification $\lie{g}$. Inspecting the signature of $B_\theta$ we easily see that $\lie{k}_0\oplus \imath \lie{p}_0$ is a compact form, say $\lie{u}_0$, of $\lie{g}$. Denote by $\sigma$ the conjugation of $\lie{g}$ with respect to the real form $\lie{g}_0$ and let $\tau$ denote the conjugation with respect to $\lie{u}_0$. Both $\sigma$ and $\tau$ are either $\Id$ or $-\Id$ on $\lie{k}_0, \imath \lie{k}_0, \lie{p}_0, \imath \lie{p}_0$. This immediately implies that the two involutions commute $\sigma \circ \tau = \tau \circ \sigma$. In particular $\tau (\lie{g}_0) \subseteq \lie{g}_0$ and the restriction of $\tau$ to $\lie{g}_0$ is the Cartan involution $\theta$ corresponding to the Cartan decomposition $\lie{g}_0=\lie{k}_0 \oplus \lie{p}_0$.
+Take a Cartan decomposition $\mfrak{g}_0 = \mfrak{k}_0 \oplus \mfrak{p}_0$ and consider $\mfrak{g}_0$ as a subset of its complexification $\mfrak{g}$. Inspecting the signature of $B_\theta$ we easily see that $\mfrak{k}_0\oplus \imath \mfrak{p}_0$ is a compact form, say $\mfrak{u}_0$, of $\mfrak{g}$. Denote by $\sigma$ the conjugation of $\mfrak{g}$ with respect to the real form $\mfrak{g}_0$ and let $\tau$ denote the conjugation with respect to $\mfrak{u}_0$. Both $\sigma$ and $\tau$ are either $\Id$ or $-\Id$ on $\mfrak{k}_0, \imath \mfrak{k}_0, \mfrak{p}_0, \imath \mfrak{p}_0$. This immediately implies that the two involutions commute $\sigma \circ \tau = \tau \circ \sigma$. In particular $\tau (\mfrak{g}_0) \subseteq \mfrak{g}_0$ and the restriction of $\tau$ to $\mfrak{g}_0$ is the Cartan involution $\theta$ corresponding to the Cartan decomposition $\mfrak{g}_0=\mfrak{k}_0 \oplus \mfrak{p}_0$.
 
-Conversely, given a compact form $\lie{u}_0$ of a complexification $\lie{g}$ of $\lie{g}_0$ such that the corresponding conjugations $\tau$ and $\sigma$ commute, we get a Cartan involution for $\lie{g}_0$ by restriction of the involution $\tau$ that corresponds to the compact form $\lie{u}_0$. Indeed, since $\lie{g}_0 \subseteq \lie{g} = \lie{u}_0 \oplus \imath \lie{u}_0$, we get for any $X+\imath Y\in\lie{g}_0$
+Conversely, given a compact form $\mfrak{u}_0$ of a complexification $\mfrak{g}$ of $\mfrak{g}_0$ such that the corresponding conjugations $\tau$ and $\sigma$ commute, we get a Cartan involution for $\mfrak{g}_0$ by restriction of the involution $\tau$ that corresponds to the compact form $\mfrak{u}_0$. Indeed, since $\mfrak{g}_0 \subseteq \mfrak{g} = \mfrak{u}_0 \oplus \imath \mfrak{u}_0$, we get for any $X+\imath Y\in\mfrak{g}_0$
 \[
  B_\theta (X+\imath Y,X+\imath Y) = -B(X+\imath Y,X-\imath Y) = -B(X,X) - B(Y,Y),
 \]
-which is positive definite since $X,Y$ are elements from the compact Lie algebra $\lie{u}_0$.
+which is positive definite since $X,Y$ are elements from the compact Lie algebra $\mfrak{u}_0$.
 
-A semisimple Lie algebra has up to inner isomorphism only one compact real form and it can be even shown that the compact form can be chosen in such a way that the corresponding conjugation $\tau$ commutes with any apriori chosen involution $\sigma$ of $\lie{g}$. This is the core of the proof of existence of Cartan involution for arbitrary real semisimple Lie algebra $\lie{g}_0$.
+A semisimple Lie algebra has up to inner isomorphism only one compact real form and it can be even shown that the compact form can be chosen in such a way that the corresponding conjugation $\tau$ commutes with any apriori chosen involution $\sigma$ of $\mfrak{g}$. This is the core of the proof of existence of Cartan involution for arbitrary real semisimple Lie algebra $\mfrak{g}_0$.
 
-To summarize, if $\lie{g}_0 = \lie{k}_0 \oplus \lie{p}_0$ is a Cartan decomposition of $\lie{g}_0$, then $\lie{k}_0 \oplus \imath \lie{p}_0$ is a compact  real form of the complexification $\lie{g}$ of $\lie{g}_0$. Conversely, if $\lie{k}_0$ and $\lie{p}_0$ are the $+1$ and $-1$ eigenspaces of an involution $\sigma$ of $\lie{g}$ then $\sigma$ is Cartan involution if and only if the real form $\lie{k}_0 \oplus \imath \lie{p}_0$  is compact.
+To summarize, if $\mfrak{g}_0 = \mfrak{k}_0 \oplus \mfrak{p}_0$ is a Cartan decomposition of $\mfrak{g}_0$, then $\mfrak{k}_0 \oplus \imath \mfrak{p}_0$ is a compact  real form of the complexification $\mfrak{g}$ of $\mfrak{g}_0$. Conversely, if $\mfrak{k}_0$ and $\mfrak{p}_0$ are the $+1$ and $-1$ eigenspaces of an involution $\sigma$ of $\mfrak{g}$ then $\sigma$ is Cartan involution if and only if the real form $\mfrak{k}_0 \oplus \imath \mfrak{p}_0$  is compact.
 
 In the following we will use this simple lemma.
 \begin{lemma}\label{lem:theta_adjoint}
- If $\lie{g}_0$ is a real semisimple Lie algebra and $\theta$ is a Cartan involution, then the adjoint operator to $\ad X$ with respect to $B_\theta$ is $-\ad \theta X$, i.e.
+ If $\mfrak{g}_0$ is a real semisimple Lie algebra and $\theta$ is a Cartan involution, then the adjoint operator to $\ad X$ with respect to $B_\theta$ is $-\ad \theta X$, i.e.
  \begin{equation*}
-  (\ad X)^* = -\ad \theta X, \quad \forall X\in\lie{g}_0
+  (\ad X)^* = -\ad \theta X, \quad \forall X\in\mfrak{g}_0
  \end{equation*}
 \end{lemma}
 \begin{proof}
-  We have for all $Y,Z\in\lie{g}$
+  We have for all $Y,Z\in\mfrak{g}$
   \begin{align*}
   B_\theta((\ad X)Y,Z) &= -B([X,Y],\theta Z) = B(Y,[X,\theta Z]) \\
                        &= B(Y,[\theta^2 X, \theta Z]) = B(Y,\theta [\theta X, Z]) \\
@@ -107,38 +107,38 @@ In the following we will use this simple lemma.
   \end{align*}
 \end{proof}
 
-In addition to compact form, there is always another real form (also unique up to conjugation) of a complex semisimple Lie algera $\lie{g}$. Let $\lie{h}_0$ be a Cartan subalgebra of $\lie{g}$ and consider its complexification $\lie{h}$ which is (by definition) a Cartan subalgebra of $\lie{g}$. We call a real Lie algebra $\lie{g}_0$ a \emph{split form} of $\lie{g}$ if the restrictions of elements of $\lie{h}^*$ to $\lie{h}_0$ are real valued.
+In addition to compact form, there is always another real form (also unique up to conjugation) of a complex semisimple Lie algera $\mfrak{g}$. Let $\mfrak{h}_0$ be a Cartan subalgebra of $\mfrak{g}$ and consider its complexification $\mfrak{h}$ which is (by definition) a Cartan subalgebra of $\mfrak{g}$. We call a real Lie algebra $\mfrak{g}_0$ a \emph{split form} of $\mfrak{g}$ if the restrictions of elements of $\mfrak{h}^*$ to $\mfrak{h}_0$ are real valued.
 
-To construct a split real form we can just take a suitable basis of $\lie{g}$ and its real span. In details, take a complex Lie algebra $\lie{g}$ and its Cartan subalgebra $\lie{h}$ and define $\lie{h}_0$ as the subset of $\lie{h}$ on which all the roots take only real values. There is always a choice (see Theorem VI.6.6 of \cite{knapp_advanced}) of root vectors $X_\alpha \in \lie{g}_\alpha$ such that $[X_\alpha, X_{-\alpha}] = H_\alpha$ and
+To construct a split real form we can just take a suitable basis of $\mfrak{g}$ and its real span. In details, take a complex Lie algebra $\mfrak{g}$ and its Cartan subalgebra $\mfrak{h}$ and define $\mfrak{h}_0$ as the subset of $\mfrak{h}$ on which all the roots take only real values. There is always a choice (see Theorem VI.6.6 of \cite{knapp_advanced}) of root vectors $X_\alpha \in \mfrak{g}_\alpha$ such that $[X_\alpha, X_{-\alpha}] = H_\alpha$ and
 \begin{gather*}
 \beta \neq -\alpha \,\&\, \alpha + \beta \notin \roots \Longrightarrow [X_\alpha,X_\beta]=0 \\
  \alpha + \beta \in\roots \Longrightarrow [X_\alpha, X_\beta] = N_{\alpha,\beta}X_{\alpha+\beta},
 \end{gather*}
-where $N_{\alpha,\beta}\in\R$ and $N_{\alpha,\beta} = -N_{-\alpha,-\beta}$. Now the split form of $\lie{g}$ is obtained as
+where $N_{\alpha,\beta}\in\R$ and $N_{\alpha,\beta} = -N_{-\alpha,-\beta}$. Now the split form of $\mfrak{g}$ is obtained as
 \[
- \lie{g}_\text{split} = \lie{h}_0 \oplus \bigoplus_{\alpha \in\roots} \R X_\alpha
+ \mfrak{g}_\text{split} = \mfrak{h}_0 \oplus \bigoplus_{\alpha \in\roots} \R X_\alpha
 \]
-and a compact form of $\lie{g}$ can be then given as
+and a compact form of $\mfrak{g}$ can be then given as
 \[
- \lie{k}_0 = \imath \lie{h}_0 \oplus \bigoplus_{\alpha\in\roots^+} \R (X_\alpha - X_{-\alpha}) \oplus \imath \R (X_\alpha + X_{-\alpha}).
+ \mfrak{k}_0 = \imath \mfrak{h}_0 \oplus \bigoplus_{\alpha\in\roots^+} \R (X_\alpha - X_{-\alpha}) \oplus \imath \R (X_\alpha + X_{-\alpha}).
 \]
 
-Let $\lie{g}_0$ be a real semisimple Lie algebra and let $\theta$ be its Cartan involution. A Cartan subalgebra $\lie{h}_0$ of $\lie{g}_0$ is called \emph{$\theta$-stable} if $\theta(\lie{h}_0)=\lie{h}_0$. In such a case we have $\lie{h}_0= (\lie{h}_0\cap\lie{k}_0) \oplus (\lie{h}_0\cap\lie{p}_0$, where $\lie{g}_0 = \lie{k}_0\oplus\lie{p}_0$ is the Cartan decomposition. We call the dimension of $\lie{h}_0\cap\lie{k}_0$ the \emph{compact dimension} of a $\theta$-stable  Cartan subalgebra $\lie{h}_0$ and similarly the dimension of $\lie{h}_0\cap\lie{p}_0$ is called the \emph{noncompact dimension} of $\lie{h}_0$. A $\theta$-stable Cartan subalgebra $\lie{h}_0 \leq \lie{g}_0$ is called \emph{maximally compact} or \emph{maximally noncompact} if and only if its compact (respectively noncompact) dimension is maximal possible.
+Let $\mfrak{g}_0$ be a real semisimple Lie algebra and let $\theta$ be its Cartan involution. A Cartan subalgebra $\mfrak{h}_0$ of $\mfrak{g}_0$ is called \emph{$\theta$-stable} if $\theta(\mfrak{h}_0)=\mfrak{h}_0$. In such a case we have $\mfrak{h}_0= (\mfrak{h}_0\cap\mfrak{k}_0) \oplus (\mfrak{h}_0\cap\mfrak{p}_0$, where $\mfrak{g}_0 = \mfrak{k}_0\oplus\mfrak{p}_0$ is the Cartan decomposition. We call the dimension of $\mfrak{h}_0\cap\mfrak{k}_0$ the \emph{compact dimension} of a $\theta$-stable  Cartan subalgebra $\mfrak{h}_0$ and similarly the dimension of $\mfrak{h}_0\cap\mfrak{p}_0$ is called the \emph{noncompact dimension} of $\mfrak{h}_0$. A $\theta$-stable Cartan subalgebra $\mfrak{h}_0 \leq \mfrak{g}_0$ is called \emph{maximally compact} or \emph{maximally noncompact} if and only if its compact (respectively noncompact) dimension is maximal possible.
 
 %TODO theta stabilita, komplexni konjugace a akce thety (viz Vogan, mozna Knapp)
 
 %\subsection{Iwasawa decomposition}
-In contrast to the complex case, Cartan subalgebras of real Lie algebras are not unique up to conjugation. Up to conjugation by inner automorphism, there is a finite number of Cartan subalgebras and any Cartan subalgebra is conjugated via an inner automorphism to a $\theta$-stable Cartan subalgebra. Moreover there is up to conjugation by an element of $K$ only one maximally compact (or maximally noncompact) $\theta$-stable Cartan subalgebra of $\lie{g}_0$.
+In contrast to the complex case, Cartan subalgebras of real Lie algebras are not unique up to conjugation. Up to conjugation by inner automorphism, there is a finite number of Cartan subalgebras and any Cartan subalgebra is conjugated via an inner automorphism to a $\theta$-stable Cartan subalgebra. Moreover there is up to conjugation by an element of $K$ only one maximally compact (or maximally noncompact) $\theta$-stable Cartan subalgebra of $\mfrak{g}_0$.
 
-Let $\lie{g}$ be a complexification of $\lie{g}_0$ and let $\lie{h}$ be a complexification of a $\theta$-stable maximally noncompact Cartan subalgebra $\lie{h}_0$ of $\lie{g}_0$. Let $\sigma$ be a complex conjugation of $\lie{g}$ with respect to the real form $\lie{g}_0$. For $\alpha\in\roots$ we define $\sigma^* \alpha$ by $(\sigma^* \alpha) (H) = \overline{\alpha(\sigma H)}$ for all $H\in\lie{h}$. Since $\sigma$ is conjugate linear, $\sigma^*\alpha$ is again a complex linear form on $\lie{h}$ and identifying $\Hom_\C(\lie{h},\C)$ with $\Hom_\R(\lie{h}_0,\C)$, the map $\sigma^*$ coincides with complex conjugation. In fact, $\sigma^*$ is an involutive automorphism of the root system $\roots(\lie{g},\lie{h})$. A root $\alpha \in \roots(\lie{g},\lie{h})$ is called \emph{compact root} if $\sigma^*\alpha = -\alpha$. The set of compact roots is denoted by $\roots_c$.
+Let $\mfrak{g}$ be a complexification of $\mfrak{g}_0$ and let $\mfrak{h}$ be a complexification of a $\theta$-stable maximally noncompact Cartan subalgebra $\mfrak{h}_0$ of $\mfrak{g}_0$. Let $\sigma$ be a complex conjugation of $\mfrak{g}$ with respect to the real form $\mfrak{g}_0$. For $\alpha\in\roots$ we define $\sigma^* \alpha$ by $(\sigma^* \alpha) (H) = \overline{\alpha(\sigma H)}$ for all $H\in\mfrak{h}$. Since $\sigma$ is conjugate linear, $\sigma^*\alpha$ is again a complex linear form on $\mfrak{h}$ and identifying $\Hom_\C(\mfrak{h},\C)$ with $\Hom_\R(\mfrak{h}_0,\C)$, the map $\sigma^*$ coincides with complex conjugation. In fact, $\sigma^*$ is an involutive automorphism of the root system $\roots(\mfrak{g},\mfrak{h})$. A root $\alpha \in \roots(\mfrak{g},\mfrak{h})$ is called \emph{compact root} if $\sigma^*\alpha = -\alpha$. The set of compact roots is denoted by $\roots_c$.
 
 \begin{proposition}[Proposition 2.3.8 of \cite{cap_parabolic_2009}]
- The set of compact roots is given by $\roots_c = \{ \alpha \in \roots \,:\,\alpha|\lie{a} = 0 \}$. It is an abstract root system on the Euclidean subspace of $\imath \lie{t}\oplus \lie{a}$ spanned by its elements. For $\alpha\in\roots_c$, the root space $\lie{g}_\alpha$ is contained in $\lie{k}\leq \lie{g}$.
+ The set of compact roots is given by $\roots_c = \{ \alpha \in \roots \,:\,\alpha|\mfrak{a} = 0 \}$. It is an abstract root system on the Euclidean subspace of $\imath \mfrak{t}\oplus \mfrak{a}$ spanned by its elements. For $\alpha\in\roots_c$, the root space $\mfrak{g}_\alpha$ is contained in $\mfrak{k}\leq \mfrak{g}$.
 \end{proposition}
 
 %\subsection{Satake diagrams}
 
-Choose a set of positive roots $\roots^+$ such that $\sigma^* \alpha \in \roots^+$ for all $\alpha\in\roots^+\setminus\roots_c$. One way to obtain such a system of positive roots is to choose ordering of $\roots$ by choosing a basis $\{H_1,\ldots, H_p\}$ of $\lie{a}$ and extending it to a basis $\{H_1,\ldots,H_r\}$ of $\imath\lie{t}\oplus\lie{a}$. By definition $\alpha\in\roots^+$ if and only if there is an index $j$ such that $\alpha(H_j) > 0$ and $\alpha(H_i) = 0 $ for all $i<j$. By definition $\alpha(H_i)\neq 0$ for some $i\leq p$ for $\alpha \in \roots^+\setminus \roots_c$ and since all $\alpha(H_j)$ are real, $\sigma H_i = H_i$ for $i\leq p$ and $\sigma(H_i) = -H_i$ for $i>p$.
+Choose a set of positive roots $\roots^+$ such that $\sigma^* \alpha \in \roots^+$ for all $\alpha\in\roots^+\setminus\roots_c$. One way to obtain such a system of positive roots is to choose ordering of $\roots$ by choosing a basis $\{H_1,\ldots, H_p\}$ of $\mfrak{a}$ and extending it to a basis $\{H_1,\ldots,H_r\}$ of $\imath\mfrak{t}\oplus\mfrak{a}$. By definition $\alpha\in\roots^+$ if and only if there is an index $j$ such that $\alpha(H_j) > 0$ and $\alpha(H_i) = 0 $ for all $i<j$. By definition $\alpha(H_i)\neq 0$ for some $i\leq p$ for $\alpha \in \roots^+\setminus \roots_c$ and since all $\alpha(H_j)$ are real, $\sigma H_i = H_i$ for $i\leq p$ and $\sigma(H_i) = -H_i$ for $i>p$.
 
 Let $\sroots$ be the set of simple roots of $\roots^+$ and put $\sroots_c = \sroots \cap \roots_c$. Then $\sroots_c$ are a system of simple roots for $\roots_c$ and we order our system of simple roots $\sroots$ in such a way that elements of $\sroots_c$ come last. The following lemma is due to Ichir{o} Satake.
 \begin{lemma}
@@ -148,17 +148,17 @@ Let $\sroots$ be the set of simple roots of $\roots^+$ and put $\sroots_c = \sro
 \end{enumerate}
 \end{lemma}
 
-The \emph{Satake diagram} of the real Lie algebra $\lie{g}_0$ is defined as follows. In the Dynkin diagram associated to the simple system $\sroots$, represent compact roots by a black dot and roots in $\sroots\setminus\sroots_c$ by a white dot. Moreover, for any $\alpha\in\sroots\setminus\sroots_c$ such that $\sigma^*\alpha\neq\alpha$, connect $\alpha$ by an arrow  to the unique simple root $\alpha'\in\sroots\setminus\sroots_c$ such that $\sigma^*\alpha -\alpha'$ is a linear combination of compact roots.
+The \emph{Satake diagram} of the real Lie algebra $\mfrak{g}_0$ is defined as follows. In the Dynkin diagram associated to the simple system $\sroots$, represent compact roots by a black dot and roots in $\sroots\setminus\sroots_c$ by a white dot. Moreover, for any $\alpha\in\sroots\setminus\sroots_c$ such that $\sigma^*\alpha\neq\alpha$, connect $\alpha$ by an arrow  to the unique simple root $\alpha'\in\sroots\setminus\sroots_c$ such that $\sigma^*\alpha -\alpha'$ is a linear combination of compact roots.
 
 
 
 %\subsection{Parabolic subalgebras of real Lie algebras}
 
 \begin{definition}[page 274, \cite{knapp_cohomological_1995}]
- Let $\lie{q}$ be a parabolic subalgebra of the complexification of a real semisimple Lie algebra $\lie{g}_0$ and let $\theta$ be the corresponding Cartan involution. We will call $\lie{q}$ to be $\theta$-stable if $\theta \lie{q} = \lie{q}$. It follows then that also the opposite parabolic subalgebra $\lie{q}^-$ is $\theta$-stable and that the Levi part is $\theta$-stable $\theta \lie{l} = \lie{l}$.
+ Let $\mfrak{q}$ be a parabolic subalgebra of the complexification of a real semisimple Lie algebra $\mfrak{g}_0$ and let $\theta$ be the corresponding Cartan involution. We will call $\mfrak{q}$ to be $\theta$-stable if $\theta \mfrak{q} = \mfrak{q}$. It follows then that also the opposite parabolic subalgebra $\mfrak{q}^-$ is $\theta$-stable and that the Levi part is $\theta$-stable $\theta \mfrak{l} = \mfrak{l}$.
 \end{definition}
 
-For a real Lie algebra $\lie{g}_0$ we define $\lie{q}_0$ to be a parabolic subalgebra if and only if the complexification $\lie{q}$ is a parabolic subalgebra of the complexification $\lie{g}$. Similarly to the complex case, there is an equivalence between parabolic subalgebra $\lie{g}$ and gradings on $\lie{g}$ also in the real category. The standard parabolic subalgebras are given by crossed roots in Satake diagrams, where we are allowed to cross only white roots (i.e. those that are not in $\roots_c$.
+For a real Lie algebra $\mfrak{g}_0$ we define $\mfrak{q}_0$ to be a parabolic subalgebra if and only if the complexification $\mfrak{q}$ is a parabolic subalgebra of the complexification $\mfrak{g}$. Similarly to the complex case, there is an equivalence between parabolic subalgebra $\mfrak{g}$ and gradings on $\mfrak{g}$ also in the real category. The standard parabolic subalgebras are given by crossed roots in Satake diagrams, where we are allowed to cross only white roots (i.e. those that are not in $\roots_c$.
 
 %TODO rozepsat, real Iwasawa?s
 
@@ -172,11 +172,11 @@ Let's look at some specific examples of real Lie algebas and groups.
 
 \begin{equation*}\label{eq:algebras_definition}
 \begin{aligned}
- \lie{sl}(n,\C) &= \{ X \in \lie{gl}(n,\C) \,|\, \tr X = 0 \} & \text{for } n \geq 1\\
- \lie{so}(m,n)  &= \{ X\in \lie{gl}(m+n,\R) \,|\, X^\dag I_{m,n}+I_{m,n}X = 0 \} & \text{for } m+n\geq 3\\
- \lie{su}(m,n)  &= \{ X \in \lie{sl}(m+n,\C)  \,|\, X^\dag I_{m,n}+I_{m,n}X = 0 \} & \text{for } m+n \geq 2\\
- \lie{so}^\dag(2n) &= \{ X \in \lie{su}(n,n) \,|\, X^t I_{n,n}J + I_{n,n} JX = 0 \} & \text{for } n \geq 2\\
- \lie{sp}(n,\R) &= \{ X \in \lie{gl}(2n,\R) \,|\, X^tJ + JX = 0 \} & \text{for } n\geq 1
+ \mfrak{sl}(n,\C) &= \{ X \in \mfrak{gl}(n,\C) \,|\, \tr X = 0 \} & \text{for } n \geq 1\\
+ \mfrak{so}(m,n)  &= \{ X\in \mfrak{gl}(m+n,\R) \,|\, X^\dag I_{m,n}+I_{m,n}X = 0 \} & \text{for } m+n\geq 3\\
+ \mfrak{su}(m,n)  &= \{ X \in \mfrak{sl}(m+n,\C)  \,|\, X^\dag I_{m,n}+I_{m,n}X = 0 \} & \text{for } m+n \geq 2\\
+ \mfrak{so}^\dag(2n) &= \{ X \in \mfrak{su}(n,n) \,|\, X^t I_{n,n}J + I_{n,n} JX = 0 \} & \text{for } n \geq 2\\
+ \mfrak{sp}(n,\R) &= \{ X \in \mfrak{gl}(2n,\R) \,|\, X^tJ + JX = 0 \} & \text{for } n\geq 1
 \end{aligned}
 \end{equation*}
 
@@ -191,7 +191,7 @@ Let's look at some specific examples of real Lie algebas and groups.
 \end{equation*}
 
 
-The Satake diagram of $\lie{su}(p,q)$ for $p+q = n+1$, $1 \leq p \leq \frac{n-1}{2}$.
+The Satake diagram of $\mfrak{su}(p,q)$ for $p+q = n+1$, $1 \leq p \leq \frac{n-1}{2}$.
 
 \begin{center}
 \resizebox{\textwidth}{!}{
@@ -243,7 +243,7 @@ The Satake diagram of $\lie{su}(p,q)$ for $p+q = n+1$, $1 \leq p \leq \frac{n-1}
 % 	\draw [<->] (a1) to (an); \draw [<->]  (a2) to (am);\draw [<->] (ap) to (ar); \draw [dotted, bend left] (p1) to (p2);
 % \end{tikzpicture}\end{center}
 
-The Satake diagram of $\lie{su}(p,p)$ for $n=2p+1$, $p\leq 2$.
+The Satake diagram of $\mfrak{su}(p,p)$ for $n=2p+1$, $p\leq 2$.
 
 % \begin{center}\begin{tikzpicture}
 %  	\node[nroot] (a1)                         [label=above:$\alpha_1$] {};
@@ -285,7 +285,7 @@ The Satake diagram of $\lie{su}(p,p)$ for $n=2p+1$, $p\leq 2$.
      \end{tikzpicture}
 \end{center}
 
-The Satake diagram for $\lie{so}(2,2n-1)$.
+The Satake diagram for $\mfrak{so}(2,2n-1)$.
 
 \begin{center}
      \begin{tikzpicture}[decoration={markings,mark=at position .6 with {\arrow[line width=2pt]{>}}}] % SO(2n-1,\R) ~ B_n relative
@@ -300,7 +300,7 @@ The Satake diagram for $\lie{so}(2,2n-1)$.
      \end{tikzpicture}
 \end{center}
 
-The Satake diagram for $\lie{so}(2,2n-2)$.
+The Satake diagram for $\mfrak{so}(2,2n-2)$.
 
 \begin{center}
      \begin{tikzpicture}] % SO^*(2n) ~ D_n relative
@@ -318,7 +318,7 @@ The Satake diagram for $\lie{so}(2,2n-2)$.
      \end{tikzpicture}
 \end{center}
 
-The Satake diagram for $\lie{sp}(n,\R)$.
+The Satake diagram for $\mfrak{sp}(n,\R)$.
 
 \begin{center}
      \begin{tikzpicture}[decoration={markings,mark=at position .5 with {\arrowreversed[line width=2pt]{>}}}] % Sp(n,\R) ~ C_n relative
@@ -333,7 +333,7 @@ The Satake diagram for $\lie{sp}(n,\R)$.
      \end{tikzpicture}
 \end{center}
 
-The Satake diagram for $\lie{so}^*(2n)$ for  even $n$.
+The Satake diagram for $\mfrak{so}^*(2n)$ for  even $n$.
 
 \begin{center}
      \begin{tikzpicture}] % SO^*(2n) ~ D_n relative
@@ -352,7 +352,7 @@ The Satake diagram for $\lie{so}^*(2n)$ for  even $n$.
      \end{tikzpicture}
 \end{center}
 
-The Satake diagram for $\lie{so}^*(2n)$ for  odd $n$.
+The Satake diagram for $\mfrak{so}^*(2n)$ for  odd $n$.
 \begin{center}
      \begin{tikzpicture}] % SO^*(2n) ~ D_n relative
 	\node[croot] (a1) [label=above:$\alpha_1$] {};
@@ -370,7 +370,7 @@ The Satake diagram for $\lie{so}^*(2n)$ for  odd $n$.
      \end{tikzpicture}
 \end{center}
 
-The Satake diagram for $\lie{e}_6^{-14}$ - EIII.
+The Satake diagram for $\mfrak{e}_6^{-14}$ - EIII.
 
 \begin{center}
     \begin{tikzpicture}% E6 relative
@@ -385,7 +385,7 @@ The Satake diagram for $\lie{e}_6^{-14}$ - EIII.
      \end{tikzpicture}
 \end{center}
 
-The Satake diagram for $\lie{e}_7^{-25}$ - EVII.
+The Satake diagram for $\mfrak{e}_7^{-25}$ - EVII.
 
 \begin{center}
      \begin{tikzpicture} % E7 relative
@@ -405,12 +405,12 @@ The Satake diagram for $\lie{e}_7^{-25}$ - EVII.
 \section{Classical Hermitian symmetric spaces}
 
 
-Let $G$ be simply connected, connected simple Lie group, let $Z$ be its center and let $K$ be a closed  maximal subgroup of $G$ such that $K/Z$ is compact. A unitary representation $(\rho,\mathbb{V})$  of $G$ such that the underlying $(\lie{g},K)$-module is an irreducible highest weight module is called unitary highest weight module. From the universal property of (generalized) Verma modules it follows that any unitarizable highest weight module is the unique irreducible quotient of a (generalized) Verma module. It is a result of Harish-Chandra that nontrivial unitarizable highest weight modules occur only when $G/K$ is a noncompact Hermitian symmetric space. The table \ref{fig:herm_pairs} of all such Hermitian pairs $(G,K)$ is given below.
+Let $G$ be simply connected, connected simple Lie group, let $Z$ be its center and let $K$ be a closed  maximal subgroup of $G$ such that $K/Z$ is compact. A unitary representation $(\rho,\mathbb{V})$  of $G$ such that the underlying $(\mfrak{g},K)$-module is an irreducible highest weight module is called unitary highest weight module. From the universal property of (generalized) Verma modules it follows that any unitarizable highest weight module is the unique irreducible quotient of a (generalized) Verma module. It is a result of Harish-Chandra that nontrivial unitarizable highest weight modules occur only when $G/K$ is a noncompact Hermitian symmetric space. The table \ref{fig:herm_pairs} of all such Hermitian pairs $(G,K)$ is given below.
 
-Let $\lie{g}_0$ and $\lie{k}_0$ be the corresponding Lie algebras of $G$ and $K$ and let $\lie{g}$ and $\lie{k}$ denote their complexifications. By $G_\C$ and $K_C$ we denote the complexifications of $G$ and $K$. The Cartan decomposition gives us $\lie{g}_0 = \lie{k}_0 \oplus \lie{q}_0$ and upon complexification we get a splitting of  $\lie{q} = \lie{p}_-\oplus\lie{p}_+$. % into eigenspaces of the complex structure that is defined on the tangent space $T_{eK}G/K \simeq \lie{q}$.
-There is a choice of a Cartan subalgebra $\lie{h}$ such that $\lie{h} \leq \lie{k}$. With respect to this Cartan subalgebra we have a triangular decomposition $\lie{g}=\lie{n}^-\oplus\lie{h}\oplus\lie{n}$ with $\lie{h} \leq \lie{k}$ and $\lie{p}_-\leq \lie{n}^-$, $\lie{p}_+ \leq \lie{n}$.
+Let $\mfrak{g}_0$ and $\mfrak{k}_0$ be the corresponding Lie algebras of $G$ and $K$ and let $\mfrak{g}$ and $\mfrak{k}$ denote their complexifications. By $G_\C$ and $K_C$ we denote the complexifications of $G$ and $K$. The Cartan decomposition gives us $\mfrak{g}_0 = \mfrak{k}_0 \oplus \mfrak{q}_0$ and upon complexification we get a splitting of  $\mfrak{q} = \mfrak{p}_-\oplus\mfrak{p}_+$. % into eigenspaces of the complex structure that is defined on the tangent space $T_{eK}G/K \simeq \mfrak{q}$.
+There is a choice of a Cartan subalgebra $\mfrak{h}$ such that $\mfrak{h} \leq \mfrak{k}$. With respect to this Cartan subalgebra we have a triangular decomposition $\mfrak{g}=\mfrak{n}^-\oplus\mfrak{h}\oplus\mfrak{n}$ with $\mfrak{h} \leq \mfrak{k}$ and $\mfrak{p}_-\leq \mfrak{n}^-$, $\mfrak{p}_+ \leq \mfrak{n}$.
 
-Both algebras $\lie{p} := \lie{k}\oplus \lie{p}_+$ and $\oppar := \lie{k}\oplus\lie{p}_-$ are parabolic subalgebras of $\lie{g}$. Moreover their nilradicals $\lie{p}_-$ and $\lie{p}_+$ are not only nilpotent but even abelian. By $P$ and $\overline{P}$ we denote the corresponding parabolic subgroups of $G_\C$. The homogeneous space $G_\C/P$ is diffeomorphic to the compact Hermitian symmetric space and $\lie{p}_-$ is naturally mapped via exponential map and projection to an open and dense subset of this compact manifold. The so called Harish-Chandra embedding gives us a realization of the noncompact dual $G/K$ as an orbit in this embedded $\lie{p}_-$. This realizes $G/K$ as a bounded Hermitian symmetric domain in $\lie{p}_-$ and it manifests the Hermitian structure on $G/K$.
+Both algebras $\mfrak{p} := \mfrak{k}\oplus \mfrak{p}_+$ and $\oppar := \mfrak{k}\oplus\mfrak{p}_-$ are parabolic subalgebras of $\mfrak{g}$. Moreover their nilradicals $\mfrak{p}_-$ and $\mfrak{p}_+$ are not only nilpotent but even abelian. By $P$ and $\overline{P}$ we denote the corresponding parabolic subgroups of $G_\C$. The homogeneous space $G_\C/P$ is diffeomorphic to the compact Hermitian symmetric space and $\mfrak{p}_-$ is naturally mapped via exponential map and projection to an open and dense subset of this compact manifold. The so called Harish-Chandra embedding gives us a realization of the noncompact dual $G/K$ as an orbit in this embedded $\mfrak{p}_-$. This realizes $G/K$ as a bounded Hermitian symmetric domain in $\mfrak{p}_-$ and it manifests the Hermitian structure on $G/K$.
 
 % \begin{figure}\label{fig:herm_pairs}
 % \begin{center}
@@ -439,36 +439,36 @@ $E_7^\mathbb{C}$ &  $E_7^{-25} $ & $E_6\times SO(2)$
 \end{center}
 \end{table}
 
- In what follows we will consider also some of the other real parabolic pairs whose complexification is the parabolic pair $(\lie{g},\lie{p})$. We will use uniform notation $\epsilon^i$, $i=1,\ldots,p$ for the elements of the basis the nilradical and by $e_i$ we will denote the dual basis defined  by the Killing form. The elements $e_i$ then span the nilradical of the opposite parabolic subalgebra. %TODO bazove elementy?
+ In what follows we will consider also some of the other real parabolic pairs whose complexification is the parabolic pair $(\mfrak{g},\mfrak{p})$. We will use uniform notation $\epsilon^i$, $i=1,\ldots,p$ for the elements of the basis the nilradical and by $e_i$ we will denote the dual basis defined  by the Killing form. The elements $e_i$ then span the nilradical of the opposite parabolic subalgebra. %TODO bazove elementy?
 
-Let $\roots$ be the set of roots of $(\lie{g},\lie{h})$ and let $\roots_c$ denote the set of roots of $(\lie{k},\lie{h})$. We call elements of $\roots_c$ the compact roots and the remaining roots in $\roots_n = \roots \setminus \roots_c$ are called noncompact. We define the positive roots $\roots^+$ in such a way that elements of $\roots_n^+ = \roots^+ \cap \roots_n$ span $\lie{p}_-$. We denote the positive compact roots by $\roots^+_c = \roots_c \cap \roots^+$. By $\omega_i$ we denote the $i$-th fundamental weight in the standard ordering.
+Let $\roots$ be the set of roots of $(\mfrak{g},\mfrak{h})$ and let $\roots_c$ denote the set of roots of $(\mfrak{k},\mfrak{h})$. We call elements of $\roots_c$ the compact roots and the remaining roots in $\roots_n = \roots \setminus \roots_c$ are called noncompact. We define the positive roots $\roots^+$ in such a way that elements of $\roots_n^+ = \roots^+ \cap \roots_n$ span $\mfrak{p}_-$. We denote the positive compact roots by $\roots^+_c = \roots_c \cap \roots^+$. By $\omega_i$ we denote the $i$-th fundamental weight in the standard ordering.
 
-%As usual we denote the Weyl group of $(\lie{g},\lie{b})$ by $W$ and the subgroup generated by reflections $s_\alpha$ for $\alpha\in \roots_c$ we denote by $W_c$. Then $W_c$ is isomorphic to the Weyl group of the root system $\roots_c$. Also we let $\rho$ be the sum of positive roots and $\leq$ denotes the Bruhat order on $\lie{h}^*$.
+%As usual we denote the Weyl group of $(\mfrak{g},\mfrak{b})$ by $W$ and the subgroup generated by reflections $s_\alpha$ for $\alpha\in \roots_c$ we denote by $W_c$. Then $W_c$ is isomorphic to the Weyl group of the root system $\roots_c$. Also we let $\rho$ be the sum of positive roots and $\leq$ denotes the Bruhat order on $\mfrak{h}^*$.
 
-There is a distinguish element in the center of $\lie{k}$ called \emph{grading element} which acts by zero on $\lie{k}$, by $1$ on $\lie{p}_+$ and by $-1$ on $\lie{p}_-$. This elements acts by a scalar on any irreducible representation of $K$. We call this scalar the \emph{geometric weight}.
+There is a distinguish element in the center of $\mfrak{k}$ called \emph{grading element} which acts by zero on $\mfrak{k}$, by $1$ on $\mfrak{p}_+$ and by $-1$ on $\mfrak{p}_-$. This elements acts by a scalar on any irreducible representation of $K$. We call this scalar the \emph{geometric weight}.
 
-Let $\sroots$ denote the set of  simple roots of $\roots$. Then $\sroots\setminus \sroots_c$ contains a single element, the so called \emph{non-compact simple root}, which we will denote by $\beta$. We define a totally ordered sequence $\xi_1,\xi_2,\ldots \xi_t$ of \emph{strongly orthogonal} non-compact positive roots as follows. Let $\xi_1$ be the unique highest root. Delete the simple roots $\alpha_1,\alpha_1'$ from the Dynkin diagram of $\lie{g}$ which are not orthogonal to $\xi_1$ and take the unique connected component containing $\beta$. Let $\xi_2$ be the unique highest root of this component and continue inductively until $\beta$ itself is deleted. We define
+Let $\sroots$ denote the set of  simple roots of $\roots$. Then $\sroots\setminus \sroots_c$ contains a single element, the so called \emph{non-compact simple root}, which we will denote by $\beta$. We define a totally ordered sequence $\xi_1,\xi_2,\ldots \xi_t$ of \emph{strongly orthogonal} non-compact positive roots as follows. Let $\xi_1$ be the unique highest root. Delete the simple roots $\alpha_1,\alpha_1'$ from the Dynkin diagram of $\mfrak{g}$ which are not orthogonal to $\xi_1$ and take the unique connected component containing $\beta$. Let $\xi_2$ be the unique highest root of this component and continue inductively until $\beta$ itself is deleted. We define
 \[\mu_j := \sum_{i=1}^j \xi_i\]
 and note that they are all dominant weights. This result as well as the following one is due to Schmid, Kostant and Hua. It plays an important role in the proof of classification of unitarizable highest weight modules \cite{enright_intrinsic_1990} which are the topic of chapter \ref{ch:unitarizable}.
 
 \begin{theorem}
- Let $I$ denote the set of integral multiindices $\underline{i}=(i_1,\ldots,l_t)$ with $i_1\geq i_2 \geq \cdots  \geq i_t \geq 0$. Let $F_{\underline{i}}$ denote the irreducible finite-dimensional $\lie{k}$-module with lowest weight $\sum_{j=1}^t i_j\xi_i$. Then $S(\lie{p}_+)$ has a multiplicity free decomposition
+ Let $I$ denote the set of integral multiindices $\underline{i}=(i_1,\ldots,l_t)$ with $i_1\geq i_2 \geq \cdots  \geq i_t \geq 0$. Let $F_{\underline{i}}$ denote the irreducible finite-dimensional $\mfrak{k}$-module with lowest weight $\sum_{j=1}^t i_j\xi_i$. Then $S(\mfrak{p}_+)$ has a multiplicity free decomposition
  \begin{equation}\label{eq:khs}
-  S(\lie{p}_+) \simeq \bigoplus_{\underline{i}\in I} F_{\underline{i}}.
+  S(\mfrak{p}_+) \simeq \bigoplus_{\underline{i}\in I} F_{\underline{i}}.
  \end{equation}
 The table \ref{tbl:strongly_og} gives the set of all strongly orthogonal roots for each Hermitian symmetric pair.
 \begin{table}[H]\label{tbl:strongly_og}\begin{center}
   \begin{tabular}{CCCCC}
-  \lie{g}_0 & \beta& t & \xi_i & \mu_i \\\hline
-   \lie{su}(p,q) &\alpha_p& p & \epsilon_i-\epsilon_{t-i+1} & \omega_i + \omega_{t-i+1} \\
-   \lie{so}(2,2n-1) & \alpha_1 & 2 & \epsilon_1+\epsilon_2, \epsilon_1 - \epsilon_2 & \omega_2, 2\omega_1\\
-   \lie{sp}(n,\R) & \alpha_n & n & 2\epsilon_i & 2\omega_1\\
-   \lie{so}(2,2n-2) &\alpha_1 & 2 & \epsilon_1 + \epsilon_2, \epsilon_1 - \epsilon_2 & \omega_2,2\omega_1\\
-%    \lie{e}_6 & \alpha_1\text{ or }\alpha_6 & 2 &
+  \mfrak{g}_0 & \beta& t & \xi_i & \mu_i \\\hline
+   \mfrak{su}(p,q) &\alpha_p& p & \epsilon_i-\epsilon_{t-i+1} & \omega_i + \omega_{t-i+1} \\
+   \mfrak{so}(2,2n-1) & \alpha_1 & 2 & \epsilon_1+\epsilon_2, \epsilon_1 - \epsilon_2 & \omega_2, 2\omega_1\\
+   \mfrak{sp}(n,\R) & \alpha_n & n & 2\epsilon_i & 2\omega_1\\
+   \mfrak{so}(2,2n-2) &\alpha_1 & 2 & \epsilon_1 + \epsilon_2, \epsilon_1 - \epsilon_2 & \omega_2,2\omega_1\\
+%    \mfrak{e}_6 & \alpha_1\text{ or }\alpha_6 & 2 &
   \end{tabular}\caption{Strongly orthogonal roots}\end{center}
 \end{table}
 \end{theorem}
-Moreover, up to a scalar multiple, there exists for each $j$ a unique non-zero $v_j\in S(\lie{p}_+)^{\lie{n}}$ of weight $-\mu_j.$ Furthemore $S(\lie{p}_+)^{\lie{n}}$ is just the polynomial algebra on the $v_j,j=1,\ldots, t.$ We will use this in the section \ref{sec:invariant} and we refer to \cite{goodman_symmetry_2009} for details.
+Moreover, up to a scalar multiple, there exists for each $j$ a unique non-zero $v_j\in S(\mfrak{p}_+)^{\mfrak{n}}$ of weight $-\mu_j.$ Furthemore $S(\mfrak{p}_+)^{\mfrak{n}}$ is just the polynomial algebra on the $v_j,j=1,\ldots, t.$ We will use this in the section \ref{sec:invariant} and we refer to \cite{goodman_symmetry_2009} for details.
 
 \section{Octonionic planes}
 
@@ -812,7 +812,7 @@ Now it is straightforward to calculate the pullback $\jscal{\partial_u \varphi(x
 
 \section{Invariant differential operators}
 
-There is a well known correspondence between homomorphisms of parabolic Verma modules and invariant differential operators acting on sections of associated bundles over $G/P$ \cite{cap_bernstein-gelfand-gelfand_2001}. For $\lie{g}$-dominant integral weights there is actually a whole complex of invariant differential operators called Bernstein-Gelfand-Gelfand resolution \cite{benstein_affine}.  These operators can be actually defined on any parabolic geometry modeled on $(G, P)$ \cite{cap_bernstein-gelfand-gelfand_2001, calderbank_differential_2001}. Using the results of \cite{huang_dirac_2006} it can be shown that construction of \cite{calderbank_differential_2001} works also for bundles associated to formal completions of unitarizable highest weight modules \cite{tucek_yamabe_2012}. For regular weights all Kostant modules admit a BGG resolution over $G/P$. See \cite{enright_diagrams_2014} and references therein. 
+There is a well known correspondence between homomorphisms of parabolic Verma modules and invariant differential operators acting on sections of associated bundles over $G/P$ \cite{cap_bernstein-gelfand-gelfand_2001}. For $\mfrak{g}$-dominant integral weights there is actually a whole complex of invariant differential operators called Bernstein-Gelfand-Gelfand resolution \cite{benstein_affine}.  These operators can be actually defined on any parabolic geometry modeled on $(G, P)$ \cite{cap_bernstein-gelfand-gelfand_2001, calderbank_differential_2001}. Using the results of \cite{huang_dirac_2006} it can be shown that construction of \cite{calderbank_differential_2001} works also for bundles associated to formal completions of unitarizable highest weight modules \cite{tucek_yamabe_2012}. For regular weights all Kostant modules admit a BGG resolution over $G/P$. See \cite{enright_diagrams_2014} and references therein. 
 
 Connection between unitarizable highest weight modules and invariant differential operators is one of the main topcis of \cite{davidson_differential_1991}. To explain it here, we have to change notation a little bit for let $\alpha$ denote multiindices of integers.
 
@@ -831,13 +831,340 @@ Let $P(V,W)$ denote the space of polynomials between two complex vector spaces $
 As was argued in \cite{davidson_differential_1991} this inner product can be used to define a nondegenerate pairing between $M(\lambda)$ and its conjugate dual $M(\lambda)^*$. In this duality one gets that $J(\lambda)$ is orthogonal to $L(\lambda)$.
 
 \begin{theorem}[Theorem 2.9 of \cite{davidson_differential_1991}]
- Let $m_1,\ldots,m_k$ be any set of generators for the maximal submodule $J(\lambda)$ of the Verma module $M(\lambda)$ which we view as an $S(\lie{p}_+)$-module. Then the simple submodule $L(\lambda)$ of the conjugate dual $M(\lambda)^*$ is the kernel of the constant coefficient operators $m_i(\partial)$, $1\leq i\leq t.$
+ Let $m_1,\ldots,m_k$ be any set of generators for the maximal submodule $J(\lambda)$ of the Verma module $M(\lambda)$ which we view as an $S(\mfrak{p}_+)$-module. Then the simple submodule $L(\lambda)$ of the conjugate dual $M(\lambda)^*$ is the kernel of the constant coefficient operators $m_i(\partial)$, $1\leq i\leq t.$
 \end{theorem}
 \begin{proof}
- A polynomial $f$ is in $L$ if and only if $\langle f, p m_i \rangle = 0$ for all $p\in P(\lie{p}_-,\C) = S(\lie{p}_+)$, $1\leq i\leq t$. According to the previous lemma this is equivalent to $p(\partial)  m_i(\partial)f)(0)$ for all relevant $p$ and $i$. From the polynomiality of $f$ follows that $m_i(\partial)f = 0$ for all $1\leq i\leq t.$
+ A polynomial $f$ is in $L$ if and only if $\langle f, p m_i \rangle = 0$ for all $p\in P(\mfrak{p}_-,\C) = S(\mfrak{p}_+)$, $1\leq i\leq t$. According to the previous lemma this is equivalent to $p(\partial)  m_i(\partial)f)(0)$ for all relevant $p$ and $i$. From the polynomiality of $f$ follows that $m_i(\partial)f = 0$ for all $1\leq i\leq t.$
 \end{proof}
 
 Of course, the simple submodule $L(\lambda)$ is isomorphic to the simple quotient of $M(\lambda)$ by $J(\lambda)$. Reader interested in explicit form of the generators $m_i$ can consult chapter 10 of \cite{davidson_differential_1991}. The relationship between the Fischer inner product and the Shapovalov form was calculated by \cite{wachi}.
 
-\subsection[Explicit singular vectors for su(m, n)]{Explicit singular vectors for $\lie{su}(m, n)$}
+\subsection[Explicit singular vectors for su(m, n)]{Explicit singular vectors for $\mfrak{su}(m, n)$}
 
+Since Verma modules are in particular highest weight modules, any homomorphism between them is determined by the image of the generating vector. This image is called singular vector it is, up to duality, precisely the invariant differential operator we seek. In this section we apply the recently developed F-method to find (and classify) all singular vectors in Verma modules for $\mfrak{su}(m, n)$ which are induced from scalar representation. 
+
+Let us consider the connected complex simple Lie group $G=\SL(n+m,\C)$, $n,m \in \N$, and its Lie algebra $\mfrak{g}=\mfrak{sl}(n+m,\C)$ given by
+\begin{align}
+  \mfrak{sl}(n+m,\C)=\{X \in M_{n+m,n+m}(\C);\, \tr X =0\}.
+\end{align}
+A Cartan subalgebra $\mfrak{h}$ of $\mfrak{g}$ is given by diagonal matrices
+\begin{align}
+  \mfrak{h} = \{\diag(a_1,a_2,\dots,a_{n+m});\, a_1,a_2,\dots,a_{n+m} \in \C,\, {\textstyle \sum_{i=1}^{n+m}} a_i=0\}.
+\end{align}
+For $i=1,2,\dots,n+m$ we define $\veps_i \in \mfrak{h}^*$ by $\veps_i(\diag(a_1,a_2,\dots,a_{n+m}))=a_i$. Then the root system of $\mfrak{g}$ with respect to $\mfrak{h}$ is $\Delta=\{\veps_i-\veps_j;\, 1\leq i \neq j \leq n+m\}$. A positive root system in $\Delta$ is $\Delta^+=\{\veps_i - \veps_j;\, 1 \leq i < j \leq n+m\}$ with the set of simple roots $\Pi=\{\alpha_1,\alpha_2,\dots,\alpha_{n+m-1}\}$, $\alpha_i= \veps_i - \veps_{i+1}$ for $i=1,2,\dots,n+m-1$. Finally, the fundamental weights are $\omega_i = \smash{\sum_{j=1}^i} \veps_j$ for $i=1,2,\dots,n+m-1$.
+
+The standard Borel subalgebra $\mfrak{b}$ of $\mfrak{g}$ is defined through $\mfrak{b} = \mfrak{h} \oplus \mfrak{n}$, where the nilradical $\mfrak{n}$ of $\mfrak{b}$ is given by \eqref{eq:niradical borel}. The subset $\Sigma=\{\alpha_1,\dots,\alpha_{n-1},\alpha_{n+1},\dots,\alpha_{n+m-1}\}$ of $\Pi$ generates the root subsystem $\Delta_\Sigma$ in $\mfrak{h}^*$. We associate to $\Sigma$ the standard parabolic subalgebra $\mfrak{p}$ of $\mfrak{g}$ by $\mfrak{p}= \mfrak{l} \oplus \mfrak{u}$, where the reductive Levi subalgebra $\mfrak{l}$ of $\mfrak{p}$ is defined by \eqref{eq:Levi subalgebra} and the nilradical $\mfrak{u}$ together with the opposite nilradical $\widebar{\mfrak{u}}$ are given by \eqref{eq:nilradical parabolic}. The $\Sigma$-height $\htt_\Sigma(\alpha)$ of $\alpha \in \Delta$ is
+\begin{align}
+  \htt_\Sigma\!\big({\textstyle \sum_{i=1}^{n+m-1}} a_i \alpha_i\big) = a_n,
+\end{align}
+so $\mfrak{g}$ is a $|1|$-graded Lie algebra with respect to the grading given by $\mfrak{g}_i = \smash{\bigoplus}_{\alpha \in \Delta,\, \htt_\Sigma(\alpha)=i}\, \mfrak{g}_\alpha$ for $0 \neq i \in \Z$, and $\mfrak{g}_0= \mfrak{h} \oplus \smash{\bigoplus}_{\alpha \in \Delta,\, \htt_\Sigma(\alpha)=0}\, \mfrak{g}_\alpha$. Moreover, we have $\mfrak{l}= \mfrak{g}_0 \simeq \C \oplus \mfrak{sl}(n,\C) \oplus \mfrak{sl}(m,\C)$, $\mfrak{u}=\mfrak{g}_1 \simeq \Hom (\C^m,\C^n)$, and $\widebar{\mfrak{u}}=\mfrak{g}_{-1} \simeq \Hom (\C^n,\C^m)$.
+
+The basis $\{f_{ij};\, i=1,2,\dots,m,\, j=1,2,\dots,n\}$ of the root spaces in the opposite nilradical $\widebar{\mfrak{u}}$ is given by
+\begin{align}
+  f_{ij} = \begin{pmatrix}
+    0 & 0 \\
+    E_{ij} & 0
+  \end{pmatrix}\!,
+\end{align}
+where $E_{ij}$ is the $(m \times n)$-matrix having $1$ at the intersection of the $i$-th row and $j$-th column and $0$ elsewhere. Analogously, the basis $\{e_{ij};\, i=1,2,\dots,n,\, j=1,2,\dots,m\}$ of the root spaces in the nilradical $\mfrak{u}$ is given by
+\begin{align}
+  e_{ij} = \begin{pmatrix}
+    0 & E_{ij} \\
+    0 & 0
+  \end{pmatrix}\!,
+\end{align}
+where $E_{ij}$ is the $(n \times m)$-matrix having $1$ at the intersection of the $i$-th row and $j$-th column and $0$ elsewhere. The Levi subalgebra $\mfrak{l}$ of $\mfrak{p}$ is the linear span of
+\begin{align}
+  h_c = \begin{pmatrix}
+    {1 \over n} I_n & 0 \\
+    0 & -{1 \over m} I_m
+  \end{pmatrix}\!, \qquad
+  h_{A,B} = \begin{pmatrix}
+    A & 0 \\
+    0 & B
+  \end{pmatrix}\!,
+\end{align}
+where $A \in M_{n,n}(\C)$, $B \in M_{m,m}(\C)$ satisfy $\tr A=0$ and $\tr B=0$. Moreover,
+the element $h_c$ is a basis of the center $\mfrak{z}(\mfrak{l})$ of $\mfrak{l}$.
+
+Finally, the parabolic subgroup $P$ of $G$ with the Lie algebra $\mfrak{p}$ is defined by $P=N_G(\mfrak{p})$, where the parabolic subalgebra $\mfrak{p}$ of $\mfrak{g}$ is given by
+\begin{align}
+  \mfrak{p}=\left\{\begin{pmatrix}
+    A & C \\
+    0 & B
+  \end{pmatrix}\!;
+   A \in M_{n,n}(\C),\ B \in M_{m,m}(\C),\, C \in M_{n,m}(\C),\, \tr A + \tr B =0
+  \right\}\!.
+\end{align}
+Any character $\lambda \in \Hom_P(\mfrak{p},\C)$ is given by
+\begin{align}
+  \lambda= \alpha \widetilde{\omega}_n
+\end{align}
+for some $\alpha \in \C$, where $\widetilde{\omega}_n\in \Hom_P(\mfrak{p},\C)$
+is equal to $\omega_n\in \mfrak{h}^*$ regarded as trivially extended to
+$\mfrak{p} =\mfrak{h} \oplus (\bigoplus_{\alpha \in \Delta_\Sigma} \mfrak{g}_\alpha) \oplus \mfrak{u}$.
+The character $\rho \in \Hom_P(\mfrak{p},\C)$ defined by \eqref{eq:rho_vector} is
+\begin{align}
+  \rho={\textstyle {n+m \over 2}}\,\widetilde{\omega}_n.
+\end{align}
+For $\alpha \in \C$ we denote the character $\alpha \widetilde{\omega}_n$ by $\lambda_\alpha \in \Hom_P(\mfrak{p},\C)$.
+\medskip
+
+Let us introduce the notation
+\begin{align}
+  E^x= \sum_{k=1}^m \sum_{\ell=1}^n x_{k\ell} \partial_{x_{k\ell}}, \qquad \qquad E^y= \sum_{k=1}^m \sum_{\ell=1}^n y_{k\ell} \partial_{y_{k\ell}}
+\end{align}
+for the Euler homogeneity operators and
+\begin{gather}
+  R^x_A=  \sum_{i,j = 1}^n \sum_{k=1}^m a_{ij} x_{ki} \partial_{x_{kj}}, \qquad \qquad L^x_B= - \sum_{i,j=1}^m \sum_{k=1}^n b_{ij} x_{jk} \partial_{x_{ik}}, \label{eq:left right action x AGS} \\
+  R^y_A= - \sum_{i,j=1}^n \sum_{k=1}^m a_{ij}y_{kj} \partial_{y_{ki}}, \qquad \qquad L^y_B= \sum_{i,j=1}^m \sum_{k=1}^n b_{ij}y_{ik} \partial_{y_{jk}}  \label{eq:left right action y AGS}
+\end{gather}
+for $A=(a_{ij}) \in M_{n,n}(\C)$, $B=(b_{ij}) \in M_{m,m}(\C)$. We set $L^y_{ij}=L^y_{E_{ij}}$ for $1 \leq i,j \leq m$ and $R^y_{ij}=R^y_{E_{ij}}$ for $1 \leq i,j \leq n$.
+\medskip
+
+\remark Let us note that the action of the Levi subalgebra can be written more succinctly using the following notation.
+\medskip
+
+\theorem{\label{thm:action AGS}
+Let $\lambda \in \Hom_P(\mfrak{p},\C)$ and let $(\sigma,\mathbb{V})$ be a $\mfrak{p}$-module. Then the embedding of $\mfrak{g}$ into $\eus{A}^\mfrak{g}_{\widebar{\mfrak{u}}} \otimes_\C \End \mathbb{V}_{\lambda+\rho}$ and $\eus{A}^\mfrak{g}_{\widebar{\mfrak{u}}^*} \otimes_\C \End \mathbb{V}_{\lambda-\rho}$ is given by
+\begin{enumerate}
+\item[1)]
+\begin{align}
+\begin{aligned}
+  \pi_{\sigma_\lambda}(f_{ij})&=-\partial_{x_{ij}}, \\
+  \hat{\pi}_{\sigma_\lambda}(f_{ij})&=-y_{ij}
+\end{aligned}
+\end{align}
+for $i=1,2,\dots,m$ and $j=1,2,\dots,n$;
+\item[2)]
+\begin{align}
+  \begin{aligned}
+    \pi_{\sigma_\lambda}(h_c)&= \bigg({1 \over n} + {1 \over m}\bigg) E^x + \bigg(\lambda(h_c)+ {n+m \over 2}\bigg) + \sigma(h_c), \\[1mm]
+    \pi_{\sigma_\lambda}(h_{A,B})&= R_A^x +L_B^x + \sigma(h_{A,B}), \\[1mm]
+    \hat{\pi}_{\sigma_\lambda}(h_c)&= -\bigg({1 \over n} + {1 \over m}\bigg) E^y +  \bigg(\lambda(h_c) - {n+m \over 2}\bigg) + \sigma(h_c), \\[1mm]
+    \hat{\pi}_{\sigma_\lambda}(h_{A,B})&= R_A^y + L_B^y + \sigma(h_{A,B})
+  \end{aligned}
+\end{align}
+for all $A \in M_{n,n}(\C)$, $B \in M_{m,m}(\C)$ satisfying $\tr A =0$ and $\tr B = 0$;
+\item[3)]
+\begin{align}
+  \begin{aligned}
+    \pi_{\sigma_\lambda}(e_{ij})&= \sum_{k=1}^m \sum_{\ell=1}^n x_{ki} x_{j\ell} \partial_{x_{k\ell}}  + \bigg(\lambda(h_c)+ {n+m \over 2}\bigg) x_{ji} + \sigma(e_{ij}) + x_{ji}\sigma(h_c)
+    \\ &\quad + \sum_{\ell=1}^n x_{j\ell} \sigma(h_{E_{i\ell}-{1\over n}I_n \delta_{i \ell},0})
+     - \sum_{k=1}^m x_{ki} \sigma(h_{0,E_{kj}-{1 \over m}I_m \delta_{kj}}),  \\
+    \hat{\pi}_{\sigma_\lambda}(e_{ij})&= \sum_{k=1}^m \sum_{\ell=1}^n y_{k\ell} \partial_{y_{ki}} \partial_{y_{j\ell}} - \bigg(\lambda(h_c)-  {n+m \over 2}\bigg) \partial_{y_{ji}} + \sigma(e_{ij}) - \partial_{y_{ji}} \sigma(h_c)
+    \\ &\quad - \sum_{\ell=1}^n \partial_{y_{j\ell}} \sigma(h_{E_{i\ell}-{1\over n}I_n \delta_{i \ell},0})
+     + \sum_{k=1}^m \partial_{y_{ki}} \sigma(h_{0,E_{kj}-{1 \over m}I_m \delta_{kj}})
+  \end{aligned}
+\end{align}
+for $i=1,2,\dots,n$ and $j=1,2,\dots,m$.
+\end{enumerate}}
+
+\proof{It follows immediately from Theorem \ref{thm:action 1-graded} using the commutation relations for the Lie algebra $\mfrak{sl}(n+m,\C)$.}
+\vspace{-2mm}
+
+%\theorem{\label{thm:action AGS}
+%Let $\lambda \in \Hom_P(\mfrak{p},\C)$ and let $(\sigma,\mathbb{V})$ be a $\mfrak{p}$-module. Then the embedding of $\mfrak{g}$ into $\eus{A}^\mfrak{g}_{\widebar{\mfrak{u}}} \otimes_\C \End \mathbb{V}_{\lambda+\rho}$ and $\eus{A}^\mfrak{g}_{\widebar{\mfrak{u}}^*} \otimes_\C \End \mathbb{V}_{\lambda-\rho}$ is given by
+%\begin{enumerate}
+%\item[1)]
+%\begin{align}
+%\begin{aligned}
+%  \pi_{\sigma_\lambda}(f_{ij})&=-\partial_{x_{ij}}, \\
+%  \hat{\pi}_{\sigma_\lambda}(f_{ij})&=-y_{ij}
+%\end{aligned}
+%\end{align}
+%for $i=1,2,\dots,m$ and $j=1,2,\dots,n$;
+%\item[2)]
+%\begin{align}
+%  \begin{aligned}
+%    \pi_{\sigma_\lambda}(h_c)&= \bigg({1 \over n} + {1 \over m}\bigg) \sum_{k=1}^m \sum_{\ell=1}^n x_{k\ell} \partial_{x_{k\ell}} + \bigg(\lambda+ {n+m \over 2}\bigg) + \sigma(h_c), \\
+%    \pi_{\sigma_\lambda}(h_{A,B})&= \sum_{k=1}^m \sum_{\ell=1}^n \sum_{r=1}^n a_{r\ell} x_{kr} \partial_{x_{k\ell}} - \sum_{k=1}^m \sum_{\ell=1}^n \sum_{s=1}^m b_{ks} x_{s\ell} \partial_{x_{k\ell}} + \sigma(h_{A,B}), \\
+%    \hat{\pi}_{\sigma_\lambda}(h_c)&= -\bigg({1 \over n} + {1 \over m}\bigg) \sum_{k=1}^m \sum_{\ell=1}^n y_{k\ell} \partial_{y_{k\ell}} +  \bigg(\lambda - {n+m \over 2}\bigg) + \sigma(h_c), \\
+%    \hat{\pi}_{\sigma_\lambda}(h_{A,B})&= -\sum_{k=1}^m \sum_{\ell=1}^n \sum_{r=1}^n a_{r\ell} y_{k\ell} \partial_{y_{kr}} + \sum_{k=1}^m \sum_{\ell=1}^n \sum_{s=1}^m b_{ks} y_{k\ell}\partial_{y_{s\ell}} + \sigma(h_{A,B})
+%  \end{aligned}
+%\end{align}
+%for all $A=(a_{r\ell}) \in M_{n,n}(\C)$, $B=(b_{ks}) \in M_{m,m}(\C)$ satisfying $\tr A =0$ and $\tr B = 0$;
+%\item[3)]
+%\begin{align}
+%  \begin{aligned}
+%    \pi_{\sigma_\lambda}(e_{ij})&= \sum_{k=1}^m \sum_{\ell=1}^n x_{ki} x_{j\ell} \partial_{x_{k\ell}}  + \bigg(\lambda+ {n+m \over 2}\bigg) x_{ji} + \sigma(e_{ij}) + x_{ji}\sigma(h_c)
+%    \\ &\quad + \sum_{\ell=1}^n x_{j\ell} \sigma(h_{E_{i\ell}-{1\over n}I_n \delta_{i \ell},0})
+%     - \sum_{k=1}^m x_{ki} \sigma(h_{0,E_{kj}-{1 \over m}I_m \delta_{kj}}),  \\
+%    \hat{\pi}_{\sigma_\lambda}(e_{ij})&= \sum_{k=1}^m \sum_{\ell=1}^n y_{k\ell} \partial_{y_{ki}} \partial_{y_{j\ell}} - \bigg(\lambda-  {n+m \over 2}\bigg) \partial_{y_{ji}} + \sigma(e_{ij}) - \partial_{y_{ji}} \sigma(h_c)
+%    \\ &\quad - \sum_{\ell=1}^n \partial_{y_{j\ell}} \sigma(h_{E_{i\ell}-{1\over n}I_n \delta_{i \ell},0})
+%     + \sum_{k=1}^m \partial_{y_{ki}} \sigma(h_{0,E_{kj}-{1 \over m}I_m \delta_{kj}})
+%  \end{aligned}
+%\end{align}
+%for $i=1,2,\dots,n$ and $j=1,2,\dots,m$.
+%\end{enumerate}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Singular vectors and equivariant differential operators}
+
+Let $\alpha \in \C$ and let $(\sigma,\C)$ be the trivial $\mfrak{p}$-module. Then from \eqref{eq:Phi isomorphism} we have an isomorphism
+\begin{align}
+  \tau \circ \Phi_{\lambda_\alpha} \colon M^\mfrak{g}_\mfrak{p}(\C_{\lambda_\alpha-\rho}) \riso \C[\widebar{\mfrak{u}}^*] \otimes_\C \C_{\lambda_\alpha-\rho}
+\end{align}
+of $\mfrak{g}$-modules, where the action of $\mfrak{g}$ on $\C[\widebar{\mfrak{u}}^*] \otimes_\C \C_{\lambda_\alpha-\rho}$ is given by Theorem \ref{thm:action AGS}.
+%Moreover, because $\C[\widebar{\mfrak{u}}^*] \otimes_\C \C_{\lambda_\alpha-\rho}$ and also $\Sol(\mfrak{g},\mfrak{p};\C[\widebar{\mfrak{u}}^*] \otimes_\C \C_{\lambda_\alpha-\rho})^\mcal{F} \subset \C[\widebar{\mfrak{u}}^*] \otimes_\C \C_{\lambda_\alpha-\rho}$ are semisimple $\mfrak{l}$-modules, we denote by $(\C[\widebar{\mfrak{u}}^*] \otimes_\C \C_{\lambda-\rho})_\mu$ and $\Sol(\mfrak{g},\mfrak{p};\C[\widebar{\mfrak{u}}^*] \otimes_\C \C_{\lambda-\rho})^\mcal{F}_\mu$ the $\mfrak{l}$-isotypic components of highest weight $\mu \in \mfrak{h}^*$.
+\medskip
+
+\proposition{\label{prop:C[u] decomposition AGS}
+Let $\alpha \in \C$ and let $r=\min\{n,m\}$. Then we have
+\begin{align}
+   \C[\widebar{\mfrak{u}}^*] \otimes_\C \C_{\lambda_\alpha-\rho} \simeq \bigoplus_{\mu \in \Lambda^+_\alpha\!(\mfrak{p})} \mathbb{F}_\mu
+\end{align}
+as $\mfrak{l}$-modules, where $\mathbb{F}_\mu$ is the simple $\mfrak{l}$-module with highest weight $\mu \in \mfrak{h}^*$ and
+\begin{align}
+ \Lambda^+_\alpha(\mfrak{p}) = \bigg\{\sum_{i=1}^r a_i \omega_{n-i} + \sum_{i=1}^r a_i \omega_{n+i} + \bigg(\alpha - {n+m \over 2} - 2 \sum_{i=1}^r a_i\!\bigg) \omega_n;\, a_1,a_2,\dots,a_r \in \N_0 \bigg\}.
+\end{align}
+Moreover, the corresponding highest weight vector $v_\mu$ of $\mathbb{F}_\mu$ in $\C[\widebar{\mfrak{u}}^*] \otimes_\C \C_{\lambda_\alpha-\rho}$ with
+\begin{align}
+\mu=\sum_{i=1}^r a_i \omega_{n-i} + \sum_{i=1}^r a_i \omega_{n+i} + \bigg(\alpha - {n+m \over 2} - 2 \sum_{i=1}^r a_i\!\bigg) \omega_n
+\end{align}
+is $v_\mu=q_1^{a_1}q_2^{a_2} \dots q_r^{a_r}$, where
+\begin{align} \label{eq:generators hwv AGS}
+  q_k = \det\!
+  \begin{pmatrix}
+    y_{1,n-k+1} & y_{1,n-k+2} & \dots & y_{1,n}\\
+    y_{2,n-k+1} & y_{2,n-k+2} & \dots & y_{2,n} \\
+    \vdots & \vdots & \ddots & \vdots \\
+    y_{k,n-k+1} & y_{k,n-k+2}&  \dots & y_{k,n}
+  \end{pmatrix}
+\end{align}
+for $k=1,2,\dots,r$.}
+
+\proof{First of all, we need to verify that the polynomials $q_k$ are the highest weight vectors with highest weights $\omega_{n-k}+\omega_{n+k}+\big(\alpha - {n + m \over 2} -2\big)\omega_n$ for $k=1,2,\dots,r$. Using \eqref{eq:left right action y AGS} it easily follows that $L^y_{ij}q_k=0$ for $j=k+1,k+2,\dots,m$ and $L^y_{ij}q_k$ is the polynomial which arises from $q_k$ replacing the $j$-th row $(y_{j,n-k+1},y_{j,n-k+2},\dots,y_{j,n})$  with the $i$-th row $(y_{i,n-k+1},y_{i,n-k+2},\dots,y_{i,n})$ in the corresponding matrix \eqref{eq:generators hwv AGS} for $j=1,2,\dots,k$. Analogously, we have that $-R^y_{ij}q_k=0$ for $i=1,2,\dots,n-k$ and $-R^y_{ij}q_k$ is the polynomial which arises from $q_k$ replacing the $i$-th column \smash{$(y_{1,i},y_{2,i},\dots,y_{k,i})^{\rm T}$} with the $j$-th column \smash{$(y_{1,j},y_{2,j},\dots,y_{k,j})^{\rm T}$} in the corresponding matrix \eqref{eq:generators hwv AGS} for $i=n-k+1,n-k+2,\dots,n$. Therefore, we obtain $R^y_{ij}q_k=0$ for $1 \leq i < j \leq n$ and $L^y_{ij}q_k=0$ for $1 \leq i < j \leq m$, which gives us that $q_k$ is annihilated by $\mfrak{l} \cap \mfrak{n}$. Furthermore, since we have
+\begin{align*}
+  \hat{\pi}_{\lambda_\alpha}\!(h_{A,B})q_k &= \sum_{i=1}^n a_i R^y_{ii}q_k + \sum_{j=1}^m b_j L^y_{jj}q_k = -\sum_{i=n-k+1}^n a_i q_k + \sum_{j=1}^k b_j q_k
+  = \bigg(\sum_{i=1}^{n-k} a_i + \sum_{j=1}^k b_j \bigg)q_k \\
+  &= \omega_{n-k}(h_{A,B})q_k + \omega_{n+k}(h_{A,B})q_k+ \bigg(\alpha-{n+m \over 2}-2\bigg)\omega_n(h_{A,B})q_k
+\end{align*}
+for all $A=\diag(a_1,a_2,\dots,a_n)$, $B=\diag(b_1,b_2,\dots,b_m)$ satisfying $\tr A=0$, $\tr B=0$, and
+\begin{align*}
+  \hat{\pi}_{\lambda_\alpha}\!(h_c)q_k&= -\bigg({1 \over n} + {1 \over m}\bigg)E^yq_k + \bigg(\alpha -{n+m \over 2}\bigg)q_k = -k\bigg({1 \over n} + {1 \over m}\bigg)q_k+ \bigg(\alpha -{n+m \over 2}\bigg)q_k \\
+  &= \omega_{n-k}(h_c)q_k + \omega_{n+k}(h_c)q_k+\bigg(\alpha-{n+m \over 2}-2\bigg)\omega_n(h_c)q_k,
+\end{align*}
+we obtain that $q_k$ is a weight vector with respect to $\mfrak{l} \cap \mfrak{h}$. Therefore, the polynomial $q_k$ is the highest weight vector with highest weight $\omega_{n-k}+ \omega_{n+k} + \big(\alpha-{n+m \over 2}-2\big)\omega_n$.
+
+As an immediate consequence of the previous result, we get that the polynomial $q_1^{a_1}q_2^{a_2}\dots q_r^{a_r}$ with $a_1,a_2,\dots,a_r \in \N_0$ is the highest weight vector with highest weight
+\begin{align*}
+\mu=\sum_{k=1}^r a_k \omega_{n-k} + \sum_{k=1}^r a_k \omega_{n+k} + \bigg(\alpha - {n+m \over 2} - 2\sum_{k=1}^n a_k\bigg) \omega_n
+\end{align*}
+and generates a finite-dimensional simple $\mfrak{l}$-submodule of $\C[\widebar{\mfrak{u}}^*] \otimes_\C \C_{\lambda_\alpha-\rho}$ isomorphic to $\mathbb{F}_\mu$, since $\C[\widebar{\mfrak{u}}^*] \otimes_\C \C_{\lambda_\alpha-\rho}$ is a semisimple $\mfrak{l}$-module decomposing into finite-dimensional simple $\mfrak{l}$-submodules. This gives us an injective homomorphism
+\begin{align*}
+  \bigoplus_{\mu \in \Lambda^+_\alpha\!(\mfrak{p})} \mathbb{F}_\mu \rarr \C[\widebar{\mfrak{u}}^*] \otimes_\C \C_{\lambda_\alpha-\rho}
+\end{align*}
+of $\mfrak{l}$-modules, which is an isomorphism as follows from \cite{Goodman-Wallach2009}.}
+
+\lemma{\label{lem:solution space AGS}
+Let $\alpha \in \C$ and $\mu \in \Lambda^+_\alpha(\mfrak{p})$. Then we have
+\begin{align*}
+ \Sol(\mfrak{g},\mfrak{p};\C[\widebar{\mfrak{u}}^*] \otimes_\C \C_{\lambda_\alpha-\rho})^\mcal{F}_\mu \simeq
+ \begin{cases}
+   \mathbb{F}_\mu & \text{for $\alpha \in \C$, $\mu = \big(\alpha-{n+m \over 2}\big)\omega_n$}, \\[1mm]
+   \mathbb{F}_\mu & \text{$\!\begin{gathered}\text{for $\alpha = a-k+{\textstyle {n+m \over 2}}$, $\mu=a \omega_{n-k} + a\omega_{n+k}-(a+k)\omega_n$,}\\[1mm] \text{$a \in \N$, $k \in \{1,2,\dots,r\}$} \hfill \end{gathered}$} \\[1mm]
+   0 & \text{otherwise}.
+ \end{cases}
+\end{align*}}
+
+\proof{Using Proposition \ref{prop:C[u] decomposition AGS} we know that $\C[\widebar{\mfrak{u}}^*] \otimes_\C \C_{\lambda_\alpha-\rho}$ is a multiplicity free $\mfrak{l}$-module. Moreover, since we have $\Sol(\mfrak{g},\mfrak{p};\C[\widebar{\mfrak{u}}^*] \otimes_\C \C_{\lambda_\alpha-\rho})^\mcal{F}_\mu \subset (\C[\widebar{\mfrak{u}}^*] \otimes_\C \C_{\lambda_\alpha-\rho})_\mu \simeq \mathbb{F}_\mu$ for $\mu \in \Lambda^+_\alpha(\mfrak{p})$, we obtain that $\smash{\Sol(\mfrak{g},\mfrak{p};\C[\widebar{\mfrak{u}}^*] \otimes_\C \C_{\lambda_\alpha-\rho})^\mcal{F}_\mu}$ is either the zero $\mfrak{l}$-module or isomorphic to the $\mfrak{l}$-module $\mathbb{F}_\mu$. Therefore, it is enough to verify, whether the highest weight vector $v_\mu$ of $(\C[\widebar{\mfrak{u}}^*] \otimes_\C \C_{\lambda_\alpha-\rho})_\mu$ is contained in $\Sol(\mfrak{g},\mfrak{p};\C[\widebar{\mfrak{u}}^*] \otimes_\C \C_{\lambda_\alpha-\rho})^\mcal{F}$ or not. Let $\mu \in \Lambda^+_\alpha(\mfrak{p})$ and let us assume that the highest weight vector
+\begin{align*}
+  v_\mu = q_1^{a_1}q_2^{a_2}\dots q_r^{a_r}
+\end{align*}
+of $(\C[\widebar{\mfrak{u}}^*] \otimes_\C \C_{\lambda_\alpha-\rho})_\mu$ with $a_1,a_2,\dots a_r \in \N_0$ belongs to $\Sol(\mfrak{g},\mfrak{p};\C[\widebar{\mfrak{u}}^*] \otimes_\C \C_{\lambda_\alpha-\rho})^\mcal{F}$. Because of the greater clarity, we denote by $q^a$ the polynomial $q_1^{a_1}q_2^{a_2}\dots q_r^{a_r}$ for $a=(a_1,a_2,\dots,a_r) \in \N_0^r$ and by $1_k \in \N_0^r$ the $r$-tuple having $1$ at the $k$-th position and $0$ otherwise. Furthermore, we have
+\begin{align*}
+  \hat{\pi}_{\lambda_\alpha}\!(e_{ij})&= \sum_{k=1}^m \sum_{\ell=1}^n y_{k\ell} \partial_{y_{ki}} \partial_{y_{j\ell}} - \bigg(\alpha-  {n+m \over 2}\bigg) \partial_{y_{ji}}= \sum_{k=1}^m  \partial_{y_{ki}} L^y_{kj} - \bigg(\alpha - {n-m \over 2} \bigg) \partial_{y_{ji}}
+\end{align*}
+for $i=1,2,\dots,n$ and $j=1,2,\dots,m$.
+\smallskip
+
+If $v_\mu =1$, then $\hat{\pi}_{\lambda_\alpha}\!(e_{ij})v_\mu=0$ for all $i=1,2,\dots,n$, $j=1,2,\dots,m$ and $\alpha \in \C$. Therefore, we have $\Sol(\mfrak{g},\mfrak{p};\C[\widebar{\mfrak{u}}^*] \otimes_\C \C_{\lambda_\alpha-\rho})^\mcal{F}_\mu \simeq \mathbb{F}_\mu$ for $\mu=\big(\alpha-{n+m \over 2}\big)\omega_n$ and $\alpha \in \C$.
+\smallskip
+
+Now, if $v_\mu \neq 1$, then there exists an index $s \in \{1,2,\dots,r\}$ satisfying $a_s \neq 0 $ and $a_\ell=0$ for $\ell=s+1,s+2,\dots,r$. Since $\partial_{y_{k,n-s+1}}q_\ell =0$ and $L^y_{ks}q_\ell=0$ for $\ell=1,2,\dots,s-1$ and $k=1,2,\dots,m$, we may write
+\begin{align*}
+   \hat{\pi}_{\lambda_\alpha}\!(e_{n-s+1,s})v_\mu &= \sum_{k=1}^m  \partial_{y_{k,n-s+1}} L^y_{ks}q^a - \big(\alpha - {\textstyle {n-m \over 2}} \big) \partial_{y_{s,n-s+1}}q^a \\
+  &= \sum_{k=1}^m  a_s\partial_{y_{k,n-s+1}} q^{a-1_s}L^y_{ks}q_s - \big(\alpha - {\textstyle {n-m \over 2}} \big) \partial_{y_{s,n-s+1}}q^a \\
+  &= \sum_{k=s}^m  a_s\partial_{y_{k,n-s+1}} q^{a-1_s}L^y_{ks}q_s - \big(\alpha - {\textstyle {n-m \over 2}} \big) \partial_{y_{s,n-s+1}}q^a,
+\end{align*}
+where we used that $L^y_{ks}q_s=0$ for $k<s$ in the last equality. Further, using $\partial_{y_{k,n-s+1}}q_\ell=0$ for $k > \ell$, we obtain
+\begin{align*}
+ \hat{\pi}_{\lambda_\alpha}\!(e_{n-s+1,s})v_\mu&= a_s\partial_{y_{s,n-s+1}} q^{a-1_s}L^y_{ss}q_s + \sum_{k=s+1}^m  a_s q^{a-1_s}\partial_{y_{k,n-s+1}}L^y_{ks}q_s \\
+ & \quad - \big(\alpha - {\textstyle {n-m \over 2}} \big) \partial_{y_{s,n-s+1}}q^a \\
+ &=a_s \partial_{y_{s,n-s+1}} q^a +(m-s)a_sq^{a_s-1_s}\partial_{y_{s,n-s+1}}q_s - \big(\alpha -{\textstyle {n-m \over 2}} \big) \partial_{y_{s,n-s+1}}q^a \\
+ &= \big(a_s-s-\alpha+{\textstyle {n+m \over 2}}\big)\partial_{y_{s,n-s+1}}q^a,
+\end{align*}
+where we used $L^y_{ss}q_s=q_s$ and $\partial_{y_{k,n-s+1}}L^y_{ks}q_s=\partial_{y_{s,n-s+1}}q_s$ for $k>s$. As $\partial_{y_{s,n-s+1}}q^a \neq 0$ and $\hat{\pi}_{\lambda_\alpha}\!(e_{n-s+1,s})v_\mu=0$, we get
+\begin{align}
+  \alpha=a_s-s+{n+m \over 2}. \label{eq:weight alpha AGS}
+\end{align}
+Our next step is to show that $a_\ell=0$ for $\ell=1,2,\dots,s-1$. Let us assume that there exists an index $t \in \{1,2,\dots,s-1\}$ satisfying $a_t \neq 0$ and $a_\ell=0$ for $\ell=t+1,t+2,\dots,s-1$. Analogously as in the previous part, we may write
+\begin{align*}
+  \hat{\pi}_{\lambda_\alpha}\!(e_{n-t+1,t})v_\mu&= \sum_{k=1}^m  \partial_{y_{k,n-t+1}} L^y_{kt}q^a - \big(\alpha - {\textstyle {n-m \over 2}} \big)\partial_{y_{t,n-t+1}}q^a \\
+  &= \sum_{k=1}^m \big(a_s\partial_{y_{k,n-t+1}}q^{a-1_s} L^y_{kt}q_s + a_t\partial_{y_{k,n-t+1}}q^{a-1_t} L^y_{kt}q_t \big)- \big(\alpha - {\textstyle {n-m \over 2}} \big)\partial_{y_{t,n-t+1}}q^a \\
+  & =\sum_{k=s+1}^m a_s\partial_{y_{k,n-t+1}}q^{a-1_s} L^y_{kt}q_s +\sum_{k=t+1}^m  a_t\partial_{y_{k,n-t+1}}q^{a-1_t} L^y_{kt}q_t \\
+  & \quad +a_s\partial_{y_{t,n-t+1}}q^{a-1_s} L^y_{tt}q_s + a_t\partial_{y_{t,n-t+1}}q^{a-1_t} L^y_{tt}q_t - \big(\alpha - {\textstyle {n-m \over 2}} \big)\partial_{y_{t,n-t+1}}q^a \\
+  &= \sum_{k=s+1}^m a_sq^{a-1_s} \partial_{y_{k,n-t+1}}L^y_{kt}q_s +\sum_{k=t+1}^m  a_tq^{a-1_t} \partial_{y_{k,n-t+1}}L^y_{kt}q_t \\
+  & \quad + \sum_{k=t+1}^s a_t (\partial_{y_{k,n-t+1}}q^{a-1_t}) L^y_{kt}q_t +\big(a_s+a_t-\alpha+{\textstyle {n-m\over 2}}\big) \partial_{y_{t,n-t+1}}q^a.
+\end{align*}
+Using $\partial_{y_{k,n-t+1}}L^y_{kt}q_s=\partial_{y_{t,n-t+1}}q_s$ for $k>s$ and $\partial_{y_{k,n-t+1}}L^y_{kt}q_t=\partial_{y_{t,n-t+1}}q_t$ for $k>t$, we get
+\begin{align*}
+  \hat{\pi}_{\lambda_\alpha}\!(e_{n-t+1,t})v_\mu&= (m-s) a_sq^{a-1_s} \partial_{y_{t,n-t+1}}q_s +(m-t) a_tq^{a-1_t} \partial_{y_{t,n-t+1}}q_t \\
+  & \quad + \sum_{k=t+1}^s a_s a_t q^{a-1_s-1_t}(\partial_{y_{k,n-t+1}}q_s) L^y_{kt}q_t +\big(a_s+a_t-\alpha+{\textstyle {n-m\over 2}}\big) \partial_{y_{t,n-t+1}}q^a  \\
+  & = a_sa_t q^{a-1_s} \partial_{y_{t,n-t+1}} q_s +a_t(a_t+s-t) q^{a-1_t} \partial_{y_{t,n-t+1}} q_t \\
+  & \quad + \sum_{k=t+1}^s a_s a_t q^{a-1_s-1_t}(\partial_{y_{k,n-t+1}}q_s) L^y_{kt}q_t,
+\end{align*}
+where we used \eqref{eq:weight alpha AGS} in the last equality. Since $\hat{\pi}_{\lambda_\alpha}\!(e_{n-t+1,t})v_\mu=0$, we acquire the equation
+\begin{align*}
+q^{a-1_s-1_t}\!\bigg(a_ta_s q_t \partial_{y_{t,n-t+1}} q_s + a_t(a_t+s-t)q_s \partial_{y_{t,n-t+1}} q_t + \sum_{k=t+1}^s a_sa_t (\partial_{y_{k,n-t+1}}q_s) L^y_{kt}q_t\!\bigg) = 0,
+\end{align*}
+which gives us
+\begin{align*}
+  a_ta_s q_t \partial_{y_{t,n-t+1}} q_s + a_t(a_t+s-t)q_s \partial_{y_{t,n-t+1}} q_t + \sum_{k=t+1}^s a_sa_t (\partial_{y_{k,n-t+1}}q_s) L^y_{kt}q_t = 0.
+\end{align*}
+Applying the operator $\partial_{y_{t,n-t+1}}$ to the previous equation, we get
+\begin{align*}
+  a_t(a_s+a_t+s-t) (\partial_{y_{t,n-t+1}} q_s)(\partial_{y_{t,n-t+1}} q_t) = 0,
+\end{align*}
+because $\partial_{y_{t,n-t+1}} (\partial_{y_{k,n-t+1}}q_s) L^y_{kt}q_t=0$ for $k=t+1,t+2,\dots,s$. Moreover, we have $\partial_{y_{t,n-t+1}} q_s \neq 0$, $\partial_{y_{t,n-t+1}} q_t \neq 0$ and $a_s +a_t +s-t >0$, hence we obtain $a_t = 0$, which is a contradiction with the choice of the index $t$. Therefore, we have $v_\mu = q_s^{a_s}$ for $\mu= a_s \omega_{n-s} +a_s \omega_{n+s} - (a_s+s)\omega_n$ and $\alpha=a_s -s + {n + m \over 2}$. It remains to show that $\hat{\pi}_{\lambda_\alpha}\!(e_{ij})v_\mu=0$ for all $i=1,2,\dots,n$, $j=1,2,\dots,m$ and $\alpha=a_s-s+{n+m \over 2}$.
+We may write
+\begin{align*}
+  \hat{\pi}_{\lambda_\alpha}\!(e_{ij})v_\mu &= \sum_{k=1}^m  \partial_{y_{ki}} L^y_{kj}q_s^{a_s} - (a_s-s+m) \partial_{y_{ji}}q_s^{a_s} \\
+  &= \sum_{k=1}^m  a_s \partial_{y_{ki}} q_s^{a_s-1}L^y_{kj}q_s - (a_s-s+m) \partial_{y_{ji}}q_s^{a_s} \\
+  & =a_s \partial_{y_{ji}} q_s^{a_s-1}L^y_{jj}q_s + \sum_{k=s+1}^m  a_s \partial_{y_{ki}} q_s^{a_s-1}L^y_{kj}q_s - (a_s-s+m) \partial_{y_{ji}}q_s^{a_s} \\ &= a_s \partial_{y_{ji}} q_s^{a_s} +  \sum_{k=s+1}^m  a_s  q_s^{a_s-1} \partial_{y_{ki}}L^y_{kj}q_s - (a_s-s+m) \partial_{y_{ji}}q_s^{a_s} \\
+  &=  \sum_{k=s+1}^m  a_s  q_s^{a_s-1} \partial_{y_{ji}}q_s -(m-s)\partial_{y_{ji}}q_s^{a_s}=(m-s)\partial_{y_{ji}}q_s^{a_s}-(m-s)\partial_{y_{ji}}q_s^{a_s}=0,
+\end{align*}
+where we used $L^y_{kj}q_s=0$ if $j>s$ or if $k \leq s$ and $k\neq j$ in the third equality and $\partial_{y_{ki}}L^y_{kj}q_s=\partial_{y_{ji}} q_s$ for $k > s$ in the fifth equality. Hence, we have \smash{$\Sol(\mfrak{g},\mfrak{p};\C[\widebar{\mfrak{u}}^*] \otimes_\C \C_{\lambda_\alpha-\rho})^\mcal{F}_\mu \simeq \mathbb{F}_\mu$} for $\mu=a \omega_{n-k} + a\omega_{n+k}-(a+k)\omega_n$ and $\alpha = a-k + {n+m \over 2}$.}
+
+\theorem{\label{thm:singular vectors decomposition AGS}
+We have
+\begin{align*}
+  \tau \circ \Phi_{\lambda_\alpha+\rho} \colon M^\mfrak{g}_\mfrak{p}(\C_{\lambda_\alpha})^\mfrak{u} \riso
+  \begin{cases}
+    \mathbb{F}_{\mu_{\alpha,r}} &  \text{if $\alpha+r \notin \N$}, \\[2mm]
+    \mathbb{F}_{\mu_{\alpha,r}} \oplus \bigoplus\limits_{k=0}^{\min\{r-1,\alpha+r-1\}} \mathbb{F}_{\mu_{\alpha,k}} & \text{if $\alpha + r \in \N$,}
+  \end{cases}
+\end{align*}
+where $\mu_{\alpha,k}=(\alpha+r-k)\omega_{n-r+k}+(\alpha+r-k)\omega_{n+r-k}-(\alpha+2r-2k)\omega_n$ for $k=0,1,\dots,r$.}
+
+\proof{The decomposition of the space of singular vectors $M^\mfrak{g}_\mfrak{p}(\mathbb{C}_{\lambda_\alpha})^\mfrak{u}$ is a straightforward consequence of Lemma \ref{lem:solution space AGS}.}
+\vspace{-4mm}
+
+If $\alpha+r \in \N$, then Theorem \ref{thm:singular vectors decomposition AGS} ensures the existence of a non-trivial homomorphism
+\begin{align}
+  \varphi \colon M^\mfrak{g}_\mfrak{p}(\mathbb{F}_{\mu_{\alpha,k}}) \rarr M^\mfrak{g}_\mfrak{p}(\C_{\lambda_\alpha})
+\end{align}
+of generalized Verma modules for $k=0,1,\dots,\min\{r-1,\alpha+r-1\}$, where the simple $\mfrak{l}$-module $\mathbb{F}_{\mu_{\alpha,k}}$ is extended to a $\mfrak{p}$-module by $\mfrak{u}$ acting trivially, uniquely determined by a homomorphism
+\begin{align}
+  \varphi_0 \colon \mathbb{F}_{\mu_{\alpha,k}} \rarr M^\mfrak{g}_\mfrak{p}(\C_{\lambda_\alpha})
+\end{align}
+of $\mfrak{p}$-modules, which is defined by
+\begin{align}
+  \varphi_0(v_{\mu_{\alpha,k}})= q^{\alpha+r-k}_{r-k}(f_{ij}) v_\alpha,
+\end{align}
+where $v_\alpha \in M^\mfrak{g}_\mfrak{p}(\C_{\lambda_\alpha})$ is the highest weight vector of $M^\mfrak{g}_\mfrak{p}(\C_{\lambda_\alpha})$ and $v_{\mu_{\alpha,k}} \in \mathbb{F}_{\mu_{\alpha,k}}$ is the highest weight vector of $\mathbb{F}_{\mu_{\alpha,k}}$.
+
+
+The same approach works also in the $\mfrak{sp}$ and $\mfrak{so}^*$ cases \cite{krizka_invariant_2017}. 
