@@ -962,7 +962,7 @@ for $i=1,2,\dots,n$ and $j=1,2,\dots,m$.
 \end{theorem}
 
 \begin{proof}
-It follows immediately by straightforward caculations from \cite{krizka_contact}.
+It follows immediately by straightforward caculations from \cite{krizka_algebraic_2017}.
 \end{proof}
 
 
@@ -971,7 +971,7 @@ Let $\alpha \in \C$ and let $(\sigma,\C)$ be the trivial $\mfrak{p}$-module. The
   \tau \circ \Phi_{\lambda_\alpha} \colon M(\C_{\lambda_\alpha-\rho}) \riso \C[\widebar{\mfrak{u}}^*] \otimes_\C \C_{\lambda_\alpha-\rho}
 \end{align}
 of $\mfrak{g}$-modules, where the action of $\mfrak{g}$ on $\C[\widebar{\mfrak{u}}^*] \otimes_\C \C_{\lambda_\alpha-\rho}$ is given by Theorem \ref{thm:action AGS}.
-%Moreover, because $\C[\widebar{\mfrak{u}}^*] \otimes_\C \C_{\lambda_\alpha-\rho}$ and also $\Sol^\mcal{F} \subset \C[\widebar{\mfrak{u}}^*] \otimes_\C \C_{\lambda_\alpha-\rho}$ are semisimple $\mfrak{l}$-modules, we denote by $(\C[\widebar{\mfrak{u}}^*] \otimes_\C \C_{\lambda-\rho})_\mu$ and $\Sol(\mfrak{g},\mfrak{p};\C[\widebar{\mfrak{u}}^*] \otimes_\C \C_{\lambda-\rho})^\mcal{F}_\mu$ the $\mfrak{l}$-isotypic components of highest weight $\mu \in \mfrak{h}^*$.
+%Moreover, because $\C[\widebar{\mfrak{u}}^*] \otimes_\C \C_{\lambda_\alpha-\rho}$ and also $\Sol \subset \C[\widebar{\mfrak{u}}^*] \otimes_\C \C_{\lambda_\alpha-\rho}$ are semisimple $\mfrak{l}$-modules, we denote by $(\C[\widebar{\mfrak{u}}^*] \otimes_\C \C_{\lambda-\rho})_\mu$ and $\Sol(\mfrak{g},\mfrak{p};\C[\widebar{\mfrak{u}}^*] \otimes_\C \C_{\lambda-\rho})_\mu$ the $\mfrak{l}$-isotypic components of highest weight $\mu \in \mfrak{h}^*$.
 \medskip
 
 If we introduce an $\mfrak{l}$-module
@@ -980,7 +980,7 @@ If we introduce an $\mfrak{l}$-module
 \end{align}
 then by \eqref{eq:Phi isomorphism} we obtain an isomorphism
 \begin{align}
-  \tau \circ \Phi_\lambda \colon M(\mathbb{V}_{\lambda-\rho})^\mfrak{u} \riso \Sol^\mcal{F}
+  \tau \circ \Phi_\lambda \colon M(\mathbb{V}_{\lambda-\rho})^\mfrak{u} \riso \Sol
 \end{align}
 of $\mfrak{l}$-modules where $\mcal{F}$ is the algebraic Fourier duality mapping uniquely determined by 
 \begin{equation*}
@@ -1040,7 +1040,7 @@ of $\mfrak{l}$-modules, which is an isomorphism as follows from \cite{Goodman-Wa
 \begin{lemma}\label{lem:solution space AGS}
 Let $\alpha \in \C$ and $\mu \in \Lambda^+_\alpha(\mfrak{p})$. Then we have
 \begin{align*}
- \Sol^\mcal{F}_\mu \simeq
+ \Sol_\mu \simeq
  \begin{cases}
    \mathbb{F}_\mu & \text{for $\alpha \in \C$, $\mu = \big(\alpha-{n+m \over 2}\big)\omega_n$}, \\[1mm]
    \mathbb{F}_\mu & \text{$\!\begin{gathered}\text{for $\alpha = a-k+{\textstyle {n+m \over 2}}$, $\mu=a \omega_{n-k} + a\omega_{n+k}-(a+k)\omega_n$,}\\[1mm] \text{$a \in \N$, $k \in \{1,2,\dots,r\}$} \hfill \end{gathered}$} \\[1mm]
@@ -1049,18 +1049,18 @@ Let $\alpha \in \C$ and $\mu \in \Lambda^+_\alpha(\mfrak{p})$. Then we have
 \end{align*}
 \end{lemma}
 
-\begin{proof}Using Proposition \ref{prop:C[u] decomposition AGS} we know that $\C[\widebar{\mfrak{u}}^*] \otimes_\C \C_{\lambda_\alpha-\rho}$ is a multiplicity free $\mfrak{l}$-module. Moreover, since we have $\Sol^\mcal{F}_\mu \subset (\C[\widebar{\mfrak{u}}^*] \otimes_\C \C_{\lambda_\alpha-\rho})_\mu \simeq \mathbb{F}_\mu$ for $\mu \in \Lambda^+_\alpha(\mfrak{p})$, we obtain that $\smash{\Sol^\mcal{F}_\mu}$ is either the zero $\mfrak{l}$-module or isomorphic to the $\mfrak{l}$-module $\mathbb{F}_\mu$. Therefore, it is enough to verify, whether the highest weight vector $v_\mu$ of $(\C[\widebar{\mfrak{u}}^*] \otimes_\C \C_{\lambda_\alpha-\rho})_\mu$ is contained in $\Sol^\mcal{F}$ or not. Let $\mu \in \Lambda^+_\alpha(\mfrak{p})$ and let us assume that the highest weight vector
+\begin{proof}Using Proposition \ref{prop:C[u] decomposition AGS} we know that $\C[\widebar{\mfrak{u}}^*] \otimes_\C \C_{\lambda_\alpha-\rho}$ is a multiplicity free $\mfrak{l}$-module. Moreover, since we have $\Sol_\mu \subset (\C[\widebar{\mfrak{u}}^*] \otimes_\C \C_{\lambda_\alpha-\rho})_\mu \simeq \mathbb{F}_\mu$ for $\mu \in \Lambda^+_\alpha(\mfrak{p})$, we obtain that $\smash{\Sol_\mu}$ is either the zero $\mfrak{l}$-module or isomorphic to the $\mfrak{l}$-module $\mathbb{F}_\mu$. Therefore, it is enough to verify, whether the highest weight vector $v_\mu$ of $(\C[\widebar{\mfrak{u}}^*] \otimes_\C \C_{\lambda_\alpha-\rho})_\mu$ is contained in $\Sol$ or not. Let $\mu \in \Lambda^+_\alpha(\mfrak{p})$ and let us assume that the highest weight vector
 \begin{align*}
   v_\mu = q_1^{a_1}q_2^{a_2}\dots q_r^{a_r}
 \end{align*}
-of $(\C[\widebar{\mfrak{u}}^*] \otimes_\C \C_{\lambda_\alpha-\rho})_\mu$ with $a_1,a_2,\dots a_r \in \N_0$ belongs to $\Sol^\mcal{F}$. For greater clarity, we denote by $q^a$ the polynomial $q_1^{a_1}q_2^{a_2}\dots q_r^{a_r}$ for $a=(a_1,a_2,\dots,a_r) \in \N_0^r$ and by $1_k \in \N_0^r$ the $r$-tuple having $1$ at the $k$-th position and $0$ otherwise. Furthermore, we have
+of $(\C[\widebar{\mfrak{u}}^*] \otimes_\C \C_{\lambda_\alpha-\rho})_\mu$ with $a_1,a_2,\dots a_r \in \N_0$ belongs to $\Sol$. For greater clarity, we denote by $q^a$ the polynomial $q_1^{a_1}q_2^{a_2}\dots q_r^{a_r}$ for $a=(a_1,a_2,\dots,a_r) \in \N_0^r$ and by $1_k \in \N_0^r$ the $r$-tuple having $1$ at the $k$-th position and $0$ otherwise. Furthermore, we have
 \begin{align*}
   \hat{\pi}_{\lambda_\alpha}\!(e_{ij})&= \sum_{k=1}^m \sum_{\ell=1}^n y_{k\ell} \partial_{y_{ki}} \partial_{y_{j\ell}} - \bigg(\alpha-  {n+m \over 2}\bigg) \partial_{y_{ji}}= \sum_{k=1}^m  \partial_{y_{ki}} L^y_{kj} - \bigg(\alpha - {n-m \over 2} \bigg) \partial_{y_{ji}}
 \end{align*}
 for $i=1,2,\dots,n$ and $j=1,2,\dots,m$.
 \smallskip
 
-If $v_\mu =1$, then $\hat{\pi}_{\lambda_\alpha}\!(e_{ij})v_\mu=0$ for all $i=1,2,\dots,n$, $j=1,2,\dots,m$ and $\alpha \in \C$. Therefore, we have $\Sol^\mcal{F}_\mu \simeq \mathbb{F}_\mu$ for $\mu=\big(\alpha-{n+m \over 2}\big)\omega_n$ and $\alpha \in \C$.
+If $v_\mu =1$, then $\hat{\pi}_{\lambda_\alpha}\!(e_{ij})v_\mu=0$ for all $i=1,2,\dots,n$, $j=1,2,\dots,m$ and $\alpha \in \C$. Therefore, we have $\Sol_\mu \simeq \mathbb{F}_\mu$ for $\mu=\big(\alpha-{n+m \over 2}\big)\omega_n$ and $\alpha \in \C$.
 \smallskip
 
 Now, if $v_\mu \neq 1$, then there exists an index $s \in \{1,2,\dots,r\}$ satisfying $a_s \neq 0 $ and $a_\ell=0$ for $\ell=s+1,s+2,\dots,r$. Since $\partial_{y_{k,n-s+1}}q_\ell =0$ and $L^y_{ks}q_\ell=0$ for $\ell=1,2,\dots,s-1$ and $k=1,2,\dots,m$, we may write
@@ -1117,7 +1117,7 @@ We may write
   &=  \sum_{k=s+1}^m  a_s  q_s^{a_s-1} \partial_{y_{ji}}q_s -(m-s)\partial_{y_{ji}}q_s^{a_s} \\
   &=(m-s)\partial_{y_{ji}}q_s^{a_s}-(m-s)\partial_{y_{ji}}q_s^{a_s}=0,
 \end{align*}
-where we used $L^y_{kj}q_s=0$ if $j>s$ or if $k \leq s$ and $k\neq j$ in the third equality and $\partial_{y_{ki}}L^y_{kj}q_s=\partial_{y_{ji}} q_s$ for $k > s$ in the fifth equality. Hence, we have \smash{$\Sol^\mcal{F}_\mu \simeq \mathbb{F}_\mu$} for $\mu=a \omega_{n-k} + a\omega_{n+k}-(a+k)\omega_n$ and $\alpha = a-k + {n+m \over 2}$.
+where we used $L^y_{kj}q_s=0$ if $j>s$ or if $k \leq s$ and $k\neq j$ in the third equality and $\partial_{y_{ki}}L^y_{kj}q_s=\partial_{y_{ji}} q_s$ for $k > s$ in the fifth equality. Hence, we have \smash{$\Sol_\mu \simeq \mathbb{F}_\mu$} for $\mu=a \omega_{n-k} + a\omega_{n+k}-(a+k)\omega_n$ and $\alpha = a-k + {n+m \over 2}$.
 \end{proof}
 
 \begin{theorem}\label{thm:singular vectors decomposition AGS}
