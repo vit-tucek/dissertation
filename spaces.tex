@@ -44,7 +44,7 @@ We can generalize this as follows. Take a matrix Lie algebra, i.e. a subalgebra 
                 &= \tr (\ad X \circ \ad (X^\dag))  = tr (\ad X (\ad X)^*) \geq 0.
  \end{align*}
 
-In fact, any real semisimple Lie algebra $\mfrak{g}_0$ is isomorphic to a Lie algebra of real matrices that is closed under transpose and the isomorphism can be chosen in such a way that the Cartan involution of $\mfrak{g}_0$ is carried to negative transpose (Proposition VI.6.28 of \cite{knapp}).
+In fact, any real semisimple Lie algebra $\mfrak{g}_0$ is isomorphic to a Lie algebra of real matrices that is closed under transpose and the isomorphism can be chosen in such a way that the Cartan involution of $\mfrak{g}_0$ is carried to negative transpose (Proposition VI.6.28 of \cite{knapp_lie_1996}).
 
 A Cartan involution $\theta$ of $\mfrak{g}_0$ yields an eigenspace decomposition $\mfrak{g}_0 = \mfrak{k}_0 \oplus \mfrak{p}_0$ of $\mfrak{g}_0$ into $+1$ and $-1$ eigenspaces of $\theta$. Since $\theta$ is a Lie algebra homomorphism, it follows that
 \begin{equation}\label{eq:cartan_decomposition_1}
@@ -66,7 +66,7 @@ A decomposition of $\mfrak{g}_0 = \mfrak{k}_0 \oplus \mfrak{p}_0$ that satisfies
 and we see that Cartan involutions are in bijective correspondence with Cartan decompositions.
 
 Cartan involutions and decompositions can be even pushed to the Lie group level.
-\begin{theorem}[Theorem VI.6.31 of \cite{knapp}]
+\begin{theorem}[Theorem VI.6.31 of \cite{knapp_lie_1996}]
  Let $G$ be a semisimple Lie group, let $\theta$ be a Cartan involution of its Lie algebra $\mfrak{g}_0$, let $\mfrak{g}_0 = lie{k}_0 \oplus \mfrak{p}_0$ be the corresponding Catan decomposition, and let $K$ be the analytic subgroup of $G$ with Lie algebra $\mfrak{k}_0$. Then
  \begin{enumerate}
   \item there exists a Lie group automorphism $\Theta$ of $G$ with differential $\theta$, and $\Theta^2=\Id$
@@ -109,7 +109,7 @@ In the following we will use this simple lemma.
 
 In addition to compact form, there is always another real form (also unique up to conjugation) of a complex semisimple Lie algera $\mfrak{g}$. Let $\mfrak{h}_0$ be a Cartan subalgebra of $\mfrak{g}$ and consider its complexification $\mfrak{h}$ which is (by definition) a Cartan subalgebra of $\mfrak{g}$. We call a real Lie algebra $\mfrak{g}_0$ a \emph{split form} of $\mfrak{g}$ if the restrictions of elements of $\mfrak{h}^*$ to $\mfrak{h}_0$ are real valued.
 
-To construct a split real form we can just take a suitable basis of $\mfrak{g}$ and its real span. In details, take a complex Lie algebra $\mfrak{g}$ and its Cartan subalgebra $\mfrak{h}$ and define $\mfrak{h}_0$ as the subset of $\mfrak{h}$ on which all the roots take only real values. There is always a choice (see Theorem VI.6.6 of \cite{knapp_advanced}) of root vectors $X_\alpha \in \mfrak{g}_\alpha$ such that $[X_\alpha, X_{-\alpha}] = H_\alpha$ and
+To construct a split real form we can just take a suitable basis of $\mfrak{g}$ and its real span. In details, take a complex Lie algebra $\mfrak{g}$ and its Cartan subalgebra $\mfrak{h}$ and define $\mfrak{h}_0$ as the subset of $\mfrak{h}$ on which all the roots take only real values. There is always a choice (see Theorem VI.6.6 of \cite{knapp_lie_1996}) of root vectors $X_\alpha \in \mfrak{g}_\alpha$ such that $[X_\alpha, X_{-\alpha}] = H_\alpha$ and
 \begin{gather*}
 \beta \neq -\alpha \,\&\, \alpha + \beta \notin \roots \Longrightarrow [X_\alpha,X_\beta]=0 \\
  \alpha + \beta \in\roots \Longrightarrow [X_\alpha, X_\beta] = N_{\alpha,\beta}X_{\alpha+\beta},
@@ -472,7 +472,7 @@ Moreover, up to a scalar multiple, there exists for each $j$ a unique non-zero $
 
 \section{Octonionic planes}\label{sec:octo}
 
-The classical Hermitian symmetric spaces (i.e. those corresponding to the classical Lie groups) are treated thoroughly in \cite{faraut_analysis_1994}. The exceptional cases were descibed in \cite{drucker_exceptional_1978, drucker_simplified_1981}. The smaller of the two exceptional cases can be seen as a complexification of the octonionic projective plane \cite{landsberg} and as such it plays a prominent role in \cite{atiyah_projective_2003}. It's hyperplane section was described in \cite{pazourek}. The real octonionic projective plane is a symmetric Riemannian space $\mathrm{F_4}/\mathrm{Spin}(9)$ with exceptional holonomy $\mathrm{Spin}(9).$ Elementary description of this space as well as other it's noncompact (pseudo)Riemannian cousins was given in \cite{held_semi-riemannian_2009}. It required a lot of case by case calcucaltions and classification of Osserman manifolds to identify the manifolds with the appropriate homogeneous spaces. In this section we show how to obtain the Riemannian metric and curvature in a uniform and elemental way.
+The classical Hermitian symmetric spaces (i.e. those corresponding to the classical Lie groups) are treated thoroughly in \cite{faraut_analysis_1994}. The exceptional cases were descibed in \cite{drucker_exceptional_1978, drucker_simplified_1981}. The smaller of the two exceptional cases can be seen as a complexification of the octonionic projective plane \cite{landsberg_projective_2001, landsberg_projective_2003} and as such it plays a prominent role in \cite{atiyah_projective_2003}. It's hyperplane section was described in \cite{pazourek_hyperplane_2011}. The real octonionic projective plane is a symmetric Riemannian space $\mathrm{F_4}/\mathrm{Spin}(9)$ with exceptional holonomy $\mathrm{Spin}(9).$ Elementary description of this space as well as other it's noncompact (pseudo)Riemannian cousins was given in \cite{held_semi-riemannian_2009}. It required a lot of case by case calculations and classification of Osserman manifolds to identify the manifolds with the appropriate homogeneous spaces. In this section we show how to obtain the Riemannian metric and curvature in a uniform and elemental way.
 
 \subsection{Octonions and the exceptional Jordan algebra}
 
@@ -509,7 +509,7 @@ A bit more obscure is the triple cross product
 \[
 u \times v \times w = \frac{1}{2}\bigl( u(\conj{v}w) - w(\conj{v}u) \bigr)
 \]
-that appears in the theory of calibrations (and in fact defines what is called the Cayley calibration), see \cite{harvey, salamon} for details. Finally, the associator is defined as
+that appears in the theory of calibrations (and in fact defines what is called the Cayley calibration), see \cite{harvey_spinors_1990} for details. Finally, the associator is defined as
 \[
 \{ x,y,z \} = (xy)z - x(yz).
 \]
@@ -620,7 +620,7 @@ Comparing \eqref{g-matrix} with \eqref{eq:varphi} and imposing $a_1 = 1$ we see 
 
 First of all $\oscal{a}{a} = \gamma_1 + \gamma_2 \sfrac{N(x_1)}{r_1^2} + \gamma_3\sfrac{N(x_2)}{r_1^2}$ where the right hand side is equal to $\sfrac{ \gamma_1 r_1^2+ \gamma_2N(x_1) + \gamma_3N(x_2)}{r_1^2}$. By the equation \eqref{eq:diag1} this is $1/r_1$ as it should be. The remaining antidiagonal term of \eqref{g-matrix} = \eqref{eq:varphi} is $x_3 = \sfrac{a_3\conj{a_2}}{\oscal{a}{a}}  = \sfrac{ x_2\conj{x_1}}{r_1}$ which is exactly the equation \eqref{eq:antidiag3}.
 
-The diagonal terms pose a slightly bigger challenge as they are equivalent to $r_1 r_2  = N(x_1)$ and $r_1 r_3 = N(x_2)$. For a nonzero $x_1, x_2$ these equations can be derived from \eqref{eq:antidiag1} and \eqref{eq:antidiag2}. In the associative case, these are two of the equations for $\varphi(a)$ to be of rank 1 and this actually remains true even in the non-associative case, see e.g. \cite{chaput}. However, we can obtain these equations by elementary calculations  as we will illustrate in the case $x_2 = 0$. For then the equation \eqref{eq:antidiag3} yields $x_3 = 0$ as we suppose $r_1 \neq 0$ from the beginning. The equation \eqref{eq:antidiag1} implies either $r_3 = 0$ or $x_1 = 0$. The latter case leading to $A$ being a zero everywhere except at the upper left position and $a = (1,0,0)^T$. In the former case, we first take the square of the  condition $1 = \mathrm{Tr}\, A = \gamma_1 r_1 + \gamma_2 r_2$ to obtain $r_1^2 + 2\gamma_1\gamma_2 r_1 r_2 + r_2^2 = 1$ and subsequently 
+The diagonal terms pose a slightly bigger challenge as they are equivalent to $r_1 r_2  = N(x_1)$ and $r_1 r_3 = N(x_2)$. For a nonzero $x_1, x_2$ these equations can be derived from \eqref{eq:antidiag1} and \eqref{eq:antidiag2}. In the associative case, these are two of the equations for $\varphi(a)$ to be of rank 1 and this actually remains true even in the non-associative case. However, we can obtain these equations by elementary calculations  as we will illustrate in the case $x_2 = 0$. For then the equation \eqref{eq:antidiag3} yields $x_3 = 0$ as we suppose $r_1 \neq 0$ from the beginning. The equation \eqref{eq:antidiag1} implies either $r_3 = 0$ or $x_1 = 0$. The latter case leading to $A$ being a zero everywhere except at the upper left position and $a = (1,0,0)^T$. In the former case, we first take the square of the  condition $1 = \mathrm{Tr}\, A = \gamma_1 r_1 + \gamma_2 r_2$ to obtain $r_1^2 + 2\gamma_1\gamma_2 r_1 r_2 + r_2^2 = 1$ and subsequently 
 \[
 r_1r_2 = \frac{1-r_1^2 - r_2^2}{2\gamma_1\gamma_2}.
 \]
@@ -674,7 +674,7 @@ The directional derivative $\partial_u \varphi(x) = \lim_{t\to 0} \frac{\mathrm{
 we obtain the result after a short calculation.
 \end{proof}
 
-Now it is straightforward to calculate the pullback $\jscal{\partial_u \varphi(x)}{\partial_v \varphi(x)}$ of the Jordan algebra scalar product  and calculate the curvature using Gauss equation. The main point here is that the scalar products on the Jordan algebras are invariant with respect to their automorphism groups and so one obtains Riemannian metrics on these coordinate patches which are invariant with respect to these groups. What remains is to prove that these patches actually cover whole orbit in each case and determine the automorphism groups. But these matters are well known \cite{springer_octonions_2000, yokota}.
+Now it is straightforward to calculate the pullback $\jscal{\partial_u \varphi(x)}{\partial_v \varphi(x)}$ of the Jordan algebra scalar product  and calculate the curvature using Gauss equation. The main point here is that the scalar products on the Jordan algebras are invariant with respect to their automorphism groups and so one obtains Riemannian metrics on these coordinate patches which are invariant with respect to these groups. What remains is to prove that these patches actually cover whole orbit in each case and determine the automorphism groups. But these matters are well known \cite{springer_octonions_2000, shukuzawa_orbit_2003}.
 
 %\begin{theorem}
 %The pullback along $\varphi$ is given by
@@ -812,7 +812,7 @@ Now it is straightforward to calculate the pullback $\jscal{\partial_u \varphi(x
 
 \section{Invariant differential operators}
 
-There is a well known correspondence between homomorphisms of parabolic Verma modules and invariant differential operators acting on sections of associated bundles over $G/P$ \cite{cap_bernstein-gelfand-gelfand_2001}. For $\mfrak{g}$-dominant integral weights there is actually a whole complex of invariant differential operators called Bernstein-Gelfand-Gelfand resolution \cite{benstein_affine}.  These operators can be actually defined on any parabolic geometry modeled on $(G, P)$ \cite{cap_bernstein-gelfand-gelfand_2001, calderbank_differential_2001}. Using the results of \cite{huang_dirac_2006} it can be shown that construction of \cite{calderbank_differential_2001} works also for bundles associated to formal completions of unitarizable highest weight modules \cite{tucek_yamabe_2012}. For regular weights all Kostant modules admit a BGG resolution over $G/P$. See \cite{enright_diagrams_2014} and references therein. 
+There is a well known correspondence between homomorphisms of parabolic Verma modules and invariant differential operators acting on sections of associated bundles over $G/P$ \cite{cap_bernstein-gelfand-gelfand_2001}. For $\mfrak{g}$-dominant integral weights there is actually a whole complex of invariant differential operators called Bernstein-Gelfand-Gelfand resolution \cite{bernstein_affine}.  These operators can be actually defined on any parabolic geometry modeled on $(G, P)$ \cite{cap_bernstein-gelfand-gelfand_2001, calderbank_differential_2001}. Using the results of \cite{huang_dirac_2006} it can be shown that construction of \cite{calderbank_differential_2001} works also for bundles associated to formal completions of unitarizable highest weight modules \cite{tucek_yamabe_2012}. For regular weights all Kostant modules admit a BGG resolution over $G/P$. See \cite{enright_diagrams_2014} and references therein. 
 
 Connection between unitarizable highest weight modules and invariant differential operators is one of the main topcis of \cite{davidson_differential_1991}. To explain it here, we have to change notation a little bit for let $\alpha$ denote multiindices of integers.
 
@@ -837,11 +837,11 @@ As was argued in \cite{davidson_differential_1991} this inner product can be use
  A polynomial $f$ is in $L$ if and only if $\langle f, p m_i \rangle = 0$ for all $p\in P(\mfrak{p}_-,\C) = S(\mfrak{p}_+)$, $1\leq i\leq t$. According to the previous lemma this is equivalent to $p(\partial)  m_i(\partial)f)(0)$ for all relevant $p$ and $i$. From the polynomiality of $f$ follows that $m_i(\partial)f = 0$ for all $1\leq i\leq t.$
 \end{proof}
 
-Of course, the simple submodule $L(\lambda)$ is isomorphic to the simple quotient of $M(\lambda)$ by $J(\lambda)$. Reader interested in explicit form of the generators $m_i$ can consult chapter 10 of \cite{davidson_differential_1991}. The relationship between the Fischer inner product and the Shapovalov form was calculated by \cite{wachi}.
+Of course, the simple submodule $L(\lambda)$ is isomorphic to the simple quotient of $M(\lambda)$ by $J(\lambda)$. Reader interested in explicit form of the generators $m_i$ can consult chapter 10 of \cite{davidson_differential_1991}. The relationship between the Fischer inner product and the Shapovalov form was calculated by \cite{wachi_contravariant_1999}.
 
 \subsection[Explicit singular vectors for su(m, n)]{Explicit singular vectors for $\mfrak{su}(m, n)$}\label{sec:invariant}
 
-Since Verma modules are in particular highest weight modules, any homomorphism between them is determined by the image of the generating vector. This image is called singular vector it is, up to duality, precisely the invariant differential operator we seek. In this section we apply the recently developed F-method \cite{kobayashi_fmethod} to find (and classify) all singular vectors in Verma modules for $\mfrak{su}(m, n)$ which are induced from scalar representation.
+Since Verma modules are in particular highest weight modules, any homomorphism between them is determined by the image of the generating vector. This image is called singular vector it is, up to duality, precisely the invariant differential operator we seek. In this section we apply the recently developed F-method \cite{kobayashi_f-method_2014, kobayashi_branching_2015} to find (and classify) all singular vectors in Verma modules for $\mfrak{su}(m, n)$ which are induced from scalar representation.
 
 \medskip
 
@@ -1034,7 +1034,7 @@ and generates a finite-dimensional simple $\mfrak{l}$-submodule of $\C[\widebar{
 \begin{align*}
   \bigoplus_{\mu \in \Lambda^+_\alpha\!(\mfrak{p})} \mathbb{F}_\mu \rarr \C[\widebar{\mfrak{u}}^*] \otimes_\C \C_{\lambda_\alpha-\rho}
 \end{align*}
-of $\mfrak{l}$-modules, which is an isomorphism as follows from \cite{Goodman-Wallach2009}.
+of $\mfrak{l}$-modules, which is an isomorphism as follows from \cite{goodman_symmetry_2009}.
 \end{proof}
 
 \begin{lemma}\label{lem:solution space AGS}
