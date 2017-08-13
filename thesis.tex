@@ -3,27 +3,27 @@
 %% Verze pro jednostranný tisk:
 % Okraje: levý 40mm, pravý 25mm, horní a dolní 25mm
 % (ale pozor, LaTeX si sám přidává 1in)
-\documentclass[12pt,a4paper,final]{report}
-\setlength\textwidth{145mm}
-\setlength\textheight{247mm}
-\setlength\oddsidemargin{15mm}
-\setlength\evensidemargin{15mm}
-\setlength\topmargin{0mm}
-\setlength\headsep{0mm}
-\setlength\headheight{0mm}
-% \openright zařídí, aby následující text začínal na pravé straně knihy
-\let\openright=\clearpage
+%\documentclass[12pt,a4paper,final]{report}
+%\setlength\textwidth{145mm}
+%\setlength\textheight{247mm}
+%\setlength\oddsidemargin{15mm}
+%\setlength\evensidemargin{15mm}
+%\setlength\topmargin{0mm}
+%\setlength\headsep{0mm}
+%\setlength\headheight{0mm}
+%% \openright zařídí, aby následující text začínal na pravé straně knihy
+%\let\openright=\clearpage
 
-%% Pokud tiskneme oboustranně:
-% \documentclass[12pt,a4paper,twoside,openright]{report}
-% \setlength\textwidth{145mm}
-% \setlength\textheight{247mm}
-% \setlength\oddsidemargin{15mm}
-% \setlength\evensidemargin{0mm}
-% \setlength\topmargin{0mm}
-% \setlength\headsep{0mm}
-% \setlength\headheight{0mm}
-% \let\openright=\cleardoublepage
+% Pokud tiskneme oboustranně:
+ \documentclass[12pt,a4paper,twoside,openright]{report}
+ \setlength\textwidth{145mm}
+ \setlength\textheight{247mm}
+ \setlength\oddsidemargin{15mm}
+ \setlength\evensidemargin{0mm}
+ \setlength\topmargin{0mm}
+ \setlength\headsep{0mm}
+ \setlength\headheight{0mm}
+ \let\openright=\cleardoublepage
 
 %\usepackage{fixltx2e}   % fixes various  bugs in pre 2015 LaTeX 
 \usepackage[utf8]{inputenc}
@@ -37,7 +37,8 @@
 \usepackage{xfrac} % for \sfrac command
 \usepackage{mathrsfs}   % calligraphic font \mathscr{C}
 \usepackage{minted} % for pretty printing of source code
-\usepackage[style=alphabetic, backend=biber]{biblatex} % style=iso-authoryear
+%\usepackage[style=alphabetic, backend=biber]{biblatex}
+\usepackage[style=iso-authoryear, backend=biber]{biblatex} 
 \addbibresource{thesis.bib}
 \usepackage{float}
 \usepackage[toc]{appendix}
