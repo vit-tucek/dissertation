@@ -1,6 +1,6 @@
 \chapter{Lie algebras and their modules}
 
-In this chapter we fix some notation and review several structural results about Lie algebras. First we start with some basic definitions concerning a Lie algebra $\lie{g}$ over a field $\k$ of real or complex numbers.
+In this chapter we fix some notation and review several structural results about Lie algebras. First we start with some basic definitions concerning complex Lie algebras.
 
 \medskip
 
@@ -34,15 +34,15 @@ If $\phi:\lie{g} \to \lie{g}$ is any automorphism of the Lie algebra $\lie{g}$, 
 and thus $B(\phi(X),\phi(Y)) = B(X,Y)$. The Cartan criterion states that a Lie algebra $\lie{g}$ is semisimple if and only if the Killing form $B$ is nondegenerate.
 
 
-Let $\lie{g}$ be a complex semisimple Lie algebra and choose a Cartan subalgebra $\lie{h} \leq \lie{g}$. Any two Cartan subalgebras of $\lie{g}$ are conjugate by an inner automorphism of $\lie{g}$. The roots $\roots$ of $(\lie{g},\lie{h})$ are linear functionals $\alpha: \lie{h} \to \C$ such that the corresponding \emph{root space} $\lie{g}_\alpha = \{ X\in G \,|\,\forall H\in \lie{h}: [H,X] = \alpha(H) X \}$ is nonempty. In other words, roots are the nontrivial weights of the adjoint representation $\ad:\lie{g}\to\lie{g}$. The roots form a finite subset $\roots \subset \lie{h}^*$ and we have the \emph{root space decomposition}
+Let $\lie{g}$ be a complex semisimple Lie algebra and choose a Cartan subalgebra $\lie{h} \leq \lie{g}$. Any two Cartan subalgebras of $\lie{g}$ are conjugate by an inner automorphism of $\lie{g}$. The roots $\roots$ of $(\lie{g},\lie{h})$ are linear functionals $\alpha: \lie{h} \to \C$ such that the corresponding \emph{root space} $\lie{g}_\alpha = \{ X\in G \,|\,\forall H\in \lie{h}: [H,X] = \alpha(H) X \}$ is nonempty. In other words, roots are the weights of the adjoint representation $\ad:\lie{g}\to\lie{g}$. The roots form a finite subset $\roots \subset \lie{h}^*$ and we have the \emph{root space decomposition}
 \[
  \lie{g} = \lie{h} \oplus \sum_{\alpha \in \roots} \lie{g}_\alpha.
 \]
 
 If $X\in\lie{g}_\alpha$ and $Y\in\lie{g}_\beta$, then $B(X,Y) = 0$ unless $\alpha = -\beta$. Thus the Killing form induces a nondegenerate pairing on $\lie{g}_\alpha \otimes \lie{g}_{-\alpha}\to \C$. The restriction of $B$ to $\lie{h}$ is nondegenerate and, in particular, for each linear functional $\lambda \in \lie{h}^*$, there is a unique
- element $\widetilde{H_\lambda} \in \lie{h}$ such that $\lambda(H) = B(H,H_\lambda)$ for all $H\in\lie{h}$. We can define the bilinear form $(\, , \,)$ on $\lie{h}^*$ by
+ element $\widetilde{H_\lambda} \in \lie{h}$ such that $\lambda(H) = B(H,\widetilde{H_\lambda})$ for all $H\in\lie{h}$. We can define the bilinear form $(\, , \,)$ on $\lie{h}^*$ by
 \[
- (\lambda,\mu) = B(\widetilde{H_\lambda}, H_\mu).
+ (\lambda,\mu) = B(\widetilde{H_\lambda}, \widetilde{H_\mu}).
 \]
 The restriction of $(\, , \, )$ to the real span of $\roots$ is positive definite (and in particular has real values).
 
@@ -63,11 +63,11 @@ Let us summarize the properties of $\roots$
        where $p,q\geq 0$ and $p-q = \frac{2(\beta,\alpha)}{(\alpha,\alpha)}$. 
 \end{enumerate}
 
-For a root $\alpha \in \roots$ we define the \emph{coroot} $H_\alpha$ as
+For a root $\alpha \in \roots$ we define the \emph{coroot} $\alpha^\vee$ as
 \[
- H_\alpha = \frac{2}{(\alpha,\alpha)}\widetilde{H_\alpha}.
+\alpha^\vee = \frac{2}{(\alpha,\alpha)}\widetilde{H_\alpha}.
 \]
-Sometimes we will denote coroot associated to $\alpha$ by $\alpha^\vee$ to keep the notation consistent with articles that we refer to. A nonzero vectors in $\lie{g}_\alpha$ are called a \emph{root vectors}. From the properties of $\roots$ follows that we can always find root vectors $E_\alpha \in \lie{g}_\alpha$, $F_\alpha \in \lie{g}_{-\alpha}$ such that the triple $E_\alpha, F_\alpha, H_\alpha$ satisfies the canonical $\lie{sl}(2)$ relations
+Nonzero vectors in $\lie{g}_\alpha$ are called a \emph{root vectors}. From the properties of $\roots$ follows that we can always find root vectors $E_\alpha \in \lie{g}_\alpha$, $F_\alpha \in \lie{g}_{-\alpha}$ such that the triple $E_\alpha, F_\alpha, H_\alpha$ satisfies the canonical $\lie{sl}(2)$ relations
 \[
  [E,F] = H, \quad [H,E] = 2E, \quad [H,F] = -2F
 \]
@@ -97,11 +97,11 @@ For a root $\alpha \in \roots$ we define \emph{root reflection} $s_\alpha$ as
 
 \subsection{Borel and parabolic subalgebras}
 
-Given a complex Lie algebra $\lie{g}$ with a chosen Cartan subalgebra $\lie{h}$ and a system of positive roots $\roots^+$ we get a \emph{Cartan decomposition} (\emph{triangluar decomposition}) as
+Given a complex Lie algebra $\lie{g}$ with a chosen Cartan subalgebra $\lie{h}$ and a system of positive roots $\roots^+$ we get a \emph{Cartan decomposition} (\emph{triangular decomposition}) as
 \[
  \lie{g} = \lie{n}^- \oplus \lie{h} \oplus \lie{n}, \quad \text{where } \lie{n} = \bigoplus_{\alpha \in \roots^+} \lie{g}_\alpha \text{ and } \lie{n}^- = \bigoplus_{\alpha \in \roots^-} \lie{g}_\alpha.
 \]
-The Lie subalgebras $\lie{n}$, $\lie{n}^-$ are nilpotent and $\lie{n}^-$ is called the \emph{opposite} Lie subalgebra to $\lie{n}$. The subalgebra $\lie{b} = \lie{h}\oplus \lie{n}$ is the \emph{standard Borel subalgebra} and we will denote by $\lie{b}^-$ the opposite  Borel subalgebra. It is clear from the Cartan decomposition that $\lie{b}\cap\lie{b}^- = \lie{h}$. All Borel subalgebras are conjugated by inner automorphism to the standard Borel subalgebra.
+The Lie subalgebras $\lie{n}$, $\lie{n}^-$ are nilpotent and $\lie{n}^-$ is called the \emph{opposite} Lie subalgebra to $\lie{n}$. The subalgebra $\lie{b} = \lie{h}\oplus \lie{n}$ is the \emph{standard Borel subalgebra} and we will denote by $\lie{b}^- = \lie{h}\oplus \lie{n}^-$ the opposite  Borel subalgebra. It is clear from the triangular  decomposition that $\lie{b}\cap\lie{b}^- = \lie{h}$. All Borel subalgebras are conjugated by inner automorphism to the standard Borel subalgebra.
 
 A \emph{parabolic subalgebra} $\lie{p}$ of $\lie{g}$ is a subalgebra that contains a Borel subalgebra, \emph{standard parabolic subalgebra} is then a subalgebra that contains the standard Borel subalgebra. All parabolic subalgebras are conjugated by inner automorphism to a standard parabolic subalgebra.
 
@@ -135,9 +135,9 @@ There is a bijective correspondence between parabolic subalgebras of $\lie{g}$ a
 
 	Given $\Sigma\subset\sroots$, the set $\lie{g}_i$ ($i\neq 0)$ is defined to be $\oplus_{\phi\in A_i} \lie{g}_\phi$, where $A_i$ contains elements $\phi=\sum_{\alpha_j\in\sroots} c_j \alpha_j$ such that $\sum_{\{j:\alpha_j\in\Sigma\}} c_j=i$, and $\lie{g}_0=\lie{h}\oplus_{\phi\in A_0} \lie{g}_\phi$.
 
-	Given a grading $\oplus_j \lie{g}_j$, the parabolic subalgebra is then $\lie{p}=\oplus_{j\lie{g}eq 0}\lie{g}_j$.
+	Given a grading $\oplus_j \lie{g}_j$, the parabolic subalgebra is then $\lie{p}=\oplus_{j\geq 0}\lie{g}_j$.
 \end{lemma}
-
+So we can see that given a parabolic Lie algebra $\lie{p} = \lie{l} \oplus \lie{u}$ there is a grading on $\lie{g}$ such that $\lie{g}_0 = \lie{l}$ and $\lie{u} = \bigoplus_{i \geq 1} g_i$. The next lemma shows structural properties of this grading as well as relationship with the Killing form.
 \begin{lemma}[Proposition 3.1.2 of \cite{cap_parabolic_2009}]
 	Let $\lie{g}=\lie{g}_{-k}\oplus\cdots \lie{g}_k$ be a $|k|$-graded semisimple Lie algebra over $\k=\R$ or $\C$ and let $B:\lie{g}\otimes \lie{g}\to \k$ be a nondegenerate invariant bilinear form. Then we have:
 	\begin{enumerate}
@@ -159,6 +159,8 @@ In particular, the Killing form $B$ has the following anti-diagonal block matrix
 \]
 where $B_{i,j}$ denote the restriction of $B$ to $\lie{g}_i\otimes \lie{g}_j$.
 
+Since the grading element $E$ is in the center of $\lie{g}_0 = \lie{l}$ it acts by scalar on any irreducible $\lie{l}$-module $\mathbb{V}$. We will call this scalar \emph{geometric weight} of $\mathbb{V}$.
+
 The Weyl group has natural action on weights by orthogonal transformations and we call a weight singular (regular) if $(\lambda + \rho, \alpha)$ is (not) zero. The reason for this $\rho$ shift is that in applications one has to consider not the defining acting of the Weyl group $W$ but rather it's \emph{affine action} 
 \[
  w \cdot \lambda = w(\lambda + \rho) - \rho.
@@ -169,13 +171,13 @@ Let $w$ be an element of $W$. A \emph{reduced expression} for $w$ is $w = s_{i_1
 
 \section[BGG category O]{BGG category $\mathcal{O}$}
 
-This chapter contains the description of Bernstein-Bernstein-Gelfand category $\mathcal{O}$ and a small recapitulation of Enright-Shelton equivalences which will be needed later.
+This chapter contains the description of Bernstein-Bernstein-Gelfand category $\mathcal{O}$ and a small recapitulation of Enright-Shelton equivalences which will be needed later. In this section we will denote the Levi lie group / algebra by $K$ / $\lie{k}$ since later we will consider only the cases when the Levi subalgebra is actually the complexification of maximal compact subalgebra of certain real form of $\lie{g}$.
 
 For any $\lambda\in\lie{h}^*$ we denote by $\C_\lambda$ the one dimensional representation of $\lie{h}$ on with character $\lambda$. We extend the action to $\lie{b} := \lie{n}\oplus\lie{h}$ by letting $\lie{n}$ act trivially. The \emph{Verma module} $N(\lambda)$ is then defined as $N(\lambda) := \lie{U(g)}\otimes_{\lie{U(b)}} \C_\lambda$. We will denote its highest weight vector by $v_\lambda$.
 
-Let $\lambda$ be a $\Delta_c^+$ dominant and integral weight and denote by $F(\lambda)$ the finite dimensional irreducible $\lie{k}$-module.  We can extend any irreducible representation of $K_\mathbb{C}$ to $P$ and to $\overline{P}$ by letting $\lie{p}_+$ and $\lie{p}_-$ act trivially. The \emph{generalized} or \emph{parabolic Verma module} $M(\lambda)$ is defined as $M(\lambda) = \lie{U}(\lie{g}) \otimes_{\lie{U}(\lie{p})} F(\lambda)$. In cases where we will need to deal with Verma modules for different algebras we will denote them by $M_\Sigma$ where $\Sigma$ is the subset of $\sroots$ defining the parabolic subalgebra $\lie{p}$. 
+Let $\lambda$ be a $\lie{k}$-dominant and integral weight and denote by $F(\lambda)$ the finite dimensional irreducible $\lie{k}$-module.  We can extend any irreducible representation of $K_\mathbb{C}$ to $P$ and to $\overline{P}$ by letting $\lie{p}_+$ and $\lie{p}_-$ act trivially. The \emph{generalized} or \emph{parabolic Verma module} $M(\lambda)$ is defined as $M(\lambda) = \lie{U}(\lie{g}) \otimes_{\lie{U}(\lie{p})} F(\lambda)$. In cases where we will need to deal with Verma modules for different algebras we will denote them by $M_\Sigma$ where $\Sigma$ is the subset of $\sroots$ defining the parabolic subalgebra $\lie{p}$. 
 
- It is well known and easy to prove that $M(\lambda)$ contains a maximal nontrivial submodule $J(\lambda)$ and we denote by $L(\lambda)$ the corresponding irreducible quotient of $M(\lambda)$. Since the nilradical $\lie{p}_+$ of $\lie{p}$ is abelian and acts trivially on $F(\lambda)$, we can see that $M(\lambda) \simeq S(\lie{p}_-)\otimes F(\lambda)$ as $K_\C$ representations, where $S(\lie{p}_-)$ is the symmetric algebra  over the Lie algebra $\lie{p}_-$.
+ It is well known and easy to prove that $M(\lambda)$ contains a maximal nontrivial submodule $J(\lambda)$ and we denote by $L(\lambda)$ the corresponding irreducible quotient of $M(\lambda)$. We can easily see that $M(\lambda) \simeq S(\lie{p}_-)\otimes F(\lambda)$ as $K_\C$ representations, where $S(\lie{p}_-)$ is the symmetric algebra  over the Lie algebra $\lie{p}_-$.
 %The canonical $\overline{P}$-invariant filtration of $M(\lambda) = \bigcup_{k\geq 0} M^k(\lambda)$ has filtration components $M^k(\lambda)= \{\epsilon^{i_1}\cdots\epsilon^{i_j}\otimes v\, | v \in F(\lambda), j \leq k \}$.
 In the case of $M(\lambda)$, the geometric weight corresponds to the polynomial degree shifted by the weight of $F(\lambda)$.% and the canonical $\overline{P}$-invariant filtration is the same as the filtration induced by the geometric weight.
 
@@ -186,6 +188,7 @@ The \emph{(parabalic) category $\mathcal{O}_\lie{p}$} is the full subcategory of
 \item $M$ is locally $\lie{u}$-finite
 \end{enumerate}
 
+\subsection{Translation principle}\label{sec:translation}
 The whole category $\mathcal{O}^ \lie{p}$ decomposes into so called \emph{infinitesimal blocks} $\mathcal{O}^\lie{p}_\mu$, where $\mu$ is an antidominant weight of $\roots$. These blocks are full subcategories consisting of modules on which the center of the universal enveloping algebra acts by a character induced from $\mu$.  One can move between different blocks using so called translation functors which in favorable cases provide equivalence of these subcategories. These functors map Verma modules to Verma modules and simple modules to simple modules. The favorable cases are determined by so called facets which are in turn defined via root hyperplanes. The bottom line is that once two weights $\mu, \mu'$ have the same signs of scalar products with positive roots the infinitesimal blocks $\mathcal{O}^\lie{p}_\mu$ and $\mathcal{O}^\lie{p}_{\mu'}$ are equivalent. See chapter 7 of \cite{humphreys_representations_2008} for details.
 
 %\subsection[Category O and translation functors]{Category $\mathcal{O}$ and translation functors}
@@ -310,7 +313,7 @@ and their counterparts with first three and last three entries swapped. Now thes
 \[
 (4,  2\, |\,  1, 0) \quad (4,  1\, |\, 2, 0) \quad (4,  0\, |\, 2, 1).
 \]
-If we impose that the weight for $\lie{sl}(6)$ has to have entries increasing by $1$ this mapping on weights has inverse as we know that we have to put the number $3$ into two places and there's only one way to do it in each case so that one obtains $\lie{l}$-dominant weight. This directly generalizes to all other $\lie{sl}$ cases as any weight can be brought by translation functors to a weight that starts with $0$, has entries which are nondecreasing and which increase only by $1$.
+If we impose that the weight for $\lie{sl}(6)$ has to have entries increasing by $1$ this mapping on weights has inverse since we know that we have to put the number $3$ into two places and there's only one way to do it in each case so that one obtains $\lie{l}$-dominant weight. This directly generalizes to all other $\lie{sl}$ cases as any weight can be brought by translation functors to a weight that starts with $0$, has entries which are nondecreasing and which increase only by $1$.
 \end{example}
 
 \begin{remark}
