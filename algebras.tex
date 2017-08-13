@@ -137,7 +137,9 @@ There is a bijective correspondence between parabolic subalgebras of $\lie{g}$ a
 
 	Given a grading $\oplus_j \lie{g}_j$, the parabolic subalgebra is then $\lie{p}=\oplus_{j\geq 0}\lie{g}_j$.
 \end{lemma}
-So we can see that given a parabolic Lie algebra $\lie{p} = \lie{l} \oplus \lie{u}$ there is a grading on $\lie{g}$ such that $\lie{g}_0 = \lie{l}$ and $\lie{u} = \bigoplus_{i \geq 1} g_i$. The next lemma shows structural properties of this grading as well as relationship with the Killing form.
+
+So we can see that given a parabolic Lie algebra $\lie{p} = \lie{l} \oplus \lie{u}$ there is a grading on $\lie{g}$ such that $\lie{g}_0 = \lie{l}$ and $\lie{u} = \bigoplus_{i \geq 1} g_i$. The associated filtration to a grading $\lie{g}=\oplus_{i=-k}^k \lie{g}_i$ of $\lie{g}$ is defined by $\lie{g}^i = \bigoplus_{j \geq i} \lie{g}_j.$ Sometimes it's convenient to use the following notation as well $\lie{g}_+ = \bigoplus_{i > 0} \lie{g}_i$ and $\lie{g}_- = \bigoplus_{i < 0} \lie{g}_i.$ The next lemma shows structural properties of this grading as well as relationship with the Killing form.
+
 \begin{lemma}[Proposition 3.1.2 of \cite{cap_parabolic_2009}]
 	Let $\lie{g}=\lie{g}_{-k}\oplus\cdots \lie{g}_k$ be a $|k|$-graded semisimple Lie algebra over $\k=\R$ or $\C$ and let $B:\lie{g}\otimes \lie{g}\to \k$ be a nondegenerate invariant bilinear form. Then we have:
 	\begin{enumerate}
@@ -338,76 +340,12 @@ where $X_0,\ldots, X_n \in \lie{m}$ and $\phi:\Lambda^k \lie{m} \to \rep{V}$. Ag
 
 There is a natural identification of $C_k(\lie{m}^*,\rep{V})$ and $C^k(\lie{m},\rep{V})$ coming from the natural isomorphism $\Lambda^k \lie{m}^* \otimes \rep{V} \simeq \Hom(\lie{m},\rep{V})$.
 
-We can identify $C^k(\lie{p}_-,\rep{V})=\Hom (\Lambda^k\lie{p}_-,\rep{V})$ with $\Lambda^k {\lie{p}_-}^*\otimes\rep{V}$. Since the Killing form induces an isomorphism ${\lie{p}_-}^* \simeq \lie{p}_+$, we can consider the Lie algebra cohomology differential $\lcd$ as an operator on the chain spaces of Lie algebra homology $\lcd: \Lambda^k {\lie{p}_-}^* \otimes V \to \Lambda^{k+1}{\lie{p}_-}^*\otimes V$. After these identifications we get the formula
+In the special case when we consider $\lie{m}$ to be a nilradical $\lie{p}_-$ of some opposite parabolic subalgebra $\lie{p}$, we have the Killing form that induces an isomorphism ${\lie{p}_-}^* \simeq \lie{p}_+.$ Since we can identify $C^k(\lie{p}_-,\rep{V})=\Hom (\Lambda^k\lie{p}_-,\rep{V})$ with $\Lambda^k {\lie{p}_-}^*\otimes\rep{V}$, we see we can consider the Lie algebra cohomology differential $\lcd$ as an operator on the chain spaces of Lie algebra homology $\lcd: \Lambda^k {\lie{p}_-}^* \otimes V \to \Lambda^{k+1}{\lie{p}_-}^*\otimes V$. After these identifications we get the formula
 \[
  \lcd  (Z_1\wedge\cdots\wedge Z_k\otimes v) = \sum_{i=1}^{2p} \epsilon^i \wedge Z_1\wedge\cdots\wedge Z_k\otimes e_i\cdot v.
-\] The Lie algebra cohomology differential is $\overline{P}$-equivariant. In particular, both $\lcd$ and $\lhd$ are $K_\C$-equivariant and consequently they preserve the geometric weight.
+\] The Lie algebra cohomology differential is $\overline{P}$-equivariant. In particular, both $\lcd$ and $\lhd$ are $L$-equivariant and consequently they preserve the geometric weight.
 
-
-
-%\subsection{Invariant and coinvariant functors and their derivations}
-
-\emph{The right standard resolution of }$\mathbb{C}$ is the
-complex of free right $U(\mathfrak{n})-$modules given by
-\begin{equation*}
-\cdots \rightarrow \Lambda ^{p+1}\mathfrak{n}\otimes U(\mathfrak{n}%
-)\rightarrow \Lambda ^{p}\mathfrak{n}\otimes U(\mathfrak{n})\rightarrow
-\cdots \rightarrow \mathfrak{n}\otimes U(\mathfrak{n})\rightarrow U(%
-\mathfrak{n})\rightarrow 0\text{.}
-\end{equation*}%
-Applying the functor
-\begin{equation*}
--\otimes _{U(\mathfrak{n})}M\text{ }
-\end{equation*}%
-to the standard resolution we obtain a complex
-\begin{equation*}
-\cdots \rightarrow \Lambda ^{p+1}\mathfrak{n}\otimes M\rightarrow \Lambda
-^{p}\mathfrak{n}\otimes M\rightarrow \cdots \rightarrow \mathfrak{n}\otimes
-M\rightarrow M\rightarrow 0
-\end{equation*}%
-of left $\mathfrak{l}-$modules called \emph{the standard} $\mathfrak{n}-$%
-\emph{homology complex}. Here $\mathfrak{l}$ acts via the tensor product of
-the adjoint action on $\Lambda ^{p}\mathfrak{n}$ with the given action on $M$%
-. Since $U(\mathfrak{g})$ is free as $U(\mathfrak{n})-$module, a routine
-homological argument identifies the pth$-$homology of the standard complex
-with the pth $\mathfrak{n}-$homology group
-\begin{equation*}
-H_{\text{p}}(\mathfrak{n},M).
-\end{equation*}%
-One knows that the induced $\mathfrak{l}-$action on the homology groups of
-the standard complex is the correct one.
-
-
-The \emph{zero} $\mathfrak{n}-$\emph{cohomology }of a $\mathfrak{g}%
--$module $M$ is the $\mathfrak{l}-$module
-\begin{equation*}
-H^{0}(\mathfrak{n},M)=\text{Hom}_{U(\mathfrak{n})}(\mathbb{C},M).
-\end{equation*}%
-This determines a left exact functor from the category of $\mathfrak{g}-$%
-modules to the category of $\mathfrak{l}-$modules. By definition, \emph{the}
-$\mathfrak{n}-$\emph{cohomology groups of} $M$ are the $\mathfrak{l}-$%
-modules obtained as the corresponding derived functors. These $\mathfrak{l}-$%
-modules can be calculated by applying the functor
-\begin{equation*}
-\text{Hom}_{U(\mathfrak{n})}(-,M)
-\end{equation*}%
-to the standard resolution of $\mathbb{C}$, this time by free left $U(%
-\mathfrak{n})-$modules. In a natural way, one obtains a complex of $%
-\mathfrak{l}-$modules and pth cohomology of this complex realizes the pth $%
-\mathfrak{n}-$cohomology group
-
-\begin{equation*}
-H^{\text{p}}(\mathfrak{n},M).
-\end{equation*}
-
- Let $\mathfrak{n}^{\ast }$denote the $\mathfrak{l}-$module dual to
-$\mathfrak{n}$. Then, using the standard complexes and the natural
-isomorphism of $\mathfrak{l}-$modules
-\begin{equation*}
-\Lambda ^{p}\mathfrak{n}^{\ast }\otimes M\cong \text{Hom}(\Lambda ^{p}%
-\mathfrak{n},M)
-\end{equation*}%
-one can deduce the following well known fact \cite[Section 2]{HS}:
+The following two propositions are well known.
 
 \begin{proposition}
 Suppose $M$ is a $\mathfrak{g-}$module. Let $\mathfrak{p}\subseteq \mathfrak{%
@@ -441,6 +379,49 @@ H_{\text{p}}(\mathfrak{n},M)\cong H^{\text{d-p}}(\mathfrak{n},M)\otimes
 
 \end{proposition}
 
+
+
+%\subsection{Invariant and coinvariant functors and their derivations}
+
+Finally let us recall interpretation of the Lie algebra (co)homology as derived functors which plays a crucial role in the proof of existence of the BGG resolution for regular Kostant modules. See \cite{enright_diagrams_2014, boe_kostant_2009} and references therein. 
+
+\emph{The right standard resolution of }$\mathbb{C}$ is the
+complex of free right $U(\mathfrak{n})-$modules given by
+\begin{equation*}
+\cdots \rightarrow \Lambda ^{p+1}\mathfrak{n}\otimes U(\mathfrak{n}%
+)\rightarrow \Lambda ^{p}\mathfrak{n}\otimes U(\mathfrak{n})\rightarrow
+\cdots \rightarrow \mathfrak{n}\otimes U(\mathfrak{n})\rightarrow U(%
+\mathfrak{n})\rightarrow 0\text{.}
+\end{equation*}%
+Applying the functor
+\begin{equation*}
+-\otimes _{U(\mathfrak{n})}M\text{ }
+\end{equation*}%
+to the standard resolution we obtain a complex
+\begin{equation*}
+\cdots \rightarrow \Lambda ^{p+1}\mathfrak{n}\otimes M\rightarrow \Lambda
+^{p}\mathfrak{n}\otimes M\rightarrow \cdots \rightarrow \mathfrak{n}\otimes
+M\rightarrow M\rightarrow 0
+\end{equation*}%
+of left $\mathfrak{l}-$modules called \emph{the standard} $\mathfrak{n}-$%
+\emph{homology complex}. Here $\mathfrak{l}$ acts via the tensor product of
+the adjoint action on $\Lambda ^{p}\mathfrak{n}$ with the given action on $M$%
+. Since $U(\mathfrak{g})$ is free as $U(\mathfrak{n})-$module, one can show that the $p$th-homology of the standard complex is in fact the $p$th $\mathfrak{n}-$homology group $H_{\text{p}}(\mathfrak{n},M).$
+
+The \emph{zero} $\mathfrak{n}-$\emph{cohomology }of a $\mathfrak{g}%
+-$module $M$ is the $\mathfrak{l}-$module
+\begin{equation*}
+H^{0}(\mathfrak{n},M)=\text{Hom}_{U(\mathfrak{n})}(\mathbb{C},M).
+\end{equation*}%
+This suggest that applying the left exact functor from the category of $\mathfrak{g}-$%
+modules to the category of $\mathfrak{l}-$modules
+\begin{equation*}
+\text{Hom}_{U(\mathfrak{n})}(-,M)
+\end{equation*}%
+to the standard resolution of $\mathbb{C}$, this time by free left $U(%
+\mathfrak{n})-$modules, will yield the Lie algebra cohomology groups which is indeed the case. 
+
+Hence we see that the we can see the Lie algebra (co)homology as the $\mathrm{Tor}$ and $\mathrm{Ext}$ functors.
 
 \subsection{Disjoint operators and Hodge decomposition}
 
@@ -509,7 +490,7 @@ where $A$ is the restriction of $\lcd$ to $\im\lhd$ and $B$ is the restriction o
 
 There is a convenient way to construct pairs of disjoint operators.
 \begin{proposition} %TODO jak je to s im adjungovaneho operatoru? v konecne dimenzi by ta podminka na nedegenerovanost na im adjunktu mela byt nadbytecna. v nekonecne?
- Let $\lhd$ be a differential on a vector space $V$ endowed with a non-degenerate bilinear (respectively sesquilinear) form $\langle \, , \, \rangle$ and let $\lcd$ be the adjoint of $\lhd$ with respect to $\langle \, , \, \rangle$. If the restriction of $\langle \, , \, \rangle$ to $\im \lhd$ and $\im \lcd$ are non-degenerate, then $\lhd$ and $\lcd$ are disjoint and the Hodge decomposition \eqref{eq:hodge_decomp} is orthogonal with respect to $\langle \, , \, \rangle$.
+ Let $\lhd$ be a differential on a vector space $V$ endowed with a non-degenerate bilinear (or sesquilinear) form $\langle \, , \, \rangle$ and let $\lcd$ be the adjoint of $\lhd$ with respect to $\langle \, , \, \rangle$. If the restrictions of $\langle \, , \, \rangle$ to $\im \lhd$ and $\im \lcd$ are non-degenerate, then $\lhd$ and $\lcd$ are disjoint and the Hodge decomposition \eqref{eq:hodge_decomp} is orthogonal with respect to $\langle \, , \, \rangle$.
 \end{proposition}
 \begin{proof}
  It is trivial to see that $\lcd$ is a differential, for we have 
@@ -518,7 +499,7 @@ There is a convenient way to construct pairs of disjoint operators.
 
  To prove \eqref{eq:disjointness}, let $x\in V$ be such that $\lhd \lcd x = 0$. We get
  \[ 0 = \langle \lhd\lcd x , y \rangle = \langle \lcd x, \lcd y \rangle \]
- for all $y\in V$. By our assumptions is the bilinear (resp. sesquilinear) map $(x,y) \to \langle \lcd x, \lcd y \rangle$ non-degenerate and hence we conclude that $\lcd x = 0$. Exchanging the roles of $\lhd$ and $\lcd$ in this computation we get that also $\lcd \lhd x =0$ implies $\lhd x=0$.
+ for all $y\in V$. By our assumptions is the bilinear (sesquilinear) map $(x,y) \to \langle \lcd x, \lcd y \rangle$ non-degenerate and hence we conclude that $\lcd x = 0$. Exchanging the roles of $\lhd$ and $\lcd$ in this computation we get that also $\lcd \lhd x =0$ implies $\lhd x=0$.
 
  Orthogonality of the Hodge resolution follows from $\ker \lhd = (\im\lcd)^\perp$ and $\ker \lcd = (\im \lhd)^\perp$.
 \end{proof}
@@ -529,9 +510,9 @@ There is a convenient way to construct pairs of disjoint operators.
  This is trivial as the restriction of $\langle \, , \, \rangle$ to any subspace is non-degenerate.
 \end{proof}
 
- If $V$ is infinite-dimensional and $L$ is any closed subspace of finite codimension, then any algebraic complementary subspace to $L$ in $V$ is also a topological complement (\cite{schaefer_topological_1999}). We further impose on $\lhd$ and $\lcd$ that the are continuous with closed image\footnote{We note that for a finite-dimensional vector space $V$ are these topological conditions automatically satisfied for all linear operators.}
+ If $V$ is infinite-dimensional and $L$ is any closed subspace of finite codimension, then any algebraic complementary subspace to $L$ in $V$ is also a topological complement (\cite{schaefer_topological_1999}). In these cases we demand that $\lhd$ and $\lcd$ are continuous with closed image\footnote{We note that for a finite-dimensional vector space $V$ are these topological conditions automatically satisfied for all linear operators.}
 
-The authors of \cite{huang_dirac_2006} proved that if $\rep{V}$ is a unitarizable $(\lie{g},K)$-module and $\lie{u}_+$ is the nilradical of an admissible real Lie algebra, then the Hodge decomposition of $C_\bullet(\lie{u}_+,\rep{V})$ is still valid. 
+The authors of \cite{huang_dirac_2006} proved that if $\rep{V}$ is a unitarizable $(\lie{g},K)$-module and $\lie{u}_+$ is abelian nilradical of a $\theta$-stable parabolic subalgebra\footnote{See the definition \ref{def:thetastableparabolic}.}, then the Hodge decomposition of $C_\bullet(\lie{u}_+,\rep{V})$ is still valid. 
 
 \subsection{Kostant theorem and Kostant modules}
 
@@ -552,7 +533,7 @@ It was proven in \cite{kostant_lie_1961} that for a finite-dimensional $\lie{g}$
 	where $L(\lambda)$ is the finite dimensional $\lie{g}$-module with highest weight $\lambda$ and $F(w\cdot \lambda)$ are finite dimensional $\lie{l}_\Sigma$ modules with highest weights $w \cdot \lambda$ where $w \cdot \lambda = w(\lambda + \rho) - \rho$ is the affine action of $w \in W.$
 \end{theorem}
 
-This theorem gave rise to a definition of \emph{Kostant modules} which are (not necessarily finite-dimensional) modules for which there is a similar formula for cohomology. It started with \cite{collingwood_mathfrakn-homology_1985} and was later developed in \cite{boe_kostant_2009}. The definition roughly says that a simple highest weight module $L$ is Kostant module if there is a graded poset $P$ with a length function in $W$ such that the $i$th cohomology is given by the affine action of elements of $P$ of length $i$. For simple modules with regular weight this poset $P$ is given by the poset of minimal coset representatives $W^\Sigma$. For singular weights the situation is much more complicated, the ``working definition'' is that the poset $P$ is given by $W^{\Sigma, J}$ from theorem \ref{thm:es_equivalence}. We refer to \cite{boe_kostant_2009} and \cite{enright_diagrams_2014} for further details and examples. For our applications we only need to know that the unitarizable highest weight modules of chapter \ref{ch:unitarizable} are examples of Kostant modules.
+This theorem gave rise to a definition of \emph{Kostant modules} which are (not necessarily finite-dimensional) modules for which there is a similar formula for cohomology. It started with \cite{collingwood_mathfrakn-homology_1985} and was later developed in \cite{boe_kostant_2009}. The definition roughly says that a simple highest weight module $L$ is Kostant module if there is a graded poset $P$ with a length function in $W$ such that the $i$th cohomology is given by the affine action of elements of $P$ of length $i$. For simple modules with regular weight this poset $P$ is given by (sub)poset of minimal coset representatives $W^\Sigma$. For singular weights the situation is much more complicated, the ``working definition'' is that the poset $P$ is given by $W^{\Sigma, J}$ from theorem \ref{thm:es_equivalence}. We refer to \cite{boe_kostant_2009} and \cite{enright_diagrams_2014} for further details and examples. For our applications we only need to know that the unitarizable highest weight modules of chapter \ref{ch:unitarizable} are examples of Kostant modules.
 
 The article \cite{boe_kostant_2009} classifies Kostant modules for arbitrary blocks of category $\mathcal{O}^\lie{p}$ for $|1|$-graded parabolic $\lie{p} \leq \lie{g}$. The classification is given by certain subdiagrams of the Dynkin diagram. Given subdiagram of the Dynkin diagram one can use the Enright-Shelton equivalence functor to simple modules of the Lie algebra defined by the smaller diagram and one obtains Kostant modules for the bigger Lie algebra. Moreover all Kostant modules arise in this way. Let $J$ denote the set of singular simple roots, i.e. \(J= \{ \alpha \in \sroots \,|\, (\lambda+\rho,\alpha^\vee) = 0 \}.\) The columns $\alpha$ and $\alpha'$ give the crossed roots in the Dynkin diagrams. Each Kostant module corresponds to a connected subdiagram of $\mathcal{D}'$ containing $\alpha'$. Each such subdiagram gives a parabolic pair and the Kostant modules correspond to finite-dimensional modules for the semisimple part of the Levi factor of $\mathcal{D}'$.
 
