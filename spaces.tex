@@ -799,7 +799,7 @@ Now it is straightforward to calculate the pullback $\jscal{\partial_u \varphi(x
 
 There is a well known correspondence between homomorphisms of parabolic Verma modules and invariant differential operators acting on sections of associated bundles over $G/P$ \cite{cap_bernstein-gelfand-gelfand_2001}. For $\mfrak{g}$-dominant integral weights there is actually a whole complex of invariant differential operators called Bernstein-Gelfand-Gelfand resolution \cite{bernstein_differential_1975}.  These operators can be actually defined on any parabolic geometry modeled on $(G, P)$ \cite{cap_bernstein-gelfand-gelfand_2001, calderbank_differential_2001}. Using the results of \cite{huang_dirac_2006} it can be shown that construction of \cite{calderbank_differential_2001} works also for bundles associated to formal completions of unitarizable highest weight modules \cite{tucek_yamabe_2012}. For regular weights all Kostant modules admit a BGG resolution over $G/P$. See \cite{enright_diagrams_2014} and references therein. 
 
-Connection between unitarizable highest weight modules and invariant differential operators is one of the main topcis of \cite{davidson_differential_1991}. To explain it here, we have to change notation a little bit for let $\alpha$ denote multiindices of integers.
+Connection between unitarizable highest weight modules and invariant differential operators is one of the main topcis of \cite{davidson_differential_1991}. To explain it here, we have to change notation a little bit and let $\alpha$ denote multiindices of natural numbers.
 
 Let $P(V,W)$ denote the space of polynomials between two complex vector spaces $V$ and $W$ which are endowed with a Hermitian inner product. For $p\in P(V,W)$ define $p(\partial):P(V,W)\to P(V,\C)$ by equality $p(\partial) e^{(s|t)_V} = p(\overline{s})e^{(s|t)_V}$. In coordinates we get that for $p(t) = \sum_{\alpha} a_{\alpha} t^{\alpha}$ the resulting linear differential operator has the expression $p(\partial)= \sum_{\alpha} \overline{a_{\alpha}} t^{\alpha}$. The \emph{Fischer inner product} on $P(V,W)$ is defined by $\langle p,q\rangle := (q(\partial)p)(0)$. Explicitly in coordinates we have for  $p(t) = \sum_{\alpha} a_{\alpha} t^{\alpha}$ and  $q(t) = \sum_{\alpha} b_{\alpha} t^{\alpha}$ that $\langle p,q\rangle = \sum_{\alpha} \alpha! (a_{\alpha},b_{\alpha})_W$.
 
@@ -813,7 +813,7 @@ Let $P(V,W)$ denote the space of polynomials between two complex vector spaces $
  All three expression are euqal to $((fq)(\partial)p)(0)$.
 \end{proof}
 
-As was argued in \cite{davidson_differential_1991} this inner product can be used to define a nondegenerate pairing between $M(\lambda)$ and its conjugate dual $M(\lambda)^*$. In this duality one gets that $J(\lambda)$ is orthogonal to $L(\lambda)$.
+As was argued in \cite{davidson_differential_1991} this inner product can be used to define a nondegenerate pairing between $M(\lambda)$ and its conjugate dual $M(\lambda)^*$. In this duality one gets that the maximal submodule $J(\lambda)$ is orthogonal to $L(\lambda)$.
 
 \begin{theorem}[Theorem 2.9 of \cite{davidson_differential_1991}]
  Let $m_1,\ldots,m_k$ be any set of generators for the maximal submodule $J(\lambda)$ of the Verma module $M(\lambda)$ which we view as an $S(\mfrak{p}_+)$-module. Then the simple submodule $L(\lambda)$ of the conjugate dual $M(\lambda)^*$ is the kernel of the constant coefficient operators $m_i(\partial)$, $1\leq i\leq t.$
@@ -826,7 +826,7 @@ Of course, the simple submodule $L(\lambda)$ is isomorphic to the simple quotien
 
 \subsection[Explicit singular vectors for su(m, n)]{Explicit singular vectors for $\mfrak{su}(m, n)$}\label{sec:invariant}
 
-Since Verma modules are in particular highest weight modules, any homomorphism between them is determined by the image of the generating vector. This image is called singular vector it is, up to duality, precisely the invariant differential operator we seek. In this section we apply the recently developed F-method \cite{kobayashi_f-method_2014, kobayashi_branching_2015} to find (and classify) all singular vectors in Verma modules for $\mfrak{su}(m, n)$ which are induced from scalar representation.
+Since Verma modules are in particular highest weight modules, any homomorphism between them is determined by the image of the generating vector. This image is called singular vector and it is, up to duality, precisely the invariant differential operator we seek. In this section we apply the recently developed F-method \cite{kobayashi_f-method_2014, kobayashi_branching_2015} to find (and classify) all singular vectors in Verma modules for $\mfrak{su}(m, n)$ which are induced from scalar representation.
 
 \medskip
 
@@ -979,7 +979,7 @@ Let $\alpha \in \C$ and let $r=\min\{n,m\}$. Then we have
 \end{align}
 as $\mfrak{l}$-modules, where $\mathbb{F}_\mu$ is the simple $\mfrak{l}$-module with highest weight $\mu \in \mfrak{h}^*$ and
 \begin{align}
- \Lambda^+_\alpha(\mfrak{p}) = \bigg\{\sum_{i=1}^r a_i \omega_{n-i} + \sum_{i=1}^r a_i \omega_{n+i} + \bigg(\alpha - {n+m \over 2} - 2 \sum_{i=1}^r a_i\!\bigg) \omega_n;\, a_1,a_2,\dots,a_r \in \N_0 \bigg\}.
+ \Lambda^+_\alpha(\mfrak{p}) = \bigg\{\sum_{i=1}^r a_i \omega_{n-i} + \sum_{i=1}^r a_i \omega_{n+i} + \bigg(\alpha - {n+m \over 2} - 2 \sum_{i=1}^r a_i\!\bigg) \omega_n;\, a_i \in \N_0 \bigg\}.
 \end{align}
 Moreover, the corresponding highest weight vector $v_\mu$ of $\mathbb{F}_\mu$ in $\C[\widebar{\mfrak{u}}^*] \otimes_\C \C_{\lambda_\alpha-\rho}$ with
 \begin{align}
@@ -1000,13 +1000,14 @@ for $k=1,2,\dots,r$.
 
 \begin{proof}First of all, we need to verify that the polynomials $q_k$ are the highest weight vectors with highest weights $\omega_{n-k}+\omega_{n+k}+\big(\alpha - {n + m \over 2} -2\big)\omega_n$ for $k=1,2,\dots,r$. Using \eqref{eq:left right action y AGS} it easily follows that $L^y_{ij}q_k=0$ for $j=k+1,k+2,\dots,m$ and $L^y_{ij}q_k$ is the polynomial which arises from $q_k$ replacing the $j$-th row $(y_{j,n-k+1},y_{j,n-k+2},\dots,y_{j,n})$  with the $i$-th row $(y_{i,n-k+1},y_{i,n-k+2},\dots,y_{i,n})$ in the corresponding matrix \eqref{eq:generators hwv AGS} for $j=1,2,\dots,k$. Analogously, we have that $-R^y_{ij}q_k=0$ for $i=1,2,\dots,n-k$ and $-R^y_{ij}q_k$ is the polynomial which arises from $q_k$ replacing the $i$-th column \smash{$(y_{1,i},y_{2,i},\dots,y_{k,i})^{\rm T}$} with the $j$-th column \smash{$(y_{1,j},y_{2,j},\dots,y_{k,j})^{\rm T}$} in the corresponding matrix \eqref{eq:generators hwv AGS} for $i=n-k+1,n-k+2,\dots,n$. Therefore, we obtain $R^y_{ij}q_k=0$ for $1 \leq i < j \leq n$ and $L^y_{ij}q_k=0$ for $1 \leq i < j \leq m$, which gives us that $q_k$ is annihilated by $\mfrak{l} \cap \mfrak{n}$. Furthermore, since we have
 \begin{align*}
-  \hat{\pi}_{\lambda_\alpha}\!(h_{A,B})q_k &= \sum_{i=1}^n a_i R^y_{ii}q_k + \sum_{j=1}^m b_j L^y_{jj}q_k = -\sum_{i=n-k+1}^n a_i q_k + \sum_{j=1}^k b_j q_k
-  = \bigg(\sum_{i=1}^{n-k} a_i + \sum_{j=1}^k b_j \bigg)q_k \\
+  \hat{\pi}_{\lambda_\alpha}\!(h_{A,B})q_k &= \sum_{i=1}^n a_i R^y_{ii}q_k + \sum_{j=1}^m b_j L^y_{jj}q_k = -\sum_{i=n-k+1}^n a_i q_k + \sum_{j=1}^k b_j q_k \\
+  &= \bigg(\sum_{i=1}^{n-k} a_i + \sum_{j=1}^k b_j \bigg)q_k \\
   &= \omega_{n-k}(h_{A,B})q_k + \omega_{n+k}(h_{A,B})q_k+ \bigg(\alpha-{n+m \over 2}-2\bigg)\omega_n(h_{A,B})q_k
 \end{align*}
 for all $A=\diag(a_1,a_2,\dots,a_n)$, $B=\diag(b_1,b_2,\dots,b_m)$ satisfying $\tr A=0$, $\tr B=0$, and
 \begin{align*}
-  \hat{\pi}_{\lambda_\alpha}\!(h_c)q_k&= -\bigg({1 \over n} + {1 \over m}\bigg)E^yq_k + \bigg(\alpha -{n+m \over 2}\bigg)q_k = -k\bigg({1 \over n} + {1 \over m}\bigg)q_k+ \bigg(\alpha -{n+m \over 2}\bigg)q_k \\
+  \hat{\pi}_{\lambda_\alpha}\!(h_c)q_k&= -\bigg({1 \over n} + {1 \over m}\bigg)E^yq_k + \bigg(\alpha -{n+m \over 2}\bigg)q_k \\
+  &= -k\bigg({1 \over n} + {1 \over m}\bigg)q_k+ \bigg(\alpha -{n+m \over 2}\bigg)q_k \\
   &= \omega_{n-k}(h_c)q_k + \omega_{n+k}(h_c)q_k+\bigg(\alpha-{n+m \over 2}-2\bigg)\omega_n(h_c)q_k,
 \end{align*}
 we obtain that $q_k$ is a weight vector with respect to $\mfrak{l} \cap \mfrak{h}$. Therefore, the polynomial $q_k$ is the highest weight vector with highest weight $\omega_{n-k}+ \omega_{n+k} + \big(\alpha-{n+m \over 2}-2\big)\omega_n$.
@@ -1040,7 +1041,8 @@ Let $\alpha \in \C$ and $\mu \in \Lambda^+_\alpha(\mfrak{p})$. Then we have
 \end{align*}
 of $(\C[\widebar{\mfrak{u}}^*] \otimes_\C \C_{\lambda_\alpha-\rho})_\mu$ with $a_1,a_2,\dots a_r \in \N_0$ belongs to $\Sol$. For greater clarity, we denote by $q^a$ the polynomial $q_1^{a_1}q_2^{a_2}\dots q_r^{a_r}$ for $a=(a_1,a_2,\dots,a_r) \in \N_0^r$ and by $1_k \in \N_0^r$ the $r$-tuple having $1$ at the $k$-th position and $0$ otherwise. Furthermore, we have
 \begin{align*}
-  \hat{\pi}_{\lambda_\alpha}\!(e_{ij})&= \sum_{k=1}^m \sum_{\ell=1}^n y_{k\ell} \partial_{y_{ki}} \partial_{y_{j\ell}} - \bigg(\alpha-  {n+m \over 2}\bigg) \partial_{y_{ji}}= \sum_{k=1}^m  \partial_{y_{ki}} L^y_{kj} - \bigg(\alpha - {n-m \over 2} \bigg) \partial_{y_{ji}}
+  \hat{\pi}_{\lambda_\alpha}\!(e_{ij})&= \sum_{k=1}^m \sum_{\ell=1}^n y_{k\ell} \partial_{y_{ki}} \partial_{y_{j\ell}} - \bigg(\alpha-  {n+m \over 2}\bigg) \partial_{y_{ji}} \\
+  &= \sum_{k=1}^m  \partial_{y_{ki}} L^y_{kj} - \bigg(\alpha - {n-m \over 2} \bigg) \partial_{y_{ji}}
 \end{align*}
 for $i=1,2,\dots,n$ and $j=1,2,\dots,m$.
 \smallskip
@@ -1068,22 +1070,25 @@ where we used $L^y_{ss}q_s=q_s$ and $\partial_{y_{k,n-s+1}}L^y_{ks}q_s=\partial_
 Our next step is to show that $a_\ell=0$ for $\ell=1,2,\dots,s-1$. Let us assume that there exists an index $t \in \{1,2,\dots,s-1\}$ satisfying $a_t \neq 0$ and $a_\ell=0$ for $\ell=t+1,t+2,\dots,s-1$. Analogously as in the previous part, we may write
 \begin{align*}
   \hat{\pi}_{\lambda_\alpha}\!(e_{n-t+1,t})v_\mu&= \sum_{k=1}^m  \partial_{y_{k,n-t+1}} L^y_{kt}q^a - \big(\alpha - {\textstyle {n-m \over 2}} \big)\partial_{y_{t,n-t+1}}q^a \\
-  &= \sum_{k=1}^m \big(a_s\partial_{y_{k,n-t+1}}q^{a-1_s} L^y_{kt}q_s + a_t\partial_{y_{k,n-t+1}}q^{a-1_t} L^y_{kt}q_t \big)- \big(\alpha - {\textstyle {n-m \over 2}} \big)\partial_{y_{t,n-t+1}}q^a \\
+  &= \sum_{k=1}^m \big(a_s\partial_{y_{k,n-t+1}}q^{a-1_s} L^y_{kt}q_s + a_t\partial_{y_{k,n-t+1}}q^{a-1_t} L^y_{kt}q_t \big) \\
+  & \qquad - \big(\alpha - {\textstyle {n-m \over 2}} \big)\partial_{y_{t,n-t+1}}q^a \\
   & =\sum_{k=s+1}^m a_s\partial_{y_{k,n-t+1}}q^{a-1_s} L^y_{kt}q_s +\sum_{k=t+1}^m  a_t\partial_{y_{k,n-t+1}}q^{a-1_t} L^y_{kt}q_t \\
-  & \quad +a_s\partial_{y_{t,n-t+1}}q^{a-1_s} L^y_{tt}q_s + a_t\partial_{y_{t,n-t+1}}q^{a-1_t} L^y_{tt}q_t - \big(\alpha - {\textstyle {n-m \over 2}} \big)\partial_{y_{t,n-t+1}}q^a \\
+  & \quad +a_s\partial_{y_{t,n-t+1}}q^{a-1_s} L^y_{tt}q_s + a_t\partial_{y_{t,n-t+1}}q^{a-1_t} L^y_{tt}q_t \\
+  & \quad - \big(\alpha - {\textstyle {n-m \over 2}} \big)\partial_{y_{t,n-t+1}}q^a \\
   &= \sum_{k=s+1}^m a_sq^{a-1_s} \partial_{y_{k,n-t+1}}L^y_{kt}q_s +\sum_{k=t+1}^m  a_tq^{a-1_t} \partial_{y_{k,n-t+1}}L^y_{kt}q_t \\
   & \quad + \sum_{k=t+1}^s a_t (\partial_{y_{k,n-t+1}}q^{a-1_t}) L^y_{kt}q_t +\big(a_s+a_t-\alpha+{\textstyle {n-m\over 2}}\big) \partial_{y_{t,n-t+1}}q^a.
 \end{align*}
 Using $\partial_{y_{k,n-t+1}}L^y_{kt}q_s=\partial_{y_{t,n-t+1}}q_s$ for $k>s$ and $\partial_{y_{k,n-t+1}}L^y_{kt}q_t=\partial_{y_{t,n-t+1}}q_t$ for $k>t$, we get
 \begin{align*}
   \hat{\pi}_{\lambda_\alpha}\!(e_{n-t+1,t})v_\mu&= (m-s) a_sq^{a-1_s} \partial_{y_{t,n-t+1}}q_s +(m-t) a_tq^{a-1_t} \partial_{y_{t,n-t+1}}q_t \\
-  & \quad + \sum_{k=t+1}^s a_s a_t q^{a-1_s-1_t}(\partial_{y_{k,n-t+1}}q_s) L^y_{kt}q_t +\big(a_s+a_t-\alpha+{\textstyle {n-m\over 2}}\big) \partial_{y_{t,n-t+1}}q^a  \\
+  & \quad + \sum_{k=t+1}^s a_s a_t q^{a-1_s-1_t}(\partial_{y_{k,n-t+1}}q_s) L^y_{kt}q_t \\
+  & \quad +\big(a_s+a_t-\alpha+{\textstyle {n-m\over 2}}\big) \partial_{y_{t,n-t+1}}q^a  \\
   & = a_sa_t q^{a-1_s} \partial_{y_{t,n-t+1}} q_s +a_t(a_t+s-t) q^{a-1_t} \partial_{y_{t,n-t+1}} q_t \\
   & \quad + \sum_{k=t+1}^s a_s a_t q^{a-1_s-1_t}(\partial_{y_{k,n-t+1}}q_s) L^y_{kt}q_t,
 \end{align*}
-where we used \eqref{eq:weight alpha AGS} in the last equality. Since $\hat{\pi}_{\lambda_\alpha}\!(e_{n-t+1,t})v_\mu=0$, we acquire the equation
+where we used \eqref{eq:weight alpha AGS} in the last equality. Since $\hat{\pi}_{\lambda_\alpha}\!(e_{n-t+1,t})v_\mu=0$, we obtain the equation
 \begin{align*}
-q^{a-1_s-1_t}\!\bigg(a_ta_s q_t \partial_{y_{t,n-t+1}} q_s + a_t(a_t+s-t)q_s \partial_{y_{t,n-t+1}} q_t + \sum_{k=t+1}^s a_sa_t (\partial_{y_{k,n-t+1}}q_s) L^y_{kt}q_t\!\bigg) = 0,
+q^{a-1_s-1_t}\!\bigg(\!a_ta_s q_t \partial_{y_{t,n-t+1}} q_s\! +\! a_t(a_t+s-t)q_s \partial_{y_{t,n-t+1}} q_t\! +\! \sum_{k=t+1}^s a_sa_t (\partial_{y_{k,n-t+1}}q_s) L^y_{kt}q_t\!\bigg) \!=\! 0,
 \end{align*}
 which gives us
 \begin{align*}
