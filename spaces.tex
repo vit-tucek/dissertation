@@ -471,11 +471,11 @@ Moreover, up to a scalar multiple, there exists for each $j$ a unique non-zero $
 
 \section{Octonionic planes}\label{sec:octo}
 
-The classical Hermitian symmetric spaces (i.e. those corresponding to the classical Lie groups) are treated thoroughly in \cite{faraut_analysis_1994}. The exceptional cases were descibed in \cite{drucker_exceptional_1978, drucker_simplified_1981}. The smaller of the two exceptional cases can be seen as a complexification of the octonionic projective plane \cite{landsberg_projective_2001, landsberg_projective_2003} and as such it plays a prominent role in \cite{atiyah_projective_2003}. It's hyperplane section was described in \cite{pazourek_hyperplane_2011}. The real octonionic projective plane is a symmetric Riemannian space $\mathrm{F_4}/\mathrm{Spin}(9)$ with exceptional holonomy $\mathrm{Spin}(9).$ Elementary description of this space as well as other it's noncompact (pseudo)Riemannian cousins was given in \cite{held_semi-riemannian_2009}. It required a lot of case by case calculations and classification of Osserman manifolds to identify the manifolds with the appropriate homogeneous spaces. In this section we show how to obtain the Riemannian metric and curvature in a uniform and elemental way.
+The classical Hermitian symmetric spaces (i.e. those corresponding to the classical Lie groups) are treated thoroughly in \cite{faraut_analysis_1994}. The exceptional cases were descibed in \cite{drucker_exceptional_1978, drucker_simplified_1981}. The smaller of the two exceptional cases can be seen as a complexification of the octonionic projective plane \cite{landsberg_projective_2001, landsberg_projective_2003, atiyah_projective_2003}. It's hyperplane section was described in \cite{pazourek_hyperplane_2011}. The real octonionic projective plane is a symmetric Riemannian space $\mathrm{F_4}/\mathrm{Spin}(9)$ with exceptional holonomy $\mathrm{Spin}(9).$ Elementary description of this space as well as it's other noncompact (pseudo)Riemannian cousins was given in \cite{held_semi-riemannian_2009}. It required a lot of case by case calculations and classification of Osserman manifolds to identify the manifolds with the appropriate homogeneous spaces. In this section we show how to obtain the Riemannian metric and curvature in a uniform and elemental way.
 
 \subsection{Octonions and the exceptional Jordan algebra}
 
-Let $\octo$ denote the normed algebra of octonions over a field $\field$ of characteristic $0$ (we will consider only $\field=\reals$ and $\field =\complex$) and let $N\colon\octo \to \reals$ denote the corresponding norm. Let $\oscal{\,}{\,}$ denote the scalar product of octonions  defined by polarization $\oscal{x}{y} = \frac{1}{2} (N(x+y) - N(x) - N(y))$. Sometimes it is defined without the factor of $1/2$, because then some formulas are simpler and one can also work over a field of characteristic $2$. The conjugation is defined by $\conj{x} = 2\oscal{x}{1}1 - x$, where $1$ is the unit of the octonionic algebra $\octo$. We define the real part of $x$ as $\Re(x) = \frac{x + \conj{x}}{2}$ and the imaginary part as $\Im(x) = \frac{x-\conj{x}}{2}$. 
+Let $\octo$ denote the normed algebra of octonions over a field $\field$ of characteristic $0$ (we will consider only $\field=\reals$ and $\field =\complex$) and let $N\colon\octo \to \reals$ denote the corresponding norm that satisfies $N(xy) = N(x)N(y)$. Let $\oscal{\,}{\,}$ denote the scalar product of octonions  defined by polarization $\oscal{x}{y} = \frac{1}{2} (N(x+y) - N(x) - N(y))$. Sometimes it is defined without the factor of $1/2$, because then some formulas are simpler and one can also work over a field of characteristic $2$. The conjugation is defined by $\conj{x} = 2\oscal{x}{1}1 - x$, where $1$ is the unit of the octonionic algebra $\octo$. We define the real part of $x$ as $\Re(x) = \frac{x + \conj{x}}{2}$ and the imaginary part as $\Im(x) = \frac{x-\conj{x}}{2}$. 
 
 One can construct $\octo$ e.g. by the Cayley-Dickson process. Basic relations concerning the scalar product are 
 \begin{equation}\label{eq:scal_product}
@@ -499,12 +499,7 @@ Finally, we will need
 %2\oscal{a,\conj{d}}\oscal{b}{\conj{c}} &= \oscal{ab}{\conj{cd}} + \oscal{a\conj{c}}{}
 \end{equation}
 
-The octonionic multiplication  can be ``decomposed'' using scalar product and cross product similarly  as in the case of quaternions. Namely, we have $\oscal{x}{y} = \Re( x\conj{y})$ and we define the cross product as \[x \times y = \Im (x\conj{y}) = \frac{1}{2}( x\conj{y} - y\conj{x}).\] It is not really a cross product, but its restriction to the space of imaginary octonions. It is easy to see that the cross product has purely imaginary values.
-
-%% HARVEY
-% The octonionic multiplication  can be ``decomposed'' using scalar product and cross product similarly  as in the case of quaternions. Namely, we have $\oscal{x}{y} = \Re( x\conj{y})$ and we define the cross product as \[x \times y = \Im (\conj{y}x) = \frac{1}{2}( \conj{y}x - \conj{x}y).\] It is not really a cross product, but its restriction to the space of imaginary octonions is (Elduque \ref{}). $x \times y = \frac{1}{2}[x,y] - (\Re x \Im y - \Re y \Im x)$ We follow conventions from Harvey \ref{harvey}.
-
-A bit more obscure is the triple cross product 
+The octonionic multiplication  can be ``decomposed'' using scalar product and cross product similarly  as in the case of quaternions. Namely, we have $\oscal{x}{y} = \Re( x\conj{y})$ and we define the \emph{cross product} as \[x \times y = \Im (x\conj{y}) = \frac{1}{2}( x\conj{y} - y\conj{x}).\] It is not really the seven-dimensional cross product, but its restriction to the space of imaginary octonions is. A bit more obscure is the \emph{triple cross product} 
 \[
 u \times v \times w = \frac{1}{2}\bigl( u(\conj{v}w) - w(\conj{v}u) \bigr)
 \]
@@ -512,9 +507,9 @@ that appears in the theory of calibrations (and in fact defines what is called t
 \[
 \{ x,y,z \} = (xy)z - x(yz).
 \]
-The associator is completely antisymmetric. This property is actually equivalent to the alternativity of the octonionic algebra which in turn implies that any subalgebra generated by two elements is associative. (Artin theorem, \ref{}) It is easy to see that if any entry is a multiple of unit in $\octo$, then the associator is zero. Thus it descends to a map $\Lambda^3 \mathrm{Im}\, \octo \to \field$.
+The associator is completely antisymmetric. This property is actually equivalent to the alternativity of the octonionic algebra which in turn implies by the Artin theorem that any subalgebra generated by two elements is associative. It is easy to see that if any entry is a multiple of unit in $\octo$, then the associator is zero. 
 
-The projective octonionic plane $\projplane$ can be defined via the exceptional formally real Jordan algebra $\jalg[3] = \mathrm{Herm}(3,\octo)$. The points of the geometry are then idempotents of trace one. The automorphism group of this Jordan algebra is the compact real group $F_4$ whose action preserves the trace and determinant of these octonionic matrices. One can define $F_4$-invariant positive definite scalar product on $\jalg$ as
+The projective octonionic plane $\projplane$ can be defined via the exceptional formally real Jordan algebra $\jalg[3] = \mathrm{Herm}(3,\octo)$. The points of this projective geometry are then idempotents of trace one. The automorphism group of this Jordan algebra is the compact real group $F_4$ whose action preserves the trace and determinant of these octonionic matrices. One can define $F_4$-invariant positive definite scalar product on $\jalg$ as
 \[
  \jscal{A}{B} = \mathrm{Tr}(A \circ B),
 \]
@@ -522,12 +517,7 @@ where $A \circ B$ is the Jordan product of $A$ and $B$ defined by
 \[
  A \circ B = \frac{1}{2} \left( AB + BA \right).
 \]
-We can generalize this as follows. Take a matrix $G=\begin{pmatrix} \gamma_1 & 0 & 0 \\ 0 & \gamma_2 & 0 \\ 0 & 0 & \gamma_3\end{pmatrix}$ such that $G^2 = \mathrm{Id}$ and all $\gamma_i$ are from the ground field $\field$. Then we define $G$-Hermitian matrices as those satisfying $GA^\dagger = AG$ and on the space of those matrices we still have the same.
-
-
-Let $G = \begin{pmatrix} \gamma_1 & 0 & 0\\ 0 & \gamma_2 & 0\\ 0 & 0 & \gamma_3\end{pmatrix}$ be a real (or complex?) matrix such that $G^2 = 1$. Scalar product on $\octo^3$ is defined by $\oscal{x}{y} = \frac{1}{2}(x^\dagger G y + y^\dagger G x) = \sum_{i=1}^3 \gamma_i\oscal{x_i}{y_i}$, where we use the standard scalar product on octonions for which $\oscal{x}{x} = N(x)$.
-
- For $x\in\octo^3$ define $\varphi (x) = \frac{1}{x^\dagger G x} x (Gx)^\dagger$, it is a trace one idempotent by direct calculation that only uses the fact that $\octo$ form a composition algebra $N(xy) = N(x)N(y)$. Moreover it is $G$-Hermitian, meaning $GA=A^\dagger G$. All $G$-symmetric matrices have the following form
+We can generalize this as follows. Take a matrix $G=\begin{pmatrix} \gamma_1 & 0 & 0 \\ 0 & \gamma_2 & 0 \\ 0 & 0 & \gamma_3\end{pmatrix}$ such that $G^2 = \mathrm{Id}$ with all $\gamma_i$ are from the ground field $\field$. Then define $G$-Hermitian matrices as those satisfying $GA = A^\dagger G$ and on the space of those matrices we still have the same Jordan algebra structure given by the anticommutator. All $G$-symmetric matrices have the following form
 \begin{equation}\label{g-matrix}
   \begin{pmatrix}
   \gamma_1 r_1 & \gamma_2 \conj{x_1} & \gamma_3 \conj{x_2} \\
@@ -544,14 +534,11 @@ and by polarization this yields
 \begin{equation}\label{eq:jscal1}
 \jscal{A}{B} = 2\left( \gamma_1\gamma_2 \oscal{x_1}{y_1} + \gamma_1\gamma_3 \oscal{x_2}{y_2} + \gamma_2\gamma_3\oscal{x_3}{y_3} \right) + \sum_{i=1}^3 r_i s_i.
 \end{equation}
-The set of all $G$-Hermitian matrices with multiplication give by
-\[
-A \circ B = \frac{1}{2}(AB+BA)
-\]
-form an exceptional Jordan algebra and from classification of Jordan algebras (see \cite{springer_octonions_2000} for details) we know that up to isomorphism that there is only one exceptional Jordan algebra over the complex numbers given by $\jalg[3][\octo_\complex]$ which corresponds to $G=\mathrm{Id}$. Over the real numbers there are actually three isomorphism classes represented by $\jalg[3]$, $\jalg[1,2]$, corresponding to $G = \begin{psmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & -1\end{psmatrix}$ and the Jordan algebra over the split octonions $\jalg[3][\octo']$. The automorphism group of an exceptional Jordan algebra is a group of type $F_4$. In the complex case we get of course the complex Lie group $F_4$, the automorphism group of $\jalg$ is the compact Lie group of type $F_4$, the automorphism group of $\jalg[3][\octo']$ is the split real Lie group of type $F_4$ and finally the $\jalg[1,2]$ has the only remaining real Lie group $F_4^{-20}$ as its automorphism group. 
+From classification of Jordan algebras (see \cite{springer_octonions_2000} for details) we know that up to isomorphism  there is only one exceptional Jordan algebra over the complex numbers given by $\jalg[3][\octo_\complex]$ which corresponds to $G=\mathrm{Id}$. Over the real numbers there are actually three isomorphism classes represented by $\jalg[3]$, $\jalg[1,2]$, corresponding to $G = \begin{psmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & -1\end{psmatrix}$ and the Jordan algebra over the split octonions $\jalg[3][\octo']$. The automorphism group of an exceptional Jordan algebra is a group of type $F_4$. In the complex case we get of course the complex Lie group $F_4$, the automorphism group of $\jalg$ is the compact Lie group of type $F_4$, the automorphism group of $\jalg[3][\octo']$ is the split real Lie group of type $F_4$ and finally the $\jalg[1,2]$ has the only remaining real Lie group $F_4^{-20}$ as its automorphism group. 
+
+We also define scalar product on $\octo^3$ by \[\oscal{x}{y} = \frac{1}{2}(x^\dagger G y + y^\dagger G x) = \sum_{i=1}^3 \gamma_i\oscal{x_i}{y_i}.\] 
 
 Now we define the affine patches / coordinate charts.
-
 \begin{align}
 \projplane: & \quad U_i = \set{(x_1, x_2, x_3)^T \in \octo^3 \,\middle|\, x_i = 1} \\
 \projplane[1,1]:  & \quad 
@@ -563,8 +550,7 @@ Now we define the affine patches / coordinate charts.
 \projplane[2][P]_s: & \quad U_i = \set{(x_1, x_2, x_3)^T \in \octo_s^3 \,\middle|\, x_i = 1 \,\&\, \sum\nolimits_i N(x_i) > 0}
 \end{align}
 
-In all cases we would like to identify lines corresponding to the different points on different patches. Over an associative algebra it is quite easy, because we can just use an equivalence relation $(x_1, x_2, x_3)^T \sim  (\lambda x_1, \lambda x_2,\lambda x_3)^T$ for any nonzero $\lambda$ from the algebra. This relation is however not transitive when we are working over the octonions. Nevertheless it is transitive on our affine coordinate patches as was shown in \cite{held_semi-riemannian_2009}. There is only one complication, in the case of the split octonions we actually demand $\lambda$ to have positive norm $N(\lambda) > 0$.
-
+We would like to identify points corresponding to the same lines from different patches. Over an associative algebra it is quite easy, because we can just use the equivalence relation $(x_1, x_2, x_3)^T \sim  (\lambda x_1, \lambda x_2,\lambda x_3)^T$ for any nonzero $\lambda$ from the algebra. This relation is however not transitive when we are working over the octonions. Nevertheless it is transitive on our affine coordinate patches as was shown in \cite{held_semi-riemannian_2009}. There is only one complication, in the case of the split octonions we actually demand $\lambda$ to have positive norm $N(\lambda) > 0$.
 
 With these preliminaries behind us we can finally define the $\mathbb{R}$ (or $\mathbb{C}$) linear mapping $\varphi: \octo^3 \to \jalg $\ by
 \[
@@ -580,11 +566,11 @@ The idea for such a mapping is borrowed from \cite{allcock_identifying_1997, asl
 	\end{pmatrix}
 \end{equation}
 
-Four octonionic planes were defined in the article \cite{held_semi-riemannian_2009} by giving maps and transition functions. We are going to show that the domains used for maps are actually just the analogs of classical affine coordinates of the projective or hyperbolic plane. We will show that these octonionic planes can be actually defined as the space of idempotent matrices of trace one in some exceptional Jordan algebra $\jalg$ which makes the $F_4$-symmetry quite manifest. Now we define our affine coordinate patches which are completely analogous to the classical picture from $\reals^{1,2}$. The only novelty is the split projective plane $\projplane[2][P]_s$.
+Four octonionic planes were defined in the article \cite{held_semi-riemannian_2009} by giving maps and transition functions. The domains used for maps are actually just the analogs of classical affine coordinates of the projective or hyperbolic plane. We show that these octonionic planes can be actually defined as the space of idempotent matrices of trace one in some exceptional Jordan algebra $\jalg$ which makes the $F_4$-symmetry quite manifest. Now we define our affine coordinate patches which are completely analogous to the classical picture from $\reals^{1,2}$. The only novelty is the split projective plane $\projplane[2][P]_s$.
 
 
 \begin{lemma}
- The equations for the octonionic plane are 
+ The equations for a matrix of the form \eqref{g-matrix} to be in the octonionic plane are 
 \begin{equation}\label{eq:trace}
 \gamma_1 r_1 + \gamma_2 r_2 + \gamma_3 r_3 = 1,
 \end{equation}
@@ -613,23 +599,23 @@ Straightforward, we have just used the equation $\mathrm{Tr}\, A = 1$ to rewrite
 The map $\varphi$ restricted to the affine coordinate patches has a well-defined smooth inverse on an octonionic plane, i.e. for any $A \in \jalg$ satisfying $A^2 = A$ and $\mathrm{Tr}\, A = 1$ there exists $a\in \octo^3$ whose one coordinate is 1 and such that $\varphi(a) = A$.
 \end{lemma}
 \begin{proof}
-The equation \eqref{eq:trace} implies that at least one $r_i$ is nonzero. Without loss of generality, we will treat the case $r_1 \neq 0$ as the others follow by permuting the indices.
+The equation \eqref{eq:trace} implies that at least one $r_i$ is nonzero. Without loss of generality, we will treat the case $r_1 \neq 0$ and the coordinate patch with first coordinate being $1$ as the other cases follow by permuting indices.
 
-Comparing \eqref{g-matrix} with \eqref{eq:varphi} and imposing $a_1 = 1$ we see that we must have $r_1 =  \sfrac{1}{\oscal{a}{a}}$ and $\gamma_1 x_1 = r_1 \gamma_1 a_2$ which leads us to defining $a_2 = \sfrac{x_1}{r_1}$. Similarly, we obtain $a_3 = \sfrac{x_2}{r_1}$. Now we need to check whether these choices satisfy all the remaining equations.
+Comparing \eqref{g-matrix} with \eqref{eq:varphi} and imposing $a_1 = 1$ we see that we must have $r_1 =  \sfrac{1}{\oscal{a}{a}}$ and $\gamma_1 x_1 = \frac{1}{\oscal{a}{a}} \gamma_1 a_2 \overline{a_1} = r_1 \gamma_1 a_2$ which leads us to defining $a_2 = \sfrac{x_1}{r_1}$. Similarly, we obtain $a_3 = \sfrac{x_2}{r_1}$. Now we need to check whether these choices for $a_2, a_3$ satisfy all the remaining equations of \eqref{g-matrix} = \eqref{eq:varphi}.
 
-First of all $\oscal{a}{a} = \gamma_1 + \gamma_2 \sfrac{N(x_1)}{r_1^2} + \gamma_3\sfrac{N(x_2)}{r_1^2}$ where the right hand side is equal to $\sfrac{ \gamma_1 r_1^2+ \gamma_2N(x_1) + \gamma_3N(x_2)}{r_1^2}$. By the equation \eqref{eq:diag1} this is $1/r_1$ as it should be. The remaining antidiagonal term of \eqref{g-matrix} = \eqref{eq:varphi} is $x_3 = \sfrac{a_3\conj{a_2}}{\oscal{a}{a}}  = \sfrac{ x_2\conj{x_1}}{r_1}$ which is exactly the equation \eqref{eq:antidiag3}.
+First of all $\oscal{a}{a} = \gamma_1 + \gamma_2 \frac{N(x_1)}{r_1^2} + \gamma_3\frac{N(x_2)}{r_1^2} = \frac{ \gamma_1 r_1^2+ \gamma_2N(x_1) + \gamma_3N(x_2)}{r_1^2}$. By the equation \eqref{eq:diag1} this is $1/r_1$ as it should be. The remaining antidiagonal term of \eqref{g-matrix} = \eqref{eq:varphi} is $x_3 = \sfrac{a_3\conj{a_2}}{\oscal{a}{a}}  = \sfrac{ x_2\conj{x_1}}{r_1}$ which is equivalent to the equation \eqref{eq:antidiag3}.
 
-The diagonal terms pose a slightly bigger challenge as they are equivalent to $r_1 r_2  = N(x_1)$ and $r_1 r_3 = N(x_2)$. For a nonzero $x_1, x_2$ these equations can be derived from \eqref{eq:antidiag1} and \eqref{eq:antidiag2}. In the associative case, these are two of the equations for $\varphi(a)$ to be of rank 1 and this actually remains true even in the non-associative case. However, we can obtain these equations by elementary calculations  as we will illustrate in the case $x_2 = 0$. For then the equation \eqref{eq:antidiag3} yields $x_3 = 0$ as we suppose $r_1 \neq 0$ from the beginning. The equation \eqref{eq:antidiag1} implies either $r_3 = 0$ or $x_1 = 0$. The latter case leading to $A$ being a zero everywhere except at the upper left position and $a = (1,0,0)^T$. In the former case, we first take the square of the  condition $1 = \mathrm{Tr}\, A = \gamma_1 r_1 + \gamma_2 r_2$ to obtain $r_1^2 + 2\gamma_1\gamma_2 r_1 r_2 + r_2^2 = 1$ and subsequently 
-\[
-r_1r_2 = \frac{1-r_1^2 - r_2^2}{2\gamma_1\gamma_2}.
-\]
-The equations \eqref{eq:diag1}, \eqref{eq:diag2} turn into 
+The diagonal terms pose a slightly bigger challenge as they are equivalent to $r_1 r_2  = N(x_1)$ and $r_1 r_3 = N(x_2)$. For a nonzero $x_1, x_2$ these equations can be derived from \eqref{eq:antidiag1} and \eqref{eq:antidiag2}.\footnote{In the associative case, these are two of the equations for $\varphi(a)$ to be of rank 1 and this actually remains true even in the non-associative case.} Let us show the case $x_2 = 0$. The equation \eqref{eq:antidiag3} yields $x_3 = 0$ as we suppose $r_1 \neq 0$ from the beginning. The equation \eqref{eq:antidiag1} implies either $r_3 = 0$ or $x_1 = 0$. The latter case leading to $A$ being a zero everywhere except at the upper left position and $a = (1,0,0)^t$. In the former case we see that the equations \eqref{eq:diag1}, \eqref{eq:diag2} turn into 
 \[
 \gamma_1 r_1 = r_1^2 +  \gamma_1\gamma_2N(x_1), \qquad \gamma_2 r_2 = r_2^2 + \gamma_1\gamma_2 N(x_1)
 \]
 and their sum yields after a rearrangement 
 \[
 N(x_1) = \frac{1- r_1^2 - r_2^2}{2\gamma_1\gamma_2}.
+\]
+If we take the square of the  condition $1 = \mathrm{Tr}\, A = \gamma_1 r_1 + \gamma_2 r_2,$ we obtain $r_1^2 + 2\gamma_1\gamma_2 r_1 r_2 + r_2^2 = 1$ and subsequently 
+\[
+r_1r_2 = \frac{1-r_1^2 - r_2^2}{2\gamma_1\gamma_2}.
 \]
 \end{proof}
 
