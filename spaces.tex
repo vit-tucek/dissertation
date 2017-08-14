@@ -17,22 +17,17 @@ A \emph{real form} of a complex Lie alebra $\mfrak{g}$ is a real Lie algebra $\m
 
 An \emph{involution} of a Lie algebra $\mfrak{g}$ is Lie algebra homomorphism $\mfrak{g}\to\mfrak{g}$ which squares to identity. An involution $\theta$ of a real semisimple Lie algebra $\mfrak{g}_0$ is called \emph{Cartan involution} if the symmetric bilinear form $B_\theta(X,Y) = -B(X,\theta Y)$ is postivive definite. We will denote the complex linear extension of $\theta$ to the complexification of $\mfrak{g}_0$ by the same symbol and we will still call it the Cartan involution. Any real semisimple Lie algebra has a Cartan involution and it is unique up to inner automorphism.
 
-\begin{example}
-  Cartan involution on $\mfrak{sl}(n,\R)$ is given by negative transpose, i.e. $\theta X = - X^t$. The subalgebra $\mfrak{k}_0$ is then $\mfrak{so}(n,\R)$ and the ideal $\mfrak{p}_0$ is the space of symmetric matrices.
 
- For $\mfrak{su}(n)$ is a Cartan involution given by a negative conjugate transpose $\theta X = - \overline{X}^t$. The subalgebra $\mfrak{k}_0$ is the whole $\mfrak{su}(n)$ and $\mfrak{p}_0$ is of course empty.
-\end{example}
-
-We can generalize this as follows. Take a matrix Lie algebra, i.e. a subalgebra of $\mfrak{gl}(n,\C)$, that is closed under transposition and define $\theta X = -X^\dag$. Then
+Take a matrix Lie algebra, i.e. a subalgebra of $\mfrak{gl}(n,\C)$, that is closed under transposition and define $\theta X = -X^\dag$ where $X^\dag = \overline{X}^t.$ Then
  \[
   \theta [X,Y] = -[X,Y]^\dag = - [Y^\dag,X^\dag] = [-X^\dag,-Y^\dag] = [\theta X, \theta Y]
  \]
  shows that $\theta$ is involution. Using the fact that $B$ is invariant with respect to automorphisms we get that
  \begin{align*}
-  B_\theta(X,Y) &= -B(x,\theta Y) = - B(\theta X, \theta^2 Y) \\
-                &= -B(\theta X, Y) = B_\theta(X,Y),
+  B_\theta(X,Y) &= -B(X, \theta Y) = - B(\theta X, \theta^2 Y) \\
+                &= -B(\theta X, Y) = B(Y, -\theta X) = B_\theta(Y, X),
  \end{align*}
- which demonstrates that $B_\theta$ is symmetric. To show that it is also positive definite, we first need to show that for a scalar product $\langle X,Y \rangle = \Re (XY^\dag)$ we have that the adjoint of $\ad X$ is $\ad X^\dag$.
+ which demonstrates that $B_\theta$ is symmetric. To show that it is also positive definite, we first need to show that for a scalar product $\langle X,Y \rangle = \Re \tr (XY^\dag)$ we have that the adjoint of $\ad X$ is $\ad X^\dag$.
  \begin{align*}
   \langle [X,Y],Z \rangle &= \Re\tr (XYZ^\dag - YXZ^\dag) = \\
 			  &= \Re\tr (YZ^\dag X - YXZ^\dag) =  \\% = \Re\tr (Y (Z^\dag X - X Z^\dag))\\
@@ -41,7 +36,7 @@ We can generalize this as follows. Take a matrix Lie algebra, i.e. a subalgebra 
  Now we can show that $B_\theta$ is in fact positive definite as follows
  \begin{align*}
   B_\theta(X,X) &= -B(X,\theta X) = -\tr (\ad X \circ \ad \theta X )\\
-                &= \tr (\ad X \circ \ad (X^\dag))  = tr (\ad X (\ad X)^*) \geq 0.
+                &= \tr (\ad X \circ \ad (X^\dag))  = \tr (\ad X \circ (\ad X)^*) \geq 0.
  \end{align*}
 
 In fact, any real semisimple Lie algebra $\mfrak{g}_0$ is isomorphic to a Lie algebra of real matrices that is closed under transpose and the isomorphism can be chosen in such a way that the Cartan involution of $\mfrak{g}_0$ is carried to negative transpose (Proposition VI.6.28 of \cite{knapp_lie_1996}).
@@ -64,6 +59,13 @@ A decomposition of $\mfrak{g}_0 = \mfrak{k}_0 \oplus \mfrak{p}_0$ that satisfies
  \end{cases}
 \]
 and we see that Cartan involutions are in bijective correspondence with Cartan decompositions.
+
+
+\begin{example}
+  Cartan involution on $\mfrak{sl}(n,\R)$ is given by negative transpose, i.e. $\theta X = - X^t$. The subalgebra $\mfrak{k}_0$ is then $\mfrak{so}(n,\R)$ and the ideal $\mfrak{p}_0$ is the space of symmetric matrices.
+
+ For $\mfrak{su}(n)$ is a Cartan involution given by a negative conjugate transpose $\theta X = - \overline{X}^t$. The subalgebra $\mfrak{k}_0$ is the whole $\mfrak{su}(n)$ and $\mfrak{p}_0$ is of course empty.
+\end{example}
 
 Cartan involutions and decompositions can be even pushed to the Lie group level.
 \begin{theorem}[Theorem VI.6.31 of \cite{knapp_lie_1996}]
@@ -107,9 +109,9 @@ In the following we will use this simple lemma.
   \end{align*}
 \end{proof}
 
-In addition to compact form, there is always another real form (also unique up to conjugation) of a complex semisimple Lie algera $\mfrak{g}$. Let $\mfrak{h}_0$ be a Cartan subalgebra of $\mfrak{g}$ and consider its complexification $\mfrak{h}$ which is (by definition) a Cartan subalgebra of $\mfrak{g}$. We call a real Lie algebra $\mfrak{g}_0$ a \emph{split form} of $\mfrak{g}$ if the restrictions of elements of $\mfrak{h}^*$ to $\mfrak{h}_0$ are real valued.
+In addition to compact form, there is always another real form (also unique up to conjugation) of a complex semisimple Lie algera $\mfrak{g}$. Let $\mfrak{h}_0$ be a Cartan subalgebra of $\mfrak{g}_0$ and consider its complexification $\mfrak{h}$ which is (by definition) a Cartan subalgebra of $\mfrak{g}$. We call a real Lie algebra $\mfrak{g}_0$ a \emph{split form} of $\mfrak{g}$ if the restrictions of elements of $\mfrak{h}^*$ to $\mfrak{h}_0$ are real valued.
 
-To construct a split real form we can just take a suitable basis of $\mfrak{g}$ and its real span. In details, take a complex Lie algebra $\mfrak{g}$ and its Cartan subalgebra $\mfrak{h}$ and define $\mfrak{h}_0$ as the subset of $\mfrak{h}$ on which all the roots take only real values. There is always a choice (see Theorem VI.6.6 of \cite{knapp_lie_1996}) of root vectors $X_\alpha \in \mfrak{g}_\alpha$ such that $[X_\alpha, X_{-\alpha}] = H_\alpha$ and
+To construct a split real form we can just take a suitable basis of $\mfrak{g}$ and its real span. In detail, take a complex Lie algebra $\mfrak{g}$ and its Cartan subalgebra $\mfrak{h}$ and define $\mfrak{h}_0$ as the subset of $\mfrak{h}$ on which all the roots take only real values. There is always a choice (see Theorem VI.6.6 of \cite{knapp_lie_1996}) of root vectors $X_\alpha \in \mfrak{g}_\alpha$ such that $[X_\alpha, X_{-\alpha}] = H_\alpha$ and
 \begin{gather*}
 \beta \neq -\alpha \,\&\, \alpha + \beta \notin \roots \Longrightarrow [X_\alpha,X_\beta]=0 \\
  \alpha + \beta \in\roots \Longrightarrow [X_\alpha, X_\beta] = N_{\alpha,\beta}X_{\alpha+\beta},
@@ -123,17 +125,17 @@ and a compact form of $\mfrak{g}$ can be then given as
  \mfrak{k}_0 = \imath \mfrak{h}_0 \oplus \bigoplus_{\alpha\in\roots^+} \R (X_\alpha - X_{-\alpha}) \oplus \imath \R (X_\alpha + X_{-\alpha}).
 \]
 
-Let $\mfrak{g}_0$ be a real semisimple Lie algebra and let $\theta$ be its Cartan involution. A Cartan subalgebra $\mfrak{h}_0$ of $\mfrak{g}_0$ is called \emph{$\theta$-stable} if $\theta(\mfrak{h}_0)=\mfrak{h}_0$. In such a case we have $\mfrak{h}_0= (\mfrak{h}_0\cap\mfrak{k}_0) \oplus (\mfrak{h}_0\cap\mfrak{p}_0$, where $\mfrak{g}_0 = \mfrak{k}_0\oplus\mfrak{p}_0$ is the Cartan decomposition. We call the dimension of $\mfrak{h}_0\cap\mfrak{k}_0$ the \emph{compact dimension} of a $\theta$-stable  Cartan subalgebra $\mfrak{h}_0$ and similarly the dimension of $\mfrak{h}_0\cap\mfrak{p}_0$ is called the \emph{noncompact dimension} of $\mfrak{h}_0$. A $\theta$-stable Cartan subalgebra $\mfrak{h}_0 \leq \mfrak{g}_0$ is called \emph{maximally compact} or \emph{maximally noncompact} if and only if its compact (respectively noncompact) dimension is maximal possible.
+Let $\mfrak{g}_0$ be a real semisimple Lie algebra and let $\theta$ be its Cartan involution. A Cartan subalgebra $\mfrak{h}_0$ of $\mfrak{g}_0$ is called \emph{$\theta$-stable} if $\theta(\mfrak{h}_0)=\mfrak{h}_0$. In such a case we have $\mfrak{h}_0= (\mfrak{h}_0\cap\mfrak{k}_0) \oplus (\mfrak{h}_0\cap\mfrak{p}_0$, where $\mfrak{g}_0 = \mfrak{k}_0\oplus\mfrak{p}_0$ is the Cartan decomposition. We call the dimension of $\lie{t} = \mfrak{h}_0\cap\mfrak{k}_0$ the \emph{compact dimension} of a $\theta$-stable  Cartan subalgebra $\mfrak{h}_0$ and similarly the dimension of $\lie{a} = \mfrak{h}_0\cap\mfrak{p}_0$ is called the \emph{noncompact dimension} of $\mfrak{h}_0$. A $\theta$-stable Cartan subalgebra $\mfrak{h}_0 \leq \mfrak{g}_0$ is called \emph{maximally compact} or \emph{maximally noncompact} if and only if its compact (respectively noncompact) dimension is maximal possible.
 
 %TODO theta stabilita, komplexni konjugace a akce thety (viz Vogan, mozna Knapp)
 
 %\subsection{Iwasawa decomposition}
 In contrast to the complex case, Cartan subalgebras of real Lie algebras are not unique up to conjugation. Up to conjugation by inner automorphism, there is a finite number of Cartan subalgebras and any Cartan subalgebra is conjugated via an inner automorphism to a $\theta$-stable Cartan subalgebra. Moreover there is up to conjugation by an element of $K$ only one maximally compact (or maximally noncompact) $\theta$-stable Cartan subalgebra of $\mfrak{g}_0$.
 
-Let $\mfrak{g}$ be a complexification of $\mfrak{g}_0$ and let $\mfrak{h}$ be a complexification of a $\theta$-stable maximally noncompact Cartan subalgebra $\mfrak{h}_0$ of $\mfrak{g}_0$. Let $\sigma$ be a complex conjugation of $\mfrak{g}$ with respect to the real form $\mfrak{g}_0$. For $\alpha\in\roots$ we define $\sigma^* \alpha$ by $(\sigma^* \alpha) (H) = \overline{\alpha(\sigma H)}$ for all $H\in\mfrak{h}$. Since $\sigma$ is conjugate linear, $\sigma^*\alpha$ is again a complex linear form on $\mfrak{h}$ and identifying $\Hom_\C(\mfrak{h},\C)$ with $\Hom_\R(\mfrak{h}_0,\C)$, the map $\sigma^*$ coincides with complex conjugation. In fact, $\sigma^*$ is an involutive automorphism of the root system $\roots(\mfrak{g},\mfrak{h})$. A root $\alpha \in \roots(\mfrak{g},\mfrak{h})$ is called \emph{compact root} if $\sigma^*\alpha = -\alpha$. The set of compact roots is denoted by $\roots_c$.
+Let $\mfrak{g}$ be a complexification of $\mfrak{g}_0$ and let $\mfrak{h}$ be a complexification of a $\theta$-stable maximally noncompact Cartan subalgebra $\mfrak{h}_0$ of $\mfrak{g}_0$. Let $\sigma$ be a complex conjugation of $\mfrak{g}$ with respect to the real form $\mfrak{g}_0$. For $\alpha\in\roots$ we define $\sigma^* \alpha$ by $(\sigma^* \alpha) (H) = \overline{\alpha(\sigma H)}$ for all $H\in\mfrak{h}$. The mapping $\sigma^*$ is an involutive automorphism of the root system $\roots(\mfrak{g},\mfrak{h})$. A root $\alpha \in \roots(\mfrak{g},\mfrak{h})$ is called \emph{compact root} if $\sigma^*\alpha = -\alpha$. The set of compact roots is denoted by $\roots_c$.
 
 \begin{proposition}[Proposition 2.3.8 of \cite{cap_parabolic_2009}]
- The set of compact roots is given by $\roots_c = \{ \alpha \in \roots \,:\,\alpha|\mfrak{a} = 0 \}$. It is an abstract root system on the Euclidean subspace of $\imath \mfrak{t}\oplus \mfrak{a}$ spanned by its elements. For $\alpha\in\roots_c$, the root space $\mfrak{g}_\alpha$ is contained in $\mfrak{k}\leq \mfrak{g}$.
+ The set of compact roots is given by $\roots_c = \{ \alpha \in \roots \,|\,\alpha \text{ restricted to } \mfrak{a} \text{ is } 0 \}$. It is an abstract root system on the Euclidean subspace of $\imath \mfrak{t}\oplus \mfrak{a}$ spanned by its elements. For $\alpha\in\roots_c$, the root space $\mfrak{g}_\alpha$ is contained in $\mfrak{k}\leq \mfrak{g}$.
 \end{proposition}
 
 %\subsection{Satake diagrams}
@@ -401,6 +403,7 @@ The Satake diagram for $\mfrak{e}_7^{-25}$ - EVII.
      \end{tikzpicture}
 \end{center}
 
+While Satake diagrams show best the structure of a real Lie algebra they classify, there is an alternative approach which starts with a maximally compact $\theta$-stable Cartan subalgebra. We won't go into details and refer reader to \cite{knapp_lie_1996}. In the following we will actually use the Vogan diagrams to denote the Hermitian symmetric pairs. The reason is that there is always only one white node corresponding to the unique simple noncompact root and it is the same simple root that defines the complex parabolic subalgebra of the Hermitian pair. I.e. by turning all white nodes in these Vogan diagrams into crossed nodes one gets the usual notation for the parabolic pair. 
 
 \section{Classical Hermitian symmetric spaces}
 
@@ -430,36 +433,32 @@ Both algebras $\mfrak{p} := \mfrak{k}\oplus \mfrak{p}_+$ and $\oppar := \mfrak{k
 \begin{tabular}{llll}
 $G_\mathbb{C}$ & {\centering $G$ }&  $K$\\\hline
 $SL(p+q,\mathbb{C})$ & $SU(p,q)$ &$S(U(p)\times U(q))$\\
-$SO(p+2,\mathbb{C})$ &  $SO(2,p)$ & $SO(p)\times SO(2)$\\
+$SO(p+2,\mathbb{C})$ &  $SO(2,p)$ & $S(O(p)\times O(2))$\\
 $SO(2n,\mathbb{C})$ &   $SO^*(2n)$ & $U(n)$\\
 $Sp(2n,\mathbb{C})$ &   $Sp(n,\mathbb{R})$ & $U(n)$\\
-$E_6^\mathbb{C}$ &   $E_6^{-14}$& $SO(10)\times SO(2)$\\
+$E_6^\mathbb{C}$ &   $E_6^{-14}$& $\mathrm{Spin}(10)\times SO(2)$\\
 $E_7^\mathbb{C}$ &  $E_7^{-25} $ & $E_6\times SO(2)$
 \end{tabular}\caption{Hermitian symmetric pairs}
 \end{center}
 \end{table}
 
- In what follows we will consider also some of the other real parabolic pairs whose complexification is the parabolic pair $(\mfrak{g},\mfrak{p})$. We will use uniform notation $\epsilon^i$, $i=1,\ldots,p$ for the elements of the basis the nilradical and by $e_i$ we will denote the dual basis defined  by the Killing form. The elements $e_i$ then span the nilradical of the opposite parabolic subalgebra. %TODO bazove elementy?
-
 Let $\roots$ be the set of roots of $(\mfrak{g},\mfrak{h})$ and let $\roots_c$ denote the set of roots of $(\mfrak{k},\mfrak{h})$. We call elements of $\roots_c$ the compact roots and the remaining roots in $\roots_n = \roots \setminus \roots_c$ are called noncompact. We define the positive roots $\roots^+$ in such a way that elements of $\roots_n^+ = \roots^+ \cap \roots_n$ span $\mfrak{p}_-$. We denote the positive compact roots by $\roots^+_c = \roots_c \cap \roots^+$. By $\omega_i$ we denote the $i$-th fundamental weight in the standard ordering.
 
 %As usual we denote the Weyl group of $(\mfrak{g},\mfrak{b})$ by $W$ and the subgroup generated by reflections $s_\alpha$ for $\alpha\in \roots_c$ we denote by $W_c$. Then $W_c$ is isomorphic to the Weyl group of the root system $\roots_c$. Also we let $\rho$ be the sum of positive roots and $\leq$ denotes the Bruhat order on $\mfrak{h}^*$.
 
-There is a distinguish element in the center of $\mfrak{k}$ called \emph{grading element} which acts by zero on $\mfrak{k}$, by $1$ on $\mfrak{p}_+$ and by $-1$ on $\mfrak{p}_-$. This elements acts by a scalar on any irreducible representation of $K$. We call this scalar the \emph{geometric weight}.
-
-Let $\sroots$ denote the set of  simple roots of $\roots$. Then $\sroots\setminus \sroots_c$ contains a single element, the so called \emph{non-compact simple root}, which we will denote by $\beta$. We define a totally ordered sequence $\xi_1,\xi_2,\ldots \xi_t$ of \emph{strongly orthogonal} non-compact positive roots as follows. Let $\xi_1$ be the unique highest root. Delete the simple roots $\alpha_1,\alpha_1'$ from the Dynkin diagram of $\mfrak{g}$ which are not orthogonal to $\xi_1$ and take the unique connected component containing $\beta$. Let $\xi_2$ be the unique highest root of this component and continue inductively until $\beta$ itself is deleted. We define
+Let $\sroots$ denote the set of  simple roots of $\roots$. From now on we will denote the set of compact roots by $\sroots_c$. The set $\sroots\setminus \sroots_c$ contains a single element, the unique \emph{non-compact simple root}, which we will denote by $\gamma_1$. We define a totally ordered sequence $\xi_1,\xi_2,\ldots \xi_t$ of \emph{strongly orthogonal} non-compact positive roots inductively by $\gamma_i$ being the unique minimal element in $\{ \alpha \in \roots_n^+ \,|\, (\alpha, \gamma_j) = 0, 1 \leq j < i\}$. We define
 \[\mu_j := \sum_{i=1}^j \xi_i\]
 and note that they are all dominant weights. This result as well as the following one is due to Schmid, Kostant and Hua. It plays an important role in the proof of classification of unitarizable highest weight modules \cite{enright_intrinsic_1990} which are the topic of chapter \ref{ch:unitarizable}.
 
 \begin{theorem}
- Let $I$ denote the set of integral multiindices $\underline{i}=(i_1,\ldots,l_t)$ with $i_1\geq i_2 \geq \cdots  \geq i_t \geq 0$. Let $F_{\underline{i}}$ denote the irreducible finite-dimensional $\mfrak{k}$-module with lowest weight $\sum_{j=1}^t i_j\xi_i$. Then $S(\mfrak{p}_+)$ has a multiplicity free decomposition
+ Let $I$ denote the set of integral multiindices $\underline{i}=(i_1,\ldots,l_t)$ with $i_1\geq i_2 \geq \cdots  \geq i_t \geq 0$. Let $F_{\underline{i}}$ denote the irreducible finite-dimensional $\mfrak{k}$-module with highest weight $\sum_{j=1}^t i_j\xi_i$. Then $S(\mfrak{p}_+)$ has a multiplicity free decomposition
  \begin{equation}\label{eq:khs}
   S(\mfrak{p}_+) \simeq \bigoplus_{\underline{i}\in I} F_{\underline{i}}.
  \end{equation}
-The table \ref{tbl:strongly_og} gives the set of all strongly orthogonal roots for each Hermitian symmetric pair.
+The table \ref{tbl:strongly_og} gives sets of  strongly orthogonal roots for  Hermitian symmetric pair.
 \begin{table}[H]\label{tbl:strongly_og}\begin{center}
   \begin{tabular}{CCCCC}
-  \mfrak{g}_0 & \beta& t & \xi_i & \mu_i \\\hline
+  \mfrak{g}_0 & \beta& t & \xi_{t-i} & \mu_{t-i} \\\hline
    \mfrak{su}(p,q) &\alpha_p& p & \epsilon_i-\epsilon_{t-i+1} & \omega_i + \omega_{t-i+1} \\
    \mfrak{so}(2,2n-1) & \alpha_1 & 2 & \epsilon_1+\epsilon_2, \epsilon_1 - \epsilon_2 & \omega_2, 2\omega_1\\
    \mfrak{sp}(n,\R) & \alpha_n & n & 2\epsilon_i & 2\omega_1\\
@@ -468,7 +467,7 @@ The table \ref{tbl:strongly_og} gives the set of all strongly orthogonal roots f
   \end{tabular}\caption{Strongly orthogonal roots}\end{center}
 \end{table}
 \end{theorem}
-Moreover, up to a scalar multiple, there exists for each $j$ a unique non-zero $v_j\in S(\mfrak{p}_+)^{\mfrak{n}}$ of weight $-\mu_j.$ Furthemore $S(\mfrak{p}_+)^{\mfrak{n}}$ is just the polynomial algebra on the $v_j,j=1,\ldots, t.$ We will use this in the section \ref{sec:invariant} and we refer to \cite{goodman_symmetry_2009} for details.
+Moreover, up to a scalar multiple, there exists for each $j$ a unique non-zero $v_j\in S(\mfrak{p}_+)^{\mfrak{n}}$ of weight $\mu_j.$ Furthemore $S(\mfrak{p}_+)^{\mfrak{n}}$ is just the polynomial algebra on the $v_j,j=1,\ldots, t.$ We will use this in the section \ref{sec:invariant} and we refer to \cite{goodman_symmetry_2009} for details.
 
 \section{Octonionic planes}\label{sec:octo}
 
