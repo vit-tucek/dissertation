@@ -1,5 +1,5 @@
 \chapter{Source code}\label{app:source}
-The Bruhat graphs in this work were produced with the help of the following code written for the mathematical software called sage \cite{sage}. Most of the code was submitted in a form of patch with respect to the version 5.12.
+The Bruhat graphs and calculations in low rank in this work were produced with the help of the following code written for the mathematical software called Sage (\url{www.sagemath.org}). Most of the code will be submitted for inclusion in the official distribution.
 
 \begin{minted}[fontsize=\footnotesize, breaklines]{python}
 ######################################################################
@@ -362,17 +362,7 @@ def get_W_action(AS, index_set, side, v, node_dist=1.5, with_dynkins=False):
             #nw = w.coset_representative(index_set, side) # Enright is wrong!
             nw = w
 
-            #self.result = nw.reduced_word()
-            #self.result = M*(2*nw.matrix()*AS.rho().to_vector() - AS.rho().to_vector())
-            #self.result = M*(nw.matrix()*v - AS.rho().to_vector())
             self.result = self.to_fundamental_weights(get_dominant(AS, nw.matrix()*v - AS.rho().to_vector(), index_set))
-            #self.result = self.to_fundamental_weights(nw.matrix()*v - 1*AS.rho().to_vector())
-            #self.result = (AS.from_vector(nw.matrix()*v) - AS.rho()).to_dominant_chamber(index_set).to_weight_space()
-            # u, direction = (AS.from_vector(nw.matrix()*v) - AS.rho()).to_dominant_chamber(index_set, reduced_word=True)
-#             wl = w.coset_representative(index_set, "left")
-#             wr = w.coset_representative(index_set, "right")
-#           self.result = u.to_weight_space(), w.reduced_word(), direction, wl.reduced_word(), wr.reduced_word(), (w*wl.inverse()).reduced_word(), (wr.inverse()*w).reduced_word(), (w*wl.inverse())*wl
-#             self.result = u.to_weight_space(), w.reduced_word(), direction
 
         def __repr__(self):
             return repr(w)
