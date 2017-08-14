@@ -79,7 +79,7 @@ Let $\sroots=\{ \alpha_1, \ldots, \alpha_r \}$ be a system of simple roots for $
 \[
  a_{ij} =\frac{2(\alpha_i,\alpha_j)}{(\alpha_i,\alpha_i)}.
 \]
-A \emph{Dynking diagram} is defined as a graph with vertex for each simple root and $i$th and $j$th vertex are joined by $a_{ij}a_{ji}$ many edges. If a two joined vertices correspond to roots of different lengths, one orients the edges by arrow pointing from the longer root to the shorter one.
+A \emph{Dynkin diagram} is defined as a graph with vertex for each simple root and $i$th and $j$th vertex are joined by $a_{ij}a_{ji}$ many edges. If a two joined vertices correspond to roots of different lengths, one orients the edges by arrow pointing from the longer root to the shorter one.
 
 % Sometimes it is convenient for computations to choose a suitable basis. For a simple roots $\sroots = \{ \alpha_1, \ldots, \alpha_n \}$ choose elements $E_i$  in the root spaces $\lie{g}_{\alpha_i}$ and $F_i \in \lie{g}_{-\alpha_i}$ such that $[E_i,F_i] = \frac{2}{(\alpha_i,\alpha_i)}$. This means that $H_i =[E_i,F_i]$ satisfies $\alpha_i(H_i)=2$ and hence $E_i,F_i,H_i$ is a $\lie{sl}(2,\C)$-triple. The elements of $\{H_i, E_i, F_i : i=1,\ldots, n \}$ are called \emph{Chevalley-Serre} generators and they satisfy the so called \emph{Chevalley-Serre relations}:
 % \begin{align*}
@@ -183,7 +183,7 @@ Let $\lambda$ be a $\lie{k}$-dominant and integral weight and denote by $F(\lamb
 %The canonical $\overline{P}$-invariant filtration of $M(\lambda) = \bigcup_{k\geq 0} M^k(\lambda)$ has filtration components $M^k(\lambda)= \{\epsilon^{i_1}\cdots\epsilon^{i_j}\otimes v\, | v \in F(\lambda), j \leq k \}$.
 In the case of $M(\lambda)$, the geometric weight corresponds to the polynomial degree shifted by the weight of $F(\lambda)$.% and the canonical $\overline{P}$-invariant filtration is the same as the filtration induced by the geometric weight.
 
-The \emph{(parabalic) category $\mathcal{O}_\lie{p}$} is the full subcategory of $\lie{U(g)}$ modules whose objects $M$ satisfy:
+The \emph{(parabolic) category $\mathcal{O}_\lie{p}$} is the full subcategory of $\lie{U(g)}$ modules whose objects $M$ satisfy:
 \begin{enumerate}
 \item $M$ is a finitely generated $\lie{U(g)}$ module
 \item Viewed as a $\lie{U(l)}$ module, $M$ is a direct sum of finite dimensional simple modules.
@@ -297,7 +297,7 @@ given by $w \mapsto L(w)$ is a bijection.
 	\]
 	where $\lie{p}'$ is a parabolic subalgebra of Hermitian type of a complex simple Lie algebra $\lie{g}'$ of rank smaller or equal to the rank of $\lie{g}.$ Moreover, there is an isomorphism of posets $W^{\Sigma, J} \to W'^{\Sigma'}$ such that the functor $\mathcal{E}$ sends parabolic Verma modules $M_\Sigma(w)$ to parabolic Verma modules $M_{\Sigma'} (w')$ and similarly for simple modules.
 	
-	\item Suppose that $\roots$ has two root lengths and $J$ contains a long root. Then there exists an equvalence of categories
+	\item Suppose that $\roots$ has two root lengths and $J$ contains a long root. Then there exists an equivalence of categories
 	\[
 	\mathcal{E}: \mathcal{O}^\lie{p}_\mu \to \mathcal{O}^\lie{p'}_{\mathrm{reg}} \oplus  \mathcal{O}^\lie{p'}_{\mathrm{reg}},
 	\]
@@ -672,7 +672,7 @@ For a contradiction, suppose that there is nonzero $u$ in $\ker \lhd \cap \im \l
 such that $\lcd \widetilde{v} = \widetilde{u}$. Thus we see that there is a non-zero element in $\ker \lhd \cap \im \lcd\cap \Lambda^k\otimes \mathbb{W}$. This is a contradiction with the assumption that $\lhd$ and $\lcd$ are disjoint for $\mathbb{V}$.
 
 
-Basically, the same argument proves that the cohomology must stay the same if it is finite-dimensional. From the Hodge theory (which is implied by the disjointness) we know that any element of the cohomology group can be uniquely represented by an alement in $\ker (\lhd + \lcd)$. Let $D=\lhd + \lcd$ and suppose for a contradiction that there is a nonzero element $(u_i)$ in $\ker D \setminus \ker D_{|\mathbb{W}}$, in the $k$-th chain space of $\mathbb{V}$. Pick $i_0$ such that $u_{i_0} \neq 0$ and $i_0$ is bigger than any eigenvalue of $E$ on $\ker D_{|\mathbb{W}}$.\footnote{This is well defined because of the finite-dimensionality of $\ker D_{|\mathbb{W}}$.} Since $D$ is again $K_\mathbb{C}$-invariant we proceed as before and construct $\widetilde{u}\in\mathbb{W}\cap\ker D$. The choice of $i_0$ now leads to the desired contradiction.
+Basically, the same argument proves that the cohomology must stay the same if it is finite-dimensional. From the Hodge theory (which is implied by the disjointness) we know that any element of the cohomology group can be uniquely represented by an element in $\ker (\lhd + \lcd)$. Let $D=\lhd + \lcd$ and suppose for a contradiction that there is a nonzero element $(u_i)$ in $\ker D \setminus \ker D_{|\mathbb{W}}$, in the $k$-th chain space of $\mathbb{V}$. Pick $i_0$ such that $u_{i_0} \neq 0$ and $i_0$ is bigger than any eigenvalue of $E$ on $\ker D_{|\mathbb{W}}$.\footnote{This is well defined because of the finite-dimensionality of $\ker D_{|\mathbb{W}}$.} Since $D$ is again $K_\mathbb{C}$-invariant we proceed as before and construct $\widetilde{u}\in\mathbb{W}\cap\ker D$. The choice of $i_0$ now leads to the desired contradiction.
 
 \end{proof}
 

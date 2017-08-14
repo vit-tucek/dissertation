@@ -3,19 +3,19 @@
 
 \section{Real Lie algebras}
 
-The \emph{complexification} of a real reducitve Lie algebra $\mfrak{g}_0$ is defined as $\mfrak{g} = \mfrak{g}_0\otimes_\R \C$. With Lie bracket defined naturally by complex linear extension as follows
+The \emph{complexification} of a real reductive Lie algebra $\mfrak{g}_0$ is defined as $\mfrak{g} = \mfrak{g}_0\otimes_\R \C$. With Lie bracket defined naturally by complex linear extension as follows
 \[
  [A\otimes z, B\otimes w] = [A,B]\otimes zw.
 \]
 As a real vector space we have isomorphism $\mfrak{g} \simeq \mfrak{g}_0 \oplus \imath \mfrak{g}_0$ defined by $X\otimes (a+\imath b) \mapsto aX \oplus \imath bX$. Writing elements $Z,Z'\in\mfrak{g}$ as $Z = X + \imath Y$ $Z'=X'+\imath Y'$ we get \[[Z,Z'] = [X,X'] - [Y,Y'] + \imath \left( [X,Y'] + [X',Y]\right).\]
 
-A \emph{real form} of a complex Lie alebra $\mfrak{g}$ is a real Lie algebra $\mfrak{g}_0$ such that $\mfrak{g}$ is the complexification of $\mfrak{g}_0$. A complex Lie algebra usually has many nonisomorphic real forms. For a complexification $\mfrak{g}$ of $\mfrak{g}_0$ we will denote by $\sigma$ the conjugation of $\mfrak{g}$ with respect to the real form $\mfrak{g}_0$.
+A \emph{real form} of a complex Lie algebra $\mfrak{g}$ is a real Lie algebra $\mfrak{g}_0$ such that $\mfrak{g}$ is the complexification of $\mfrak{g}_0$. A complex Lie algebra usually has many nonisomorphic real forms. For a complexification $\mfrak{g}$ of $\mfrak{g}_0$ we will denote by $\sigma$ the conjugation of $\mfrak{g}$ with respect to the real form $\mfrak{g}_0$.
 
 \begin{example}
- The complexification of the classical Lie algebra of trace-free real matrices $\mfrak{sl}(n,\R)$ is naturally isomorphic to the Lie algebra of trace-free complex matrices $\mfrak{sl}(n,\C)$. Anoter real form of $\mfrak{sl}(n,\C)$ is for example the algebra of trace-free skew Hermitian  matrices  $\mfrak{su}(n)$. %TODO
+ The complexification of the classical Lie algebra of trace-free real matrices $\mfrak{sl}(n,\R)$ is naturally isomorphic to the Lie algebra of trace-free complex matrices $\mfrak{sl}(n,\C)$. Another real form of $\mfrak{sl}(n,\C)$ is for example the algebra of trace-free skew Hermitian  matrices  $\mfrak{su}(n)$. %TODO
 \end{example}
 
-An \emph{involution} of a Lie algebra $\mfrak{g}$ is Lie algebra homomorphism $\mfrak{g}\to\mfrak{g}$ which squares to identity. An involution $\theta$ of a real semisimple Lie algebra $\mfrak{g}_0$ is called \emph{Cartan involution} if the symmetric bilinear form $B_\theta(X,Y) = -B(X,\theta Y)$ is postivive definite. We will denote the complex linear extension of $\theta$ to the complexification of $\mfrak{g}_0$ by the same symbol and we will still call it the Cartan involution. Any real semisimple Lie algebra has a Cartan involution and it is unique up to inner automorphism.
+An \emph{involution} of a Lie algebra $\mfrak{g}$ is Lie algebra homomorphism $\mfrak{g}\to\mfrak{g}$ which squares to identity. An involution $\theta$ of a real semisimple Lie algebra $\mfrak{g}_0$ is called \emph{Cartan involution} if the symmetric bilinear form $B_\theta(X,Y) = -B(X,\theta Y)$ is positive definite. We will denote the complex linear extension of $\theta$ to the complexification of $\mfrak{g}_0$ by the same symbol and we will still call it the Cartan involution. Any real semisimple Lie algebra has a Cartan involution and it is unique up to inner automorphism.
 
 
 Take a matrix Lie algebra, i.e. a subalgebra of $\mfrak{gl}(n,\C)$, that is closed under transposition and define $\theta X = -X^\dag$ where $X^\dag = \overline{X}^t.$ Then
@@ -45,7 +45,7 @@ A Cartan involution $\theta$ of $\mfrak{g}_0$ yields an eigenspace decomposition
 \begin{equation}\label{eq:cartan_decomposition_1}
  [\mfrak{k}_0,\mfrak{k}_0] \subseteq \mfrak{k}_0, \quad[\mfrak{k}_0,\mfrak{p}_0] \subseteq \mfrak{p}_0, \quad [\mfrak{p}_0,\mfrak{p}_0] \subseteq \mfrak{k}_0.
 \end{equation}
-From these relations it is easy to derive that $\mfrak{k}_0$ and $\mfrak{p}_0$ are orthogonal with respect to $B_\theta$ and $B$. If $X$ is in $\mfrak{k}_0$ and $Y$ is in $\mfrak{p}_0$, then $\ad X \circ \ad Y $ sends $\mfrak{k}_0$ to $\mfrak{p}_0$ and $\mfrak{p}_0$ to $\mfrak{k}_0$; i.e. as a matrix in block form subordinated to the decomposition $\mfrak{g}_0 = \mfrak{k}_0 \oplus \mfrak{p}_0$ it has the form $\begin{smatrix} 0 & * \\ * & 0\end{smatrix}$. Thus it has trace $0$ and $B(X,Y) = 0$ and since $\theta Y = - Y$ also $B_\theta (X,Y) = 0$. Because $B_\theta$ is positive definite, the eigenspacese have the property that
+From these relations it is easy to derive that $\mfrak{k}_0$ and $\mfrak{p}_0$ are orthogonal with respect to $B_\theta$ and $B$. If $X$ is in $\mfrak{k}_0$ and $Y$ is in $\mfrak{p}_0$, then $\ad X \circ \ad Y $ sends $\mfrak{k}_0$ to $\mfrak{p}_0$ and $\mfrak{p}_0$ to $\mfrak{k}_0$; i.e. as a matrix in block form subordinated to the decomposition $\mfrak{g}_0 = \mfrak{k}_0 \oplus \mfrak{p}_0$ it has the form $\begin{smatrix} 0 & * \\ * & 0\end{smatrix}$. Thus it has trace $0$ and $B(X,Y) = 0$ and since $\theta Y = - Y$ also $B_\theta (X,Y) = 0$. Because $B_\theta$ is positive definite, the eigenspaces have the property that
 \begin{equation}\label{eq:cartan_decomposition_2}
  B \text{ is } \begin{cases} \text{negative definite on } \mfrak{k}_0 \\ \text{positive definite on } \mfrak{p}_0. \end{cases}
 \end{equation}
@@ -69,7 +69,7 @@ and we see that Cartan involutions are in bijective correspondence with Cartan d
 
 Cartan involutions and decompositions can be even pushed to the Lie group level.
 \begin{theorem}[Theorem VI.6.31 of \cite{knapp_lie_1996}]
- Let $G$ be a semisimple Lie group, let $\theta$ be a Cartan involution of its Lie algebra $\mfrak{g}_0$, let $\mfrak{g}_0 = lie{k}_0 \oplus \mfrak{p}_0$ be the corresponding Catan decomposition, and let $K$ be the analytic subgroup of $G$ with Lie algebra $\mfrak{k}_0$. Then
+ Let $G$ be a semisimple Lie group, let $\theta$ be a Cartan involution of its Lie algebra $\mfrak{g}_0$, let $\mfrak{g}_0 = lie{k}_0 \oplus \mfrak{p}_0$ be the corresponding Cartan decomposition, and let $K$ be the analytic subgroup of $G$ with Lie algebra $\mfrak{k}_0$. Then
  \begin{enumerate}
   \item there exists a Lie group automorphism $\Theta$ of $G$ with differential $\theta$, and $\Theta^2=\Id$
   \item the subgroup of $G$ fixed by $\Theta$ is $K$
@@ -89,7 +89,7 @@ Conversely, given a compact form $\mfrak{u}_0$ of a complexification $\mfrak{g}$
 \]
 which is positive definite since $X,Y$ are elements from the compact Lie algebra $\mfrak{u}_0$.
 
-A semisimple Lie algebra has up to inner isomorphism only one compact real form and it can be even shown that the compact form can be chosen in such a way that the corresponding conjugation $\tau$ commutes with any apriori chosen involution $\sigma$ of $\mfrak{g}$. This is the core of the proof of existence of Cartan involution for arbitrary real semisimple Lie algebra $\mfrak{g}_0$.
+A semisimple Lie algebra has up to inner isomorphism only one compact real form and it can be even shown that the compact form can be chosen in such a way that the corresponding conjugation $\tau$ commutes with any a priori chosen involution $\sigma$ of $\mfrak{g}$. This is the core of the proof of existence of Cartan involution for arbitrary real semisimple Lie algebra $\mfrak{g}_0$.
 
 To summarize, if $\mfrak{g}_0 = \mfrak{k}_0 \oplus \mfrak{p}_0$ is a Cartan decomposition of $\mfrak{g}_0$, then $\mfrak{k}_0 \oplus \imath \mfrak{p}_0$ is a compact  real form of the complexification $\mfrak{g}$ of $\mfrak{g}_0$. Conversely, if $\mfrak{k}_0$ and $\mfrak{p}_0$ are the $+1$ and $-1$ eigenspaces of an involution $\sigma$ of $\mfrak{g}$ then $\sigma$ is Cartan involution if and only if the real form $\mfrak{k}_0 \oplus \imath \mfrak{p}_0$  is compact.
 
@@ -109,7 +109,7 @@ In the following we will use this simple lemma.
   \end{align*}
 \end{proof}
 
-In addition to compact form, there is always another real form (also unique up to conjugation) of a complex semisimple Lie algera $\mfrak{g}$. Let $\mfrak{h}_0$ be a Cartan subalgebra of $\mfrak{g}_0$ and consider its complexification $\mfrak{h}$ which is (by definition) a Cartan subalgebra of $\mfrak{g}$. We call a real Lie algebra $\mfrak{g}_0$ a \emph{split form} of $\mfrak{g}$ if the restrictions of elements of $\mfrak{h}^*$ to $\mfrak{h}_0$ are real valued.
+In addition to compact form, there is always another real form (also unique up to conjugation) of a complex semisimple Lie algebra $\mfrak{g}$. Let $\mfrak{h}_0$ be a Cartan subalgebra of $\mfrak{g}_0$ and consider its complexification $\mfrak{h}$ which is (by definition) a Cartan subalgebra of $\mfrak{g}$. We call a real Lie algebra $\mfrak{g}_0$ a \emph{split form} of $\mfrak{g}$ if the restrictions of elements of $\mfrak{h}^*$ to $\mfrak{h}_0$ are real valued.
 
 To construct a split real form we can just take a suitable basis of $\mfrak{g}$ and its real span. In detail, take a complex Lie algebra $\mfrak{g}$ and its Cartan subalgebra $\mfrak{h}$ and define $\mfrak{h}_0$ as the subset of $\mfrak{h}$ on which all the roots take only real values. There is always a choice (see Theorem VI.6.6 of \cite{knapp_lie_1996}) of root vectors $X_\alpha \in \mfrak{g}_\alpha$ such that $[X_\alpha, X_{-\alpha}] = H_\alpha$ and
 \begin{gather*}
@@ -164,7 +164,7 @@ For a real Lie algebra $\mfrak{g}_0$ we define $\mfrak{q}_0$ to be a parabolic s
 
 %TODO rozepsat, real Iwasawa?s
 
-Let's look at some specific examples of real Lie algebas and groups.
+Let's look at some specific examples of real Lie algebras and groups.
 
 \[
  I_{m,n} = \begin{pmatrix} \Id_m & 0 \\ 0 & -\Id_n \end{pmatrix}, \quad J = \begin{pmatrix} 0 & \Id_n \\ -\Id_n & 0 \end{pmatrix}
@@ -810,7 +810,7 @@ Let $P(V,W)$ denote the space of polynomials between two complex vector spaces $
  \]
 \end{lemma}
 \begin{proof}
- All three expression are euqal to $((fq)(\partial)p)(0)$.
+ All three expression are equal to $((fq)(\partial)p)(0)$.
 \end{proof}
 
 As was argued in \cite{davidson_differential_1991} this inner product can be used to define a nondegenerate pairing between $M(\lambda)$ and its conjugate dual $M(\lambda)^*$. In this duality one gets that the maximal submodule $J(\lambda)$ is orthogonal to $L(\lambda)$.
