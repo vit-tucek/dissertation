@@ -924,9 +924,9 @@ for $i=1,2,\dots,m$ and $j=1,2,\dots,n$;
 \item[2)]
 \begin{align}
   \begin{aligned}
-    \pi_{\sigma_\lambda}(h_c)&= \bigg({1 \over n} + {1 \over m}\bigg) E^x + \bigg(\lambda(h_c)+ {n+m \over 2}\bigg) + \sigma(h_c), \\[1mm]
+    \pi_{\sigma_\lambda}(h_c)&= \bigg(\frac{1}{n} + \frac{1}{m}\bigg) E^x + \bigg(\lambda(h_c)+ \frac{n+m}{2}\bigg) + \sigma(h_c), \\[1mm]
     \pi_{\sigma_\lambda}(h_{A,B})&= R_A^x +L_B^x + \sigma(h_{A,B}), \\[1mm]
-    \hat{\pi}_{\sigma_\lambda}(h_c)&= -\bigg({1 \over n} + {1 \over m}\bigg) E^y +  \bigg(\lambda(h_c) - {n+m \over 2}\bigg) + \sigma(h_c), \\[1mm]
+    \hat{\pi}_{\sigma_\lambda}(h_c)&= -\bigg(\frac{1}{n} + \frac{1}{m}\bigg) E^y +  \bigg(\lambda(h_c) - \frac{n+m}{2}\bigg) + \sigma(h_c), \\[1mm]
     \hat{\pi}_{\sigma_\lambda}(h_{A,B})&= R_A^y + L_B^y + \sigma(h_{A,B})
   \end{aligned}
 \end{align}
@@ -934,12 +934,12 @@ for all $A \in M_{n,n}(\C)$, $B \in M_{m,m}(\C)$ satisfying $\tr A =0$ and $\tr 
 \item[3)]
 \begin{align}
   \begin{aligned}
-    \pi_{\sigma_\lambda}(e_{ij})&= \sum_{k=1}^m \sum_{\ell=1}^n x_{ki} x_{j\ell} \partial_{x_{k\ell}}  + \bigg(\lambda(h_c)+ {n+m \over 2}\bigg) x_{ji} + \sigma(e_{ij}) + x_{ji}\sigma(h_c)
-    \\ &\quad + \sum_{\ell=1}^n x_{j\ell} \sigma(h_{E_{i\ell}-{1\over n}I_n \delta_{i \ell},0})
-     - \sum_{k=1}^m x_{ki} \sigma(h_{0,E_{kj}-{1 \over m}I_m \delta_{kj}}),  \\
-    \hat{\pi}_{\sigma_\lambda}(e_{ij})&= \sum_{k=1}^m \sum_{\ell=1}^n y_{k\ell} \partial_{y_{ki}} \partial_{y_{j\ell}} - \bigg(\lambda(h_c)-  {n+m \over 2}\bigg) \partial_{y_{ji}} + \sigma(e_{ij}) - \partial_{y_{ji}} \sigma(h_c)
-    \\ &\quad - \sum_{\ell=1}^n \partial_{y_{j\ell}} \sigma(h_{E_{i\ell}-{1\over n}I_n \delta_{i \ell},0})
-     + \sum_{k=1}^m \partial_{y_{ki}} \sigma(h_{0,E_{kj}-{1 \over m}I_m \delta_{kj}})
+    \pi_{\sigma_\lambda}(e_{ij})&= \sum_{k=1}^m \sum_{\ell=1}^n x_{ki} x_{j\ell} \partial_{x_{k\ell}}  + \bigg(\lambda(h_c)+ \frac{n+m}{2}\bigg) x_{ji} + \sigma(e_{ij}) + x_{ji}\sigma(h_c)
+    \\ &\quad + \sum_{\ell=1}^n x_{j\ell} \sigma(h_{E_{i\ell}-\frac{1}{n}I_n \delta_{i \ell},0})
+     - \sum_{k=1}^m x_{ki} \sigma(h_{0,E_{kj}-\frac{1}{m}I_m \delta_{kj}}),  \\
+    \hat{\pi}_{\sigma_\lambda}(e_{ij})&= \sum_{k=1}^m \sum_{\ell=1}^n y_{k\ell} \partial_{y_{ki}} \partial_{y_{j\ell}} - \bigg(\lambda(h_c)-  \frac{n+m}{2}\bigg) \partial_{y_{ji}} + \sigma(e_{ij}) - \partial_{y_{ji}} \sigma(h_c)
+    \\ &\quad - \sum_{\ell=1}^n \partial_{y_{j\ell}} \sigma(h_{E_{i\ell}-\frac{1}{n}I_n \delta_{i \ell},0})
+     + \sum_{k=1}^m \partial_{y_{ki}} \sigma(h_{0,E_{kj}-\frac{1}{m}I_m \delta_{kj}})
   \end{aligned}
 \end{align}
 for $i=1,2,\dots,n$ and $j=1,2,\dots,m$.
@@ -979,11 +979,11 @@ Let $\alpha \in \C$ and let $r=\min\{n,m\}$. Then we have
 \end{align}
 as $\mfrak{l}$-modules, where $\mathbb{F}_\mu$ is the simple $\mfrak{l}$-module with highest weight $\mu \in \mfrak{h}^*$ and
 \begin{align}
- \Lambda^+_\alpha(\mfrak{p}) = \bigg\{\sum_{i=1}^r a_i \omega_{n-i} + \sum_{i=1}^r a_i \omega_{n+i} + \bigg(\alpha - {n+m \over 2} - 2 \sum_{i=1}^r a_i\!\bigg) \omega_n;\, a_i \in \N_0 \bigg\}.
+ \Lambda^+_\alpha(\mfrak{p}) = \bigg\{\sum_{i=1}^r a_i \omega_{n-i} + \sum_{i=1}^r a_i \omega_{n+i} + \bigg(\alpha - \frac{n+m}{2} - 2 \sum_{i=1}^r a_i\!\bigg) \omega_n;\, a_i \in \N_0 \bigg\}.
 \end{align}
 Moreover, the corresponding highest weight vector $v_\mu$ of $\mathbb{F}_\mu$ in $\C[\widebar{\mfrak{u}}^*] \otimes_\C \C_{\lambda_\alpha-\rho}$ with
 \begin{align}
-\mu=\sum_{i=1}^r a_i \omega_{n-i} + \sum_{i=1}^r a_i \omega_{n+i} + \bigg(\alpha - {n+m \over 2} - 2 \sum_{i=1}^r a_i\!\bigg) \omega_n
+\mu=\sum_{i=1}^r a_i \omega_{n-i} + \sum_{i=1}^r a_i \omega_{n+i} + \bigg(\alpha - \frac{n+m}{2} - 2 \sum_{i=1}^r a_i\!\bigg) \omega_n
 \end{align}
 is $v_\mu=q_1^{a_1}q_2^{a_2} \dots q_r^{a_r}$, where
 \begin{align} \label{eq:generators hwv AGS}
@@ -998,23 +998,23 @@ is $v_\mu=q_1^{a_1}q_2^{a_2} \dots q_r^{a_r}$, where
 for $k=1,2,\dots,r$.
 \end{proposition}
 
-\begin{proof}First of all, we need to verify that the polynomials $q_k$ are the highest weight vectors with highest weights $\omega_{n-k}+\omega_{n+k}+\big(\alpha - {n + m \over 2} -2\big)\omega_n$ for $k=1,2,\dots,r$. Using \eqref{eq:left right action y AGS} it easily follows that $L^y_{ij}q_k=0$ for $j=k+1,k+2,\dots,m$ and $L^y_{ij}q_k$ is the polynomial which arises from $q_k$ replacing the $j$-th row $(y_{j,n-k+1},y_{j,n-k+2},\dots,y_{j,n})$  with the $i$-th row $(y_{i,n-k+1},y_{i,n-k+2},\dots,y_{i,n})$ in the corresponding matrix \eqref{eq:generators hwv AGS} for $j=1,2,\dots,k$. Analogously, we have that $-R^y_{ij}q_k=0$ for $i=1,2,\dots,n-k$ and $-R^y_{ij}q_k$ is the polynomial which arises from $q_k$ replacing the $i$-th column \smash{$(y_{1,i},y_{2,i},\dots,y_{k,i})^{\rm T}$} with the $j$-th column \smash{$(y_{1,j},y_{2,j},\dots,y_{k,j})^{\rm T}$} in the corresponding matrix \eqref{eq:generators hwv AGS} for $i=n-k+1,n-k+2,\dots,n$. Therefore, we obtain $R^y_{ij}q_k=0$ for $1 \leq i < j \leq n$ and $L^y_{ij}q_k=0$ for $1 \leq i < j \leq m$, which gives us that $q_k$ is annihilated by $\mfrak{l} \cap \mfrak{n}$. Furthermore, since we have
+\begin{proof}First of all, we need to verify that the polynomials $q_k$ are the highest weight vectors with highest weights $\omega_{n-k}+\omega_{n+k}+\big(\alpha - \frac{n + m}{2} -2\big)\omega_n$ for $k=1,2,\dots,r$. Using \eqref{eq:left right action y AGS} it easily follows that $L^y_{ij}q_k=0$ for $j=k+1,k+2,\dots,m$ and $L^y_{ij}q_k$ is the polynomial which arises from $q_k$ replacing the $j$-th row $(y_{j,n-k+1},y_{j,n-k+2},\dots,y_{j,n})$  with the $i$-th row $(y_{i,n-k+1},y_{i,n-k+2},\dots,y_{i,n})$ in the corresponding matrix \eqref{eq:generators hwv AGS} for $j=1,2,\dots,k$. Analogously, we have that $-R^y_{ij}q_k=0$ for $i=1,2,\dots,n-k$ and $-R^y_{ij}q_k$ is the polynomial which arises from $q_k$ replacing the $i$-th column \smash{$(y_{1,i},y_{2,i},\dots,y_{k,i})^{\rm T}$} with the $j$-th column \smash{$(y_{1,j},y_{2,j},\dots,y_{k,j})^{\rm T}$} in the corresponding matrix \eqref{eq:generators hwv AGS} for $i=n-k+1,n-k+2,\dots,n$. Therefore, we obtain $R^y_{ij}q_k=0$ for $1 \leq i < j \leq n$ and $L^y_{ij}q_k=0$ for $1 \leq i < j \leq m$, which gives us that $q_k$ is annihilated by $\mfrak{l} \cap \mfrak{n}$. Furthermore, since we have
 \begin{align*}
   \hat{\pi}_{\lambda_\alpha}\!(h_{A,B})q_k &= \sum_{i=1}^n a_i R^y_{ii}q_k + \sum_{j=1}^m b_j L^y_{jj}q_k = -\sum_{i=n-k+1}^n a_i q_k + \sum_{j=1}^k b_j q_k \\
   &= \bigg(\sum_{i=1}^{n-k} a_i + \sum_{j=1}^k b_j \bigg)q_k \\
-  &= \omega_{n-k}(h_{A,B})q_k + \omega_{n+k}(h_{A,B})q_k+ \bigg(\alpha-{n+m \over 2}-2\bigg)\omega_n(h_{A,B})q_k
+  &= \omega_{n-k}(h_{A,B})q_k + \omega_{n+k}(h_{A,B})q_k+ \bigg(\alpha-\frac{n+m}{2}-2\bigg)\omega_n(h_{A,B})q_k
 \end{align*}
 for all $A=\diag(a_1,a_2,\dots,a_n)$, $B=\diag(b_1,b_2,\dots,b_m)$ satisfying $\tr A=0$, $\tr B=0$, and
 \begin{align*}
-  \hat{\pi}_{\lambda_\alpha}\!(h_c)q_k&= -\bigg({1 \over n} + {1 \over m}\bigg)E^yq_k + \bigg(\alpha -{n+m \over 2}\bigg)q_k \\
-  &= -k\bigg({1 \over n} + {1 \over m}\bigg)q_k+ \bigg(\alpha -{n+m \over 2}\bigg)q_k \\
-  &= \omega_{n-k}(h_c)q_k + \omega_{n+k}(h_c)q_k+\bigg(\alpha-{n+m \over 2}-2\bigg)\omega_n(h_c)q_k,
+  \hat{\pi}_{\lambda_\alpha}\!(h_c)q_k&= -\bigg(\frac{1}{n} + \frac{1}{m}\bigg)E^yq_k + \bigg(\alpha -\frac{n+m}{2}\bigg)q_k \\
+  &= -k\bigg(\frac{1}{n} + \frac{1}{m}\bigg)q_k+ \bigg(\alpha -\frac{n+m}{2}\bigg)q_k \\
+  &= \omega_{n-k}(h_c)q_k + \omega_{n+k}(h_c)q_k+\bigg(\alpha-\frac{n+m}{2}-2\bigg)\omega_n(h_c)q_k,
 \end{align*}
-we obtain that $q_k$ is a weight vector with respect to $\mfrak{l} \cap \mfrak{h}$. Therefore, the polynomial $q_k$ is the highest weight vector with highest weight $\omega_{n-k}+ \omega_{n+k} + \big(\alpha-{n+m \over 2}-2\big)\omega_n$.
+we obtain that $q_k$ is a weight vector with respect to $\mfrak{l} \cap \mfrak{h}$. Therefore, the polynomial $q_k$ is the highest weight vector with highest weight $\omega_{n-k}+ \omega_{n+k} + \big(\alpha-\frac{n+m}{2}-2\big)\omega_n$.
 
 As an immediate consequence of the previous result, we get that the polynomial $q_1^{a_1}q_2^{a_2}\dots q_r^{a_r}$ with $a_1,a_2,\dots,a_r \in \N_0$ is the highest weight vector with highest weight
 \begin{align*}
-\mu=\sum_{k=1}^r a_k \omega_{n-k} + \sum_{k=1}^r a_k \omega_{n+k} + \bigg(\alpha - {n+m \over 2} - 2\sum_{k=1}^n a_k\bigg) \omega_n
+\mu=\sum_{k=1}^r a_k \omega_{n-k} + \sum_{k=1}^r a_k \omega_{n+k} + \bigg(\alpha - \frac{n+m}{2} - 2\sum_{k=1}^n a_k\bigg) \omega_n
 \end{align*}
 and generates a finite-dimensional simple $\mfrak{l}$-submodule of $\C[\widebar{\mfrak{u}}^*] \otimes_\C \C_{\lambda_\alpha-\rho}$ isomorphic to $\mathbb{F}_\mu$, since $\C[\widebar{\mfrak{u}}^*] \otimes_\C \C_{\lambda_\alpha-\rho}$ is a semisimple $\mfrak{l}$-module decomposing into finite-dimensional simple $\mfrak{l}$-submodules. This gives us an injective homomorphism
 \begin{align*}
@@ -1028,8 +1028,8 @@ Let $\alpha \in \C$ and $\mu \in \Lambda^+_\alpha(\mfrak{p})$. Then we have
 \begin{align*}
  \Sol_\mu \simeq
  \begin{cases}
-   \mathbb{F}_\mu & \text{for $\alpha \in \C$, $\mu = \big(\alpha-{n+m \over 2}\big)\omega_n$}, \\[1mm]
-   \mathbb{F}_\mu & \text{$\!\begin{gathered}\text{for $\alpha = a-k+{\textstyle {n+m \over 2}}$, $\mu=a \omega_{n-k} + a\omega_{n+k}-(a+k)\omega_n$,}\\[1mm] \text{$a \in \N$, $k \in \{1,2,\dots,r\}$} \hfill \end{gathered}$} \\[1mm]
+   \mathbb{F}_\mu & \text{for $\alpha \in \C$, $\mu = \big(\alpha-\frac{n+m}{2}\big)\omega_n$}, \\[1mm]
+   \mathbb{F}_\mu & \text{$\!\begin{gathered}\text{for $\alpha = a-k+{\textstyle \frac{n+m}{2}}$, $\mu=a \omega_{n-k} + a\omega_{n+k}-(a+k)\omega_n$,}\\[1mm] \text{$a \in \N$, $k \in \{1,2,\dots,r\}$} \hfill \end{gathered}$} \\[1mm]
    0 & \text{otherwise}.
  \end{cases}
 \end{align*}
@@ -1041,48 +1041,48 @@ Let $\alpha \in \C$ and $\mu \in \Lambda^+_\alpha(\mfrak{p})$. Then we have
 \end{align*}
 of $(\C[\widebar{\mfrak{u}}^*] \otimes_\C \C_{\lambda_\alpha-\rho})_\mu$ with $a_1,a_2,\dots a_r \in \N_0$ belongs to $\Sol$. For greater clarity, we denote by $q^a$ the polynomial $q_1^{a_1}q_2^{a_2}\dots q_r^{a_r}$ for $a=(a_1,a_2,\dots,a_r) \in \N_0^r$ and by $1_k \in \N_0^r$ the $r$-tuple having $1$ at the $k$-th position and $0$ otherwise. Furthermore, we have
 \begin{align*}
-  \hat{\pi}_{\lambda_\alpha}\!(e_{ij})&= \sum_{k=1}^m \sum_{\ell=1}^n y_{k\ell} \partial_{y_{ki}} \partial_{y_{j\ell}} - \bigg(\alpha-  {n+m \over 2}\bigg) \partial_{y_{ji}} \\
-  &= \sum_{k=1}^m  \partial_{y_{ki}} L^y_{kj} - \bigg(\alpha - {n-m \over 2} \bigg) \partial_{y_{ji}}
+  \hat{\pi}_{\lambda_\alpha}\!(e_{ij})&= \sum_{k=1}^m \sum_{\ell=1}^n y_{k\ell} \partial_{y_{ki}} \partial_{y_{j\ell}} - \bigg(\alpha-  \frac{n+m}{2}\bigg) \partial_{y_{ji}} \\
+  &= \sum_{k=1}^m  \partial_{y_{ki}} L^y_{kj} - \bigg(\alpha - \frac{n-m}{2} \bigg) \partial_{y_{ji}}
 \end{align*}
 for $i=1,2,\dots,n$ and $j=1,2,\dots,m$.
 \smallskip
 
-If $v_\mu =1$, then $\hat{\pi}_{\lambda_\alpha}\!(e_{ij})v_\mu=0$ for all $i=1,2,\dots,n$, $j=1,2,\dots,m$ and $\alpha \in \C$. Therefore, we have $\Sol_\mu \simeq \mathbb{F}_\mu$ for $\mu=\big(\alpha-{n+m \over 2}\big)\omega_n$ and $\alpha \in \C$.
+If $v_\mu =1$, then $\hat{\pi}_{\lambda_\alpha}\!(e_{ij})v_\mu=0$ for all $i=1,2,\dots,n$, $j=1,2,\dots,m$ and $\alpha \in \C$. Therefore, we have $\Sol_\mu \simeq \mathbb{F}_\mu$ for $\mu=\big(\alpha-\frac{n+m}{2}\big)\omega_n$ and $\alpha \in \C$.
 \smallskip
 
 Now, if $v_\mu \neq 1$, then there exists an index $s \in \{1,2,\dots,r\}$ satisfying $a_s \neq 0 $ and $a_\ell=0$ for $\ell=s+1,s+2,\dots,r$. Since $\partial_{y_{k,n-s+1}}q_\ell =0$ and $L^y_{ks}q_\ell=0$ for $\ell=1,2,\dots,s-1$ and $k=1,2,\dots,m$, we may write
 \begin{align*}
-   \hat{\pi}_{\lambda_\alpha}\!(e_{n-s+1,s})v_\mu &= \sum_{k=1}^m  \partial_{y_{k,n-s+1}} L^y_{ks}q^a - \big(\alpha - {\textstyle {n-m \over 2}} \big) \partial_{y_{s,n-s+1}}q^a \\
-  &= \sum_{k=1}^m  a_s\partial_{y_{k,n-s+1}} q^{a-1_s}L^y_{ks}q_s - \big(\alpha - {\textstyle {n-m \over 2}} \big) \partial_{y_{s,n-s+1}}q^a \\
-  &= \sum_{k=s}^m  a_s\partial_{y_{k,n-s+1}} q^{a-1_s}L^y_{ks}q_s - \big(\alpha - {\textstyle {n-m \over 2}} \big) \partial_{y_{s,n-s+1}}q^a,
+   \hat{\pi}_{\lambda_\alpha}\!(e_{n-s+1,s})v_\mu &= \sum_{k=1}^m  \partial_{y_{k,n-s+1}} L^y_{ks}q^a - \big(\alpha - {\textstyle \frac{n-m}{2}} \big) \partial_{y_{s,n-s+1}}q^a \\
+  &= \sum_{k=1}^m  a_s\partial_{y_{k,n-s+1}} q^{a-1_s}L^y_{ks}q_s - \big(\alpha - {\textstyle \frac{n-m}{2}} \big) \partial_{y_{s,n-s+1}}q^a \\
+  &= \sum_{k=s}^m  a_s\partial_{y_{k,n-s+1}} q^{a-1_s}L^y_{ks}q_s - \big(\alpha - {\textstyle \frac{n-m}{2}} \big) \partial_{y_{s,n-s+1}}q^a,
 \end{align*}
 where we used that $L^y_{ks}q_s=0$ for $k<s$ in the last equality. Further, using $\partial_{y_{k,n-s+1}}q_\ell=0$ for $k > \ell$, we obtain
 \begin{align*}
  \hat{\pi}_{\lambda_\alpha}\!(e_{n-s+1,s})v_\mu&= a_s\partial_{y_{s,n-s+1}} q^{a-1_s}L^y_{ss}q_s + \sum_{k=s+1}^m  a_s q^{a-1_s}\partial_{y_{k,n-s+1}}L^y_{ks}q_s \\
- & \quad - \big(\alpha - {\textstyle {n-m \over 2}} \big) \partial_{y_{s,n-s+1}}q^a \\
- &=a_s \partial_{y_{s,n-s+1}} q^a +(m-s)a_sq^{a_s-1_s}\partial_{y_{s,n-s+1}}q_s - \big(\alpha -{\textstyle {n-m \over 2}} \big) \partial_{y_{s,n-s+1}}q^a \\
- &= \big(a_s-s-\alpha+{\textstyle {n+m \over 2}}\big)\partial_{y_{s,n-s+1}}q^a,
+ & \quad - \big(\alpha - {\textstyle \frac{n-m}{2}} \big) \partial_{y_{s,n-s+1}}q^a \\
+ &=a_s \partial_{y_{s,n-s+1}} q^a +(m-s)a_sq^{a_s-1_s}\partial_{y_{s,n-s+1}}q_s - \big(\alpha -{\textstyle \frac{n-m}{2}} \big) \partial_{y_{s,n-s+1}}q^a \\
+ &= \big(a_s-s-\alpha+{\textstyle \frac{n+m}{2}}\big)\partial_{y_{s,n-s+1}}q^a,
 \end{align*}
 where we used $L^y_{ss}q_s=q_s$ and $\partial_{y_{k,n-s+1}}L^y_{ks}q_s=\partial_{y_{s,n-s+1}}q_s$ for $k>s$. As $\partial_{y_{s,n-s+1}}q^a \neq 0$ and $\hat{\pi}_{\lambda_\alpha}\!(e_{n-s+1,s})v_\mu=0$, we get
 \begin{align}
-  \alpha=a_s-s+{n+m \over 2}. \label{eq:weight alpha AGS}
+  \alpha=a_s-s+\frac{n+m}{2}. \label{eq:weight alpha AGS}
 \end{align}
 Our next step is to show that $a_\ell=0$ for $\ell=1,2,\dots,s-1$. Let us assume that there exists an index $t \in \{1,2,\dots,s-1\}$ satisfying $a_t \neq 0$ and $a_\ell=0$ for $\ell=t+1,t+2,\dots,s-1$. Analogously as in the previous part, we may write
 \begin{align*}
-  \hat{\pi}_{\lambda_\alpha}\!(e_{n-t+1,t})v_\mu&= \sum_{k=1}^m  \partial_{y_{k,n-t+1}} L^y_{kt}q^a - \big(\alpha - {\textstyle {n-m \over 2}} \big)\partial_{y_{t,n-t+1}}q^a \\
+  \hat{\pi}_{\lambda_\alpha}\!(e_{n-t+1,t})v_\mu&= \sum_{k=1}^m  \partial_{y_{k,n-t+1}} L^y_{kt}q^a - \big(\alpha - {\textstyle \frac{n-m}{2}} \big)\partial_{y_{t,n-t+1}}q^a \\
   &= \sum_{k=1}^m \big(a_s\partial_{y_{k,n-t+1}}q^{a-1_s} L^y_{kt}q_s + a_t\partial_{y_{k,n-t+1}}q^{a-1_t} L^y_{kt}q_t \big) \\
-  & \qquad - \big(\alpha - {\textstyle {n-m \over 2}} \big)\partial_{y_{t,n-t+1}}q^a \\
+  & \qquad - \big(\alpha - {\textstyle \frac{n-m}{2}} \big)\partial_{y_{t,n-t+1}}q^a \\
   & =\sum_{k=s+1}^m a_s\partial_{y_{k,n-t+1}}q^{a-1_s} L^y_{kt}q_s +\sum_{k=t+1}^m  a_t\partial_{y_{k,n-t+1}}q^{a-1_t} L^y_{kt}q_t \\
   & \quad +a_s\partial_{y_{t,n-t+1}}q^{a-1_s} L^y_{tt}q_s + a_t\partial_{y_{t,n-t+1}}q^{a-1_t} L^y_{tt}q_t \\
-  & \quad - \big(\alpha - {\textstyle {n-m \over 2}} \big)\partial_{y_{t,n-t+1}}q^a \\
+  & \quad - \big(\alpha - {\textstyle \frac{n-m}{2}} \big)\partial_{y_{t,n-t+1}}q^a \\
   &= \sum_{k=s+1}^m a_sq^{a-1_s} \partial_{y_{k,n-t+1}}L^y_{kt}q_s +\sum_{k=t+1}^m  a_tq^{a-1_t} \partial_{y_{k,n-t+1}}L^y_{kt}q_t \\
-  & \quad + \sum_{k=t+1}^s a_t (\partial_{y_{k,n-t+1}}q^{a-1_t}) L^y_{kt}q_t +\big(a_s+a_t-\alpha+{\textstyle {n-m\over 2}}\big) \partial_{y_{t,n-t+1}}q^a.
+  & \quad + \sum_{k=t+1}^s a_t (\partial_{y_{k,n-t+1}}q^{a-1_t}) L^y_{kt}q_t +\big(a_s+a_t-\alpha+{\textstyle \frac{n-m}{2}}\big) \partial_{y_{t,n-t+1}}q^a.
 \end{align*}
 Using $\partial_{y_{k,n-t+1}}L^y_{kt}q_s=\partial_{y_{t,n-t+1}}q_s$ for $k>s$ and $\partial_{y_{k,n-t+1}}L^y_{kt}q_t=\partial_{y_{t,n-t+1}}q_t$ for $k>t$, we get
 \begin{align*}
   \hat{\pi}_{\lambda_\alpha}\!(e_{n-t+1,t})v_\mu&= (m-s) a_sq^{a-1_s} \partial_{y_{t,n-t+1}}q_s +(m-t) a_tq^{a-1_t} \partial_{y_{t,n-t+1}}q_t \\
   & \quad + \sum_{k=t+1}^s a_s a_t q^{a-1_s-1_t}(\partial_{y_{k,n-t+1}}q_s) L^y_{kt}q_t \\
-  & \quad +\big(a_s+a_t-\alpha+{\textstyle {n-m\over 2}}\big) \partial_{y_{t,n-t+1}}q^a  \\
+  & \quad +\big(a_s+a_t-\alpha+{\textstyle \frac{n-m}{2}}\big) \partial_{y_{t,n-t+1}}q^a  \\
   & = a_sa_t q^{a-1_s} \partial_{y_{t,n-t+1}} q_s +a_t(a_t+s-t) q^{a-1_t} \partial_{y_{t,n-t+1}} q_t \\
   & \quad + \sum_{k=t+1}^s a_s a_t q^{a-1_s-1_t}(\partial_{y_{k,n-t+1}}q_s) L^y_{kt}q_t,
 \end{align*}
@@ -1098,7 +1098,7 @@ Applying the operator $\partial_{y_{t,n-t+1}}$ to the previous equation, we get
 \begin{align*}
   a_t(a_s+a_t+s-t) (\partial_{y_{t,n-t+1}} q_s)(\partial_{y_{t,n-t+1}} q_t) = 0,
 \end{align*}
-because $\partial_{y_{t,n-t+1}} (\partial_{y_{k,n-t+1}}q_s) L^y_{kt}q_t=0$ for $k=t+1,t+2,\dots,s$. Moreover, we have $\partial_{y_{t,n-t+1}} q_s \neq 0$, $\partial_{y_{t,n-t+1}} q_t \neq 0$ and $a_s +a_t +s-t >0$, hence we obtain $a_t = 0$, which is a contradiction with the choice of the index $t$. Therefore, we have $v_\mu = q_s^{a_s}$ for $\mu= a_s \omega_{n-s} +a_s \omega_{n+s} - (a_s+s)\omega_n$ and $\alpha=a_s -s + {n + m \over 2}$. It remains to show that $\hat{\pi}_{\lambda_\alpha}\!(e_{ij})v_\mu=0$ for all $i=1,2,\dots,n$, $j=1,2,\dots,m$ and $\alpha=a_s-s+{n+m \over 2}$.
+because $\partial_{y_{t,n-t+1}} (\partial_{y_{k,n-t+1}}q_s) L^y_{kt}q_t=0$ for $k=t+1,t+2,\dots,s$. Moreover, we have $\partial_{y_{t,n-t+1}} q_s \neq 0$, $\partial_{y_{t,n-t+1}} q_t \neq 0$ and $a_s +a_t +s-t >0$, hence we obtain $a_t = 0$, which is a contradiction with the choice of the index $t$. Therefore, we have $v_\mu = q_s^{a_s}$ for $\mu= a_s \omega_{n-s} +a_s \omega_{n+s} - (a_s+s)\omega_n$ and $\alpha=a_s -s + \frac{n + m}{2}$. It remains to show that $\hat{\pi}_{\lambda_\alpha}\!(e_{ij})v_\mu=0$ for all $i=1,2,\dots,n$, $j=1,2,\dots,m$ and $\alpha=a_s-s+\frac{n+m}{2}$.
 We may write
 \begin{align*}
   \hat{\pi}_{\lambda_\alpha}\!(e_{ij})v_\mu &= \sum_{k=1}^m  \partial_{y_{ki}} L^y_{kj}q_s^{a_s} - (a_s-s+m) \partial_{y_{ji}}q_s^{a_s} \\
@@ -1107,7 +1107,7 @@ We may write
   &=  \sum_{k=s+1}^m  a_s  q_s^{a_s-1} \partial_{y_{ji}}q_s -(m-s)\partial_{y_{ji}}q_s^{a_s} \\
   &=(m-s)\partial_{y_{ji}}q_s^{a_s}-(m-s)\partial_{y_{ji}}q_s^{a_s}=0,
 \end{align*}
-where we used $L^y_{kj}q_s=0$ if $j>s$ or if $k \leq s$ and $k\neq j$ in the third equality and $\partial_{y_{ki}}L^y_{kj}q_s=\partial_{y_{ji}} q_s$ for $k > s$ in the fifth equality. Hence, we have \smash{$\Sol_\mu \simeq \mathbb{F}_\mu$} for $\mu=a \omega_{n-k} + a\omega_{n+k}-(a+k)\omega_n$ and $\alpha = a-k + {n+m \over 2}$.
+where we used $L^y_{kj}q_s=0$ if $j>s$ or if $k \leq s$ and $k\neq j$ in the third equality and $\partial_{y_{ki}}L^y_{kj}q_s=\partial_{y_{ji}} q_s$ for $k > s$ in the fifth equality. Hence, we have \smash{$\Sol_\mu \simeq \mathbb{F}_\mu$} for $\mu=a \omega_{n-k} + a\omega_{n+k}-(a+k)\omega_n$ and $\alpha = a-k + \frac{n+m}{2}$.
 \end{proof}
 
 \begin{theorem}\label{thm:singular vectors decomposition AGS}
