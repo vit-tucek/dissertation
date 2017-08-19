@@ -18,28 +18,46 @@
  \documentclass[12pt,a4paper,twoside,openright]{report}
  \setlength\textwidth{145mm}
  \setlength\textheight{247mm}
- \setlength\oddsidemargin{15mm}
+ \setlength\oddsidemargin{14.2mm}
  \setlength\evensidemargin{0mm}
  \setlength\topmargin{0mm}
  \setlength\headsep{0mm}
  \setlength\headheight{0mm}
  \let\openright=\cleardoublepage
 
+%% Generate PDF/A-2u
+\usepackage[a-2u]{pdfx}
+
 %\usepackage{fixltx2e}   % fixes various  bugs in pre 2015 LaTeX 
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
+
+%% Prefer Latin Modern fontspdfx
+\usepackage{lmodern}
+
 \usepackage{microtype}  % microtypographical enhancements
 \usepackage[english]{babel}
-\usepackage{amsmath,amssymb,amsthm}
+\usepackage{amsmath, amssymb, amsthm, amsfonts}
 \usepackage{graphicx}
+\usepackage{bm}             % boldface symbols (\bm)
 \usepackage{pdfpages} % for inserting pdfs of published articles
 \usepackage{twoopt} % for convenient commands
 \usepackage{xfrac} % for \sfrac command
 \usepackage{mathrsfs}   % calligraphic font \mathscr{C}
 \usepackage{minted} % for pretty printing of source code
+
+\usepackage[nottoc]{tocbibind} % makes sure that bibliography and the lists
+			    % of figures/tables are included in the table
+			    % of contents
+\usepackage{dcolumn}        % improved alignment of table columns
+\usepackage{booktabs}       % improved horizontal lines in tables
+\usepackage{paralist}       % improved enumerate and itemize
+
+%\usepackage{natbib}         % citation style AUTHOR (YEAR), or AUTHOR [NUMBER]
 %\usepackage[style=alphabetic, backend=biber]{biblatex}
 \usepackage[style=iso-alphabetic, backend=biber]{biblatex} 
 \addbibresource{thesis.bib}
+
 \usepackage{float}
 \usepackage[toc]{appendix}
 \usepackage[matrix,arrow]{xy}    % for diagrams
@@ -52,12 +70,13 @@
 \newcolumntype{C}{>{$\displaystyle}c <{$}}
 
 
-%% Balíček hyperref, kterým jdou vyrábět klikací odkazy v PDF,
-%% ale hlavně ho používáme k uložení metadat do PDF (včetně obsahu).
-%% POZOR, nezapomeňte vyplnit jméno práce a autora.
-\usepackage[final,pdftex,breaklinks,unicode,bookmarksopen=true]{hyperref}   % Musí být za všemi ostatními balíčky
-\hypersetup{pdftitle=Invariant differential operators}
-\hypersetup{pdfauthor=Vít Tuček}
+%% The hyperref package for clickable links in PDF and also for storing
+%% metadata to PDF (including the table of contents).
+%% Most settings are pre-set by the pdfx package.
+\hypersetup{unicode}
+\hypersetup{breaklinks=true}
+%\hypersetup{pdftitle=Invariant differential operators}
+%\hypersetup{pdfauthor=Vít Tuček}
 
 \usepackage{csquotes}
 
@@ -80,7 +99,8 @@
 }}
 \makeatother
 
-% Toto makro definuje kapitolu, která není očíslovaná, ale je uvedena v obsahu.
+% This macro defines a chapter, which is not numbered, but is included
+% in the table of contents.
 \def\chapwithtoc#1{
 \chapter*{#1}
 \addcontentsline{toc}{chapter}{#1}
@@ -94,7 +114,56 @@
 \lefthyphenmin=2
 \righthyphenmin=2
 
+%%% Basic information on the thesis
+
+% Thesis title in English (exactly as in the formal assignment)
+\def\ThesisTitle{Invariant differential operators}
+
+% Author of the thesis
+\def\ThesisAuthor{Vít Tuček}
+
+% Year when the thesis is submitted
+\def\YearSubmitted{2017}
+
+% Name of the department or institute, where the work was officially assigned
+% (according to the Organizational Structure of MFF UK in English,
+% or a full name of a department outside MFF)
+\def\Department{Mathematical Institute of Charles University}
+
+% Is it a department (katedra), or an institute (ústav)?
+\def\DeptType{Institute}
+
+% Thesis supervisor: name, surname and titles
+\def\Supervisor{prof. RNDr. Vladimír Souček, DrSc.}
+
+% Supervisor's department (again according to Organizational structure of MFF)
+\def\SupervisorsDepartment{Mathematical Institute of Charles University}
+
+% Study programme and specialization
+\def\StudyProgramme{Mathematics}
+\def\StudyBranch{4M2 \begin{small}Geometry and topology, global analysis\end{small}}
+
+% An optional dedication: you can thank whomever you wish (your supervisor,
+% consultant, a person who lent the software, etc.)
+\def\Dedication{%
+I dedicate this work to my parents.
+}
+
+% Abstract (recommended length around 80-200 words; this is not a copy of your thesis assignment!)
+\def\Abstract{%
+Abstract.
+}
+
+% 3 to 5 keywords (recommended), each enclosed in curly braces
+\def\Keywords{%
+{key} {words}
+}
+
 \input{titlepage}
+
+%%% A page with automatically generated table of contents of the doctoral thesis
+
+\tableofcontents
 
 \hbadness=10000 % silence underfull warnings
 
@@ -112,6 +181,20 @@
 \printbibliography
 %\bibliographystyle{plain}
 %\bibliography{thesis}
+
+%%% Figures used in the thesis (consider if this is needed)
+\listoffigures
+
+%%% Tables used in the thesis (consider if this is needed)
+%%% In mathematical theses, it could be better to move the list of tables to the beginning of the thesis.
+\listoftables
+
+%%% Do not include figures and tables from appendices in list of figures and list of tables
+%%% from https://tex.stackexchange.com/questions/213523/remove-appendix-tables-and-figures-from-list-of-figure-tables
+\let\svaddcontentsline\addcontentsline
+\renewcommand\addcontentsline[3]{%
+  \ifthenelse{\equal{#1}{lof}}{}%
+  {\ifthenelse{\equal{#1}{lot}}{}{\svaddcontentsline{#1}{#2}{#3}}}}
 
 \include{appendix}
 
