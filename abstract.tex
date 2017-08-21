@@ -1,0 +1,115 @@
+%%% Hlavní soubor. Zde se definují základní parametry a odkazuje se na ostatní části. %%%
+\RequirePackage{fix-cm}
+%% Verze pro jednostranný tisk:
+% Okraje: levý 40mm, pravý 25mm, horní a dolní 25mm
+% (ale pozor, LaTeX si sám přidává 1in)
+\documentclass[12pt,a4paper,final]{report}
+\setlength\textwidth{145mm}
+\setlength\textheight{247mm}
+\setlength\oddsidemargin{15mm}
+\setlength\evensidemargin{15mm}
+\setlength\topmargin{0mm}
+\setlength\headsep{0mm}
+\setlength\headheight{0mm}
+% \openright zařídí, aby následující text začínal na pravé straně knihy
+\let\openright=\clearpage
+
+
+%% Generate PDF/A-2u
+\usepackage[a-2u]{pdfx}
+
+%\usepackage{fixltx2e}   % fixes various  bugs in pre 2015 LaTeX 
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+%% Prefer Latin Modern fontspdfx
+\usepackage{lmodern}
+
+\usepackage{microtype}  % microtypographical enhancements
+\usepackage[english]{babel}
+\usepackage{amsmath, amssymb, amsthm, amsfonts}
+\usepackage{graphicx}
+\usepackage{bm}             % boldface symbols (\bm)
+\usepackage{pdfpages} % for inserting pdfs of published articles
+\usepackage{twoopt} % for convenient commands
+\usepackage{xfrac} % for \sfrac command
+\usepackage{mathrsfs}   % calligraphic font \mathscr{C}
+\usepackage{minted} % for pretty printing of source code
+
+\usepackage[nottoc]{tocbibind} % makes sure that bibliography and the lists
+			    % of figures/tables are included in the table
+			    % of contents
+\usepackage{dcolumn}        % improved alignment of table columns
+\usepackage{booktabs}       % improved horizontal lines in tables
+\usepackage{paralist}       % improved enumerate and itemize
+\usepackage[justification=centering]{caption} % center multiline captions or e.g. [format=hang] 
+
+%\usepackage{natbib}         % citation style AUTHOR (YEAR), or AUTHOR [NUMBER]
+%\usepackage[style=alphabetic, backend=biber]{biblatex}
+\usepackage[style=iso-alphabetic, backend=biber]{biblatex} 
+\addbibresource{thesis.bib}
+
+\usepackage{float}
+\usepackage[toc]{appendix}
+\usepackage[matrix,arrow]{xy}    % for diagrams
+\usepackage{euscript}
+
+\usepackage{tikz}
+\input{diagrams/tikz_settings.tex}
+
+\usepackage{threeparttable,array}
+\newcolumntype{C}{>{$\displaystyle}c <{$}}
+
+\usepackage{csquotes}
+
+%%% Drobné úpravy stylu
+
+% Tato makra přesvědčují mírně ošklivým trikem LaTeX, aby hlavičky kapitol
+% sázel příčetněji a nevynechával nad nimi spoustu místa. Směle ignorujte.
+\makeatletter
+\def\@makechapterhead#1{
+  {\parindent \z@ \raggedright \normalfont
+   \Huge\bfseries \thechapter. #1
+   \par\nobreak
+   \vskip 20\p@
+}}
+\def\@makeschapterhead#1{
+  {\parindent \z@ \raggedright \normalfont
+   \Huge\bfseries #1
+   \par\nobreak
+   \vskip 20\p@
+}}
+\makeatother
+
+% This macro defines a chapter, which is not numbered, but is included
+% in the table of contents.
+\def\chapwithtoc#1{
+\chapter*{#1}
+\addcontentsline{toc}{chapter}{#1}
+}
+
+\input{definitions}
+
+\begin{document}
+
+% Trochu volnější nastavení dělení slov, než je default.
+\lefthyphenmin=2
+\righthyphenmin=2
+
+%%% Basic information on the thesis
+
+
+%% The hyperref package for clickable links in PDF and also for storing
+%% metadata to PDF (including the table of contents).
+%% Most settings are pre-set by the pdfx package.
+\hypersetup{unicode}
+\hypersetup{breaklinks=true}
+%\hypersetup{pdftitle=Invariant differential operators}
+%\hypersetup{pdfauthor=Vít Tuček}
+
+\thispagestyle{empty}
+
+
+In this thesis we classify singular vectors in scalar parabolic Verma modules for those pairs $(\lie{sl}(n), \lie{p})$  of complex Lie algebras where the homogeneous space $\mathrm{SL}(n, \mathbb{C}) / P$ is the Grassmannian of $k$-planes in $\mathbb{C}^n.$ We calculate cohomology of nilpotent radicals with values in certain unitarizable highest weight modules. According to \cite{boe_kostant_2009} these modules have  BGG resolutions with weights determined by this cohomology. Such resolutions induce complexes of invariant differential operators on sections of associated bundles over Hermitian symmetric spaces. We describe formal completions of unitarizable highest weight modules that one can use to modify method from \cite{calderbank_differential_2001} that constructs sequences of differential operators over any $1$-graded (aka almost Hermitian) geometry. We suggest uniform description of octonionic planes that could serve as a basis for better understanding of the exceptional Hermitian symmetric space for group $\mathrm{E}_6.$
+
+\end{document}
