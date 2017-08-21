@@ -17,7 +17,7 @@ If $L(\lambda)$ is an irreducible unitarizable module for $\lambda=\lambda_0+z\z
 
 A $\lie{g}$-module $M$ is called unitarizable if there exists (necessarily unique up to a multiple) positive definite contravariant form on $M$. The following theorem explains the structure of the set of $z\in\R$ such that the module $M(\lambda)$ is unitarizable.
 
-\begin{figure}[H]\label{fig:struct}
+\begin{figure}[H]
   \begin{center}
   \begin{tikzpicture}
       \node[croot] at (2,0) [label=above:$A(\lambda_0)$] {};
@@ -28,7 +28,7 @@ A $\lie{g}$-module $M$ is called unitarizable if there exists (necessarily uniqu
       \draw[<->] (2,-0.5) -- (3,-0.5);
       \node at (2.5,-0.5) [label=below:$C$] {};
   \end{tikzpicture}
-  \end{center}\caption{Structure of unitarizable weights} %TODO dodelat mark na 0
+  \end{center}\caption{Structure of unitarizable weights}\label{fig:struct} %TODO dodelat mark na 0
 \end{figure}
 
 \begin{theorem}[Theorem 2.4 of \cite{enright_classification_1983}]
@@ -40,11 +40,11 @@ where $A(\lambda_0)$, $B(\lambda_0)$ and $C(\lambda_0)$ are real numbers express
 	
 The discrete series representation corresponds to $z <0$ and limit of discrete series representation corresponds to $z=0$. For $z  < A(\lambda_0)$ we have $L(\lambda) = M(\lambda)$ (i.e. the generalized Verma modules are irreducible) and for all $z \geq A(\lambda_0)$ such that $L(\lambda)$ are unitarizable the generalized Verma modules are reducible.%, hence the elements of  $\{z=A(\lambda_0) + kC| \, z \leq B(\lambda_0) \et k\in \mathbb{N}_0 \}$ are called  reduction points or points of reducibility.
 
-\begin{table}[h]\label{tbl:C}
+\begin{table}[h]
 \[\begin{array}{c|ccccccc}
 \lie{g}_0 & \mathrm{SU}(p,q) & \mathrm{Sp}(n,\mathbb{R}) & \mathrm{SO}^*(2n) & \mathrm{SO}(2,2n-2) & \mathrm{SO}(2,2n-1) & \mathrm{E}_6 & \mathrm{E}_7\\\hline
 C & 1 & \frac{1}{2} & 2 & n-2 & n-\frac{3}{2} & 3 & 4
-\end{array}\]\caption{Distance between points of reducibility}
+\end{array}\]\caption{Distance between points of reducibility}\label{tbl:C}
 \end{table}
 \end{theorem}
 
@@ -91,7 +91,7 @@ The following two theorems finish the general classification of unitarizable hig
 \begin{theorem}[Theorem 2.10 of \cite{enright_classification_1983}]\label{thm:reduction_points}
  The first reduction point $A(\lambda_0)$ is given by\footnote{Or in other words, the number of reduction points equals the split rank of $Q(\lambda_0)$.}
  \[
-   A(\lambda_0) = B(\lambda_0) - (\text{split rank } Q(\lambda_0) -1) C.
+   A(\lambda_0) = B(\lambda_0) - (\text{split rank of } Q(\lambda_0) -1) C.
  \]
 \end{theorem}
 
