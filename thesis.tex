@@ -70,15 +70,6 @@
 \usepackage{threeparttable,array}
 \newcolumntype{C}{>{$\displaystyle}c <{$}}
 
-
-%% The hyperref package for clickable links in PDF and also for storing
-%% metadata to PDF (including the table of contents).
-%% Most settings are pre-set by the pdfx package.
-\hypersetup{unicode}
-\hypersetup{breaklinks=true}
-%\hypersetup{pdftitle=Invariant differential operators}
-%\hypersetup{pdfauthor=Vít Tuček}
-
 \usepackage{csquotes}
 
 %%% Drobné úpravy stylu
@@ -118,7 +109,7 @@
 %%% Basic information on the thesis
 
 % Thesis title in English (exactly as in the formal assignment)
-\def\ThesisTitle{Invariant differential operators}
+\def\ThesisTitle{Invariant differential operators for $1$-graded geometries}
 
 % Author of the thesis
 \def\ThesisAuthor{Vít Tuček}
@@ -147,18 +138,33 @@
 % An optional dedication: you can thank whomever you wish (your supervisor,
 % consultant, a person who lent the software, etc.)
 \def\Dedication{%
+
+I wholeheartedly thank my supervisor, prof. Vladimír Souček, for his infinite patience. I am grateful to Jirka and Petra who stood beside me all these years and to all my other friends who provided moral support. I thank Sváťa and Libor for mathematical discussions. Finally, I'm indebted to all who contributed to Sage.
+
+\vspace{5cm}
+
+\begin{center}
 I dedicate this work to my parents.
+\end{center}
 }
 
 % Abstract (recommended length around 80-200 words; this is not a copy of your thesis assignment!)
 \def\Abstract{%
-Abstract.
+In this thesis we classify singular vectors in scalar parabolic Verma modules for $(\lie{SL}(n), \lie{p})$ where $\mathrm{SL}(n) / P$ is the Grassmannian of $k$-planes in $\mathbb{C}^n.$ We calculate nilpotent Lie algebra cohomology with values in certain unitarizable highest weight modules which according to \cite{boe_kostant_2009} give BGG resolutions of the said modules. We present tools that allow using these these resolutions for construction of sequences of differential operators on any almost Hermitian geometry in a similar fashion as in \cite{calderbank_differential_2001}. We suggest uniform description of octonionic planes that could serve as a basis for better understanding of the exceptional Hermitian symmetric space for group $\mathrm{E}_6.$
 }
 
 % 3 to 5 keywords (recommended), each enclosed in curly braces
 \def\Keywords{%
-{key} {words}
+{Hermitian symmetric space}, {unitarizable highest weight module}, {nilpotent Lie algebra cohomology}, {octonionic projective plane}
 }
+
+%% The hyperref package for clickable links in PDF and also for storing
+%% metadata to PDF (including the table of contents).
+%% Most settings are pre-set by the pdfx package.
+\hypersetup{unicode}
+\hypersetup{breaklinks=true}
+%\hypersetup{pdftitle=Invariant differential operators}
+%\hypersetup{pdfauthor=Vít Tuček}
 
 \input{titlepage}
 
