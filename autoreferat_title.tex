@@ -1,0 +1,237 @@
+
+% Thesis title in English (exactly as in the formal assignment)
+\def\ThesisTitle{Invariant differential operators for $1$-graded geometries}
+
+% Author of the thesis
+\def\ThesisAuthor{Vít Tuček}
+
+% Year when the thesis is submitted
+\def\YearSubmitted{2017}
+
+% Name of the department or institute, where the work was officially assigned
+% (according to the Organizational Structure of MFF UK in English,
+% or a full name of a department outside MFF)
+\def\Department{Mathematical Institute of Charles University}
+
+% Is it a department (katedra), or an institute (ústav)?
+\def\DeptType{Institute}
+
+% Thesis supervisor: name, surname and titles
+\def\Supervisor{prof. RNDr. Vladimír Souček, DrSc.}
+
+% Supervisor's department (again according to Organizational structure of MFF)
+\def\SupervisorsDepartment{Mathematical Institute of Charles University}
+
+% Study programme and specialization
+\def\StudyProgramme{Mathematics}
+\def\StudyBranch{4M2 \begin{small}Geometry and topology, global analysis\end{small}}
+
+% An optional dedication: you can thank whomever you wish (your supervisor,
+% consultant, a person who lent the software, etc.)
+\def\Dedication{%
+
+I wholeheartedly thank my supervisor, prof. Vladimír Souček, for his infinite patience. I am grateful to Jirka and Petra who stood beside me all these years and to all my other friends who provided moral support. I thank Sváťa and Libor for mathematical discussions. Finally, I'm indebted to all who contributed to Sage.
+
+\vspace{5cm}
+
+\begin{center}
+I dedicate this work to my parents.
+\end{center}
+}
+
+% Abstract (recommended length around 80-200 words; this is not a copy of your thesis assignment!)
+\def\Abstract{%
+In this thesis we classify singular vectors in scalar parabolic Verma modules for those pairs $(\lie{sl}(n, \mathbb{C}), \lie{p})$  of complex Lie algebras where the homogeneous space $\mathrm{SL}(n, \mathbb{C}) / P$ is the Grassmannian of $k$-planes in $\mathbb{C}^n.$ We calculate cohomology of nilpotent radicals with values in certain unitarizable highest weight modules. According to \cite{boe_kostant_2009} these modules have  BGG resolutions with weights determined by this cohomology. Such resolutions induce complexes of invariant differential operators on sections of associated bundles over Hermitian symmetric spaces. We describe formal completions of unitarizable highest weight modules that one can use to modify method from \cite{calderbank_differential_2001} that constructs sequences of differential operators over any $1$-graded (aka almost Hermitian) geometry. We suggest uniform description of octonionic planes that could serve as a basis for better understanding of the exceptional Hermitian symmetric space for group $\mathrm{E}_6.$
+}
+
+% 3 to 5 keywords (recommended), each enclosed in curly braces
+\def\Keywords{%
+{Hermitian symmetric space}, {unitarizable highest weight module}, {nilpotent Lie algebra cohomology}, {octonionic plane}
+}
+
+\pagestyle{empty}
+\hypersetup{pageanchor=false}
+\begin{center}
+
+\centerline{\mbox{\includegraphics[width=166mm]{logo-en.pdf}}}
+
+\vspace{-8mm}
+\vfill
+
+{\bf\Large ABSTRACT OF DOCTORAL THESIS}
+
+\vfill
+
+{\LARGE\ThesisAuthor}
+
+\vspace{15mm}
+
+{\LARGE\bfseries\ThesisTitle}
+
+\vfill
+
+\Department
+
+\vfill
+
+\begin{tabular}{rl}
+
+Supervisor of the doctoral thesis: & \Supervisor \\
+\noalign{\vspace{2mm}}
+Study programme: & \StudyProgramme \\
+\noalign{\vspace{2mm}}
+Study branch: & \StudyBranch \\
+\end{tabular}
+
+\vfill
+
+% Zde doplňte rok
+Prague \YearSubmitted
+
+\end{center}
+
+%%% PEOPLE
+
+\newpage
+
+
+\noindent The results of this thesis were achieved in the period of a doctoral study at the Faculty of Mathematics and Physics, Charles University in Prague in years 2008--2017.\\
+\vfill{}
+\begin{tabular}{lcl}
+\textbf{PhD student:} & & Mgr. Vít Tuček\tabularnewline
+& & \tabularnewline
+\textbf{Department:} & & \Department \tabularnewline
+%  , 186 75, Praha 8
+& & Sokolovská 83\tabularnewline
+& & 186 75 Praha 8\tabularnewline
+& & \tabularnewline
+\textbf{Supervisor:} & & \Supervisor \tabularnewline
+& & \Department \tabularnewline
+& & Sokolovská 83\tabularnewline
+& & 186 75 Praha 8\tabularnewline
+& & \tabularnewline
+\textbf{Opponents:} & & prof. RNDr. Jan Slovák, DrSc. \tabularnewline
+& & Department of Mathematics at Statistics,\tabularnewline
+& & Masaryk University \tabularnewline
+& & Kotlářská 2 \tabularnewline
+& & 611 37 Brno\tabularnewline
+& & \tabularnewline
+& & doc. RNDr. Jiří Vanžura, CSc.\tabularnewline
+& & Institute of Mathematics AS CR \tabularnewline
+& & Žižkova 22\tabularnewline
+& & 616 62 Brno\tabularnewline
+& & \tabularnewline
+\textbf{Chairman:} & & \Supervisor \tabularnewline
+& & \Department \tabularnewline
+& & Sokolovská 83\tabularnewline
+& & 186 75 Praha 8\tabularnewline
+\end{tabular}\\
+\vfill{}
+\noindent The thesis defense will take place on
+\\
+\\
+The thesis can be viewed at the Study Department of Doctoral Studies of the Faculty of Mathematics and Physics, Charles University in Prague, Ke Karlovu 3, Prague 2.
+
+
+\newpage
+
+% CZECH TITLE PAGE
+\newpage
+%
+\pagestyle{empty}
+\hypersetup{pageanchor=false}
+\begin{center}
+
+\centerline{\mbox{\includegraphics[width=166mm]{logo-cs.pdf}}}
+
+\vspace{-8mm}
+\vfill
+
+{\bf\Large ATUOREFERÁT DIZERTAČNÍ PRÁCE }
+
+\vfill
+
+{\LARGE\ThesisAuthor}
+
+\vspace{15mm}
+
+{\LARGE\bfseries Invariantní diferenciální operátory pro $1$-gradované geometrie}
+
+\vfill
+
+Matematický ústav Univerzity Karlovy
+
+\vfill
+
+\begin{tabular}{rl}
+
+Školitel: & \Supervisor \\
+\noalign{\vspace{2mm}}
+Studijní program: & Matematika\\
+\noalign{\vspace{2mm}}
+Studijní obor: & 4M2 Geometrie a topologie, globální analýza \\
+\end{tabular}
+
+\vfill
+
+% Zde doplňte rok
+Praha \YearSubmitted
+
+\end{center}
+
+
+%%% LIDI
+
+\newpage
+
+
+\noindent Disertační práce byla vypracována na základě výsledků získaných v letech 2008--2017 v rámci doktorského studia na Matematicko-fyzikální fakultě Univerzity
+Karlovy v Praze.\\
+\vfill{}
+\begin{tabular}{lcl}
+\textbf{PhD student:} & & Mgr. Vít Tuček\tabularnewline
+& & \tabularnewline
+\textbf{Školící pracoviště:} & & Matematický ústav Univerzity Karlovy \tabularnewline
+%  , 186 75, Praha 8
+& & Sokolovská 83\tabularnewline
+& & 186 75 Praha 8\tabularnewline
+& & \tabularnewline
+\textbf{Supervisor:} & & \Supervisor \tabularnewline
+& & Matematický ústav Univerzity Karlovy \tabularnewline
+& & Sokolovská 83\tabularnewline
+& & 186 75 Praha 8\tabularnewline
+& & \tabularnewline
+\textbf{Oponenti:} & & prof. RNDr. Jan Slovák, DrSc. \tabularnewline
+& & Department of Mathematics at Statistics,\tabularnewline
+& & Masaryk University \tabularnewline
+& & Kotlářská 2 \tabularnewline
+& & 611 37 Brno\tabularnewline
+& & \tabularnewline
+& & doc. RNDr. Jiří Vanžura, CSc.\tabularnewline
+& & Institute of Mathematics AS CR \tabularnewline
+& & Žižkova 22\tabularnewline
+& & 616 62 Brno\tabularnewline
+& & \tabularnewline
+\textbf{Předseda RDSO:} & & \Supervisor \tabularnewline
+& & Matematický ústav Univerzity Karlovy \tabularnewline
+& & Sokolovská 83\tabularnewline
+& & 186 75 Praha 8\tabularnewline
+\end{tabular}\\
+\vfill{}
+\noindent Obhajoba dizertační práce se koná
+\\
+\\
+S disertační prací je možné se seznámit na studijním oddělení pro doktorské studium
+MFF UK, Ke Karlovu 3, Praha 2.
+
+
+\newpage
+
+%%% Strana s automaticky generovaným obsahem disertační práce. U matematických
+%%% prací je přípustné, aby seznam tabulek a zkratek, existují-li, byl umístěn
+%%% na začátku práce, místo na jejím konci.
+
+\pagestyle{plain}
+\setcounter{page}{1}
+\tableofcontents
+\newpage

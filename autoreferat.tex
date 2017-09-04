@@ -1,0 +1,146 @@
+%%% Hlavní soubor. Zde se definují základní parametry a odkazuje se na ostatní části. %%%
+\RequirePackage{fix-cm}
+%% Verze pro jednostranný tisk:
+% Okraje: levý 40mm, pravý 25mm, horní a dolní 25mm
+% (ale pozor, LaTeX si sám přidává 1in)
+\documentclass[12pt,a4paper,final]{report}
+\setlength\textwidth{145mm}
+\setlength\textheight{247mm}
+\setlength\oddsidemargin{15mm}
+\setlength\evensidemargin{15mm}
+\setlength\topmargin{0mm}
+\setlength\headsep{0mm}
+\setlength\headheight{0mm}
+% \openright zařídí, aby následující text začínal na pravé straně knihy
+\let\openright=\clearpage
+
+
+%% Generate PDF/A-2u
+\usepackage[a-2u]{pdfx}
+
+
+%\usepackage{fixltx2e}   % fixes various  bugs in pre 2015 LaTeX 
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+%% Prefer Latin Modern fontspdfx
+\usepackage{lmodern}
+
+\usepackage{microtype}  % microtypographical enhancements
+\usepackage[english]{babel}
+\usepackage{amsmath, amssymb, amsthm, amsfonts}
+\usepackage{graphicx}
+\usepackage{bm}             % boldface symbols (\bm)
+\usepackage{pdfpages} % for inserting pdfs of published articles
+\usepackage{twoopt} % for convenient commands
+\usepackage{xfrac} % for \sfrac command
+\usepackage{mathrsfs}   % calligraphic font \mathscr{C}
+\usepackage{minted} % for pretty printing of source code
+
+\usepackage[nottoc]{tocbibind} % makes sure that bibliography and the lists
+			    % of figures/tables are included in the table
+			    % of contents
+\usepackage{dcolumn}        % improved alignment of table columns
+\usepackage{booktabs}       % improved horizontal lines in tables
+\usepackage{paralist}       % improved enumerate and itemize
+\usepackage[justification=centering]{caption} % center multiline captions or e.g. [format=hang] 
+
+%\usepackage{natbib}         % citation style AUTHOR (YEAR), or AUTHOR [NUMBER]
+%\usepackage[style=alphabetic, backend=biber]{biblatex}
+\usepackage[style=iso-alphabetic, backend=biber]{biblatex} 
+\addbibresource{thesis.bib}
+
+\usepackage{float}
+\usepackage[toc]{appendix}
+\usepackage[matrix,arrow]{xy}    % for diagrams
+\usepackage{euscript}
+
+\usepackage{tikz}
+\input{diagrams/tikz_settings.tex}
+
+\usepackage{threeparttable,array}
+\newcolumntype{C}{>{$\displaystyle}c <{$}}
+
+\usepackage{csquotes}
+
+%%% Drobné úpravy stylu
+
+% Tato makra přesvědčují mírně ošklivým trikem LaTeX, aby hlavičky kapitol
+% sázel příčetněji a nevynechával nad nimi spoustu místa. Směle ignorujte.
+\makeatletter
+\def\@makechapterhead#1{
+  {\parindent \z@ \raggedright \normalfont
+   \Huge\bfseries \thechapter. #1
+   \par\nobreak
+   \vskip 20\p@
+}}
+\def\@makeschapterhead#1{
+  {\parindent \z@ \raggedright \normalfont
+   \Huge\bfseries #1
+   \par\nobreak
+   \vskip 20\p@
+}}
+\makeatother
+
+% This macro defines a chapter, which is not numbered, but is included
+% in the table of contents.
+\def\chapwithtoc#1{
+\chapter*{#1}
+\addcontentsline{toc}{chapter}{#1}
+}
+
+\input{definitions}
+
+\begin{document}
+
+% Trochu volnější nastavení dělení slov, než je default.
+\lefthyphenmin=2
+\righthyphenmin=2
+
+%%% Basic information on the thesis
+
+
+%% The hyperref package for clickable links in PDF and also for storing
+%% metadata to PDF (including the table of contents).
+%% Most settings are pre-set by the pdfx package.
+\hypersetup{unicode}
+\hypersetup{breaklinks=true}
+%\hypersetup{pdftitle=Invariant differential operators}
+%\hypersetup{pdfauthor=Vít Tuček}
+
+\input{autoreferat_title}
+
+\chapter*{Introduction}
+\addcontentsline{toc}{chapter}{Introduction}
+
+Geometrical problems often lead to systems of PDEs which are given by differential opetrator acting between sections of natural bundles. For example, one can consider the problem of finding Killing vector fields $X$ which are infinitesimal isometris of a Riemannian manifold $(M, g)$ and obtain operator $\mathcal{L}_X g$ whose kernel is precisely given by such fields. Or one can ask for infinitesimal conformal automorphisms -- those vector fields, whose flow preserves metric only up to a multiple by a positive scalar function -- where one gets $\mathcal{L}_X - \frac{2}{n} \mathrm{div}\, X \, g.$ There is a notion of prolongation for system of PDEs which basically introduces new variables and which aims at rewriting the system in a more managable form. The ultimate goal is to obtain so called geometric prolongation which expresses the original system as an equation for parallel fields for a connection on a bundle of higher rank. For problems where such a prolongation procedure terminates after finite number of steps one obtains that the space of solutions is locally bounded by the rank of the prolongation bundle and hence one immediately sees that the original problem was overdetermined. For example in the case of conformal Killing vector fields on an $n$-dimensional manifold one obtains bundle of rank $n+2.$ There are however interesting operators which have infinite dimensional kernel in general. For example the conformally invariant  modification of the Beltrami--Laplace operator.
+
+For the class of so called parabolic geometries there is a construction for all natural overdetermined operators which was discovered by \cite{cap_bernstein-gelfand-gelfand_2001} and later simplified by \cite{calderbank_differential_2001}. Given a semisimple Lie group $G$, it's parabolic subgroup $P$ and a $(\mathfrak{g}, P)$-representation $\mathbb{V}$ this construction produces a sequence of differential operators on any Cartan geometry modeled on $G \to G/P$ which has very favourable properties. For example, the first operator in the sequence is automatically geometrically prolonged by suitable modification of the so called tractor connection which is defined on the bundle associated to $\mathbb{V}.$  
+
+The main aim of this work is to generalize the construction of \cite{calderbank_differential_2001} in such a way that one could obtain operators which are not overdetermined. There are two side results. Uniform description of Riemannian metrics of octonionic planes in chapter 2.3 and classification of singular vector in scalar induced parabolic Verma modules for $\mathfrak{sl}(n, \mathbb{C})$ in chapter 2.4 which is a joint work with Libor Křižka.
+
+\chapter{Invariant differential operators}
+
+ Let us briefly recall how a question of existence of invariant differential operators can be reduced to this algebraic problem. Consider a homogeneous space of the form $G/H$ and a homogeneous bundle $\mathcal{V} = G \times_H \mathbb{V} \to G/H$. This bundle is defined as the quotient of $G\times \mathbb{V}$ by the equivalence relation $(g, v) \simeq (gh, \rho(h^{-1}) v)$, where $\rho: H \to GL(\mathbb{V}$ is a representation of $H.$ Smooth sections $s$ of this bundle can be identified with $H$-invariant functions $\{ f \colon G \to \mathbb{V} \,|\, f(gh) = \rho(h^{-1}) f(g)\}$  by $s(gH) = [(g, f(g)].$ From this identification it is evident that there is a well defined left action of $G$ on the space of sections of $\mathcal{V}$ defined by $\widetilde{\rho(g)} f (x) = f(g^{-1}x)$. Now it is quite clear what an invariant differential operator should be -- a differential operator that respects these naturally defined actions:
+\begin{gather*}
+D \colon \Gamma^\infty(G/H, \mathcal{V}) \to \Gamma^\infty(G/H, \mathcal{W}) \\
+D \circ \widetilde{\rho_\mathbb{V}} =  \widetilde{\rho_\mathbb{W}} \circ D.
+\end{gather*}
+One can construct many intereseting representations of $G$ as kernels of such invariant differential operators but in this thesis we have taken a converse approach and we construct interesting differential operators using representations. 
+
+ So let's see what is the connection to algebra. In general, a (linear) differential operator of order $k$ is a (linear) mapping from the $k$-th jet prolongation 
+\[
+D\colon \Gamma^\infty(G/H,\mathcal{J}^k \mathcal{V}) \to \Gamma^\infty(G/H, \mathcal{W}).
+\]
+%that has nontrivial main symbol 
+%\[
+%0 \neq \sigma_k(D) \in \Gamma^\infty(G/H, \bigodot{\!}^k T^* G/H \otimes \mathcal{V}).
+%\]
+
+Since a jet prolongation of a homogeneous vector bundle is again a homogeneous vector bundle and since $G$ acts transitively on $G/H$, we get a correspondence between invariant differential operators and homomorphisms of $J^k \mathbb{V} \to \mathbb{W},$ where  $J^k \mathbb{V}$ denotes the algebraic jet prolongation of $\mathbb{V}.$  The space of such homomorphisms is isomorphic to the space of dual homomorphisms $\mathbb{W}^* \to (J^k\mathbb{V})^* $. Passing to limit $k \to \infty$ we get the correspondence between invariant differential operators and homomorphisms $\mathbb{W} \to  \varinjlim  (J^k\mathbb{V})^* $. It turns out that $\varinjlim  (J^k\mathbb{V})^*$ is actually the induced module $\mathfrak{U(g)\otimes_{U(h)}} \mathbb{V}^*$  and with a little bit of work one can show that the space of invariant linear operators from sections of $\mathcal{V}$ to sections of $\mathcal{W}$  is isomorphic to $\Hom_{\mathfrak{g}}(\mathfrak{U(g)\otimes_{U(h)}}\mathbb{W}^*, \mathfrak{U(g)\otimes_{U(h)}}\mathbb{V}^*)$.
+
+
+
+
+
+\end{document}
