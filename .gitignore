@@ -22,10 +22,11 @@
 *.mtc1
 *.out
 *.synctex.gz
-thesis.pdf
 _minted-thesis
 *.tps
 *.bcf
 *.xml
 *-blx.bib
+*.xmpi
+*.pdf
 *.xmpi
