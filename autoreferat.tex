@@ -64,7 +64,7 @@
 \usepackage{csquotes}
 
 %%% Drobné úpravy stylu
-
+\let\clearpage\relax 
 % Tato makra přesvědčují mírně ošklivým trikem LaTeX, aby hlavičky kapitol
 % sázel příčetněji a nevynechával nad nimi spoustu místa. Směle ignorujte.
 \makeatletter
@@ -113,13 +113,15 @@
 \chapter*{Introduction}
 \addcontentsline{toc}{chapter}{Introduction}
 
-Geometrical problems often lead to systems of PDEs which are given by differential opetrator acting between sections of natural bundles. For example, one can consider the problem of finding Killing vector fields $X$ which are infinitesimal isometris of a Riemannian manifold $(M, g)$ and obtain operator $\mathcal{L}_X g$ whose kernel is precisely given by such fields. Or one can ask for infinitesimal conformal automorphisms --- those vector fields, whose flow preserves metric only up to a multiple by a positive scalar function --- where one gets $\mathcal{L}_X - \frac{2}{n} \mathrm{div}\, X \, g.$ There is a notion of prolongation for system of PDEs which basically introduces new variables and which aims at rewriting the system in a more managable form. The ultimate goal is to obtain so called geometric prolongation which expresses the original system as an equation for parallel fields for a connection on a bundle of higher rank. For problems where such a prolongation procedure terminates after finite number of steps one obtains that the space of solutions is locally bounded by the rank of the prolongation bundle and hence one immediately sees that the original problem was overdetermined. For example in the case of conformal Killing vector fields on an $n$-dimensional manifold one obtains bundle of rank $n+2.$ There are however interesting operators which have infinite dimensional kernel in general. For example the conformally invariant  modification of the Beltrami--Laplace operator.
+Geometrical problems often lead to systems of PDEs which are given by differential operator acting between sections of natural bundles. For example, one can consider the problem of finding Killing vector fields $X$ which are infinitesimal isometries of a Riemannian manifold $(M, g)$ and obtain operator $\mathcal{L}_X g$ whose kernel is precisely given by such fields. Or one can ask for infinitesimal conformal automorphisms --- those vector fields, whose flow preserves metric only up to a multiple by a positive scalar function --- where one gets $\mathcal{L}_X - \frac{2}{n} \mathrm{div}\, X \, g.$ There is a notion of prolongation for system of PDEs which basically introduces new variables and which aims at rewriting the system in a more manageable form. The ultimate goal is to obtain so called geometric prolongation which expresses the original system as an equation for parallel fields for a connection on a bundle of higher rank. For problems where such a prolongation procedure terminates after finite number of steps one obtains that the space of solutions is locally bounded by the rank of the prolongation bundle and hence one immediately sees that the original problem was overdetermined. For example in the case of conformal Killing vector fields on an $n$-dimensional manifold one obtains bundle of rank $n+2.$ There are however interesting operators which have infinite dimensional kernel in general. For example the conformally invariant  modification of the Beltrami--Laplace operator.
 
-For the class of so called parabolic geometries there is a construction for all natural overdetermined operators which was discovered by \cite{cap_bernstein-gelfand-gelfand_2001} and later simplified by \cite{calderbank_differential_2001}. Given a semisimple Lie group $G$, it's parabolic subgroup $P$ and a $(\mathfrak{g}, P)$-representation $\mathbb{V}$ this construction produces a sequence of differential operators on any Cartan geometry modeled on $G \to G/P$ which has very favourable properties. For example, the first operator in the sequence is automatically geometrically prolonged by suitable modification of the so called tractor connection which is defined on the bundle associated to $\mathbb{V}.$  
+For the class of so called parabolic geometries there is a construction for all natural overdetermined operators which was discovered by \cite{cap_bernstein-gelfand-gelfand_2001} and later simplified by \cite{calderbank_differential_2001}. Given a semisimple Lie group $G$, it's parabolic subgroup $P$ and a \emph{finite-dimensional} $(\mathfrak{g}, P)$-representation $\mathbb{V}$ this construction produces a sequence of differential operators on any Cartan geometry modeled on $G \to G/P$ which has very favourable properties. For example, the first operator in the sequence is automatically geometrically prolonged by suitable modification of the so called tractor connection which is defined on the bundle associated to $\mathbb{V}.$ For the homogeneous models $(G \to G/H, \omega_{{MC}})$ this produces a complex of differential operators between sections of homogeneous bundles over $G/H.$ However, not all invariant operators between homogeneous bundles are specializations of natural differential operators from general Cartan geometries.
 
-The main aim of this work is to generalize the construction of \cite{calderbank_differential_2001} in such a way that one could obtain operators which are not overdetermined. There are two side results: uniform description of Riemannian metrics of octonionic planes in chapter 2.3 and classification of singular vector in scalar induced parabolic Verma modules for $\mathfrak{sl}(n, \mathbb{C})$ in chapter 2.4 which is a joint work with Libor Křižka.
+The main aim of this work is to generalize the construction of \cite{calderbank_differential_2001} in such a way that one could obtain operators which are not overdetermined. At the same time it provides a way of extension of some invariant differential operators from the homogeneous models to general curved Cartan geometries. These operators form sequences whose shape is governed by Lie algebra homology. As a part of this thesis, a computer program was written on top of computer algebra system Sage that calculates the Lie algebra homologies for given rank.
 
-We start with some algebraic preliminaries and then move on to the invariant differential operators.
+ There are two side results: uniform description of Riemannian metrics of octonionic planes in chapter 2.3 and classification of singular vector in scalar induced parabolic Verma modules for $\mathfrak{sl}(n, \mathbb{C})$ in chapter 2.4 which is a joint work with Libor Křižka.
+
+We start with some algebraic preliminaries and then move on to the invariant differential operators. We finish with description of the structure of the new sequences we obtained.
 
 \chapter{Algebraic preliminaries}
 
@@ -152,32 +154,14 @@ The \emph{opposite parabolic} subalgebra $\oppar$  is obtained by switching nega
 
 It is convenient to denote parabolic subalgebras by Dynkin diagrams with crossed or otherwise marked nodes. Namely, the standard parabolic subalgebra $\lie{p}_\Sigma$ of $(\lie{g},\roots^+)$ is denoted by the Dynkin diagram of $\lie{g}$ where the nodes corresponding to $\Sigma$ are represented by crosses instead of dots. By erasing of these crossed nodes one obtains the Dynkin diagram of the semisimple part of $\lie{l}$ and the crossed nodes correspond precisely to the generators of the center of $\lie{l}$.
 
-
-Elements of $\lie{h}^*$ are called weights. Weights $\lambda$ such that $(\lambda, \alpha)$ is greater (less) or equal to zero for all $\alpha \in \roots_\Sigma$ are called \emph{$\lie{p}$-dominant} ($\lie{p}$-\emph{antidominant}). In case they satisfy this condition for all roots $\alpha \in \roots$ we call them $\lie{g}$-(anti)dominant or just (anti)dominant. The weights dual to simple coroots are called fundamental weights. There is a distinguished element of $\lie{h}^*$ sometimes called the lowest form and usually denoted by $\rho$. It is defined as the sum of fundamental weights or equivalently as half the sum of positive roots. 
-
 The following lemma (whose proof can be found in \cite{cap_parabolic_2009}) shows that the parabolic subalgebras are equivalent to gradings of the lie algebra $\lie{g}$.
 \begin{lemma}
-There is a bijective correspondence between parabolic subalgebras of $\lie{g}$ and gradings $\lie{g}=\oplus_{i=-k}^k \lie{g}_i$ of $\lie{g}$.
-
-	Given $\Sigma\subset\sroots$, the set $\lie{g}_i$ ($i\neq 0)$ is defined to be $\oplus_{\phi\in A_i} \lie{g}_\phi$, where $A_i$ contains elements $\phi=\sum_{\alpha_j\in\sroots} c_j \alpha_j$ such that $\sum_{\{j:\alpha_j\in\Sigma\}} c_j=i$, and $\lie{g}_0=\lie{h}\oplus_{\phi\in A_0} \lie{g}_\phi$.
-
-	Given a grading $\oplus_j \lie{g}_j$, the parabolic subalgebra is then $\lie{p}=\oplus_{j\geq 0}\lie{g}_j$.
+There is a bijective correspondence between parabolic subalgebras of $\lie{g}$ and gradings $\lie{g}=\oplus_{i=-k}^k \lie{g}_i$ of $\lie{g}$.	Given $\Sigma\subset\sroots$, the set $\lie{g}_i$ ($i\neq 0)$ is defined to be $\oplus_{\phi\in A_i} \lie{g}_\phi$, where $A_i$ contains elements $\phi=\sum_{\alpha_j\in\sroots} c_j \alpha_j$ such that $\sum_{\{j:\alpha_j\in\Sigma\}} c_j=i$, and $\lie{g}_0=\lie{h}\oplus_{\phi\in A_0} \lie{g}_\phi$.	Given a grading $\oplus_j \lie{g}_j$, the parabolic subalgebra is then $\lie{p}=\oplus_{j\geq 0}\lie{g}_j$.
 \end{lemma}
 
-So we can see that given a parabolic Lie algebra $\lie{p} = \lie{l} \oplus \lie{u}$ there is a grading on $\lie{g}$ such that $\lie{g}_0 = \lie{l}$ and $\lie{u} = \bigoplus_{i \geq 1} g_i$. The associated filtration to a grading $\lie{g}=\oplus_{i=-k}^k \lie{g}_i$ of $\lie{g}$ is defined by $\lie{g}^i = \bigoplus_{j \geq i} \lie{g}_j.$ Sometimes it's convenient to use the following notation as well $\lie{g}_+ = \bigoplus_{i > 0} \lie{g}_i$ and $\lie{g}_- = \bigoplus_{i < 0} \lie{g}_i.$ The next lemma shows structural properties of this grading as well as relationship with the Killing form.
+So we can see that given a parabolic Lie algebra $\lie{p} = \lie{l} \oplus \lie{u}$ there is a grading on $\lie{g}$ such that $\lie{g}_0 = \lie{l}$ and $\lie{u} = \bigoplus_{i \geq 1} \lie{g}_i$.
 
-\begin{lemma}[Proposition 3.1.2 of \cite{cap_parabolic_2009}]
-	Let $\lie{g}=\lie{g}_{-k}\oplus\cdots \lie{g}_k$ be a $|k|$-graded semisimple Lie algebra over $\k=\R$ or $\C$ and let $B:\lie{g}\otimes \lie{g}\to \k$ be a nondegenerate invariant bilinear form. Then we have:
-	\begin{enumerate}
-	 \item There is a unique element $E \in \lie{g}$, called the \emph{grading element}, such that \([E,X] = jX\) for all $X \in \lie{g}_j$. The element $E$ lies in the center of the subalgebra $\lie{g}_0 \leq \lie{g}$.
-	 \item The $|k|$-grading on $\lie{g}$ induces a $|k_i|$-grading for some $k_i\leq k$ on each ideal $s\subseteq \lie{g}$. In particular, $\lie{g}$ is a direct sum of $|k_i|$-graded simple Lie algebras, where $k_i\leq k$ for all $i$ and $k_i=k$ for at least one $i$.
-	 \item The isomorphism $\lie{g} \to \lie{g}^*$ provided by $B$ is compatible with the filtration and the grading of $\lie{g}$. In particular, $B$ induces dualities of $\lie{g}_0$-modules between $\lie{g}_i$ and $\lie{g}_{-i}$ and the filtration component $\lie{g}^i$ is exactly the annihilator (with respect to $B$) of $\lie{g}^{-i+1}$. Hence, $B$ induces a duality of $\lie{p}$-modules between $\lie{g}/\lie{g}^{-i+1}$ and $\lie{g}^i$, and in particular between $\lie{g}/\lie{p}$ and $\lie{p}_+$.  
-	 \item For $i<0$ we have $[\lie{g}_{i+1},\lie{g}_{-1}] = \lie{g}_i$. If no simple ideal of $\lie{g}$ is contained in $\lie{g}_)$, then this also holds for $i=0$.
-	 \item Let $A\in\lie{g}_i$ with $i>0$ be an element such that $[A,X]=0$ for all $X\in\lie{g}_{-1}$. Then $A=0$. If no simple ideal of $\lie{g}$ is contained in $\lie{g}_)$, then this also holds for $i=0$.
-	\end{enumerate}
-\end{lemma}
-
-In particular, the Killing form $B$ has the following anti-diagonal block matrix form with respect to the decomposition $\lie{g}=\lie{g}_{-k}\oplus\cdots \lie{g}_k$
+This grading is compatible with the Killing form $B$ of $\lie{g}$ which has the following anti-diagonal block matrix form with respect to the decomposition $\lie{g}=\lie{g}_{-k}\oplus\cdots \lie{g}_k$
 \[
  B = \begin{pmatrix}
       0 & \cdots & B_{k,-k} \\
@@ -187,7 +171,14 @@ In particular, the Killing form $B$ has the following anti-diagonal block matrix
 \]
 where $B_{i,j}$ denote the restriction of $B$ to $\lie{g}_i\otimes \lie{g}_j$.
 
-Since the grading element $E$ is in the center of $\lie{g}_0 = \lie{l}$ it acts by scalar on any irreducible $\lie{l}$-module $\mathbb{V}$. We will call this scalar \emph{geometric weight} of $\mathbb{V}$.
+There exists grading element $E$ in the center of $\lie{g}_0 = \lie{l}$ which acts by scalar on any irreducible $\lie{l}$-module $\mathbb{V}$ and in particular it acts by $k$ on $\lie{g}_k.$ Its action on $\mathbb{V}$ is called \emph{geometric weight} of $\mathbb{V}$.
+
+Sometimes it's convenient to use the following notation as well 
+ \[
+ \lie{p}_+ = \bigoplus_{i > 0} \lie{g}_i, \qquad \lie{p}_- = \bigoplus_{i < 0} \lie{g}_i.
+ \]
+We are concentrating here on the case where $\lie{l}$ is actually a complexification $\lie{k}$ of a maximal compact subalgebra of a specific real form $\lie{g}_0$ of simple complex Lie algebra $\lie{g}$. This is quite rare and there are just few real forms that actually fall into consideration. Most importantly, such a constraint forces the nilradical $\lie{p}_+ = \lie{u}$ to be abelian. Since for our application we really need to the parabolic subalgebra $\lie{p}$ to be compatible with the real structure of $\lie{g}_0$ it makes more sense to label these cases by the real forms $(\lie{g}_0, \lie{k}_0)$ which are actually Hermitian symmetric pairs. In other words, we only consider Hermitian symmetric spaces $G_0/K_0$ which are Riemannian symmetric spaces with compatible complex structure.
+
 
 The Weyl group has natural action on weights by orthogonal transformations and we call a weight singular (regular) if $(\lambda + \rho, \alpha)$ is (not) zero. The reason for this $\rho$ shift is that in applications one has to consider not the defining acting of the Weyl group $W$ but rather it's \emph{affine action} 
 \[
@@ -275,7 +266,11 @@ Since a jet prolongation of a homogeneous vector bundle is again a homogeneous v
 \Hom_{\mathfrak{g}}\left(\mathfrak{U(g)\otimes_{U(h)}}\mathbb{W}^*, \, \mathfrak{U(g)\otimes_{U(h)}}\mathbb{V}^*\right).
 \]
 
-For special case when $\lie{g}$ is a semisimple complex Lie algebra and $\lie{h} = \lie{b}$ is  its Borel subalgebra these induced modules $\lie{U(g)_{U(b)}}\otimes \mathbb{V}^*$ are known as Verma modules and for a irreducible $\lie{b}$ module $\mathbb{C}_\lambda$, $\lambda \in \mathbb{C}$ are usually denoted by $M(\lambda)$. If one takes for $\lie{h} = \lie{p}$ a parabolic subalgebra of $\lie{g}$, then one gets so called generalized or parabolic Verma modules $M_\lie{p} (\mathbb{F}_\lambda)$ where now $\mathbb{F}_\lambda$ denotes the irreducible representation of the Levi part $\lie{l}$ of $\lie{p}$. In this case, one has to of course restrict to $\lambda$ that is $\lie{l}$-integral and $\lie{l}$-dominant. 
+For special case when $\lie{g}$ is a semisimple complex Lie algebra and $\lie{h} = \lie{b}$ is  its Borel subalgebra these induced modules $\lie{U(g)_{U(b)}}\otimes \mathbb{V}^*$ are known as Verma modules and for a irreducible $\lie{b}$ module $\mathbb{C}_\lambda$, $\lambda \in \mathbb{C}$ they are usually denoted by $M(\lambda)$. If one takes for $\lie{h} = \lie{p}$ a parabolic subalgebra of $\lie{g}$, then one gets so called generalized or parabolic Verma modules $M_\lie{p} (\mathbb{F}_\lambda)$ where now $\mathbb{F}_\lambda$ denotes the irreducible representation of the Levi part $\lie{l}$ of $\lie{p}$. In this case, one has to of course restrict to $\lambda$ that is $\lie{l}$-integral and $\lie{l}$-dominant. Since Verma modules are generated by a highest weight vector, their homomorphisms are given by the so called singular vectors. So a $\phi: M(\mu) \to M(\lambda)$ is given by a vector in $M(\lambda)$ that is killed by the action of the nilradical $\lie{n}$ of $\lie{g}$. Such vectors are called singular vectors.
+
+In $1$-graded case where the nilradical of the parabolic subalgebra is actually abelian these induced modules can be identified with vector valued polynomials. One can then recast the problem of finding singular vectors to a system of PDEs. For scalar valued polynomials one can use result of Kostant-Hua-Schmid coupled with classical invariant theory and write explicitly those polynomials that are fixed by the nilradical of $\lie{l}$ and hence one has to only check which of these are in the kernel of operators corresponding to the nilradical of the parabolic. In a joint work with Libor Křižka we have proved that the only singular vectors in the $\lie{sl}$-case, where the nilradical consists of $m\times n$ matrices, are powers of certain minors. For the other two classical cases corresponding to symmetric and antisymmetric matrices this is a work in progress. 
+
+\subsubsection{Natural operators for curved Cartan geometries}
 
 The original Calderbank--Diemer construction of \cite{calderbank_differential_2001} starts with a \emph{finite-dimensional} $(\lie{g}, P)$-representation $\mathbb{V}$ and a parabolic geometry $(\mathcal{G} \to M, \omega).$ One then forms the associated bundle $\mathcal{V} = \mathcal{G}\times_P \mathbb{V}$ with connection $\nabla^\mathcal{V}$ induced from the Cartan connection $\omega$ which can be extended to the twisted deRham operator 
 \[
@@ -303,7 +298,7 @@ where $X_0,\ldots, X_n \in \lie{m}$ and $\phi:\Lambda^k \lie{m} \to \rep{V}$. Ag
 
 There is a natural identification of $C_k(\lie{m}^*,\rep{V})$ and $C^k(\lie{m},\rep{V})$ coming from the natural isomorphism $\Lambda^k \lie{m}^* \otimes \rep{V} \simeq \Hom(\lie{m},\rep{V})$.
 
-In the special case when we consider $\lie{m}$ to be a nilradical $\lie{p}_-$ of some opposite parabolic subalgebra $\lie{p}$, we have the Killing form that induces an isomorphism ${\lie{p}_-}^* \simeq \lie{p}_+.$ Since we can identify $C^k(\lie{p}_-,\rep{V})=\Hom (\Lambda^k\lie{p}_-,\rep{V})$ with $\Lambda^k {\lie{p}_-}^*\otimes\rep{V}$, we see we can consider the Lie algebra cohomology differential $\lcd$ as an operator on the chain spaces of Lie algebra homology $\lcd: \Lambda^k {\lie{p}_-}^* \otimes V \to \Lambda^{k+1}{\lie{p}_-}^*\otimes V$. After these identifications we get the formula
+In the special case when we consider $\lie{m}$ to be a nilradical $\lie{p}_-$ of some opposite parabolic subalgebra $\lie{p}$, we have the Killing form that induces an isomorphism ${\lie{p}_-}^* \simeq \lie{p}_+.$ Since we can identify $C^k(\lie{p}_-,\rep{V})=\Hom (\Lambda^k\lie{p}_-,\rep{V})$ with $\Lambda^k {\lie{p}_-}^*\otimes\rep{V}$, we see we can consider the Lie algebra cohomology differential $\lcd_{\lie{p}_-}$ as an operator on the chain spaces of Lie algebra homology $\lcd: \Lambda^k {\lie{p}_-}^* \otimes V \to \Lambda^{k+1}{\lie{p}_-}^*\otimes V$. After these identifications we get the formula
 \[
  \lcd  (Z_1\wedge\cdots\wedge Z_k\otimes v) = \sum_{i=1}^{2p} \epsilon^i \wedge Z_1\wedge\cdots\wedge Z_k\otimes e_i\cdot v.
 \] The Lie algebra cohomology differential is $\overline{P}$-equivariant. In particular, both $\lcd$ and $\lhd$ are $L$-equivariant and consequently they preserve the geometric weight.
@@ -395,9 +390,9 @@ There is a convenient way to construct pairs of disjoint operators.
 % This is trivial as the restriction of $\langle \, , \, \rangle$ to any subspace is non-degenerate.
 %\end{proof}
 
- If $V$ is infinite-dimensional and $L$ is any closed subspace of finite codimension, then any algebraic complementary subspace to $L$ in $V$ is also a topological complement (\cite{schaefer_topological_1999}). In these cases we demand that $\lhd$ and $\lcd$ are continuous with closed image\footnote{We note that for a finite-dimensional vector space $V$ are these topological conditions automatically satisfied for all linear operators.}
 
-The authors of \cite{huang_dirac_2006} proved that if $\rep{V}$ is a unitarizable $(\lie{g},K)$-module and $\lie{u}_+$ is abelian nilradical of a $\theta$-stable parabolic subalgebra, then the Hodge decomposition of $C_\bullet(\lie{u}_+,\rep{V})$ is still valid. 
+
+Consider the Hermitian symmetric pair $(\lie{g}_0, \lie{k}_0)$ and it's corresponding Cartan involution $\theta$. The authors of \cite{huang_dirac_2006} proved that if $\rep{V}$ is a unitarizable $(\lie{g},K)$-module and $\lie{p}_+$ is abelian nilradical of a $\theta$-stable parabolic subalgebra coming from the Cartan decomposition of $\lie{g}$, then the Hodge decomposition of $C_\bullet(\lie{p}_+,\rep{V})$ is still valid.
 
 \subsection{Kostant theorem}
 
@@ -422,7 +417,7 @@ It was proven in \cite{kostant_lie_1961} that for a finite-dimensional $\lie{g}$
 \subsection{Formal globalizations}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-From now on consider the Hermitian symmetric situation, where $\lie{k}$ is actually the Levi subalgebra of a parabolic subalgebra with abelian radical. Consider the simple quotient $L(\lambda)$ of the parabolic Verma module $M(\lambda)$ induced from the opposite parabolic algebra $\oppar$. It is not a $P$-representation but we would like induce from it a $P$-representation in order to be able to use it in geometrical applications. Let $L(\lambda)=\bigoplus_{\mu\in \widehat{K}_\C} L_\mu$ be the decomposition of $L(\lambda)$ into $K_\C$-types. Each $L_\mu$ is contained in some $S^k(\lie{p}_+,F(\lambda))$ modulo the maximal submodule of $M(\lambda)$ and the algebra $\lie{p}_+$ acts  as multiplication by a variable, while $\lie{p}_-$ acts basically as differentiation. To formalize this write $L(\lambda) = \bigoplus_{\mu\in\widehat{K_\C}, k\in\mathbb{N}} L_{\mu,k}$ where $L_{\mu,k}$ is the $K_\C$-type contained in $S^k(\lie{p}_+,F(\lambda))$ and note that $\lie{p}_+ (L_{\mu,k}) \subset L_{\mu,k+1}$.
+From now on consider the Hermitian symmetric situation, where $\lie{k}$ is actually the Levi subalgebra of a parabolic subalgebra with abelian radical. Then we have $\lie{U}(\lie{p}_+) = S(\lie{p}_+).$ Consider the simple quotient $L(\lambda)$ of the parabolic Verma module $M(\lambda)$ induced from the opposite parabolic algebra $\oppar$. It is not a $P$-representation but we would like induce from it a $P$-representation in order to be able to use it in geometrical applications. Let $L(\lambda)=\bigoplus_{\mu\in \widehat{K}_\C} L_\mu$ be the decomposition of $L(\lambda)$ into $K_\C$-types. Each $L_\mu$ is contained in some $S^k(\lie{p}_+,F(\lambda))$ modulo the maximal submodule of $M(\lambda)$ and the algebra $\lie{p}_+$ acts  as multiplication by a variable, while $\lie{p}_-$ acts basically as differentiation. To formalize this write $L(\lambda) = \bigoplus_{\mu\in\widehat{K_\C}, k\in\mathbb{N}} L_{\mu,k}$ where $L_{\mu,k}$ is the $K_\C$-type contained in $S^k(\lie{p}_+,F(\lambda))$ and note that $\lie{p}_+ (L_{\mu,k}) \subset L_{\mu,k+1}$.
 
 
 The \emph{formal globalization} or rather \emph{formal completion} of $L(\lambda)$ is defined as   $\overline{L(\lambda)}=\prod_{\mu\in \widehat{K}_\C} L_\mu$ (product of topological vector spaces).  Since each $K_\C$-type is finite-dimensional and each $S^k(\lie{p}_+,F(\lambda))$ contains only finitely many irreducible $K_\C$-representations, we can write it as
@@ -674,22 +669,25 @@ Now it is easy to see that the formal globalization is representation of $P$, si
 \chapter{Unitarizable highest weight modules}\label{ch:unitarizable}
 
 One of the main open problem of representation theory is classification of unitary modules of Lie groups. Apart from the finite-dimensional representations (which are unitary for compact Lie groups) one of the classes of modules where a complete classification was obta
-ned is the class of unitarizable modules of highest weight. It is precisely the intersection of BGG category $\mathcal{O}$ and Harish-Chandra $(\mathfrak{g}, K)$-modules. It was proved already by Harish-Chandra that these modules can occur only in the Hermitian symmetric case, see \cite{harish-chandra_representations_1955, harish-chandra_representations_1956-1} and \cite{harish-chandra_representations_1956} for details.
-
-A sufficient and necessary condition for unitarizability of a highest weight module appears in \cite{garland_unitarizable_1981}. Independently, these modules were classified by Jakobsen in \cite{jakobsen_last_1981, jakobsen_hermitian_1983} with later development in \cite{jakobsen_intrinsic_1996}. Another, yet independent, approach was given by \cite{enright_classification_1983} with later simplification in \cite{joseph_annihilators_1992}. In \cite{adams_unitary_1987} it was shown that all unitarizable highest weight modules can be obtained via the derived functor construction from either a one-dimensional or a unipotent representation. This  parametrization given here fits in nicely with the Langlands classification and the coadjoint orbit picture.  
+ned is the class of unitarizable modules of highest weight. It is precisely the intersection of BGG category $\mathcal{O}$ and Harish-Chandra $(\mathfrak{g}, K_0)$-modules. It was proved already by Harish-Chandra that these modules can occur only in the Hermitian symmetric case.
 
 In this chapter we follow mainly the article \cite{enright_classification_1983} and reorganization of the unitarizable weight into integral cones that was presented in \cite{davidson_differential_1991}. 
 
 \section{Classification}
 
-The algebra $\lie{k}$ has a one-dimensional center which is complementary to the span of $\roots_c$. We pick a generator $\zeta$ of the center by requiring $\frac{2 \langle \zeta,\beta \rangle}{\langle \beta, \beta \rangle} = 1$, where $\beta$ is the unique maximal noncompact root\footnote{Equivalently, $\beta$ is the highest weight of $\lie{k}$-representation $\lie{p}_+$.} of $\roots^+$. Now any line $\lambda+z\zeta$ for $z\in\C$ can be uniquely written as $\lambda_0 + z\zeta$ with
+The algebra $\lie{k}$ has a one-dimensional center which is complementary to the span of $\roots_c$. We pick a generator $\zeta$ of the center by requiring $\frac{2 \langle \zeta,\beta \rangle}{\langle \beta, \beta \rangle} = 1$, where $\beta$ is the unique maximal noncompact root\footnote{Equivalently, $\beta$ is the highest weight of $\lie{k}$-representation $\lie{p}_+$.} of $\roots^+$. Now any line affine line with base point $\lambda$ with direction vector $\zeta$ ($\{\lambda+z\zeta \,|\, z\in\C$ can be uniquely written as $\lambda_0 + z\zeta$ with
 \[
  \langle \lambda_0 + \rho,\beta \rangle = 0, \quad \rho =\sum_{\alpha\in\roots^+} \alpha.
 \]
 
-If $L(\lambda)$ is an irreducible unitarizable module for $\lambda=\lambda_0+z\zeta$, then $z$ must be real and the $K_\C$-finiteness implies that $\lambda$ must be $\roots^+_c$-dominant integral. Write the generalized Verma module $M(\lambda)$ as $S(\lie{p}_+)\otimes F(\lambda_0) \otimes \C_z\zeta$. If we fix a basis of $\lie{g}$ and $F(\lambda_0)$, we may view the modules $M(\lambda)$ as defined on the same vector space $S(\lie{p}_+)\otimes F(\lambda_0)$ where the action of $\lie{g}$ is given by polynomial expressions in $z$. Likewise, we may view the Shapovalov form on $M(\lambda)$ as a bilinear form on $S(\lie{p}_+) \otimes F(\lambda_0)$ with values in complex polynomials $\C[z]$.
+Unitarizable highest weight modules are obtained as quotients of parabolic Verma modules $M(\lambda) = M_\lie{p}(\lambda)$ by their unique maximal submodule $J(\lambda)$.
 
-A $\lie{g}$-module $M$ is called unitarizable if there exists (necessarily unique up to a multiple) positive definite contravariant form on $M$. The following theorem explains the structure of the set of $z\in\R$ such that the module $M(\lambda)$ is unitarizable.
+\begin{theorem}[Theorem 2.4 of \cite{enright_classification_1983}]
+ The set of real numbers $z$ with $L(\lambda_0 + z\zeta)$ a unitarizable $\lie{g}$-module is given by the set
+\[
+  \{z \in \mathbb{R}\, |\, z \leq A(\lambda_0)\} \cup \{ z=A(\lambda_0) + k C(\lambda_0)\,|\, z \leq B(\lambda_0) \et k\in \mathbb{N}_0\},
+\]
+where $A(\lambda_0)$, $B(\lambda_0)$ and $C(\lambda_0)$ are real numbers expressible in terms of certain root systems $Q(\lambda_0)$ and $R(\lambda_0)$ associated to $\lambda_0$. Moreover $C(\lambda_0)$ is independent of $\lambda_0$ and depends only on the type of $\lie{g}_0$. The values of $C$ are listed in Table \ref{tbl:C} and the structure of the set of unitarizable highest weights is depicted in Figure \ref{fig:struct}.
 
 \begin{figure}[H]
   \begin{center}
@@ -704,13 +702,6 @@ A $\lie{g}$-module $M$ is called unitarizable if there exists (necessarily uniqu
   \end{tikzpicture}
   \end{center}\caption{Structure of unitarizable weights}\label{fig:struct} %TODO dodelat mark na 0
 \end{figure}
-
-\begin{theorem}[Theorem 2.4 of \cite{enright_classification_1983}]
- The set of real numbers $z$ with $L(\lambda_0 + z\zeta)$ a unitarizable $\lie{g}$-module is given by the set
-\[
-  \{z \in \mathbb{R}\, |\, z \leq A(\lambda_0)\} \cup \{ z=A(\lambda_0) + k C(\lambda_0)\,|\, z \leq B(\lambda_0) \et k\in \mathbb{N}_0\},
-\]
-where $A(\lambda_0)$, $B(\lambda_0)$ and $C(\lambda_0)$ are real numbers expressible in terms of certain root systems $Q(\lambda_0)$ and $R(\lambda_0)$ associated to $\lambda_0$. Moreover $C(\lambda_0)$ is independent of $\lambda_0$ and depends only on the type of $\lie{g}_0$. The values of $C$ are listed in Table \ref{tbl:C} and the structure of the set of unitarizable highest weights is depicted in Figure \ref{fig:struct}.
 	
 The discrete series representation corresponds to $z <0$ and limit of discrete series representation corresponds to $z=0$. For $z  < A(\lambda_0)$ we have $L(\lambda) = M(\lambda)$ (i.e. the generalized Verma modules are irreducible) and for all $z \geq A(\lambda_0)$ such that $L(\lambda)$ are unitarizable the generalized Verma modules are reducible.%, hence the elements of  $\{z=A(\lambda_0) + kC| \, z \leq B(\lambda_0) \et k\in \mathbb{N}_0 \}$ are called  reduction points or points of reducibility.
 
@@ -722,24 +713,21 @@ C & 1 & \frac{1}{2} & 2 & n-2 & n-\frac{3}{2} & 3 & 4
 \end{table}
 \end{theorem}
 
-Let $\roots_c(\lambda_0) := \{ \alpha \in \roots_c | \langle \alpha,\lambda_0 \rangle = 0 \}$ and recall the definition of $\beta$ the maximal non-compact root. Take the root subsystem of $\roots$ generated by $\pm \beta$ and $\roots_c(\lambda_0)$ and decompose it into a disjoint union of simple root systems. Let $Q(\lambda_0)$ be the root system in this union which contains $\beta$.
-
-If $\roots$ has two root lengths and if there are short compact roots $\alpha$ not orthogonal to $Q(\lambda_0)$ with $\frac{2 \langle \lambda_0,\alpha \rangle}{\langle \alpha, \alpha \rangle}  =1$, then let $\Psi$ be the root system generated by $\pm \beta, \roots_c(\lambda_0)$ and all such $\alpha$. Let $R(\lambda_0)$ be the simple component of $\Psi$ which contains $\beta$. If $\roots$ has only one root length or if no such $\alpha$ exists, then put $R(\lambda_0) = Q(\lambda_0)$.
-
-Since these root systems are subsystems of $\roots$ and since each has compact and noncompact roots, each is a root system of a Hermitian symmetric pair.
-
-There is a convenient way to construct $Q(\lambda_0)$ by means of Dynkin diagrams. Draw a Dynkin diagram of $\lie{g}$ and delete the unique node corresponding to simple noncompact root. Now adjoin to the resulting diagram $-\beta$ by the usual rules as when constructing extended Dynkin diagrams. The maximal connected subdiagram containing $-\beta$ such that its every compact simple root is orthogonal to $\lambda_0$ is the Dynkin diagram of $Q(\lambda_0)$. We illustrate on the case of $\lie{su}(p,q)$. Here the noncompact root $\beta$ is $\alpha_p$ and we get the following extended Dynkin diagram.
+The numbers $A(\lambda_0), B(\lambda_0)$ can be calculated from two root systems $Q(\lambda_0)$ and $R(\lambda_0)$. There is a convenient way to construct $Q(\lambda_0)$ by means of Dynkin diagrams. Draw a Dynkin diagram of $\lie{g}$ and delete the unique node corresponding to simple noncompact root. Now adjoin to the resulting diagram $-\beta$ by the usual rules as when constructing extended Dynkin diagrams. The maximal connected subdiagram containing $-\beta$ such that its every compact simple root is orthogonal to $\lambda_0$ is the Dynkin diagram of $Q(\lambda_0)$. We illustrate on the case of $\lie{su}(p,q)$. 
 \begin{figure}[H]\label{fig:Q}
   \begin{center}
-     \begin{tikzpicture} % SU(p,q) ~ A_{n-1} relative
+     \begin{tikzpicture}[cross/.style={path picture={ 
+  \draw[black]
+(path picture bounding box.south east) -- (path picture bounding box.north west) (path picture bounding box.south west) -- (path picture bounding box.north east);
+}}] 
 	\node[croot] (a1) [label=below:$\alpha_1$] {};
 	\node[croot] (a2) [right= of a1] [label=below:$\alpha_2$] {};
-	\node[croot] (a3) [right= of a2] [label=below:$\alpha_3$] {};
+	\node[croot, cross] (a3) [right= of a2] [label=below:$\alpha_3$] {};
 	\node (a4) [right= of a3] {};
 	\node[nroot] (a5) [above right=of a4] [label=above:$-\beta$] {};
 	\node (a6) [below right=of a5] {};
 	\node[croot] (a7) [right=of a6] [label=below:$\alpha_{n-3}$] {};
-	\node[croot] (a8) [right=of a7] [label=below:$\alpha_{n-2}$] {};
+	\node[nroot, cross] (a8) [right=of a7] [label=below:$\alpha_{n-2}$] {};
 	\node[croot] (a9) [right=of a8] [label=below:$\alpha_{n-1}$] {};
 	\draw (a1) to (a2) to (a3); \draw [dotted] (a3) to (a4);
 	\draw [dotted](a6) to (a7);
@@ -750,9 +738,6 @@ There is a convenient way to construct $Q(\lambda_0)$ by means of Dynkin diagram
 \end{figure}
 If we write down $\lambda_0$ with respect to the basis of fundamental weights $\lambda_0 = \sum_i a_i \omega_i$ we see that $Q(\lambda_0)$ is a root system of $\lie{su}(p',q')$ where $p'$ and $q'$ are maximal such that the coefficients $a_1,a_2,\ldots,a_{p'}$ and $a_{n-q'+1},a_{n-q'+2}, \ldots, a_n$ are nonzero.
 
-The root system $R(\lambda_0)$ is different from $Q(\lambda_0)$ only in two cases. The first one is $\lie{g}_0=\lie{sp}(n,\R)$ where $Q(\lambda_0) = \lie{sp}(n',\R)$ and $R(\lambda_0) = \lie{sp}(n'',\R)$ with $n' < n'' \leq n$. The second one is $\lie{g}_0=\lie{so}(2,2n-1)$ where $Q(\lambda_0) = \lie{su}(1,n-1)$ and $R(\lambda_0) = \lie{so}(2,2n-1)$ with $\lambda_0 = (\lambda_1,\frac{1}{2},\ldots,\frac{1}{2})$ in the $\epsilon$-basis.
-
-The following two theorems finish the general classification of unitarizable highest weight modules.
 
 %\begin{theorem}[Theorem 2.8 of \cite{enright_classification_1983}]
 % Let $\roots^+_{c,1} := \roots^+_c \cap Q(\lambda_0)$ and let $\roots^+_{c,2} := \roots^+_c \cap R(\lambda_0)$. Denote by $\rho_{c,i}$ half of the sum of roots in $\roots^+_{c,i}$.
@@ -769,19 +754,15 @@ The following two theorems finish the general classification of unitarizable hig
 % \]
 %\end{theorem}
 
-Now let's see what we can tell about the maximal module $J(\lambda)$ of the generalized Verma module $M(\lambda)$. %The following was proved in \cite{davidson_differential_1991}.
-
+Now let's see what we can tell about the maximal module $J(\lambda)$ of the generalized Verma module $M(\lambda)$.
 \begin{theorem}[Theorem 3.1 of \cite{davidson_differential_1991}]
  Suppose $L(\lambda) = M(\lambda)/J(\lambda)$ is unitarizable and $J(\lambda)\neq 0$. Then
  \begin{enumerate}
   \item $H^1(\lie{p}_-,L(\lambda))$ is an irreducible $\lie{k}$-module
-  \item $J(\lambda)$ is generated over $S(\lie{p}_+)$ by an irreducible $\lie{k}$-submodule $J(\lambda)^0$ isomorphic to $H^1(\lie{p}_-,L(\lambda))$.
+  \item $J(\lambda)$ is generated over $\lie{U}(\lie{p}_+)$ by an irreducible $\lie{k}$-submodule $J(\lambda)^0$ isomorphic to $H^1(\lie{p}_-,L(\lambda))$.
  \end{enumerate}
 \end{theorem}
-
-
-%Let $J(\lambda)$ denote the maximal submodule of the generalized Verma module $M(\lambda)$. For all unitarizable highest weight modules we have  $J(\lambda)$  generated by $\lie{U(g)}$ from an irreducible $\lie{k}$-module.
-In particular, the generator of $J(\lambda)$ must be contained in some component $S^k(\lie{p}_+)\otimes F(\lambda)$. This $k$ is called \emph{level of reduction} of $L(\lambda)$ and is denoted by $l(\lambda)$.
+In particular, the generator of $J(\lambda)$ must be contained in some component $\lie{U}^k(\lie{p}_+)\otimes F(\lambda)$. This $k$ is called \emph{level of reduction} of $L(\lambda)$ and is denoted by $l(\lambda)$.
 
 \begin{definition}
  The set of reduction points $\Lambda_r$ is the union of all reduction points. Explicitly
@@ -795,29 +776,16 @@ In particular, the generator of $J(\lambda)$ must be contained in some component
  Let $a=(Q,R,l)\in\mathcal{A}$ and let $\lambda\in\Lambda_a$. If we write $\lambda= z\zeta + \lambda_0$, then $z=B(\lambda)-(l-1)C$ and on the other hand for $\lambda=(B - nC)\zeta + \lambda_0 \in \Lambda_r$ we have $l(\lambda) =n+1$.
 
 
-Let $\lie{h}^*_\R$ denote the real span of the roots. A \emph{cone} with vertex zero (in $\lie{h}^*_\R$) is the intersection of a (nonempty) collection of closed half spaces. Each cone $C$ is thus determined by a finite set $\{h_i \in \lie{h}|i=1,\ldots,k\}$ with $C= \{ \lambda \in \lie{h}^*_\R | \lambda(h_i) \geq 0, i=1,\ldots k\}$. An \emph{integral cone} will be the intersection of a cone with the set of all $\lie{k}$-integral points of $\lie{h}^*.$ For an integral element $\nu\in\lie{h}^*$, a translated cone with vertex $\nu$ is a set of the form $\nu + C$ with $C$ some integral cone.
-
-\begin{definition}
- For $a=(Q,R,l)\in\mathcal{A}$, let $C_a$ be the integral cone of $\lie{k}$-dominant integral elements in $\lie{h}^*_\R$ which are orthogonal to elements in $R$.
-\end{definition}
-
-%Since the root system $R$ always contains $\beta$, the representations $L(\lambda)$ are in fact finite-dimensional for $\lambda\in C_a$.
-
-For concrete calculations the following lemma can be useful. 
-
-\begin{lemma}[Section 4.3 of \cite{enright_resolutions_2004}]
-The cone $C_{Q, R, l}$ consists of positive integral multiples of weights of the form $\omega_i - (\omega_i, \beta^\vee) \zeta,$ where $\omega_i$ is a fundamental weight corresponding to simple root $\alpha_i$ that does not belong to $R$.
-\end{lemma}
+Let $\lie{h}^*_\R$ denote the real span of the roots. A \emph{cone} with vertex zero (in $\lie{h}^*_\R$) is the intersection of a (nonempty) collection of closed half spaces. An \emph{integral cone} will be the intersection of a cone with the set of all $\lie{k}$-integral points of $\lie{h}^*.$
 
 \begin{proposition}[Proposition 6.6 of \cite{davidson_differential_1991}]
- The set of reduction points $\Lambda_r$ is the disjoint union of the sets $\Lambda_a, a\in\mathcal{A}$.
-
- Each set $\Lambda_a$ is a translated integral cone with vertex $\lambda_a + C_a$.
+ For $a=(Q,R,l)\in\mathcal{A}$, let $C_a$ be the integral cone of $\lie{k}$-dominant integral elements in $\lie{h}^*_\R$ which are orthogonal to elements in $R$.
+ 
+ The set of reduction points $\Lambda_r$ is the disjoint union of the sets $\lambda_a + C_a, a\in\mathcal{A}$.
 \end{proposition}
 
 \section{Nilpotent cohomology of unitarizable highest weight modules}
 
-The convention employed in this section is that we omit the terms whose indices are outside natural boundaries. 
 
 \begin{definition}\label{def:cohomology_roots}
 Let $\Psi_\lambda$ be the set if roots in $\roots$ which are orthogonal to $\lambda+\rho$ and let $\Psi_\lambda^+ = \Psi_\lambda \cap \roots^+$. Denote by $\roots_{n,\lambda}^+$ the roots which satisfy the following conditions
@@ -857,45 +825,33 @@ A priori, it is not clear that $W_\lambda$ is a Weyl group. The following theore
 
 We can use this theorem to find the simple roots of the reduced Hermitian symmetric pair $(\lie{g}_\lambda, \lie{k}_\lambda).$ The proof of the formula \eqref{eq:cohomology} is based on the fact that for unitarizable highest weights the so called Enright Shelton equivalences translate the problem to calculation of nilpotent Lie algebra cohomology of the reduced Hermitian pair with values in a finite dimensional representation. Hence one can just calculate the BGG diagram of minimal representatives of the pair $(\lie{g}_\lambda, \lie{k}_\lambda)$ using the classical algorithm and then apply the embedding of $(\lie{g}_\lambda, \lie{k}_\lambda)$ into $(\lie{g}, \lie{k}).$
 
-\begin{remark}
- The $\lie{k}$-weight of the first cohomology is given by $\lambda_0-\rho$ where $\lambda_0$ is the unique $\roots_c^+$ dominant element in the $W_c$ orbit of $s_{\gamma_0}\lambda$ for the unique noncompact simple root $\gamma_0 \in \roots_\lambda^+$.
-\end{remark}
-
-\begin{lemma}\label{lem:singular_are_noncompact}
- Let $\lambda$ be a highest weight of a unitarizable highest weight module. If a positive root is orthogonal to $\lambda + \rho$ then it must be noncompact.
- \[
-  \alpha \in \roots^+: \alpha \perp \lambda + \rho \Longrightarrow \alpha \in \roots^+_n
- \]
-\end{lemma}
-
-
-\begin{example} 
- Let us take $\lie{g} = \lie{so}(2,2n-2)$ with $\lambda = (2-n)\omega_1$. Then in the epsilon basis we have $\lambda + \rho = (1,n-2,\ldots,1,0)$ and $\Psi_\lambda^+ = \{ \epsilon_1 - \epsilon_{n-1}\}$. The only noncompact root that is orthogonal to $\epsilon_1 -  \epsilon_{n-1}$ and whose scalar product with $\lambda + \rho$ is positive integral is $\alpha = \epsilon_1 + \epsilon_{n-1}$. Thus we get $\roots_{n,\lambda}^+ = \epsilon_1 + \epsilon_{n-1} = \roots_\lambda$. It follows that
-\begin{align*}
- H^0(\lie{p}_-,L((2-n)\omega_1)) &= F((2-n)\omega_1)\\
- H^1(\lie{p}_-,L((2-n)\omega_1)) &= F(-n\omega_1)\\
- H^i(\lie{p}_-,L((2-n)\omega_1)) &= 0 \text{ for } i\geq 2.
-\end{align*} 
-
-Similarly there is only one root generating $W_\lambda$ for $\lie{g} = \lie{so}(2,2n-1)$ and $\lambda = (\frac{3}{2} - n)\omega_1$ and we get that in that case
-\begin{align*}
- H^0(\lie{p}_-,L((\frac{3}{2}-n)\omega_1)) &= F((\frac{3}{2}-n)\omega_1)\\
- H^1(\lie{p}_-,L((\frac{3}{2}-n)\omega_1)) &= F((-\frac{1}{2}-n)\omega_1)\\
- H^i(\lie{p}_-,L((\frac{3}{2}-n)\omega_1)) &= 0 \text{ for } i\geq 2.
-\end{align*}
-
-Moreover we can easily check that in both of these cases the cone $C_a$ is empty.
-
-The Calderbank Diemer construction produces precisely the conformally invariant modification of the Laplace--Beltrami operator.
-\end{example}
-
+%\begin{example} 
+% Let us take $\lie{g} = \lie{so}(2,2n-2)$ with $\lambda = (2-n)\omega_1$. Then in the epsilon basis we have $\lambda + \rho = (1,n-2,\ldots,1,0)$ and $\Psi_\lambda^+ = \{ \epsilon_1 - \epsilon_{n-1}\}$. The only noncompact root that is orthogonal to $\epsilon_1 -  \epsilon_{n-1}$ and whose scalar product with $\lambda + \rho$ is positive integral is $\alpha = \epsilon_1 + \epsilon_{n-1}$. Thus we get $\roots_{n,\lambda}^+ = \epsilon_1 + \epsilon_{n-1} = \roots_\lambda$. It follows that
+%\begin{align*}
+% H^0(\lie{p}_-,L((2-n)\omega_1)) &= F((2-n)\omega_1)\\
+% H^1(\lie{p}_-,L((2-n)\omega_1)) &= F(-n\omega_1)\\
+% H^i(\lie{p}_-,L((2-n)\omega_1)) &= 0 \text{ for } i\geq 2.
+%\end{align*} 
+%
+%Similarly there is only one root generating $W_\lambda$ for $\lie{g} = \lie{so}(2,2n-1)$ and $\lambda = (\frac{3}{2} - n)\omega_1$ and we get that in that case
+%\begin{align*}
+% H^0(\lie{p}_-,L((\frac{3}{2}-n)\omega_1)) &= F((\frac{3}{2}-n)\omega_1)\\
+% H^1(\lie{p}_-,L((\frac{3}{2}-n)\omega_1)) &= F((-\frac{1}{2}-n)\omega_1)\\
+% H^i(\lie{p}_-,L((\frac{3}{2}-n)\omega_1)) &= 0 \text{ for } i\geq 2.
+%\end{align*}
+%
+%Moreover we can easily check that in both of these cases the cone $C_a$ is empty.
+%
+%The Calderbank--Diemer construction produces precisely the conformally invariant modification of the Laplace--Beltrami operator.
+%\end{example}
+%
 \begin{remark}
  The formula \eqref{eq:cohomology} is actually stated a little bit differently in \cite{enright_analogues_1988}. Namely, the finite dimensional modules appearing in the cohomology are $F(\overline{w}\cdot lambda)$ where $\overline{w}$ is the minimal length representant of $w$. The same formula appears in a recent article \cite{enright_diagrams_2014}. However, this formula is wrong as the following example shows.
 
 Consider $\lie{su}(1,2)$ and weight $\lambda = -(a+2)\omega_1 + (a+1)\omega_2$. The reduced Hermitian pair is of type $A_1$ and it's given by $\{\epsilon_1 - \epsilon_3 \}$. The associated reflection is $s_{\epsilon_1 - \epsilon_3} = s_1 s_2 s_1$ and its minimal coset representative is $s_1 s_2$. It's affine action on $\lambda$ gives $-2\omega_1 - (a+2)\omega_2$ which is not $\roots_c^+$-dominant. On the other hand the (normal) action of $s_1 s_2 s_1$ on $\lambda + \rho$ gives $ -(a+2)\omega_1 + (a+1)\omega_2$ which is $\roots_c^+$-dominant and hence the first cohomology is $F(-(a+3)\omega_1 + a\omega_2).$
 \end{remark}
 
-Cohomologies of all unitarizable modules for the two expceptional types are explicitely computed in \cite{enright_resolutions_2004-1}. The papers \cite{enright_hilbert_2004}, \cite{enright_resolutions_2004} treat also certain weights for the classical types $\lie{su}(p,q)$, $\lie{sp}(n,\R)$ and $\lie{so}^*(2n).$  The orthogonal cases $\lie{so}(2,2n-2)$, $\lie{so}(2,2n-1)$ are rather easy and are calculated completely. We present here only the results for the even rank, for the odd rank the cohomologies are similar. For the other classical types we have only partial results of which we present only the cases of $\lie{su}$ and $\lie{so}^*$. The thesis contains cohomologies of all unitarizable modules for algebras of small ranks in appendix. 
+Cohomologies of all unitarizable modules for the two expceptional types are explicitely computed in \cite{enright_resolutions_2004-1}. The papers \cite{enright_hilbert_2004}, \cite{enright_resolutions_2004} treat also certain weights for the classical types $\lie{su}(p,q)$, $\lie{sp}(n,\R)$ and $\lie{so}^*(2n).$  The orthogonal cases $\lie{so}(2,2n-2)$, $\lie{so}(2,2n-1)$ are rather easy and are calculated completely. We present here only the results for the even rank, for the odd rank the cohomologies are similar. For the other classical types we have only partial results of which we present only the cases of $\lie{su}(p,q)$. The thesis contains cohomologies of all unitarizable modules for algebras of small ranks in appendix. 
 
 In general the combinatorics behind the calculations is rather involved. In most cases the reduced Hermitian pair doesn't stay the same on the cone which is due to the fact that these cones can intersect facets in nontrivial ways as the next example demonstrates. 
 
@@ -1019,116 +975,117 @@ The most singular case occurs for $\lie{su}(k,k)$ and $p'=q'=l = k $. Then the s
 \end{figure} 
 
 
-% COHOMOLOGY SO
-\subsection[SO*(2n)]{$\mathrm{SO}^*(2n) \sim D_n, n\geq 4$}
-\inserttikzfigure{diagrams/dynkin_Dn_n.tikz}{Marked Dynkin diagram for $\mathrm{SO}^*(2n)$}
-\begin{center}
-\resizebox{\textwidth}{!}{
-\begin{threeparttable}
-\begin{tabular}{CCCCC}
-  \text{Vertex } \lambda_a & \text{Weight } \mu_a &  Q(\lambda_a) = R(\lambda_a)& l(\lambda_a) \\ \hline
-  \omega_2 - (2n-2)\omega_n & -(2n-2)\omega_n & \mathrm{SU}(1,1) &  1 \\
-  \omega_p -2(n-p+l) \omega_n & \omega_{p-2l}-2(n-p+l)\omega_n & \mathrm{SO}^*(2p)\tnote{1} & 1\leq l \leq \floor{\frac{p}{2}} \\
-  \omega_{n-1} - (1+2l)\omega_n & \omega_{n-1-2l} - 2(1+l)\omega_n &  \mathrm{SO}^*(2n-2) & 1\leq l \leq \floor{\frac{n-1}{2}} \\
-  -(2l-2)\omega_n & \omega_{n-2l} - 2l\omega_n &  \mathrm{SO}^*(2n)  & 1\leq l \leq \floor{\frac{n}{2}} \\
-  \omega_1 +\omega_{q+1} - (2n-q)\omega_n & \omega_q -(2n-q)\omega_n & \mathrm{SU}(1,q)\tnote{2} & 1\\
-  \omega_1 +\omega_{n-1} - (n+1)\omega_n & \omega_{n-2} - (n+2)\omega_n &  \mathrm{SU}(1,n-2)  & 1 \\
-  \omega_1 -(n-1)\omega_n & \omega_{n-1} - n\omega_n &  \mathrm{SU}(1,n-1)  & 1
-\end{tabular}
-\smallskip
-\begin{tablenotes}
- \item [1] $3 \leq p \leq n-2$
- \item [2] $2 \leq q \leq n-3$
-\end{tablenotes}\caption{Vertices and root systems for $\mathrm{SO}^*(2n)$, $n\geq 4$}\label{tbl:so_star}
-\end{threeparttable}
-}
-\end{center}
-Let $a=(Q,R,l)$, $Q=R$. Then for $R=\mathrm{SO}^*(2p)$, $3\leq p\leq n$
-\[
- C_a = \{a_p\omega_p+\cdots + a_n\omega_n \,|\, a_n = -2a_p - \cdots -2a_{n-2} - a_{n-1}\}
-\]
-and for  $R=\mathrm{SU}(1,q)$, $1\leq q \leq n-1$
-\[
- C_a = \{a_1\omega_1 + a_{q+1}\omega_{q+1} + \cdots + a_n\omega_n \,|\, a_n = -(a_1 + 2a_{q+1} + \cdots + 2a_{n-2} + a_{n-1})\}.
-\]
-\subsubsection{Nilpotent cohomology in detail}
-\begin{enumerate}
- \item $\lambda =  \omega_2 - (2n-2)\omega_n $\\
-  \[
-   \Psi^+_\lambda = \emptyset, \quad \roots^+_{n,\lambda} = \{ \epsilon_1 + \epsilon_2 \}
-  \]
- \item $\lambda = \omega_p -2(n-p+l) \omega_n$, $3\leq p \leq n-2$, $1\leq l \leq \floor{\frac{p}{2}}$\\
-  \begin{align*}
-   \Psi^+_\lambda & = \{ \epsilon_i + \epsilon_{2(p-l)+1-i} \,|\, \max\{1,1+2(p-l)-n\} \leq i < p-2l+1 \} \cup \\ &\qquad \{ \epsilon_i + \epsilon_{2(p-l)+2-i} \,|\, p-2l+2 \leq i < p-l+1 \}
-  \end{align*}
-  \begin{align*}
-	M_\lambda &= \{1, \ldots,\max\{0,2(p-l)-n\}, p-2l+1, p-l+1  \} \\
-    \roots^+_{n,\lambda} &= \{ \epsilon_i + \epsilon_j \,|\,  i,j \in M_\lambda \et i < j \}
-  \end{align*}
- \item $\lambda = \omega_{n-1} - (1+2l)\omega_n  $, $  1\leq l \leq \floor{\frac{n-1}{2}}$  \\
-  \begin{enumerate}
-   \item $n$ is odd and $l=\frac{n-1}{2}$\\
-    \[
-      \Psi^+_\lambda = \Big\{\epsilon_i + \epsilon_{n+1-i} \,\big|\, 1<i< \frac{n+1}{2} \Big\}
-    \]
-    \[
-      \roots^+_{n,\lambda} = \left\{ \epsilon_1 + \epsilon_{\frac{n+1}{2}} \right\}
-    \]
-   \item $n$ even or $n$ odd and $l < \frac{n-1}{2}$\\
-    \[
-      \Psi^+_\lambda = \{\epsilon_i + \epsilon_{2(n-l)-i} \,|\, n-2l<i<n-l \} \cup \{ \epsilon_{n-2l-1} + \epsilon_n \}
-    \]
-    \[
-      \roots^+_{n,\lambda} = \{ \epsilon_i + \epsilon_j \,|\, i < j \et i,j\in \{1,\ldots,n-2l-2,n-2l,n-l\} \}
-    \]
-  \end{enumerate}  
- \item $\lambda = -(2l-2)\omega_n $, $ 1\leq l \leq \floor{\frac{n}{2}} $\\
- \[
-  \Psi^+_\lambda = \{ \epsilon_i + \epsilon_{2(n-l+1)-i} \,|\, n + 2(1-l) \leq i \leq n-l  \} 
- \]
- \[
-  \roots^+_{n,\lambda} =  \{ \epsilon_i + \epsilon_j \,|\, i < j \et i,j \in \{ 1,\ldots, n-2l+1,n-l+1 \} \}
- \] 
- \item $\lambda =  \omega_1 +\omega_{q+1} - (2n-q)\omega_n$, $ 2\leq q \leq n-3$\\
-  \[
-   \Psi^+_\lambda = \Big\{ \epsilon_i + \epsilon_{2+q-i} \,\big|\, 1 < i < \frac{q}{2}+1 \Big\}
-  \]
-  \[
-   \roots^+_{n,\lambda} = \begin{cases}
-                           \{ \epsilon_1 + \epsilon_{q+1}  \}, & q \text{ is odd}\\
-                           \big\{ \epsilon_1 + \epsilon_{q+1}, \epsilon_1 + \epsilon_{\frac{q}{2}+1}   \big\}, & q \text{ is even}
-                          \end{cases}
-  \]  
- \item $\lambda = \omega_1 +\omega_{n-1} - (n+1)\omega_n $\\
-  \[
-   \Psi^+_\lambda = \Big\{ \epsilon_i + \epsilon_{n-i} \,\big|\, 1 < i < \frac{n}{2}\Big\}, \quad 
-   \roots^+_{n,\lambda} = \begin{cases}
-				\{\epsilon_1 + \epsilon_{n-1} \}, & n \text{ is odd} \\
-				\{\epsilon_1 + \epsilon_{n-1}, \epsilon_1 + \epsilon_{\frac{n}{2}} \}, & n \text{ is even}
-			  \end{cases}
-  \]  
- \item $\lambda = \omega_1 -(n-1)\omega_n $\\
- \[
-   \Psi^+_\lambda = \Big\{\epsilon_i + \epsilon_{n+1-i} \,\big|\, 1 < i < \frac{n+1}{2} \Big\}
- \]
- \[
-   \roots^+_{n,\lambda} = \begin{cases}
-				\{\epsilon_1 + \epsilon_n \}, & n \text{ is even} \\
-				\{\epsilon_1 + \epsilon_n, \epsilon_1 + \epsilon_{\frac{n+1}{2}} \}, & n \text{ is odd}
-			  \end{cases}
-  \]
-\end{enumerate}
-
-\begin{figure}[H]
-  \centering
-  \input{diagrams/nroots_D5_5.tikz} 
-	\input{diagrams/bruhat_D5_5.tikz} 
-  \caption{Poset of noncompact roots and the BGG graph for $\mathrm{SO}^*(10)$}
-\end{figure} 
-
-
-% CONFORMAL EVEN
-
+%% COHOMOLOGY SO
+%\subsection[SO*(2n)]{$\mathrm{SO}^*(2n) \sim D_n, n\geq 4$}
+%\inserttikzfigure{diagrams/dynkin_Dn_n.tikz}{Marked Dynkin diagram for $\mathrm{SO}^*(2n)$}
+%\begin{center}
+%\resizebox{\textwidth}{!}{
+%\begin{threeparttable}
+%\begin{tabular}{CCCCC}
+%  \text{Vertex } \lambda_a & \text{Weight } \mu_a &  Q(\lambda_a) = R(\lambda_a)& l(\lambda_a) \\ \hline
+%  \omega_2 - (2n-2)\omega_n & -(2n-2)\omega_n & \mathrm{SU}(1,1) &  1 \\
+%  \omega_p -2(n-p+l) \omega_n & \omega_{p-2l}-2(n-p+l)\omega_n & \mathrm{SO}^*(2p)\tnote{1} & 1\leq l \leq \floor{\frac{p}{2}} \\
+%  \omega_{n-1} - (1+2l)\omega_n & \omega_{n-1-2l} - 2(1+l)\omega_n &  \mathrm{SO}^*(2n-2) & 1\leq l \leq \floor{\frac{n-1}{2}} \\
+%  -(2l-2)\omega_n & \omega_{n-2l} - 2l\omega_n &  \mathrm{SO}^*(2n)  & 1\leq l \leq \floor{\frac{n}{2}} \\
+%  \omega_1 +\omega_{q+1} - (2n-q)\omega_n & \omega_q -(2n-q)\omega_n & \mathrm{SU}(1,q)\tnote{2} & 1\\
+%  \omega_1 +\omega_{n-1} - (n+1)\omega_n & \omega_{n-2} - (n+2)\omega_n &  \mathrm{SU}(1,n-2)  & 1 \\
+%  \omega_1 -(n-1)\omega_n & \omega_{n-1} - n\omega_n &  \mathrm{SU}(1,n-1)  & 1
+%\end{tabular}
+%\smallskip
+%\begin{tablenotes}
+% \item [1] $3 \leq p \leq n-2$
+% \item [2] $2 \leq q \leq n-3$
+%\end{tablenotes}\caption{Vertices and root systems for $\mathrm{SO}^*(2n)$, $n\geq 4$}\label{tbl:so_star}
+%\end{threeparttable}
+%}
+%\end{center}
+%Let $a=(Q,R,l)$, $Q=R$. Then for $R=\mathrm{SO}^*(2p)$, $3\leq p\leq n$
+%\[
+% C_a = \{a_p\omega_p+\cdots + a_n\omega_n \,|\, a_n = -2a_p - \cdots -2a_{n-2} - a_{n-1}\}
+%\]
+%and for  $R=\mathrm{SU}(1,q)$, $1\leq q \leq n-1$
+%\[
+% C_a = \{a_1\omega_1 + a_{q+1}\omega_{q+1} + \cdots + a_n\omega_n \,|\, a_n = -(a_1 + 2a_{q+1} + \cdots + 2a_{n-2} + a_{n-1})\}.
+%\]
+%\subsubsection{Nilpotent cohomology in detail}
+%\begin{enumerate}
+% \item $\lambda =  \omega_2 - (2n-2)\omega_n $\\
+%  \[
+%   \Psi^+_\lambda = \emptyset, \quad \roots^+_{n,\lambda} = \{ \epsilon_1 + \epsilon_2 \}
+%  \]
+% \item $\lambda = \omega_p -2(n-p+l) \omega_n$, $3\leq p \leq n-2$, $1\leq l \leq \floor{\frac{p}{2}}$\\
+%  \begin{align*}
+%   \Psi^+_\lambda & = \{ \epsilon_i + \epsilon_{2(p-l)+1-i} \,|\, \max\{1,1+2(p-l)-n\} \leq i < p-2l+1 \} \cup \\ &\qquad \{ \epsilon_i + \epsilon_{2(p-l)+2-i} \,|\, p-2l+2 \leq i < p-l+1 \}
+%  \end{align*}
+%  \begin{align*}
+%	M_\lambda &= \{1, \ldots,\max\{0,2(p-l)-n\}, p-2l+1, p-l+1  \} \\
+%    \roots^+_{n,\lambda} &= \{ \epsilon_i + \epsilon_j \,|\,  i,j \in M_\lambda \et i < j \}
+%  \end{align*}
+% \item $\lambda = \omega_{n-1} - (1+2l)\omega_n  $, $  1\leq l \leq \floor{\frac{n-1}{2}}$  \\
+%  \begin{enumerate}
+%   \item $n$ is odd and $l=\frac{n-1}{2}$\\
+%    \[
+%      \Psi^+_\lambda = \Big\{\epsilon_i + \epsilon_{n+1-i} \,\big|\, 1<i< \frac{n+1}{2} \Big\}
+%    \]
+%    \[
+%      \roots^+_{n,\lambda} = \left\{ \epsilon_1 + \epsilon_{\frac{n+1}{2}} \right\}
+%    \]
+%   \item $n$ even or $n$ odd and $l < \frac{n-1}{2}$\\
+%    \[
+%      \Psi^+_\lambda = \{\epsilon_i + \epsilon_{2(n-l)-i} \,|\, n-2l<i<n-l \} \cup \{ \epsilon_{n-2l-1} + \epsilon_n \}
+%    \]
+%    \[
+%      \roots^+_{n,\lambda} = \{ \epsilon_i + \epsilon_j \,|\, i < j \et i,j\in \{1,\ldots,n-2l-2,n-2l,n-l\} \}
+%    \]
+%  \end{enumerate}  
+% \item $\lambda = -(2l-2)\omega_n $, $ 1\leq l \leq \floor{\frac{n}{2}} $\\
+% \[
+%  \Psi^+_\lambda = \{ \epsilon_i + \epsilon_{2(n-l+1)-i} \,|\, n + 2(1-l) \leq i \leq n-l  \} 
+% \]
+% \[
+%  \roots^+_{n,\lambda} =  \{ \epsilon_i + \epsilon_j \,|\, i < j \et i,j \in \{ 1,\ldots, n-2l+1,n-l+1 \} \}
+% \] 
+% \item $\lambda =  \omega_1 +\omega_{q+1} - (2n-q)\omega_n$, $ 2\leq q \leq n-3$\\
+%  \[
+%   \Psi^+_\lambda = \Big\{ \epsilon_i + \epsilon_{2+q-i} \,\big|\, 1 < i < \frac{q}{2}+1 \Big\}
+%  \]
+%  \[
+%   \roots^+_{n,\lambda} = \begin{cases}
+%                           \{ \epsilon_1 + \epsilon_{q+1}  \}, & q \text{ is odd}\\
+%                           \big\{ \epsilon_1 + \epsilon_{q+1}, \epsilon_1 + \epsilon_{\frac{q}{2}+1}   \big\}, & q \text{ is even}
+%                          \end{cases}
+%  \]  
+% \item $\lambda = \omega_1 +\omega_{n-1} - (n+1)\omega_n $\\
+%  \[
+%   \Psi^+_\lambda = \Big\{ \epsilon_i + \epsilon_{n-i} \,\big|\, 1 < i < \frac{n}{2}\Big\}, \quad 
+%   \roots^+_{n,\lambda} = \begin{cases}
+%				\{\epsilon_1 + \epsilon_{n-1} \}, & n \text{ is odd} \\
+%				\{\epsilon_1 + \epsilon_{n-1}, \epsilon_1 + \epsilon_{\frac{n}{2}} \}, & n \text{ is even}
+%			  \end{cases}
+%  \]  
+% \item $\lambda = \omega_1 -(n-1)\omega_n $\\
+% \[
+%   \Psi^+_\lambda = \Big\{\epsilon_i + \epsilon_{n+1-i} \,\big|\, 1 < i < \frac{n+1}{2} \Big\}
+% \]
+% \[
+%   \roots^+_{n,\lambda} = \begin{cases}
+%				\{\epsilon_1 + \epsilon_n \}, & n \text{ is even} \\
+%				\{\epsilon_1 + \epsilon_n, \epsilon_1 + \epsilon_{\frac{n+1}{2}} \}, & n \text{ is odd}
+%			  \end{cases}
+%  \]
+%\end{enumerate}
+%
+%\begin{figure}[H]
+%  \centering
+%  \input{diagrams/nroots_D5_5.tikz} 
+%	\input{diagrams/bruhat_D5_5.tikz} 
+%  \caption{Poset of noncompact roots and the BGG graph for $\mathrm{SO}^*(10)$}
+%\end{figure} 
+%
+%
+%% CONFORMAL EVEN
+%
+%
 
 \subsection[SO(2,2n-2)]{$\mathrm{SO}(2,2n-2) \sim D_n, n\geq 3$}\label{sec:conf_even}
 \inserttikzfigure{diagrams/dynkin_Dn_1.tikz}{Marked Dynkin diagram for $\mathrm{SO}(2,2n-2)$}
@@ -1291,7 +1248,7 @@ The generated root subsystem of $\roots$ is
 \[\Psi^+_\lambda = \{ \epsilon_1 - \epsilon_{n-1} \}, \qquad \roots^+_{n,\lambda} = \{ \epsilon_1 + \epsilon_{n-1} \}\] It  follows that the generated root system is of type $A_1$ and all the information on cohomology is already contained in the table \ref{tbl:so_even}. 
  \item $ \lambda = 0$\\
 \[\Psi_\lambda = \emptyset, \qquad \roots^+_{n,\lambda} = \roots^+_n\]
-In this case we generate the whole original root system and thus the cohomology is in this case computed by the orginial Kostant's formula.   
+In this case we generate the whole original root system and thus the cohomology is in this case computed by the original Kostant's formula.   
  \item $ \lambda = -(n-1)\omega_1  + \omega_{n-1}$\\
 \[ \Psi^+_\lambda = \{\epsilon_1 +\epsilon_n \}, \qquad \roots^+_{n,\lambda} = \{\epsilon_1 - \epsilon_n \}\]
  This generates the roots subsystem of type $A_1$ and all the cohomology information is contained in table \ref{tbl:so_even}. The integral cone is in this case \[C = \{x(-\omega_1 + \omega_{n-1}) \,|\, x\in\mathbb{N}_0 \}\] and one for $\mu  \in C$, $\mu = -x\omega_1 + x\omega_{n-1}$ one has
@@ -1469,7 +1426,7 @@ In this case we generate the whole original root system and thus the cohomology 
 \chapter*{Conclusion}
 \addcontentsline{toc}{chapter}{Conclusion}
 
-We have calculated cohomology of all unitarziable weights in the conformal Hermitian symmetric case and obtained partial results in the remaining ones. We found explicit singular vectors in some cases and we have shown in general that these modules give rise to sequences of differential operators similarly to finite-dimensional $\lie{g}$ representations. The formula for cohomology of unitarizable weights is based on certain equivalence of categories that transports the results from the finite-dimensional representations to the unitarizable ones. What does one obtain by transporting unitarizable modules from the smaller rank? 
+We have calculated cohomology of all unitarziable weights in the conformal Hermitian symmetric case and obtained partial results in the remaining ones. We found explicit singular vectors in some cases and we have shown in general that these modules give rise to sequences of differential operators similarly to finite-dimensional $\lie{g}$ representations. The formula for cohomology of unitarizable weights is based on certain equivalence of categories that transports the results from the finite-dimensional representations to the unitarizable ones. Of course, a natural question is what one would obtain by transporting BGG resolutions of unitarizable modules from smaller rank.
 
 The class of modules for which there exists the BGG resolution (in the flat case) is strictly bigger than the class of unitarizable highest weight modules. It is not clear whether there are curved analogues for these nonunitarizable Kostant modules. Another natural question is whether our modification of the Calderbank--Diemer construction works also for some other globalization apart from the formal one. And of course, having explicit expression for these operators is also highly desirable. 
 
@@ -1477,4 +1434,17 @@ We have made some progress towards elementary description of the smaller of the 
 
 \addcontentsline{toc}{chapter}{Bibliography}
 \printbibliography
+
+\chapter*{Publications}
+
+\fullcite{pazourek_hyperplane_2011}
+
+\bigskip
+
+\noindent\fullcite{tucek_construction_2011}
+
+\bigskip
+
+\noindent\fullcite{tucek_yamabe_2012}
+
 \end{document}
