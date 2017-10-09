@@ -25,7 +25,7 @@
 
 \usepackage{booktabs} % improved horizontal lines in tables
 
-\usepackage[justification=centering]{caption} % center multiline captions or e.g. [format=hang]
+%\usepackage[justification=centering]{caption} % center multiline captions or e.g. [format=hang]
 
 
 
@@ -42,7 +42,8 @@
 \input{pres_definitions}
 
 
-\usepackage{threeparttable,array}
+\usepackage{threeparttable}
+\usepackage{array}
 
 \newcolumntype{C}{>{$\displaystyle}c <{$}}
 
@@ -121,7 +122,11 @@
 \begin{itemize}%[<+- | alert@+>]
 \item Compact symmetric space $H/K$ is called a Hermitian symmetric space if it admits $H$-invariant complex structure
 \item $H/K \simeq G/P$ where $G$ is a complexification of $H$ and $P$ is a parabolic subgroup with \emph{abelian} radical
-\item The Levi part of $P$ is complexification of the maximal compact subgroup $K$
+\item  Levi part of $P$ is complexification of the maximal compact subgroup $K$
+\item compact roots $\Phi_c$ \et noncompact roots $\Phi_n$ \\
+      \begin{center}
+       $\lie{g} = \lie{p}_- \oplus \lie{k} \oplus \lie{p}_+, \quad \lie{p} = \lie{k} \oplus \lie{p}_+$
+      \end{center}
 %\item The noncompact dual $H^*$ is given on the level of Lie algebras by $\lie{h}^* = \lie{k} \oplus \imath \lie{m}$ where $\lie{h} = \lie{k} \oplus \lie{m}$
 %\item Borel embedding $H^*/K \hookrightarrow G/P$
 %\item Harish-Chandra embedding $H^*/K \hookrightarrow \lie{m}_+$ where $\lie{m}_+$ is the nilradical of $\lie{p}$
@@ -191,20 +196,20 @@ $
 
 \begin{frame}{Invariant differential operators}
 \begin{itemize}[<+- | alert@+>]
-	\item For a homogeneous space $G/H$, $H$-representation $\mathbb{V}$ the associated homogeneous bundle is $\mathcal{V} = G \times_H \mathbb{V} \to G/H$
+	\item For a homogeneous space $G/P$, $P$-representation $\mathbb{V}$ the associated homogeneous bundle is $\mathcal{V} = G \times_P \mathbb{V} \to G/P$
 	\item \emph{invariant differential operators} between sections of two such bundles $\mathcal{V}$ and $\mathcal{W}$ must respect natural induced actions of $G$
 	\begin{gather*}
-\mathcal{D} \colon \Gamma^\infty(G/H, \mathcal{V}) \to \Gamma^\infty(G/H, \mathcal{W}) \\
+\mathcal{D} \colon \Gamma^\infty(G/P, \mathcal{V}) \to \Gamma^\infty(G/P, \mathcal{W}) \\
 \mathcal{D} \circ \widetilde{\rho_\mathbb{V}} =  \widetilde{\rho_\mathbb{W}} \circ \mathcal{D}.
 \end{gather*}
 \item (linear) differential operator $\mathcal{D}$ of order $k$ is given by a linear map from the $k$-th jet prolongation 
 \[
-D\colon \Gamma^\infty(G/H,\mathcal{J}^k \mathcal{V}) \to \Gamma^\infty(G/H, \mathcal{W})
+D\colon \Gamma^\infty(G/P,\mathcal{J}^k \mathcal{V}) \to \Gamma^\infty(G/P, \mathcal{W})
 \]
 \item From invariance we equivalently have homomorphism $J^k \mathbb{V} \to \mathbb{W},$ where  $J^k \mathbb{V}$ denotes the algebraic jet prolongation of $\mathbb{V}.$
 \item Passing to dual maps and taking the limit $k \to \infty$ we get 
 \[
-\Hom_{\mathfrak{h}}\left(\mathbb{W}^*, \, \mathfrak{U(g)\otimes_{U(h)}}\mathbb{V}^*\right) \simeq \Hom_{\mathfrak{g}}\left(\mathfrak{U(g)\otimes_{U(h)}}\mathbb{W}^*, \, \mathfrak{U(g)\otimes_{U(h)}}\mathbb{V}^*\right)
+\Hom_{\mathfrak{p}}\left(\mathbb{W}^*, \, \mathfrak{U(g)\otimes_{U(p)}}\mathbb{V}^*\right) \simeq \Hom_{\mathfrak{g}}\left(\mathfrak{U(g)\otimes_{U(p)}}\mathbb{W}^*, \, \mathfrak{U(g)\otimes_{U(p)}}\mathbb{V}^*\right)
 \]
 \end{itemize}
  
@@ -213,37 +218,42 @@ D\colon \Gamma^\infty(G/H,\mathcal{J}^k \mathcal{V}) \to \Gamma^\infty(G/H, \mat
 
 
 \begin{frame}{Invariant differential operators}
-\begin{itemize}
-	\item Classification in the homogeneous case $G/P$
-	\item Natural extension to Cartan geometries modelled on $(G, P)$
+\begin{itemize}[<+- | alert@+>]
+\item Classification in the homogeneous case $G/P$\\
+ $\rightsquigarrow$ homomorphisms (resolutions) of parabolic Verma modules \\
+ \begin{center}
+ $M(\lambda) = \mathfrak{U(g)\otimes_{U(p)}}\mathbb{F}_\lambda$
+ \end{center}
+\item $H^i(\lie{p}_+, L) = H_i(\lie{p}_-, L) = \mathrm{Tor}_i^{\lie{p}_-}(\mathbb{C}, L)$ \et Vermas are $\lie{p}_-$-free
+\item Natural extension to Cartan geometries modelled on $(G, P)$\\
+ $\rightsquigarrow$ splitting operators for bundles associated to nilpotent Lie algebra cohomology
 \end{itemize}
 \end{frame}
 
-%\begin{frame}{Calderbank--Diemer construction}
-%\begin{itemize}[<+- | alert@+>]
-	%\item Certain Neumann series has to converge $\rightsquigarrow$ formal globalization
-	%\item formal globalization has a well defined $P$-action\\ \hspace{1cm} $\rightsquigarrow$ highest / lowest weight
-	%\item operator in the Neumann series constructed using Kostant's Hodge decomposition $\rightsquigarrow$ unitarizable modules
-%\end{itemize}
-%\end{frame}
 
 
 \section{Unitarizable highest weight modules}
 %
 
 \begin{frame}{Classification}
-\begin{itemize}[<+- | alert@+>]
-	\item Exists only for the Hermitian symmetric pairs. 
-	\item Given by the simple quotient $L(\lambda)$ of a parabolic Verma module $M(\lambda) = \mathfrak{U(g)\otimes_{U(p)}}\mathbb{F}_\lambda$
+\begin{itemize}
+	\item Exist only for the Hermitian symmetric pairs. 
+	\item Given by the simple quotient $L(\lambda)$ of $M(\lambda)$
 	\item Hermitian product given by the \emph{Shapovalov form}
 \end{itemize}
 \end{frame}
 
 \begin{frame}{Classification --- continued}
-\begin{itemize}[<+- | alert@+>]
-\item fixing the center of $\lie{k}$ by  $\frac{2 \langle \zeta,\beta \rangle}{\langle \beta, \beta \rangle} = 1$ we can write any weight $\lambda$ uniquely as $\lambda = \lambda_0 + z \zeta$ with  $\langle \lambda_0 + \rho,\beta \rangle = 0$
-	\item the set of $z \in \mathbb{C}$ for which the simple factor of Verma module $L(\lambda)$ is unitarizable:
+$\beta$ \ldots maximal non-compact root
+
+any weight $\lambda \in \lie{h}^*$ can be written uniquely as $\lambda = \lambda_0 + z \zeta$ where $\langle \zeta, \beta^\vee \rangle = 1$ \et $\langle \lambda_0 + \rho,\beta \rangle = 0$
+
+ %fixing the center of $\lie{k}$ pick $zeta$ such that  $\frac{2 \langle \zeta,\beta \rangle}{\langle \beta, \beta \rangle} = 1$ we can write any weight $\lambda$ uniquely as $\lambda = \lambda_0 + z \zeta$ with  $\langle \lambda_0 + \rho,\beta \rangle = 0$
+
+\pause
+set of $z \in \mathbb{C}$ for which the simple factor of Verma module $L(\lambda)$ is unitarizable:
 	
+\begin{center}
 \begin{tikzpicture}
       \node[croot] at (2,0) [label=above:$A(\lambda_0)$] {};
       \node[croot] at (3,0) {};
@@ -252,22 +262,23 @@ D\colon \Gamma^\infty(G/H,\mathcal{J}^k \mathcal{V}) \to \Gamma^\infty(G/H, \mat
       \draw [dotted] (4,0) to (5,0);
       \draw[<->] (2,-0.5) -- (3,-0.5);
       \node at (2.5,-0.5) [label=below:$C$] {};
+      \draw (1,-0.1) -- (1, 0.1);
+      \node at (1, 0) [label=above:$0$] {};
   \end{tikzpicture}
+\end{center}
 	
 	$A(\lambda_0)$, $B(\lambda_0)$ and $C(\lambda_0)$ are real numbers expressible in terms of certain root systems $Q(\lambda_0)$ and $R(\lambda_0)$ associated to $\lambda_0$
-	
-	
+\pause	
+\vspace{-0.5cm}
 \begin{table}[h]
-\[\begin{array}{c|ccccccc}
-\lie{g} & \mathrm{SU}(p,q) & \mathrm{Sp}(n,\mathbb{R}) & \mathrm{SO}^*(2n) & \mathrm{SO}(2,2n-2) & \mathrm{SO}(2,2n-1) & \mathrm{E}_6 & \mathrm{E}_7\\\hline
-C & 1 & \frac{1}{2} & 2 & n-2 & n-\frac{3}{2} & 3 & 4
-\end{array}\]\caption{Distance between points of reducibility}\label{tbl:C}
+\[\begin{array}{c|ccccc}
+\lie{g} & \mathrm{SU}(p,q) & \mathrm{Sp}(n,\mathbb{R}) & \mathrm{SO}^*(2n) & \mathrm{SO}(2,2n-2) & \mathrm{SO}(2,2n-1) \\\hline
+C & 1 & \frac{1}{2} & 2 & n-2 & n-\frac{3}{2}
+\end{array}\]
 \end{table}
-\end{itemize}
 \end{frame}
 
-\begin{frame}
-$\beta$ \ldots maximal non-compact root
+\begin{frame}{Classification --- continued}
 	    \begin{tikzpicture} % SU(p,q) ~ A_{n-1} relative
 	\node[croot] (a1) [label=below:$\alpha_1$] {};
 	\node[croot] (a2) [right= of a1] [label=below:$\alpha_2$] {};
@@ -285,41 +296,51 @@ $\beta$ \ldots maximal non-compact root
      \end{tikzpicture}
 
 $Q(\lambda_0)$ \ldots maximal connected subdiagram containing $-\beta$ such that its every compact simple root is orthogonal to $\lambda_0$.
-\begin{theorem}[Theorem 2.8 of \cite{enright_classification_1983}]
- Let $\roots^+_{c,1} := \roots^+_c \cap Q(\lambda_0)$ and let $\roots^+_{c,2} := \roots^+_c \cap R(\lambda_0)$. Denote by $\rho_{c,i}$ half of the sum of roots in $\roots^+_{c,i}$.
- 
- If $\lie{g}_0=\lie{so}(2,2n-1)$ and $Q(\lambda_0) \neq R(\lambda_0)$ then \[B(\lambda_0) = 1 + \frac{\langle \rho_{c,2},\beta\rangle}{\langle \beta, \beta \rangle}.\]
- In all other cases \[B(\lambda_0) = 1 + \frac{ \langle \rho_{c,1} + \rho_{c,2} , \beta \rangle}{\langle \beta, \beta \rangle}.\]
-\end{theorem}
+\end{frame}
 
+\begin{frame}{Classification --- continued}
 \begin{theorem}[Theorem 2.10 of \cite{enright_classification_1983}]\label{thm:reduction_points}
  The first reduction point $A(\lambda_0)$ is given by\footnote{Or in other words, the number of reduction points equals the split rank of $Q(\lambda_0)$.}
  \[
    A(\lambda_0) = B(\lambda_0) - (\text{split rank of } Q(\lambda_0) -1) C.
  \]
 \end{theorem}
+\end{frame}
 
+\begin{frame}{Classification --- continued}
+\begin{theorem}[Theorem 2.8 of \cite{enright_classification_1983}]
+ Let $\roots^+_{c,1} := \roots^+_c \cap Q(\lambda_0)$ and let $\roots^+_{c,2} := \roots^+_c \cap R(\lambda_0)$. Denote by $\rho_{c,i}$ half of the sum of roots in $\roots^+_{c,i}$.
+ 
+ If $\lie{g}_0=\lie{so}(2,2n-1)$ and $Q(\lambda_0) \neq R(\lambda_0)$ then \[B(\lambda_0) = 1 + \frac{\langle \rho_{c,2},\beta\rangle}{\langle \beta, \beta \rangle}.\]
+ In all other cases \[B(\lambda_0) = 1 + \frac{ \langle \rho_{c,1} + \rho_{c,2} , \beta \rangle}{\langle \beta, \beta \rangle}.\]
+\end{theorem}
 \end{frame}
 
 
-\begin{frame}{Classification -- cone decomposition}
+\begin{frame}{Classification --- cone decomposition}
 
 \emph{level of reduction} \ldots \\
 $L(\lambda) = M(\lambda) / N(\lambda)$ where $N(\lambda) \subseteq M(\lambda)^k$ for $k\geq l$.
 
 For $\lambda=(B - nC)\zeta + \lambda_0 \in \Lambda_r$ we have $l(\lambda) =n+1$
 
-$a=(Q(\lambda_0), R(\lambda_0), l(\lambda_0))$ for ``reducible'' unitarizable highest weight module
+\pause
+
+$a=(Q(\lambda_0), R(\lambda_0), l(\lambda_0))$
 
 $C_a$  -- integral cone of $\lie{k}$-dominant integral elements in $\lie{h}^*_\R$ which are orthogonal to elements in $R$
 
-The set of reduction points $\Lambda_r$ is the disjoint union of translated integral cones $\lambda_a + C_a$.
+The set of reduction points $\Lambda_r$ is the disjoint union of translated integral  cones $\lambda_a + C_a$.
 
-\begin{lemma}[Section 4.3 of \cite{enright_resolutions_2004}]
+\pause
+
+\begin{lemma}
 The cone $C_{Q, R, l}$ consists of positive integral multiples of weights of the form $\omega_i - (\omega_i, \beta^\vee) \zeta,$ where $\omega_i$ is a fundamental weight corresponding to simple root $\alpha_i$ that does not belong to $R$.
 \end{lemma}
 \end{frame}
 %
+
+\section{Nilpotent cohomology}
 
 \begin{frame}{Enright's formula}
 
@@ -339,24 +360,27 @@ Let $\Psi_\lambda$ be the set of roots orthogonal to $\lambda+\rho$.
 
  Let $W_\lambda$ be the subgroup of $W$ which is generated by reflections $s_\alpha$ for $\alpha\in \roots_{n,\lambda}^+$.
 
-\pause 
 
- Let $\roots_\lambda$ be the subset of $\roots$ of elements $\beta$ with $s_\beta\in W_\lambda$ and let $\roots_{\lambda,c} = \roots_c \cap \roots_\lambda$, $\roots_{\lambda,c}^+ = \roots_{\lambda,c} \cap \roots^+$.
 
-\pause 
-
- Finally, define  $W^{c,i}_\lambda = \{ w \in W_\lambda \, |\, w \rho \text{ is } \roots^+_{\lambda, c}\text{-dominant and } l_\lambda(w)=i \}$.
 \end{definition}
 
 \end{frame}
 
 \begin{frame}{Enright's formula -- continued}
+ Let $\roots_\lambda$ be the subset of $\roots$ of elements $\beta$ with $s_\beta\in W_\lambda$ and let $\roots_{\lambda,c} = \roots_c \cap \roots_\lambda$, $\roots_{\lambda,c}^+ = \roots_{\lambda,c} \cap \roots^+$.
+
+\pause 
+
+$\roots_\lambda$ is a root subsystem and $(\roots_{\lambda,c}, \roots_{\lambda,n})$ is (\emph{reduced}) Hermitian symmetric pair
+
+\pause
+ 
 \begin{theorem}[Theorem 3.7 of \cite{davidson_differential_1991}]
  For unitarizable highest weight modules $L(\lambda)$ and for $i\in \mathbb{N}$ we have
 \begin{equation*}
  H^i(\lie{p}_+, L(\lambda))\simeq \bigoplus_{w\in W^{c,i}_\lambda} F(\overline{w(\lambda+\rho)} - \rho)
 \end{equation*}
-where  $\overline{\lambda}$ is the unique $\roots_c^+$-dominant element in the $W_c$ orbit of $\lambda$.
+where  $\overline{\lambda}$ is the unique $\roots_c^+$-dominant element in the $W_c$ orbit of $\lambda$ and  $W^{c,i}_\lambda = \{ w \in W_\lambda \, |\, w \rho \text{ is } \roots^+_{\lambda, c}\text{-dominant and } l_\lambda(w)=i \}$.
 \end{theorem}
 
 \end{frame}
@@ -374,18 +398,18 @@ The only noncompact root that is orthogonal to $\epsilon_1 -  \epsilon_{n-1}$ an
 
 Thus we get $\roots_{n,\lambda}^+ = \epsilon_1 + \epsilon_{n-1} = \roots_\lambda$. It follows that
 \begin{align*}
- H^0(\lie{p}_-,L((2-n)\omega_1)) &= F((2-n)\omega_1)\\
- H^1(\lie{p}_-,L((2-n)\omega_1)) &= F(-n\omega_1)\\
- H^i(\lie{p}_-,L((2-n)\omega_1)) &= 0 \text{ for } i\geq 2.
+ H^0(\lie{p}_+,L((2-n)\omega_1)) &= \mathbb{F}((2-n)\omega_1)\\
+ H^1(\lie{p}_+,L((2-n)\omega_1)) &= \mathbb{F}(-n\omega_1)\\
+ H^i(\lie{p}_+,L((2-n)\omega_1)) &= 0 \text{ for } i\geq 2.
 \end{align*} 
 \end{frame}
 
 \begin{frame}{Example -- nilpotent cohomology for $ \lie{so}(2,2n-1)$}
 Similarly for $\lie{g} = \lie{so}(2,2n-1)$ and $\lambda = (3/2 - n)\omega_1$ and we get that in that case
 \begin{align*}
- H^0(\lie{p}_-,L((3/2-n)\omega_1)) &= F((3/2-n)\omega_1)\\
- H^1(\lie{p}_-,L((3/2-n)\omega_1)) &= F((-1/2-n)\omega_1)\\
- H^i(\lie{p}_-,L((3/2-n)\omega_1)) &= 0 \text{ for } i\geq 2.
+ H^0(\lie{p}_+,L((3/2-n)\omega_1)) &= \mathbb{F}((3/2-n)\omega_1)\\
+ H^1(\lie{p}_+,L((3/2-n)\omega_1)) &= \mathbb{F}((-1/2-n)\omega_1)\\
+ H^i(\lie{p}_+,L((3/2-n)\omega_1)) &= 0 \text{ for } i\geq 2.
 \end{align*}
 \end{frame}
 %
@@ -437,11 +461,12 @@ Similarly for $\lie{g} = \lie{so}(2,2n-1)$ and $\lambda = (3/2 - n)\omega_1$ and
 	\draw (a4) to (a5) to (a6);
      \end{tikzpicture} 
 \end{tablenotes}
-\caption{Vertices and root systems for $\mathrm{SO}(2,2n-2)$, $n\geq 3$}\label{tbl:so_even}
 \end{threeparttable}\end{center}
 \end{frame}
 
-\begin{frame}{$\lambda =  -(2n-p-1)\omega_1+\omega_{p+1}$}
+\begin{frame}[allowframebreaks]{$\lambda =  (A - a_{n-1} - a_{n} - 2n + p + 1)\omega_1+(a_{p+1}+1)\omega_{p+1} + \sum_{i=p+2}^n a_i \omega_i$}
+
+ 
 \begin{tikzpicture}
 \draw (0 cm,0) -- (6 cm,0);
 \draw (8 cm,0) -- (10 cm,0);
@@ -453,19 +478,27 @@ Similarly for $\lie{g} = \lie{so}(2,2n-1)$ and $\lambda = (3/2 - n)\omega_1$ and
 \draw[fill=black] (10 cm, 0 cm) circle (.1cm) node[below=4pt]{$\epsilon_{2} - \epsilon_{3}$};
 \draw [dotted] (node_a) to (node_b);
 \end{tikzpicture}  
-	\begin{tikzpicture}[>=latex,line join=bevel,]
+
+\pagebreak
+
+\begin{center}
+ \[
+ A = -2(a_{p+1} + \cdots + a_{n-2})
+ \]
+ 
+	\begin{tikzpicture}[>=latex,line join=bevel,scale=1, every node/.style={transform shape}]
 
   \node (node_0) at (0,10) [draw,draw=none] {$\left(A - a_{n-1} - a_{n} - 2n + p + 1,\,0,\,0,\ldots,\,0,\,0,\,a_{p+1}+1,\,a_{p+2},\ldots,\,a_{n}\right)$};
 
-  \node (node_1) at (0,8) [draw,draw=none] {$\left(A - a_{n-1} - a_{n} - 2n + p,\,0,\,0,\ldots,\,0,\,1,\,a_{p+1},\,a_{p+2},\ldots,\,a_{n}\right)$};
+  \node (node_1) at (0,9) [draw,draw=none] {$\left(A - a_{n-1} - a_{n} - 2n + p,\,0,\,0,\ldots,\,0,\,1,\,a_{p+1},\,a_{p+2},\ldots,\,a_{n}\right)$};
 
-  \node (node_2) at (0,6) [draw,draw=none] {$\left(A - a_{n-1} - a_{n} - 2n + p-1,\,0,\,0,\ldots,\,1,\,0,\,a_{p+1},\,a_{p+2},\ldots,\,a_{n}\right)$};
+  \node (node_2) at (0,8) [draw,draw=none] {$\left(A - a_{n-1} - a_{n} - 2n + p-1,\,0,\,0,\ldots,\,1,\,0,\,a_{p+1},\,a_{p+2},\ldots,\,a_{n}\right)$};
 
-  \node (node_3) at (0,4) [draw,draw=none] {$\left(A - a_{n-1} - a_{n} - 2n + 1,\,0,\,1,\ldots,\,0,\,0,\,a_{p+1},\,a_{p+2},\ldots,\,a_{n}\right)$};
+  \node (node_3) at (0,7) [draw,draw=none] {$\left(A - a_{n-1} - a_{n} - 2n + 1,\,0,\,1,\ldots,\,0,\,0,\,a_{p+1},\,a_{p+2},\ldots,\,a_{n}\right)$};
 
-  \node (node_4) at (0,2) [draw,draw=none] {$\left(A - a_{n-1} - a_{n} - 2n + 2,\,1,\,0,\ldots,\,0,\,0,\,a_{p+1},\,a_{p+2},\ldots,\,a_{n}\right)$};
+  \node (node_4) at (0,6) [draw,draw=none] {$\left(A - a_{n-1} - a_{n} - 2n + 2,\,1,\,0,\ldots,\,0,\,0,\,a_{p+1},\,a_{p+2},\ldots,\,a_{n}\right)$};
   
-  \node (node_5) at (0,0) [draw,draw=none] {$\left(A - a_{n-1} - a_{n} - 2n +2,\,0,\,0,\ldots,\,0,\,0,\,a_{p+1},\,a_{p+2},\ldots,\,a_{n}\right)$};
+  \node (node_5) at (0,5) [draw,draw=none] {$\left(A - a_{n-1} - a_{n} - 2n +2,\,0,\,0,\ldots,\,0,\,0,\,a_{p+1},\,a_{p+2},\ldots,\,a_{n}\right)$};
 
   \draw [black,->] (node_0) edge (node_1);
   \draw [black,->] (node_1) edge (node_2);
@@ -474,11 +507,15 @@ Similarly for $\lie{g} = \lie{so}(2,2n-1)$ and $\lambda = (3/2 - n)\omega_1$ and
   \draw [black,->] (node_4) edge (node_5);
 %
 \end{tikzpicture}
-  Nilpotent cohomology / BGG resolution, $A = -2(a_{p+1} + \cdots + a_{n-2})$
+\end{center}
+  
 \end{frame}
 
 \begin{frame}{$\lambda = -(a+b+n+1)\omega_1 + (a+1)\omega_{n-1} + (b+1)\omega_n$}
 \begin{tikzpicture}
+
+
+
 \draw (0 cm,0) -- (6 cm,0);
 \draw (8 cm,0) -- (10 cm,0);
 \draw[fill=white] (0 cm, 0 cm) circle (.1cm) node[below=4pt]{$\epsilon_{1} + \epsilon_{n-1}$};
@@ -489,19 +526,22 @@ Similarly for $\lie{g} = \lie{so}(2,2n-1)$ and $\lambda = (3/2 - n)\omega_1$ and
 \draw[fill=black] (10 cm, 0 cm) circle (.1cm) node[below=4pt]{$\epsilon_{2} - \epsilon_{3}$};
 \draw [dotted] (node_a) to (node_b);
 \end{tikzpicture}  
-\begin{tikzpicture}[>=latex,line join=bevel,]
+
+\begin{center}
+
+\begin{tikzpicture}[>=latex,line join=bevel,scale=1, every node/.style={transform shape}]
 
   \node (node_0) at (0,10) [draw,draw=none] {$\left(-(a+b+n+1), 0, 0, \ldots, 0, 0, a+1, b+1 \right)$};
 
-  \node (node_1) at (0,8) [draw,draw=none] {$\left(-(a+b+n+2), 0, 0, \ldots, 0, 1, a, b \right)$};
+  \node (node_1) at (0,9) [draw,draw=none] {$\left(-(a+b+n+2), 0, 0, \ldots, 0, 1, a, b \right)$};
 
-  \node (node_2) at (0,6) [draw,draw=none] {$\left(-(a+b+n+3), 0, 0, \ldots, 1, 0, a, b \right)$};
+  \node (node_2) at (0,8) [draw,draw=none] {$\left(-(a+b+n+3), 0, 0, \ldots, 1, 0, a, b \right)$};
 
-  \node (node_3) at (0,4) [draw,draw=none] {$\left(-(a+b+2n-3), 0, 1, \ldots, 0, 0, a, b \right)$};
+  \node (node_3) at (0,7) [draw,draw=none] {$\left(-(a+b+2n-3), 0, 1, \ldots, 0, 0, a, b \right)$};
 
-  \node (node_4) at (0,2) [draw,draw=none] {$\left(-(a+b+2n-2), 1, 0, \ldots, 0, 0, a, b \right)$};
+  \node (node_4) at (0,6) [draw,draw=none] {$\left(-(a+b+2n-2), 1, 0, \ldots, 0, 0, a, b \right)$};
   
-  \node (node_5) at (0,0) [draw,draw=none] {$\left(-(a+b+2n-2), 0, 0, \ldots, 0, 0, a, b \right)$};
+  \node (node_5) at (0,5) [draw,draw=none] {$\left(-(a+b+2n-2), 0, 0, \ldots, 0, 0, a, b \right)$};
 
   \draw [black,->] (node_0) edge (node_1);
   \draw [black,->] (node_1) edge (node_2);
@@ -510,18 +550,21 @@ Similarly for $\lie{g} = \lie{so}(2,2n-1)$ and $\lambda = (3/2 - n)\omega_1$ and
   \draw [black,->] (node_4) edge (node_5);
 %
 \end{tikzpicture}
+\end{center}
 	
 \end{frame}
 
 \begin{frame}{$\lambda = -(t+n-1)\omega_1 + (t+1)\omega_n$}
-For $t=0$ we obtain set of singular roots $\Psi^+_\lambda = \{ \epsilon_1-\epsilon_n\}$ and set generating roots $\roots^+_{n,\lambda} = \{ \epsilon_1 + \epsilon_n \}$. This gives the subsystem of type $A_1$
+For $t=0$ we obtain set of singular roots $\Psi^+_\lambda = \{ \epsilon_1-\epsilon_n\}$ and the set of generating roots $\roots^+_{n,\lambda} = \{ \epsilon_1 + \epsilon_n \}$. This gives the subsystem of type $A_1$
   \[
    \roots_\lambda = \{ \epsilon_1 + \epsilon_n, -\epsilon_1 - \epsilon_n\}
   \]
-  and the resulting weights for nontrivial cohomology groups are all in the table \ref{tbl:so_even}. 
+  and the only nontrivial cohomology is in degree $1$ with weight $-n\omega_1 + \omega_{n-1}$. 
+\end{frame}
+
+\begin{frame}{$\lambda = -(t+n-1)\omega_1 + (t+1)\omega_n$}
   
   For $t\geq 1$ we get no singular roots $\Psi^+_\lambda = \emptyset$ and the generated subsystem is of type $A_{n-1}.$
-	
 	
 	\begin{tikzpicture}
 \draw (0 cm,0) -- (6 cm,0);
@@ -534,17 +577,20 @@ For $t=0$ we obtain set of singular roots $\Psi^+_\lambda = \{ \epsilon_1-\epsil
 \draw[fill=black] (10 cm, 0 cm) circle (.1cm) node[below=4pt]{$\epsilon_{2} - \epsilon_{3}$};
 \draw [dotted] (node_a) to (node_b);
 \end{tikzpicture}  
-  {The reduced Hermitian symmetric pair for $\lambda = -(n-1)\omega_1 + \omega_n$}
 
+\end{frame}
 
-\begin{tikzpicture}[>=latex,line join=bevel,]
+\begin{frame}{$\lambda = -(t+n-1)\omega_1 + (t+1)\omega_n$}
+\begin{center}
+
+\begin{tikzpicture}[>=latex,line join=bevel,scale=1, every node/.style={transform shape}]
 
   \node (node_0) at (0,10) [draw,draw=none] {$\left(-t-n+1, 0, 0, \ldots, 0, 0, t+1\right)$};
-  \node (node_1) at (0,8) [draw,draw=none] {$\left(-t-n, 0, 0, \ldots, 0, 1, t \right)$};
-  \node (node_2) at (0,6) [draw,draw=none] {$\left(-t-n-1, 0, 0, \ldots, 1, 0, t \right)$};
-  \node (node_3) at (0,4) [draw,draw=none] {$\left(-t-2n+4, 0, 1, \ldots, 0, 0, t \right)$};
-  \node (node_4) at (0,2) [draw,draw=none] {$\left(-t-2n+3, 1, 0, \ldots, 0, 0, t \right)$};
-  \node (node_5) at (0,0) [draw,draw=none] {$\left(-t-2n+3, 0, 0, \ldots, 0, 0, t \right)$};
+  \node (node_1) at (0,9) [draw,draw=none] {$\left(-t-n, 0, 0, \ldots, 0, 1, t \right)$};
+  \node (node_2) at (0,8) [draw,draw=none] {$\left(-t-n-1, 0, 0, \ldots, 1, 0, t \right)$};
+  \node (node_3) at (0,7) [draw,draw=none] {$\left(-t-2n+4, 0, 1, \ldots, 0, 0, t \right)$};
+  \node (node_4) at (0,6) [draw,draw=none] {$\left(-t-2n+3, 1, 0, \ldots, 0, 0, t \right)$};
+  \node (node_5) at (0,5) [draw,draw=none] {$\left(-t-2n+3, 0, 0, \ldots, 0, 0, t \right)$};
 
   \draw [black,->] (node_0) edge (node_1);
   \draw [black,->] (node_1) edge (node_2);
@@ -553,11 +599,98 @@ For $t=0$ we obtain set of singular roots $\Psi^+_\lambda = \{ \epsilon_1-\epsil
   \draw [black,->] (node_4) edge (node_5);
 %
 \end{tikzpicture}
+\end{center}
+\end{frame}
+
+
+\begin{frame}{$\lambda = -(t+n-1)\omega_1  + (t+1)\omega_{n-1}$}
+For $t=0$ we have similarly to the previous case a singular weight with only nontrivial cohomology of degree one with weight $-n\omega_1 + \omega_n$
+
+Fro $t\geq 1$
+	\begin{tikzpicture}
+\draw (0 cm,0) -- (6 cm,0);
+\draw (8 cm,0) -- (10 cm,0);
+\draw[fill=white] (0 cm, 0 cm) circle (.1cm) node[below=4pt]{$\epsilon_{1} - \epsilon_{n}$};
+\draw[fill=black] (2.5 cm, 0 cm) circle (.1cm) node[below=4pt]{$\epsilon_{n-1} + \epsilon_{n}$};
+\draw[fill=black] (5 cm, 0 cm) circle (.1cm) node[below=4pt]{$\epsilon_{n-2} - \epsilon_{n-1}$};
+\node (node_a) at (6 cm, 0 cm) {};
+\node (node_b) at (8 cm, 0 cm) {};
+\draw[fill=black] (10 cm, 0 cm) circle (.1cm) node[below=4pt]{$\epsilon_{2} - \epsilon_{3}$};
+\draw [dotted] (node_a) to (node_b);
+\end{tikzpicture}  
+\end{frame}
+
+
+\begin{frame}{$\lambda = -(t+n-1)\omega_1  + (t+1)\omega_{n-1}$}
+\begin{center}
+\begin{tikzpicture}[>=latex,line join=bevel,scale=1, every node/.style={transform shape}]
+
+  \node (node_0) at (0,10) [draw,draw=none] {$\left(-t-n+1, 0, 0, \ldots, 0, t+1, 0\right)$};
+  \node (node_1) at (0,9) [draw,draw=none] {$\left(-t-n, 0, 0, \ldots,  0, t, 1 \right)$};
+  \node (node_2) at (0,8) [draw,draw=none] {$\left(-t-n-1, 0, 0, \ldots, 1,  t, 0 \right)$};
+  \node (node_3) at (0,7) [draw,draw=none] {$\left(-t-2n+4, 0, 1, \ldots, 0,  t, 0 \right)$};
+  \node (node_4) at (0,6) [draw,draw=none] {$\left(-t-2n+3, 1, 0, \ldots, 0,  t, 0 \right)$};
+  \node (node_5) at (0,5) [draw,draw=none] {$\left(-t-2n+3, 0, 0, \ldots, 0,  t, 0 \right)$};
+
+  \draw [black,->] (node_0) edge (node_1);
+  \draw [black,->] (node_1) edge (node_2);
+  \draw [dotted] (node_2) to (node_3);
+  \draw [black,->] (node_3) edge (node_4);
+  \draw [black,->] (node_4) edge (node_5);
+%
+\end{tikzpicture}
+\end{center}
 \end{frame}
 
 \begin{frame}{Example -- scalar products with positive roots}
 $\mathrm{SO}^*(16)$: $\lambda = \left(a_{5} + 1\right)\omega_{5} + a_6\omega_6 + a_7\omega_7 - \left(2 \, a_{5} + 2 \, a_{6} + a_{7} + 8\right)\omega_{8}$
-\begin{tikzpicture}[>=latex,line join=bevel,scale=0.6, every node/.style={transform shape}]
+\begin{tikzpicture}[>=latex,line join=bevel,scale=0.65, every node/.style={transform shape}]
+%%
+\node (node_2) at (308.5bp,61.5bp) [draw,draw=none] {$ \epsilon_{3} + \epsilon_{5}$};
+  \node (node_4) at (173.5bp,8.5bp) [draw,draw=none] {$\epsilon_{2} + \epsilon_{7}$};
+  \node (node_3) at (269.5bp,8.5bp) [draw,draw=none] {$\epsilon_{3} + \epsilon_{6}$};
+  \node (node_9) at (200.5bp,220.5bp) [draw,draw=none] {$\epsilon_{1} + \epsilon_{4}$};
+  \node (node_8) at (149.5bp,114.5bp) [draw,draw=none] {$ \epsilon_{1} + \epsilon_{6}$};
+  \node (node_7) at (221.5bp,61.5bp) [draw,draw=none] {$\epsilon_{2} + \epsilon_{6}$};
+  \node (node_6) at (236.5bp,114.5bp) [draw,draw=none] {$\epsilon_{2} + \epsilon_{5}$};
+  \node (node_5) at (308.5bp,114.5bp) [draw,draw=none] {$ \epsilon_{3} + \epsilon_{4}$};
+  \node (node_14) at (236.5bp,326.5bp) [draw,draw=none] {$\epsilon_{1} + \epsilon_{2}$};
+  \node (node_13) at (348.5bp,8.5bp) [draw,draw=none] {$\epsilon_{4} + \epsilon_{5})$};
+  \node (node_12) at (108.5bp,61.5bp) [draw,draw=none] {$ \epsilon_{1} + \epsilon_{7}$};
+  \node (node_11) at (200.5bp,167.5bp) [draw,draw=none] {$\epsilon_{1} + \epsilon_{5}$};
+  \node (node_10) at (55.5bp,8.5bp) [draw,draw=none] {$ \epsilon_{1} + \epsilon_{8}$};
+  \node (node_1) at (272.5bp,167.5bp) [draw,draw=none] {$\epsilon_{2} + \epsilon_{4}$};
+  \node (node_0) at (272.5bp,220.5bp) [draw,draw=none] {$\epsilon_{2} + \epsilon_{3}$};
+  \node (node_15) at (236.5bp,273.5bp) [draw,draw=none] {$\epsilon_{1} + \epsilon_{3}$};
+  \draw [black,->] (node_12) ..controls (120.42bp,77.332bp) and (129.52bp,88.646bp)  .. (node_8);
+  \draw [black,->] (node_8) ..controls (164.56bp,130.56bp) and (176.35bp,142.35bp)  .. (node_11);
+  \draw [black,->] (node_10) ..controls (71.149bp,24.558bp) and (83.403bp,36.35bp)  .. (node_12);
+  \draw [black,->] (node_6) ..controls (246.92bp,130.26bp) and (254.79bp,141.41bp)  .. (node_1);
+  \draw [black,->] (node_1) ..controls (250.71bp,183.93bp) and (232.91bp,196.54bp)  .. (node_9);
+  \draw [black,->] (node_3) ..controls (280.84bp,24.332bp) and (289.49bp,35.646bp)  .. (node_2);
+  \draw [black,->] (node_4) ..controls (187.6bp,24.483bp) and (198.55bp,36.114bp)  .. (node_7);
+  \draw [black,->] (node_9) ..controls (210.92bp,236.26bp) and (218.79bp,247.41bp)  .. (node_15);
+  \draw [black,->] (node_0) ..controls (262.08bp,236.26bp) and (254.21bp,247.41bp)  .. (node_15);
+  \draw [black,->] (node_11) ..controls (200.5bp,182.81bp) and (200.5bp,193.03bp)  .. (node_9);
+  \draw [black,->] (node_7) ..controls (225.73bp,76.88bp) and (228.78bp,87.262bp)  .. (node_6);
+  \draw [black,->] (node_13) ..controls (336.87bp,24.332bp) and (327.99bp,35.646bp)  .. (node_2);
+  \draw [black,->] (node_15) ..controls (236.5bp,288.81bp) and (236.5bp,299.03bp)  .. (node_14);
+  \draw [black,->] (node_5) ..controls (298.08bp,130.26bp) and (290.21bp,141.41bp)  .. (node_1);
+  \draw [black,->] (node_1) ..controls (272.5bp,182.81bp) and (272.5bp,193.03bp)  .. (node_0);
+  \draw [black,->] (node_7) ..controls (199.71bp,77.935bp) and (181.91bp,90.539bp)  .. (node_8);
+  \draw [black,->] (node_2) ..controls (286.71bp,77.935bp) and (268.91bp,90.539bp)  .. (node_6);
+  \draw [black,->] (node_6) ..controls (226.08bp,130.26bp) and (218.21bp,141.41bp)  .. (node_11);
+  \draw [black,->] (node_3) ..controls (255.4bp,24.483bp) and (244.45bp,36.114bp)  .. (node_7);
+  \draw [black,->] (node_2) ..controls (308.5bp,76.805bp) and (308.5bp,87.034bp)  .. (node_5);
+  \draw [black,->] (node_4) ..controls (154.02bp,24.784bp) and (138.37bp,37.061bp)  .. (node_12);
+%
+\end{tikzpicture}
+\end{frame}
+
+
+\begin{frame}{Example -- scalar products with positive roots}
+$\mathrm{SO}^*(16)$: $\lambda = \left(a_{5} + 1\right)\omega_{5} + a_6\omega_6 + a_7\omega_7 - \left(2 \, a_{5} + 2 \, a_{6} + a_{7} + 8\right)\omega_{8}$
+\begin{tikzpicture}[>=latex,line join=bevel,scale=0.65, every node/.style={transform shape}]
 %%
 \node (node_2) at (308.5bp,61.5bp) [draw,draw=none] {$(2, \epsilon_{3} + \epsilon_{5})$};
   \node (node_4) at (173.5bp,8.5bp) [draw,draw=none] {$(-a_{5} - a_{6}, \epsilon_{2} + \epsilon_{7})$};
@@ -600,51 +733,50 @@ $\mathrm{SO}^*(16)$: $\lambda = \left(a_{5} + 1\right)\omega_{5} + a_6\omega_6 +
 \end{tikzpicture}
 \end{frame}
 
-\begin{frame}{$\lambda = -(t+n-1)\omega_1  + (t+1)\omega_{n-1}$}
-$t=0$ -- Dirac, singularni, tabulka
-	\begin{tikzpicture}
-\draw (0 cm,0) -- (6 cm,0);
-\draw (8 cm,0) -- (10 cm,0);
-\draw[fill=white] (0 cm, 0 cm) circle (.1cm) node[below=4pt]{$\epsilon_{1} - \epsilon_{n}$};
-\draw[fill=black] (2.5 cm, 0 cm) circle (.1cm) node[below=4pt]{$\epsilon_{n-1} + \epsilon_{n}$};
-\draw[fill=black] (5 cm, 0 cm) circle (.1cm) node[below=4pt]{$\epsilon_{n-2} - \epsilon_{n-1}$};
-\node (node_a) at (6 cm, 0 cm) {};
-\node (node_b) at (8 cm, 0 cm) {};
-\draw[fill=black] (10 cm, 0 cm) circle (.1cm) node[below=4pt]{$\epsilon_{2} - \epsilon_{3}$};
-\draw [dotted] (node_a) to (node_b);
-\end{tikzpicture}  
-  {The reduced Hermitian symmetric pair for $\lambda = -(n-1)\omega_1  + \omega_{n-1}$}
 
-\begin{tikzpicture}[>=latex,line join=bevel,]
 
-  \node (node_0) at (0,10) [draw,draw=none] {$\left(-t-n+1, 0, 0, \ldots, 0, t+1, 0\right)$};
-  \node (node_1) at (0,8) [draw,draw=none] {$\left(-t-n, 0, 0, \ldots,  0, t, 1 \right)$};
-  \node (node_2) at (0,6) [draw,draw=none] {$\left(-t-n-1, 0, 0, \ldots, 1,  t, 0 \right)$};
-  \node (node_3) at (0,4) [draw,draw=none] {$\left(-t-2n+4, 0, 1, \ldots, 0,  t, 0 \right)$};
-  \node (node_4) at (0,2) [draw,draw=none] {$\left(-t-2n+3, 1, 0, \ldots, 0,  t, 0 \right)$};
-  \node (node_5) at (0,0) [draw,draw=none] {$\left(-t-2n+3, 0, 0, \ldots, 0,  t, 0 \right)$};
-
-  \draw [black,->] (node_0) edge (node_1);
-  \draw [black,->] (node_1) edge (node_2);
-  \draw [dotted] (node_2) to (node_3);
-  \draw [black,->] (node_3) edge (node_4);
-  \draw [black,->] (node_4) edge (node_5);
+\begin{frame}{Example -- scalar products with positive roots}
+\begin{tikzpicture}[>=latex,line join=bevel,scale=0.7, every node/.style={transform shape}]
+%%
+\node (node_2) at (308.5bp,61.5bp) [draw,draw=none] {$(2, \epsilon_{3} + \epsilon_{5})$};
+  \node (node_4) at (173.5bp,8.5bp) [draw,draw=none] {$(\alert{\bm{-a_{5} - a_{6}}}, \epsilon_{2} + \epsilon_{7})$};
+  \node (node_3) at (269.5bp,8.5bp) [draw,draw=none] {$(\alert{\bm{-a_{5}}}, \epsilon_{3} + \epsilon_{6})$};
+  \node (node_9) at (200.5bp,220.5bp) [draw,draw=none] {$(5, \epsilon_{1} + \epsilon_{4})$};
+  \node (node_8) at (149.5bp,114.5bp) [draw,draw=none] {$(\alert{\bm{-a_{5} + 2}}, \epsilon_{1} + \epsilon_{6})$};
+  \node (node_7) at (221.5bp,61.5bp) [draw,draw=none] {$(\alert{\bm{-a_{5} + 1}}, \epsilon_{2} + \epsilon_{6})$};
+  \node (node_6) at (236.5bp,114.5bp) [draw,draw=none] {$(3, \epsilon_{2} + \epsilon_{5})$};
+  \node (node_5) at (308.5bp,114.5bp) [draw,draw=none] {$(3, \epsilon_{3} + \epsilon_{4})$};
+  \node (node_14) at (236.5bp,326.5bp) [draw,draw=none] {$(7, \epsilon_{1} + \epsilon_{2})$};
+  \node (node_13) at (348.5bp,8.5bp) [draw,draw=none] {$(1, \epsilon_{4} + \epsilon_{5})$};
+  \node (node_12) at (108.5bp,61.5bp) [draw,draw=none] {$(\alert{\bm{-a_{5} - a_{6} + 1}}, \epsilon_{1} + \epsilon_{7})$};
+  \node (node_11) at (200.5bp,167.5bp) [draw,draw=none] {$(4, \epsilon_{1} + \epsilon_{5})$};
+  \node (node_10) at (55.5bp,8.5bp) [draw,draw=none] {$(\alert{\bm{-a_{5} - a_{6} - a_{7}}}, \epsilon_{1} + \epsilon_{8})$};
+  \node (node_1) at (272.5bp,167.5bp) [draw,draw=none] {$(4, \epsilon_{2} + \epsilon_{4})$};
+  \node (node_0) at (272.5bp,220.5bp) [draw,draw=none] {$(5, \epsilon_{2} + \epsilon_{3})$};
+  \node (node_15) at (236.5bp,273.5bp) [draw,draw=none] {$(6, \epsilon_{1} + \epsilon_{3})$};
+  \draw [black,->] (node_12) ..controls (120.42bp,77.332bp) and (129.52bp,88.646bp)  .. (node_8);
+  \draw [black,->] (node_8) ..controls (164.56bp,130.56bp) and (176.35bp,142.35bp)  .. (node_11);
+  \draw [black,->] (node_10) ..controls (71.149bp,24.558bp) and (83.403bp,36.35bp)  .. (node_12);
+  \draw [black,->] (node_6) ..controls (246.92bp,130.26bp) and (254.79bp,141.41bp)  .. (node_1);
+  \draw [black,->] (node_1) ..controls (250.71bp,183.93bp) and (232.91bp,196.54bp)  .. (node_9);
+  \draw [black,->] (node_3) ..controls (280.84bp,24.332bp) and (289.49bp,35.646bp)  .. (node_2);
+  \draw [black,->] (node_4) ..controls (187.6bp,24.483bp) and (198.55bp,36.114bp)  .. (node_7);
+  \draw [black,->] (node_9) ..controls (210.92bp,236.26bp) and (218.79bp,247.41bp)  .. (node_15);
+  \draw [black,->] (node_0) ..controls (262.08bp,236.26bp) and (254.21bp,247.41bp)  .. (node_15);
+  \draw [black,->] (node_11) ..controls (200.5bp,182.81bp) and (200.5bp,193.03bp)  .. (node_9);
+  \draw [black,->] (node_7) ..controls (225.73bp,76.88bp) and (228.78bp,87.262bp)  .. (node_6);
+  \draw [black,->] (node_13) ..controls (336.87bp,24.332bp) and (327.99bp,35.646bp)  .. (node_2);
+  \draw [black,->] (node_15) ..controls (236.5bp,288.81bp) and (236.5bp,299.03bp)  .. (node_14);
+  \draw [black,->] (node_5) ..controls (298.08bp,130.26bp) and (290.21bp,141.41bp)  .. (node_1);
+  \draw [black,->] (node_1) ..controls (272.5bp,182.81bp) and (272.5bp,193.03bp)  .. (node_0);
+  \draw [black,->] (node_7) ..controls (199.71bp,77.935bp) and (181.91bp,90.539bp)  .. (node_8);
+  \draw [black,->] (node_2) ..controls (286.71bp,77.935bp) and (268.91bp,90.539bp)  .. (node_6);
+  \draw [black,->] (node_6) ..controls (226.08bp,130.26bp) and (218.21bp,141.41bp)  .. (node_11);
+  \draw [black,->] (node_3) ..controls (255.4bp,24.483bp) and (244.45bp,36.114bp)  .. (node_7);
+  \draw [black,->] (node_2) ..controls (308.5bp,76.805bp) and (308.5bp,87.034bp)  .. (node_5);
+  \draw [black,->] (node_4) ..controls (154.02bp,24.784bp) and (138.37bp,37.061bp)  .. (node_12);
 %
 \end{tikzpicture}
-\end{frame}
-
-\section{Conclusion}
-
-
-\begin{frame}{Summary}
-
-\begin{itemize}
- \item uniform and elementary construction of octonionic planes 
- \item generalization of Calderbank--Diemer construction to unitarizable highest weight modules
- \item software for nilpotent cohomology calculations 
- \item complete nilpotent cohomology of unitarizable highest weight modules in conformal case / partial results elsewhere
-\end{itemize}
-
 \end{frame}
 
 
@@ -652,7 +784,7 @@ $t=0$ -- Dirac, singularni, tabulka
 
 \begin{frame}[standout]
 
-Thank you for your attention!
+Thank you for attention!
 
 \end{frame}
 
@@ -674,6 +806,198 @@ Thank you for your attention!
 
 \end{frame}
 
+\begin{frame}{$\mathrm{SU}(p,q), p+q = n \geq 2$}
+\begin{gather*}
+  \lambda_a=\omega_{p'} + \omega_{n-q'} - (n+l+1-p'-q')\omega_p   \\
+  1\leq p' \leq p,\quad 1\leq q' \leq q,\quad 1\leq l \leq \min(p',q')\\
+  Q(\lambda_a)=R(\lambda_a)=\mathrm{SU}(p',q') \\
+  (  \mu_a = \omega_{p'-l}+\omega_{n-q'+l}-(n+l+1-p'-q')\omega_p)
+\end{gather*}
 
+\begin{multline*}
+ C_a = \{a_{p'}\omega_{p'} + \cdots + a_p\omega_p + \cdots + a_{n-q'}\omega_{n-q'} \,|\, \\
+\quad  a_p=-a_{p'}-\cdots -a_{p-1}-a_{p+1} - \cdots - a_{n-q'} \}.
+\end{multline*}
+
+\end{frame}
+
+\begin{frame}{$\mathrm{Sp}(n,\R), n \geq 2$}
+\begin{gather*}
+  \lambda_a = \omega_q + \omega_r - (2+n-\frac{1}{2}(r+q-l+1))\omega_n\\
+   1\leq q\leq r\leq n,\quad 1\leq l \leq q\\
+   Q(\lambda_a) = \mathrm{Sp}(q,\R),\quad R(\lambda_a)= \mathrm{Sp}(r,\R) \\
+   (\mu_a= \omega_{q-l} + \omega_{r-l} - (2+n-\frac{1}{2}(r+q-l+1))\omega_n)
+\end{gather*}
+\[
+ C_a = \{ a_r\omega_r + \cdots + a_n\omega_n \,|\, a_n=-(a_r+\cdots + a_{n-1}) \}
+\]
+\end{frame}
+
+\begin{frame}{$\mathrm{SO}^*(2n), n\geq 4$}
+
+\begin{center}
+\resizebox{\textwidth}{!}{
+\begin{threeparttable}
+\begin{tabular}{CCCCC}
+  \text{Vertex } \lambda_a & \text{Weight } \mu_a &  Q(\lambda_a) = R(\lambda_a)& l(\lambda_a) \\ \hline
+  \omega_2 - (2n-2)\omega_n & -(2n-2)\omega_n & \mathrm{SU}(1,1) &  1 \\
+  \omega_p -2(n-p+l) \omega_n & \omega_{p-2l}-2(n-p+l)\omega_n & \mathrm{SO}^*(2p)\tnote{1} & 1\leq l \leq \floor{\frac{p}{2}} \\
+  \omega_{n-1} - (1+2l)\omega_n & \omega_{n-1-2l} - 2(1+l)\omega_n &  \mathrm{SO}^*(2n-2) & 1\leq l \leq \floor{\frac{n-1}{2}} \\
+  -(2l-2)\omega_n & \omega_{n-2l} - 2l\omega_n &  \mathrm{SO}^*(2n)  & 1\leq l \leq \floor{\frac{n}{2}} \\
+  \omega_1 +\omega_{q+1} - (2n-q)\omega_n & \omega_q -(2n-q)\omega_n & \mathrm{SU}(1,q)\tnote{2} & 1\\
+  \omega_1 +\omega_{n-1} - (n+1)\omega_n & \omega_{n-2} - (n+2)\omega_n &  \mathrm{SU}(1,n-2)  & 1 \\
+  \omega_1 -(n-1)\omega_n & \omega_{n-1} - n\omega_n &  \mathrm{SU}(1,n-1)  & 1
+\end{tabular}
+\smallskip
+\begin{tablenotes}
+ \item [1] $3 \leq p \leq n-2$
+ \item [2] $2 \leq q \leq n-3$
+\end{tablenotes}
+\end{threeparttable}
+}
+\end{center}
+\end{frame}
+
+\begin{frame}{$\mathrm{SO}^*(2n), n\geq 4$}
+Let $a=(Q,R,l)$, $Q=R$. Then for $R=\mathrm{SO}^*(2p)$, $3\leq p\leq n$
+\[
+ C_a = \{a_p\omega_p+\cdots + a_n\omega_n \,|\, a_n = -2a_p - \cdots -2a_{n-2} - a_{n-1}\}
+\]
+and for  $R=\mathrm{SU}(1,q)$, $1\leq q \leq n-1$
+\[
+ C_a = \{a_1\omega_1 + a_{q+1}\omega_{q+1} + \cdots + a_n\omega_n \,|\, a_n = -(a_1 + 2a_{q+1} + \cdots + 2a_{n-2} + a_{n-1})\}.
+\]
+
+\end{frame}
+
+\begin{frame}{$E_6$}
+\begin{center}\begin{threeparttable}\label{tbl:e6}
+\begin{tabular}{CCCCC}
+  \text{Vertex } \lambda_a & \text{Weight } \mu_a & Q(\lambda_a) = R(\lambda_a) & l(\lambda_a) \\ \hline
+  -12 \omega_1 + \omega_2 & -12 \omega_1 & \mathrm{SU}(1,1) & 1\\
+  -12 \omega_1 + \omega_4 & -12 \omega_1 + \omega_2 & \mathrm{SU}(1,2)& 1\\
+  -12 \omega_1 + \omega_3 + \omega_5 & -12 \omega_1 + \omega_4 & \mathrm{SU}(1,3) & 1\\
+  -9 \omega_1 + \omega_5 \tnote{1} & -10 \omega_1 + \omega_3 & \mathrm{SU}(1,4) & 1\\
+  -10 \omega_1 + \omega_3 + \omega_6 \tnote{2} & -10 \omega_1 + \omega_5 & \mathrm{SU}(1,4) & 1\\
+  -8 \omega_1 + \omega_3 & -8 \omega_1+ \omega_6 & \mathrm{SU}(1,5) & 1 \\
+  -5 \omega_1 +  \omega_6 & -6 \omega_1+ \omega_2 & \mathrm{SO}(2,8) & 1 \\
+  -8 \omega_1 + \omega_6 & -9 \omega_1 & \mathrm{SO}(2,8) & 2 \\
+  0 & -2 \omega_1+ \omega_3 & EIII & 1 \\
+  -3 \omega_1 & -5 \omega_1 + \omega_6 & EIII & 2
+\end{tabular}
+\smallskip
+\begin{tablenotes}
+ \item [1] Dynkin diagram
+    \begin{tikzpicture} % E6 relative
+        \node[croot] (a1) [label=above:$-\beta$] {};
+        \node[croot] (a2) [right=of a1] [label=above:$\alpha_2$] {};
+        \node[croot] (a3) [right=of a2] [label=above:$\alpha_4$] {};
+        \node[croot] (a4) [right=of a4] [label=above:$\alpha_3$] {};
+	\draw (a1) to (a2) to (a3) to (a4);
+     \end{tikzpicture}
+ \item [2] Dynkin diagram
+ \begin{tikzpicture} % E6 relative
+        \node[croot] (a1) [label=above:$-\beta$] {};
+        \node[croot] (a2) [right=of a1] [label=above:$\alpha_2$] {};
+        \node[croot] (a3) [right=of a2] [label=above:$\alpha_4$] {};
+        \node[croot] (a4) [right=of a3] [label=above:$\alpha_5$] {};
+	\draw (a1) to (a2) to (a3) to (a4);
+     \end{tikzpicture}
+\end{tablenotes}
+\end{threeparttable}\end{center}
+\end{frame}
+
+\begin{frame}{$E_7$}
+
+\begin{center}\begin{threeparttable}
+\begin{tabular}{CCCCC}
+  \text{Vertex } \lambda_a & \text{Weight } \mu_a & Q(\lambda_a) = R(\lambda_a) & l(\lambda_a) \\ \hline
+  \omega_1 - 18 \omega_7 & -18 \omega_7 & \mathrm{SU}(1,1) & 1 \\
+  \omega_3 - 18 \omega_7 & \omega_1 -18 \omega_7 & \mathrm{SU}(1,2) & 1 \\
+  \omega_4 - 18 \omega_7 & \omega_3 -18 \omega_7 & \mathrm{SU}(1,3) & 1 \\
+  \omega_2 + \omega_5 - 18 \omega_7 & \omega_4 - 18 \omega_7 & \mathrm{SU}(1,4) & 1 \\
+  \omega_5 -15 \omega_7 \tnote{1} &  \omega_2 - 15\omega_7 & \mathrm{SU}(1,5) & 1 \\
+  \omega_2 + \omega_6 - 16 \omega_7 \tnote{2} &  \omega_5 - 16 \omega_7 & \mathrm{SU}(1,5) & 1 \\
+  \omega_2 - 13 \omega_7 &  \omega_6 - 14 \omega_7 & \mathrm{SU}(1,6) & 1 \\
+  \omega_6 - 10 \omega_7 &  \omega_1 - 10 \omega_7 & \mathrm{SO}(2,10) & 1 \\
+  \omega_6 - 14 \omega_7 & -14 \omega_7 & \mathrm{SO}(2,10) & 2 \\
+  0 &  \omega_6 - 2 \omega_7 & EVII & 1 \\
+  -4 \omega_7 &  \omega_1 - 6 \omega_7 & EVII & 2 \\
+  -8 \omega_7 & -10 \omega_7 & EVII & 3
+\end{tabular}
+\smallskip
+\begin{tablenotes}
+ \item [1] Dynkin diagram
+    \begin{tikzpicture} % E6 relative
+        \node[croot] (a1) [label=above:$-\beta$] {};
+        \node[croot] (a2) [right=of a1] [label=above:$\alpha_1$] {};
+        \node[croot] (a3) [right=of a2] [label=above:$\alpha_3$] {};
+        \node[croot] (a4) [right=of a3] [label=above:$\alpha_4$] {};
+        \node[croot] (a5) [right=of a4] [label=above:$\alpha_2$] {};
+	\draw (a1) to (a2) to (a3) to (a4) to (a5);
+     \end{tikzpicture}
+ \item [2] Dynkin diagram
+ \begin{tikzpicture} % E6 relative
+        \node[croot] (a1) [label=above:$-\beta$] {};
+        \node[croot] (a2) [right=of a1] [label=above:$\alpha_1$] {};
+        \node[croot] (a3) [right=of a2] [label=above:$\alpha_3$] {};
+        \node[croot] (a4) [right=of a3] [label=above:$\alpha_4$] {};
+        \node[croot] (a5) [right=of a4] [label=above:$\alpha_5$] {};
+	\draw (a1) to (a2) to (a3) to (a4) to (a5);
+     \end{tikzpicture}
+\end{tablenotes}
+\end{threeparttable}\end{center}
+\end{frame}
+
+
+\begin{frame}{Calderbank--Diemer construction}
+\begin{itemize}[<+- | alert@+>]
+	\item Certain Neumann series has to converge $\rightsquigarrow$ formal globalization
+	\item formal globalization has a well defined $P$-action\\ \hspace{1cm} $\rightsquigarrow$ highest / lowest weight
+	\item operator in the Neumann series constructed using Kostant's Hodge decomposition $\rightsquigarrow$ unitarizable modules
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Enright--Shelton equivalence 1}
+
+\begin{theorem}[\cite{enright_categories_1987}, \cite{enright_highest_1989}] 
+\hspace{1em} \\[-1em]
+Suppose that either $\roots$ has one root length or that it has roots of two lengths and all the roots in $J$ are short. Then there exists an equivalence of categories
+	\[
+	\mathcal{E}: \mathcal{O}^\lie{p}_\mu \to \mathcal{O}^\lie{p'}_{\mathrm{reg}},
+	\]
+	where $\lie{p}'$ is a parabolic subalgebra of Hermitian type of a complex simple Lie algebra $\lie{g}'$ of rank \alert{smaller} or equal to the rank of $\lie{g}.$ Moreover, there is an isomorphism of posets $W^{\Sigma, J} \to W'^{\Sigma'}$ such that the functor $\mathcal{E}$ sends parabolic Verma modules $M_\Sigma(w)$ to parabolic Verma modules $M_{\Sigma'} (w')$ and similarly for simple modules.
+
+\end{theorem}
+
+\end{frame}
+
+\begin{frame}{Enright--Shelton equivalence  2}
+\begin{theorem}[\cite{enright_categories_1987}, \cite{enright_highest_1989}] 
+ Suppose that $\roots$ has two root lengths and $J$ contains a long root. Then there exists an equivalence of categories
+	\[
+	\mathcal{E}: \mathcal{O}^\lie{p}_\mu \to \mathcal{O}^\lie{p'}_{\mathrm{reg}} \oplus  \mathcal{O}^\lie{p'}_{\mathrm{reg}},
+	\]
+	where $\lie{p}'$ is a parabolic subalgebra of Hermitian type of a complex simple Lie algebra $\lie{g}'$ of rank \alert{smaller} or equal to the rank of $\lie{g}.$ More precisely the poset $W^{\Sigma, J}$ is a disjoint union $W^{\Sigma, J}_\mathrm{odd} \cup W^{\Sigma, J}_{\mathrm{even}}$ of two poset and the category $\mathcal{O} ^\lie{p}_\mu$ has a decomposition into a direct sum $\mathcal{O} ^\lie{p}_\mu = \mathcal{O} ^\lie{p}_{\mu, \mathrm{even}} \oplus \mathcal{O} ^\lie{p}_{\mu, \mathrm{odd}}$ such that all extensions between modules in different summands is zero. There exists isomorphisms of posets $ W^{\Sigma, J}_{\mathrm{odd}} \to W'^{\Sigma'}$ and $ W^{\Sigma, J}_{\mathrm{even}} \to W'^{\Sigma'}$ and corresponding equivalences of categories $\mathcal{E}_{\mathrm{odd}}: \mathcal{O} ^\lie{p}_{\mu, \mathrm{odd}} \to  \mathcal{O}^\lie{p'}_{\mathrm{reg}}$ and $\mathcal{E}_{\mathrm{even}}: \mathcal{O} ^\lie{p}_{\mu, \mathrm{even}} \to  \mathcal{O}^\lie{p'}_{\mathrm{reg}}$ such that $M_\Sigma(w) \to M_{\Sigma'} (w')$ and similarly for their simple quotients.
+
+\end{theorem}
+
+\end{frame}
+
+\begin{frame}{Enright--Shelton equivalences --- example}
+
+Consider $(\lie{sl}_6, \lie{sl}_3 \oplus \lie{sl}_3)$ with $\mu = (0,1,2\, |\, 3,3,4)$. 
+
+Permutations of $\mu + \rho$ which are highest weights  of simple modules plus $\rho$ have their first three and last three entries strictly decreasing.  There are only six possible cases, namely
+\[
+(4, 3, 2\, |\, 3, 1, 0) \quad (4, 3, 1\, |\,3, 2, 0) \quad (4, 3, 0\, |\,3, 2, 1)
+\]
+and their counterparts with first three and last three entries swapped. Now these three weights are equivalent to 
+\[
+(4,  2\, |\,  1, 0) \quad (4,  1\, |\, 2, 0) \quad (4,  0\, |\, 2, 1).
+\]
+%If we impose that the weight for $\lie{sl}(6)$ has to have entries increasing by $1$ this mapping on weights has inverse since we know that we have to put the number $3$ into two places and there's only one way to do it in each case so that one obtains $\lie{k}$-dominant weight. This directly generalizes to all other $\lie{sl}$ cases as any weight can be brought by translation functors to a weight that starts with $0$, has entries which are nondecreasing and which increase only by $1$.
+
+\end{frame}
 
 \end{document}
